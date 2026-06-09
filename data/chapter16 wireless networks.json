@@ -5,7 +5,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What IEEE standard defines Wi-Fi 6 and what is its throughput improvement over Wi-Fi 5?",
-    "o": ["IEEE 802.11ac — 200% improvement", "IEEE 802.11ax — 400% improvement", "IEEE 802.11n — 300% improvement", "IEEE 802.11ad — 500% improvement"],
+    "o": [
+      "IEEE 802.11ac \u2014 200% improvement",
+      "IEEE 802.11ax \u2014 400% improvement",
+      "IEEE 802.11n \u2014 300% improvement",
+      "IEEE 802.11ad \u2014 500% improvement"
+    ],
     "a": 1,
     "w": "Wi-Fi 6 is defined by IEEE 802.11ax and offers a 400% improvement in throughput compared to Wi-Fi 5. IEEE 802.11ac is Wi-Fi 5. IEEE 802.11n is Wi-Fi 4. IEEE 802.11ad is WiGig (60 GHz), a separate high-speed short-range standard."
   },
@@ -15,7 +20,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What is the typical range of a Personal Area Network (PAN) as defined by IEEE 802.15?",
-    "o": ["Within 1 m (3.3 ft)", "Within 10 m (33 ft)", "Within 100 m (328 ft)", "Within 1000 m (3280 ft)"],
+    "o": [
+      "Within 1 m (3.3 ft)",
+      "Within 10 m (33 ft)",
+      "Within 100 m (328 ft)",
+      "Within 1000 m (3280 ft)"
+    ],
     "a": 1,
     "w": "PANs as defined by IEEE 802.15 typically operate within a 10 m (33 ft) radius of the personal space. 1 m is overly restrictive and describes only very short-range NFC or similar technologies. 100 m is more characteristic of WLAN (Wi-Fi) coverage. 1000 m is in the range of outdoor wireless links, far beyond PAN scope."
   },
@@ -25,7 +35,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What characterizes an Independent BSS (IBSS) in WLAN terminology?",
-    "o": ["Multiple APs linked to expand coverage", "Stations communicate directly without an AP", "A single AP managing all communication", "A centralized WLAN controller managing multiple APs"],
+    "o": [
+      "Multiple APs linked to expand coverage",
+      "Stations communicate directly without an AP",
+      "A single AP managing all communication",
+      "A centralized WLAN controller managing multiple APs"
+    ],
     "a": 1,
     "w": "An IBSS (Independent Basic Service Set) allows stations to communicate directly without an access point in an ad-hoc network configuration. Multiple APs linked for expanded coverage describes an ESS (Extended Service Set). A single AP managing all communication is a BSS (Basic Service Set). A centralized controller is a WLAN infrastructure management feature, not a BSS type."
   },
@@ -35,7 +50,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What encryption standard is recommended for WPANs?",
-    "o": ["WEP", "WPA/WPA2", "AES", "DES"],
+    "o": [
+      "WEP",
+      "WPA/WPA2",
+      "AES",
+      "DES"
+    ],
     "a": 2,
     "w": "AES (Advanced Encryption Standard) is recommended for WPANs (Wireless Personal Area Networks). WPA/WPA2 is recommended for WLANs. WEP is not recommended for any current wireless system due to known vulnerabilities. DES is an outdated symmetric encryption algorithm not used in modern wireless security."
   },
@@ -45,7 +65,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What beamforming method transmits the same signal through multiple antennas?",
-    "o": ["Diversity Coding", "Spatial Multiplexing", "Precoding", "MIMO"],
+    "o": [
+      "Diversity Coding",
+      "Spatial Multiplexing",
+      "Precoding",
+      "MIMO"
+    ],
     "a": 2,
     "w": "Precoding transmits the same signal through multiple antennas with adjusted phase and amplitude to form a directed beam. Diversity Coding transmits orthogonal signals through multiple antennas for redundancy. Spatial Multiplexing splits a high-bandwidth signal into multiple lower-bandwidth streams. MIMO is the overarching technique that includes all these methods, not a specific beamforming sub-method."
   },
@@ -55,7 +80,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What duplex method transmits and receives on separate frequencies simultaneously?",
-    "o": ["Time Division Duplex (TDD)", "Frequency Division Duplex (FDD)", "Half-duplex switching", "MIMO spatial multiplexing"],
+    "o": [
+      "Time Division Duplex (TDD)",
+      "Frequency Division Duplex (FDD)",
+      "Half-duplex switching",
+      "MIMO spatial multiplexing"
+    ],
     "a": 1,
     "w": "Frequency Division Duplex (FDD) transmits and receives simultaneously on separate frequencies, enabling full-duplex operation. Time Division Duplex (TDD) alternately transmits and receives in time slots on the same frequency. Half-duplex switching is a single-direction-at-a-time approach. MIMO spatial multiplexing increases throughput using multiple antennas, not a duplex method."
   },
@@ -65,7 +95,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What unlicensed spectrum frequencies are used for Wi-Fi?",
-    "o": ["900 MHz, 2.4 GHz, and 5 GHz", "2.4 GHz, 5 GHz, and 6 GHz", "5 GHz and 6 GHz only", "2.4 GHz only"],
+    "o": [
+      "900 MHz, 2.4 GHz, and 5 GHz",
+      "2.4 GHz, 5 GHz, and 6 GHz",
+      "5 GHz and 6 GHz only",
+      "2.4 GHz only"
+    ],
     "a": 1,
     "w": "Wi-Fi uses the unlicensed 2.4 GHz, 5 GHz, and 6 GHz spectrum bands. 900 MHz is used for some IoT and older cordless phones but is not a primary Wi-Fi band. 5 GHz and 6 GHz only would exclude the widely used 2.4 GHz band. 2.4 GHz only would exclude the 5 GHz and 6 GHz bands added in later Wi-Fi generations."
   },
@@ -75,7 +110,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "How many 20 MHz-wide channels does the 5 GHz range contain?",
-    "o": ["12 channels", "16 channels", "23 channels", "36 channels"],
+    "o": [
+      "12 channels",
+      "16 channels",
+      "23 channels",
+      "36 channels"
+    ],
     "a": 2,
     "w": "The 5 GHz range is divided into 23 channels, each 20 MHz wide. 12 and 16 channels understate the 5 GHz channel count. 36 channels would require more spectrum than the defined 5 GHz unlicensed band provides with 20 MHz channel spacing."
   },
@@ -85,7 +125,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What climate effect impacts wireless frequencies above 6 GHz?",
-    "o": ["Increased multipath from building reflections", "Rain fade and heavy moisture attenuation", "Increased Fresnel zone clearance requirements", "Reduced antenna gain in humid conditions"],
+    "o": [
+      "Increased multipath from building reflections",
+      "Rain fade and heavy moisture attenuation",
+      "Increased Fresnel zone clearance requirements",
+      "Reduced antenna gain in humid conditions"
+    ],
     "a": 1,
     "w": "High frequencies above 6 GHz are affected by rain fade and heavy moisture, which attenuate the signal. Rain fade is a well-documented phenomenon at microwave and millimeter-wave frequencies. Building reflections cause multipath at all frequencies, not specifically above 6 GHz. Fresnel zone clearance requirements are independent of rain fade. Antenna gain is not directly reduced by humidity at most operational frequencies."
   },
@@ -95,7 +140,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What cable type used in DAS operates from 70 MHz to 2.4 GHz?",
-    "o": ["Category 6A balanced twisted-pair", "Single-mode optical fiber", "Radiating coax (leaky coax)", "Series-11U coaxial cable"],
+    "o": [
+      "Category 6A balanced twisted-pair",
+      "Single-mode optical fiber",
+      "Radiating coax (leaky coax)",
+      "Series-11U coaxial cable"
+    ],
     "a": 2,
     "w": "Radiating Coax (Leaky Coax) operates from 70 MHz to 2.4 GHz in DAS applications, deliberately allowing RF signals to radiate along its length for in-building coverage. Category 6A is used for DAS backhaul but does not radiate RF signals. Single-mode optical fiber is used for long-haul DAS links but does not radiate RF. Series-11U coaxial cable is a video distribution cable, not a radiating antenna cable."
   },
@@ -105,7 +155,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What does the link budget in a DAS refer to?",
-    "o": ["The financial budget for DAS installation", "The sum of gains and losses in the system including transmission line loss and antenna gains", "The maximum number of antennas in a DAS design", "The power output limit of each remote unit"],
+    "o": [
+      "The financial budget for DAS installation",
+      "The sum of gains and losses in the system including transmission line loss and antenna gains",
+      "The maximum number of antennas in a DAS design",
+      "The power output limit of each remote unit"
+    ],
     "a": 1,
     "w": "The link budget refers to the sum of all gains and losses in the system, including transmission line loss, splitter/coupler losses, and antenna gains, determining whether adequate signal strength reaches all coverage areas. Financial budget is a project management consideration, not a technical DAS term. Antenna count is a design parameter, not the link budget. Maximum power output is a system specification, not the budget calculation."
   },
@@ -115,7 +170,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What Diversity Coding beamforming method transmits orthogonal signals through multiple antennas?",
-    "o": ["Precoding", "Diversity Coding", "Spatial Multiplexing", "Adaptive beamsteering"],
+    "o": [
+      "Precoding",
+      "Diversity Coding",
+      "Spatial Multiplexing",
+      "Adaptive beamsteering"
+    ],
     "a": 1,
     "w": "Diversity Coding transmits orthogonal signals through multiple antennas to provide redundancy and improve link reliability. Precoding transmits the same signal through multiple antennas with phase adjustments. Spatial Multiplexing splits a high-rate signal into independent streams. Adaptive beamsteering is a real-time antenna direction technique, not one of the three standard beamforming methods."
   },
@@ -125,7 +185,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What additional consideration applies to antenna support structures exceeding 60 m (200 ft) in height?",
-    "o": ["No additional requirements beyond standard antenna mounts", "Additional structural and lighting considerations apply", "They must use MIMO antennas exclusively", "They require only optical fiber backhaul"],
+    "o": [
+      "No additional requirements beyond standard antenna mounts",
+      "Additional structural and lighting considerations apply",
+      "They must use MIMO antennas exclusively",
+      "They require only optical fiber backhaul"
+    ],
     "a": 1,
     "w": "Antenna support structures exceeding 60 m (200 ft) in height have additional considerations including structural analysis for wind loading and aviation obstruction lighting requirements. Standard antenna mount considerations are insufficient at this height. MIMO antenna type is not height-dependent. Backhaul medium is a system design choice unrelated to structure height."
   },
@@ -135,7 +200,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What path loss is introduced by a radome cover on a parabolic antenna?",
-    "o": ["0.1 dB", "0.3 dB", "0.5 dB", "1.0 dB"],
+    "o": [
+      "0.1 dB",
+      "0.3 dB",
+      "0.5 dB",
+      "1.0 dB"
+    ],
     "a": 2,
     "w": "Radome covers for parabolic antennas may cause 0.5 dB path loss due to signal absorption and reflection in the radome material. 0.1 dB and 0.3 dB understate the typical radome insertion loss. 1.0 dB would be an excessive loss for a standard radome and would indicate a poorly designed or damaged unit."
   },
@@ -145,7 +215,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What height above the rooftop surface must RF media on rooftops be supported?",
-    "o": ["13 mm (0.5 in)", "25 mm (1 in)", "38 mm (1.5 in)", "75 mm (3 in)"],
+    "o": [
+      "13 mm (0.5 in)",
+      "25 mm (1 in)",
+      "38 mm (1.5 in)",
+      "75 mm (3 in)"
+    ],
     "a": 2,
     "w": "RF media on rooftops should be supported 38 mm (1.5 in) above the surface to prevent water pooling damage and allow for roof maintenance. 13 mm and 25 mm are insufficient to protect against water accumulation. 75 mm would be unnecessary additional height that complicates installation."
   },
@@ -155,7 +230,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What type of media provides low-loss transmission for frequencies above 1 GHz in outdoor wireless systems?",
-    "o": ["Standard coaxial cable", "Balanced twisted-pair", "Flexible or rigid waveguides", "Optical fiber only"],
+    "o": [
+      "Standard coaxial cable",
+      "Balanced twisted-pair",
+      "Flexible or rigid waveguides",
+      "Optical fiber only"
+    ],
     "a": 2,
     "w": "Flexible or rigid waveguides provide low-loss transmission for frequencies above 1 GHz in outdoor wireless applications. Standard coaxial cable has increasing attenuation at higher frequencies and is not the lowest-loss option above 1 GHz. Balanced twisted-pair is unsuitable for RF transmission at these frequencies. Optical fiber requires O/E conversion and is used for DAS backhaul, not as antenna feed line."
   },
@@ -165,7 +245,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What digital signal handling technology is used in digital DAS systems?",
-    "o": ["Automatic Gain Control (AGC)", "Time Division Duplex (TDD) transceivers", "Frequency Division Multiplex (FDM)", "Analog-to-digital conversion only"],
+    "o": [
+      "Automatic Gain Control (AGC)",
+      "Time Division Duplex (TDD) transceivers",
+      "Frequency Division Multiplex (FDM)",
+      "Analog-to-digital conversion only"
+    ],
     "a": 1,
     "w": "Digital DAS systems use time division duplex (TDD) transceivers for handling digital signals. AGC (Automatic Gain Control) is used in analog DAS systems. FDM is a legacy analog multiplexing technique. Analog-to-digital conversion is a component of the digital DAS process but not the defining signal handling technology."
   },
@@ -175,7 +260,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What is the maximum allowable illumination for infrared (IR) communication systems?",
-    "o": ["1 lux", "5 lux", "10 lux", "50 lux"],
+    "o": [
+      "1 lux",
+      "5 lux",
+      "10 lux",
+      "50 lux"
+    ],
     "a": 2,
     "w": "Infrared communication has a maximum allowable illumination of 10 lux to prevent interference from ambient IR sources such as sunlight and incandescent lighting. 1 and 5 lux would be overly restrictive limits for practical IR system deployment. 50 lux would be too permissive and would allow excessive ambient IR interference."
   },
@@ -185,7 +275,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What power delivery PoE mode delivers power over unused pairs in a 4-pair cable?",
-    "o": ["Mode A", "Mode B", "Mode C", "Mode D"],
+    "o": [
+      "Mode A",
+      "Mode B",
+      "Mode C",
+      "Mode D"
+    ],
     "a": 1,
     "w": "PoE Mode B delivers power over unused pairs in a 4-pair cable, using the spare pairs not carrying data signals. Mode A delivers power over the same pairs carrying data (multiple pairs). Modes C and D are not standard IEEE PoE mode designations."
   },
@@ -195,7 +290,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What Wi-Fi feature enhances coverage and performance using multiple antennas to direct signals?",
-    "o": ["DSSS (Direct Sequence Spread Spectrum)", "OFDM (Orthogonal Frequency Division Multiplexing)", "Beamforming and MIMO", "QAM-256 modulation"],
+    "o": [
+      "DSSS (Direct Sequence Spread Spectrum)",
+      "OFDM (Orthogonal Frequency Division Multiplexing)",
+      "Beamforming and MIMO",
+      "QAM-256 modulation"
+    ],
     "a": 2,
     "w": "Beamforming and MIMO (Multiple Input Multiple Output) enhance WLAN coverage and performance by directing RF energy toward connected clients and using multiple spatial streams. DSSS is an older spread-spectrum modulation technique. OFDM is a multi-carrier modulation scheme that improves spectral efficiency but is not a spatial technique. QAM-256 is a higher-order modulation used to increase throughput, not coverage."
   },
@@ -205,9 +305,14 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "Which 5 GHz channel range is always permitted for WLAN operation?",
-    "o": ["5.150–5.250 GHz and 5.735–5.815 GHz", "5.170–5.740 GHz", "5.250–5.350 GHz", "5.470–5.725 GHz"],
+    "o": [
+      "5.150\u20135.250 GHz and 5.735\u20135.815 GHz",
+      "5.170\u20135.740 GHz",
+      "5.250\u20135.350 GHz",
+      "5.470\u20135.725 GHz"
+    ],
     "a": 0,
-    "w": "Channels 5.150–5.250 GHz and 5.735–5.815 GHz are always permitted for WLAN use. 5.170–5.740 GHz are restricted when in use by government devices. 5.250–5.350 GHz requires Dynamic Frequency Selection (DFS) to avoid radar interference. 5.470–5.725 GHz also requires DFS in most regulatory domains."
+    "w": "Channels 5.150\u20135.250 GHz and 5.735\u20135.815 GHz are always permitted for WLAN use. 5.170\u20135.740 GHz are restricted when in use by government devices. 5.250\u20135.350 GHz requires Dynamic Frequency Selection (DFS) to avoid radar interference. 5.470\u20135.725 GHz also requires DFS in most regulatory domains."
   },
   {
     "id": 447,
@@ -215,7 +320,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "How does an Extended Service Set (ESS) expand WLAN coverage?",
-    "o": ["By increasing transmit power of a single AP", "By linking multiple APs to expand coverage area", "By operating at lower frequencies for greater range", "By using directional antennas at a single AP"],
+    "o": [
+      "By increasing transmit power of a single AP",
+      "By linking multiple APs to expand coverage area",
+      "By operating at lower frequencies for greater range",
+      "By using directional antennas at a single AP"
+    ],
     "a": 1,
     "w": "An ESS (Extended Service Set) links multiple APs together to expand wireless coverage beyond what a single AP can provide. Increasing transmit power is a single-AP approach limited by regulatory constraints. Lower frequencies improve range with a single AP but are not an ESS. Directional antennas extend coverage in one direction from a single AP, not across a multi-AP system."
   },
@@ -225,7 +335,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What WLAN network type is traditionally used for indoor multi-point networks?",
-    "o": ["6 GHz band", "5 GHz band", "2.4 GHz band", "60 GHz band (WiGig)"],
+    "o": [
+      "6 GHz band",
+      "5 GHz band",
+      "2.4 GHz band",
+      "60 GHz band (WiGig)"
+    ],
     "a": 2,
     "w": "The 2.4 GHz band has traditionally been used for indoor multi-point networks due to its better wall penetration and longer range compared to higher frequency bands. The 6 GHz band is the newest Wi-Fi 6E band with limited obstacle penetration. The 5 GHz band offers more channels and less interference but has shorter range and reduced wall penetration. The 60 GHz band (WiGig) is used only for very short-range, line-of-sight high-throughput applications."
   },
@@ -235,7 +350,12 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What Spatial Multiplexing beamforming method splits a high-bandwidth RF signal?",
-    "o": ["Precoding — same signal through multiple antennas", "Diversity Coding — orthogonal signals through multiple antennas", "Spatial Multiplexing — splits into low-bandwidth signals on separate streams", "Beamsteering — physically rotates antenna direction"],
+    "o": [
+      "Precoding \u2014 same signal through multiple antennas",
+      "Diversity Coding \u2014 orthogonal signals through multiple antennas",
+      "Spatial Multiplexing \u2014 splits into low-bandwidth signals on separate streams",
+      "Beamsteering \u2014 physically rotates antenna direction"
+    ],
     "a": 2,
     "w": "Spatial Multiplexing splits a high-bandwidth RF signal into multiple low-bandwidth signals transmitted on separate spatial streams using multiple antennas. Precoding uses multiple antennas to direct the same signal. Diversity Coding provides redundancy through orthogonal transmission. Beamsteering physically redirects antenna patterns and is not one of the three primary beamforming methods."
   },
@@ -245,8 +365,163 @@
     "testName": "Wireless Networks",
     "chapter": "Wireless Networks",
     "q": "What type of signal handling does analog DAS use compared to digital DAS?",
-    "o": ["Time division duplex transceivers", "Automatic Gain Control (AGC)", "Orthogonal Frequency Division Multiplexing (OFDM)", "MIMO spatial streams"],
+    "o": [
+      "Time division duplex transceivers",
+      "Automatic Gain Control (AGC)",
+      "Orthogonal Frequency Division Multiplexing (OFDM)",
+      "MIMO spatial streams"
+    ],
     "a": 1,
     "w": "Analog DAS uses Automatic Gain Control (AGC) to maintain consistent signal levels across the distributed antenna system. Digital DAS uses TDD transceivers. OFDM is a modulation technique used at the radio level, not a DAS signal handling method. MIMO spatial streams are a wireless access layer feature, not specific to DAS analog signal processing."
+  },
+  {
+    "id": 761,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "What is the term for an unobstructed path between a wireless transmitter and receiver?",
+    "o": [
+      "Fresnel Zone",
+      "Line of Sight (LoS)",
+      "Diffraction Path",
+      "Harmonic Zone"
+    ],
+    "a": 1,
+    "w": "Line of Sight (LoS) refers to the direct, unobstructed path between a wireless transmitter and receiver, which is required for optimal signal transmission in many wireless systems. The Fresnel Zone is an elliptical region around the LoS path that must be kept clear of obstructions for optimal signal propagation, not the path itself (option A). Diffraction Path describes signal propagation around obstacles, which is the opposite of an unobstructed path (option C). Harmonic Zone is not a recognized wireless communications term related to signal transmission paths (option D)."
+  },
+  {
+    "id": 762,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "Which wireless modulation technique is used to alter the amplitude, frequency, or phase of a carrier signal?",
+    "o": [
+      "Quadrature Amplitude Modulation (QAM)",
+      "Diffraction Modulation",
+      "Radio Frequency Modulation",
+      "Orthogonal Wave Shifting"
+    ],
+    "a": 0,
+    "w": "Quadrature Amplitude Modulation (QAM) is a modulation technique that encodes data by altering both the amplitude and phase of a carrier signal simultaneously, enabling high data throughput in wireless systems. Diffraction Modulation is not a recognized wireless modulation technique (option B). Radio Frequency Modulation is a general description rather than a specific modulation technique used in wireless networking (option C). Orthogonal Wave Shifting is not a standard wireless modulation technique (option D)."
+  },
+  {
+    "id": 763,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "What is the 3dB rule in wireless system design?",
+    "o": [
+      "Doubling signal power reduces the gain by 3dB",
+      "Doubling signal power adds 3dB to the gain",
+      "Dividing signal power by 3 halves the signal gain",
+      "Halving the signal power removes 3dB from the total signal strength"
+    ],
+    "a": 1,
+    "w": "The 3dB rule states that doubling the signal power results in a 3dB increase in gain because the decibel scale is logarithmic (10 x log10(2) \u2248 3dB). Doubling signal power increases gain by 3dB, not reduces it (option A). Dividing signal power by 3 would result in approximately a 4.8dB loss, not halving the gain (option C). Halving the signal power results in a 3dB loss, but this describes a reduction, not the doubling relationship of the 3dB rule (option D)."
+  },
+  {
+    "id": 764,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "Which frequency bands are used in wireless networks?",
+    "o": [
+      "High and low bands",
+      "Licensed and unlicensed bands",
+      "Broad and narrow bands",
+      "Static and dynamic bands"
+    ],
+    "a": 1,
+    "w": "Wireless networks operate in both licensed frequency bands (requiring FCC authorization for exclusive use) and unlicensed bands (available for general use without licensing, such as 2.4 GHz and 5 GHz ISM bands). High and low bands are general frequency descriptions, not the regulatory classification framework for wireless network bands (option A). Broad and narrow bands describe bandwidth characteristics, not frequency band authorization categories (option C). Static and dynamic bands are not recognized regulatory classifications for wireless frequency bands (option D)."
+  },
+  {
+    "id": 765,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "What does the 802.15 standard describe?",
+    "o": [
+      "Wireless Local Area Networks (WLANs)",
+      "Personal Area Networks (PANs)",
+      "Distributed Antenna Systems (DAS)",
+      "Cellular Network Standards"
+    ],
+    "a": 1,
+    "w": "IEEE 802.15 defines standards for Wireless Personal Area Networks (WPANs), including Bluetooth (802.15.1) and ZigBee (802.15.4), covering short-range wireless communication within an individual's personal space. IEEE 802.11 defines Wireless Local Area Network (WLAN) standards, not 802.15 (option A). Distributed Antenna Systems are covered by separate telecommunications standards, not IEEE 802.15 (option C). Cellular network standards are defined by 3GPP and ITU, not IEEE 802.15 (option D)."
+  },
+  {
+    "id": 766,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "What type of wireless LAN configuration uses two or more Access Points (APs) to manage communication between devices?",
+    "o": [
+      "Independent Basic Service Set (IBSS)",
+      "Basic Service Set (BSS)",
+      "Extended Service Set (ESS)",
+      "Distributed Service Set (DSS)"
+    ],
+    "a": 2,
+    "w": "An Extended Service Set (ESS) consists of two or more Basic Service Sets (BSSs) connected via a distribution system, allowing seamless roaming between multiple APs throughout a coverage area. An IBSS (ad hoc mode) connects devices directly without any APs, using peer-to-peer connections (option A). A BSS uses a single AP to manage communications within its coverage area (option B). Distributed Service Set (DSS) is not a recognized 802.11 WLAN configuration type (option D)."
+  },
+  {
+    "id": 767,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "What is the primary function of a Distributed Antenna System (DAS)?",
+    "o": [
+      "Improve bandwidth for outdoor networks",
+      "Provide a wireless network within buildings where outdoor networks cannot penetrate",
+      "Replace traditional wired networks",
+      "Extend WLAN range in open spaces"
+    ],
+    "a": 1,
+    "w": "A DAS provides cellular and wireless coverage within buildings, tunnels, and other areas where outdoor signals cannot adequately penetrate, by distributing signal from a central source through antennas placed throughout the structure. DAS is primarily designed for indoor coverage, not to improve outdoor network bandwidth (option A). DAS supplements wired networks with wireless connectivity and does not replace wired infrastructure (option C). DAS is primarily used for indoor coverage in areas with poor outdoor signal penetration, not for extending WLAN range in open outdoor spaces (option D)."
+  },
+  {
+    "id": 768,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "Which of the following is not a cable type used in DAS systems?",
+    "o": [
+      "Singlemode optical fiber",
+      "Coaxial",
+      "Shielded ribbon cable",
+      "Balanced twisted pair"
+    ],
+    "a": 2,
+    "w": "Shielded ribbon cable is not used in DAS systems; ribbon cable is used for mass-terminated fiber optic connections and data applications, not for distributing RF signals in DAS infrastructure. Singlemode optical fiber is commonly used in DAS systems to carry digitized RF signals over long distances (option A). Coaxial cable is the traditional medium used in DAS for carrying RF signals between components (option B). Balanced twisted pair is used in some DAS architectures for carrying digitized signal streams to remote antenna units (option D)."
+  },
+  {
+    "id": 769,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "What is the main headend unit in a DAS system called?",
+    "o": [
+      "Master Control Unit (MCU)",
+      "Base Transceiver Station (BTS)",
+      "Signal Distribution Unit (SDU)",
+      "Central Antenna Controller (CAC)"
+    ],
+    "a": 0,
+    "w": "The Master Control Unit (MCU) is the headend component of a DAS system that connects to signal sources, processes the RF signals, and distributes them to remote antenna units throughout the coverage area. A Base Transceiver Station (BTS) is a cellular network component that connects to the DAS but is not the DAS headend unit itself (option B). Signal Distribution Unit (SDU) is not the standard term for the DAS headend unit (option C). Central Antenna Controller (CAC) is not a recognized DAS component designation (option D)."
+  },
+  {
+    "id": 770,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "What does the backend equipment in a DAS system typically include?",
+    "o": [
+      "Omnidirectional antennas and coaxial cables",
+      "Expansion modules, signal repeaters, and remote units",
+      "Line of Sight amplifiers and directional antennas",
+      "Transceivers and power converters"
+    ],
+    "a": 1,
+    "w": "DAS backend (headend) equipment typically includes expansion modules (to scale capacity), signal repeaters (to boost signal levels), and remote units (to distribute signals to antenna locations). Omnidirectional antennas and coaxial cables are the distribution and radiation components at the frontend, not the backend equipment (option A). Line of Sight amplifiers are point-to-point wireless link components, not DAS backend equipment (option C). Transceivers and power converters may be internal components but do not define the primary DAS backend equipment categories (option D)."
   }
 ]
