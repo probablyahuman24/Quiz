@@ -724,7 +724,7 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, on
       ),
       el('div', { style: { flex:1 } },
         el('div', { style: { fontSize:10, fontWeight:700, color:'#94a3b8', letterSpacing:2 } }, 'BICSI · RCDD'),
-        el('h1', { style: { fontSize:22, fontWeight:800, color:'#0f172a' } }, 'Quiz Bank')
+        el('h1', { style: { fontSize:22, fontWeight:800, color:'#0f172a' } }, 'Practice Test')
       ),
       el('div', { style: { textAlign:'right' } },
         el('div', { style: { fontSize:24, fontWeight:800, color:'#7c3aed', lineHeight:1 } }, overallScore !== null ? overallScore + '%' : '—'),
