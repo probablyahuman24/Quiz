@@ -68,6 +68,12 @@ function save(data) {
 function load() {
   try { const r = localStorage.getItem(STORAGE_KEY); return r ? JSON.parse(r) : null; } catch(e) { return null; }
 }
+function saveUser(username, data) {
+  try { localStorage.setItem(STORAGE_KEY + '_' + username, JSON.stringify(data)); } catch(e) {}
+}
+function loadUser(username) {
+  try { const r = localStorage.getItem(STORAGE_KEY + '_' + username); return r ? JSON.parse(r) : null; } catch(e) { return null; }
+}
 function el(type, props, ...children) {
   return React.createElement(type, props, ...children);
 }
@@ -209,10 +215,25 @@ function App() {
   });
   const [authLoading, setAuthLoading] = useState(false);
   const [authError, setAuthError] = useState('');
-  const [progressLoaded, setProgressLoaded] = useState(false);
+  // Start as true if user-specific local cache exists → no loading screen on re-login
+  const [progressLoaded, setProgressLoaded] = useState(() => {
+    try {
+      const user = JSON.parse(localStorage.getItem('rcdd_user'));
+      return user ? !!localStorage.getItem(STORAGE_KEY + '_' + user.username) : false;
+    } catch(e) { return false; }
+  });
   const justLoadedRef = useRef(false);
 
   const [appData, setAppData] = useState(() => {
+    // Prefer user-specific cache for instant load
+    try {
+      const user = JSON.parse(localStorage.getItem('rcdd_user'));
+      if (user && user.username) {
+        const cached = loadUser(user.username);
+        if (cached) return { sessions: cached.sessions || {}, history: cached.history || [], starred: cached.starred || [], wrongCounts: cached.wrongCounts || {}, confidenceLog: cached.confidenceLog || {} };
+      }
+    } catch(e) {}
+    // Fall back to legacy generic cache
     const saved = load();
     if (!saved) {
       try {
@@ -223,14 +244,15 @@ function App() {
         }
       } catch(e) {}
     }
-    if (saved) {
-      return { sessions: saved.sessions || {}, history: saved.history || [], starred: saved.starred || [], wrongCounts: saved.wrongCounts || {}, confidenceLog: saved.confidenceLog || {} };
-    }
+    if (saved) return { sessions: saved.sessions || {}, history: saved.history || [], starred: saved.starred || [], wrongCounts: saved.wrongCounts || {}, confidenceLog: saved.confidenceLog || {} };
     return { sessions: {}, history: [], starred: [], wrongCounts: {}, confidenceLog: {} };
   });
 
-  // Keep localStorage in sync
-  useEffect(() => { save(appData); }, [appData]);
+  // Keep localStorage in sync (both generic and user-specific)
+  useEffect(() => {
+    save(appData);
+    if (currentUser) saveUser(currentUser.username, appData);
+  }, [appData, currentUser]);
 
   // Fetch all chapter question files
   useEffect(() => {
@@ -247,9 +269,10 @@ function App() {
       .catch(err => { setFetchError(err.message); setLoading(false); });
   }, []);
 
-  // ── Load progress from Firestore once questions + user are ready ──
+  // ── Sync from Firestore whenever user + questions are ready ──
+  // Runs in the background if local cache exists; blocks (loading screen) if not.
   useEffect(() => {
-    if (!currentUser || questions.length === 0 || progressLoaded) return;
+    if (!currentUser || questions.length === 0) return;
     db.collection('users').doc(currentUser.username).get()
       .then(doc => {
         if (doc.exists && doc.data().progress) {
@@ -269,7 +292,7 @@ function App() {
         setProgressLoaded(true);
       })
       .catch(() => setProgressLoaded(true));
-  }, [currentUser, questions, progressLoaded]);
+  }, [currentUser, questions]); // intentionally excludes progressLoaded — runs once per login
 
   // ── Debounced save to Firestore (2s after last change) ──
   useEffect(() => {
@@ -294,7 +317,15 @@ function App() {
       if (doc.data().pin !== h) { setAuthError('Incorrect PIN. Try again.'); return; }
       const user = { username };
       localStorage.setItem('rcdd_user', JSON.stringify(user));
-      setProgressLoaded(false);
+      const cached = loadUser(username);
+      if (cached) {
+        // Local cache exists → load it immediately, Firestore syncs in background
+        setAppData({ sessions: cached.sessions || {}, history: cached.history || [], starred: cached.starred || [], wrongCounts: cached.wrongCounts || {}, confidenceLog: cached.confidenceLog || {} });
+        setProgressLoaded(true);
+      } else {
+        // New device — show loading screen until Firestore responds
+        setProgressLoaded(false);
+      }
       setCurrentUser(user);
     } catch(e) {
       setAuthError('Connection error. Check your internet.');
@@ -318,7 +349,7 @@ function App() {
       });
       const user = { username };
       localStorage.setItem('rcdd_user', JSON.stringify(user));
-      setProgressLoaded(false);
+      setProgressLoaded(true); // New user — nothing to load from Firestore
       setCurrentUser(user);
     } catch(e) {
       setAuthError('Connection error. Check your internet.');
