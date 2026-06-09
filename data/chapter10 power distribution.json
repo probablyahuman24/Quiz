@@ -5,7 +5,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "Which UPS type does NOT filter or regulate utility power?",
-    "o": ["Online double-conversion UPS", "Line-interactive UPS", "Standby UPS", "Modular UPS"],
+    "o": [
+      "Online double-conversion UPS",
+      "Line-interactive UPS",
+      "Standby UPS",
+      "Modular UPS"
+    ],
     "a": 2,
     "w": "Standby UPS does not filter or regulate utility power during normal operation; it simply passes through utility power and switches to battery only upon power failure. Online double-conversion UPS continuously converts power through the battery, providing full conditioning. Line-interactive UPS provides some conditioning through a transformer but lacks frequency regulation. Modular UPS uses modular components for scalability and efficiency."
   },
@@ -15,7 +20,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What K-rating handles 75% non-linear load in transformers?",
-    "o": ["K-4", "K-7", "K-13", "K-20"],
+    "o": [
+      "K-4",
+      "K-7",
+      "K-13",
+      "K-20"
+    ],
     "a": 2,
     "w": "K-13 transformer rating handles 75% non-linear load from harmonic-generating equipment. K-4 handles 35% non-linear load. K-7 handles 50% non-linear load. K-20 handles higher non-linear loads than K-13 but is not the rating associated with 75%."
   },
@@ -25,7 +35,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What type of UPS lacks frequency regulation?",
-    "o": ["Online UPS", "Standby UPS", "Line-interactive UPS", "Modular UPS"],
+    "o": [
+      "Online UPS",
+      "Standby UPS",
+      "Line-interactive UPS",
+      "Modular UPS"
+    ],
     "a": 2,
     "w": "Line-interactive UPS units lack frequency regulation because they use the utility frequency during normal operation, only providing voltage regulation through an autotransformer. Online UPS provides full double-conversion with both voltage and frequency regulation. Standby UPS also lacks regulation but the specific noted characteristic is line-interactive. Modular UPS typically provides full conditioning including frequency regulation."
   },
@@ -35,7 +50,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What redundancy topology consists of multiple single-module UPS systems connected to redundant paths?",
-    "o": ["Centralized redundant", "Distributed redundant", "Modular N+1", "2N parallel"],
+    "o": [
+      "Centralized redundant",
+      "Distributed redundant",
+      "Modular N+1",
+      "2N parallel"
+    ],
     "a": 1,
     "w": "The distributed redundant UPS topology consists of multiple single-module systems connected to redundant paths, distributing the UPS function across independent units. Centralized redundant topology uses a single large UPS with redundant modules. Modular N+1 provides one extra module in a modular system. 2N parallel uses two complete independent UPS systems."
   },
@@ -45,9 +65,14 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What spare capacity should UPS sizing include for future growth?",
-    "o": ["5–10%", "10–25%", "25–50%", "50–100%"],
+    "o": [
+      "5\u201310%",
+      "10\u201325%",
+      "25\u201350%",
+      "50\u2013100%"
+    ],
     "a": 1,
-    "w": "UPS sizing should include 10–25% spare capacity for future growth to accommodate additional equipment without requiring UPS replacement. 5–10% provides insufficient headroom for meaningful growth. 25–50% may be overly conservative and increase unnecessary capital cost. 50–100% would significantly oversize the UPS and waste investment."
+    "w": "UPS sizing should include 10\u201325% spare capacity for future growth to accommodate additional equipment without requiring UPS replacement. 5\u201310% provides insufficient headroom for meaningful growth. 25\u201350% may be overly conservative and increase unnecessary capital cost. 50\u2013100% would significantly oversize the UPS and waste investment."
   },
   {
     "id": 281,
@@ -55,7 +80,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What is the lifespan ranking of battery types from shortest to longest?",
-    "o": ["VRLA, wet cell, lithium-ion", "Wet cell, VRLA, lithium-ion", "Lithium-ion, VRLA, wet cell", "VRLA, lithium-ion, wet cell"],
+    "o": [
+      "VRLA, wet cell, lithium-ion",
+      "Wet cell, VRLA, lithium-ion",
+      "Lithium-ion, VRLA, wet cell",
+      "VRLA, lithium-ion, wet cell"
+    ],
     "a": 0,
     "w": "From shortest to longest lifespan: VRLA (Valve-Regulated Lead-Acid) has the shortest lifespan, wet cell batteries have a longer lifespan than VRLA, and lithium-ion has the longest lifespan of the three. This ranking reflects industry-standard lifecycle comparisons for UPS battery systems."
   },
@@ -65,7 +95,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What is the effect of low temperature on battery capacity and lifespan?",
-    "o": ["Increases capacity and decreases lifespan", "Decreases capacity and increases lifespan", "Increases both capacity and lifespan", "Decreases both capacity and lifespan"],
+    "o": [
+      "Increases capacity and decreases lifespan",
+      "Decreases capacity and increases lifespan",
+      "Increases both capacity and lifespan",
+      "Decreases both capacity and lifespan"
+    ],
     "a": 1,
     "w": "Low temperatures decrease battery capacity (the amount of energy the battery can deliver) but increase lifespan by slowing the chemical degradation processes. This is the classic battery performance tradeoff. High temperatures do the opposite: increase temporary capacity but accelerate aging and reduce overall lifespan."
   },
@@ -75,7 +110,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What type of power line noise is measured from phase to ground?",
-    "o": ["Differential-mode noise", "Common-mode noise", "Normal-mode noise", "Transverse-mode noise"],
+    "o": [
+      "Differential-mode noise",
+      "Common-mode noise",
+      "Normal-mode noise",
+      "Transverse-mode noise"
+    ],
     "a": 1,
     "w": "Common-mode noise is measured from phase to ground and appears equally on all conductors relative to ground. Differential-mode noise is measured phase to neutral, appearing as a difference between conductors. Normal-mode and transverse-mode are alternative names for differential-mode noise in some reference texts."
   },
@@ -85,7 +125,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "How many air volume changes per hour are required for battery venting?",
-    "o": ["1 air change per hour", "2 air changes per hour", "4 air changes per hour", "8 air changes per hour"],
+    "o": [
+      "1 air change per hour",
+      "2 air changes per hour",
+      "4 air changes per hour",
+      "8 air changes per hour"
+    ],
     "a": 2,
     "w": "Battery venting requires 4 air volume changes per hour to prevent accumulation of hydrogen gas released during charging. 1 and 2 air changes are insufficient to safely dilute hydrogen concentrations. 8 air changes would provide more than necessary and would increase HVAC load and cost unnecessarily."
   },
@@ -95,7 +140,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "How many watts of power require 1 ton of air conditioning?",
-    "o": ["1200 watts", "2400 watts", "3517 watts", "5000 watts"],
+    "o": [
+      "1200 watts",
+      "2400 watts",
+      "3517 watts",
+      "5000 watts"
+    ],
     "a": 2,
     "w": "3517 watts of power requires 1 ton of air conditioning (equivalent to 12,000 BTU/hr). 1200 watts significantly underestimates the cooling capacity of 1 ton of air conditioning. 2400 watts is below the actual conversion factor. 5000 watts overstates the power equivalent of 1 ton of cooling."
   },
@@ -105,7 +155,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What is the maximum AH capacity of VRLA batteries?",
-    "o": ["500 AH", "1000 AH", "2000 AH", "3000 AH"],
+    "o": [
+      "500 AH",
+      "1000 AH",
+      "2000 AH",
+      "3000 AH"
+    ],
     "a": 3,
     "w": "VRLA (Valve-Regulated Lead-Acid) batteries have a maximum capacity of up to 3000 AH. 500 AH and 1000 AH represent smaller VRLA battery configurations available commercially. 2000 AH is below the stated maximum capacity for VRLA systems."
   },
@@ -115,9 +170,14 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What is the short circuit current that battery protection devices must interrupt?",
-    "o": ["Approximately 2× AH rating", "Approximately 5× AH rating", "Approximately 10× AH rating", "Approximately 20× AH rating"],
+    "o": [
+      "Approximately 2\u00d7 AH rating",
+      "Approximately 5\u00d7 AH rating",
+      "Approximately 10\u00d7 AH rating",
+      "Approximately 20\u00d7 AH rating"
+    ],
     "a": 2,
-    "w": "Battery protection devices must interrupt short circuit currents of approximately 10× the AH rating to protect against the destructive fault currents that batteries can source. 2× and 5× are far too low to represent the actual fault current potential of lead-acid batteries. 20× would overestimate the typical short circuit current ratio for most battery systems."
+    "w": "Battery protection devices must interrupt short circuit currents of approximately 10\u00d7 the AH rating to protect against the destructive fault currents that batteries can source. 2\u00d7 and 5\u00d7 are far too low to represent the actual fault current potential of lead-acid batteries. 20\u00d7 would overestimate the typical short circuit current ratio for most battery systems."
   },
   {
     "id": 288,
@@ -125,9 +185,14 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "In ac circuits with capacitive reactance, what is the relationship between current and voltage?",
-    "o": ["Current lags voltage by 90°", "Current leads voltage", "Current and voltage are in phase", "Current leads voltage by exactly 180°"],
+    "o": [
+      "Current lags voltage by 90\u00b0",
+      "Current leads voltage",
+      "Current and voltage are in phase",
+      "Current leads voltage by exactly 180\u00b0"
+    ],
     "a": 1,
-    "w": "In ac circuits with capacitive reactance, current leads voltage (specifically by up to 90° in a purely capacitive circuit). In inductive circuits, current lags voltage. In purely resistive circuits, current and voltage are in phase. 180° phase difference would represent an opposing reactive element condition, not capacitive behavior."
+    "w": "In ac circuits with capacitive reactance, current leads voltage (specifically by up to 90\u00b0 in a purely capacitive circuit). In inductive circuits, current lags voltage. In purely resistive circuits, current and voltage are in phase. 180\u00b0 phase difference would represent an opposing reactive element condition, not capacitive behavior."
   },
   {
     "id": 289,
@@ -135,9 +200,14 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What is the typical transfer time of a Static Transfer Switch (STS)?",
-    "o": ["1 full cycle", "½ cycle", "¼ cycle", "1/8 cycle"],
+    "o": [
+      "1 full cycle",
+      "\u00bd cycle",
+      "\u00bc cycle",
+      "1/8 cycle"
+    ],
     "a": 2,
-    "w": "Static Transfer Switches have a typical transfer time of ¼ cycle (about 4 ms at 60 Hz), fast enough to prevent sensitive equipment from experiencing a meaningful power interruption. 1 full cycle would be too slow for many critical loads. ½ cycle is faster than needed but is the specification for some older mechanical transfer devices. 1/8 cycle would be extremely fast and is not the specified STS transfer time."
+    "w": "Static Transfer Switches have a typical transfer time of \u00bc cycle (about 4 ms at 60 Hz), fast enough to prevent sensitive equipment from experiencing a meaningful power interruption. 1 full cycle would be too slow for many critical loads. \u00bd cycle is faster than needed but is the specification for some older mechanical transfer devices. 1/8 cycle would be extremely fast and is not the specified STS transfer time."
   },
   {
     "id": 290,
@@ -145,7 +215,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What type of power issue involves a voltage decrease lasting more than 1 minute?",
-    "o": ["Sag", "Interruption", "Undervoltage", "Overvoltage"],
+    "o": [
+      "Sag",
+      "Interruption",
+      "Undervoltage",
+      "Overvoltage"
+    ],
     "a": 2,
     "w": "Undervoltage is defined as a voltage decrease lasting more than 1 minute. A sag is a voltage decrease lasting only 0.5 cycle to 1 minute. An interruption is the total absence of voltage. Overvoltage is a voltage increase lasting more than 1 minute."
   },
@@ -155,9 +230,14 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What are the temperature limits for arc flashes compared to the sun's surface?",
-    "o": ["Arc flashes are 2× the temperature of the sun's surface", "Arc flashes are 4× the temperature of the sun's surface", "Arc flashes are equal in temperature to the sun's surface", "Arc flashes are 10× the temperature of the sun's surface"],
+    "o": [
+      "Arc flashes are 2\u00d7 the temperature of the sun's surface",
+      "Arc flashes are 4\u00d7 the temperature of the sun's surface",
+      "Arc flashes are equal in temperature to the sun's surface",
+      "Arc flashes are 10\u00d7 the temperature of the sun's surface"
+    ],
     "a": 1,
-    "w": "Arc flashes generate temperatures 4× that of the sun's surface (approximately 20,000°C), making them extraordinarily dangerous. 2× would be a significant understatement of arc flash temperatures. Equal temperature would not convey the extreme danger. 10× would overstate the arc flash temperature beyond published values."
+    "w": "Arc flashes generate temperatures 4\u00d7 that of the sun's surface (approximately 20,000\u00b0C), making them extraordinarily dangerous. 2\u00d7 would be a significant understatement of arc flash temperatures. Equal temperature would not convey the extreme danger. 10\u00d7 would overstate the arc flash temperature beyond published values."
   },
   {
     "id": 292,
@@ -165,7 +245,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What standard provides arc flash hazard safety requirements?",
-    "o": ["NFPA 72", "NFPA 101", "NFPA 70E", "IEEE 802.3"],
+    "o": [
+      "NFPA 72",
+      "NFPA 101",
+      "NFPA 70E",
+      "IEEE 802.3"
+    ],
     "a": 2,
     "w": "NFPA 70E provides arc flash hazard safety standards including requirements for personal protective equipment (PPE) and safe work practices. NFPA 72 is the National Fire Alarm Code. NFPA 101 is the Life Safety Code. IEEE 802.3 covers Ethernet networking standards and has no bearing on arc flash safety."
   },
@@ -175,7 +260,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "For what type of circuits does Ohm's Law fully apply without restrictions?",
-    "o": ["All ac circuits", "Purely capacitive ac circuits", "DC circuits", "All circuits"],
+    "o": [
+      "All ac circuits",
+      "Purely capacitive ac circuits",
+      "DC circuits",
+      "All circuits"
+    ],
     "a": 2,
     "w": "Ohm's Law applies universally in DC circuits. In AC circuits, it applies only to purely resistive AC circuits because inductance and capacitance introduce reactive impedance not accounted for by simple V=IR. All AC circuits are excluded from universal Ohm's Law application due to their reactive components. Purely capacitive circuits have a phase relationship between V and I that prevents simple Ohm's Law application."
   },
@@ -185,7 +275,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What percentage of non-linear load does a K-7 transformer handle?",
-    "o": ["35%", "50%", "75%", "100%"],
+    "o": [
+      "35%",
+      "50%",
+      "75%",
+      "100%"
+    ],
     "a": 1,
     "w": "A K-7 rated transformer handles 50% non-linear load from harmonic-generating equipment. K-4 handles 35% non-linear load. K-13 handles 75% non-linear load. No standard single K-rating is specified for 100% non-linear load."
   },
@@ -195,7 +290,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What is the basis for sizing electrical equipment like transformers and panelboards?",
-    "o": ["Real power (kW)", "Reactive power (kVAR)", "Apparent power (kVA)", "Power factor (PF)"],
+    "o": [
+      "Real power (kW)",
+      "Reactive power (kVAR)",
+      "Apparent power (kVA)",
+      "Power factor (PF)"
+    ],
     "a": 2,
     "w": "Sizing of electrical equipment like transformers and panelboards is based on apparent power (kVA) because it accounts for both real and reactive power components. Real power (kW) only reflects useful work and would undersize equipment for loads with poor power factors. Reactive power alone would ignore the real power portion. Power factor is a ratio, not a direct sizing parameter."
   },
@@ -204,8 +304,13 @@
     "test": 10,
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
-    "q": "What is the voltage drop formula constant K for copper circuits loaded ≤50%?",
-    "o": ["K = 8", "K = 11", "K = 15", "K = 22"],
+    "q": "What is the voltage drop formula constant K for copper circuits loaded \u226450%?",
+    "o": [
+      "K = 8",
+      "K = 11",
+      "K = 15",
+      "K = 22"
+    ],
     "a": 1,
     "w": "Voltage drop calculations use K = 11 for copper circuits loaded at 50% or less. K = 8 is not a standard constant for copper voltage drop calculations. K = 15 and K = 22 would overstate the voltage drop and produce incorrect circuit sizing."
   },
@@ -215,7 +320,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What can neutral conductors handle up to in non-linear device applications?",
-    "o": ["100% rated load", "150% rated load", "200% rated load", "The same as phase conductors only"],
+    "o": [
+      "100% rated load",
+      "150% rated load",
+      "200% rated load",
+      "The same as phase conductors only"
+    ],
     "a": 2,
     "w": "Neutral conductors carry current and may handle up to 200% rated load in non-linear devices due to triplen harmonic currents that do not cancel in three-phase systems. 100% is the standard rating but non-linear loads cause harmonic currents to add rather than cancel on the neutral. 150% understates the potential neutral loading in high-harmonic environments. Phase conductors carry their rated load independently from the neutral."
   },
@@ -225,7 +335,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What power delivery mode are PoE cables categorized under?",
-    "o": ["Class 1 power loads", "Class 2 power loads", "Class 3 power loads", "Class 4 power loads"],
+    "o": [
+      "Class 1 power loads",
+      "Class 2 power loads",
+      "Class 3 power loads",
+      "Class 4 power loads"
+    ],
     "a": 1,
     "w": "PoE cables deliver Class 2 power loads according to the NEC classification for limited power sources. Class 1 covers low-voltage, lower-power installations. Class 3 is used for higher-voltage, higher-power circuits. Class 4 is not a standard NEC power circuit classification."
   },
@@ -235,7 +350,12 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What waveforms are used in Class 4 power circuits?",
-    "o": ["Sinusoidal ac only", "DC only", "Continuous DC, pulsed DC, sinusoidal ac, and offset ac", "Square wave and sinusoidal ac only"],
+    "o": [
+      "Sinusoidal ac only",
+      "DC only",
+      "Continuous DC, pulsed DC, sinusoidal ac, and offset ac",
+      "Square wave and sinusoidal ac only"
+    ],
     "a": 2,
     "w": "Continuous DC, pulsed DC, sinusoidal ac, and offset ac waveforms are used in Class 4 circuits to support a variety of power delivery modes. Sinusoidal ac only would exclude the DC modes used in Class 4 applications. DC only would exclude ac waveforms present in Class 4. Square waves are not listed as Class 4 waveforms in the standard."
   },
@@ -245,8 +365,88 @@
     "testName": "Power Distribution",
     "chapter": "Power Distribution",
     "q": "What type of power issue is defined as a total absence of voltage on one or more phase conductors?",
-    "o": ["Sag", "Undervoltage", "Overvoltage", "Interruption"],
+    "o": [
+      "Sag",
+      "Undervoltage",
+      "Overvoltage",
+      "Interruption"
+    ],
     "a": 3,
     "w": "An interruption is defined as the total absence of voltage on one or more phase conductors. A sag is a reduction in voltage lasting 0.5 cycles to 1 minute. Undervoltage is a sustained reduction in voltage lasting more than 1 minute. Overvoltage is a sustained increase in voltage lasting more than 1 minute."
+  },
+  {
+    "id": 731,
+    "test": 10,
+    "testName": "Power Distribution",
+    "chapter": "Power Distribution",
+    "q": "What is an arc flash?",
+    "o": [
+      "A sudden release of mechanical energy",
+      "A short circuit in the air",
+      "An overheating of electrical wires",
+      "A malfunction of electrical devices"
+    ],
+    "a": 1,
+    "w": "An arc flash is a short circuit through the air between two conductors or between a conductor and ground, releasing an explosive burst of energy in the form of heat, light, pressure, and molten metal. A sudden release of mechanical energy describes a mechanical failure such as an explosion, not an electrical arc flash (option A). Overheating of electrical wires is a thermal fault condition that may precede but is distinct from an arc flash event (option C). A general malfunction of electrical devices encompasses many fault types and is too broad to define arc flash specifically (option D)."
+  },
+  {
+    "id": 732,
+    "test": 10,
+    "testName": "Power Distribution",
+    "chapter": "Power Distribution",
+    "q": "What is the primary purpose of Lockout/Tagout (LOTO) procedures?",
+    "o": [
+      "To repair damaged equipment",
+      "To identify faulty circuits",
+      "To isolate energy sources and prevent accidental equipment startup during maintenance",
+      "To increase the speed of equipment maintenance"
+    ],
+    "a": 2,
+    "w": "Lockout/Tagout (LOTO) procedures isolate all energy sources from equipment and apply physical locks and warning tags to prevent accidental energization while maintenance is being performed, protecting workers from injury. LOTO is a safety procedure for preventing injury during maintenance, not a repair procedure itself (option A). Identifying faulty circuits is a troubleshooting activity, not the purpose of LOTO (option B). LOTO adds steps to the maintenance process, which typically slows rather than speeds up work (option D)."
+  },
+  {
+    "id": 733,
+    "test": 10,
+    "testName": "Power Distribution",
+    "chapter": "Power Distribution",
+    "q": "Which step in the LOTO process involves attaching locks and tags to isolating devices?",
+    "o": [
+      "Prepare",
+      "Isolate",
+      "Apply LOTO",
+      "Release Energy"
+    ],
+    "a": 2,
+    "w": "The \"Apply LOTO\" step involves physically attaching lockout locks and warning tags to the isolating devices (such as circuit breakers and disconnect switches) to prevent unauthorized re-energization. The Prepare step involves identifying all energy sources and gathering LOTO equipment before beginning the procedure (option A). The Isolate step involves operating the energy-isolating devices to disconnect the equipment from its energy sources (option B). Release Energy (de-energization) involves dissipating stored energy such as capacitors, springs, and pressure after isolation (option D)."
+  },
+  {
+    "id": 734,
+    "test": 10,
+    "testName": "Power Distribution",
+    "chapter": "Power Distribution",
+    "q": "What does the 'Tagout' in LOTO refer to?",
+    "o": [
+      "Physically locking energy sources",
+      "Discharging residual energy",
+      "Attaching a warning tag indicating a lockout is in place",
+      "Testing the system for de-energization"
+    ],
+    "a": 2,
+    "w": "Tagout refers to attaching a standardized warning tag to the isolating device indicating that the equipment has been locked out and must not be operated until the tag is removed by the authorized worker. Physically locking energy sources is the Lockout portion of LOTO, not the Tagout component (option A). Discharging residual energy is the Release Energy step, separate from applying tags (option B). Testing for de-energization is the verification step that comes after both lockout and tagout have been applied (option D)."
+  },
+  {
+    "id": 735,
+    "test": 10,
+    "testName": "Power Distribution",
+    "chapter": "Power Distribution",
+    "q": "Why is verifying the system de-energized a critical step in the LOTO process?",
+    "o": [
+      "To ensure compliance with company policies",
+      "To minimize equipment downtime",
+      "To confirm there is no residual energy before starting work",
+      "To maintain records for safety inspections"
+    ],
+    "a": 2,
+    "w": "Verifying de-energization is critical because it confirms that all energy sources have been successfully isolated and no residual energy remains, protecting workers from unexpected electrical shock or equipment activation. Compliance with company policies is a secondary benefit; the primary purpose is worker safety (option A). Verification does not minimize downtime; it is a mandatory safety step that may extend the preparation time (option B). Record maintenance is important but is not the critical safety reason for verifying de-energization (option D)."
   }
 ]

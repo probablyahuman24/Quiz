@@ -5,7 +5,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What type of processor collects, stores, and processes historical data such as energy usage and operating costs in a BAS?",
-    "o": ["Field-level controller", "System-level controller", "Management-level processor", "Zone-level controller"],
+    "o": [
+      "Field-level controller",
+      "System-level controller",
+      "Management-level processor",
+      "Zone-level controller"
+    ],
     "a": 2,
     "w": "The Management-Level Processor collects, stores, and processes historical data including energy usage, operating costs, and alarm reports. Field-Level Controllers handle Direct Digital Control of unitary equipment. System-Level Controllers interface directly with controlled equipment through sensors and communication links. Zone-level controller is not a standard BAS hierarchy level."
   },
@@ -15,7 +20,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What type of conductor size range is commonly used for BAS balanced twisted-pair cabling?",
-    "o": ["12 AWG to 16 AWG", "16 AWG to 22 AWG", "22 AWG to 26 AWG", "24 AWG only"],
+    "o": [
+      "12 AWG to 16 AWG",
+      "16 AWG to 22 AWG",
+      "22 AWG to 26 AWG",
+      "24 AWG only"
+    ],
     "a": 1,
     "w": "Balanced twisted-pair conductors of 16 AWG to 22 AWG are commonly used for BAS cabling, providing adequate current capacity for sensor and control signals. 12 AWG to 16 AWG would be unnecessarily heavy for low-power BAS signals. 22 AWG to 26 AWG would be on the thin side for longer BAS runs and may not meet current capacity requirements. 24 AWG only is not the specified range."
   },
@@ -25,7 +35,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What minimum distance must Horizontal Connection Points (HCPs) be from the telecommunications room (TR)?",
-    "o": ["5 m (16 ft)", "10 m (33 ft)", "15.2 m (50 ft)", "30 m (98 ft)"],
+    "o": [
+      "5 m (16 ft)",
+      "10 m (33 ft)",
+      "15.2 m (50 ft)",
+      "30 m (98 ft)"
+    ],
     "a": 2,
     "w": "BAS HCPs (Horizontal Connection Points) should be at least 15.2 m (50 ft) from the telecommunications room to provide adequate cable length for field-level device connections. 5 m and 10 m are too close to the TR to serve most field-device coverage areas. 30 m would be overly restrictive and may limit the practical number of HCPs in a building."
   },
@@ -35,7 +50,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What identification is used for cross-connections for BAS FA (Fire Alarm) services?",
-    "o": ["Blue insulator clips", "Green insulator clips", "Red insulator clips", "Yellow insulator clips"],
+    "o": [
+      "Blue insulator clips",
+      "Green insulator clips",
+      "Red insulator clips",
+      "Yellow insulator clips"
+    ],
     "a": 2,
     "w": "Cross-connections for BAS FA (Fire Alarm) services use red insulator clips for identification to clearly differentiate life-safety fire alarm circuits from other BAS services. Blue clips are used for data cabling identification in some systems. Green clips have no standard BAS assignment. Yellow clips may be used in other identification schemes but red is specified for FA cross-connects."
   },
@@ -45,7 +65,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What is the maximum BAS communication bus length without extenders or repeaters?",
-    "o": ["305 m (1000 ft)", "610 m (2000 ft)", "914 m (3000 ft)", "1219.2 m (4000 ft)"],
+    "o": [
+      "305 m (1000 ft)",
+      "610 m (2000 ft)",
+      "914 m (3000 ft)",
+      "1219.2 m (4000 ft)"
+    ],
     "a": 3,
     "w": "BAS communication bus lengths can extend up to 1219.2 m (4000 ft) without extenders or repeaters. 305 m, 610 m, and 914 m all fall within this limit but are not the stated maximum before signal boosting is required."
   },
@@ -55,9 +80,14 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What is the coverage area per BAS device in commercial office buildings or hotel rooms?",
-    "o": ["One device per 9 m² (97 ft²)", "One device per 15 m² (161 ft²)", "One device per 23 m² (248 ft²)", "One device per 46 m² (495 ft²)"],
+    "o": [
+      "One device per 9 m\u00b2 (97 ft\u00b2)",
+      "One device per 15 m\u00b2 (161 ft\u00b2)",
+      "One device per 23 m\u00b2 (248 ft\u00b2)",
+      "One device per 46 m\u00b2 (495 ft\u00b2)"
+    ],
     "a": 2,
-    "w": "One BAS device per 23 m² (248 ft²) is specified for commercial office buildings or hotel rooms. 9 m² would result in an excessive number of devices for typical office applications. 15 m² is below the specified density. 46 m² is too sparse for adequate BAS coverage in standard commercial applications."
+    "w": "One BAS device per 23 m\u00b2 (248 ft\u00b2) is specified for commercial office buildings or hotel rooms. 9 m\u00b2 would result in an excessive number of devices for typical office applications. 15 m\u00b2 is below the specified density. 46 m\u00b2 is too sparse for adequate BAS coverage in standard commercial applications."
   },
   {
     "id": 407,
@@ -65,7 +95,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What is the maximum number of horizontal cabling links per HCP?",
-    "o": ["6 links", "8 links", "12 links", "16 links"],
+    "o": [
+      "6 links",
+      "8 links",
+      "12 links",
+      "16 links"
+    ],
     "a": 2,
     "w": "Coverage area connections are reconfigured at the HCP with a maximum of 12 links per HCP. 6 and 8 links would underutilize the HCP capacity. 16 links would exceed the maximum and could degrade signal distribution management."
   },
@@ -75,7 +110,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What EMS program minimizes HVAC runtime by calculating occupancy temperature needs?",
-    "o": ["Load Reset", "Night Cycle", "Optimum Start", "Daylight Harvesting"],
+    "o": [
+      "Load Reset",
+      "Night Cycle",
+      "Optimum Start",
+      "Daylight Harvesting"
+    ],
     "a": 2,
     "w": "Optimum Start minimizes HVAC runtime by calculating the exact time to start heating or cooling to reach the occupancy set point temperature just as occupancy begins. Load Reset ensures minimum energy usage for cooling or heating loads. Night Cycle maintains temperature limits during unoccupied periods. Daylight Harvesting reduces lighting energy, not HVAC runtime."
   },
@@ -85,7 +125,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "Approximately what percentage of energy can Daylight Harvesting save in average buildings?",
-    "o": ["1%", "2%", "4%", "10%"],
+    "o": [
+      "1%",
+      "2%",
+      "4%",
+      "10%"
+    ],
     "a": 2,
     "w": "Daylight Harvesting saves approximately 4% energy in average buildings by reducing artificial lighting when natural light is sufficient. 1% and 2% understate the documented energy savings from daylight harvesting implementations. 10% would overstate the savings achievable from lighting control alone in a typical building."
   },
@@ -95,7 +140,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What percentage of electrical operational costs in commercial buildings can lighting controls account for?",
-    "o": ["Up to 15%", "Up to 25%", "Up to 40%", "Up to 60%"],
+    "o": [
+      "Up to 15%",
+      "Up to 25%",
+      "Up to 40%",
+      "Up to 60%"
+    ],
     "a": 2,
     "w": "Lighting controls account for up to 40% of electrical operational costs in commercial buildings, making them one of the most significant targets for energy management systems. 15% and 25% understate lighting's share of commercial building electricity costs. 60% would overstate lighting's proportion of total electrical costs."
   },
@@ -105,7 +155,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What communication protocol type do BAS devices typically use?",
-    "o": ["High-speed dedicated fiber links", "Poll-response or peer protocol", "Ethernet 10BASE-T only", "Serial RS-232 only"],
+    "o": [
+      "High-speed dedicated fiber links",
+      "Poll-response or peer protocol",
+      "Ethernet 10BASE-T only",
+      "Serial RS-232 only"
+    ],
     "a": 1,
     "w": "BAS communication links typically use poll-response or peer protocol for low-speed reliable communication between field devices and controllers. High-speed fiber is used for network backbone, not BAS field devices. Ethernet may be used in modern BAS but is not the typical historical BAS communication protocol. RS-232 is a legacy serial protocol not used in standard BAS networks."
   },
@@ -115,9 +170,14 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "How often are BAS products and technologies typically upgraded?",
-    "o": ["Every 1–2 years", "Every 3–4 years", "Every 5–7 years", "Every 10–15 years"],
+    "o": [
+      "Every 1\u20132 years",
+      "Every 3\u20134 years",
+      "Every 5\u20137 years",
+      "Every 10\u201315 years"
+    ],
     "a": 2,
-    "w": "BAS products and technologies are typically upgraded every 5 to 7 years to keep pace with technology improvements and manufacturer support cycles. 1–2 years would be too frequent for major BAS infrastructure upgrades. 3–4 years is shorter than the typical upgrade cycle. 10–15 years would result in outdated systems operating well beyond reasonable support periods."
+    "w": "BAS products and technologies are typically upgraded every 5 to 7 years to keep pace with technology improvements and manufacturer support cycles. 1\u20132 years would be too frequent for major BAS infrastructure upgrades. 3\u20134 years is shorter than the typical upgrade cycle. 10\u201315 years would result in outdated systems operating well beyond reasonable support periods."
   },
   {
     "id": 413,
@@ -125,7 +185,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What BAS sequence is associated with fire alarm system integration in elevator control?",
-    "o": ["Optimum start and load reset", "Elevator recall and shutdown", "Night cycle and demand limiting", "Daylight harvesting and occupancy sensing"],
+    "o": [
+      "Optimum start and load reset",
+      "Elevator recall and shutdown",
+      "Night cycle and demand limiting",
+      "Daylight harvesting and occupancy sensing"
+    ],
     "a": 1,
     "w": "BAS sequences include elevator recall and shutdown as part of fire alarm system integration, returning elevators to designated floors and preventing use during a fire. Optimum start and load reset are HVAC energy management functions. Night cycle is an HVAC unoccupied period function. Daylight harvesting and occupancy sensing are lighting control functions."
   },
@@ -135,7 +200,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What is a characteristic of field-level controllers in a BAS hierarchy?",
-    "o": ["They process and store building-wide historical data", "They are designed for DDC of unitary equipment and HVAC", "They manage multiple buildings across a campus network", "They serve as the web interface for occupant control"],
+    "o": [
+      "They process and store building-wide historical data",
+      "They are designed for DDC of unitary equipment and HVAC",
+      "They manage multiple buildings across a campus network",
+      "They serve as the web interface for occupant control"
+    ],
     "a": 1,
     "w": "Field-Level Controllers are designed for Direct Digital Control (DDC) of unitary equipment and HVAC, EMS, and access control applications. Management-level processors handle historical data. Campus-wide management requires higher-level systems. Web interfaces may be part of management-level processors, not field controllers."
   },
@@ -145,7 +215,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What must BAS signals and telecommunications signals NOT share in a multi-pair backbone cable?",
-    "o": ["The same conduit", "The same binder group", "The same cable tray", "The same floor distribution panel"],
+    "o": [
+      "The same conduit",
+      "The same binder group",
+      "The same cable tray",
+      "The same floor distribution panel"
+    ],
     "a": 1,
     "w": "BAS signals and telecommunications signals should not share the same binder group in a multi-pair backbone cable to prevent crosstalk and interference between systems. They may share the same conduit with proper segregation. Sharing cable trays with adequate separation is generally acceptable. Floor distribution panels can serve multiple systems with separate fields."
   },
@@ -155,7 +230,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What EMS program maintains temperature limits during unoccupied periods?",
-    "o": ["Optimum Start", "Load Reset", "Night Cycle", "Demand Limiting"],
+    "o": [
+      "Optimum Start",
+      "Load Reset",
+      "Night Cycle",
+      "Demand Limiting"
+    ],
     "a": 2,
     "w": "Night Cycle maintains temperature limits during unoccupied periods by periodically running HVAC to prevent extreme temperature drift. Optimum Start calculates when to begin conditioning for occupancy. Load Reset ensures minimum energy for current conditioning loads. Demand Limiting reduces peak electrical demand by cycling non-critical equipment."
   },
@@ -165,7 +245,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What does Limit Control prevent in HVAC systems?",
-    "o": ["Excessive energy usage during peak demand", "Freezing of water coils or heat exchangers", "Overheating of electrical distribution panels", "Unauthorized access to mechanical equipment rooms"],
+    "o": [
+      "Excessive energy usage during peak demand",
+      "Freezing of water coils or heat exchangers",
+      "Overheating of electrical distribution panels",
+      "Unauthorized access to mechanical equipment rooms"
+    ],
     "a": 1,
     "w": "Limit Controls prevent freezing of water coils or heat exchangers, protecting mechanical equipment from low-temperature damage. Energy usage control is an EMS function. Electrical panel overheating is addressed by electrical protection devices. Unauthorized access is an EAC function, not an HVAC limit control."
   },
@@ -175,7 +260,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What is the maximum number of HCPs permitted in a single horizontal cabling link?",
-    "o": ["None — HCPs are not permitted in horizontal links", "One HCP per horizontal cabling link", "Two HCPs per horizontal cabling link", "Three HCPs per horizontal cabling link"],
+    "o": [
+      "None \u2014 HCPs are not permitted in horizontal links",
+      "One HCP per horizontal cabling link",
+      "Two HCPs per horizontal cabling link",
+      "Three HCPs per horizontal cabling link"
+    ],
     "a": 1,
     "w": "No more than one HCP should be placed in a single horizontal cabling link to maintain signal quality and simplify troubleshooting. Zero HCPs may apply where BAS devices connect directly to the TR. Two or three HCPs per link would create multiple connection points that increase signal degradation and administration complexity."
   },
@@ -185,7 +275,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "Where may system-level controllers and cabling be installed in a BAS design?",
-    "o": ["Only in dedicated telecommunications spaces", "In mechanical or electrical areas", "Only adjacent to the management-level processor", "Only at field device locations"],
+    "o": [
+      "Only in dedicated telecommunications spaces",
+      "In mechanical or electrical areas",
+      "Only adjacent to the management-level processor",
+      "Only at field device locations"
+    ],
     "a": 1,
     "w": "System-level controllers and cabling can be installed in mechanical or electrical areas, providing flexibility to locate controllers near the equipment they control. They are not restricted to telecommunications spaces, though they may be located there. They do not need to be adjacent to the management-level processor. Field device locations are for sensors and actuators, not system-level controllers."
   },
@@ -195,7 +290,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What additional BAS capabilities beyond HVAC and security does a modern BAS potentially include?",
-    "o": ["Cabling certification testing", "Controls for window shades and digital signage", "Cable plant documentation", "PoE power management for IP cameras"],
+    "o": [
+      "Cabling certification testing",
+      "Controls for window shades and digital signage",
+      "Cable plant documentation",
+      "PoE power management for IP cameras"
+    ],
     "a": 1,
     "w": "Modern BAS systems can include controls for window shades, digital signage, and additional building systems beyond traditional HVAC and security. Cabling certification testing is an ICT installer function. Cable plant documentation is a telecommunications administration task. PoE power management is an IT/networking function, not a standard BAS scope."
   },
@@ -205,7 +305,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What type of control uses air pressure from sensors for input in HVAC applications?",
-    "o": ["Electronic controls", "Pneumatic controls", "DDC controls", "Limit controls"],
+    "o": [
+      "Electronic controls",
+      "Pneumatic controls",
+      "DDC controls",
+      "Limit controls"
+    ],
     "a": 1,
     "w": "Pneumatic controls use air pressure from sensors for input, representing an older but still-present HVAC control technology. Electronic controls use electrical signals for sensing and actuation. DDC (Direct Digital Control) uses digital microprocessors for control. Limit controls are safety-function devices that prevent extreme conditions, not pressure-based sensors."
   },
@@ -215,7 +320,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What does the BAS management processor handle regarding energy management in mid-to-large buildings?",
-    "o": ["Direct control of all HVAC sensors", "Energy usage analysis and cost reporting", "Physical installation of field devices", "Calibration of pneumatic control sensors"],
+    "o": [
+      "Direct control of all HVAC sensors",
+      "Energy usage analysis and cost reporting",
+      "Physical installation of field devices",
+      "Calibration of pneumatic control sensors"
+    ],
     "a": 1,
     "w": "Management processors handle energy usage analysis and cost reporting in mid-to-large buildings' EMS programs. Direct control of HVAC sensors is performed by system-level and field-level controllers. Physical installation is a construction activity. Pneumatic sensor calibration is a mechanical technician task."
   },
@@ -225,7 +335,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What communication mode characterizes modern BAS systems for improved efficiency?",
-    "o": ["Centralized intelligence with all processing at the management level", "Distributed intelligence", "Analog signal processing only", "Single-direction polling only"],
+    "o": [
+      "Centralized intelligence with all processing at the management level",
+      "Distributed intelligence",
+      "Analog signal processing only",
+      "Single-direction polling only"
+    ],
     "a": 1,
     "w": "Modern BAS systems utilize distributed intelligence for efficiency, allowing field and system-level controllers to make local decisions without constant dependence on the management-level processor. Centralized intelligence creates a single point of failure and slow response times. Analog signal processing has been replaced by digital controllers in modern BAS. Single-direction polling is a legacy protocol approach not used in modern distributed BAS."
   },
@@ -235,7 +350,12 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "What is the EMS program Load Reset designed to achieve?",
-    "o": ["Maximizes HVAC energy usage during peak occupancy", "Ensures minimum energy usage for cooling or heating", "Resets the BAS after a power failure", "Resets occupancy schedules to factory defaults"],
+    "o": [
+      "Maximizes HVAC energy usage during peak occupancy",
+      "Ensures minimum energy usage for cooling or heating",
+      "Resets the BAS after a power failure",
+      "Resets occupancy schedules to factory defaults"
+    ],
     "a": 1,
     "w": "Load Reset ensures minimum energy usage for cooling or heating by continuously adjusting the supply air or water temperature to meet the actual load, avoiding over-conditioning. Maximizing energy usage would be counter to energy management goals. Resetting after power failure is a system recovery function. Occupancy schedule reset is a programming function unrelated to the Load Reset EMS program."
   },
@@ -245,8 +365,88 @@
     "testName": "Intelligent Building Systems",
     "chapter": "Intelligent Building Systems",
     "q": "For what reason are BAS outlets generally not required when using HCPs?",
-    "o": ["HCPs provide power to BAS devices directly", "BAS devices connect directly to HCPs without needing outlet connections", "HCPs replace the function of a telecommunications outlet", "The BAS standard prohibits outlets adjacent to HCPs"],
+    "o": [
+      "HCPs provide power to BAS devices directly",
+      "BAS devices connect directly to HCPs without needing outlet connections",
+      "HCPs replace the function of a telecommunications outlet",
+      "The BAS standard prohibits outlets adjacent to HCPs"
+    ],
     "a": 2,
     "w": "BAS outlets are generally not required when using HCPs because BAS devices connect directly to HCPs, which serve as the connectivity point for field devices, eliminating the need for separate outlets at each device location. HCPs do not provide power to BAS devices. HCPs connect field devices, but they do not physically replace telecom outlet hardware. The BAS standard does not prohibit outlets near HCPs."
+  },
+  {
+    "id": 756,
+    "test": 15,
+    "testName": "Intelligent Building Systems",
+    "chapter": "Intelligent Building Systems",
+    "q": "What is the primary purpose of a Building Automation System (BAS)?",
+    "o": [
+      "To manage financial transactions",
+      "To monitor and control electromechanical systems in a building",
+      "To optimize cloud data storage",
+      "To enhance internet speed"
+    ],
+    "a": 1,
+    "w": "A Building Automation System (BAS) monitors and controls electromechanical systems including HVAC, lighting, fire alarm, security, and energy management to optimize building performance and occupant comfort. Financial transaction management is performed by enterprise software systems, not BAS (option A). Cloud data storage is an IT infrastructure function, not a BAS function (option C). Internet speed optimization is performed by network equipment, not building automation systems (option D)."
+  },
+  {
+    "id": 757,
+    "test": 15,
+    "testName": "Intelligent Building Systems",
+    "chapter": "Intelligent Building Systems",
+    "q": "Which of the following systems can be managed by a BAS?",
+    "o": [
+      "Lighting and telecommunication systems",
+      "HVAC and digital signage systems",
+      "Fire and security systems",
+      "All of the above"
+    ],
+    "a": 3,
+    "w": "A comprehensive BAS can manage all building systems including lighting, telecommunications, HVAC, digital signage, fire protection, and security systems through a unified network infrastructure. Limiting BAS to lighting and telecommunications (option A) ignores the broader scope of modern building automation capabilities. HVAC and digital signage represent only a subset of systems manageable by a BAS (option B). Fire and security systems alone represent only a portion of what a modern BAS can control (option C)."
+  },
+  {
+    "id": 758,
+    "test": 15,
+    "testName": "Intelligent Building Systems",
+    "chapter": "Intelligent Building Systems",
+    "q": "What is the typical lifecycle of BAS systems?",
+    "o": [
+      "3\u20135 years",
+      "5\u20137 years",
+      "7\u201310 years",
+      "10\u201315 years"
+    ],
+    "a": 1,
+    "w": "BAS systems typically have a lifecycle of 5 to 7 years for software and controllers before upgrades are needed, though the physical sensors and field devices may last longer. 3-5 years is too short for BAS system lifecycle; this timeframe may apply to individual software updates (option A). 7-10 years represents a longer lifecycle that may apply to some hardware components but not the overall system (option C). 10-15 years exceeds the typical BAS technology refresh cycle given rapid advances in building automation technology (option D)."
+  },
+  {
+    "id": 759,
+    "test": 15,
+    "testName": "Intelligent Building Systems",
+    "chapter": "Intelligent Building Systems",
+    "q": "What type of BAS controller manages field devices directly?",
+    "o": [
+      "Field-level controller",
+      "System-level controller",
+      "Management-level controller",
+      "Gateway controller"
+    ],
+    "a": 0,
+    "w": "Field-level controllers (also called direct digital controllers or DDCs) directly manage field devices such as sensors, actuators, and terminal units at the point of operation. System-level controllers coordinate multiple field controllers and manage system-wide functions, not individual field devices directly (option B). Management-level controllers provide the highest-level building-wide oversight and user interface but do not directly manage field devices (option C). Gateway controllers translate between different communication protocols but are not the primary controllers of field devices (option D)."
+  },
+  {
+    "id": 760,
+    "test": 15,
+    "testName": "Intelligent Building Systems",
+    "chapter": "Intelligent Building Systems",
+    "q": "What is the coverage area for each BAS device connected via structured cabling?",
+    "o": [
+      "9 m\u00b2",
+      "18 m\u00b2",
+      "23 m\u00b2",
+      "30 m\u00b2"
+    ],
+    "a": 2,
+    "w": "ANSI/TIA-569 allocates approximately 23 m\u00b2 (approximately 250 ft\u00b2) of building floor area per BAS device connected via structured cabling for Equipment Room space planning purposes. 9 m\u00b2 would result in significantly more devices per floor than typical BAS installations require (option A). 18 m\u00b2 is below the standard coverage area allocation used in equipment room sizing calculations (option B). 30 m\u00b2 exceeds the standard allocation and would result in undersizing the Equipment Room for BAS device terminations (option D)."
   }
 ]

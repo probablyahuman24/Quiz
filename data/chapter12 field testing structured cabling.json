@@ -5,7 +5,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What does a Wire Map Test verify in a balanced twisted-pair installation?",
-    "o": ["Signal attenuation over the full channel length", "Correct conductor connections, shield continuity, and identifies transposed, reversed, or split pairs", "NEXT loss between all pairs at both ends", "Propagation delay skew between all four pairs"],
+    "o": [
+      "Signal attenuation over the full channel length",
+      "Correct conductor connections, shield continuity, and identifies transposed, reversed, or split pairs",
+      "NEXT loss between all pairs at both ends",
+      "Propagation delay skew between all four pairs"
+    ],
     "a": 1,
     "w": "The Wire Map Test verifies correct conductor connections, checks for grounded conductors, verifies shield continuity, and identifies transposed, reversed, or split pairs. Attenuation measurement is a separate Insertion Loss test. NEXT is measured by a dedicated crosstalk parameter test. Propagation delay skew is a separate parameter calculated from individual pair delay measurements."
   },
@@ -15,7 +20,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "For DC Loop Resistance testing, how is the far end of the cable prepared?",
-    "o": ["Left open-circuit", "Terminated with a matched load", "Shorted at the far end", "Connected to the signal source"],
+    "o": [
+      "Left open-circuit",
+      "Terminated with a matched load",
+      "Shorted at the far end",
+      "Connected to the signal source"
+    ],
     "a": 2,
     "w": "DC Loop Resistance measures conductor resistance with the far end shorted, creating a complete loop that allows the tester to measure the combined resistance of both conductors. An open-circuit would prevent current flow and give an infinite resistance reading. A matched load would modify the measurement with external impedance. Connecting to the signal source would not allow DC loop resistance measurement."
   },
@@ -25,7 +35,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What field test instrument level is required for Category 6A and Class EA cabling testing?",
-    "o": ["Level I", "Level II", "Level III", "Level IV"],
+    "o": [
+      "Level I",
+      "Level II",
+      "Level III",
+      "Level IV"
+    ],
     "a": 2,
     "w": "Level III field test instruments are required for Category 6A and Class EA cabling to meet the accuracy requirements at frequencies up to 500 MHz. Level I instruments lack the accuracy for high-performance categories. Level II instruments may be used for lower categories but are insufficient for 6A/EA. Level IV is not a defined level in standard field tester classification."
   },
@@ -35,7 +50,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What does Return Loss indicate about a cabling link?",
-    "o": ["The total signal loss from one end to the other", "Impedance uniformity and mismatch — smaller dB loss means better performance", "The noise coupling from adjacent cables", "The delay difference between the fastest and slowest pairs"],
+    "o": [
+      "The total signal loss from one end to the other",
+      "Impedance uniformity and mismatch \u2014 smaller dB loss means better performance",
+      "The noise coupling from adjacent cables",
+      "The delay difference between the fastest and slowest pairs"
+    ],
     "a": 1,
     "w": "Return Loss indicates impedance uniformity and mismatch; a smaller decibel loss (higher return loss value) means better performance, as less signal is reflected back. Total end-to-end signal loss is measured by Insertion Loss. Noise coupling from adjacent cables is measured as Alien Crosstalk. Delay difference between pairs is the Propagation Delay Skew parameter."
   },
@@ -45,9 +65,14 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What does ACR-F measure in a cabling system?",
-    "o": ["Crosstalk at the same end as the disturbing signal", "Crosstalk measured at the opposite end from the disturbing signal, normalized by attenuation loss", "Crosstalk from all pairs combined at the near end", "The ratio of alien crosstalk to insertion loss"],
+    "o": [
+      "Crosstalk at the same end as the disturbing signal",
+      "Crosstalk measured at the opposite end from the disturbing signal, normalized by attenuation loss",
+      "Crosstalk from all pairs combined at the near end",
+      "The ratio of alien crosstalk to insertion loss"
+    ],
     "a": 1,
-    "w": "ACR-F (Attenuation to Crosstalk Ratio – Far End) measures crosstalk at the opposite end from the disturbing signal, normalized by the attenuation loss; larger ACR-F values indicate better performance. Crosstalk at the same end is NEXT (Near-End Crosstalk). Combined crosstalk from all pairs at the near end is PSNEXT. Alien crosstalk ratio is a separate measurement related to cables in adjacent bundles."
+    "w": "ACR-F (Attenuation to Crosstalk Ratio \u2013 Far End) measures crosstalk at the opposite end from the disturbing signal, normalized by the attenuation loss; larger ACR-F values indicate better performance. Crosstalk at the same end is NEXT (Near-End Crosstalk). Combined crosstalk from all pairs at the near end is PSNEXT. Alien crosstalk ratio is a separate measurement related to cables in adjacent bundles."
   },
   {
     "id": 331,
@@ -55,7 +80,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What OTDR testing accessories are required to be longer than the instrument's dead zone?",
-    "o": ["Termination resistors", "Launch cord and receive cord", "Optical power meter reference cables", "Fiber continuity tracers"],
+    "o": [
+      "Termination resistors",
+      "Launch cord and receive cord",
+      "Optical power meter reference cables",
+      "Fiber continuity tracers"
+    ],
     "a": 1,
     "w": "OTDR testing requires a launch cord and a receive cord, each longer than the OTDR's dead zone, to allow the instrument to recover from the initial pulse before measuring the actual link. Termination resistors are used in electrical testing, not fiber OTDR. Power meter reference cables are used in OLTS testing, not specifically for dead zone compensation. Continuity tracers confirm fiber connectivity but are not OTDR accessories."
   },
@@ -64,10 +94,15 @@
     "test": 12,
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
-    "q": "What is the worst-case attenuation coefficient for 50/125 µm laser-optimized OM3 fiber at 850 nm?",
-    "o": ["1.5 dB/km", "2.0 dB/km", "3.0 dB/km", "3.5 dB/km"],
+    "q": "What is the worst-case attenuation coefficient for 50/125 \u00b5m laser-optimized OM3 fiber at 850 nm?",
+    "o": [
+      "1.5 dB/km",
+      "2.0 dB/km",
+      "3.0 dB/km",
+      "3.5 dB/km"
+    ],
     "a": 2,
-    "w": "The worst-case attenuation coefficient for 50/125 µm laser-optimized OM3 fiber at 850 nm is 3.0 dB/km for OTDR testing purposes. 1.5 dB/km is the specification at 1300 nm, not 850 nm. 2.0 dB/km understates the worst-case coefficient at 850 nm. 3.5 dB/km is the maximum attenuation specification in some product standards but not the worst-case OTDR test coefficient."
+    "w": "The worst-case attenuation coefficient for 50/125 \u00b5m laser-optimized OM3 fiber at 850 nm is 3.0 dB/km for OTDR testing purposes. 1.5 dB/km is the specification at 1300 nm, not 850 nm. 2.0 dB/km understates the worst-case coefficient at 850 nm. 3.5 dB/km is the maximum attenuation specification in some product standards but not the worst-case OTDR test coefficient."
   },
   {
     "id": 333,
@@ -75,9 +110,14 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "For singlemode OTDR testing, what wavelengths are used?",
-    "o": ["850 nm ± 30 nm or 1300 nm ± 20 nm", "1310 nm ± 10 nm or 1550 nm ± 20 nm", "1383 nm ± 5 nm or 1490 nm ± 10 nm", "1625 nm ± 10 nm only"],
+    "o": [
+      "850 nm \u00b1 30 nm or 1300 nm \u00b1 20 nm",
+      "1310 nm \u00b1 10 nm or 1550 nm \u00b1 20 nm",
+      "1383 nm \u00b1 5 nm or 1490 nm \u00b1 10 nm",
+      "1625 nm \u00b1 10 nm only"
+    ],
     "a": 1,
-    "w": "Singlemode OTDR testing operates at 1310 nm ± 10 nm or 1550 nm ± 20 nm. 850 nm and 1300 nm are the multimode testing wavelengths. 1383 nm is the water-peak wavelength for OS2 fiber qualification, not standard OTDR testing. 1625 nm is used for in-service testing of live fiber, not standard acceptance testing."
+    "w": "Singlemode OTDR testing operates at 1310 nm \u00b1 10 nm or 1550 nm \u00b1 20 nm. 850 nm and 1300 nm are the multimode testing wavelengths. 1383 nm is the water-peak wavelength for OS2 fiber qualification, not standard OTDR testing. 1625 nm is used for in-service testing of live fiber, not standard acceptance testing."
   },
   {
     "id": 334,
@@ -85,9 +125,14 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "At what wavelength does multimode OTDR testing typically operate?",
-    "o": ["850 nm ± 10 nm", "1300 nm ± 20 nm", "1310 nm ± 10 nm", "1550 nm ± 20 nm"],
+    "o": [
+      "850 nm \u00b1 10 nm",
+      "1300 nm \u00b1 20 nm",
+      "1310 nm \u00b1 10 nm",
+      "1550 nm \u00b1 20 nm"
+    ],
     "a": 1,
-    "w": "Multimode OTDR testing operates at 1300 nm ± 20 nm for standard acceptance testing. 850 nm is used for light source/power meter (OLTS) measurements of multimode fiber, not OTDR. 1310 nm and 1550 nm are singlemode testing wavelengths."
+    "w": "Multimode OTDR testing operates at 1300 nm \u00b1 20 nm for standard acceptance testing. 850 nm is used for light source/power meter (OLTS) measurements of multimode fiber, not OTDR. 1310 nm and 1550 nm are singlemode testing wavelengths."
   },
   {
     "id": 335,
@@ -95,9 +140,14 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "Why can optical length exceed physical cable length?",
-    "o": ["Due to signal reflections adding apparent length", "Due to fiber lay in cables like stranded loose tube designs", "Because OTDR measurements include splice losses", "Due to chromatic dispersion broadening the test pulse"],
+    "o": [
+      "Due to signal reflections adding apparent length",
+      "Due to fiber lay in cables like stranded loose tube designs",
+      "Because OTDR measurements include splice losses",
+      "Due to chromatic dispersion broadening the test pulse"
+    ],
     "a": 1,
-    "w": "Optical length can exceed physical length because of fiber lay — in stranded loose tube cables, the fibers wind around the cable core and are longer than the cable jacket itself. Signal reflections can cause measurement artifacts but do not add optical length in a properly designed system. Splice losses affect power budget, not apparent length. Chromatic dispersion broadens pulses but does not make the fiber appear longer in OTDR measurements."
+    "w": "Optical length can exceed physical length because of fiber lay \u2014 in stranded loose tube cables, the fibers wind around the cable core and are longer than the cable jacket itself. Signal reflections can cause measurement artifacts but do not add optical length in a properly designed system. Splice losses affect power budget, not apparent length. Chromatic dispersion broadens pulses but does not make the fiber appear longer in OTDR measurements."
   },
   {
     "id": 336,
@@ -105,7 +155,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What is the total splice attenuation calculation method?",
-    "o": ["Number of splices divided by individual splice loss", "Number of splices multiplied by individual splice loss", "Individual splice loss squared by the number of splices", "The highest single splice loss value only"],
+    "o": [
+      "Number of splices divided by individual splice loss",
+      "Number of splices multiplied by individual splice loss",
+      "Individual splice loss squared by the number of splices",
+      "The highest single splice loss value only"
+    ],
     "a": 1,
     "w": "Total splice attenuation is calculated as the number of splices multiplied by individual splice loss (typically 0.3 dB per splice). Dividing would give a nonsensical result. Squaring would grossly overestimate attenuation. Using only the highest single splice loss ignores all other splices in the link."
   },
@@ -115,7 +170,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What is used to verify polarity in optical fiber systems?",
-    "o": ["Visual fault locator only", "OTDR trace analysis", "OLTS or a visible light source", "Optical power meter alone"],
+    "o": [
+      "Visual fault locator only",
+      "OTDR trace analysis",
+      "OLTS or a visible light source",
+      "Optical power meter alone"
+    ],
     "a": 2,
     "w": "Polarity is verified with OLTS (Optical Loss Test Set) or a visible light source, which confirms that the transmit and receive fibers are correctly connected end-to-end. Visual fault locators can detect breaks but are not a polarity verification method. OTDR traces measure attenuation and locate faults but do not verify polarity in the sense of correct end-to-end connectivity orientation. An optical power meter alone cannot determine polarity without a light source at the far end."
   },
@@ -125,7 +185,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What is the worst-case OTDR attenuation coefficient for singlemode fiber at 1550 nm?",
-    "o": ["0.4 dB/km", "0.5 dB/km", "1.0 dB/km", "1.5 dB/km"],
+    "o": [
+      "0.4 dB/km",
+      "0.5 dB/km",
+      "1.0 dB/km",
+      "1.5 dB/km"
+    ],
     "a": 2,
     "w": "The worst-case OTDR attenuation coefficient for singlemode fiber at 1550 nm is 1.0 dB/km used in link loss budget calculations. 0.4 dB/km is the OS2 specified maximum attenuation, which applies to the cable product, not the worst-case test budget coefficient. 0.5 dB/km is below the worst-case testing figure. 1.5 dB/km would be excessive for singlemode fiber at this wavelength."
   },
@@ -135,9 +200,14 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "Which test parameter measures noise caused specifically by adjacent data communication cables?",
-    "o": ["NEXT loss", "Power Sum NEXT (PSNEXT)", "Return Loss", "Alien Crosstalk (AXT)"],
+    "o": [
+      "NEXT loss",
+      "Power Sum NEXT (PSNEXT)",
+      "Return Loss",
+      "Alien Crosstalk (AXT)"
+    ],
     "a": 3,
-    "w": "Alien Crosstalk (AXT) measures noise caused by adjacent data communication cables — cables from separate bundles disturbing the measured cable. NEXT measures crosstalk between pairs within the same cable. PSNEXT measures the combined near-end crosstalk from all other pairs within the same cable. Return Loss measures impedance mismatch reflections within the cable itself."
+    "w": "Alien Crosstalk (AXT) measures noise caused by adjacent data communication cables \u2014 cables from separate bundles disturbing the measured cable. NEXT measures crosstalk between pairs within the same cable. PSNEXT measures the combined near-end crosstalk from all other pairs within the same cable. Return Loss measures impedance mismatch reflections within the cable itself."
   },
   {
     "id": 340,
@@ -145,7 +215,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What must PSANEXT and PSAACR-F testing capture together?",
-    "o": ["Polarity and shield continuity", "Power Sum AXT (alien crosstalk) measurements", "Propagation delay and delay skew simultaneously", "NEXT and return loss in a single test sweep"],
+    "o": [
+      "Polarity and shield continuity",
+      "Power Sum AXT (alien crosstalk) measurements",
+      "Propagation delay and delay skew simultaneously",
+      "NEXT and return loss in a single test sweep"
+    ],
     "a": 1,
     "w": "PSANEXT and PSAACR-F capture Power Sum Alien Crosstalk (Power Sum AXT) measurements from all disturbing cables combined. They do not measure polarity or shield continuity. Propagation delay and skew are measured by separate delay tests. NEXT and return loss are in-cable parameters, not alien crosstalk measurements."
   },
@@ -155,9 +230,14 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "Which test measures signal coupling between two pairs within a cable with higher values indicating better performance?",
-    "o": ["Insertion Loss", "Return Loss", "NEXT Loss", "ACR-N"],
+    "o": [
+      "Insertion Loss",
+      "Return Loss",
+      "NEXT Loss",
+      "ACR-N"
+    ],
     "a": 2,
-    "w": "NEXT Loss measures signal coupling between two pairs within a cable; higher NEXT loss values indicate less coupling and therefore better performance. Insertion Loss measures signal attenuation — lower values are better. Return Loss measures reflected signal — higher values (less reflection) are better but the parameter describes mismatch not pair-to-pair coupling. ACR-N (Attenuation to Crosstalk Ratio at the Near End) is a derived parameter, not a direct coupling measurement."
+    "w": "NEXT Loss measures signal coupling between two pairs within a cable; higher NEXT loss values indicate less coupling and therefore better performance. Insertion Loss measures signal attenuation \u2014 lower values are better. Return Loss measures reflected signal \u2014 higher values (less reflection) are better but the parameter describes mismatch not pair-to-pair coupling. ACR-N (Attenuation to Crosstalk Ratio at the Near End) is a derived parameter, not a direct coupling measurement."
   },
   {
     "id": 342,
@@ -165,7 +245,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "For what applications is Power Sum Crosstalk testing required?",
-    "o": ["Single-pair applications only", "Applications communicating over multiple pairs simultaneously", "Legacy Category 3 voice applications", "Optical fiber backbone testing only"],
+    "o": [
+      "Single-pair applications only",
+      "Applications communicating over multiple pairs simultaneously",
+      "Legacy Category 3 voice applications",
+      "Optical fiber backbone testing only"
+    ],
     "a": 1,
     "w": "Power Sum Crosstalk testing is required for applications that communicate over multiple pairs simultaneously, such as 1000BASE-T and 10GBASE-T, where signals on all pairs can interfere with each other. Single-pair applications only need standard NEXT. Category 3 voice systems operate at too low a frequency to require power sum crosstalk testing. Optical fiber does not use twisted-pair crosstalk parameters."
   },
@@ -175,7 +260,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What TDR instrument function is used for both length calculation and fault identification?",
-    "o": ["Optical Loss Test Set (OLTS)", "Time Domain Reflectometer (TDR)", "Spectrum analyzer", "Network analyzer"],
+    "o": [
+      "Optical Loss Test Set (OLTS)",
+      "Time Domain Reflectometer (TDR)",
+      "Spectrum analyzer",
+      "Network analyzer"
+    ],
     "a": 1,
     "w": "The TDR (Time Domain Reflectometer) is used for cable length calculation and fault identification by sending a pulse and measuring the reflected signal's arrival time. OLTS measures optical insertion loss and is used for fiber, not TDR functions. A spectrum analyzer measures signal frequency content, not cable length or faults. A network analyzer measures S-parameters and impedance across frequencies, not primarily for fault location."
   },
@@ -185,7 +275,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "For pass/fail decisions on cable length, what measurement is used?",
-    "o": ["Physical cable length measured by the installer", "Longest electrical length measured by the tester", "Shortest electrical length measured by the tester", "Average of all four pair lengths"],
+    "o": [
+      "Physical cable length measured by the installer",
+      "Longest electrical length measured by the tester",
+      "Shortest electrical length measured by the tester",
+      "Average of all four pair lengths"
+    ],
     "a": 2,
     "w": "The shortest electrical length is used for pass/fail decisions because it represents the most conservative estimate, ensuring compliance when pair lengths vary. Physical length does not account for NVP (Nominal Velocity of Propagation) variations. The longest electrical length would give a more lenient result and may allow a technically failing installation to pass. The average could mask individual pairs that exceed limits."
   },
@@ -195,7 +290,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What coaxial cabling test parameters include VSWR and TDR impedance?",
-    "o": ["Balanced twisted-pair test parameters", "Optical fiber test parameters", "Coaxial cabling key test parameters", "BAS cabling test parameters"],
+    "o": [
+      "Balanced twisted-pair test parameters",
+      "Optical fiber test parameters",
+      "Coaxial cabling key test parameters",
+      "BAS cabling test parameters"
+    ],
     "a": 2,
     "w": "VSWR (Voltage Standing Wave Ratio) and TDR impedance are key test parameters for coaxial cabling. These parameters measure the impedance continuity and reflections within the coaxial cable. They are not relevant to balanced twisted-pair, which uses different parameters like NEXT and insertion loss. Optical fiber uses attenuation and return loss tests, not VSWR."
   },
@@ -205,7 +305,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What device is required for testing coaxial cabling signal strength?",
-    "o": ["OTDR", "Spectrum analyzer", "Level III field tester", "Optical power meter"],
+    "o": [
+      "OTDR",
+      "Spectrum analyzer",
+      "Level III field tester",
+      "Optical power meter"
+    ],
     "a": 1,
     "w": "A spectrum analyzer is required for coaxial cabling testing to measure signal strength and identify spurious signals across the cable's frequency range. OTDR is used for optical fiber, not coaxial cable. Level III field testers are specific to balanced twisted-pair cabling. Optical power meters measure light levels in optical fiber systems."
   },
@@ -215,7 +320,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "Within how many days of cable reel delivery must post-installation testing follow?",
-    "o": ["2 days", "3 days", "5 days", "7 days"],
+    "o": [
+      "2 days",
+      "3 days",
+      "5 days",
+      "7 days"
+    ],
     "a": 2,
     "w": "Post-installation testing must follow cable reel testing within five days of delivery to ensure continuity between factory-tested and installed conditions. 2 and 3 days would impose an unnecessarily tight timeline for large installations. 7 days extends the acceptable testing window beyond the stated standard requirement."
   },
@@ -225,7 +335,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What is the direction of an OTDR trace relative to the cable?",
-    "o": ["Flat horizontal line", "A slope from left to right, steeper at shorter wavelengths", "An upward slope indicating signal gain", "A vertical drop at each splice location only"],
+    "o": [
+      "Flat horizontal line",
+      "A slope from left to right, steeper at shorter wavelengths",
+      "An upward slope indicating signal gain",
+      "A vertical drop at each splice location only"
+    ],
     "a": 1,
     "w": "An OTDR trace forms a slope from left to right representing signal loss along the cable, steeper at shorter wavelengths where attenuation is higher. A flat line would indicate zero attenuation, which is physically impossible. An upward slope would indicate signal gain, which is not a normal fiber characteristic. Vertical drops appear at discrete events like connectors or splices but the overall trace is a downward slope."
   },
@@ -235,7 +350,12 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What is NOT required as an acceptance test in field testing standards?",
-    "o": ["NEXT Loss", "Insertion Loss", "Return Loss", "Insertion Loss Deviation"],
+    "o": [
+      "NEXT Loss",
+      "Insertion Loss",
+      "Return Loss",
+      "Insertion Loss Deviation"
+    ],
     "a": 3,
     "w": "Insertion Loss Deviation is not required as an acceptance test in field testing standards. NEXT Loss, Insertion Loss, and Return Loss are all standard required acceptance test parameters for balanced twisted-pair cabling certification."
   },
@@ -245,8 +365,88 @@
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
     "q": "What instrument is used to test optical fiber insertion loss with a light source?",
-    "o": ["OTDR", "TDR", "OLTS (Optical Loss Test Set)", "Spectrum analyzer"],
+    "o": [
+      "OTDR",
+      "TDR",
+      "OLTS (Optical Loss Test Set)",
+      "Spectrum analyzer"
+    ],
     "a": 2,
     "w": "Optical fiber insertion loss is tested with a light source and power meter, or combined in an OLTS (Optical Loss Test Set). OTDR measures attenuation by backscattered light and is a complementary but different measurement technique. TDR is used for electrical cable testing. Spectrum analyzers measure RF frequency content, not optical loss."
+  },
+  {
+    "id": 741,
+    "test": 12,
+    "testName": "Field Testing Structured Cabling",
+    "chapter": "Field Testing Structured Cabling",
+    "q": "What does a wire map test in balanced twisted-pair cabling check?",
+    "o": [
+      "Signal interference",
+      "Continuity of structured cabling cables",
+      "Attenuation across the cable length",
+      "Connector integrity"
+    ],
+    "a": 1,
+    "w": "A wire map test verifies the continuity of each conductor in a structured cabling cable, confirming correct pin-to-pin connections and identifying faults such as opens, shorts, crossed pairs, and split pairs. Signal interference is measured by crosstalk tests (NEXT, FEXT), not the wire map test (option A). Attenuation is measured by insertion loss tests, not the wire map (option C). Connector integrity involves physical inspection and may involve return loss testing, which is separate from wire map testing (option D)."
+  },
+  {
+    "id": 742,
+    "test": 12,
+    "testName": "Field Testing Structured Cabling",
+    "chapter": "Field Testing Structured Cabling",
+    "q": "Which device provides pass or fail results for a 50-ohm dielectric coaxial cable?",
+    "o": [
+      "Spectrum analyzer",
+      "OTDR",
+      "50-ohm cable tester",
+      "Multimeter"
+    ],
+    "a": 2,
+    "w": "A 50-ohm cable tester is specifically designed to verify the performance of 50-ohm coaxial cables and provide pass/fail results based on impedance, continuity, and signal level measurements. A spectrum analyzer measures signal frequency and amplitude across a frequency range but does not provide simple pass/fail results for coaxial cable testing (option A). An OTDR (Optical Time Domain Reflectometer) is used exclusively for optical fiber testing, not coaxial cables (option B). A multimeter can measure basic continuity and DC resistance but cannot perform the full range of tests needed for coaxial cable pass/fail certification (option D)."
+  },
+  {
+    "id": 743,
+    "test": 12,
+    "testName": "Field Testing Structured Cabling",
+    "chapter": "Field Testing Structured Cabling",
+    "q": "What does an Optical Time Domain Reflectometer (OTDR) measure?",
+    "o": [
+      "Cable interference and signal strength",
+      "Power loss, length, and attenuation in optical fibers",
+      "Electrical continuity in coaxial cables",
+      "Connector insulation resistance"
+    ],
+    "a": 1,
+    "w": "An OTDR measures optical fiber characteristics including power loss at connectors and splices, total fiber length, and attenuation per unit length by analyzing backscattered light pulses sent into the fiber. Cable interference and signal strength are measured by spectrum analyzers and signal analyzers, not OTDRs (option A). OTDRs are for optical fiber only and cannot measure electrical continuity in coaxial cables (option C). Insulation resistance is an electrical measurement performed with specialized instruments, not an OTDR (option D)."
+  },
+  {
+    "id": 744,
+    "test": 12,
+    "testName": "Field Testing Structured Cabling",
+    "chapter": "Field Testing Structured Cabling",
+    "q": "What is the formula for calculating link attenuation in optical fiber?",
+    "o": [
+      "Cable attenuation = total dB x cable length",
+      "Link attenuation = cable attenuation + connector attenuation + splice attenuation",
+      "Attenuation = number of splices x 0.75 dB",
+      "Attenuation = worst-case power x total length"
+    ],
+    "a": 1,
+    "w": "Total link attenuation equals the sum of cable attenuation (dB/km x length), connector insertion losses (dB per connector), and splice losses (dB per splice), providing the total optical power budget consumed by the link. Cable attenuation alone (option A) does not account for connector and splice losses, making it an incomplete link loss calculation. Multiplying splices by 0.75 dB (option C) only accounts for splice losses and ignores cable and connector attenuation. Worst-case power x total length (option D) does not correspond to a recognized optical link loss calculation formula."
+  },
+  {
+    "id": 745,
+    "test": 12,
+    "testName": "Field Testing Structured Cabling",
+    "chapter": "Field Testing Structured Cabling",
+    "q": "Why does the OTDR typically underestimate the loss of connectors and splices?",
+    "o": [
+      "It uses an overfilled launch cord",
+      "It requires access to both ends of the fiber",
+      "It might have an underfilled launch",
+      "It assumes zero loss in splices"
+    ],
+    "a": 2,
+    "w": "An underfilled launch condition, where fewer modes are launched than the fiber supports, causes the OTDR to underestimate connector and splice losses because the reference power level does not account for the full modal power that would be attenuated at the connection point. An overfilled launch cord introduces more modes than the fiber can carry, which would cause the OTDR to overestimate losses, not underestimate (option A). Requiring access to both ends is a limitation of insertion loss testing, not a reason for OTDR measurement inaccuracy (option B). OTDRs analyze backscatter signatures at connections rather than assuming zero loss (option D)."
   }
 ]

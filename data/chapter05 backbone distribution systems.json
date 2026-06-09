@@ -5,7 +5,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What is the other name for the main cross-connect (MC/CD) in a backbone distribution system?",
-    "o": ["Building distributor", "Floor distributor", "Campus distributor", "Zone distributor"],
+    "o": [
+      "Building distributor",
+      "Floor distributor",
+      "Campus distributor",
+      "Zone distributor"
+    ],
     "a": 2,
     "w": "The main cross-connect (MC/CD) is also called a campus distributor, as it connects entrance cables, first-level backbone cables, and equipment cables at the top of the distribution hierarchy. The building distributor is the name for the intermediate cross-connect (IC). The floor distributor is the name for the horizontal cross-connect (HC). Zone distributor is a data center term, not the standard backbone hierarchy name."
   },
@@ -15,7 +20,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What is the maximum length for balanced twisted-pair backbone cables between network equipment?",
-    "o": ["50 m (164 ft)", "75 m (246 ft)", "90 m (295 ft)", "100 m (328 ft)"],
+    "o": [
+      "50 m (164 ft)",
+      "75 m (246 ft)",
+      "90 m (295 ft)",
+      "100 m (328 ft)"
+    ],
     "a": 3,
     "w": "The maximum length for balanced twisted-pair backbone cables between network equipment is 100 m (328 ft). 50 m and 75 m are below the maximum and would unnecessarily restrict design flexibility. 90 m is the maximum for permanent horizontal links, not backbone cables. The 100 m maximum applies to backbone twisted-pair channels."
   },
@@ -25,7 +35,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What standard specifies dispersion-shifted single-mode fiber for passive optical networks?",
-    "o": ["ITU-T G.652", "ITU-T G.653", "ITU-T G.654", "ITU-T G.655"],
+    "o": [
+      "ITU-T G.652",
+      "ITU-T G.653",
+      "ITU-T G.654",
+      "ITU-T G.655"
+    ],
     "a": 1,
     "w": "ITU-T G.653 specifies dispersion-shifted single-mode fiber for passive optical networks, where dispersion is minimized at 1550 nm. ITU-T G.652 specifies standard single-mode fiber with zero dispersion near 1310 nm. ITU-T G.654 specifies low-loss single-mode fiber for long-haul applications. ITU-T G.655 specifies non-zero dispersion-shifted single-mode fiber used for submarine and long-haul terrestrial applications."
   },
@@ -35,7 +50,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What is the curb height recommended for slots used in backbone distribution systems?",
-    "o": ["10 mm (0.4 in)", "15 mm (0.6 in)", "25 mm (1 in)", "50 mm (2 in)"],
+    "o": [
+      "10 mm (0.4 in)",
+      "15 mm (0.6 in)",
+      "25 mm (1 in)",
+      "50 mm (2 in)"
+    ],
     "a": 2,
     "w": "Slots used in backbone systems should have a 25 mm (1 in) high curb to contain cables and prevent them from migrating out of the slot opening. 10 mm and 15 mm curbs would be too low to retain cable bundles. 50 mm would create a curb high enough to cause a tripping hazard and impede cable installation."
   },
@@ -45,7 +65,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "How high above floor level should sleeves used in backbone systems extend?",
-    "o": ["Flush with the floor", "13 mm (0.5 in)", "25 mm (1 in)", "50 mm (2 in)"],
+    "o": [
+      "Flush with the floor",
+      "13 mm (0.5 in)",
+      "25 mm (1 in)",
+      "50 mm (2 in)"
+    ],
     "a": 2,
     "w": "Sleeves used in backbone systems should extend 25 mm (1 in) above floor level to prevent cables from being damaged by floor traffic and to allow proper cable management at the floor transition. Flush with the floor would leave cables vulnerable to foot traffic and floor cleaning equipment. 13 mm provides minimal protection. 50 mm would create an unnecessary trip hazard and obstruction."
   },
@@ -54,10 +79,15 @@
     "test": 5,
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
-    "q": "How many sleeves are required for a floor area of 1858 m² (20,000 ft²)?",
-    "o": ["3 sleeves", "5 sleeves", "7 sleeves", "10 sleeves"],
+    "q": "How many sleeves are required for a floor area of 1858 m\u00b2 (20,000 ft\u00b2)?",
+    "o": [
+      "3 sleeves",
+      "5 sleeves",
+      "7 sleeves",
+      "10 sleeves"
+    ],
     "a": 1,
-    "w": "5 sleeves are required for a floor area of 1858 m² (20,000 ft²). 3 sleeves would be insufficient for the backbone capacity needed at this floor area. 7 sleeves correspond to larger areas such as 9290 m² (100,000 ft²) or more. 10 sleeves would be excessive for a floor area of this size."
+    "w": "5 sleeves are required for a floor area of 1858 m\u00b2 (20,000 ft\u00b2). 3 sleeves would be insufficient for the backbone capacity needed at this floor area. 7 sleeves correspond to larger areas such as 9290 m\u00b2 (100,000 ft\u00b2) or more. 10 sleeves would be excessive for a floor area of this size."
   },
   {
     "id": 157,
@@ -65,7 +95,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What is the color coding for threads on Intermediate Metal Conduit (IMC) ends?",
-    "o": ["Red", "Yellow", "Green", "Blue"],
+    "o": [
+      "Red",
+      "Yellow",
+      "Green",
+      "Blue"
+    ],
     "a": 1,
     "w": "Yellow is the industry-standard color for threads on Intermediate Metal Conduit (IMC) ends. Red is the color for Rigid Metal Conduit (RMC) threads. Green and blue are not standard conduit thread color codes recognized in the industry."
   },
@@ -75,7 +110,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What is the recommended multimode optical fiber type for backbone cabling?",
-    "o": ["OM1", "OM2", "OM3", "OM4 or higher"],
+    "o": [
+      "OM1",
+      "OM2",
+      "OM3",
+      "OM4 or higher"
+    ],
     "a": 3,
     "w": "The recommended multimode optical fiber for backbone cabling is OM4 or higher to support current and emerging high-speed applications. OM1 and OM2 are legacy fiber types not recommended for new backbone installations due to limited bandwidth. OM3 is acceptable but OM4 or higher is the recommendation to future-proof the backbone."
   },
@@ -85,7 +125,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What is the maximum number of cross-connection levels permitted in a backbone distribution system?",
-    "o": ["One level", "Two levels", "Three levels", "Four levels"],
+    "o": [
+      "One level",
+      "Two levels",
+      "Three levels",
+      "Four levels"
+    ],
     "a": 1,
     "w": "Backbone systems should have no more than two levels of cross-connections to minimize signal loss and latency. One level would be too limiting for buildings with multiple floors requiring intermediate cross-connects. Three or four levels would add excessive signal degradation and complexity to the backbone infrastructure."
   },
@@ -95,7 +140,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What is the minimum number of subscribers an OLT port supports in an EPON using passive optical splitters?",
-    "o": ["8 subscribers", "12 subscribers", "16 subscribers", "32 subscribers"],
+    "o": [
+      "8 subscribers",
+      "12 subscribers",
+      "16 subscribers",
+      "32 subscribers"
+    ],
     "a": 2,
     "w": "The OLT (Optical Line Terminal) in an EPON supports a minimum of 16 subscribers per port using passive optical splitters. 8 subscribers represents half the minimum specified by the standard. 12 is not a standard EPON splitter ratio. 32 subscribers is the typical maximum ratio in PON systems, not the minimum per port."
   },
@@ -105,7 +155,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What type of conduit is the heaviest and thickest-walled steel conduit?",
-    "o": ["Electrical Metallic Tubing (EMT)", "Intermediate Metal Conduit (IMC)", "Rigid Metal Conduit (RMC)", "Flexible Metal Conduit (FMC)"],
+    "o": [
+      "Electrical Metallic Tubing (EMT)",
+      "Intermediate Metal Conduit (IMC)",
+      "Rigid Metal Conduit (RMC)",
+      "Flexible Metal Conduit (FMC)"
+    ],
     "a": 2,
     "w": "Rigid Metal Conduit (RMC) is the heaviest and thickest-walled steel conduit, providing the greatest mechanical protection for cables. EMT is thin-walled and lightweight, not the heaviest. IMC is intermediate in wall thickness between EMT and RMC. Flexible Metal Conduit is used for connections to vibrating equipment and is not a heavy-walled conduit."
   },
@@ -115,7 +170,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What is the role of the Optical Network Unit (ONU) in an EPON?",
-    "o": ["Aggregates upstream traffic from all subscribers", "Connects the service provider's fiber to the subscriber's premises", "Manages VLAN assignments for each subscriber", "Provides power to passive optical splitters"],
+    "o": [
+      "Aggregates upstream traffic from all subscribers",
+      "Connects the service provider's fiber to the subscriber's premises",
+      "Manages VLAN assignments for each subscriber",
+      "Provides power to passive optical splitters"
+    ],
     "a": 1,
     "w": "The ONU (Optical Network Unit) connects the service provider's fiber to the subscriber's premises, acting as the customer-side termination point in an EPON. The OLT aggregates upstream traffic from all subscribers. VLAN management is an IP-layer function, not an ONU-specific role. Passive optical splitters are unpowered by definition and do not require power from any device."
   },
@@ -125,7 +185,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What does the entrance facility (EF) provide in a backbone distribution system?",
-    "o": ["Cross-connection between horizontal and backbone cabling", "Public/private network service cable access to a building", "Housing for the main network switches", "Distribution of power to telecommunications spaces"],
+    "o": [
+      "Cross-connection between horizontal and backbone cabling",
+      "Public/private network service cable access to a building",
+      "Housing for the main network switches",
+      "Distribution of power to telecommunications spaces"
+    ],
     "a": 1,
     "w": "The entrance facility (EF) provides public/private network service cable access to a building, acting as the interface between external service provider cables and the internal backbone. Horizontal-to-backbone cross-connection is performed at the HC/FD. Main network switches are housed in equipment rooms, not the entrance facility. Power distribution to telecommunications spaces is managed by electrical panels."
   },
@@ -135,7 +200,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What does a hierarchical star campus backbone use between the MC (CD) and IC (BD)?",
-    "o": ["Direct UTP connections only", "Interbuilding or intrabuilding links", "Wireless RF backhaul", "Coaxial backbone cables"],
+    "o": [
+      "Direct UTP connections only",
+      "Interbuilding or intrabuilding links",
+      "Wireless RF backhaul",
+      "Coaxial backbone cables"
+    ],
     "a": 1,
     "w": "A hierarchical star campus backbone uses interbuilding or intrabuilding links between the MC (CD) and IC (BD) to form the structural backbone hierarchy. Direct UTP connections may exist but the defining characteristic is the hierarchical star structure with these links. Wireless RF backhaul is not a structured cabling backbone element. Coaxial backbone cables are not used in modern hierarchical star campus backbones."
   },
@@ -145,7 +215,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What Category backbone cable supports frequencies up to 100 MHz?",
-    "o": ["Category 3", "Category 5e / Class D", "Category 6A / Class EA", "Category 7A / Class FA"],
+    "o": [
+      "Category 3",
+      "Category 5e / Class D",
+      "Category 6A / Class EA",
+      "Category 7A / Class FA"
+    ],
     "a": 1,
     "w": "Category 5e/Class D twisted-pair cables support frequencies up to 100 MHz for backbone applications. Category 3 multi-pair backbone cable supports only voice and low-speed data. Category 6A/Class EA supports up to 500 MHz, more than the 100 MHz specification. Category 7A/Class FA supports up to 1000 MHz, far exceeding the 100 MHz band."
   },
@@ -155,7 +230,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What does a clustered star configuration improve in a backbone network?",
-    "o": ["Reduces the number of optical fiber strands needed", "Improves network management efficiency through equipment concentration", "Increases the maximum backbone cable length", "Eliminates the need for intermediate cross-connects"],
+    "o": [
+      "Reduces the number of optical fiber strands needed",
+      "Improves network management efficiency through equipment concentration",
+      "Increases the maximum backbone cable length",
+      "Eliminates the need for intermediate cross-connects"
+    ],
     "a": 1,
     "w": "In clustered star configurations, equipment concentration improves network management efficiency by centralizing active equipment and simplifying administration. Optical fiber strand count is not directly affected by topology. Maximum backbone cable length is a physical parameter unrelated to topology choice. Intermediate cross-connects may still be required even with a clustered star topology."
   },
@@ -165,7 +245,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "Which ITU-T standard specifies fiber used for submarine and long-haul terrestrial applications?",
-    "o": ["ITU-T G.652", "ITU-T G.653", "ITU-T G.654", "ITU-T G.655"],
+    "o": [
+      "ITU-T G.652",
+      "ITU-T G.653",
+      "ITU-T G.654",
+      "ITU-T G.655"
+    ],
     "a": 3,
     "w": "ITU-T G.655 specifies non-zero dispersion-shifted single-mode fiber used for submarine and long-haul terrestrial applications to manage chromatic dispersion in DWDM systems. ITU-T G.652 is standard single-mode fiber for general use. ITU-T G.653 is dispersion-shifted fiber for PON applications. ITU-T G.654 specifies low-loss large-effective-area fiber, not specifically non-zero dispersion-shifted fiber."
   },
@@ -175,7 +260,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What minimum depth perpendicular to the wall is required for backbone slots?",
-    "o": ["75 mm (3 in)", "100 mm (4 in)", "150 mm (6 in)", "200 mm (8 in)"],
+    "o": [
+      "75 mm (3 in)",
+      "100 mm (4 in)",
+      "150 mm (6 in)",
+      "200 mm (8 in)"
+    ],
     "a": 2,
     "w": "Slots should be flush against the wall with a minimum depth of 150 mm (6 in) perpendicular to the wall to accommodate the cable bundles that pass through them. 75 mm and 100 mm are insufficient to accommodate the volume of backbone cables in a multi-story building. 200 mm would provide more than needed and is not the standard minimum."
   },
@@ -185,7 +275,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "When are direct connections between HCs/FDs permitted in a backbone system?",
-    "o": ["Always, as they reduce backbone complexity", "Never, as they violate star topology", "Only in specific circumstances", "Only when optical fiber is used"],
+    "o": [
+      "Always, as they reduce backbone complexity",
+      "Never, as they violate star topology",
+      "Only in specific circumstances",
+      "Only when optical fiber is used"
+    ],
     "a": 2,
     "w": "Direct connections between HCs/FDs should only be used in specific circumstances, such as when implementing bus or ring logical topologies that require these additional connections beyond the standard star. They are not universally permitted, as excessive horizontal cross-connects complicate administration. They are not completely prohibited, as some applications require them. The cabling type is not the determining factor."
   },
@@ -195,7 +290,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "In telephony terminology, what are the 'branches' of a tree and branch topology called?",
-    "o": ["Feeder cables", "Distribution cables", "Trunk cables", "Drop cables"],
+    "o": [
+      "Feeder cables",
+      "Distribution cables",
+      "Trunk cables",
+      "Drop cables"
+    ],
     "a": 1,
     "w": "In telephony tree and branch topology, the branches are called distribution cables, which carry signals from the central feeder to individual service points. Feeder cables are the main trunk segments from the central office, not branches. Trunk cables are a general term for main backbone cabling. Drop cables connect distribution cables to individual customer premises."
   },
@@ -205,7 +305,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "Category 3 multi-pair backbone cable is available in configurations ranging from how many pairs?",
-    "o": ["2 to 100 pairs", "4 to 2700 pairs", "25 to 600 pairs", "50 to 1200 pairs"],
+    "o": [
+      "2 to 100 pairs",
+      "4 to 2700 pairs",
+      "25 to 600 pairs",
+      "50 to 1200 pairs"
+    ],
     "a": 1,
     "w": "Category 3 multi-pair backbone cable is available in configurations from 4 to 2700 pairs, providing scalability for everything from small buildings to large campus distribution systems. 2 to 100 pairs would represent only the smallest installations. 25 to 600 pairs does not reflect the full range of available configurations. 50 to 1200 pairs understates the available maximum pair count."
   },
@@ -215,7 +320,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "Which backbone design introduces single points of failure by definition?",
-    "o": ["Full mesh topology", "Star topology for campus backbones", "Ring topology", "Partial mesh topology"],
+    "o": [
+      "Full mesh topology",
+      "Star topology for campus backbones",
+      "Ring topology",
+      "Partial mesh topology"
+    ],
     "a": 1,
     "w": "Using a star topology for campus backbones introduces single points of failure at the central node, because all paths converge at one point. Full mesh topology is the gold standard for eliminating single points of failure. Ring topology provides redundancy if two directions are available. Partial mesh reduces but does not necessarily eliminate single points of failure."
   },
@@ -225,7 +335,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What is the Class E twisted-pair cable frequency specification?",
-    "o": ["100 MHz", "250 MHz", "500 MHz", "1000 MHz"],
+    "o": [
+      "100 MHz",
+      "250 MHz",
+      "500 MHz",
+      "1000 MHz"
+    ],
     "a": 1,
     "w": "Class E twisted-pair cables support frequencies up to 250 MHz. 100 MHz is the specification for Class D (Category 5e). 500 MHz corresponds to Class EA (Category 6A). 1000 MHz is the specification for Class FA (Category 7A)."
   },
@@ -235,7 +350,12 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "For what purpose is single-mode optical fiber suitable in backbone cabling?",
-    "o": ["Only digital transmission", "Only analog transmission", "Both analog and digital transmission", "Neither; multimode is required for backbones"],
+    "o": [
+      "Only digital transmission",
+      "Only analog transmission",
+      "Both analog and digital transmission",
+      "Neither; multimode is required for backbones"
+    ],
     "a": 2,
     "w": "Single-mode optical fiber is suitable for both analog and digital transmission in backbone cabling, making it the most versatile fiber type for mixed-use backbones. It is not restricted to digital only; CATV systems use analog transmission over single-mode fiber. Similarly, analog security camera feeds can be transported over single-mode. Multimode is preferred for short-distance premises but is not the only option for backbones."
   },
@@ -245,8 +365,313 @@
     "testName": "Backbone Distribution Systems",
     "chapter": "Backbone Distribution Systems",
     "q": "What backbone topology offers the most design options for ICT designers?",
-    "o": ["Ring topology", "Bus topology", "Star topology", "Campus backbone cabling"],
+    "o": [
+      "Ring topology",
+      "Bus topology",
+      "Star topology",
+      "Campus backbone cabling"
+    ],
     "a": 3,
     "w": "Campus backbone cabling offers the most design options for ICT designers because it spans multiple buildings and allows integration of diverse topologies, technologies, and media types. Ring topology is primarily used for specific network redundancy scenarios. Bus topology is a legacy arrangement with limited design flexibility. Star topology within a single building is more constrained than campus-wide backbone design options."
+  },
+  {
+    "id": 661,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "What is the primary purpose of backbone distribution systems?",
+    "o": [
+      "To link devices within a single room",
+      "To provide connectivity between floors and facilities",
+      "To replace horizontal cabling",
+      "To distribute power throughout a building"
+    ],
+    "a": 1,
+    "w": "Backbone distribution systems provide connectivity between floors within a building and between buildings across a campus, forming the high-capacity core of the cabling infrastructure. Connecting devices within a single room is the function of horizontal cabling, not backbone systems (option A). Backbone cabling complements horizontal cabling and does not replace it (option C). Power distribution is a separate building system handled by electrical infrastructure, not telecommunications backbone (option D)."
+  },
+  {
+    "id": 662,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "Which topology is most widely implemented in backbone distribution systems?",
+    "o": [
+      "Ring",
+      "Bus",
+      "Hierarchical star",
+      "Tree"
+    ],
+    "a": 2,
+    "w": "The hierarchical star topology is most widely implemented in backbone distribution systems because it provides clear hierarchy, easy troubleshooting, and efficient cable management from the Main Cross-Connect through Intermediate Cross-Connects to Horizontal Cross-Connects. Ring topology is used in some campus backbones for redundancy but is not the most widely implemented backbone topology (option A). Bus topology is obsolete for modern backbone implementations due to single points of failure and scalability limitations (option B). Tree topology is a variation of hierarchical star but the term hierarchical star is the standard designation (option D)."
+  },
+  {
+    "id": 663,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "In a first-level star topology, what is the connection relationship?",
+    "o": [
+      "Direct connection between MC and IC",
+      "IC connected to multiple other ICs",
+      "Logical ring connections",
+      "Multiple cross-connections"
+    ],
+    "a": 0,
+    "w": "In a first-level star topology, the Main Cross-Connect (MC) connects directly to each Intermediate Cross-Connect (IC), forming a simple star pattern with MC at the center. IC connecting to multiple other ICs describes a second-level or multi-tier star topology, not a first-level star (option B). Logical ring connections describe a ring topology, not a star topology (option C). Multiple cross-connections between the same points are limited to two cross-connections maximum in backbone standards (option D)."
+  },
+  {
+    "id": 664,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "What is the maximum number of cross-connections allowed in a backbone topology?",
+    "o": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "a": 1,
+    "w": "ANSI/TIA-568 limits backbone topologies to a maximum of two cross-connections (two hierarchical levels) between any two end points to control signal attenuation and maintain performance. One cross-connection is the minimum hierarchy but does not represent the maximum allowed (option A). Three cross-connections would exceed the standard limit and introduce excessive signal loss (option C). Four cross-connections far exceeds the standard maximum and would significantly degrade signal performance (option D)."
+  },
+  {
+    "id": 665,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "What is a common topology used in campus backbones to enhance redundancy?",
+    "o": [
+      "Star",
+      "Ring",
+      "Bus",
+      "Tree"
+    ],
+    "a": 1,
+    "w": "Ring topology is commonly used in campus backbones to enhance redundancy because it provides two paths between any two points, so a single fiber cut does not interrupt service. Star topology is the most common backbone topology but has a single point of failure at the center node (option A). Bus topology is obsolete for modern backbone implementations and provides no redundancy (option C). Tree topology is hierarchical and also has single points of failure at each branch node (option D)."
+  },
+  {
+    "id": 666,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "What is a disadvantage of the star topology?",
+    "o": [
+      "Complex maintenance",
+      "Increased cost and single point of failure",
+      "Lack of flexibility",
+      "Low bandwidth"
+    ],
+    "a": 1,
+    "w": "The star topology has the disadvantage of increased cost due to all cables converging at a central point and creates a single point of failure where the central device failure takes down the entire star. Star topology is actually simpler to maintain than ring or mesh topologies, not more complex (option A). Star topology is highly flexible and easy to expand by adding new branches (option C). Star topology supports high bandwidth as each branch has a dedicated connection to the center (option D)."
+  },
+  {
+    "id": 667,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "Which backbone media is best for immunity to EMI?",
+    "o": [
+      "100-Ohm balanced twisted-pair cables",
+      "Multimode fiber optic cables",
+      "Single-mode fiber optic cables",
+      "Copper coaxial cables"
+    ],
+    "a": 2,
+    "w": "Single-mode fiber optic cables provide complete immunity to electromagnetic interference because they transmit light signals rather than electrical signals, making them the best choice for EMI-sensitive environments. Balanced twisted-pair cables have some EMI immunity but are still susceptible to strong electromagnetic fields (option A). Multimode fiber optic cables also provide EMI immunity, but single-mode is specified here as the best backbone media (option B). Copper coaxial cables are susceptible to EMI and require shielding to minimize interference (option D)."
+  },
+  {
+    "id": 668,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "Which of the following is a feature of rigid metal conduits (RMC)?",
+    "o": [
+      "Light and non-threaded",
+      "Interchangeable with IMC",
+      "Threaded and suitable for all environments",
+      "Less resistant to corrosion"
+    ],
+    "a": 2,
+    "w": "Rigid Metal Conduit (RMC) is threaded and suitable for all environments including wet, corrosive, and hazardous locations, making it the most robust conduit option. RMC is the heaviest conduit type, not light (option A). RMC is not interchangeable with IMC because they have different wall thicknesses and fittings (option B). RMC has excellent corrosion resistance, especially galvanized versions, not less resistance (option D)."
+  },
+  {
+    "id": 669,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "What is the recommended spacing for vertical cable ties in backbone cabling?",
+    "o": [
+      "0.5 meters",
+      "1 meter",
+      "1.5 meters",
+      "2 meters"
+    ],
+    "a": 1,
+    "w": "Vertical backbone cables should be supported with cable ties or straps at 1-meter intervals to prevent cable sag, maintain bend radius requirements, and protect cable integrity over long vertical runs. 0.5-meter spacing would use excessive hardware and may overtighten cables if installed incorrectly (option A). 1.5-meter intervals are too widely spaced and may allow cable sag, especially for heavy cable bundles (option C). 2-meter intervals are insufficient support for vertical cable runs and could result in cable damage over time (option D)."
+  },
+  {
+    "id": 670,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "What does Ethernet in the First Mile (EFM) refer to?",
+    "o": [
+      "The backbone between floors",
+      "The network between the access provider and the subscriber",
+      "The horizontal cabling within a building",
+      "The connection between devices in a room"
+    ],
+    "a": 1,
+    "w": "Ethernet in the First Mile (EFM), defined in IEEE 802.3ah, refers to the network connection between the access provider's infrastructure and the subscriber's premises, also known as the last mile connection. The backbone between floors is an intra-building connection, not a service provider connection (option A). Horizontal cabling within a building is covered by separate standards like ANSI/TIA-568, not EFM (option C). Connections between devices in a room fall under local area network standards, not EFM (option D)."
+  },
+  {
+    "id": 671,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "What type of network is a Passive Optical Network (PON)?",
+    "o": [
+      "Point-to-point",
+      "Star",
+      "Point-to-multipoint",
+      "Ring"
+    ],
+    "a": 2,
+    "w": "A Passive Optical Network (PON) is a point-to-multipoint network where a single optical fiber from the central office serves multiple subscribers through passive optical splitters. Point-to-point networks require a dedicated fiber between each pair of endpoints, which is more expensive than PON (option A). Star topology centrally connects all nodes but uses active equipment at the center, unlike the passive splitters in PON (option B). Ring topology connects nodes in a closed loop, which is not the architecture used in PON systems (option D)."
+  },
+  {
+    "id": 672,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "What type of fiber optic cable is used in a PON?",
+    "o": [
+      "Multimode",
+      "Single-mode",
+      "Hybrid fiber-coaxial",
+      "Plastic fiber"
+    ],
+    "a": 1,
+    "w": "Single-mode fiber optic cable is used in PON systems because it supports the long transmission distances required between the central office and subscriber premises, typically up to 20 km. Multimode fiber has higher attenuation and limited reach, making it unsuitable for the long distances in PON deployments (option A). Hybrid fiber-coaxial (HFC) is a different network architecture used by cable TV providers, not PON (option C). Plastic fiber (POF) has very high attenuation and is only suitable for very short distance applications, not PON deployments (option D)."
+  },
+  {
+    "id": 673,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "How many premises can a PON typically serve with passive optical splitters?",
+    "o": [
+      "8\u201316",
+      "16\u201364",
+      "32\u2013128",
+      "128\u2013256"
+    ],
+    "a": 2,
+    "w": "A typical PON can serve 32 to 128 premises using passive optical splitters that divide the optical signal from a single fiber into multiple paths without requiring active electronic amplification. 8-16 premises underutilizes the capacity of PON systems which are designed for much higher subscriber counts (option A). 16-64 premises is within range but does not represent the typical full capacity of modern PON deployments (option B). 128-256 premises exceeds the typical splitting ratio capacity of standard PON splitters (option D)."
+  },
+  {
+    "id": 674,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "Which connector type is required for cabling beyond the Optical Line Terminal (OLT) in a PON?",
+    "o": [
+      "SC",
+      "LC",
+      "ST",
+      "APC"
+    ],
+    "a": 3,
+    "w": "Angle-polished connectors (APC) are required for cabling beyond the OLT in PON systems because they reduce back-reflection to levels below -65 dB, which is critical for the sensitive downstream and upstream signal separation in PON systems. SC connectors are commonly used in telecommunications but standard SC connectors do not meet the low back-reflection requirements of PON systems (option A). LC connectors are small form factor connectors widely used in data centers but not specified for PON beyond-OLT applications (option B). ST connectors use a bayonet-style coupling and are an older connector type not specified for modern PON deployments (option C)."
+  },
+  {
+    "id": 675,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "What is the purpose of wave division multiplexing (WDM) in a PON?",
+    "o": [
+      "Increase the number of connectors",
+      "Provide immunity to EMI",
+      "Increase fiber capacity",
+      "Enable cost savings"
+    ],
+    "a": 2,
+    "w": "Wave Division Multiplexing (WDM) increases fiber capacity by transmitting multiple wavelengths of light simultaneously on a single fiber, allowing bidirectional communication and additional services over the same infrastructure. WDM does not affect connector counts or types in the system (option A). Fiber optic systems are inherently immune to EMI, and WDM does not provide additional EMI immunity (option B). While WDM can enable cost savings, the primary technical purpose is to increase fiber capacity by multiplexing wavelengths (option D)."
+  },
+  {
+    "id": 676,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "Where is the Optical Line Terminal (OLT) located in a PON?",
+    "o": [
+      "Inside the subscriber's premises",
+      "In the central office",
+      "At the splitter location",
+      "Along the fiber backbone"
+    ],
+    "a": 1,
+    "w": "The Optical Line Terminal (OLT) is located in the service provider's central office, where it manages all optical transmissions to and from multiple subscriber Optical Network Units (ONUs). The Optical Network Unit (ONU) or ONT is located at the subscriber's premises, not the OLT (option A). The splitter is a passive component located between the OLT and subscribers, not where the OLT resides (option C). The OLT is a central office termination device, not a distributed component along the fiber backbone (option D)."
+  },
+  {
+    "id": 677,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "Which of the following is a component of backbone distribution systems?",
+    "o": [
+      "Transceivers",
+      "Cable pathways",
+      "Ethernet switches",
+      "Multimode splitters"
+    ],
+    "a": 1,
+    "w": "Cable pathways, including conduits, cable trays, and sleeves, are essential physical infrastructure components of backbone distribution systems that route and protect backbone cables between telecommunications spaces. Transceivers are active electronic components that belong to the active equipment, not the backbone cabling infrastructure (option A). Ethernet switches are active network equipment, not passive backbone distribution components (option C). Multimode splitters are PON-specific components and are not general backbone distribution components (option D)."
+  },
+  {
+    "id": 678,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "How far should sleeves extend from the wall in internal pathways?",
+    "o": [
+      "10\u201315 mm",
+      "15\u201320 mm",
+      "25\u201377 mm",
+      "80\u2013100 mm"
+    ],
+    "a": 2,
+    "w": "Sleeves used in internal pathway penetrations should extend 25 to 77 mm (approximately 1 to 3 inches) from the wall surface to protect cables from sharp wall edges and facilitate proper firestopping installation. 10-15 mm is insufficient extension to properly protect cables from wall edges or accommodate firestopping materials (option A). 15-20 mm does not provide adequate extension for proper cable protection and firestopping (option B). 80-100 mm is an excessive sleeve extension that would protrude unnecessarily into the room space (option D)."
+  },
+  {
+    "id": 679,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "What should be the curb height for slots in internal pathways?",
+    "o": [
+      "10 mm",
+      "15 mm",
+      "25 mm",
+      "50 mm"
+    ],
+    "a": 2,
+    "w": "Slots in internal pathways (floor penetrations) should have a minimum curb height of 25 mm (approximately 1 inch) to prevent water, debris, and cleaning fluids from entering the pathway and damaging cables. 10 mm is insufficient curb height to effectively prevent water and debris from entering the pathway (option A). 15 mm provides limited protection and does not meet the recommended minimum curb height (option B). 50 mm is more than necessary for a pathway curb and would create an unnecessary tripping hazard (option D)."
+  },
+  {
+    "id": 680,
+    "test": 5,
+    "testName": "Backbone Distribution Systems",
+    "chapter": "Backbone Distribution Systems",
+    "q": "How much should the slot area increase for every 40,000 ft\u00b2 of usable floor space?",
+    "o": [
+      "6 inches",
+      "8 inches",
+      "10 inches",
+      "12 inches"
+    ],
+    "a": 3,
+    "w": "For every additional 40,000 ft\u00b2 of usable floor space, backbone pathway slot areas should increase by 12 inches (approximately 30 cm) to accommodate the growing number of cables required to serve larger floor areas. 6-inch increments would undersize the pathway slots for large floor areas with high cable densities (option A). 8-inch increments are insufficient to accommodate all backbone cables needed for 40,000 ft\u00b2 of floor space (option B). 10-inch increments fall short of the standard recommendation for pathway slot size increases (option C)."
   }
 ]

@@ -5,7 +5,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "Within what distance of the connecting hardware must labels be placed on telecommunications infrastructure elements?",
-    "o": ["100 mm (4 in)", "150 mm (6 in)", "300 mm (12 in)", "600 mm (24 in)"],
+    "o": [
+      "100 mm (4 in)",
+      "150 mm (6 in)",
+      "300 mm (12 in)",
+      "600 mm (24 in)"
+    ],
     "a": 2,
     "w": "All telecommunications infrastructure elements and equipment components should be labeled within 300 mm (12 in) of the connecting hardware on both the user and cabling sides. 100 mm is too restrictive for all labeling scenarios. 150 mm is below the standard maximum distance. 600 mm would allow labels to be placed far from the hardware, complicating identification."
   },
@@ -15,7 +20,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What is the minimum recommended record-keeping system for telecommunications administration?",
-    "o": ["Paper-based log books", "Spreadsheet software", "Dedicated database software", "Automated infrastructure management (AIM) system"],
+    "o": [
+      "Paper-based log books",
+      "Spreadsheet software",
+      "Dedicated database software",
+      "Automated infrastructure management (AIM) system"
+    ],
     "a": 1,
     "w": "The minimum recommended record-keeping system is spreadsheet software, providing organized, searchable records without requiring specialized software investment. Paper-based logs are less organized and harder to search or audit. Dedicated database software exceeds the minimum and may be appropriate for larger systems. AIM systems are the most advanced option, well above the minimum recommendation."
   },
@@ -25,7 +35,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "Which administration class is recommended for premises served by a single equipment room?",
-    "o": ["Class 1", "Class 2", "Class 3", "Class 4"],
+    "o": [
+      "Class 1",
+      "Class 2",
+      "Class 3",
+      "Class 4"
+    ],
     "a": 0,
     "w": "Class 1 is recommended for premises served by a single equipment room, representing the simplest administration system that administers only the ER. Class 2 is for tenants served by one or more telecommunications spaces with mandatory firestop records. Class 3 is for multi-building campuses. Class 4 is recommended for multi-site system environments."
   },
@@ -35,7 +50,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What is mandatory in Class 2 administration systems?",
-    "o": ["Pathway records", "Firestop location records", "BAS device records", "Cooling capacity data"],
+    "o": [
+      "Pathway records",
+      "Firestop location records",
+      "BAS device records",
+      "Cooling capacity data"
+    ],
     "a": 1,
     "w": "Firestop location records are mandatory in Class 2 administration systems to ensure accurate documentation of all firestopping locations for inspection and maintenance. Pathway administration is optional in Class 2. BAS device records are not specifically mandated at Class 2. Cooling capacity data is optional information for space records."
   },
@@ -45,7 +65,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What color-coded cross-connect field is used for horizontal cabling?",
-    "o": ["White", "Blue", "Gray", "Brown"],
+    "o": [
+      "White",
+      "Blue",
+      "Gray",
+      "Brown"
+    ],
     "a": 1,
     "w": "Blue is the designated cross-connect field color for horizontal cabling. White is used for first-level backbone cabling. Gray is used for second-level backbone cabling. Brown is used for campus backbone cabling."
   },
@@ -55,7 +80,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What color designates the demarcation point in cross-connect field color coding?",
-    "o": ["Purple", "Yellow", "Orange", "Red"],
+    "o": [
+      "Purple",
+      "Yellow",
+      "Orange",
+      "Red"
+    ],
     "a": 2,
     "w": "Orange designates the demarcation point in cross-connect field color coding. Purple is used for common equipment. Yellow is used for auxiliary circuits in some systems. Red is used for key telephone system connections in some standards."
   },
@@ -65,7 +95,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What color identifies common equipment in cross-connect field color coding?",
-    "o": ["Blue", "Gray", "Orange", "Purple"],
+    "o": [
+      "Blue",
+      "Gray",
+      "Orange",
+      "Purple"
+    ],
     "a": 3,
     "w": "Purple is used for common equipment in the cross-connect field color coding scheme. Blue identifies horizontal cabling. Gray identifies second-level backbone cabling. Orange identifies the demarcation point."
   },
@@ -75,7 +110,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What type of RFID tags are recommended for electronically tagging components in telecommunications administration?",
-    "o": ["Active RFID tags", "Passive RFID tags", "Semi-passive RFID tags", "Ultra-wideband RFID tags"],
+    "o": [
+      "Active RFID tags",
+      "Passive RFID tags",
+      "Semi-passive RFID tags",
+      "Ultra-wideband RFID tags"
+    ],
     "a": 1,
     "w": "Passive RFID tags are recommended for electronically tagging components in telecommunications administration because they require no battery and have an indefinite lifespan once installed. Active RFID tags require batteries and periodic replacement. Semi-passive tags have batteries only for sensor functions and are more complex than needed. Ultra-wideband RFID is used for real-time location, not component labeling."
   },
@@ -85,7 +125,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What standard specifies functional requirements for Automated Infrastructure Management (AIM) systems?",
-    "o": ["ISO/IEC 11801", "ANSI/TIA-568", "ISO/IEC 18598", "ANSI/TIA-607"],
+    "o": [
+      "ISO/IEC 11801",
+      "ANSI/TIA-568",
+      "ISO/IEC 18598",
+      "ANSI/TIA-607"
+    ],
     "a": 2,
     "w": "ISO/IEC 18598 specifies the functional requirements, system requirements, business benefits, and data exchange formats for AIM systems. ISO/IEC 11801 covers balanced cabling performance. ANSI/TIA-568 covers structured cabling standards. ANSI/TIA-607 covers telecommunications bonding and grounding."
   },
@@ -95,7 +140,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What required information must a Bonding Conductor administration record include?",
-    "o": ["Bond resistance measurement only", "Conductor size and type", "Date of installation and inspector name", "TBC routing path only"],
+    "o": [
+      "Bond resistance measurement only",
+      "Conductor size and type",
+      "Date of installation and inspector name",
+      "TBC routing path only"
+    ],
     "a": 1,
     "w": "A Bonding Conductor administration record requires information on conductor size and type. Bond resistance measurements are test results, not the primary required record content. Installation date and inspector name may be optional supplementary records. Routing path is spatial information that may be included but is not the specifically required data element."
   },
@@ -105,7 +155,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "Which administration record component requires linkage to both cable and space records?",
-    "o": ["Firestopping component", "Splice component", "Cord and jumper component", "Termination position component"],
+    "o": [
+      "Firestopping component",
+      "Splice component",
+      "Cord and jumper component",
+      "Termination position component"
+    ],
     "a": 1,
     "w": "The Splice component must link to both cable and space records because a splice exists physically in a space and electrically on a cable. The Firestopping component links to the pathway record only. Cords and jumpers require no cross-reference linkages. Termination positions link to cable records but do not necessarily require mandatory space linkages."
   },
@@ -115,7 +170,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What is the cross-connect field color for second-level backbone cabling?",
-    "o": ["Brown", "White", "Gray", "Orange"],
+    "o": [
+      "Brown",
+      "White",
+      "Gray",
+      "Orange"
+    ],
     "a": 2,
     "w": "Gray is used for second-level backbone cabling cross-connect fields. Brown is used for campus backbone cabling. White is used for first-level backbone cabling. Orange is used for the demarcation point."
   },
@@ -125,7 +185,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "Which administration class is recommended for multi-site system environments?",
-    "o": ["Class 1", "Class 2", "Class 3", "Class 4"],
+    "o": [
+      "Class 1",
+      "Class 2",
+      "Class 3",
+      "Class 4"
+    ],
     "a": 3,
     "w": "Class 4 is recommended for multi-site system environments where administration spans multiple locations. Class 1 is for single ER premises. Class 2 is for multi-space tenant environments. Class 3 is for multi-building campus environments, not multi-site systems."
   },
@@ -135,7 +200,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What type of floor plan coordinate system is recommended for large telecommunications spaces?",
-    "o": ["Alphanumeric grid coordinate system", "Sequential numbering system", "Color-coded zone system", "Radial distance system from central point"],
+    "o": [
+      "Alphanumeric grid coordinate system",
+      "Sequential numbering system",
+      "Color-coded zone system",
+      "Radial distance system from central point"
+    ],
     "a": 0,
     "w": "Grid coordinate systems are recommended for identifying floor plan locations in large telecommunications spaces, providing unique, unambiguous location references. Sequential numbering makes location interpretation difficult without a floor plan. Color-coded zones lack the granularity needed in large spaces. Radial distance systems are impractical for rectangular telecommunications spaces."
   },
@@ -145,7 +215,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What administration record is classified as optional under the Spaces component?",
-    "o": ["Telecommunications space identifier", "Cabinet dimensions", "Room floor plan", "Cooling capacity"],
+    "o": [
+      "Telecommunications space identifier",
+      "Cabinet dimensions",
+      "Room floor plan",
+      "Cooling capacity"
+    ],
     "a": 2,
     "w": "Room Floor Plan is an optional record under the Spaces component in the administration system. Telecommunications space identifier is a required field. Cabinet dimensions are associated with the Cabinet/Rack/Frame record category. Cooling capacity is specifically noted as optional information within the spaces administration record."
   },
@@ -155,7 +230,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What does the complexity of telecommunications infrastructure indicate about administration class selection?",
-    "o": ["More complex systems always use Class 1 for simplicity", "The number of telecommunications spaces indicates complexity and drives class selection", "Class is selected based only on building height", "Administration class depends on cable category, not space count"],
+    "o": [
+      "More complex systems always use Class 1 for simplicity",
+      "The number of telecommunications spaces indicates complexity and drives class selection",
+      "Class is selected based only on building height",
+      "Administration class depends on cable category, not space count"
+    ],
     "a": 1,
     "w": "The complexity of infrastructure can be indicated by the number of telecommunications spaces, which guides the selection of the appropriate administration class. Complex systems with multiple spaces require higher administration classes. Building height is not the determining factor for class selection. Cable category determines cabling performance, not administration complexity class."
   },
@@ -165,7 +245,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "For what record type does the Cabinet, Rack, Frame, or Wall Segment record require an identifier?",
-    "o": ["The cable type connected to it", "The cabinet identifier", "The floor level number", "The equipment manufacturer"],
+    "o": [
+      "The cable type connected to it",
+      "The cabinet identifier",
+      "The floor level number",
+      "The equipment manufacturer"
+    ],
     "a": 1,
     "w": "The Cabinet, Rack, Frame, or Wall Segment record in the Spaces and Pathways category requires the cabinet identifier as the required information. Cable type is tracked in cabling records, not cabinet records. Floor level information is spatial context, not the required identifier. Equipment manufacturer data is optional and falls under the Equipment Record."
   },
@@ -175,7 +260,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What optional record exists under the Bonding and Grounding category for the SBB component?",
-    "o": ["SBB manufacturer record", "EBC record (SBB component)", "TBC routing record", "SBG measurement record"],
+    "o": [
+      "SBB manufacturer record",
+      "EBC record (SBB component)",
+      "TBC routing record",
+      "SBG measurement record"
+    ],
     "a": 1,
     "w": "The EBC Record (SBB component in the Bonding and Grounding category) is listed as an optional record. SBB manufacturer records are not a defined optional record category. TBC routing records are part of the bonding conductor records. SBG measurement records are test data, not an administration record category."
   },
@@ -185,7 +275,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What purpose do color codes serve in cross-connect fields?",
-    "o": ["Indicate cable performance category", "Ensure quick identification of cable types and functions", "Identify the installation date", "Differentiate between copper and fiber cables"],
+    "o": [
+      "Indicate cable performance category",
+      "Ensure quick identification of cable types and functions",
+      "Identify the installation date",
+      "Differentiate between copper and fiber cables"
+    ],
     "a": 1,
     "w": "Color codes in cross-connect fields ensure quick identification of cable types and functions, reducing administration errors during patching. Cable performance category uses labeling, not color codes. Installation date is a separate record field. Copper and fiber cables are differentiated by physical appearance and hardware type, not cross-connect color codes."
   },
@@ -195,7 +290,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What cross-connect color identifies campus backbone cabling?",
-    "o": ["Gray", "White", "Brown", "Green"],
+    "o": [
+      "Gray",
+      "White",
+      "Brown",
+      "Green"
+    ],
     "a": 2,
     "w": "Brown is used for campus backbone cabling cross-connect fields. Gray identifies second-level backbone. White identifies first-level backbone. Green is not a standard cross-connect field color in BICSI/TIA administration color coding."
   },
@@ -205,7 +305,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What record linkage is required for the Firestopping Component in administration records?",
-    "o": ["Links to cable and space records only", "Links to pathway record only", "Links to the bonding and grounding record", "No linkage is required"],
+    "o": [
+      "Links to cable and space records only",
+      "Links to pathway record only",
+      "Links to the bonding and grounding record",
+      "No linkage is required"
+    ],
     "a": 1,
     "w": "The Firestopping component links to the pathway record only, because firestopping is associated with the physical pathway penetration. It does not link to cable records because the same firestop may serve multiple cables. It does not link to bonding records. Firestopping records have at least one required linkage, contrary to option D."
   },
@@ -215,7 +320,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What do telecommunications administration systems primarily assist with?",
-    "o": ["Managing active equipment firmware updates", "Assigning cables, pairs, fibers, patch panels, and ports", "Scheduling maintenance windows for equipment", "Tracking network traffic and bandwidth utilization"],
+    "o": [
+      "Managing active equipment firmware updates",
+      "Assigning cables, pairs, fibers, patch panels, and ports",
+      "Scheduling maintenance windows for equipment",
+      "Tracking network traffic and bandwidth utilization"
+    ],
     "a": 1,
     "w": "Telecommunications administration systems assist in assigning cables, pairs, fibers, patch panels, and ports to track physical infrastructure relationships. Firmware management is an IT function. Maintenance scheduling is a project management function. Network traffic tracking is a network management function, separate from physical infrastructure administration."
   },
@@ -225,7 +335,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What cross-connect field color identifies first-level backbone cabling?",
-    "o": ["Blue", "White", "Gray", "Brown"],
+    "o": [
+      "Blue",
+      "White",
+      "Gray",
+      "Brown"
+    ],
     "a": 1,
     "w": "White identifies first-level backbone cabling cross-connect fields. Blue identifies horizontal cabling. Gray identifies second-level backbone. Brown identifies campus backbone cabling."
   },
@@ -235,7 +350,12 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "For what type of administration record are no cross-reference linkages required?",
-    "o": ["Splice components", "Firestopping components", "Cords and jumpers", "Termination positions"],
+    "o": [
+      "Splice components",
+      "Firestopping components",
+      "Cords and jumpers",
+      "Termination positions"
+    ],
     "a": 2,
     "w": "No linkages are required for cords and jumpers in the Cabling category, as they are temporary connections that change frequently. Splice components must link to cable and space records. Firestopping components link to pathway records. Termination positions require linkages to cable and other associated records."
   },
@@ -245,8 +365,88 @@
     "testName": "Telecommunications Administration",
     "chapter": "Telecommunications Administration",
     "q": "What information must be included in administration records for a Termination Position/Port?",
-    "o": ["Cable category and length", "Termination position identifier only", "Connected equipment MAC address", "Port speed and duplex settings"],
+    "o": [
+      "Cable category and length",
+      "Termination position identifier only",
+      "Connected equipment MAC address",
+      "Port speed and duplex settings"
+    ],
     "a": 1,
     "w": "Termination position records require the termination position identifier as the key required information to identify the physical location within the cross-connect field. Cable category and length are separate cable records. MAC addresses are network layer identifiers outside the scope of physical infrastructure administration. Port speed and duplex are active equipment settings, not physical infrastructure records."
+  },
+  {
+    "id": 736,
+    "test": 11,
+    "testName": "Telecommunications Administration",
+    "chapter": "Telecommunications Administration",
+    "q": "What is the primary purpose of telecommunications administration?",
+    "o": [
+      "To install new network devices",
+      "To ensure proper operation and maintenance of telecommunications infrastructure and equipment",
+      "To optimize data speeds",
+      "To manage network security protocols"
+    ],
+    "a": 1,
+    "w": "Telecommunications administration ensures the proper operation and maintenance of the telecommunications infrastructure through documentation, labeling, and record-keeping as defined in ANSI/TIA-606 standards. Installing network devices is an installation activity, not the primary administrative function (option A). Optimizing data speeds is a network performance function performed by network engineers using active equipment, not administration (option C). Network security protocols are managed by IT security teams, separate from the telecommunications administration of physical infrastructure (option D)."
+  },
+  {
+    "id": 737,
+    "test": 11,
+    "testName": "Telecommunications Administration",
+    "chapter": "Telecommunications Administration",
+    "q": "What are the components of a telecommunications administration system?",
+    "o": [
+      "Routers, servers, switches",
+      "Cables, bonding systems, grounding systems",
+      "Labeling, record-keeping, identifier scheme",
+      "Power systems, service provider equipment, labeling"
+    ],
+    "a": 2,
+    "w": "Per ANSI/TIA-606, a telecommunications administration system comprises labeling (identifying all infrastructure elements), record-keeping (maintaining documentation), and an identifier scheme (systematic naming conventions). Routers, servers, and switches are active network equipment, not components of the administration system (option A). Cables, bonding, and grounding systems are physical infrastructure components, not administration system components (option B). Power systems and service provider equipment are infrastructure elements subject to administration, not components of the administration system itself (option D)."
+  },
+  {
+    "id": 738,
+    "test": 11,
+    "testName": "Telecommunications Administration",
+    "chapter": "Telecommunications Administration",
+    "q": "In which class of telecommunications administration are additional identifiers for campus cabling introduced?",
+    "o": [
+      "Class 1",
+      "Class 2",
+      "Class 3",
+      "Class 4"
+    ],
+    "a": 2,
+    "w": "ANSI/TIA-606 Class 3 introduces additional identifiers for campus cabling, adding outdoor cable and pathway identifiers to the building-level identifiers included in lower classes. Class 1 covers basic single-tenant building administration with minimum labeling requirements (option A). Class 2 adds identifiers for multi-tenant buildings beyond Class 1 requirements (option B). Class 4 is the highest class, covering enterprise-wide administration including remote sites beyond campus (option D)."
+  },
+  {
+    "id": 739,
+    "test": 11,
+    "testName": "Telecommunications Administration",
+    "chapter": "Telecommunications Administration",
+    "q": "What is the maximum distance from the connecting hardware that cables must be labeled?",
+    "o": [
+      "10 cm",
+      "20 cm",
+      "30 cm",
+      "50 cm"
+    ],
+    "a": 2,
+    "w": "ANSI/TIA-606 requires cable labels to be placed within 30 cm (approximately 12 inches) of each connecting hardware termination to ensure labels are clearly visible and associated with the correct connection. 10 cm is unnecessarily close and may interfere with connector access (option A). 20 cm is below the standard maximum distance but is not the specified maximum (option B). 50 cm exceeds the maximum distance and may result in labels being difficult to associate with specific connections (option D)."
+  },
+  {
+    "id": 740,
+    "test": 11,
+    "testName": "Telecommunications Administration",
+    "chapter": "Telecommunications Administration",
+    "q": "Which of the following is a standard testing requirement for label performance?",
+    "o": [
+      "Signal interference test",
+      "Adhesion test",
+      "Compression test",
+      "Heat resistance test"
+    ],
+    "a": 1,
+    "w": "ANSI/TIA-606 and UL 969 require adhesion testing for labels to ensure they remain securely attached to cables and hardware throughout their service life under various environmental conditions. Signal interference tests evaluate cable performance, not label performance (option A). Compression tests measure mechanical strength properties and are not a standard label performance test (option C). While heat resistance is a property evaluated in some label standards, the adhesion test is the primary standardized performance requirement (option D)."
   }
 ]
