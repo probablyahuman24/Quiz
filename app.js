@@ -606,19 +606,7 @@ function SideMenu({ open, onClose, testStats, history, totalAnswered, totalQs, t
 function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onCustomQuiz, onResetTest, dark, onToggleDark }) {
   const t = T(dark);
   const pct = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
-  const [chapterFilter, setChapterFilter] = useState('All');
   const [resetConfirm, setResetConfirm] = useState(null);
-
-  const allChapters = useMemo(() => {
-    const chaps = new Set();
-    tests.forEach(test => test.questions.forEach(q => { if(q.chapter) chaps.add(q.chapter); }));
-    return Array.from(chaps).sort();
-  }, [tests]);
-
-  const filteredTests = useMemo(() => {
-    if (chapterFilter==='All') return tests;
-    return tests.filter(test => test.questions.some(q => q.chapter===chapterFilter));
-  }, [tests, chapterFilter]);
 
   return el('div', { style: { minHeight:'100vh', background:t.bg, display:'flex', flexDirection:'column' } },
     el('div', { style: { background:t.card, borderBottom:'1px solid '+t.borderLight, padding:'52px 20px 14px', display:'flex', alignItems:'center', gap:14 } },
@@ -646,20 +634,13 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, on
         el('div', { style: { height:'100%', background:'linear-gradient(90deg,#7c3aed,#a855f7)', borderRadius:3, width:pct+'%' } })
       )
     ),
-    el('div', { style: { padding:'10px 20px 0', background:t.card, borderBottom:'1px solid '+t.borderLight } },
-      el('div', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:8 } }, 'FILTER BY CHAPTER'),
-      el('div', { style: { display:'flex', gap:6, overflowX:'auto', paddingBottom:10 } },
-        el('button', { onClick:()=>setChapterFilter('All'), style: { flexShrink:0, padding:'5px 12px', borderRadius:20, border:'1.5px solid '+(chapterFilter==='All'?'#7c3aed':t.border), background:chapterFilter==='All'?'#7c3aed':t.card, color:chapterFilter==='All'?'#fff':t.textSub, fontSize:11, fontWeight:700, whiteSpace:'nowrap' } }, 'All'),
-        ...allChapters.map(ch => el('button', { key:ch, onClick:()=>setChapterFilter(ch===chapterFilter?'All':ch), style: { flexShrink:0, padding:'5px 12px', borderRadius:20, border:'1.5px solid '+(chapterFilter===ch?'#7c3aed':t.border), background:chapterFilter===ch?'#7c3aed':t.card, color:chapterFilter===ch?'#fff':t.textSub, fontSize:11, fontWeight:600, whiteSpace:'nowrap', maxWidth:140, overflow:'hidden', textOverflow:'ellipsis' } }, ch))
-      )
-    ),
     el('div', { style: { flex:1, padding:'16px 20px', overflowY:'auto' } },
       el('div', { style: { display:'flex', gap:10, marginBottom:14 } },
         el('button', { onClick:onCustomQuiz, style: { flex:1, background:'linear-gradient(135deg,#0891b2,#0284c7)', color:'#fff', border:'none', borderRadius:14, padding:'13px 10px', fontSize:13, fontWeight:700, display:'flex', alignItems:'center', justifyContent:'center', gap:7, boxShadow:'0 4px 14px rgba(8,145,178,0.3)', cursor:'pointer' } }, '✦ Custom Quiz'),
         allTestsDone && el('button', { onClick:onFocusSession, style: { flex:1, background:'linear-gradient(135deg,#6366f1,#8b5cf6)', color:'#fff', border:'none', borderRadius:14, padding:'13px 10px', fontSize:13, fontWeight:700, display:'flex', alignItems:'center', justifyContent:'center', gap:7, boxShadow:'0 4px 14px rgba(99,102,241,0.3)', cursor:'pointer' } }, '🎯 Focus Session')
       ),
       el('div', { style: { fontSize:10, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:12 } }, 'SELECT A TEST'),
-      ...filteredTests.map(test => {
+      ...tests.map(test => {
         const ts = testStats.find(x=>x.testId===test.id)||{done:0,correct:0,total:test.questions.length,pct:null};
         const color = COLORS[test.id]||'#6366f1';
         const light = dark ? color+'22' : (LIGHTS[test.id]||'#f5f3ff');
