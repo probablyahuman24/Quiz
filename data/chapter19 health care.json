@@ -1,0 +1,252 @@
+[
+  {
+    "id": 501,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What is the minimum distance a Technology Equipment Center (TEC) must be from X-ray or EMI sources?",
+    "o": ["1.5 m (5 ft)", "2.5 m (8 ft)", "3.7 m (12 ft)", "6 m (20 ft)"],
+    "a": 2,
+    "w": "TECs must be located at least 3.7 m (12 ft) from X-ray or EMI sources to protect sensitive networking equipment from interference. 1.5 m and 2.5 m are insufficient separation distances. 6 m exceeds the required minimum but would also be compliant."
+  },
+  {
+    "id": 502,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What temperature range must be maintained in a Technology Equipment Center (TEC)?",
+    "o": ["15–20°C (59–68°F)", "18–24°C (64–75°F)", "20–26°C (68–79°F)", "22–28°C (72–82°F)"],
+    "a": 1,
+    "w": "TECs must maintain a temperature of 18–24°C (64–75°F) to protect sensitive networking and computing equipment. 15–20°C would be too cold for some equipment and increase condensation risk. 20–26°C and 22–28°C are warmer than the specified maximum and could cause overheating of sensitive equipment."
+  },
+  {
+    "id": 503,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What relative humidity range must be maintained in a TEC?",
+    "o": ["20–40%", "30–55%", "40–60%", "50–70%"],
+    "a": 1,
+    "w": "TECs must maintain a relative humidity of 30–55% to prevent both static electricity buildup at low humidity and condensation at high humidity. 20–40% risks static discharge. 40–60% and 50–70% allow humidity that could cause condensation and corrosion on sensitive equipment."
+  },
+  {
+    "id": 504,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "How many Technology Distribution Rooms (TDRs) are required per floor in a healthcare facility?",
+    "o": ["One TDR per two floors", "At least one TDR per floor", "One TDR per building", "Two TDRs per floor minimum"],
+    "a": 1,
+    "w": "At least one TDR is required per floor to ensure adequate horizontal cabling coverage within the 90 m maximum cable distance. One TDR per two floors would not maintain cable distance compliance on the lower floor. One TDR per building would serve only single-story facilities. Two TDRs per floor is a minimum only in large or complex floor plans, not the universal requirement."
+  },
+  {
+    "id": 505,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What is the maximum horizontal cable distance from a TDR to the work area?",
+    "o": ["60 m (197 ft)", "75 m (246 ft)", "90 m (295 ft)", "100 m (328 ft)"],
+    "a": 2,
+    "w": "The maximum horizontal cable distance from a TDR to the work area is 90 m (295 ft), consistent with general structured cabling standards. 60 m and 75 m are unnecessarily restrictive. 100 m is the total channel length including patch cords, not the horizontal cable segment limit."
+  },
+  {
+    "id": 506,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What standard governs nurse call system wiring and requirements?",
+    "o": ["NFPA 72", "UL 1069", "ANSI/TIA-568", "IEC 60364"],
+    "a": 1,
+    "w": "Nurse call systems must comply with UL 1069 standards, which specifically cover hospital signaling and nurse call equipment. NFPA 72 covers fire alarm systems, not nurse call. ANSI/TIA-568 covers structured cabling performance. IEC 60364 covers electrical installation requirements generally."
+  },
+  {
+    "id": 507,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "Where should corridor lights for nurse call systems be installed?",
+    "o": ["Above every patient room door", "At intersections of corridors in nursing units", "At the nurses station only", "Above every bathroom entrance"],
+    "a": 1,
+    "w": "Corridor lights for nurse call systems should be installed at intersections of corridors in nursing units to maximize visibility from any corridor direction. Lights above every patient room door would be redundant and wasteful. Lights only at the nurses station would not alert staff in hallways. Lights above bathroom entrances would serve only bathroom emergency calls."
+  },
+  {
+    "id": 508,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What is the typical range of active RFID systems in healthcare facilities?",
+    "o": ["0.1–0.5 m (0.3–1.6 ft)", "1–2 m (3.28–6.6 ft)", "5–10 m (16–33 ft)", "20–50 m (66–164 ft)"],
+    "a": 1,
+    "w": "Active RFID systems in healthcare have a typical range of 1–2 m (3.28–6.6 ft), suitable for room-level asset and patient tracking. 0.1–0.5 m would be too short for practical tracking. 5–10 m would create ambiguity about which room an asset is in. 20–50 m would span multiple rooms and zones, making precise location identification impossible."
+  },
+  {
+    "id": 509,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "At what frequency range do active RFID systems operate in healthcare?",
+    "o": ["433 MHz", "902–928 MHz", "2.4–5.8 GHz", "13.56 MHz"],
+    "a": 2,
+    "w": "Active RFID in healthcare operates at 2.4–5.8 GHz, enabling short-range high-frequency communication suitable for real-time location systems. 433 MHz is used in some active RFID systems but is not the standard healthcare range. 902–928 MHz (UHF) is the frequency for passive RFID systems. 13.56 MHz is used for NFC and HF passive RFID, not active healthcare tracking systems."
+  },
+  {
+    "id": 510,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What frequency band is dedicated to Wireless Medical Telemetry Services (WMTS)?",
+    "o": ["433 MHz", "608–614 MHz", "902–928 MHz", "2.4 GHz"],
+    "a": 1,
+    "w": "WMTS uses the dedicated frequency range of 608–614 MHz for transmitting patient vitals wirelessly. 433 MHz is used in consumer wireless devices, not dedicated medical telemetry. 902–928 MHz is the UHF ISM band used for passive RFID and unlicensed industrial devices. 2.4 GHz is the general ISM band for Wi-Fi and Bluetooth, not dedicated WMTS."
+  },
+  {
+    "id": 511,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "Is an individual license required in the U.S. to operate WMTS equipment?",
+    "o": ["Yes, a Part 90 license is required", "Yes, a hospital-specific FCC license is required", "No individual license is required", "Only a state health department permit is required"],
+    "a": 2,
+    "w": "No individual license is required in the U.S. for WMTS operation; the dedicated frequency band is coordinated nationally. Part 90 licenses are for land mobile radio, not WMTS. Hospital-specific FCC licenses are not required for WMTS. State health department permits relate to facility operations, not radio frequency licensing."
+  },
+  {
+    "id": 512,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What does PACS stand for and what is its primary use in healthcare?",
+    "o": ["Patient Access Control System, for managing visitor entry", "Picture Archiving and Communication System, for storing and viewing digital radiology images", "Power and Cooling System, for data center management", "Patient Alert and Call System, for nurse call coordination"],
+    "a": 1,
+    "w": "PACS stands for Picture Archiving and Communication System, used for storing and viewing digital radiology images. It is not a security system, cooling system, or nurse call system — those are entirely separate healthcare ICT components."
+  },
+  {
+    "id": 513,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "Which healthcare area is identified as among the most technology-dependent?",
+    "o": ["Hospital cafeteria", "Administrative offices", "Operating rooms", "Hospital gift shop"],
+    "a": 2,
+    "w": "Operating rooms are among the most technology-dependent areas in healthcare facilities, requiring extensive AV, communications, medical equipment integration, and power infrastructure. Cafeterias and gift shops have minimal ICT requirements. Administrative offices have significant ICT needs but far fewer specialized medical technology requirements than operating rooms."
+  },
+  {
+    "id": 514,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What must the Entrance Facility (EF) in a healthcare facility be connected to?",
+    "o": ["Backup generator only", "Emergency power systems", "The main utility transformer directly", "UPS systems only"],
+    "a": 1,
+    "w": "The healthcare facility EF must be connected to emergency power systems to ensure continuity of critical communications during a power outage. A backup generator alone is not sufficient; full emergency power system integration is required. Direct transformer connection bypasses critical emergency power management. UPS alone without emergency power systems would not provide sustained power during extended outages."
+  },
+  {
+    "id": 515,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What is the purpose of In-Patient Television Systems (IPTS) in healthcare?",
+    "o": ["Provides clinical decision support to physicians", "Delivers entertainment and information to patients", "Monitors vital signs via the television set", "Coordinates nurse call responses"],
+    "a": 1,
+    "w": "In-patient television systems provide entertainment and information services to patients during their stay and can utilize new or existing TV distribution infrastructure. They do not provide clinical decision support, vital sign monitoring, or nurse call coordination; those are separate dedicated clinical systems."
+  },
+  {
+    "id": 516,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "In which scenarios can a healthcare facility's Entrance Facility be combined with the TEC?",
+    "o": ["In all facilities regardless of size", "In smaller facilities only", "Only in facilities with more than 500 beds", "Only in multi-story facilities"],
+    "a": 1,
+    "w": "The EF can be combined with the TEC in smaller healthcare facilities where the reduced infrastructure scope makes separate spaces impractical. In larger facilities, dedicated separate rooms are required. Bed count and building height are not the determining criteria — facility size and infrastructure complexity are."
+  },
+  {
+    "id": 517,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What are ultra-wideband RFID systems' operating frequency range in healthcare?",
+    "o": ["433–868 MHz", "902–928 MHz", "3.1–10 GHz", "24–60 GHz"],
+    "a": 2,
+    "w": "Ultra-wideband (UWB) RFID systems used in healthcare real-time location operate in the 3.1–10 GHz range, providing precise centimeter-level positioning. 433–868 MHz and 902–928 MHz are narrow-band frequencies used in traditional RFID, not UWB. 24–60 GHz is the millimeter-wave range used in radar and point-to-point wireless, not healthcare RFID."
+  },
+  {
+    "id": 518,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What are passive RFID systems' primary operating frequency in healthcare (UHF band)?",
+    "o": ["13.56 MHz", "433 MHz", "902–928 MHz", "2.4 GHz"],
+    "a": 2,
+    "w": "Passive RFID in healthcare uses the 902–928 MHz UHF band for real-time trackable applications. 13.56 MHz is the HF band used in NFC and access cards. 433 MHz is used in some active RFID systems but not standard passive UHF RFID. 2.4 GHz is used for active RFID and Wi-Fi."
+  },
+  {
+    "id": 519,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What is required for nurse call initiation devices in bathroom areas?",
+    "o": ["Standard wall-mounted push buttons", "Bathroom stations as initiation devices", "Remote paging from the nurses station only", "Wireless pendants only"],
+    "a": 1,
+    "w": "Bathroom stations are specific initiation devices designed for nurse call systems in bathroom areas, allowing patients to call for assistance. Standard wall push buttons may not be accessible to a patient who has fallen. Remote paging from the nurses station is a notification device, not a patient-initiated call device. Wireless pendants are an alternative but bathroom stations are the specifically designated device type."
+  },
+  {
+    "id": 520,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "Where should in-patient television monitor placement be determined from in room design?",
+    "o": ["Determined solely by window placement", "Determined by headwall or footwall design", "Standardized at the foot of all beds", "Mounted on the ceiling in all rooms"],
+    "a": 1,
+    "w": "Monitor placement for in-patient television depends on the headwall or footwall design of the patient room. Window placement affects lighting, not monitor position. Foot-of-bed standardization doesn't account for different room layouts. Ceiling mounting is not the standard for IPTS monitors."
+  },
+  {
+    "id": 521,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What must be true about nurse call systems regarding their connection to other building systems?",
+    "o": ["They must share pathways with fire alarm systems", "They must be electrically isolated from other systems", "They must connect to the BAS for integration", "They must use the same cable type as telephone systems"],
+    "a": 1,
+    "w": "Nurse call systems must be electrically isolated from other systems to prevent interference with their life-safety signaling function and maintain compliance with UL 1069. Sharing pathways with fire alarm systems creates safety and compliance issues. BAS integration is optional in some advanced systems but isolation is the fundamental requirement. Cable type selection is independent of the isolation requirement."
+  },
+  {
+    "id": 522,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "Which nurse call notification devices are installed at corridor intersections in nursing units?",
+    "o": ["Annunciator panels", "Zone lights", "Corridor lights", "Master stations"],
+    "a": 2,
+    "w": "Corridor lights are installed at intersections of corridors in nursing units to visually alert staff approaching from any direction. Annunciator panels are centralized displays at the nurses station. Zone lights indicate which zone has a call but are not specifically positioned at intersections. Master stations are audio communication hubs, not visual corridor indicators."
+  },
+  {
+    "id": 523,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What type of RFID system provides real-time tracking of patients, staff, and equipment?",
+    "o": ["Passive RFID only", "Active RFID only", "RTLS (Real-Time Locating Systems)", "NFC systems"],
+    "a": 2,
+    "w": "Real-Time Locating Systems (RTLS) provide real-time tracking of patients, staff, and equipment and can use either active or passive technologies. Passive-only RFID typically requires a reader in proximity and cannot provide continuous real-time location. Active-only RFID is one implementation but RTLS is the correct category term. NFC is for very short-range communication, not real-time location tracking."
+  },
+  {
+    "id": 524,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "Where must the TDR be connected in a healthcare building-wide communication system?",
+    "o": ["Directly to the external network service provider", "To the TEC for building-wide communication", "Only to other TDRs on adjacent floors", "To the BAS head-end controller"],
+    "a": 1,
+    "w": "Each TDR is connected to the TEC for building-wide communication, forming the backbone of the healthcare facility's ICT infrastructure. TDRs do not connect directly to external service providers; the EF and TEC handle that interface. TDR-to-TDR connections would bypass the TEC hierarchy. BAS head-end connection is for building automation, not general ICT."
+  },
+  {
+    "id": 525,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "Which nurse call systems permit tamper-resistance hall stations?",
+    "o": ["All nurse call systems", "Only digital nurse call systems", "Only audiovisual systems", "Systems complying with UL 1069 only"],
+    "a": 2,
+    "w": "Tamper-resistance hall stations are allowed only in audiovisual nurse call systems, where they prevent accidental or intentional activation of the station. They are not universally permitted across all nurse call systems. Digital systems have specific configuration requirements separate from tamper-resistance hardware. UL 1069 compliance governs all nurse call systems but does not alone permit tamper-resistance stations."
+  }
+]

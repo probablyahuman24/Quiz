@@ -1,0 +1,252 @@
+[
+  {
+    "id": 576,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "Which standards provide design guidelines for environments outside typical commercial premises?",
+    "o": ["ANSI/TIA-568 and ISO/IEC 11801", "TIA-1005 and ISO/IEC 11801-3", "ANSI/TIA-942 and ISO/IEC 24764", "ANSI/TIA-607 and ISO/IEC 30129"],
+    "a": 1,
+    "w": "TIA-1005 and ISO/IEC 11801-3 provide design guidelines for special occupancy locations outside typical commercial premises. ANSI/TIA-568 and ISO/IEC 11801 cover standard commercial structured cabling. ANSI/TIA-942 and ISO/IEC 24764 cover data centers. ANSI/TIA-607 and ISO/IEC 30129 cover grounding and bonding."
+  },
+  {
+    "id": 577,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What does MICE stand for in the industrial environment classification system?",
+    "o": ["Mechanical, Internal, Chemical, Electrical", "Mechanical, Ingress, Climatic/Chemical, Electromagnetic", "Material, Installation, Cabling, Environment", "Moisture, Interference, Conductor, Enclosure"],
+    "a": 1,
+    "w": "MICE stands for Mechanical, Ingress, Climatic/Chemical, and Electromagnetic conditions, describing the four environmental stress categories for industrial cabling. All other options are fabricated and do not represent the actual MICE classification system."
+  },
+  {
+    "id": 578,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What MICE classification describes commercial environments?",
+    "o": ["MICE 0", "MICE 1", "MICE 2", "MICE 3"],
+    "a": 1,
+    "w": "MICE 1 describes commercial environments with standard office conditions. MICE 2 describes light industrial environments with moderate stresses. MICE 3 describes harsh industrial environments with severe stresses. MICE 0 is not a defined classification level."
+  },
+  {
+    "id": 579,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What MICE classification applies to harsh industrial environments?",
+    "o": ["MICE 1", "MICE 2", "MICE 3", "MICE 4"],
+    "a": 2,
+    "w": "MICE 3 describes harsh industrial environments with the most severe mechanical, ingress, climatic/chemical, and electromagnetic stresses. MICE 1 is for commercial environments. MICE 2 is for light industrial. MICE 4 is not a defined MICE classification."
+  },
+  {
+    "id": 580,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "In the IP code format IPxy, what does 'x' represent?",
+    "o": ["Protection from water", "Protection from solid objects", "Protection from electromagnetic fields", "Protection from chemical exposure"],
+    "a": 1,
+    "w": "In the IP code format, 'x' represents protection from solid objects (first digit). 'y' represents protection from water (second digit). Electromagnetic and chemical protections are classified separately and are not part of the IP code."
+  },
+  {
+    "id": 581,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What IP solid object protection rating indicates dust-tight protection?",
+    "o": ["x = 4", "x = 5", "x = 6", "x = 7"],
+    "a": 2,
+    "w": "x = 6 in the IP code indicates dust-tight protection, meaning no ingress of dust. x = 4 is not a standard first-digit IP level. x = 5 provides partial protection from dust but is not fully dust-tight. x = 7 is a water protection rating (second digit), not a solid object rating."
+  },
+  {
+    "id": 582,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What does IP y = 7 indicate in the IP code?",
+    "o": ["Protection against high-pressure water jets", "Protection against splashed water from all directions", "Immersion in water up to 1 meter for 30 minutes", "Dust-tight protection"],
+    "a": 2,
+    "w": "y = 7 in the IP code indicates the enclosure can withstand immersion in water up to 1 meter depth for 30 minutes. High-pressure water jet protection is y = 6. Splashed water from all directions is y = 4. Dust-tight protection is x = 6, the first digit of the IP code."
+  },
+  {
+    "id": 583,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What NEMA rating protects against corrosive agents?",
+    "o": ["NEMA 1", "NEMA 4X", "NEMA 6P", "NEMA 12K"],
+    "a": 1,
+    "w": "NEMA 4X provides protection against corrosive agents in addition to dust, water, and ice. NEMA 1 protects only against falling dirt. NEMA 6P provides protection against water and prolonged exposure. NEMA 12K protects against oil and coolant seepage."
+  },
+  {
+    "id": 584,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What NEMA enclosure rating protects against oil and coolant seepage?",
+    "o": ["NEMA 1", "NEMA 4X", "NEMA 6P", "NEMA 12K"],
+    "a": 3,
+    "w": "NEMA 12K protects against oil and coolant seepage, appropriate for machine shop and manufacturing environments. NEMA 1 protects against falling dirt only. NEMA 4X protects against corrosive agents. NEMA 6P protects against water and prolonged submersion."
+  },
+  {
+    "id": 585,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "Which of the following is an example of a hazardous location requiring compliance with NEC (NFPA 70)?",
+    "o": ["Open-plan office spaces", "Battery rooms and vehicle fueling facilities", "Standard hotel guest rooms", "School classrooms"],
+    "a": 1,
+    "w": "Battery rooms and vehicle fueling and repair facilities are examples of hazardous locations that must comply with NEC (NFPA 70) due to the presence of explosive gases or flammable materials. Office spaces, hotel rooms, and classrooms are standard commercial environments without these hazards."
+  },
+  {
+    "id": 586,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "Which of the following is an example of a climatic condition location?",
+    "o": ["Open-plan office", "Server room", "Airplane hangar", "Hospital patient room"],
+    "a": 2,
+    "w": "Airplane hangars are examples of climatic condition locations with temperatures or humidity outside normal human occupancy ranges. Open-plan offices and hospital patient rooms are standard occupancy environments. Server rooms have controlled conditions that are engineered, not naturally extreme."
+  },
+  {
+    "id": 587,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What are the three primary areas defined in industrial premises per TIA-1005 and ISO/IEC 11801-3?",
+    "o": ["Offices, warehouses, and loading docks", "Control rooms, automation islands, and work areas", "Machine rooms, server rooms, and control centers", "Production floors, maintenance bays, and clean rooms"],
+    "a": 1,
+    "w": "TIA-1005 and ISO/IEC 11801-3 define three primary industrial areas: Control Rooms, Automation Islands (machinery without personnel during operation), and Work Areas. The other options mix industrial facility types not defined in these standards."
+  },
+  {
+    "id": 588,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What defines an Automation Island in industrial premises?",
+    "o": ["An area with full-time personnel monitoring equipment", "Machinery installations without personnel during operation", "A server room for industrial control systems", "A maintenance workshop for machinery repair"],
+    "a": 1,
+    "w": "Automation Islands are machinery installations that operate without personnel present during operation, representing the most automated zone. Full-time personnel monitoring describes control rooms. Server rooms are ICT infrastructure spaces, not industrial automation zones. Maintenance workshops are work areas."
+  },
+  {
+    "id": 589,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "Which industrial control system areas are identified as the harshest environments?",
+    "o": ["Control rooms and server rooms", "Work areas and machine areas", "Automation islands and loading docks", "Clean rooms and testing laboratories"],
+    "a": 1,
+    "w": "In industrial control system environments, work areas and machine areas are the harshest zones due to direct exposure to machinery, vibration, dust, chemicals, and extreme temperatures. Control rooms have controlled environments. Automation islands operate without personnel but are not identified as the harshest in the MICE classification context."
+  },
+  {
+    "id": 590,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What special cabling type is permitted under ISO/IEC 61156 for special occupancy locations?",
+    "o": ["Category 8.2 shielded cabling", "Single Pair Ethernet (SPE) cabling", "Plenum-rated multimode fiber only", "Armored coaxial cable"],
+    "a": 1,
+    "w": "Single Pair Ethernet (SPE) cabling per ISO/IEC 61156 is specifically allowed in special occupancy locations for unique applications. Category 8.2 is a data center cabling type, not a special occupancy allowance. Plenum-rated fiber is a fire rating classification, not a special occupancy-specific type. Armored coaxial is used in some harsh environments but is not the specifically cited SPE standard."
+  },
+  {
+    "id": 591,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What connector type is specified as standard for optical fiber cabling in special occupancy locations per TIA-604-10A?",
+    "o": ["SC connectors", "ST connectors", "LC connectors", "MPO/MTP connectors"],
+    "a": 2,
+    "w": "LC connectors are specified as standard for optical fiber cabling in special occupancy locations per TIA-604-10A. SC connectors are used in standard premises but are not the specifically cited standard for industrial/special environments. ST connectors are legacy connectors not recommended for new installations. MPO/MTP connectors are used in high-density data center applications."
+  },
+  {
+    "id": 592,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What topologies does optical fiber cabling support in special occupancy locations?",
+    "o": ["Star topology only", "Ring topology only", "Star, ring, or bus topology", "Mesh topology only"],
+    "a": 2,
+    "w": "Optical fiber cabling in special occupancy locations supports star, ring, or bus topology to accommodate the varied redundancy and connectivity needs of industrial control systems. Star-only is too restrictive for industrial requirements where ring redundancy is often needed. Ring-only excludes the more common star topology. Mesh is not a defined optical fiber topology for these applications."
+  },
+  {
+    "id": 593,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What does IP y = 1 indicate?",
+    "o": ["Immersion in water", "Protection against splashed water from all directions", "Protection against vertically falling water", "No water protection"],
+    "a": 2,
+    "w": "y = 1 in the IP code indicates protection against vertically falling water (dripping water). y = 4 is protection against splashed water from all directions. y = 7 is protection against temporary immersion. y = 0 indicates no water protection."
+  },
+  {
+    "id": 594,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What IP rating first digit indicates partial protection from dust?",
+    "o": ["x = 3", "x = 4", "x = 5", "x = 6"],
+    "a": 2,
+    "w": "x = 5 provides partial protection from dust (dust-protected), preventing dust from entering in amounts that would harm the equipment. x = 3 protects against solid objects greater than 2.5 mm. x = 4 protects against solid objects greater than 1 mm. x = 6 is fully dust-tight with no ingress."
+  },
+  {
+    "id": 595,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What does NEMA 1 enclosure protect against?",
+    "o": ["Corrosive agents", "Oil and coolant seepage", "Water and prolonged exposure", "Falling dirt"],
+    "a": 3,
+    "w": "NEMA 1 is the most basic indoor enclosure, protecting only against falling dirt. NEMA 4X protects against corrosive agents. NEMA 12K protects against oil and coolant seepage. NEMA 6P protects against water and prolonged submersion."
+  },
+  {
+    "id": 596,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What MICE classification applies to light industrial environments?",
+    "o": ["MICE 1", "MICE 2", "MICE 3", "MICE 4"],
+    "a": 1,
+    "w": "MICE 2 describes light industrial environments with moderate environmental stresses. MICE 1 is for commercial environments. MICE 3 is for harsh industrial environments. MICE 4 is not a defined MICE classification level."
+  },
+  {
+    "id": 597,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What systems does structured cabling support in industrial environments per TIA-1005 and ISO/IEC 11801-3?",
+    "o": ["Voice, data, and process/production control systems", "Fire detection and suppression systems only", "Building access control and CCTV only", "HVAC and lighting control only"],
+    "a": 0,
+    "w": "Structured cabling in industrial environments supports voice and data systems, as well as process and production control systems. Fire detection, access control, CCTV, HVAC, and lighting are all valid building systems, but the full scope defined by TIA-1005 and ISO/IEC 11801-3 for industrial premises includes voice, data, and process/production control."
+  },
+  {
+    "id": 598,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What type of 2-pair cabling is specifically mentioned as allowable in special occupancy locations?",
+    "o": ["2-pair, 120-ohm balanced twisted-pair", "2-pair, 100-ohm balanced twisted-pair", "2-pair, 75-ohm coaxial pair", "2-pair, 150-ohm screened pair"],
+    "a": 1,
+    "w": "2-pair, 100-ohm balanced twisted-pair cabling is specifically mentioned as allowable in special occupancy locations. 120-ohm is used in token ring and some European systems, not the specified type here. 75-ohm is a coaxial impedance, not balanced twisted-pair. 150-ohm screened pair is used in older shielded systems not referenced in TIA-1005."
+  },
+  {
+    "id": 599,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What does IP y = 4 protect against?",
+    "o": ["Vertically falling water", "Water jets from any direction", "Splashed water from all directions", "Temporary immersion"],
+    "a": 2,
+    "w": "y = 4 in the IP code indicates protection against splashed water from all directions. y = 1 protects against vertically falling water. y = 5 protects against water jets from any direction. y = 7 protects against temporary immersion."
+  },
+  {
+    "id": 600,
+    "test": 22,
+    "testName": "Special Design Considerations",
+    "chapter": "Special Design Considerations",
+    "q": "What must special occupancy cabling design comply with alongside MICE classification and environmental ratings?",
+    "o": ["Only manufacturer warranty requirements", "Environmental standards and applicable codes", "International trade agreements for equipment import", "Insurance company specifications only"],
+    "a": 1,
+    "w": "Special occupancy cabling design must comply with environmental standards and applicable codes, with MICE classification guiding material selection and IP/NEMA ratings for enclosures. Manufacturer warranties are commercial obligations, not design compliance requirements. International trade agreements and insurance specifications are not design code compliance frameworks."
+  }
+]

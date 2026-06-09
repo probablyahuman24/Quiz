@@ -1,0 +1,252 @@
+[
+  {
+    "id": 451,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "Which EAC level includes field devices such as credential readers and locking mechanisms?",
+    "o": ["Level 1", "Level 2", "Level 3", "Level 4"],
+    "a": 2,
+    "w": "EAC Level 3 includes field devices such as credential readers and locking mechanisms — the physical hardware at the door. Level 1 typically refers to the management software layer. Level 2 refers to the controller/panel layer. Level 4 is not a standard EAC hierarchy level."
+  },
+  {
+    "id": 452,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "Which lock type is mounted through the door?",
+    "o": ["Mortise lock", "Electric bolt", "Cylindrical lock", "Magnetic door lock"],
+    "a": 2,
+    "w": "Cylindrical locks are mounted through the door via a cylindrical hole bored through the door face. Mortise locks are embedded into the door edge and latch to a strike in the doorframe. Electric bolts offer high security and are surface- or frame-mounted. Magnetic door locks are mounted on the door frame and door face, not through the door."
+  },
+  {
+    "id": 453,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What is the fail-safe characteristic of magnetic door locks?",
+    "o": ["They lock upon loss of power", "They unlock upon loss of power", "They remain in their last state upon loss of power", "They trigger an alarm upon loss of power"],
+    "a": 1,
+    "w": "Magnetic door locks are typically fail-safe, meaning they unlock upon loss of power to allow egress in an emergency. Fail-secure locks (like electric bolts) lock upon loss of power. Remaining in the last state is neither fail-safe nor fail-secure. Triggering an alarm is a monitoring function separate from the mechanical lock state."
+  },
+  {
+    "id": 454,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What is the fail characteristic of electric strikes?",
+    "o": ["Fail-safe", "Fail-secure", "Fail-neutral", "Fail-open"],
+    "a": 1,
+    "w": "Electric strikes are fail-secure, meaning they remain locked upon loss of power, denying access. Fail-safe devices unlock on power loss (e.g., magnetic locks). Fail-neutral and fail-open are not standard lock classifications; fail-open is another term for fail-safe."
+  },
+  {
+    "id": 455,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What does a Vestibule Lock function allow on the outside lever?",
+    "o": ["Outside lever is always free to turn", "Outside lever access is key-controlled", "Outside lever is locked permanently", "Outside lever is controlled by a biometric reader only"],
+    "a": 1,
+    "w": "The Vestibule Lock function allows the inside lever to always permit egress while the outside lever's access is key-controlled, creating a controlled entry vestibule. Always free to turn describes an uncontrolled entry. Permanently locked outside lever would not allow any access. Biometric-only control describes a reader configuration, not the lock function definition."
+  },
+  {
+    "id": 456,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What FACP pathway class continues to function past a single open circuit?",
+    "o": ["Class B", "Class N", "Class A", "Class E"],
+    "a": 2,
+    "w": "Class A is a redundant signal pathway that continues to function past a single open circuit due to its loop topology. Class B has no redundancy and stops at a single open circuit. Class N uses Ethernet or network protocol-based pathways. Class E is used for supplemental equipment and is not monitored for integrity."
+  },
+  {
+    "id": 457,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "Which FACP pathway class uses Ethernet or network protocol-based pathways?",
+    "o": ["Class A", "Class B", "Class C", "Class N"],
+    "a": 3,
+    "w": "Class N designates Ethernet or network protocol-based pathways for fire alarm signaling. Class A is the traditional redundant wired loop pathway. Class B is a non-redundant wired pathway. Class C is used with addressable devices and appliances."
+  },
+  {
+    "id": 458,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "How frequently must a DACT verify the integrity of call-forwarded lines?",
+    "o": ["Every hour", "Every 4 hours", "Every 12 hours", "Every 24 hours"],
+    "a": 1,
+    "w": "A Digital Alarm Communicator Transmitter (DACT) must verify the integrity of forwarded lines every 4 hours to ensure the transmission path to the monitoring station remains functional. Every hour would be excessively frequent and consume phone line resources. Every 12 hours or 24 hours would leave too long a window for an undetected failure of the communication path."
+  },
+  {
+    "id": 459,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "How often must a Digital Alarm Radio Transmitter (DART) complete test signals at minimum?",
+    "o": ["Every 4 hours", "Every 12 hours", "Every 24 hours", "Every 48 hours"],
+    "a": 2,
+    "w": "A DART must complete test signals at least once every 24 hours to verify its radio transmission capability. Every 4 hours is the DACT line integrity check interval, not the DART test signal requirement. Every 12 hours is more frequent than required. Every 48 hours would leave too long an interval without verification of backup radio capability."
+  },
+  {
+    "id": 460,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "By how many dB above ambient sound levels must public fire alarm signaling achieve per NFPA 72?",
+    "o": ["5 dB", "10 dB", "15 dB", "20 dB"],
+    "a": 2,
+    "w": "Per NFPA 72, public fire alarm signaling must achieve 15 dB above ambient sound levels to ensure audibility in occupied spaces. 5 dB and 10 dB would be insufficient to ensure the alarm is clearly heard above background noise. 20 dB is more than required and may cause hearing discomfort in low-ambient environments."
+  },
+  {
+    "id": 461,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What is the minimum acceptable frame rate for digital video surveillance systems?",
+    "o": ["1 fps", "2 fps", "3.75 fps", "5 fps"],
+    "a": 2,
+    "w": "The minimum acceptable frame rate for digital video surveillance systems is 3.75 fps to capture useful motion evidence. 1 fps and 2 fps are too slow to capture meaningful motion and would miss many security events. 5 fps is above the minimum but would also be acceptable."
+  },
+  {
+    "id": 462,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What are IR cameras in video surveillance also called?",
+    "o": ["Thermal cameras", "Starlight cameras", "PTZ cameras", "IP cameras"],
+    "a": 1,
+    "w": "IR cameras used for low-light conditions are also called starlight cameras due to their ability to capture images in near-darkness. Thermal cameras detect heat signatures, a different technology from IR-illuminated starlight cameras. PTZ cameras are pan-tilt-zoom cameras defined by their movement capability, not their illumination technology. IP cameras describe network connectivity, not illumination type."
+  },
+  {
+    "id": 463,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What lock hardware grade is used in high-security applications?",
+    "o": ["Grade 3", "Grade 2", "Grade 1", "Grade 0"],
+    "a": 2,
+    "w": "Grade 1 is the most durable lock hardware grade, used in high-security applications. Grade 2 is residential/light commercial use. Grade 3 is the lightest-duty grade for residential applications. Grade 0 is not a standard ANSI lock hardware grade."
+  },
+  {
+    "id": 464,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What shared pathway level prioritizes life safety data over non-life safety data?",
+    "o": ["Level 0", "Level 1", "Level 2", "Level 3"],
+    "a": 1,
+    "w": "Level 1 shared pathways prioritize life safety data over non-life safety data on shared network infrastructure. Level 0 provides no segregation or prioritization of life safety data. Level 2 and Level 3 are not standard NFPA 72 shared pathway designations."
+  },
+  {
+    "id": 465,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What are the common topologies used for EAC network design?",
+    "o": ["Bus and ring", "Loop and star", "Mesh and tree", "Ring and mesh"],
+    "a": 1,
+    "w": "Common EAC network topologies include loop and star configurations. Bus and ring topologies are used in some legacy systems but are not the primary EAC network topologies. Mesh and tree are more complex and less commonly applied in standard EAC deployments. Ring and mesh are not the specified common EAC topologies."
+  },
+  {
+    "id": 466,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "In analog video surveillance systems, when is video transmitted to the cross-point matrix?",
+    "o": ["Only when a camera is being actively viewed", "Only when motion is detected", "At all times, viewed or not", "Only during scheduled recording windows"],
+    "a": 2,
+    "w": "In traditional analog video surveillance systems, video is transmitted to the cross-point matrix at all times, whether or not it is being actively viewed. This continuous transmission distinguishes analog from digital IP systems, which transmit on demand or on trigger. Motion detection and scheduling are features of digital/IP systems, not traditional analog matrix systems."
+  },
+  {
+    "id": 467,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "Into how many categories does threat analysis divide potential damage?",
+    "o": ["Three", "Five", "Seven", "Ten"],
+    "a": 2,
+    "w": "Threat analysis divides potential damage into seven categories to comprehensively assess the range of security risks. Three or five categories would be insufficient for a thorough security threat assessment. Ten categories would be overly granular and exceed the standard referenced in security design."
+  },
+  {
+    "id": 468,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What does an Exclusive Communication Network in EAC design mean?",
+    "o": ["EAC data shared with BAS on a single cable", "EAC data on a dedicated physical network separate from other systems", "EAC data encrypted on a shared IT network", "EAC data transmitted wirelessly only"],
+    "a": 1,
+    "w": "An Exclusive Communication Network means EAC data is carried on a dedicated physical network separate from other building systems, providing the highest security and reliability. Sharing with BAS on one cable would create dependency and potential interference. Encryption on a shared IT network is a cybersecurity measure, not an exclusive physical network. Wireless-only transmission is a configuration option, not the definition of an exclusive network."
+  },
+  {
+    "id": 469,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "Which of the following is an example of an operational mitigation technique in physical security?",
+    "o": ["Credential readers", "Crime prevention through design", "Guard posts and patrols", "Electrified door locks"],
+    "a": 2,
+    "w": "Guard posts and patrols are operational mitigation techniques, relying on human security personnel and procedures. Credential readers are electronic mitigation. Crime prevention through design is architectural mitigation. Electrified door locks are electronic mitigation devices."
+  },
+  {
+    "id": 470,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What type of hardware commonly uses latch bolt monitors?",
+    "o": ["Magnetic door locks", "Electric bolts", "Electric strikes", "Cylindrical locks"],
+    "a": 2,
+    "w": "Electric strikes often include monitoring switches like latch bolt monitors to confirm the latch has engaged the strike. Magnetic door locks monitor door position but do not use latch bolt monitors. Electric bolts are standalone locking devices without latch mechanisms. Cylindrical locks are mechanical and do not typically include electronic monitoring switches."
+  },
+  {
+    "id": 471,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What is a DACT required to connect to?",
+    "o": ["One dedicated telephone line", "Two separate transmission channels", "A primary IP network and a backup PSTN line", "A cellular network only"],
+    "a": 1,
+    "w": "A Digital Alarm Communicator Transmitter must connect to two separate transmission channels to provide redundancy in alarm communication. A single telephone line creates a single point of failure. An IP plus PSTN combination may meet requirements in some standards but the fundamental requirement is two separate channels. Cellular-only would be a single technology path."
+  },
+  {
+    "id": 472,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "In ESS (Electronic Security Systems), what three primary systems does integration cover?",
+    "o": ["Fire alarm, lighting control, and HVAC", "Video surveillance, access control, and alarm systems", "Perimeter detection, BAS, and telecommunications", "CCTV, intercom, and building management"],
+    "a": 1,
+    "w": "ESS integrates video surveillance, access control, and alarm systems into a unified security platform. Fire alarm and lighting are life safety and building systems outside the core ESS scope. Perimeter detection and BAS are separate system categories. While CCTV is part of video surveillance, intercom and building management are not the three core ESS components."
+  },
+  {
+    "id": 473,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "Which FACP pathway class is used with addressable devices and appliances?",
+    "o": ["Class A", "Class B", "Class C", "Class E"],
+    "a": 2,
+    "w": "Class C is used with addressable devices and appliances in fire alarm systems, enabling individual device identification on the circuit. Class A is a redundant loop for conventional or addressable systems. Class B is a non-redundant conventional circuit. Class E is for supplemental, non-monitored equipment."
+  },
+  {
+    "id": 474,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What is the fire alarm system integration sequence involving elevators called?",
+    "o": ["Elevator capture", "Elevator recall and shutdown", "Elevator override sequence", "Elevator interlock protocol"],
+    "a": 1,
+    "w": "BAS fire alarm integration sequences include elevator recall and shutdown, which returns elevators to a designated floor and opens the doors upon fire alarm activation. Elevator capture is an informal term sometimes used but not the standard designation. Elevator override and interlock protocol are not standard fire alarm integration terminology."
+  },
+  {
+    "id": 475,
+    "test": 17,
+    "testName": "Electronic Access Control (EAC)",
+    "chapter": "Electronic Access Control (EAC)",
+    "q": "What type of electrified exit hardware is commonly used in double-door applications?",
+    "o": ["Magnetic door locks", "Electric strikes", "Electrified exit hardware (Panic Hardware)", "Electric bolts"],
+    "a": 2,
+    "w": "Electrified Exit Hardware (Panic Hardware) is commonly used in double-door applications to meet life safety egress requirements while allowing electronic access control. Magnetic door locks can be used on double doors but are not specifically characterized as panic hardware. Electric strikes are single-door latch devices. Electric bolts are high-security single-point locking devices."
+  }
+]

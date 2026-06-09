@@ -1,0 +1,252 @@
+[
+  {
+    "id": 551,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What three essential elements make up a telecommunications project design?",
+    "o": ["RFI, RFP, and RFQ", "Specifications, drawings, and cost estimates", "SOW, BIM model, and punch list", "Contract, schedule, and budget"],
+    "a": 1,
+    "w": "Telecommunications project design consists of three essential elements: specifications (detailed requirements), drawings (visual representation), and cost estimates (financial expectations). RFI, RFP, and RFQ are procurement documents. SOW, BIM, and punch list are project management tools, not the three design elements. Contract, schedule, and budget are project administration components."
+  },
+  {
+    "id": 552,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What word should a Scope of Work (SoW) use to indicate mandatory actions?",
+    "o": ["Should", "May", "Shall", "Will"],
+    "a": 2,
+    "w": "The SoW uses 'shall' to indicate mandatory actions that are non-negotiable requirements. 'Should' indicates a recommendation, not a requirement. 'May' indicates permission or optionality. 'Will' is used in some legal contexts but 'shall' is the standard technical specification term for mandatory requirements."
+  },
+  {
+    "id": 553,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What does a SoW explicitly exclude?",
+    "o": ["Deliverables and milestones", "Technical specifications for materials", "Legal, financial, and contract administration matters", "Drawing references and standards"],
+    "a": 2,
+    "w": "The SoW includes deliverables and milestones but excludes legal, financial, and contract administration matters, which are handled in separate contract documents. Technical specifications are a core part of the SoW. Drawing references are integral to the SoW. Legal and financial matters belong to the contract, not the technical SoW."
+  },
+  {
+    "id": 554,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What MasterFormat division covers Communications in construction projects?",
+    "o": ["Division 16", "Division 25", "Division 27", "Division 28"],
+    "a": 2,
+    "w": "MasterFormat Division 27 covers Communications. Division 16 is the legacy Electrical division from the older CSI format. Division 25 covers Integrated Automation. Division 28 covers Electronic Safety and Security."
+  },
+  {
+    "id": 555,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What MasterFormat division covers Electronic Safety and Security?",
+    "o": ["Division 22", "Division 25", "Division 27", "Division 28"],
+    "a": 3,
+    "w": "MasterFormat Division 28 covers Electronic Safety and Security, including fire alarm, access control, and video surveillance systems. Division 22 covers Plumbing. Division 25 covers Integrated Automation (BAS). Division 27 covers Communications."
+  },
+  {
+    "id": 556,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What project management tool identifies the sequence of activities that determines the total project duration?",
+    "o": ["Gantt Chart", "Work Breakdown Structure", "Critical Path Method (CPM)", "PERT"],
+    "a": 2,
+    "w": "The Critical Path Method (CPM) identifies the sequence of activities (critical path) that determines the minimum project duration. A Gantt Chart visualizes task timelines but doesn't identify the critical path analytically. Work Breakdown Structure diagrams task organization but doesn't determine schedule. PERT uses probabilistic estimates but the defining methodology for critical path identification is CPM."
+  },
+  {
+    "id": 557,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What estimates does PERT use in its analysis?",
+    "o": ["Actual cost, budgeted cost, and earned value", "Best case, most likely, and worst case durations", "Optimistic, pessimistic, and most likely estimates", "Fixed cost, variable cost, and contingency"],
+    "a": 2,
+    "w": "PERT (Program Evaluation and Review Technique) uses optimistic, pessimistic, and most likely time estimates to calculate a weighted average duration for each activity. Best/most likely/worst is essentially the same concept but 'optimistic, pessimistic, and most likely' is the precise PERT terminology. Actual/budgeted/earned value is Earned Value Management terminology. Cost estimates are separate from schedule estimates."
+  },
+  {
+    "id": 558,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "How many levels of hierarchy does MasterFormat support?",
+    "o": ["Three levels", "Four levels", "Five levels", "Six levels"],
+    "a": 2,
+    "w": "MasterFormat supports up to five levels of hierarchy in its numbering format (11 22 33.44.5555), providing granular categorization of construction activities. Three and four levels would limit the granularity available. Six levels would exceed the defined MasterFormat structure."
+  },
+  {
+    "id": 559,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What does Building Information Modeling (BIM) generate?",
+    "o": ["2D floor plans with cable routing", "3D models incorporating detailed product information, quantities, and properties", "Network diagrams for logical infrastructure", "Financial models for project cost estimation"],
+    "a": 1,
+    "w": "BIM generates 3D models incorporating detailed product information, quantities, and properties, enabling coordinated design and construction. 2D floor plans are traditional CAD drawings, not BIM. Network diagrams are ICT logical design tools. Financial models are project cost management tools, separate from BIM's physical modeling capability."
+  },
+  {
+    "id": 560,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "In the Design-Build (DB) delivery method, who oversees both design and construction phases?",
+    "o": ["The building owner directly", "The design professionals independently", "The contractor", "A separate construction manager"],
+    "a": 2,
+    "w": "In Design-Build, the contractor oversees both design and construction phases, with design professionals often working for or with the contractor. The owner has a single point of responsibility. In DBB, the owner engages design professionals directly. A separate construction manager defines the CMAR method, not DB."
+  },
+  {
+    "id": 561,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "In Design-Bid-Build (DBB), who do design professionals work directly with?",
+    "o": ["The general contractor", "The subcontractors", "The building owner", "The construction manager"],
+    "a": 2,
+    "w": "In DBB, design professionals work directly with the building owner during the design phase, after which construction is bid out to contractors. The contractor is engaged after design completion, not during design. Subcontractors are engaged by the general contractor, not directly with design professionals in DBB. A construction manager defines CMAR, not DBB."
+  },
+  {
+    "id": 562,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What dual role does the construction manager play in a CMAR delivery method?",
+    "o": ["Owner's representative and final inspector", "Consultant during design and general contractor during construction", "Designer and project financier", "Risk manager and insurance coordinator"],
+    "a": 1,
+    "w": "In CMAR (Construction Manager at Risk), the construction manager acts as a consultant during the design phase and as the general contractor during construction. They are not the owner's representative; that role remains with the owner. They do not finance the project. Risk management and insurance are separate project functions."
+  },
+  {
+    "id": 563,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What sustainability framework does project design focus on balancing?",
+    "o": ["Cost, schedule, and quality", "Environmental, economic, and socio-cultural factors", "Design, construction, and operations", "Safety, security, and sustainability"],
+    "a": 1,
+    "w": "Sustainability goals focus on balancing environmental, economic, and socio-cultural factors while adhering to regulatory requirements. Cost/schedule/quality is the classic project management triple constraint, not the sustainability framework. Design/construction/operations is a project lifecycle framework. Safety/security/sustainability mixes different goal categories."
+  },
+  {
+    "id": 564,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What must disaster recovery and business continuity plans be protected from?",
+    "o": ["Physical damage and flooding", "Unauthorized disclosure", "Software viruses and cyber attacks", "Regulatory audit access"],
+    "a": 1,
+    "w": "Disaster recovery and business continuity plans must be protected from unauthorized disclosure, as they contain sensitive information about vulnerabilities and system dependencies. Physical protection is also important but the specific stated requirement is unauthorized disclosure. Cyber protection is a separate security measure. Regulatory bodies may have legitimate access rights, so restricting audit access would be inappropriate."
+  },
+  {
+    "id": 565,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "How long should ICT infrastructure be designed to support technologies?",
+    "o": ["3–5 years", "7–10 years", "10–15 years", "20–25 years"],
+    "a": 2,
+    "w": "ICT infrastructure should be designed to support technologies for 10–15 years to justify the investment and avoid premature replacement. 3–5 years is too short for major infrastructure investment. 7–10 years is below the recommended design horizon. 20–25 years would be overly optimistic given the rate of technology change in ICT."
+  },
+  {
+    "id": 566,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "Are periodic progress reports classified as SoW deliverables?",
+    "o": ["Yes, they are primary SoW deliverables", "Yes, but only final reports", "No, they help track project health but are not SoW deliverables", "Only if specified by the client"],
+    "a": 2,
+    "w": "Periodic progress reports help track project health but are not classified as SoW deliverables. The SoW defines formal project outputs and milestones. Progress reports are management tools used during execution, not deliverables that the contractor formally hands over to the client."
+  },
+  {
+    "id": 567,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What is the purpose of a Punch List in project administration?",
+    "o": ["To document all project risks identified during planning", "To list all change orders approved during construction", "To summarize corrections required before project acceptance", "To track daily progress against the project schedule"],
+    "a": 2,
+    "w": "A Punch List summarizes corrections required before project acceptance, identifying deficiencies that must be addressed for final sign-off. Risk documentation is a risk register function. Change orders are tracked in a change order log. Daily progress is tracked in construction reports, not a punch list."
+  },
+  {
+    "id": 568,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What type of specification focuses on achieving desired outcomes, allowing contractors to choose materials and methods?",
+    "o": ["Reference specification", "Descriptive specification", "Performance specification", "Prescriptive specification"],
+    "a": 2,
+    "w": "Performance specifications focus on achieving desired outcomes and allow contractors freedom to choose materials and methods. Reference specifications are based on established standards. Descriptive specifications specify exact properties and installation methods. Prescriptive specification is another term for descriptive specifications."
+  },
+  {
+    "id": 569,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What TPM knowledge area covers document access and project communication systems?",
+    "o": ["Integration Management", "Scope Management", "Communications Management", "Human Resources Management"],
+    "a": 2,
+    "w": "Communications Management covers document access and project communication systems in telecommunications project management. Integration Management breaks large projects into smaller units. Scope Management defines project boundaries. Human Resources Management covers workforce safety and organization."
+  },
+  {
+    "id": 570,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "Which TPM knowledge area includes the calculation of critical paths?",
+    "o": ["Scope Management", "Time Management", "Cost Management", "Integration Management"],
+    "a": 1,
+    "w": "Time Management in telecommunications project management includes the calculation of critical paths to determine the minimum project duration. Scope Management defines boundaries but not scheduling. Cost Management ensures budget compliance. Integration Management coordinates project components but does not calculate critical paths."
+  },
+  {
+    "id": 571,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "Which TPM knowledge area identifies and involves all interested parties?",
+    "o": ["Human Resources Management", "Communications Management", "Risk Management", "Stakeholder Management"],
+    "a": 3,
+    "w": "Stakeholder Management identifies and involves all interested parties in the project. Human Resources Management focuses on the project team workforce. Communications Management manages information flow. Risk Management identifies and mitigates project risks."
+  },
+  {
+    "id": 572,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What does Integration Management in TPM do?",
+    "o": ["Manages BAS and ICT system integration", "Oversees acquisition of resources", "Breaks down large projects into smaller, manageable units", "Coordinates design and construction phases"],
+    "a": 2,
+    "w": "Integration Management in TPM breaks down large projects into smaller, manageable units for better control and coordination. Managing BAS and ICT integration is a technical design function. Procurement Management oversees resource acquisition. Phase coordination is a broader project management function not specific to Integration Management."
+  },
+  {
+    "id": 573,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What type of specification specifies exact properties and installation methods?",
+    "o": ["Performance specification", "Reference specification", "Proprietary specification", "Descriptive specification"],
+    "a": 3,
+    "w": "Descriptive specifications specify exact material properties and installation methods, leaving no contractor discretion. Performance specifications define outcomes and allow flexibility. Reference specifications cite existing standards. Proprietary specifications name specific manufacturer products or systems."
+  },
+  {
+    "id": 574,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What additional practice occurs after project completion in TPM?",
+    "o": ["Quarterly performance review", "Lessons learned meeting", "Annual infrastructure audit", "Client satisfaction survey only"],
+    "a": 1,
+    "w": "A lessons learned meeting after project completion is an additional TPM practice to capture knowledge for future projects. Quarterly reviews are ongoing management tools, not a post-project activity. Annual audits are operational activities. Client satisfaction surveys may occur but the specific referenced practice is the lessons learned meeting."
+  },
+  {
+    "id": 575,
+    "test": 21,
+    "testName": "Project Administration, Execution, and Risk Management",
+    "chapter": "Project Administration, Execution, and Risk Management",
+    "q": "What are the two components of Change Orders in project administration?",
+    "o": ["Cost increase and schedule delay", "Project scope and time frame changes", "Material substitution and labor rate changes", "Design revision and re-inspection requirements"],
+    "a": 1,
+    "w": "Change Orders are formal documents defining required changes in project scope and time frame. Cost and schedule impacts are consequences of scope/time changes but are not the two defining components. Material substitution may be part of a scope change but is not the defining characteristic. Design revisions and re-inspections may result from change orders but are not the two components."
+  }
+]
