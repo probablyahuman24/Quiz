@@ -1,22 +1,32 @@
 // RCDD Quiz Bank — app.js
 // Vanilla React (no JSX, no build step needed)
+// Updated: Spaced repetition, Confidence tagging, Chapter filter,
+//          Weak area auto-drill, Wrong answers review, Per-test reset
 
 const { useState, useEffect, useCallback, useMemo } = React;
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const LABELS = ['A','B','C','D'];
-const STORAGE_KEY = 'rcdd_v2';
+const STORAGE_KEY = 'rcdd_v3';
 const QUESTIONS_URL = 'questions.json';
 
 const COLORS = {
   1:'#7c3aed', 2:'#0284c7', 3:'#059669', 4:'#d97706',
   5:'#dc2626', 6:'#0891b2', 7:'#65a30d', 8:'#9333ea',
-  9:'#0f766e', 10:'#be185d'
+  9:'#0f766e', 10:'#be185d', 11:'#b45309', 12:'#1d4ed8',
+  13:'#0f766e', 14:'#7c3aed', 15:'#c2410c', 16:'#0369a1',
+  17:'#4f46e5', 18:'#b91c1c', 19:'#047857', 20:'#9333ea',
+  21:'#0284c7', 22:'#d97706',
+  focus:'#6366f1', review:'#e11d48'
 };
 const LIGHTS = {
   1:'#f5f3ff', 2:'#f0f9ff', 3:'#ecfdf5', 4:'#fffbeb',
   5:'#fef2f2', 6:'#ecfeff', 7:'#f7fee7', 8:'#faf5ff',
-  9:'#f0fdfa', 10:'#fdf2f8'
+  9:'#f0fdfa', 10:'#fdf2f8', 11:'#fef3c7', 12:'#eff6ff',
+  13:'#f0fdfa', 14:'#f5f3ff', 15:'#fff7ed', 16:'#f0f9ff',
+  17:'#eef2ff', 18:'#fef2f2', 19:'#ecfdf5', 20:'#faf5ff',
+  21:'#f0f9ff', 22:'#fffbeb',
+  focus:'#eef2ff', review:'#fff1f2'
 };
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -46,33 +56,51 @@ function App() {
   const [screen, setScreen] = useState('home');
   const [activeTest, setActiveTest] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  // 'normal' | 'focus' | 'review'
+  const [sessionMode, setSessionMode] = useState('normal');
 
   const [appData, setAppData] = useState(() => {
     const saved = load();
-    return saved || { sessions: {}, history: [], starred: [] };
+    // Migrate from old storage key if needed
+    if (!saved) {
+      try {
+        const old = localStorage.getItem('rcdd_v2');
+        if (old) {
+          const parsed = JSON.parse(old);
+          return {
+            sessions: parsed.sessions || {},
+            history: parsed.history || [],
+            starred: parsed.starred || [],
+            wrongCounts: {},
+            confidenceLog: {}
+          };
+        }
+      } catch(e) {}
+    }
+    if (saved) {
+      return {
+        sessions: saved.sessions || {},
+        history: saved.history || [],
+        starred: saved.starred || [],
+        wrongCounts: saved.wrongCounts || {},
+        confidenceLog: saved.confidenceLog || {}
+      };
+    }
+    return { sessions: {}, history: [], starred: [], wrongCounts: {}, confidenceLog: {} };
   });
 
-  // Persist on every change
   useEffect(() => { save(appData); }, [appData]);
 
-  // Fetch questions
   useEffect(() => {
     fetch(QUESTIONS_URL + '?v=' + Date.now())
       .then(r => {
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.json();
       })
-      .then(data => {
-        setQuestions(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        setFetchError(err.message);
-        setLoading(false);
-      });
+      .then(data => { setQuestions(data); setLoading(false); })
+      .catch(err => { setFetchError(err.message); setLoading(false); });
   }, []);
 
-  // Group questions by test
   const tests = useMemo(() => {
     const map = {};
     questions.forEach(q => {
@@ -82,17 +110,24 @@ function App() {
     return Object.values(map).sort((a, b) => a.id - b.id);
   }, [questions]);
 
-  // Session management
+  // ── Spaced-repetition shuffle: priority questions with wrongCount >= 1 first ──
+  const spacedShuffle = useCallback((qs) => {
+    const priority = qs.filter(q => (appData.wrongCounts[q.id] || 0) >= 1);
+    const normal = qs.filter(q => (appData.wrongCounts[q.id] || 0) < 1);
+    return [...shuffle(priority), ...shuffle(normal)];
+  }, [appData.wrongCounts]);
+
   const getOrCreateSession = useCallback((testId) => {
     if (appData.sessions[testId]) return appData.sessions[testId];
     const t = tests.find(x => x.id === testId);
     if (!t) return null;
-    const qs = shuffle(t.questions);
-    const sess = { questions: qs, answers: Array(qs.length).fill(null) };
+    const qs = spacedShuffle(t.questions);
+    const sess = { questions: qs, answers: Array(qs.length).fill(null), confidences: Array(qs.length).fill(null), mode: 'normal' };
     setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [testId]: sess } }));
     return sess;
-  }, [appData.sessions, tests]);
+  }, [appData.sessions, tests, spacedShuffle]);
 
+  // ── Answer with confidence ──
   const answer = useCallback((testId, qIdx, optIdx) => {
     setAppData(prev => {
       const sess = prev.sessions[testId];
@@ -103,32 +138,91 @@ function App() {
     });
   }, []);
 
+  const setConfidence = useCallback((testId, qIdx, conf) => {
+    setAppData(prev => {
+      const sess = prev.sessions[testId];
+      if (!sess) return prev;
+      const confidences = [...(sess.confidences || Array(sess.questions.length).fill(null))];
+      confidences[qIdx] = conf;
+      return { ...prev, sessions: { ...prev.sessions, [testId]: { ...sess, confidences } } };
+    });
+  }, []);
+
   const finishTest = useCallback((testId) => {
     const sess = appData.sessions[testId];
     if (!sess) return;
+
+    // Skip score tracking for review/focus sessions
+    const isSpecialSession = sess.mode === 'review' || sess.mode === 'focus';
+
+    const newWrongCounts = { ...appData.wrongCounts };
+    const newConfidenceLog = { ...appData.confidenceLog };
+
+    sess.questions.forEach((q, i) => {
+      const correct = sess.answers[i] === q.a;
+      const conf = sess.confidences ? sess.confidences[i] : null;
+      if (!correct && sess.answers[i] !== null) {
+        newWrongCounts[q.id] = (newWrongCounts[q.id] || 0) + 1;
+      } else if (correct && !isSpecialSession) {
+        // Reduce wrong count on correct answer (floor at 0)
+        if (newWrongCounts[q.id]) {
+          newWrongCounts[q.id] = Math.max(0, newWrongCounts[q.id] - 1);
+        }
+      }
+      // Log confidence + correctness
+      newConfidenceLog[q.id] = { conf, correct, testId };
+    });
+
+    if (isSpecialSession) {
+      setAppData(prev => ({
+        ...prev,
+        wrongCounts: newWrongCounts,
+        confidenceLog: newConfidenceLog
+      }));
+      setScreen('result');
+      return;
+    }
+
     const correct = sess.questions.filter((q, i) => sess.answers[i] === q.a).length;
     const pct = Math.round(correct / sess.questions.length * 100);
     const entry = { date: new Date().toISOString(), testId, correct, total: sess.questions.length, pct };
-    setAppData(prev => ({ ...prev, history: [entry, ...prev.history] }));
+    setAppData(prev => ({
+      ...prev,
+      history: [entry, ...prev.history],
+      wrongCounts: newWrongCounts,
+      confidenceLog: newConfidenceLog
+    }));
     setScreen('result');
-  }, [appData.sessions]);
+  }, [appData]);
 
   const reshuffleTest = useCallback((testId) => {
     const t = tests.find(x => x.id === testId);
     if (!t) return;
-    const qs = shuffle(t.questions);
-    setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [testId]: { questions: qs, answers: Array(qs.length).fill(null) } } }));
+    const qs = spacedShuffle(t.questions);
+    setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [testId]: { questions: qs, answers: Array(qs.length).fill(null), confidences: Array(qs.length).fill(null), mode: 'normal' } } }));
     setScreen('test');
-  }, [tests]);
+  }, [tests, spacedShuffle]);
 
   const retryTest = useCallback((testId) => {
     setAppData(prev => {
       const sess = prev.sessions[testId];
       if (!sess) return prev;
-      return { ...prev, sessions: { ...prev.sessions, [testId]: { ...sess, answers: Array(sess.questions.length).fill(null) } } };
+      return { ...prev, sessions: { ...prev.sessions, [testId]: { ...sess, answers: Array(sess.questions.length).fill(null), confidences: Array(sess.questions.length).fill(null) } } };
     });
     setScreen('test');
   }, []);
+
+  // ── Per-test reset ──
+  const resetTest = useCallback((testId) => {
+    const t = tests.find(x => x.id === testId);
+    if (!t) return;
+    const qs = spacedShuffle(t.questions);
+    setAppData(prev => {
+      const sessions = { ...prev.sessions };
+      delete sessions[testId];
+      return { ...prev, sessions };
+    });
+  }, [tests, spacedShuffle]);
 
   const toggleStar = useCallback((qId) => {
     setAppData(prev => ({
@@ -140,13 +234,73 @@ function App() {
   const reshuffleAll = useCallback(() => {
     const sessions = {};
     tests.forEach(t => {
-      const qs = shuffle(t.questions);
-      sessions[t.id] = { questions: qs, answers: Array(qs.length).fill(null) };
+      const qs = spacedShuffle(t.questions);
+      sessions[t.id] = { questions: qs, answers: Array(qs.length).fill(null), confidences: Array(qs.length).fill(null), mode: 'normal' };
     });
     setAppData(prev => ({ ...prev, sessions }));
-  }, [tests]);
+  }, [tests, spacedShuffle]);
 
-  // Computed stats
+  // ── Focus Session: 10 weakest questions by per-chapter score ──
+  const startFocusSession = useCallback(() => {
+    if (questions.length === 0) return;
+    // Collect chapter scores across all sessions
+    const chapStats = {};
+    tests.forEach(t => {
+      const sess = appData.sessions[t.id];
+      if (!sess) return;
+      sess.questions.forEach((q, i) => {
+        const ch = q.chapter || 'General';
+        if (!chapStats[ch]) chapStats[ch] = { correct: 0, total: 0, questions: [] };
+        chapStats[ch].total++;
+        if (sess.answers[i] === q.a) chapStats[ch].correct++;
+        // Collect wrong ones
+        if (sess.answers[i] !== null && sess.answers[i] !== q.a) {
+          chapStats[ch].questions.push(q);
+        }
+      });
+    });
+    // Sort chapters by score (lowest first) and pick up to 10 questions
+    const sortedChaps = Object.entries(chapStats)
+      .filter(([, v]) => v.questions.length > 0)
+      .sort(([, a], [, b]) => (a.correct / Math.max(a.total, 1)) - (b.correct / Math.max(b.total, 1)));
+    let focusQs = [];
+    for (const [, v] of sortedChaps) {
+      focusQs = focusQs.concat(v.questions);
+      if (focusQs.length >= 10) break;
+    }
+    // If not enough wrong answers from chapters, pad with high-wrongCount questions
+    if (focusQs.length < 10) {
+      const extra = questions
+        .filter(q => !focusQs.find(fq => fq.id === q.id))
+        .sort((a, b) => (appData.wrongCounts[b.id] || 0) - (appData.wrongCounts[a.id] || 0))
+        .slice(0, 10 - focusQs.length);
+      focusQs = focusQs.concat(extra);
+    }
+    focusQs = focusQs.slice(0, 10);
+    const focusId = 'focus';
+    const sess = { questions: focusQs, answers: Array(focusQs.length).fill(null), confidences: Array(focusQs.length).fill(null), mode: 'focus' };
+    setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [focusId]: sess } }));
+    setSessionMode('focus');
+    setActiveTest(focusId);
+    setScreen('test');
+  }, [questions, tests, appData]);
+
+  // ── Review Wrong Answers session ──
+  const startReviewSession = useCallback(() => {
+    if (questions.length === 0) return;
+    // Gather all wrongly answered questions, sorted by most-wrong first
+    const wrongQs = questions
+      .filter(q => (appData.wrongCounts[q.id] || 0) > 0)
+      .sort((a, b) => (appData.wrongCounts[b.id] || 0) - (appData.wrongCounts[a.id] || 0));
+    if (wrongQs.length === 0) return;
+    const reviewId = 'review';
+    const sess = { questions: wrongQs, answers: Array(wrongQs.length).fill(null), confidences: Array(wrongQs.length).fill(null), mode: 'review' };
+    setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [reviewId]: sess } }));
+    setSessionMode('review');
+    setActiveTest(reviewId);
+    setScreen('test');
+  }, [questions, appData.wrongCounts]);
+
   const testStats = useMemo(() => tests.map(t => {
     const sess = appData.sessions[t.id];
     if (!sess) return { testId: t.id, name: t.name, done: 0, correct: 0, total: t.questions.length, pct: null };
@@ -159,6 +313,13 @@ function App() {
   const totalQs = testStats.reduce((s, ts) => s + ts.total, 0);
   const totalCorrect = testStats.reduce((s, ts) => s + ts.correct, 0);
   const overallScore = totalAnswered > 0 ? Math.round(totalCorrect / totalAnswered * 100) : null;
+
+  const allTestsDone = tests.length > 0 && tests.every(t => {
+    const s = appData.sessions[t.id];
+    return s && s.answers.every(a => a !== null);
+  });
+
+  const hasWrongAnswers = useMemo(() => Object.values(appData.wrongCounts).some(c => c > 0), [appData.wrongCounts]);
 
   if (loading) return null;
 
@@ -174,15 +335,48 @@ function App() {
   const session = activeTest ? (appData.sessions[activeTest] || null) : null;
 
   return el('div', { style: { maxWidth:430, margin:'0 auto', minHeight:'100vh', background:'#f8fafc', fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
-    el(SideMenu, { open: menuOpen, onClose: () => setMenuOpen(false), testStats, history: appData.history, totalAnswered, totalQs, totalCorrect, overallScore }),
-    screen === 'home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, onSelect: id => { setActiveTest(id); getOrCreateSession(id); setScreen('test'); }, onMenu: () => setMenuOpen(true), onReshuffleAll: reshuffleAll }),
-    screen === 'test' && session && el(TestScreen, { key: activeTest, testId: activeTest, session, starred: appData.starred, onAnswer: answer, onStar: toggleStar, onBack: () => setScreen('home'), onFinish: () => finishTest(activeTest) }),
-    screen === 'result' && session && el(ResultScreen, { testId: activeTest, session, onBack: () => setScreen('test'), onRetry: () => retryTest(activeTest), onReshuffle: () => reshuffleTest(activeTest), onHome: () => setScreen('home') })
+    el(SideMenu, {
+      open: menuOpen,
+      onClose: () => setMenuOpen(false),
+      testStats, history: appData.history,
+      totalAnswered, totalQs, totalCorrect, overallScore,
+      hasWrongAnswers,
+      onReviewWrong: () => { setMenuOpen(false); startReviewSession(); }
+    }),
+    screen === 'home' && el(HomeScreen, {
+      tests, testStats, overallScore, totalAnswered, totalQs,
+      onSelect: id => { setSessionMode('normal'); setActiveTest(id); getOrCreateSession(id); setScreen('test'); },
+      onMenu: () => setMenuOpen(true),
+      onReshuffleAll: reshuffleAll,
+      allTestsDone,
+      onFocusSession: startFocusSession,
+      onResetTest: resetTest
+    }),
+    screen === 'test' && session && el(TestScreen, {
+      key: activeTest + '_' + (session.mode || 'normal'),
+      testId: activeTest,
+      session,
+      starred: appData.starred,
+      wrongCounts: appData.wrongCounts,
+      onAnswer: answer,
+      onConfidence: setConfidence,
+      onStar: toggleStar,
+      onBack: () => setScreen('home'),
+      onFinish: () => finishTest(activeTest)
+    }),
+    screen === 'result' && session && el(ResultScreen, {
+      testId: activeTest,
+      session,
+      onBack: () => setScreen('test'),
+      onRetry: () => retryTest(activeTest),
+      onReshuffle: () => reshuffleTest(activeTest),
+      onHome: () => setScreen('home')
+    })
   );
 }
 
 // ── Side Menu ─────────────────────────────────────────────────────────────────
-function SideMenu({ open, onClose, testStats, history, totalAnswered, totalQs, totalCorrect, overallScore }) {
+function SideMenu({ open, onClose, testStats, history, totalAnswered, totalQs, totalCorrect, overallScore, hasWrongAnswers, onReviewWrong }) {
   const accuracy = totalAnswered > 0 ? Math.round(totalCorrect / totalAnswered * 100) : 0;
   const completion = totalQs > 0 ? Math.round(totalAnswered / totalQs * 100) : 0;
   const bestScore = history.length ? Math.max(...history.map(h => h.pct)) : null;
@@ -205,6 +399,10 @@ function SideMenu({ open, onClose, testStats, history, totalAnswered, totalQs, t
         el('button', { onClick: onClose, style: { background:'#f1f5f9', border:'none', borderRadius:8, width:30, height:30, fontSize:14, color:'#64748b' } }, '✕')
       ),
       el('div', { style: { padding:'16px 18px 0' } },
+        // Review Wrong Answers button
+        hasWrongAnswers && el('button', { onClick: onReviewWrong, style: { width:'100%', background:'#fff1f2', border:'1.5px solid #f43f5e', borderRadius:11, padding:'12px', fontSize:13, fontWeight:700, color:'#e11d48', marginBottom:16, display:'flex', alignItems:'center', justifyContent:'center', gap:6 } },
+          '✗ Review Wrong Answers'
+        ),
         el('p', { style: { fontSize:9, fontWeight:700, color:'#94a3b8', letterSpacing:2, marginBottom:10 } }, 'OVERALL'),
         el('div', { style: { display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, marginBottom:14 } },
           ...stats.map(s =>
@@ -214,7 +412,6 @@ function SideMenu({ open, onClose, testStats, history, totalAnswered, totalQs, t
             )
           )
         ),
-        // Overall progress bar
         el('div', { style: { background:'#f8fafc', borderRadius:12, padding:'12px 14px', marginBottom:14 } },
           el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:6 } },
             el('span', { style: { fontSize:11, fontWeight:600, color:'#475569' } }, 'Completion'),
@@ -224,7 +421,6 @@ function SideMenu({ open, onClose, testStats, history, totalAnswered, totalQs, t
             el('div', { style: { height:'100%', background:'linear-gradient(90deg,#7c3aed,#a855f7)', borderRadius:3, width: completion + '%', transition:'width 0.5s' } })
           )
         ),
-        // Per-test breakdown
         el('p', { style: { fontSize:9, fontWeight:700, color:'#94a3b8', letterSpacing:2, marginBottom:10 } }, 'TEST BREAKDOWN'),
         ...testStats.map(ts =>
           el('div', { key: ts.testId, style: { marginBottom:10 } },
@@ -237,7 +433,6 @@ function SideMenu({ open, onClose, testStats, history, totalAnswered, totalQs, t
             )
           )
         ),
-        // Session history
         history.length > 0 && el('div', null,
           el('p', { style: { fontSize:9, fontWeight:700, color:'#94a3b8', letterSpacing:2, margin:'14px 0 10px' } }, 'RECENT SESSIONS'),
           ...history.slice(0, 10).map((h, i) =>
@@ -255,10 +450,25 @@ function SideMenu({ open, onClose, testStats, history, totalAnswered, totalQs, t
 }
 
 // ── Home Screen ───────────────────────────────────────────────────────────────
-function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, onSelect, onMenu, onReshuffleAll }) {
+function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onResetTest }) {
   const pct = totalQs > 0 ? Math.round(totalAnswered / totalQs * 100) : 0;
+  const [chapterFilter, setChapterFilter] = useState('All');
+  const [resetConfirm, setResetConfirm] = useState(null); // testId or null
+
+  // Unique chapters across all tests
+  const allChapters = useMemo(() => {
+    const chaps = new Set();
+    tests.forEach(t => t.questions.forEach(q => { if (q.chapter) chaps.add(q.chapter); }));
+    return Array.from(chaps).sort();
+  }, [tests]);
+
+  // Filtered tests
+  const filteredTests = useMemo(() => {
+    if (chapterFilter === 'All') return tests;
+    return tests.filter(t => t.questions.some(q => q.chapter === chapterFilter));
+  }, [tests, chapterFilter]);
+
   return el('div', { style: { minHeight:'100vh', background:'#f8fafc', display:'flex', flexDirection:'column' } },
-    // Header
     el('div', { style: { background:'#fff', borderBottom:'1px solid #f1f5f9', padding:'52px 20px 14px', display:'flex', alignItems:'center', gap:14 } },
       el('button', { onClick: onMenu, style: { background:'none', border:'none', padding:4, display:'flex', flexDirection:'column', gap:5 } },
         el('span', { style: { display:'block', width:20, height:2, background:'#1e293b', borderRadius:2 } }),
@@ -274,7 +484,6 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, on
         el('div', { style: { fontSize:10, color:'#94a3b8' } }, 'score')
       )
     ),
-    // Progress
     el('div', { style: { padding:'12px 20px 8px', background:'#fff' } },
       el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
         el('span', { style: { fontSize:11, color:'#64748b' } }, 'Overall Progress'),
@@ -284,63 +493,113 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, on
         el('div', { style: { height:'100%', background:'linear-gradient(90deg,#7c3aed,#a855f7)', borderRadius:3, width: pct + '%' } })
       )
     ),
-    // Test list
+
+    // ── Chapter Filter Bar ──
+    el('div', { style: { padding:'10px 20px 0', background:'#fff', borderBottom:'1px solid #f1f5f9' } },
+      el('div', { style: { fontSize:9, fontWeight:700, color:'#94a3b8', letterSpacing:2, marginBottom:8 } }, 'FILTER BY CHAPTER'),
+      el('div', { style: { display:'flex', gap:6, overflowX:'auto', paddingBottom:10 } },
+        el('button', {
+          key: 'All',
+          onClick: () => setChapterFilter('All'),
+          style: { flexShrink:0, padding:'5px 12px', borderRadius:20, border:'1.5px solid ' + (chapterFilter === 'All' ? '#7c3aed' : '#e2e8f0'), background: chapterFilter === 'All' ? '#7c3aed' : '#fff', color: chapterFilter === 'All' ? '#fff' : '#475569', fontSize:11, fontWeight:700, whiteSpace:'nowrap' }
+        }, 'All'),
+        ...allChapters.map(ch =>
+          el('button', {
+            key: ch,
+            onClick: () => setChapterFilter(ch === chapterFilter ? 'All' : ch),
+            style: { flexShrink:0, padding:'5px 12px', borderRadius:20, border:'1.5px solid ' + (chapterFilter === ch ? '#7c3aed' : '#e2e8f0'), background: chapterFilter === ch ? '#7c3aed' : '#fff', color: chapterFilter === ch ? '#fff' : '#475569', fontSize:11, fontWeight:600, whiteSpace:'nowrap', maxWidth:140, overflow:'hidden', textOverflow:'ellipsis' }
+          }, ch)
+        )
+      )
+    ),
+
     el('div', { style: { flex:1, padding:'16px 20px', overflowY:'auto' } },
+
+      // ── Focus Session button ──
+      allTestsDone && el('button', { onClick: onFocusSession, style: { width:'100%', background:'linear-gradient(135deg,#6366f1,#8b5cf6)', color:'#fff', border:'none', borderRadius:14, padding:'14px', fontSize:14, fontWeight:700, marginBottom:14, boxShadow:'0 4px 16px rgba(99,102,241,0.3)', display:'flex', alignItems:'center', justifyContent:'center', gap:8 } },
+        '🎯 Focus Session — Drill Weak Areas'
+      ),
+
       el('div', { style: { fontSize:10, fontWeight:700, color:'#94a3b8', letterSpacing:2, marginBottom:12 } }, 'SELECT A TEST'),
-      ...tests.map(t => {
+
+      ...filteredTests.map(t => {
         const ts = testStats.find(x => x.testId === t.id) || { done:0, correct:0, total:t.questions.length, pct:null };
         const color = COLORS[t.id] || '#6366f1';
         const light = LIGHTS[t.id] || '#f5f3ff';
         const isComplete = ts.done === ts.total && ts.done > 0;
         const fillPct = ts.total > 0 ? (ts.done / ts.total * 100) : 0;
-        return el('button', { key: t.id, onClick: () => onSelect(t.id), style: { width:'100%', background:'#fff', border:'1.5px solid ' + (isComplete ? color + '60' : '#e2e8f0'), borderRadius:14, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, marginBottom:9, textAlign:'left' } },
-          el('div', { style: { width:38, height:38, borderRadius:11, background:light, color:color, display:'flex', alignItems:'center', justifyContent:'center', fontSize:15, fontWeight:800, flexShrink:0 } }, t.id),
-          el('div', { style: { flex:1, minWidth:0 } },
-            el('div', { style: { display:'flex', alignItems:'center', gap:6, marginBottom:2 } },
-              el('span', { style: { fontSize:13, fontWeight:700, color:'#0f172a' } }, t.name),
-              isComplete && el('span', { style: { fontSize:10, fontWeight:700, padding:'1px 7px', borderRadius:20, background:light, color:color } }, '✓ Done')
+        const isConfirming = resetConfirm === t.id;
+
+        return el('div', { key: t.id, style: { marginBottom:9, position:'relative' } },
+          el('button', { onClick: () => { if (!isConfirming) onSelect(t.id); }, style: { width:'100%', background:'#fff', border:'1.5px solid ' + (isComplete ? color + '60' : '#e2e8f0'), borderRadius:14, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, textAlign:'left', opacity: isConfirming ? 0.5 : 1 } },
+            el('div', { style: { width:38, height:38, borderRadius:11, background:light, color:color, display:'flex', alignItems:'center', justifyContent:'center', fontSize:15, fontWeight:800, flexShrink:0 } }, t.id),
+            el('div', { style: { flex:1, minWidth:0 } },
+              el('div', { style: { display:'flex', alignItems:'center', gap:6, marginBottom:2 } },
+                el('span', { style: { fontSize:13, fontWeight:700, color:'#0f172a' } }, t.name),
+                isComplete && el('span', { style: { fontSize:10, fontWeight:700, padding:'1px 7px', borderRadius:20, background:light, color:color } }, '✓ Done')
+              ),
+              el('div', { style: { fontSize:11, color:'#94a3b8', marginBottom:5 } }, t.questions.length + ' questions'),
+              el('div', { style: { height:3, background:'#f1f5f9', borderRadius:2, overflow:'hidden' } },
+                el('div', { style: { height:'100%', background:color, borderRadius:2, width: fillPct + '%' } })
+              )
             ),
-            el('div', { style: { fontSize:11, color:'#94a3b8', marginBottom:5 } }, t.questions.length + ' questions'),
-            el('div', { style: { height:3, background:'#f1f5f9', borderRadius:2, overflow:'hidden' } },
-              el('div', { style: { height:'100%', background:color, borderRadius:2, width: fillPct + '%' } })
-            )
+            el('div', { style: { display:'flex', flexDirection:'column', alignItems:'flex-end', gap:1 } },
+              ts.pct !== null
+                ? el('span', { style: { fontSize:17, fontWeight:800, color:color } }, ts.pct + '%')
+                : el('span', { style: { fontSize:13, color:'#e2e8f0' } }, '—')
+            ),
+            // Reset icon
+            el('button', {
+              onClick: (e) => { e.stopPropagation(); setResetConfirm(t.id); },
+              style: { background:'none', border:'none', fontSize:16, color:'#94a3b8', padding:'4px', flexShrink:0, lineHeight:1 },
+              title: 'Reset this test'
+            }, '↺'),
+            !isConfirming && el('span', { style: { fontSize:20, color:'#cbd5e1' } }, '›')
           ),
-          el('div', { style: { display:'flex', flexDirection:'column', alignItems:'flex-end', gap:1 } },
-            ts.pct !== null
-              ? el('span', { style: { fontSize:17, fontWeight:800, color:color } }, ts.pct + '%')
-              : el('span', { style: { fontSize:13, color:'#e2e8f0' } }, '—')
-          ),
-          el('span', { style: { fontSize:20, color:'#cbd5e1' } }, '›')
+          // Inline reset confirmation
+          isConfirming && el('div', { style: { position:'absolute', bottom:-1, left:0, right:0, background:'#fff', border:'1.5px solid #f43f5e', borderRadius:'0 0 14px 14px', padding:'8px 14px', display:'flex', alignItems:'center', gap:8, zIndex:2 } },
+            el('span', { style: { fontSize:12, fontWeight:600, color:'#0f172a', flex:1 } }, 'Reset this test?'),
+            el('button', { onClick: () => { onResetTest(t.id); setResetConfirm(null); }, style: { background:'#f43f5e', color:'#fff', border:'none', borderRadius:7, padding:'5px 12px', fontSize:12, fontWeight:700 } }, 'Yes'),
+            el('button', { onClick: () => setResetConfirm(null), style: { background:'#f8fafc', color:'#475569', border:'1.5px solid #e2e8f0', borderRadius:7, padding:'5px 12px', fontSize:12, fontWeight:600 } }, 'No')
+          )
         );
       }),
+
       el('button', { onClick: onReshuffleAll, style: { width:'100%', background:'#f8fafc', border:'1.5px solid #e2e8f0', borderRadius:12, padding:'12px', fontSize:13, fontWeight:600, color:'#64748b', marginTop:4 } }, '↺ Reshuffle All Tests')
     )
   );
 }
 
 // ── Test Screen ───────────────────────────────────────────────────────────────
-function TestScreen({ testId, session, starred, onAnswer, onStar, onBack, onFinish }) {
+function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfidence, onStar, onBack, onFinish }) {
   const [qIdx, setQIdx] = useState(0);
   const [showJump, setShowJump] = useState(false);
 
-  const color = COLORS[testId] || '#6366f1';
-  const light = LIGHTS[testId] || '#f5f3ff';
+  const isSpecial = testId === 'focus' || testId === 'review';
+  const color = isSpecial ? (COLORS[testId] || '#6366f1') : (COLORS[testId] || '#6366f1');
+  const light = isSpecial ? (LIGHTS[testId] || '#f5f3ff') : (LIGHTS[testId] || '#f5f3ff');
   const qs = session.questions;
   const ans = session.answers;
+  const confs = session.confidences || Array(qs.length).fill(null);
   const q = qs[qIdx];
   const isAnswered = ans[qIdx] !== null;
   const selected = ans[qIdx];
+  const confSet = confs[qIdx] !== null;
   const allDone = ans.every(a => a !== null);
   const doneCount = ans.filter(a => a !== null).length;
   const progress = ((qIdx + 1) / qs.length) * 100;
+  const wrongCount = wrongCounts[q.id] || 0;
+
+  const sessionLabel = session.mode === 'focus' ? '🎯 FOCUS SESSION' :
+                       session.mode === 'review' ? '✗ REVIEW MODE' :
+                       'TEST ' + testId;
 
   return el('div', { style: { minHeight:'100vh', background:'#f8fafc', display:'flex', flexDirection:'column' } },
-    // Header
     el('div', { style: { background:'#fff', borderBottom:'2px solid ' + color + '22', padding:'52px 14px 10px', display:'flex', alignItems:'center', gap:10 } },
       el('button', { onClick: onBack, style: { background:'none', border:'none', fontSize:24, color:'#64748b', lineHeight:1, padding:'0 4px' } }, '‹'),
       el('div', { style: { flex:1 } },
-        el('div', { style: { fontSize:10, fontWeight:700, color:color, letterSpacing:1.5 } }, 'TEST ' + testId),
-        el('div', { style: { fontSize:12, fontWeight:600, color:'#475569' } }, q.testName)
+        el('div', { style: { fontSize:10, fontWeight:700, color:color, letterSpacing:1.5 } }, sessionLabel),
+        el('div', { style: { fontSize:12, fontWeight:600, color:'#475569' } }, q.testName || q.chapter || '')
       ),
       el('button', { onClick: () => setShowJump(s => !s), style: { background: showJump ? color : '#f8fafc', border:'1.5px solid ' + color, borderRadius:9, padding:'5px 12px', fontSize:12, fontWeight:700, color: showJump ? '#fff' : color } },
         showJump ? '✕' : '⊞ ' + doneCount + '/' + qs.length
@@ -363,18 +622,35 @@ function TestScreen({ testId, session, starred, onAnswer, onStar, onBack, onFini
         )
       )
     ),
-    // Progress bar
     el('div', { style: { height:3, background:'#f1f5f9' } },
       el('div', { style: { height:'100%', background:color, width:progress+'%', transition:'width 0.4s', borderRadius:'0 2px 2px 0' } })
     ),
-    // Question
+    // Question card
     el('div', { style: { margin:'16px 18px 0', background:'#fff', borderRadius:14, padding:'16px', boxShadow:'0 1px 6px rgba(0,0,0,0.05)' } },
       el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:8 } },
-        el('span', { style: { fontSize:10, fontWeight:700, color:color, letterSpacing:1.5 } }, 'Q' + (qIdx+1) + ' OF ' + qs.length),
+        el('div', { style: { display:'flex', alignItems:'center', gap:8 } },
+          el('span', { style: { fontSize:10, fontWeight:700, color:color, letterSpacing:1.5 } }, 'Q' + (qIdx+1) + ' OF ' + qs.length),
+          wrongCount > 0 && el('span', { style: { fontSize:9, fontWeight:700, background:'#fff1f2', color:'#dc2626', borderRadius:10, padding:'2px 7px' } }, '✗ ' + wrongCount + 'x wrong')
+        ),
         el('button', { onClick: () => onStar(q.id), style: { background:'none', border:'none', fontSize:20, color: starred.includes(q.id) ? '#f59e0b' : '#cbd5e1', padding:0 } }, starred.includes(q.id) ? '★' : '☆')
       ),
       el('p', { style: { fontSize:15, fontWeight:600, color:'#0f172a', lineHeight:1.55 } }, q.q)
     ),
+
+    // ── Confidence Buttons (shown before answering) ──
+    !isAnswered && el('div', { style: { margin:'10px 18px 0' } },
+      el('div', { style: { fontSize:9, fontWeight:700, color:'#94a3b8', letterSpacing:1.5, marginBottom:6 } }, 'HOW CONFIDENT ARE YOU?'),
+      el('div', { style: { display:'flex', gap:7 } },
+        [['Sure','#059669','#ecfdf5'], ['Unsure','#d97706','#fffbeb'], ['Guessing','#dc2626','#fef2f2']].map(([label, tc, bg]) =>
+          el('button', {
+            key: label,
+            onClick: () => onConfidence(testId, qIdx, label.toLowerCase()),
+            style: { flex:1, padding:'8px 4px', borderRadius:9, border:'1.5px solid ' + (confs[qIdx] === label.toLowerCase() ? tc : '#e2e8f0'), background: confs[qIdx] === label.toLowerCase() ? bg : '#fff', color: confs[qIdx] === label.toLowerCase() ? tc : '#94a3b8', fontSize:11, fontWeight:700 }
+          }, label)
+        )
+      )
+    ),
+
     // Options
     el('div', { style: { padding:'12px 18px 0', display:'flex', flexDirection:'column', gap:8 } },
       ...q.o.map((opt, i) => {
@@ -384,7 +660,7 @@ function TestScreen({ testId, session, starred, onAnswer, onStar, onBack, onFini
           else if (i === selected && i !== q.a) { bg='#fff1f2'; border='#f43f5e'; col='#9f1239'; lbg='#f43f5e'; lc='#fff'; }
           else { bg='#fafafa'; border='#f1f5f9'; col='#b0bec5'; lbg='#f1f5f9'; lc='#b0bec5'; }
         }
-        return el('button', { key:i, onClick: () => onAnswer(testId, qIdx, i), style: { display:'flex', alignItems:'center', gap:10, border:'1.5px solid '+border, borderRadius:11, padding:'12px', textAlign:'left', width:'100%', background:bg, color:col } },
+        return el('button', { key:i, onClick: () => !isAnswered && onAnswer(testId, qIdx, i), style: { display:'flex', alignItems:'center', gap:10, border:'1.5px solid '+border, borderRadius:11, padding:'12px', textAlign:'left', width:'100%', background:bg, color:col } },
           el('span', { style: { minWidth:24, height:24, borderRadius:6, background:lbg, color:lc, display:'flex', alignItems:'center', justifyContent:'center', fontSize:11, fontWeight:700, flexShrink:0 } }, LABELS[i]),
           el('span', { style: { fontSize:13.5, lineHeight:1.4, flex:1 } }, opt),
           isAnswered && i === q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✓'),
@@ -392,14 +668,21 @@ function TestScreen({ testId, session, starred, onAnswer, onStar, onBack, onFini
         );
       })
     ),
+
     // Explanation
     isAnswered && el('div', { style: { margin:'12px 18px 0', background:'#fff', borderRadius:12, padding:'13px', border:'1px solid #e2e8f0' } },
       el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
         el('span', { style: { fontSize:12, fontWeight:700, color: selected === q.a ? '#16a34a' : '#dc2626' } }, selected === q.a ? 'Correct ✓' : 'Incorrect ✗'),
         el('span', { style: { fontSize:11, color:'#94a3b8' } }, 'Answer: ' + LABELS[q.a])
       ),
+      confs[qIdx] && el('div', { style: { marginBottom:6, display:'flex', gap:6, alignItems:'center' } },
+        el('span', { style: { fontSize:10, fontWeight:700, color:'#94a3b8' } }, 'You were:'),
+        el('span', { style: { fontSize:10, fontWeight:700, padding:'2px 9px', borderRadius:20, background: confs[qIdx] === 'sure' ? '#ecfdf5' : confs[qIdx] === 'unsure' ? '#fffbeb' : '#fef2f2', color: confs[qIdx] === 'sure' ? '#059669' : confs[qIdx] === 'unsure' ? '#d97706' : '#dc2626' } }, confs[qIdx].charAt(0).toUpperCase() + confs[qIdx].slice(1)),
+        selected !== q.a && confs[qIdx] === 'sure' && el('span', { style: { fontSize:10, fontWeight:700, color:'#dc2626', background:'#fff1f2', borderRadius:20, padding:'2px 9px' } }, '⚠️ Danger Gap')
+      ),
       el('p', { style: { fontSize:12.5, color:'#475569', lineHeight:1.6 } }, q.w)
     ),
+
     // Navigation
     el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', padding:'12px 18px 44px', marginTop:'auto' } },
       el('button', { onClick: () => qIdx > 0 && setQIdx(q => q-1), disabled: qIdx === 0, style: { background:'#f8fafc', border:'1.5px solid #e2e8f0', borderRadius:10, padding:'9px 16px', fontSize:13, fontWeight:600, color:'#64748b', opacity: qIdx === 0 ? 0.35 : 1 } }, '‹ Prev'),
@@ -414,15 +697,22 @@ function TestScreen({ testId, session, starred, onAnswer, onStar, onBack, onFini
 
 // ── Result Screen ─────────────────────────────────────────────────────────────
 function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome }) {
+  const isSpecial = testId === 'focus' || testId === 'review';
   const color = COLORS[testId] || '#6366f1';
   const light = LIGHTS[testId] || '#f5f3ff';
   const qs = session.questions;
   const ans = session.answers;
+  const confs = session.confidences || Array(qs.length).fill(null);
   const score = qs.filter((q, i) => ans[i] === q.a).length;
   const pct = Math.round(score / qs.length * 100);
   const grade = pct >= 80 ? { label:'Excellent 🎯', color:'#059669', bg:'#f0fdf4' }
     : pct >= 60 ? { label:'Good 👍', color:'#d97706', bg:'#fffbeb' }
     : { label:'Keep Going 📚', color:'#dc2626', bg:'#fff1f2' };
+
+  // ── Confidence analysis: wrong-but-sure (danger gaps) ──
+  const dangerGaps = qs.filter((q, i) => ans[i] !== q.a && confs[i] === 'sure');
+  const wrongGuessing = qs.filter((q, i) => ans[i] !== q.a && confs[i] === 'guessing');
+  const wrongUnsure = qs.filter((q, i) => ans[i] !== q.a && confs[i] === 'unsure');
 
   // Chapter breakdown
   const chapMap = {};
@@ -435,16 +725,33 @@ function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome })
   const chapters = Object.entries(chapMap)
     .map(([ch, v]) => ({ ch, pct: Math.round(v.correct/v.total*100), correct:v.correct, total:v.total }))
     .sort((a, b) => a.pct - b.pct);
+
   return el('div', { style: { minHeight:'100vh', background:'#f8fafc', overflowY:'auto', paddingBottom:48 } },
-    // Hero
     el('div', { style: { background:grade.bg, padding:'52px 20px 22px', display:'flex', flexDirection:'column', alignItems:'center', borderRadius:'0 0 22px 22px', position:'relative' } },
       el('button', { onClick: onBack, style: { position:'absolute', top:52, left:16, background:'none', border:'none', fontSize:24, color:'#64748b' } }, '‹'),
-      el('div', { style: { width:44, height:44, borderRadius:12, background:light, color:color, display:'flex', alignItems:'center', justifyContent:'center', fontSize:18, fontWeight:800, marginBottom:8 } }, testId),
+      isSpecial
+        ? el('div', { style: { fontSize:13, fontWeight:800, color:color, marginBottom:8 } }, testId === 'focus' ? '🎯 Focus Session' : '✗ Review Mode')
+        : el('div', { style: { width:44, height:44, borderRadius:12, background:light, color:color, display:'flex', alignItems:'center', justifyContent:'center', fontSize:18, fontWeight:800, marginBottom:8 } }, testId),
       el('div', { style: { fontSize:54, fontWeight:800, color:'#0f172a', lineHeight:1 } }, pct, el('span', { style: { fontSize:20 } }, '%')),
       el('div', { style: { fontSize:14, fontWeight:700, color:grade.color, marginTop:3 } }, grade.label),
       el('div', { style: { fontSize:12, color:'#64748b', marginTop:4 } }, score + ' of ' + qs.length + ' correct')
     ),
-    // Chapter breakdown
+
+    // ── Confidence breakdown ──
+    (dangerGaps.length > 0 || wrongGuessing.length > 0) && el('div', { style: { margin:'14px 18px 0', background:'#fff', borderRadius:14, padding:'16px', boxShadow:'0 1px 6px rgba(0,0,0,0.04)' } },
+      el('div', { style: { fontSize:10, fontWeight:700, color:'#94a3b8', letterSpacing:2, marginBottom:12 } }, 'CONFIDENCE ANALYSIS'),
+      dangerGaps.length > 0 && el('div', { style: { marginBottom:10, background:'#fff1f2', borderRadius:10, padding:'10px 12px', border:'1px solid #fca5a5' } },
+        el('div', { style: { fontSize:11, fontWeight:700, color:'#dc2626', marginBottom:6 } }, '⚠️ Danger Gaps — Wrong but SURE (' + dangerGaps.length + ')'),
+        el('div', { style: { fontSize:10, color:'#94a3b8', marginBottom:8 } }, 'You were confident but incorrect. These need immediate attention.'),
+        ...dangerGaps.map(q => el('div', { key:q.id, style: { fontSize:11, color:'#7f1d1d', padding:'4px 0', borderTop:'1px solid #fee2e2' } }, '• ' + q.q.substring(0,60) + (q.q.length>60?'…':'')))
+      ),
+      wrongGuessing.length > 0 && el('div', { style: { background:'#fef3c7', borderRadius:10, padding:'10px 12px', border:'1px solid #fde68a' } },
+        el('div', { style: { fontSize:11, fontWeight:700, color:'#92400e', marginBottom:6 } }, '🤔 Wrong while Guessing (' + wrongGuessing.length + ')'),
+        el('div', { style: { fontSize:10, color:'#92400e', marginBottom:4 } }, 'You knew you were uncertain — review these to build confidence.'),
+        ...wrongGuessing.map(q => el('div', { key:q.id, style: { fontSize:11, color:'#78350f', padding:'3px 0' } }, '• ' + q.q.substring(0,60) + (q.q.length>60?'…':'')))
+      )
+    ),
+
     el('div', { style: { margin:'14px 18px 0', background:'#fff', borderRadius:14, padding:'16px', boxShadow:'0 1px 6px rgba(0,0,0,0.04)' } },
       el('div', { style: { fontSize:10, fontWeight:700, color:'#94a3b8', letterSpacing:2, marginBottom:12 } }, 'TOPIC BREAKDOWN'),
       ...chapters.map(c =>
@@ -459,27 +766,31 @@ function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome })
         )
       )
     ),
-    // Question review
+
     el('div', { style: { margin:'12px 18px 0', background:'#fff', borderRadius:14, padding:'16px', boxShadow:'0 1px 6px rgba(0,0,0,0.04)' } },
       el('div', { style: { fontSize:10, fontWeight:700, color:'#94a3b8', letterSpacing:2, marginBottom:10 } }, 'QUESTION REVIEW'),
       ...qs.map((q, i) => {
         const correct = ans[i] === q.a;
-        return el('div', { key:q.id, style: { border:'1.5px solid '+(correct?'#dcfce7':'#fff1f2'), borderRadius:10, padding:'10px', marginBottom:8, background:correct?'#f8fffe':'#fffafa' } },
+        const conf = confs[i];
+        const isDangerGap = !correct && conf === 'sure';
+        return el('div', { key:q.id, style: { border:'1.5px solid '+(isDangerGap?'#fca5a5':correct?'#dcfce7':'#fff1f2'), borderRadius:10, padding:'10px', marginBottom:8, background:isDangerGap?'#fff5f5':correct?'#f8fffe':'#fffafa' } },
           el('div', { style: { display:'flex', gap:8 } },
             el('span', { style: { minWidth:20, height:20, borderRadius:5, background:correct?'#22c55e':'#f43f5e', color:'#fff', display:'flex', alignItems:'center', justifyContent:'center', fontSize:10, fontWeight:700, flexShrink:0, marginTop:1 } }, correct?'✓':'✗'),
             el('div', null,
               el('p', { style: { fontSize:12, fontWeight:600, color:'#0f172a', lineHeight:1.4, marginBottom:3 } }, q.q),
-              !correct && el('p', { style: { fontSize:11, color:'#dc2626', marginBottom:2 } }, 'Your: ' + (ans[i]!==null ? LABELS[ans[i]]+'. '+q.o[ans[i]] : '—')),
+              conf && el('span', { style: { fontSize:9, fontWeight:700, padding:'1px 6px', borderRadius:10, marginBottom:4, display:'inline-block', background: conf==='sure'?'#ecfdf5':conf==='guessing'?'#fef2f2':'#fffbeb', color: conf==='sure'?'#059669':conf==='guessing'?'#dc2626':'#d97706' } }, conf.charAt(0).toUpperCase()+conf.slice(1)),
+              isDangerGap && el('span', { style: { fontSize:9, fontWeight:700, padding:'1px 6px', borderRadius:10, background:'#fee2e2', color:'#dc2626', marginLeft:4 } }, '⚠️ Danger Gap'),
+              !correct && el('p', { style: { fontSize:11, color:'#dc2626', marginBottom:2, marginTop:3 } }, 'Your: ' + (ans[i]!==null ? LABELS[ans[i]]+'. '+q.o[ans[i]] : '—')),
               el('p', { style: { fontSize:11, color:'#059669' } }, '✓ ' + LABELS[q.a] + '. ' + q.o[q.a])
             )
           )
         );
       })
     ),
-    // Action buttons
+
     el('div', { style: { padding:'12px 18px', display:'flex', flexDirection:'column', gap:9 } },
-      el('button', { onClick: onReshuffle, style: { width:'100%', background:color, color:'#fff', border:'none', borderRadius:13, padding:'14px', fontSize:14, fontWeight:700 } }, '↺ Reshuffle & Retry'),
-      el('button', { onClick: onRetry, style: { width:'100%', background:'#fff', color:color, border:'1.5px solid '+color, borderRadius:13, padding:'13px', fontSize:14, fontWeight:700 } }, 'Retry Same Questions'),
+      !isSpecial && el('button', { onClick: onReshuffle, style: { width:'100%', background:color, color:'#fff', border:'none', borderRadius:13, padding:'14px', fontSize:14, fontWeight:700 } }, '↺ Reshuffle & Retry'),
+      !isSpecial && el('button', { onClick: onRetry, style: { width:'100%', background:'#fff', color:color, border:'1.5px solid '+color, borderRadius:13, padding:'13px', fontSize:14, fontWeight:700 } }, 'Retry Same Questions'),
       el('button', { onClick: onHome, style: { width:'100%', background:'#f8fafc', color:'#475569', border:'1.5px solid #e2e8f0', borderRadius:13, padding:'13px', fontSize:13, fontWeight:600 } }, '← All Tests')
     )
   );
