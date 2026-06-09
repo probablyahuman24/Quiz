@@ -307,8 +307,7 @@ function App() {
   useEffect(() => { save(appData); if (currentUser) saveUser(currentUser.username, appData); }, [appData, currentUser]);
 
   useEffect(() => {
-    const ts = '?v=' + Date.now();
-    Promise.all(CHAPTER_FILES.map(url => fetch(url+ts).then(r => { if(!r.ok) throw new Error('HTTP '+r.status+' — '+url); return r.json(); })))
+    Promise.all(CHAPTER_FILES.map(url => fetch(url).then(r => { if(!r.ok) throw new Error('HTTP '+r.status+' — '+url); return r.json(); })))
       .then(arrays => { setQuestions(arrays.flat()); setLoading(false); })
       .catch(err => { setFetchError(err.message); setLoading(false); });
   }, []);
