@@ -19,6 +19,7 @@ const CHAPTER_FILES = [
   'data/chapter08 fire protection and firestopping.json',
   'data/chapter09 telecommunications grounding and bonding.json',
   'data/chapter10 power distribution.json',
+  'data/chapter11 telecommunications administration.json',
   'data/chapter12 field testing structured cabling.json',
   'data/chapter13 outside plant osp.json',
   'data/chapter14 audiovisual systems.json',
