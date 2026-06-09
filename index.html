@@ -52,5 +52,19 @@
     };
   </script>
   <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/Quiz/sw.js').then(reg => {
+        // Re-check for a new SW whenever the user returns to the tab
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') reg.update();
+        });
+      });
+      // When a new SW takes control, reload to get fresh files
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        window.location.reload();
+      });
+    }
+  </script>
 </body>
 </html>
