@@ -5,7 +5,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What frequency range defines the Super Low Frequency (SLF) band?",
-    "o": ["3 Hz to 30 Hz", "30 Hz to 300 Hz", "300 Hz to 3000 Hz", "3 kHz to 30 kHz"],
+    "o": [
+      "3 Hz to 30 Hz",
+      "30 Hz to 300 Hz",
+      "300 Hz to 3000 Hz",
+      "3 kHz to 30 kHz"
+    ],
     "a": 1,
     "w": "The Super Low Frequency (SLF) band spans 30 Hz to 300 Hz. 3 Hz to 30 Hz is the Extremely Low Frequency (ELF) band used for submarine communications. 300 Hz to 3000 Hz is the Ultra Low Frequency (ULF) band. 3 kHz to 30 kHz is the Very Low Frequency (VLF) band."
   },
@@ -15,7 +20,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What is the minimum Common-Mode Rejection Ratio (CMRR) considered desirable for balanced twisted-pair cabling?",
-    "o": ["20 dB", "30 dB", "40 dB", "60 dB"],
+    "o": [
+      "20 dB",
+      "30 dB",
+      "40 dB",
+      "60 dB"
+    ],
     "a": 2,
     "w": "A minimum CMRR of 40 dB is desirable for balanced twisted-pair cabling to adequately reject common-mode noise. 20 dB provides insufficient rejection for most modern data applications. 30 dB is below the recommended minimum and may allow excessive noise interference. 60 dB, while excellent, is not the stated minimum recommended value in standards."
   },
@@ -25,7 +35,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "In a balanced circuit, how do unwanted signal currents flow in each conductor?",
-    "o": ["Equal in magnitude, opposite directions", "Equal in magnitude, same direction", "Different magnitudes, opposite directions", "Different magnitudes, same direction"],
+    "o": [
+      "Equal in magnitude, opposite directions",
+      "Equal in magnitude, same direction",
+      "Different magnitudes, opposite directions",
+      "Different magnitudes, same direction"
+    ],
     "a": 1,
     "w": "In a balanced circuit, unwanted signal currents in each conductor are equal in magnitude and flow in the same direction, which allows the differential receiver to cancel them out as common-mode noise. Equal magnitude but opposite direction describes the desired differential signal, not unwanted noise. Different magnitudes represent an imbalance that would degrade CMRR. Different magnitudes in opposite directions would result in poor rejection of interference."
   },
@@ -35,7 +50,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "Which type of EMI coupling occurs due to magnetic fields?",
-    "o": ["Capacitive coupling", "Conducted coupling", "Inductive coupling", "Radiated coupling"],
+    "o": [
+      "Capacitive coupling",
+      "Conducted coupling",
+      "Inductive coupling",
+      "Radiated coupling"
+    ],
     "a": 2,
     "w": "Inductive coupling occurs due to magnetic fields, where a changing magnetic field induces a voltage in a nearby conductor. Capacitive coupling results from electric fields between conductors with a potential difference. Conducted coupling affects devices through shared electrical paths such as power lines or signal conductors. Radiated coupling involves electromagnetic waves propagating through space and inducing interference at a distance."
   },
@@ -45,7 +65,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "Over what frequency range is conducted interference typically measured?",
-    "o": ["30 Hz to 300 kHz", "100 kHz to 30 MHz", "30 MHz to 5 GHz", "1 GHz to 10 GHz"],
+    "o": [
+      "30 Hz to 300 kHz",
+      "100 kHz to 30 MHz",
+      "30 MHz to 5 GHz",
+      "1 GHz to 10 GHz"
+    ],
     "a": 1,
     "w": "Conducted interference is measured over 100 kHz to 30 MHz, where signals travel through power lines and signal conductors. 30 Hz to 300 kHz covers the SLF and LF bands and is not the standard range for conducted EMI testing. 30 MHz to 5 GHz is the range for radiated interference measurements. 1 GHz to 10 GHz is used for higher-frequency radiated testing but not conducted EMI."
   },
@@ -55,7 +80,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What describes the Ultra Low Frequency (ULF) band in the electromagnetic spectrum?",
-    "o": ["3 Hz to 30 Hz", "30 Hz to 300 Hz", "300 Hz to 3000 Hz", "3 kHz to 30 kHz"],
+    "o": [
+      "3 Hz to 30 Hz",
+      "30 Hz to 300 Hz",
+      "300 Hz to 3000 Hz",
+      "3 kHz to 30 kHz"
+    ],
     "a": 2,
     "w": "The Ultra Low Frequency (ULF) band spans 300 Hz to 3000 Hz. 3 Hz to 30 Hz is the Extremely Low Frequency (ELF) band. 30 Hz to 300 Hz is the Super Low Frequency (SLF) band. 3 kHz to 30 kHz is the Very Low Frequency (VLF) band."
   },
@@ -65,7 +95,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What is the consequence of improperly grounded screened cabling systems regarding EMI?",
-    "o": ["They provide better immunity to radiated fields", "They behave as antennas for ESD", "They reduce common-mode noise effectively", "They improve differential-mode rejection"],
+    "o": [
+      "They provide better immunity to radiated fields",
+      "They behave as antennas for ESD",
+      "They reduce common-mode noise effectively",
+      "They improve differential-mode rejection"
+    ],
     "a": 1,
     "w": "Improperly grounded screened cabling systems can behave as antennas for ESD (Electrostatic Discharge), actually worsening EMI performance instead of improving it. They do not provide better immunity; the improper grounding creates additional susceptibility. Properly grounded shields reduce common-mode noise, but improper grounding defeats this benefit. Differential-mode rejection relies on pair balance, not shield grounding."
   },
@@ -75,7 +110,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What type of noise is caused by EFT (Electrical Fast Transient) disturbances?",
-    "o": ["Sustained sinusoidal interference", "Bursts when inductive and capacitive circuits switch on and off", "Continuous broadband noise from power lines", "Low-frequency hum from transformers"],
+    "o": [
+      "Sustained sinusoidal interference",
+      "Bursts when inductive and capacitive circuits switch on and off",
+      "Continuous broadband noise from power lines",
+      "Low-frequency hum from transformers"
+    ],
     "a": 1,
     "w": "EFT disturbances occur when inductive and capacitive circuits switch on and off, producing fast bursts of high-frequency noise on power and signal lines. Sustained sinusoidal interference is characteristic of continuous wave EMI sources like oscillators. Broadband noise is typically from thermal or shot noise mechanisms. Low-frequency hum originates from transformer magnetic fields and mains frequency, not EFT."
   },
@@ -85,9 +125,14 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What unit is used to measure magnetic field strength in radiated emission testing?",
-    "o": ["Volts per meter (V/m)", "Amperes per meter (A/m)", "Watts per square meter (W/m²)", "Tesla (T)"],
+    "o": [
+      "Volts per meter (V/m)",
+      "Amperes per meter (A/m)",
+      "Watts per square meter (W/m\u00b2)",
+      "Tesla (T)"
+    ],
     "a": 1,
-    "w": "The magnetic field is measured in amperes per meter (A/m) during radiated emission testing. Volts per meter (V/m) is used for the electrical field strength component of radiated emissions. Watts per square meter (W/m²) measures power density, not field strength directly. Tesla (T) measures magnetic flux density, which is a related but different quantity used in other applications."
+    "w": "The magnetic field is measured in amperes per meter (A/m) during radiated emission testing. Volts per meter (V/m) is used for the electrical field strength component of radiated emissions. Watts per square meter (W/m\u00b2) measures power density, not field strength directly. Tesla (T) measures magnetic flux density, which is a related but different quantity used in other applications."
   },
   {
     "id": 85,
@@ -95,7 +140,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "Which cabling type provides full immunity to EMI effects?",
-    "o": ["Shielded twisted-pair (STP)", "Coaxial cable", "Dielectric optical fiber", "Category 6A UTP"],
+    "o": [
+      "Shielded twisted-pair (STP)",
+      "Coaxial cable",
+      "Dielectric optical fiber",
+      "Category 6A UTP"
+    ],
     "a": 2,
     "w": "Dielectric optical fiber cabling is fully immune to EMI effects because it transmits light signals rather than electrical signals, making it unaffected by electromagnetic fields. Shielded twisted-pair cable reduces but does not eliminate EMI susceptibility. Coaxial cable has good EMI resistance but is still an electrical conductor susceptible to conducted interference. Category 6A UTP offers good balance but no complete immunity to EMI."
   },
@@ -105,7 +155,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What does a ground loop describe in telecommunications systems?",
-    "o": ["A single grounding path with one connection to earth", "Two parallel paths with identical conductive terminations", "A high-impedance path used for lightning protection", "A grounding conductor connecting SBB to PBB"],
+    "o": [
+      "A single grounding path with one connection to earth",
+      "Two parallel paths with identical conductive terminations",
+      "A high-impedance path used for lightning protection",
+      "A grounding conductor connecting SBB to PBB"
+    ],
     "a": 1,
     "w": "A ground loop describes two parallel paths with identical conductive terminations, which creates circulating currents that can introduce noise and interference into sensitive circuits. A single grounding path is the desired configuration that prevents ground loops. A high-impedance grounding path would be a defect, not a loop. A TBC connects SBB to PBB and is a properly designed grounding element, not a loop."
   },
@@ -115,7 +170,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What type of EMI noise corrupts transmitted signals in a balanced circuit?",
-    "o": ["Common-mode (CM) noise", "Differential mode (DM) noise", "Shot noise", "Thermal noise"],
+    "o": [
+      "Common-mode (CM) noise",
+      "Differential mode (DM) noise",
+      "Shot noise",
+      "Thermal noise"
+    ],
     "a": 1,
     "w": "Differential mode (DM) noise directly corrupts transmitted signals in a balanced circuit because it appears as a voltage difference between the two conductors, mimicking the desired differential signal. Common-mode noise appears equally on both conductors and is rejected by a properly balanced receiver. Shot noise is a quantum-mechanical phenomenon in semiconductor devices, not a coupling mode. Thermal noise is random broadband noise from conductor resistance, categorized separately from DM interference."
   },
@@ -125,7 +185,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "Why should surge protection devices be placed close to the transient source?",
-    "o": ["To increase signal amplification", "To reduce EMI transients before they propagate further", "To improve cable balance", "To lower the impedance of the ground path"],
+    "o": [
+      "To increase signal amplification",
+      "To reduce EMI transients before they propagate further",
+      "To improve cable balance",
+      "To lower the impedance of the ground path"
+    ],
     "a": 1,
     "w": "Surge protection devices should be placed close to the transient source to reduce EMI transients before they can propagate further into the system and cause damage. Placing them far from the source allows transients to travel along conductors and couple into adjacent systems. Surge protection devices do not amplify signals. Cable balance is achieved through twisting and material properties, not surge device placement."
   },
@@ -135,7 +200,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "Which shielding type provides good protection specifically against electric fields?",
-    "o": ["Braided shield", "Foil-type shield", "Spiral (serve) shield", "Double-braided shield"],
+    "o": [
+      "Braided shield",
+      "Foil-type shield",
+      "Spiral (serve) shield",
+      "Double-braided shield"
+    ],
     "a": 1,
     "w": "Foil-type shield cables provide good protection against electric fields due to their continuous coverage around the cable. Braided shields offer mechanical flexibility and are effective against magnetic fields but have gaps. Spiral (serve) shields are flexible but offer lower coverage percentages and are better for mechanical protection. Double-braided shields improve coverage over single-braid but are heavier and not specifically noted for electric field immunity."
   },
@@ -145,7 +215,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What frequency range is used for radiated interference measurements?",
-    "o": ["100 kHz to 30 MHz", "30 MHz to 5 GHz", "3 GHz to 300 GHz", "1 Hz to 100 kHz"],
+    "o": [
+      "100 kHz to 30 MHz",
+      "30 MHz to 5 GHz",
+      "3 GHz to 300 GHz",
+      "1 Hz to 100 kHz"
+    ],
     "a": 1,
     "w": "Radiated interference is measured over 30 MHz to 5 GHz, the frequency range where most electronic equipment generates and is susceptible to radiated emissions. 100 kHz to 30 MHz is the conducted interference measurement range. 3 GHz to 300 GHz covers millimeter-wave frequencies rarely used in standard EMC testing. 1 Hz to 100 kHz covers low-frequency magnetic field emissions tested by separate methods."
   },
@@ -155,7 +230,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What is the primary reason ICT conductors should not be installed in conduits containing electrical power conductors?",
-    "o": ["Increased cable weight", "Risk of EMI from power conductors coupling into ICT cables", "Reduced cable bend radius", "Incompatible conduit materials"],
+    "o": [
+      "Increased cable weight",
+      "Risk of EMI from power conductors coupling into ICT cables",
+      "Reduced cable bend radius",
+      "Incompatible conduit materials"
+    ],
     "a": 1,
     "w": "ICT conductors should not share conduits with electrical power conductors primarily because of the risk of EMI from the power conductors coupling interference into the ICT cables, degrading signal quality. Cable weight is not a concern in most standard installations. Bend radius is determined by conduit size and cable specifications, not by the type of co-installed cables. Conduit materials are selected by the installation type, not by the cable types inside."
   },
@@ -165,7 +245,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "Which of the following correctly describes how EMC controls electromagnetic energy?",
-    "o": ["By eliminating all electromagnetic signals in a system", "By controlling generation, transmission, and reception of EM energy to prevent EMI", "By boosting signal power to overcome interference", "By replacing electrical cabling with optical fiber in all applications"],
+    "o": [
+      "By eliminating all electromagnetic signals in a system",
+      "By controlling generation, transmission, and reception of EM energy to prevent EMI",
+      "By boosting signal power to overcome interference",
+      "By replacing electrical cabling with optical fiber in all applications"
+    ],
     "a": 1,
     "w": "EMC (Electromagnetic Compatibility) controls the generation, transmission, and reception of electromagnetic energy to prevent EMI from affecting system operation. It does not eliminate all EM signals, as many are necessary and desired. Boosting signal power would worsen emissions, not improve compatibility. While optical fiber helps in some situations, EMC is a system-wide approach not limited to cable replacement."
   },
@@ -175,7 +260,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What type of shielding technique is preferred to filter both common-mode and differential-mode signals?",
-    "o": ["Foil shields only", "Braided shields only", "Magnetic (inductive) filter schemes", "Capacitive filter schemes"],
+    "o": [
+      "Foil shields only",
+      "Braided shields only",
+      "Magnetic (inductive) filter schemes",
+      "Capacitive filter schemes"
+    ],
     "a": 2,
     "w": "Magnetic (inductive) filter schemes are preferred to filter both common-mode (CM) and differential-mode (DM) unwanted signals because inductors present high impedance to both noise modes. Foil shields address electric field coupling but do not filter DM noise on signal lines. Braided shields improve mechanical robustness but similarly do not specifically filter DM signals. Capacitive filters are effective for CM noise but less effective against DM signals."
   },
@@ -185,7 +275,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "How does cable shield effectiveness vary with operating frequency?",
-    "o": ["It remains constant across all frequencies", "It improves linearly with frequency", "It varies with operating frequency", "It is only effective below 1 MHz"],
+    "o": [
+      "It remains constant across all frequencies",
+      "It improves linearly with frequency",
+      "It varies with operating frequency",
+      "It is only effective below 1 MHz"
+    ],
     "a": 2,
     "w": "Cable shield effectiveness varies with operating frequency due to changes in skin depth, resonance effects, and the shield's impedance characteristics. A shield that performs well at low frequencies may have reduced effectiveness at higher frequencies due to aperture resonances and skin effect. Constant performance across all frequencies is not achievable with practical shield designs. Shield performance is not a simple linear function of frequency."
   },
@@ -195,7 +290,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "Which of the following is an example of a conducted EMI source?",
-    "o": ["Radar systems", "Navigation transceivers", "Power lines and motors", "Mobile phone base stations"],
+    "o": [
+      "Radar systems",
+      "Navigation transceivers",
+      "Power lines and motors",
+      "Mobile phone base stations"
+    ],
     "a": 2,
     "w": "Power lines and motors are conducted EMI sources because they inject interference directly into electrical circuits through shared conductors. Radar systems are radiated EMI sources that emit high-power RF energy into the environment. Navigation transceivers are also radiated sources transmitting RF signals. Mobile phone base stations are radiated sources that emit RF energy wirelessly, not through conducted paths."
   },
@@ -205,7 +305,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What is the relationship between higher cable categories and their ability to store energy with respect to ESD?",
-    "o": ["Higher categories store more energy, increasing ESD risk", "Higher categories have lower ability to store energy", "Higher categories store energy at higher frequencies only", "Category has no effect on ESD energy storage"],
+    "o": [
+      "Higher categories store more energy, increasing ESD risk",
+      "Higher categories have lower ability to store energy",
+      "Higher categories store energy at higher frequencies only",
+      "Category has no effect on ESD energy storage"
+    ],
     "a": 1,
     "w": "Higher cable categories have a lower ability to store energy with respect to ESD, meaning they are less likely to accumulate and discharge damaging static charges. This is due to tighter pair balance and construction that reduces susceptibility to charge accumulation. Higher categories do not store more energy; that would make them more hazardous. The energy storage characteristic applies across frequencies, not only at high frequencies."
   },
@@ -215,7 +320,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What does reflection loss describe in the context of shielding?",
-    "o": ["The attenuation of a signal as it travels through a conductor", "The part of an EM wave rejected or reflected by a shield", "The loss caused by impedance mismatch at cable connectors", "The energy absorbed by insulation material in a cable"],
+    "o": [
+      "The attenuation of a signal as it travels through a conductor",
+      "The part of an EM wave rejected or reflected by a shield",
+      "The loss caused by impedance mismatch at cable connectors",
+      "The energy absorbed by insulation material in a cable"
+    ],
     "a": 1,
     "w": "Reflection loss occurs when part of an electromagnetic wave is rejected or reflected by a shield at its surface rather than penetrating through it. This is one of the two primary shielding mechanisms alongside absorption loss. Signal attenuation through a conductor is a separate insertion loss parameter. Connector impedance mismatch causes return loss, not reflection loss in the shielding context. Insulation absorption is a dielectric loss mechanism unrelated to shield reflection."
   },
@@ -225,7 +335,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "Which of the following best describes how better-balanced circuits improve EMI performance?",
-    "o": ["They increase the signal amplitude to overcome noise", "They minimize conversion from CM signals to DM signals", "They reduce the attenuation of the cable", "They eliminate the need for cable shielding"],
+    "o": [
+      "They increase the signal amplitude to overcome noise",
+      "They minimize conversion from CM signals to DM signals",
+      "They reduce the attenuation of the cable",
+      "They eliminate the need for cable shielding"
+    ],
     "a": 1,
     "w": "Better-balanced circuits minimize the conversion of common-mode (CM) signals into differential-mode (DM) signals, which directly improves EMI immunity since DM noise corrupts data signals. Increasing signal amplitude is a brute-force approach that increases emissions rather than improving EMC. Cable attenuation is a separate physical characteristic not related to balance. Cable shielding may still be required even in well-balanced systems, especially in high-EMI environments."
   },
@@ -235,7 +350,12 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "What are gamma rays' wavelengths relative to visible light?",
-    "o": ["Ten times smaller", "One hundred times smaller", "A million times smaller", "The same as visible light"],
+    "o": [
+      "Ten times smaller",
+      "One hundred times smaller",
+      "A million times smaller",
+      "The same as visible light"
+    ],
     "a": 2,
     "w": "Gamma rays have wavelengths approximately a million times smaller than visible light, placing them at the extreme high-energy, short-wavelength end of the electromagnetic spectrum. Ten times smaller would fall within the soft X-ray range. One hundred times smaller corresponds roughly to hard ultraviolet or soft X-ray wavelengths. Gamma rays are vastly more energetic than visible light, not comparable in wavelength."
   },
@@ -245,8 +365,163 @@
     "testName": "Electromagnetic Compatibility",
     "chapter": "Electromagnetic Compatibility",
     "q": "Which of the following is identified as a common internal EMI source in a building?",
-    "o": ["Radar installations", "Satellite dishes", "ICT logic circuits", "AM radio towers"],
+    "o": [
+      "Radar installations",
+      "Satellite dishes",
+      "ICT logic circuits",
+      "AM radio towers"
+    ],
     "a": 2,
     "w": "ICT logic circuits are a common internal EMI source because high-speed digital switching generates harmonic-rich signals that can radiate or conduct into nearby equipment. Radar installations are external high-power radiated sources. Satellite dishes are receiving devices and primarily susceptible to EMI rather than generating it. AM radio towers are external radiated sources operating at low frequencies well outside typical ICT equipment environments."
+  },
+  {
+    "id": 621,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "What does Electromagnetic Compatibility (EMC) ensure?",
+    "o": [
+      "Devices operate without overheating",
+      "Devices operate within electromagnetic field limits without disrupting others",
+      "Devices are free from physical damage",
+      "Devices are immune to power surges"
+    ],
+    "a": 1,
+    "w": "EMC ensures that devices operate within defined electromagnetic field limits and do not cause interference to other devices. Overheating is a thermal issue unrelated to electromagnetic compatibility (option A). Physical damage protection pertains to mechanical design, not EMC (option C). Immunity to power surges is addressed by surge protection systems, not EMC standards (option D)."
+  },
+  {
+    "id": 622,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "What are the two key factors in measuring EMC?",
+    "o": [
+      "Resistance and impedance",
+      "Emission and immunity",
+      "Power and frequency",
+      "Field strength and voltage"
+    ],
+    "a": 1,
+    "w": "EMC is measured by two key factors: emission (the level of electromagnetic energy radiated by a device) and immunity (the device's ability to resist interference from external electromagnetic fields). Resistance and impedance are electrical parameters used in circuit analysis, not EMC measurement (option A). Power and frequency are general electrical parameters, not EMC-specific measurement factors (option C). Field strength and voltage are related concepts but do not fully describe the dual measurement framework of EMC (option D)."
+  },
+  {
+    "id": 623,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "At what distance does the FCC mandate measuring electromagnetic radiation for Class B devices?",
+    "o": [
+      "1 meter",
+      "3 meters",
+      "10 meters",
+      "30 meters"
+    ],
+    "a": 1,
+    "w": "The FCC mandates that electromagnetic radiation from Class B devices (residential use) be measured at a distance of 3 meters to ensure compliance with emission limits. 1 meter is too close for standardized FCC Class B measurement (option A). 10 meters is used for Class A (commercial/industrial) device measurements (option C). 30 meters is not a standard FCC measurement distance for Class B devices (option D)."
+  },
+  {
+    "id": 624,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "What is the acceptable maximum field strength measured for EMC compliance?",
+    "o": [
+      "1 V/m",
+      "2 V/m",
+      "3 V/m",
+      "5 V/m"
+    ],
+    "a": 2,
+    "w": "The acceptable maximum field strength for EMC compliance is 3 V/m, which represents the immunity threshold that equipment must withstand without degradation. 1 V/m is below the standard immunity test level and too restrictive (option A). 2 V/m does not correspond to the standard EMC field strength limit (option B). 5 V/m exceeds the standard limit and would represent a higher severity test level (option D)."
+  },
+  {
+    "id": 625,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Which of the following is a source of electromagnetic interference (EMI)?",
+    "o": [
+      "Wooden structures",
+      "Electric motors",
+      "Fiber optic cables",
+      "Ceramic insulators"
+    ],
+    "a": 1,
+    "w": "Electric motors are significant sources of EMI because they generate electromagnetic fields through their rotating magnetic components and switching circuits. Wooden structures are non-conductive and do not generate or significantly interact with electromagnetic fields (option A). Fiber optic cables transmit light signals and are immune to EMI, making them a solution rather than a source (option C). Ceramic insulators are passive, non-conducting materials that do not generate electromagnetic interference (option D)."
+  },
+  {
+    "id": 626,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "How can unwanted signals causing EMI be suppressed?",
+    "o": [
+      "Twisting the cables",
+      "Filtering, shielding, bonding, and grounding",
+      "Using higher voltage power lines",
+      "Placing cables near electric motors"
+    ],
+    "a": 1,
+    "w": "EMI suppression involves filtering (removing unwanted frequencies), shielding (enclosing cables or equipment), bonding (equalizing potentials), and grounding (providing a low-impedance return path). Twisting cables alone reduces differential mode noise but is not a comprehensive EMI suppression strategy (option A). Higher voltage power lines would increase EMI generation, not suppress it (option C). Placing cables near electric motors would increase EMI exposure, not suppress it (option D)."
+  },
+  {
+    "id": 627,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "What is the difference between common mode (CM) and differential mode (DM) interference?",
+    "o": [
+      "CM occurs between signal carriers, DM occurs between a conductor and its return path",
+      "CM is related to crosstalk, DM is related to grounding loops",
+      "CM shares a common ground, DM radiates energy between carriers",
+      "CM is low-frequency, DM is high-frequency"
+    ],
+    "a": 2,
+    "w": "Common mode interference occurs when both conductors in a pair share a common ground reference and the noise appears equally on both conductors relative to ground, while differential mode interference radiates energy between the signal carriers. Option A reverses the correct definitions of CM and DM. Crosstalk is a separate phenomenon from common mode interference, and grounding loops relate to CM rather than DM (option B). CM and DM interference can occur across all frequencies, not divided by low vs high frequency (option D)."
+  },
+  {
+    "id": 628,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "How should shielding be grounded for high-frequency signals with capacitive coupling?",
+    "o": [
+      "Grounded at both ends",
+      "Grounded at one end",
+      "Grounded at alternating points",
+      "Not grounded"
+    ],
+    "a": 1,
+    "w": "For high-frequency signals with capacitive coupling, shielding should be grounded at one end only to prevent ground loops that can introduce low-frequency interference. Grounding at both ends creates a ground loop that can introduce 50/60 Hz hum and other low-frequency interference (option A). Alternating grounding points would create unpredictable impedance paths and inconsistent shielding effectiveness (option C). Not grounding the shield at all would defeat its purpose and allow capacitive coupling to cause interference (option D)."
+  },
+  {
+    "id": 629,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "What type of cables should be separated from telecommunications cables due to significant EMI risk?",
+    "o": [
+      "Low-voltage cables",
+      "Fiber optic cables",
+      "Power cables exceeding 5 kVA",
+      "Data cables"
+    ],
+    "a": 2,
+    "w": "Power cables exceeding 5 kVA generate significant electromagnetic fields that can induce interference into adjacent telecommunications cables, requiring mandatory separation distances. Low-voltage cables generally present minimal EMI risk to telecommunications cables (option A). Fiber optic cables are immune to EMI and do not pose an interference risk to other cables (option B). Data cables are telecommunications cables themselves and do not pose the same EMI risk as high-power cables (option D)."
+  },
+  {
+    "id": 630,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "What are the two main factors that influence the effectiveness of cable shielding?",
+    "o": [
+      "Shield material and cable length",
+      "External blocking and proper termination",
+      "Frequency and impedance",
+      "Shield thickness and twisting"
+    ],
+    "a": 1,
+    "w": "The effectiveness of cable shielding depends on external blocking (the shield's ability to prevent electromagnetic fields from penetrating) and proper termination (correct grounding at the appropriate end). Shield material and cable length are secondary considerations that influence but do not define shielding effectiveness as the two main factors (option A). Frequency and impedance affect signal transmission but are not the primary factors determining shield effectiveness (option C). Shield thickness contributes to effectiveness, but twisting applies to the cable pairs, not the shield itself (option D)."
   }
 ]
