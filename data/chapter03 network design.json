@@ -1,0 +1,252 @@
+[
+  {
+    "id": 101,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What is the connection point between OSI layers called?",
+    "o": ["Protocol stack", "Service Access Point (SAP)", "Network interface card", "Data link frame"],
+    "a": 1,
+    "w": "Service Access Points (SAPs) are the connection points between OSI layers, providing the interface through which each layer offers its services to the layer above. A protocol stack is the vertical representation of all OSI layers, not a single connection point. A network interface card is physical hardware connecting a device to the network. A data link frame is a Layer 2 data unit, not a connection point between layers."
+  },
+  {
+    "id": 102,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which OSI layer is responsible for intranetwork data transfer?",
+    "o": ["Layer 1 – Physical", "Layer 2 – Data Link", "Layer 3 – Network", "Layer 4 – Transport"],
+    "a": 1,
+    "w": "OSI Layer 2, the Data Link layer, is responsible for intranetwork data transfer within a single network segment. Layer 1 handles physical bit transmission only. Layer 3 handles internetwork routing between different networks. Layer 4 manages end-to-end quality of service and error recovery across multiple networks."
+  },
+  {
+    "id": 103,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which OSI layer allows various levels of quality to be assigned to the data transfer process?",
+    "o": ["Layer 2", "Layer 3", "Layer 4", "Layer 7"],
+    "a": 2,
+    "w": "OSI Layer 4, the Transport layer, allows various levels of quality to be assigned to the data transfer process, including reliability, flow control, and error recovery. Layer 2 handles intranetwork frame delivery without QoS assignment. Layer 3 handles routing but relies on Layer 4 for end-to-end QoS. Layer 7 supports application functions but delegates quality-of-service mechanisms to lower layers."
+  },
+  {
+    "id": 104,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which OSI layer supports multiple applications using the same protocols?",
+    "o": ["Layer 4 – Transport", "Layer 5 – Session", "Layer 6 – Presentation", "Layer 7 – Application"],
+    "a": 3,
+    "w": "OSI Layer 7, the Application layer, supports multiple applications such as email clients using the same application-level protocols. Layer 4 provides transport services but does not directly support multiple application-level protocols. Layer 5 manages session establishment and termination. Layer 6 handles data formatting and encryption but does not manage multiple applications sharing protocols."
+  },
+  {
+    "id": 105,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What is the minimum number of access provider (AP) connections required for a Class 2 data center?",
+    "o": ["One AP connection", "Two AP connections", "Three AP connections", "Four AP connections"],
+    "a": 1,
+    "w": "A Class 2 data center must have at least two access provider (AP) connections to provide redundancy and prevent a single point of failure at the service entry. One AP connection creates a single point of failure unacceptable in Class 2 requirements. Three or four AP connections may exist but exceed the stated minimum for Class 2 classification."
+  },
+  {
+    "id": 106,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "How far apart must entrance rooms served by two access providers be in a data center?",
+    "o": ["10 m (33 ft)", "15 m (49 ft)", "20 m (82 ft)", "30 m (98 ft)"],
+    "a": 2,
+    "w": "Data center entrance rooms served by two APs must be at least 20 m (82 ft) apart to ensure physical separation reduces the risk of simultaneous damage to both paths from a single event. 10 m provides insufficient physical diversity. 15 m may not meet standards for path independence in disaster scenarios. 30 m exceeds requirements and may not be practical, though it would also be compliant."
+  },
+  {
+    "id": 107,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What is a Class 4 data center configuration called when it has no component redundancy?",
+    "o": ["N+1", "2N", "2(N+N)", "N+2"],
+    "a": 2,
+    "w": "Class 4 systems without component redundancy require a 2(N+N) configuration, meaning two complete active systems supporting each other. N+1 provides one backup unit for a single primary, insufficient for Class 4. 2N provides two complete systems but is typically applied differently than 2(N+N). N+2 provides two backup units but does not represent the Class 4 full-redundancy model."
+  },
+  {
+    "id": 108,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What type of network design is referred to as top-down design?",
+    "o": ["Physical network design", "Functional network design", "Logical network design", "Hierarchical network design"],
+    "a": 1,
+    "w": "Functional network design is also referred to as top-down design because it starts from the application and business requirements at the top and works downward to physical implementation. Physical network design is used when detailed network characteristics are unavailable and works bottom-up. Logical network design describes addressing schemes and protocols, not the design methodology. Hierarchical design is a topology classification, not a design methodology name."
+  },
+  {
+    "id": 109,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What does a VLAN use to divide a single broadcast domain into smaller ones?",
+    "o": ["Switches", "Hubs", "Routers", "Bridges"],
+    "a": 2,
+    "w": "A VLAN uses routers to divide a single broadcast domain into smaller broadcast domains (subnets). Switches by themselves create separate collision domains but keep all ports in the same broadcast domain unless VLAN-aware. Hubs are Layer 1 devices that extend collision domains and have no routing or VLAN capability. Bridges segment collision domains but do not create separate broadcast domains like VLANs with routers."
+  },
+  {
+    "id": 110,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What does each port on a network switch represent?",
+    "o": ["A shared collision domain for all devices", "A separate collision domain and dedicated connection", "A broadcast domain shared with adjacent ports", "A single communication channel shared with the uplink port"],
+    "a": 1,
+    "w": "Each port on a network switch represents a separate collision domain and serves as a dedicated connection, enabling full-duplex communication per port. Shared collision domains are characteristic of hubs, not switches. Broadcast domains span all switch ports by default unless VLANs are configured. Communication channels are dedicated per port in switched environments, not shared with uplinks."
+  },
+  {
+    "id": 111,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What is the difference between a Layer 3 switch and a traditional router?",
+    "o": ["Layer 3 switches operate at Layer 2 only", "Layer 3 switches use hardware-based logic for faster routing but are less flexible than traditional routers", "Traditional routers are faster than Layer 3 switches", "Layer 3 switches cannot process IP addresses"],
+    "a": 1,
+    "w": "Layer 3 switches use hardware-based ASIC logic for faster routing decisions but are less flexible than traditional software-based routers when it comes to supporting diverse routing protocols and WAN interfaces. Layer 3 switches explicitly process Layer 3 addresses, not just Layer 2 frames. Traditional routers use software-based forwarding which is slower for high-volume routing. Layer 3 switches fully process IP addresses as part of their function."
+  },
+  {
+    "id": 112,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What network type covers a personal space and typically operates within 10 m (33 ft)?",
+    "o": ["LAN (Local Area Network)", "CAN (Campus Area Network)", "PAN (Personal Area Network)", "MAN (Metropolitan Area Network)"],
+    "a": 2,
+    "w": "A PAN (Personal Area Network) interconnects devices within a personal space and typically operates within about 10 m (33 ft), covering technologies like Bluetooth. A LAN covers a building or part of a building, far larger than a personal space. A CAN (Campus Area Network) covers multiple buildings on a campus. A MAN links networks across multiple sites within a city, covering distances of kilometers."
+  },
+  {
+    "id": 113,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What networking feature allows multiple servers to operate within the same physical host?",
+    "o": ["Server clustering", "Network redundancy", "Virtualization", "Load balancing"],
+    "a": 2,
+    "w": "Virtualization allows multiple virtual servers to operate within the same physical host while retaining the benefits of separate physical servers, improving utilization and reducing hardware costs. Server clustering links multiple physical servers to work as one, not multiple virtual servers on one host. Network redundancy provides alternate paths and does not relate to server consolidation. Load balancing distributes traffic across servers but requires them to be distinct entities."
+  },
+  {
+    "id": 114,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What is high availability in the context of server infrastructure?",
+    "o": ["The ability to add servers without downtime", "Improved reliability achieved by server clustering", "The use of RAID storage for data protection", "Running multiple virtual machines on one host"],
+    "a": 1,
+    "w": "High availability refers to the improved reliability achieved by server clustering, where the failure of one server triggers automatic failover to another. Adding servers without downtime describes scalability, not high availability. RAID storage protects data integrity but does not by itself ensure server availability. Running virtual machines on one host improves utilization but creates a single point of failure if the host fails."
+  },
+  {
+    "id": 115,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What is a 'flat' network in network design terminology?",
+    "o": ["A network with no switches", "A single broadcast domain spanning all switches and hubs", "A network with a maximum of two VLANs", "A network that uses only Layer 1 devices"],
+    "a": 1,
+    "w": "A 'flat' network refers to a single broadcast domain spanning all switches and hubs, with no segmentation by routers or VLANs. A network with no switches would use only hubs, creating a single collision domain, not specifically a flat network. Two VLANs would represent a segmented, non-flat design. Layer 1 only networks (hubs) are the most basic form but flat network is a specific design concept, not a hardware limitation."
+  },
+  {
+    "id": 116,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which network application is identified as the most resource-demanding?",
+    "o": ["File transfer", "Email services", "Videoconferencing", "Web browsing"],
+    "a": 2,
+    "w": "Videoconferencing is the most resource-demanding network application due to its simultaneous requirements for high bandwidth, low latency, and low jitter for both audio and video streams. File transfer demands high bandwidth but tolerates latency. Email services require minimal real-time bandwidth. Web browsing is bursty and can tolerate latency, consuming far fewer sustained resources than videoconferencing."
+  },
+  {
+    "id": 117,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What is the purpose of a storage area network (SAN) with a core storage director?",
+    "o": ["To manage VLAN assignments for all servers", "To ensure storage availability for all servers", "To replace network switches in data centers", "To provide wireless storage access"],
+    "a": 1,
+    "w": "A storage area network (SAN) with a core storage director ensures storage availability for all connected servers by providing a high-speed, dedicated network for storage traffic separate from the data network. VLAN management is handled by network switches, not SAN components. SAN directors supplement, not replace, network switches. SANs use dedicated high-speed fiber or iSCSI connections, not wireless media."
+  },
+  {
+    "id": 118,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What does unified communications (UC) integrate?",
+    "o": ["Only VoIP and email", "VoIP, video communications, instant messaging, and presence indicators", "Physical security and video surveillance", "BAS and power distribution systems"],
+    "a": 1,
+    "w": "Unified communications integrates VoIP, video communications, instant messaging, and presence indicators into a single platform for seamless communication. Integrating only VoIP and email describes basic telephony integration, not full UC. Physical security and video surveillance are part of electronic security systems, separate from UC. BAS and power distribution are building systems, not UC components."
+  },
+  {
+    "id": 119,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "In the OSI model, how is data transmitted at the physical layer?",
+    "o": ["From the highest layer of the sender to the highest layer of the receiver", "From the lowest layer of the sender to the lowest layer of the receiver", "Directly between Session layers of both devices", "Via the Application layer only"],
+    "a": 1,
+    "w": "Data is physically transmitted from the lowest layer (Layer 1 – Physical) of the sender to the lowest layer of the receiver, with each layer on the receiving side interpreting headers added by its counterpart on the sending side. Highest-layer-to-highest-layer describes a conceptual peer communication, not actual transmission. Session layer communication is logical, not physical. Application layer data is encapsulated before physical transmission."
+  },
+  {
+    "id": 120,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What type of WAN design links every site to every other site, avoiding single points of failure?",
+    "o": ["Star WAN", "Ring WAN", "Full mesh WAN", "Partial mesh WAN"],
+    "a": 2,
+    "w": "A full mesh WAN design links every site to every other site, ensuring no single point of failure because multiple paths exist between any two sites. A star WAN has a central hub and creates a single point of failure at the hub. A ring WAN connects sites in a loop but a double break can isolate sites. A partial mesh WAN eliminates some single points of failure but not all, providing fewer redundant paths than a full mesh."
+  },
+  {
+    "id": 121,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which topology is used for OSP (outside plant) cabling as well as campus backbones?",
+    "o": ["Ring topology", "Bus topology", "Star topology", "Mesh topology"],
+    "a": 2,
+    "w": "The star topology is the generally used design for both OSP cabling and campus backbones, as it provides centralized control and simplifies fault isolation. Ring topology is a logical topology that can be overlaid but is not the standard OSP physical design. Bus topology has a single shared medium and is unsuitable for large-scale backbones. Mesh topology is used in router networks but is not a fundamental cabling topology for OSP."
+  },
+  {
+    "id": 122,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which data center topology uses fewer switches and is best for centralized management?",
+    "o": ["End-of-row topology", "Top-of-rack topology", "Centralized topology", "Distributed topology"],
+    "a": 2,
+    "w": "A centralized topology uses fewer switches compared to other computer room topologies by aggregating connections to a central point, reducing equipment costs and simplifying management. End-of-row topology uses switches at the row ends, requiring more switches than a single centralized switch. Top-of-rack places a switch in every rack, maximizing switch count. Distributed topology spreads switching across multiple points, also requiring more switches."
+  },
+  {
+    "id": 123,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which class of data center has no single point of failure?",
+    "o": ["Class 1", "Class 2", "Class 3", "Class 4"],
+    "a": 3,
+    "w": "A Class 4 data center has no single point of failure, with fully redundant, fault-tolerant systems for all critical infrastructure. Class 1 has basic infrastructure with multiple single points of failure. Class 2 provides some redundancy but still has single points of failure. Class 3 is concurrently maintainable but may still have single points of failure in certain failure scenarios."
+  },
+  {
+    "id": 124,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What connects a station to the network medium in a workstation or server?",
+    "o": ["A driver", "An operating system", "A network interface card (NIC)", "A hub"],
+    "a": 2,
+    "w": "A network interface card (NIC) connects a station to the network medium, providing the physical interface for network communication. A driver is software that links the NIC to the operating system but is not the physical connection itself. The operating system manages the device but relies on the NIC and driver for network access. A hub is a shared network device, not a component within a workstation."
+  },
+  {
+    "id": 125,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What does a Metropolitan Area Network (MAN) link?",
+    "o": ["Devices within a single room", "Networks across multiple sites within a city", "Networks across international locations", "Devices on a single building floor"],
+    "a": 1,
+    "w": "A MAN (Metropolitan Area Network) links networks across multiple sites within a city, covering distances typically from a few kilometers to tens of kilometers. Devices within a single room are connected by a LAN or PAN. Networks across international locations are connected by WANs. Devices on a single building floor are connected by horizontal LAN cabling, far smaller in scope than a MAN."
+  }
+]

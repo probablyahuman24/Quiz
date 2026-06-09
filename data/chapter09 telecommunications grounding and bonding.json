@@ -1,0 +1,252 @@
+[
+  {
+    "id": 251,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What is the Primary Bonding Busbar (PBB) referenced to?",
+    "o": ["The building steel structure", "An approved grounding electrode", "The nearest SBB in the building", "The ac neutral conductor"],
+    "a": 1,
+    "w": "The Primary Bonding Busbar (PBB) is referenced to an approved grounding electrode, establishing a reliable low-impedance connection to earth. The building steel can be used as a grounding electrode but is not the reference itself; the PBB must connect to the approved electrode system. The SBB is a secondary point referenced through the TBB to the PBB. The neutral conductor is not a telecommunications grounding reference."
+  },
+  {
+    "id": 252,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What is the maximum length of a Telecommunications Bonding Conductor (TBC)?",
+    "o": ["3 m (10 ft)", "6 m (20 ft)", "9 m (30 ft)", "15 m (50 ft)"],
+    "a": 2,
+    "w": "The Telecommunications Bonding Conductor (TBC) must not exceed 9 m (30 ft) in length to maintain a low-impedance path between the PBB and the ac grounding electrode system. 3 m and 6 m are acceptable lengths but are not the maximum. 15 m would exceed the maximum specified length and create an unacceptably high-impedance path."
+  },
+  {
+    "id": 253,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What current should a properly installed TBC measure under normal conditions?",
+    "o": ["0 A", "Less than 0.5 A", "Less than 1 A", "Between 1 and 5 A"],
+    "a": 0,
+    "w": "A properly installed TBC should measure 0 A under normal conditions because it is a bonding conductor intended only to equalize potentials, not to carry operational current. Less than 0.5 A or 1 A would indicate an imbalance or fault condition. Any measurable current in the TBC signals a potential grounding problem that needs investigation."
+  },
+  {
+    "id": 254,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What is the function of the Telecommunications Bonding Backbone (TBB)?",
+    "o": ["Connects the PBB to the ac grounding electrode", "Equalizes potentials between TRs on multiple floors", "Equalizes potentials between TRs on the same floor", "Provides a ground reference for active equipment"],
+    "a": 1,
+    "w": "The TBB (Telecommunications Bonding Backbone) equalizes potentials between TRs on multiple floors, running vertically through the building to connect all SBBs. The TBC connects the PBB to the ac grounding electrode system. The BBC (Bonding Backbone Conductor) equalizes potentials between TRs on the same floor. Active equipment grounding uses the equipment grounding system, supplemented by the SBB."
+  },
+  {
+    "id": 255,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What is the recommended maximum bonding resistance between a grounding electrode (e.g., steel column) and a busbar?",
+    "o": ["≤0.01 ohms", "≤0.05 ohms", "≤0.1 ohms", "≤0.5 ohms"],
+    "a": 2,
+    "w": "The recommended bonding resistance between a grounding electrode such as a steel column and a busbar is ≤0.1 ohms. 0.01 and 0.05 ohms are more stringent than required and would be difficult to achieve consistently. 0.5 ohms exceeds the recommended maximum and could result in inadequate grounding performance."
+  },
+  {
+    "id": 256,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What minimum conductor size should be used for bonding conductors ≤30.5 m (100 ft)?",
+    "o": ["12 AWG", "10 AWG", "8 AWG", "6 AWG"],
+    "a": 3,
+    "w": "Bonding conductors ≤30.5 m (100 ft) should use a minimum 6 AWG conductor to ensure adequate current-carrying capacity and low impedance. 12 AWG is too small for bonding conductors and would present excessive impedance. 10 AWG and 8 AWG are also below the minimum specified for this length of bonding conductor."
+  },
+  {
+    "id": 257,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What is the purpose of the Supplementary Bonding Grid (SBG)?",
+    "o": ["To provide a backup grounding path to earth", "To provide a low-impedance path between racks and cabinets in telecommunications spaces", "To connect the PBB to multiple SBBs simultaneously", "To carry fault current from telecommunications equipment to the main service panel"],
+    "a": 1,
+    "w": "The SBG provides a low-impedance path between racks and cabinets in telecommunications spaces, reducing potential differences between equipment enclosures. It is not a backup earth path; the TBC and TBB serve that function. It does not connect PBB to SBBs; the TBB does. It does not carry fault current in the traditional sense; it equalizes potentials to prevent hazardous voltages."
+  },
+  {
+    "id": 258,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "In a raised floor installation, what must connect the SBB to the SBG?",
+    "o": ["A single TBC connection", "A TBC connecting to at least two points in the SBG", "A direct BBC connection", "A dedicated copper busbar running under the floor"],
+    "a": 1,
+    "w": "In raised floors, a TBC must connect the SBB to at least two points in the SBG to ensure redundant paths and maintain the supplementary grid's effectiveness. A single connection would create a single point of failure in the SBG connection. A BBC connects TRs on the same floor, not the SBB to the SBG. A dedicated busbar is not the specified connection method for this application."
+  },
+  {
+    "id": 259,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What is the typical appearance of an Isolated Ground (IG) receptacle?",
+    "o": ["Yellow", "Orange", "Red", "Blue"],
+    "a": 1,
+    "w": "IG (Isolated Ground) receptacles are often orange in color to distinguish them from standard grounded receptacles. Yellow is not a standard color for IG receptacles. Red is used for emergency power circuits. Blue is used in some countries for neutral conductors and is not associated with IG receptacles."
+  },
+  {
+    "id": 260,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What is the maximum recommended impedance for telecommunications equipment grounding on 277 V ac circuits per IEEE 1100?",
+    "o": ["0.1 ohms", "0.5 ohms", "0.8 ohms", "1.0 ohms"],
+    "a": 2,
+    "w": "The recommended maximum impedance for telecommunications equipment grounding is 0.8 ohms for 277 V ac circuits per IEEE 1100. 0.1 ohms is more stringent than required for this voltage level. 0.5 ohms is stricter than the 277 V standard but exceeds the specified value. 1.0 ohms exceeds the recommended maximum and would not provide adequate protection."
+  },
+  {
+    "id": 261,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "For interbuilding circuits to be exempt from lightning protection, what maximum cable run length applies for non-buried cables?",
+    "o": ["15.2 m (50 ft)", "30.5 m (100 ft)", "42.7 m (140 ft)", "60 m (200 ft)"],
+    "a": 2,
+    "w": "Interbuilding circuits are exempt from lightning protection for cable runs ≤42.7 m (140 ft) when cables are directly buried or in underground conduits. 15.2 m and 30.5 m are below this threshold and would also qualify. 60 m exceeds the threshold and would require lightning protection measures."
+  },
+  {
+    "id": 262,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "Who is NOT responsible for telecommunications bonding and grounding design?",
+    "o": ["ICT designers specifying busbar sizes", "ICT designers identifying grounding electrode types", "ICT designers engineering surge protection systems", "ICT designers specifying TBC conductor sizes"],
+    "a": 2,
+    "w": "ICT designers do not engineer surge protection systems; that responsibility belongs to electrical engineers specializing in power systems. ICT designers are responsible for specifying busbar sizes, identifying grounding electrode types, and specifying TBC conductor sizes as part of the telecommunications infrastructure design."
+  },
+  {
+    "id": 263,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What hazard can result from grounding impedance exceeding recommended values?",
+    "o": ["Increased bandwidth limitations on data cables", "Prolonged electrical shock risks and repeated equipment malfunctions", "Reduced attenuation in shielded cables", "Decreased CMRR in balanced circuits"],
+    "a": 1,
+    "w": "Impedance exceeding recommended values may cause prolonged electrical shock risks and repeated malfunctions of telecommunications equipment by failing to quickly clear fault currents. High grounding impedance does not affect data cable bandwidth. Cable attenuation is not affected by grounding impedance. CMRR is a function of cable balance, not grounding impedance."
+  },
+  {
+    "id": 264,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "Where should telecommunications busbars be installed if structural steel is used as a grounding electrode?",
+    "o": ["As far from structural steel as possible", "Near structural steel", "On the exterior building wall", "Adjacent to the main electrical panel only"],
+    "a": 1,
+    "w": "Telecommunications busbars should be installed near structural steel if it is used as a grounding electrode to minimize the length and impedance of the bonding connection. Installing far from structural steel would increase bonding conductor length and impedance. Exterior wall placement would increase the distance from interior structural steel. Proximity to the main electrical panel is important for the TBC but not the primary criterion for busbar placement relative to structural steel."
+  },
+  {
+    "id": 265,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What standards specify the sizing of TBCs and BBCs in relation to the TBB?",
+    "o": ["ANSI/TIA-606 and ISO/IEC 15018", "ANSI/TIA-607 and ISO/IEC 30129", "ANSI/TIA-568 and ISO/IEC 11801", "ANSI/TIA-942 and ISO/IEC 24764"],
+    "a": 1,
+    "w": "ANSI/TIA-607 and ISO/IEC 30129 specify the sizing of TBCs and BBCs to match the largest TBB in the building. ANSI/TIA-606 is the administration standard for telecommunications infrastructure. ANSI/TIA-568 and ISO/IEC 11801 cover structured cabling performance, not grounding. ANSI/TIA-942 and ISO/IEC 24764 cover data center cabling, not grounding and bonding."
+  },
+  {
+    "id": 266,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What does the Bonding Backbone Conductor (BBC) equalize?",
+    "o": ["Potentials between TRs on multiple floors", "Potentials between TRs on the same floor", "Potentials between buildings on a campus", "Potentials between the SBB and the SBG"],
+    "a": 1,
+    "w": "The BBC (Bonding Backbone Conductor) equalizes potentials between TRs on the same floor, running horizontally to connect SBBs at the same building level. The TBB equalizes potentials between TRs on multiple floors. Campus bonding uses interconnection between separate building grounding systems. The TBC connects the SBB to the SBG in raised floor environments."
+  },
+  {
+    "id": 267,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What is the cone of protection in lightning protection?",
+    "o": ["The area covered by a lightning suppressor in a circuit", "The lightning-protected area within the cone of protection provided by a mast or building", "The range of ESD discharge from a person to equipment", "The zone where surge arresters are effective"],
+    "a": 1,
+    "w": "The lightning-protected area is within the cone of protection provided by a mast or building, defining the zone shielded from direct lightning strikes by a tall structure. A circuit lightning suppressor provides conducted protection, not a physical cone of protection. ESD discharge range from a person is measured in centimeters, not a cone of protection. Surge arrester effectiveness zones are defined by response time, not a cone shape."
+  },
+  {
+    "id": 268,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What are foreign voltages in telecommunications systems?",
+    "o": ["Voltages from foreign (non-domestic) power grids", "Electrical currents not normally carried by telecommunications systems", "High-frequency interference from radio transmitters", "Overvoltages caused by lightning on outside plant cables"],
+    "a": 1,
+    "w": "Foreign voltages are electrical currents not normally carried by telecommunications systems, such as induced power line voltages or ground potential rise that appear on telecom cables. They are not related to international power grids. High-frequency interference is an EMI issue, not a foreign voltage. Lightning overvoltages are a specific type of transient, while foreign voltages is a broader category including utility power interference."
+  },
+  {
+    "id": 269,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What is the maximum ac current permitted on any bonding conductor?",
+    "o": ["Less than 0.5 A", "Less than 1 A", "Less than 5 A", "Less than 10 A"],
+    "a": 1,
+    "w": "The maximum ac current on any bonding conductor should be less than 1 A. Values less than 0.5 A are also acceptable but the stated maximum is less than 1 A. Less than 5 A and less than 10 A would indicate significant current flow in a bonding conductor, pointing to a fault condition that needs to be investigated and corrected."
+  },
+  {
+    "id": 270,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What does the ac grounding (earthing) electrode system establish for electrical systems?",
+    "o": ["A +5 V reference for digital circuits", "A 0 V reference for electrical systems", "A floating reference independent of earth", "A 120 V ac reference potential"],
+    "a": 1,
+    "w": "The ac grounding (earthing) electrode system establishes a 0 V reference for electrical systems, providing a common earth potential reference. A +5 V reference is used in digital logic circuits, not grounding systems. A floating reference is specifically avoided in properly grounded systems. 120 V ac is a line voltage, not a grounding reference."
+  },
+  {
+    "id": 271,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "Which component of the ac grounding system makes direct contact with the earth?",
+    "o": ["Grounding electrode conductor", "Grounding electrode", "Equipment grounding conductor", "Telecommunications bonding conductor"],
+    "a": 1,
+    "w": "The grounding electrode makes direct contact with the earth, such as ground rods, building steel, or water pipes. The grounding electrode conductor connects the system to the grounding electrode but does not itself contact the earth. Equipment grounding conductors connect equipment enclosures to the grounding system but do not themselves contact earth. The TBC is a telecommunications-specific bonding conductor."
+  },
+  {
+    "id": 272,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What are three hazards reduced by proper grounding in telecommunications systems?",
+    "o": ["Lightning, ESD, and high-voltage contact", "Cable attenuation, crosstalk, and noise", "Corrosion, mechanical damage, and fire", "Overheating, vibration, and moisture"],
+    "a": 0,
+    "w": "Grounding provides a low-impedance path for lightning dissipation, electrostatic discharge (ESD), and high-voltage contact protection. Cable attenuation and crosstalk are transmission performance parameters unrelated to grounding. Corrosion and mechanical damage are installation quality issues. Overheating and moisture are environmental concerns addressed by HVAC and sealing, not grounding."
+  },
+  {
+    "id": 273,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What instrument accurately measures grounding impedance?",
+    "o": ["Digital multimeter", "Ground impedance tester", "Clamp ammeter", "Spectrum analyzer"],
+    "a": 1,
+    "w": "Grounding impedance is accurately measured using a ground impedance tester, which injects a test signal to measure the impedance to earth. A digital multimeter measures resistance but cannot accurately test true grounding impedance including reactive components. A clamp ammeter measures current in conductors but does not measure impedance. A spectrum analyzer measures frequency-domain signals, not grounding impedance."
+  },
+  {
+    "id": 274,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "Why are IG (Isolated Ground) systems not recommended for all voice and data equipment?",
+    "o": ["They reduce CMRR in balanced circuits", "They may expose equipment to additional issues such as ground loops", "They increase cable attenuation", "They are incompatible with Category 6A cabling"],
+    "a": 1,
+    "w": "IG systems aim to reduce EMI but may expose equipment to additional issues such as ground loops and do not provide universal benefits. Properly installed standard three-prong grounded receptacles are considered more reliable. IG systems do not affect CMRR, which is a cabling balance characteristic. Cable attenuation is unrelated to the grounding method at the receptacle. IG receptacles are electrically compatible with any cabling category."
+  },
+  {
+    "id": 275,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "What is the role of the Secondary Bonding Busbar (SBB)?",
+    "o": ["Central attachment point in the EF or ER", "Grounding point for telecommunications systems in ERs or TRs", "Connects the TBC to the ac grounding electrode", "Distributes power to telecommunications equipment"],
+    "a": 1,
+    "w": "The Secondary Bonding Busbar (SBB) serves as the grounding point for telecommunications systems within equipment rooms and telecommunications rooms. The PBB is the central attachment point in the EF or ER. The TBC connects the PBB to the ac grounding electrode, not the SBB. Power distribution is managed by electrical infrastructure, not bonding busbars."
+  }
+]

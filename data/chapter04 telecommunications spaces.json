@@ -1,0 +1,252 @@
+[
+  {
+    "id": 126,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What is the minimum working clearance required in front and rear of installed equipment in telecommunications spaces?",
+    "o": ["0.5 m (1.64 ft)", "1 m (3.28 ft)", "1.5 m (4.92 ft)", "2 m (6.56 ft)"],
+    "a": 1,
+    "w": "Telecommunications spaces require at least 1 m (3.28 ft) of working clearance in front and rear of installed equipment to allow for safe operation, maintenance, and cable management. 0.5 m is insufficient for most maintenance tasks and does not meet standard requirements. 1.5 m and 2 m provide more space than the minimum required but are not the stated minimum."
+  },
+  {
+    "id": 127,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "At what height above finished floor (AFF) should HVAC sensors be placed in equipment rooms?",
+    "o": ["0.5 m (1.64 ft)", "1.0 m (3.28 ft)", "1.52 m (5 ft)", "2.0 m (6.56 ft)"],
+    "a": 2,
+    "w": "HVAC sensors in equipment rooms should be placed 1.52 m (5 ft) above the finished floor to measure temperature conditions at the level most representative of equipment operating conditions. 0.5 m is too low and would measure floor-level conditions. 1.0 m is the height used for lighting recommendations, not HVAC sensors. 2.0 m may measure conditions above most rack-mounted equipment and would not represent operational temperatures accurately."
+  },
+  {
+    "id": 128,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What is the recommended horizontal plane lighting level at 1 m (3.28 ft) AFF in telecommunications space aisles?",
+    "o": ["200 lux (18.6 foot-candles)", "350 lux (32.5 foot-candles)", "500 lux (46 foot-candles)", "750 lux (69.7 foot-candles)"],
+    "a": 2,
+    "w": "500 lux (46 foot-candles) is recommended in horizontal planes 1 m (3.28 ft) AFF in aisles of telecommunications spaces. 200 lux (18.6 foot-candles) is the recommendation for vertical planes, not horizontal planes. 350 lux does not correspond to any standard telecommunications space lighting specification. 750 lux exceeds what is required and represents an unnecessarily high level for standard work areas."
+  },
+  {
+    "id": 129,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What is the recommended height of racks, cabinets, or enclosures in telecommunications spaces?",
+    "o": ["1.8 m (6 ft)", "2.0 m (6.6 ft)", "2.1 m (7 ft)", "2.4 m (8 ft)"],
+    "a": 2,
+    "w": "Racks, cabinets, or enclosures should be 2.1 m (7 ft) tall in telecommunications spaces to standardize equipment installation heights and maximize usable rack space. 1.8 m is shorter than the standard recommendation and wastes vertical space. 2.0 m is close but not the specified standard. 2.4 m is the minimum ceiling height requirement, not the rack height."
+  },
+  {
+    "id": 130,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What depth of space should be left for wall-mounted equipment in telecommunications spaces?",
+    "o": ["75 mm (3 in)", "100 mm (4 in)", "150 mm (6 in)", "200 mm (8 in)"],
+    "a": 2,
+    "w": "Recommendations include leaving 150 mm (6 in) of depth for wall-mounted equipment to allow adequate cable routing and heat dissipation behind the mounted hardware. 75 mm is insufficient for most wall-mounted telecommunications equipment. 100 mm (4 in) is used for conduit termination inside entrance facilities, not wall equipment depth. 200 mm exceeds the recommended depth and wastes wall space unnecessarily."
+  },
+  {
+    "id": 131,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What minimum access headroom is required for cable trays in equipment rooms?",
+    "o": ["150 mm (6 in)", "205 mm (8 in)", "305 mm (12 in)", "450 mm (18 in)"],
+    "a": 2,
+    "w": "Cable trays in equipment rooms should have a minimum of 305 mm (12 in) of access headroom above them to allow proper cable installation and maintenance. 150 mm (6 in) is too restricted for cable management work. 205 mm is below the stated minimum and would limit access. 450 mm exceeds the minimum but may not be achievable in all ceiling configurations."
+  },
+  {
+    "id": 132,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "How far into the room should ceiling conduits protrude without bends?",
+    "o": ["6 mm to 12 mm (0.25 in to 0.5 in)", "12 mm to 25 mm (0.5 in to 1 in)", "25.4 mm to 51 mm (1 in to 2 in)", "50 mm to 100 mm (2 in to 4 in)"],
+    "a": 2,
+    "w": "Conduits in ceilings should protrude 25.4 mm (1 in) to 51 mm (2 in) into the room without bends to facilitate cable pulling and termination within the telecommunications space. Less than 25.4 mm would leave insufficient room for connector installation. More than 51 mm extends unnecessarily into the room and creates an obstruction. Protrusions with bends would impede cable installation."
+  },
+  {
+    "id": 133,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What is the standard sleeve trade size recommended for backbone pathways in telecommunications spaces?",
+    "o": ["2 trade size (51 mm)", "3 trade size (77 mm)", "4 trade size (103 mm)", "6 trade size (155 mm)"],
+    "a": 2,
+    "w": "4 trade size (103 mm) sleeves are standard for backbone pathways in telecommunications spaces to accommodate the larger bundle sizes of backbone cabling. 2 trade size is too small for backbone cable bundles. 3 trade size may be insufficient for high-density backbone runs. 6 trade size is larger than typically required for standard backbone pathways."
+  },
+  {
+    "id": 134,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "How much additional space should be planned for cross-connection areas with surge protection compared to without?",
+    "o": ["Same space is required", "1.5 to 2 times more space", "2 to 4 times more space", "5 times more space"],
+    "a": 2,
+    "w": "The recommended space for cross-connections with surge protection is 2–4 times greater than without surge protection, as surge protection devices add significant hardware volume. Same space would be inadequate given the physical size of surge protection components. 1.5 to 2 times understates the space increase needed. 5 times would be an overestimate and would waste valuable telecommunications space."
+  },
+  {
+    "id": 135,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What is the minimum floor space for an equipment room in a building up to 50,000 m² (500,000 ft²)?",
+    "o": ["8 m² (86 ft²)", "10 m² (107 ft²)", "12 m² (120 ft²)", "15 m² (161 ft²)"],
+    "a": 2,
+    "w": "The minimum floor space for an equipment room serving a building up to 50,000 m² (500,000 ft²) is 12 m² (120 ft²). 8 m² is too small for a functional equipment room meeting standard guidelines. 10 m² is below the specified minimum. 15 m² exceeds the minimum but is not the stated floor space requirement."
+  },
+  {
+    "id": 136,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "How is equipment room minimum size calculated using the number of work areas?",
+    "o": ["Multiply by 0.02 m² (0.25 ft²) per work area", "Multiply by 0.07 m² (0.75 ft²) per work area", "Multiply by 0.10 m² (1.0 ft²) per work area", "Multiply by 0.15 m² (1.5 ft²) per work area"],
+    "a": 1,
+    "w": "ER minimum size can be determined by multiplying the number of work areas by 0.07 m² (0.75 ft²). 0.02 m² per work area (which matches the BAS device formula, not work areas) would significantly undersize the room. 0.10 m² overstates the per-work-area space requirement. 0.15 m² would produce an unnecessarily large room estimate."
+  },
+  {
+    "id": 137,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What is the minimum ceiling height recommended for larger telecommunications spaces?",
+    "o": ["2.0 m (6.6 ft)", "2.4 m (8 ft)", "3.0 m (10 ft)", "3.5 m (11.5 ft)"],
+    "a": 2,
+    "w": "For larger telecommunications spaces, a ceiling height of at least 3 m (10 ft) AFF is recommended to accommodate overhead cable trays, large equipment, and maintenance access. 2.0 m is below even the general minimum. 2.4 m is the absolute minimum for telecommunications spaces but is not the recommended height for larger spaces. 3.5 m exceeds the recommendation but would also be acceptable."
+  },
+  {
+    "id": 138,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What is the minimum clearance required below fire sprinkler heads for all objects in telecommunications spaces?",
+    "o": ["305 mm (12 in)", "457 mm (18 in)", "610 mm (24 in)", "914 mm (36 in)"],
+    "a": 1,
+    "w": "All objects in telecommunications spaces must maintain a clearance of at least 457 mm (18 in) below fire sprinkler heads to ensure the sprinkler pattern is not obstructed. 305 mm is insufficient to prevent interference with sprinkler water distribution. 610 mm and 914 mm provide more clearance than required, though they would also meet the standard."
+  },
+  {
+    "id": 139,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What height above floor must duplex or quad power receptacles be installed in telecommunications spaces?",
+    "o": ["At floor level (0 mm)", "At least 76 mm (3 in) AFF", "At least 152 mm (6 in) AFF", "At least 305 mm (12 in) AFF"],
+    "a": 2,
+    "w": "Duplex or quad power receptacles must be installed at least 152 mm (6 in) AFF to protect them from potential water ingress at floor level and to allow connection of equipment cords without sharp bends. At floor level would expose receptacles to flooding and physical damage. 76 mm provides minimal protection above floor level. 305 mm exceeds the minimum but is not the stated requirement."
+  },
+  {
+    "id": 140,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "For buildings with less than 93 m² (1000 ft²) usable floor space, what may be used instead of a full ER?",
+    "o": ["A patch panel closet", "A wall-mounted backboard", "Self-contained cabinets", "A shared electrical room"],
+    "a": 2,
+    "w": "For buildings with less than 93 m² (1000 ft²) usable floor space, self-contained cabinets may be used instead of a full equipment room to provide a practical, space-efficient alternative. A patch panel closet does not provide the environmental controls or power management of a dedicated ER. A wall-mounted backboard lacks the enclosure needed for equipment protection. Sharing an electrical room creates EMI and safety concerns."
+  },
+  {
+    "id": 141,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "How much termination space should be allocated for each optical fiber strand?",
+    "o": ["645 mm² (1 in²)", "1290 mm² (2 in²)", "2580 mm² (4 in²)", "3870 mm² (6 in²)"],
+    "a": 1,
+    "w": "1290 mm² (2 in²) should be allocated for each optical fiber strand in termination space estimates. 645 mm² is too small for a single fiber termination. 2580 mm² (4 in²) is the allocation for each 4-pair circuit, not an individual optical fiber. 3870 mm² would overcalculate the space needed for fiber terminations."
+  },
+  {
+    "id": 142,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "For what size building is a 3 m × 2.4 m (10 ft × 8 ft) telecommunications space sufficient?",
+    "o": ["Areas up to 230 m² (2500 ft²)", "Areas up to 465 m² (5000 ft²)", "Areas up to 750 m² (8070 ft²)", "Areas up to 1000 m² (10,764 ft²)"],
+    "a": 1,
+    "w": "A telecommunications space of 3 m × 2.4 m (10 ft × 8 ft) can serve areas up to 465 m² (5000 ft²). Areas up to 230 m² would be overserved by this space size. 750 m² requires a 3 m × 3.4 m space, larger than the 3 m × 2.4 m specified. 1000 m² would require an even larger telecommunications room."
+  },
+  {
+    "id": 143,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What is the required plywood specification for wall lining in telecommunications spaces?",
+    "o": ["1.8 m (6 ft) tall, 12 mm (0.5 in) thick", "2.0 m (6.6 ft) tall, 15 mm (0.6 in) thick", "2.4 m (8 ft) tall, 19 mm (0.75 in) thick", "3.0 m (10 ft) tall, 25 mm (1 in) thick"],
+    "a": 2,
+    "w": "Plywood used to line walls in telecommunications spaces should be 2.4 m (8 ft) tall and at least 19 mm (0.75 in) thick to provide a sturdy mounting surface for equipment and cable management hardware. 1.8 m tall plywood would not reach standard telecommunications equipment heights. 12 mm or 15 mm thickness does not provide sufficient structural support for heavy hardware mounting. 3.0 m tall plywood would exceed most room ceiling heights."
+  },
+  {
+    "id": 144,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "In multi-tenant buildings, who must have authorization for entry into locked telecommunications spaces?",
+    "o": ["Building owner only", "Service providers only", "All tenants", "The building manager and ICT designer only"],
+    "a": 2,
+    "w": "In multi-tenant buildings, authorization for entry into locked telecommunications spaces must be provided to all tenants to ensure equitable access to their cabling infrastructure. Restricting access to the building owner only would prevent tenants from managing their own cabling. Service provider-only access would block tenants from troubleshooting or modifying their systems. The building manager and ICT designer alone cannot fulfill all tenant access needs."
+  },
+  {
+    "id": 145,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What type of floor covering is NOT recommended in telecommunications spaces?",
+    "o": ["Raised access flooring", "Sealed concrete", "Carpet", "Anti-static vinyl tile"],
+    "a": 2,
+    "w": "Carpet is not recommended as a floor covering in telecommunications spaces because it generates static electricity, retains dust, and can impede airflow under equipment. Raised access flooring is specifically recommended for cable management in equipment rooms. Sealed concrete is acceptable and commonly used. Anti-static vinyl tile is an appropriate alternative to carpet in telecommunications spaces."
+  },
+  {
+    "id": 146,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What is the recommended door width for large equipment deliveries to telecommunications spaces?",
+    "o": ["0.91 m (3 ft)", "1.22 m (4 ft)", "1.52 m (5 ft)", "1.83 m (6 ft)"],
+    "a": 3,
+    "w": "Double doors measuring 1.83 m (6 ft) wide and 2.3 m (90 in) high are recommended for large equipment deliveries to telecommunications spaces. 0.91 m (3 ft) is the minimum entryway width for general equipment access, not large delivery doors. 1.22 m and 1.52 m are intermediate widths that may not accommodate large server racks and cabinets."
+  },
+  {
+    "id": 147,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What must be installed in telecommunications spaces if multiple equipment grounding connections are needed?",
+    "o": ["Isolation transformers", "Copper busbars for grounding", "Fiber distribution panels", "UPS bypass switches"],
+    "a": 1,
+    "w": "Telecommunications spaces must provide copper busbars for grounding if multiple equipment grounding or intersystem grounding is needed, providing a common low-impedance reference point. Isolation transformers address power quality, not multi-point grounding. Fiber distribution panels manage optical fiber connections and have no grounding function. UPS bypass switches are power continuity devices unrelated to multi-point grounding."
+  },
+  {
+    "id": 148,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What must telecommunications spaces with load-bearing walls accept as a limitation?",
+    "o": ["Reduced fire rating requirements", "Reduced relocation possibilities if the building expands", "Inability to install raised flooring", "Restriction to single-tenant use only"],
+    "a": 1,
+    "w": "Telecommunications spaces with load-bearing walls reduce relocation possibilities if the building expands, as the walls cannot be easily moved or removed. Load-bearing walls do not change fire rating requirements; the fire rating relates to construction type. Raised flooring can be installed regardless of wall type. Single-tenant restriction is not related to wall structural type."
+  },
+  {
+    "id": 149,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "At what minimum height above the floor must equipment be elevated in areas prone to water ingress?",
+    "o": ["50 mm (2 in)", "100 mm (4 in)", "150 mm (6 in)", "200 mm (8 in)"],
+    "a": 2,
+    "w": "Housekeeping pads should elevate equipment at least 150 mm (6 in) off the floor in areas prone to water ingress to prevent flood damage to telecommunications equipment. 50 mm provides insufficient protection against typical minor flooding events. 100 mm may be marginally insufficient in areas with significant water ingress risk. 200 mm exceeds what is typically required and may create other installation challenges."
+  },
+  {
+    "id": 150,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "What is the minimum usable floor space to determine the need for a full equipment room with at least 14 m² (150 ft²)?",
+    "o": ["Less than 100 work areas", "Less than 200 work areas", "Less than 500 work areas", "Less than 1000 work areas"],
+    "a": 1,
+    "w": "For less than 200 work areas, the ER size should be at least 14 m² (150 ft²). This threshold defines when the larger minimum floor space applies. Fewer than 100 work areas would fall within the same guideline. 500 and 1000 work areas exceed the threshold referenced and would require significantly larger equipment rooms."
+  }
+]

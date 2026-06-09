@@ -1,0 +1,252 @@
+[
+  {
+    "id": 176,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the maximum number of connection points allowed in a horizontal cabling channel model?",
+    "o": ["Two", "Three", "Four", "Six"],
+    "a": 2,
+    "w": "A maximum of four connection points are allowed in a horizontal cabling channel model to keep signal degradation within acceptable limits for the installed category. Two connection points would apply to a simpler link without consolidation points or MUTOAs. Three connection points is below the defined maximum. Six connection points would exceed the standard and degrade channel performance."
+  },
+  {
+    "id": 177,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the minimum free space required above underfloor cable trays in access floor pathways?",
+    "o": ["25 mm (1 in)", "50 mm (2 in)", "75 mm (3 in)", "100 mm (4 in)"],
+    "a": 1,
+    "w": "For horizontal pathways using access floors, a minimum of 50 mm (2 in) free space should be available above underfloor cable trays to allow cables to be added, removed, or rearranged. 25 mm would be insufficient for cable management access. 75 mm and 100 mm exceed the minimum but may not always be achievable in low-profile access floor systems."
+  },
+  {
+    "id": 178,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "In ceiling-based pathways, how much clear vertical space must be allowed above conduits and cables?",
+    "o": ["25 mm (1 in)", "50 mm (2 in)", "75 mm (3 in)", "150 mm (6 in)"],
+    "a": 2,
+    "w": "In ceiling-based pathways, at least 75 mm (3 in) of clear vertical space should be available above conduits and cables to allow installation, removal, and maintenance. 25 mm and 50 mm do not provide sufficient clearance for pulling cables or routing new cables. 150 mm exceeds the minimum but may not always be available in tight ceiling plenum spaces."
+  },
+  {
+    "id": 179,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the minimum length of a pull box relative to the diameter of the largest conduit it serves?",
+    "o": ["8 times the conduit diameter", "12 times the conduit diameter", "16 times the conduit diameter", "20 times the conduit diameter"],
+    "a": 2,
+    "w": "The minimum pull box length should be 16 times the diameter of the largest conduit it serves to ensure sufficient space for cable bending radius and pulling tension management. 8 times would create too tight a radius, potentially damaging cables. 12 times is below the minimum standard. 20 times is more generous than required but would also comply."
+  },
+  {
+    "id": 180,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What maximum number of work areas may a MUTOA serve?",
+    "o": ["6 work areas", "8 work areas", "12 work areas", "16 work areas"],
+    "a": 2,
+    "w": "A MUTOA (Multi-User Telecommunications Outlet Assembly) may serve a maximum of 12 work areas. 6 work areas would be a conservative implementation but is not the defined maximum. 8 work areas understates the standard maximum. 16 work areas exceeds the defined limit, which would invalidate the MUTOA design."
+  },
+  {
+    "id": 181,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the derating factor for 26 AWG equipment cords in MUTOA designs?",
+    "o": ["30%", "50%", "70%", "90%"],
+    "a": 1,
+    "w": "In MUTOA designs, the derating factor for 26 AWG equipment cords is 50%, meaning they are counted at half their length for channel compliance. 30% is not a standard derating factor for AWG-based cords. 70% is the derating factor for 28 AWG cords, not 26 AWG. 90% would not adequately account for the higher attenuation of thinner-gauge stranded patch cords."
+  },
+  {
+    "id": 182,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What defines a Consolidation Point (CP) in a horizontal cabling system?",
+    "o": ["A midpoint between two TRs", "An interconnection point within a horizontal cabling system", "A cross-connect between horizontal and backbone cabling", "A point where optical fiber converts to copper"],
+    "a": 1,
+    "w": "A CP (Consolidation Point) is an interconnection point within a horizontal cabling system, typically used in open-plan offices for flexible cable management. A midpoint between two TRs would be a backbone element, not a horizontal CP. A cross-connect between horizontal and backbone cabling is performed at the HC/FD. Conversion between optical fiber and copper is done by media converters, not consolidation points."
+  },
+  {
+    "id": 183,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What aggregation device is used in Passive Optical Networks (PONs)?",
+    "o": ["Optical Network Unit (ONU)", "Optical Line Terminal (OLT)", "Optical Amplifier", "Dense Wavelength Division Multiplexer"],
+    "a": 1,
+    "w": "The aggregation device in a PON is the Optical Line Terminal (OLT), which is located at the service provider end and manages all downstream traffic. The ONU is the customer-side device, not the aggregation point. An optical amplifier boosts signal power in long-haul links but is not the PON aggregation device. A DWDM multiplexer combines wavelengths but is not the PON aggregation point."
+  },
+  {
+    "id": 184,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the maximum distance specified for ITU G.984 GPON (C optics)?",
+    "o": ["20 km (12 mi)", "40 km (25 mi)", "60 km (37 mi)", "100 km (62 mi)"],
+    "a": 2,
+    "w": "The maximum distance for ITU G.984 GPON (C optics) is 60 km (37 mi). 20 km represents a shorter-reach GPON variant. 40 km is the maximum distance for ITU G.987 10GPON/XG-PON, not GPON. 100 km exceeds any standard GPON specification and is associated with long-haul terrestrial single-mode fiber systems."
+  },
+  {
+    "id": 185,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the maximum current per conductor for PoE Type 1?",
+    "o": ["100 mA", "175 mA", "300 mA", "600 mA"],
+    "a": 1,
+    "w": "The maximum current per conductor for PoE Type 1 is 175 mA. 100 mA is below the Type 1 specification and would underestimate cable heating. 300 mA and 600 mA correspond to higher PoE types (Type 3 and Type 4), which deliver more power per conductor."
+  },
+  {
+    "id": 186,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the maximum power at source for PoE Type 4?",
+    "o": ["15.4 W", "30 W", "60 W", "90 W"],
+    "a": 3,
+    "w": "The maximum power at source for PoE Type 4 is 90 W, which is the highest power level defined in the IEEE 802.3bt standard. 15.4 W corresponds to PoE Type 1 (802.3af). 30 W corresponds to PoE Type 2 (802.3at). 60 W corresponds to PoE Type 3, not Type 4."
+  },
+  {
+    "id": 187,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "In T568A pin assignments, which pair is connected to pins 4 and 5?",
+    "o": ["Green pair", "Orange pair", "Blue pair", "Brown pair"],
+    "a": 2,
+    "w": "In T568A pin assignments, the Blue pair is connected to pins 4 and 5. The Green pair occupies pins 1 and 2. The Orange pair occupies pins 3 and 6 in T568A. The Brown pair occupies pins 7 and 8."
+  },
+  {
+    "id": 188,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "How should optical fiber slack be stored inside fiber hardware in a telecommunications room?",
+    "o": ["1 m (3.3 ft)", "2 m (6.6 ft)", "3 m (10 ft)", "5 m (16.4 ft)"],
+    "a": 2,
+    "w": "For optical fiber slack in the TR, 3 m (10 ft) should be stored inside fiber hardware to allow for future re-terminations or repairs without having to run new cable. 1 m provides insufficient slack for any re-termination or splice repair. 2 m may be marginal for some repair scenarios. 5 m is more than needed and would create congestion inside the fiber hardware."
+  },
+  {
+    "id": 189,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What typical splitter output ratio is used for optical splitters in PON systems?",
+    "o": ["1:4", "1:8", "1:16", "1:32"],
+    "a": 3,
+    "w": "Optical splitters in PON systems are unpowered and typically have a 1:32 splitter output ratio, allowing one fiber to serve 32 subscribers. 1:4 is a lower ratio used in smaller or commercial installations. 1:8 is used in some enterprise PON applications. 1:16 is a valid ratio but not the typical standard for residential PON systems."
+  },
+  {
+    "id": 190,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What wavelengths should optical fiber cabling for PONs be tested for bidirectional loss?",
+    "o": ["850 nm and 1300 nm", "1310 nm and 1383 nm", "1310 nm and 1550 nm", "1550 nm and 1625 nm"],
+    "a": 2,
+    "w": "Optical fiber cabling for PONs should be tested for bidirectional loss at 1310 nm and 1550 nm, which are the two primary operating wavelengths for PON downstream and upstream transmission. 850 nm and 1300 nm are multimode fiber testing wavelengths, not applicable to single-mode PON systems. 1383 nm is the water-peak wavelength tested for OS2 fiber qualification, not standard PON testing. 1550 nm and 1625 nm are wavelengths used in OTDR testing for fault location, not standard PON acceptance testing."
+  },
+  {
+    "id": 191,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the maximum distance for ITU G.987 10GPON/XG-PON?",
+    "o": ["20 km (12 mi)", "40 km (25 mi)", "60 km (37 mi)", "80 km (50 mi)"],
+    "a": 1,
+    "w": "The maximum distance for ITU G.987 10GPON/XG-PON is 40 km (25 mi). 20 km is below the specified maximum for 10GPON. 60 km is the maximum for GPON with C optics, not 10GPON. 80 km exceeds the 10GPON standard and applies to long-haul single-mode fiber applications."
+  },
+  {
+    "id": 192,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What type of pathway does an example like J-hooks represent?",
+    "o": ["Continuous pathway", "Non-continuous pathway", "Enclosed pathway", "Under-carpet pathway"],
+    "a": 1,
+    "w": "J-hooks are an example of non-continuous pathways, characterized by discrete support points with gaps between them rather than a continuous cable tray or conduit. Continuous pathways like cable trays or conduits provide support along the entire cable run. Enclosed pathways are conduits or raceways that fully enclose the cable. Under-carpet pathways are flat cable systems installed beneath carpet tiles."
+  },
+  {
+    "id": 193,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "Where should telecom outlet (TO) boxes be installed relative to electrical outlets?",
+    "o": ["500 mm above electrical outlets", "At the same height as electrical outlets", "300 mm below electrical outlets", "On the opposite wall from electrical outlets"],
+    "a": 1,
+    "w": "TO boxes should be installed at the same height as electrical outlets to maintain a consistent and professional appearance and to ensure compliance with accessibility and installation standards. 500 mm above or 300 mm below would create inconsistency and potential accessibility issues. Placing them on the opposite wall could create cable management challenges and is not a standard installation practice."
+  },
+  {
+    "id": 194,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the preferred perimeter raceway installation restriction?",
+    "o": ["Use only in wet locations", "Use only in dry locations", "Use only in telecommunications rooms", "Use only below raised access floors"],
+    "a": 1,
+    "w": "Perimeter raceways should be used only in dry locations because moisture can damage cables and reduce the insulation resistance over time. Wet locations require conduit with appropriate sealing methods. Perimeter raceways are deployed at work area level, not just in telecommunications rooms. Below raised access floors uses underfloor distribution systems, not perimeter raceways."
+  },
+  {
+    "id": 195,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What design standard height are standard-height access floors for general office areas?",
+    "o": ["100 mm (4 in)", "150 mm (6 in)", "200 mm (8 in)", "250 mm (10 in)"],
+    "a": 2,
+    "w": "Standard-height access floors in general office areas require 200 mm (8 in) clearance above the structural floor. 100 mm is below low-profile access floor classification. 150 mm is classified as a low-profile access floor. 250 mm would be a high-access-floor system used in data centers with significant underfloor cable volumes."
+  },
+  {
+    "id": 196,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the concentrated load capacity required for medium-duty access floors?",
+    "o": ["4.4 kN (1000 lbf)", "6.6 kN (1500 lbf)", "8.8 kN (2000 lbf)", "11 kN (2500 lbf)"],
+    "a": 2,
+    "w": "Medium-duty access floors should have a concentrated load capacity of 8.8 kN (2000 lbf). 4.4 kN represents a lighter-duty classification. 6.6 kN is between classifications but not the specified value. 11 kN would be a heavy-duty floor specification exceeding the medium-duty standard."
+  },
+  {
+    "id": 197,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the maximum finished height of freestanding access floors?",
+    "o": ["150 mm (6 in)", "200 mm (8 in)", "254 mm (10 in)", "305 mm (12 in)"],
+    "a": 3,
+    "w": "Freestanding access floors are limited to finished heights of 305 mm (12 in) or less. 150 mm and 200 mm fall within this limit but are not the maximum. 254 mm also falls within limits. 305 mm is the specified maximum for freestanding access floor systems above which permanent or anchored systems must be used."
+  },
+  {
+    "id": 198,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "At what interval are cable trays and wireways typically supported?",
+    "o": ["0.75 m (2.5 ft) centers", "1.0 m (3.3 ft) centers", "1.5 m (5 ft) centers", "2.0 m (6.6 ft) centers"],
+    "a": 2,
+    "w": "Cable trays and wireways are typically supported at 1.5 m (5 ft) centers unless designed for longer spans. 0.75 m centers would be excessive support frequency and increase installation cost. 1.0 m provides adequate support but is more frequent than the standard recommendation. 2.0 m may be acceptable for heavy-duty cable tray systems specifically designed for longer spans."
+  },
+  {
+    "id": 199,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What maximum number of 90-degree bends in a conduit run requires a pull box or pull point?",
+    "o": ["One 90-degree bend", "Two 90-degree bends", "Three 90-degree bends", "Four 90-degree bends"],
+    "a": 1,
+    "w": "If a conduit run has more than two 90-degree bends, a pull box or pull point must be included to maintain manageable cable pulling tension. One 90-degree bend does not require a pull box and is easily accommodated. Two 90-degree bends are the maximum before a pull box is required. Three or four bends without a pull box would require excessive pulling force and risk cable damage."
+  },
+  {
+    "id": 200,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What BAS pathway planning guideline applies to the number of cables per system or coverage area?",
+    "o": ["Two cables per coverage area minimum", "One cable per system or coverage area anticipated", "Three cables per BAS device required", "No specific cable count per coverage area"],
+    "a": 1,
+    "w": "BAS pathways should anticipate one cable per system or coverage area to simplify installation and future expansion planning. Two cables would overestimate the typical BAS cabling requirement. Three cables per BAS device would significantly overprovision the pathway design. The standard does provide specific guidance rather than leaving it undefined."
+  }
+]

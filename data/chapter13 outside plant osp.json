@@ -1,0 +1,252 @@
+[
+  {
+    "id": 351,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the specified range for intrabuilding conduit penetrations?",
+    "o": ["12 mm (0.5 in) to 51 mm (2 in)", "25 mm (1 in) to 77 mm (3 in)", "50 mm (2 in) to 100 mm (4 in)", "77 mm (3 in) to 103 mm (4 in)"],
+    "a": 1,
+    "w": "The specified range for intrabuilding conduit penetrations is 25 mm (1 in) to 77 mm (3 in). 12 mm to 51 mm is too small for the full range of backbone conduit sizes. 50 mm to 100 mm is outside the stated specification range. 77 mm to 103 mm falls above the specified maximum."
+  },
+  {
+    "id": 352,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the maximum span from the last pole to a building for aerial plant?",
+    "o": ["15 m (50 ft)", "20 m (66 ft)", "30.5 m (100 ft)", "45 m (148 ft)"],
+    "a": 2,
+    "w": "The span from the last pole to the building must not exceed 30.5 m (100 ft) for aerial plant to limit sag, mechanical stress, and wind loading on the drop span. 15 m and 20 m are within the limit but not the specified maximum. 45 m would exceed the maximum and create unacceptable mechanical loads on the cable and attachment point."
+  },
+  {
+    "id": 353,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the minimum depth of conduit top below the ground surface?",
+    "o": ["305 mm (12 in)", "457 mm (18 in)", "610 mm (24 in)", "762 mm (30 in)"],
+    "a": 2,
+    "w": "The top of OSP conduit must be at least 610 mm (24 in) below the ground surface to protect against surface disturbances, frost damage, and accidental excavation. 305 mm and 457 mm are insufficient depths that would expose conduit to frost and surface damage. 762 mm exceeds the minimum and provides more protection than required."
+  },
+  {
+    "id": 354,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "How must entrance sleeves slope relative to the building exterior?",
+    "o": ["Upward toward the building exterior", "Downward toward the building exterior", "Level with no slope", "Upward at exactly 45 degrees toward the interior"],
+    "a": 1,
+    "w": "Entrance sleeves must slope downward toward the building exterior to prevent water from entering the building by gravity flow. Sloping upward toward the exterior would allow water to flow into the building. A level sleeve would allow water to pond and eventually enter. A 45-degree slope would create an excessive bend that could damage cables."
+  },
+  {
+    "id": 355,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the minimum number of conduits required in an OSP conduit pathway design, including one spare?",
+    "o": ["3 conduits including one spare", "4 conduits plus one spare", "5 conduits including one spare", "2 conduits plus one spare"],
+    "a": 1,
+    "w": "OSP conduit pathway design must include a minimum of four conduits plus one spare, for a total of five conduits. Three conduits including one spare provides only two active conduits, insufficient for adequate diversity. Five conduits including the spare would still allow four active conduits. The specification is four active plus one spare, not fewer."
+  },
+  {
+    "id": 356,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the maximum total bend degrees allowed between pulling points in an OSP conduit pathway?",
+    "o": ["90 degrees", "135 degrees", "189 degrees", "270 degrees"],
+    "a": 2,
+    "w": "Total bends in an OSP conduit pathway must not exceed 189 degrees between pulling points to keep cable pulling tension within acceptable limits. 90 degrees would be overly restrictive for practical routing. 135 degrees is below the allowable maximum. 270 degrees would create excessive friction and risk cable damage during installation."
+  },
+  {
+    "id": 357,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the minimum height of posts or bollards above finished grade for barrier protection?",
+    "o": ["610 mm (24 in)", "762 mm (30 in)", "1067 mm (42 in)", "1220 mm (48 in)"],
+    "a": 2,
+    "w": "Posts or bollards for protection must extend 1067 mm (42 in) above finished grade to be effective against vehicle impact. 610 mm and 762 mm are insufficient to stop most vehicles. 1220 mm exceeds the specification but would also be protective."
+  },
+  {
+    "id": 358,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "How deep must stepped trenches be before requiring multiple steps?",
+    "o": ["0.9 m (3 ft)", "1.22 m (4 ft)", "1.52 m (5 ft)", "2 m (6.6 ft)"],
+    "a": 2,
+    "w": "Stepped trenches deeper than 1.52 m (5 ft) require multiple steps for worker safety to prevent cave-ins and allow safe entry and exit. 0.9 m and 1.22 m are shallow enough that single-step or unstepped trenches are acceptable. 2 m is beyond the threshold and would still require steps, but the trigger depth is 1.52 m."
+  },
+  {
+    "id": 359,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What separation is required between telecommunications and water pipes running in parallel in a joint trench?",
+    "o": ["77 mm (3 in)", "152 mm (6 in)", "305 mm (12 in)", "457 mm (18 in)"],
+    "a": 2,
+    "w": "The joint trench separation requirement between telecommunications and water pipes running in parallel is 305 mm (12 in). 77 mm is the concrete separation required between telecommunications and power conduits. 152 mm is the separation for telecommunications and gas pipes at crossing points. 457 mm exceeds any of the specified joint trench separation values."
+  },
+  {
+    "id": 360,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What separation of concrete is required between telecommunications and power conduits in a joint trench?",
+    "o": ["25 mm (1 in)", "51 mm (2 in)", "77 mm (3 in)", "152 mm (6 in)"],
+    "a": 2,
+    "w": "77 mm (3 in) of concrete is required between telecommunications and power conduits in a joint trench. 25 mm and 51 mm are insufficient to provide adequate protection and separation. 152 mm (6 in) is the required separation between telecommunications and gas pipes at crossing points."
+  },
+  {
+    "id": 361,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the difference between cable diversity and route diversity in OSP service design?",
+    "o": ["Cable diversity uses different carriers; route diversity uses different cable types", "Cable diversity assigns circuits among different sheaths; route diversity assigns circuits along entirely different paths", "Cable diversity is for fiber; route diversity is for copper", "They are the same concept with different names"],
+    "a": 1,
+    "w": "Cable diversity assigns circuits among different sheaths or cables, while route diversity assigns circuits along entirely different physical paths to a building. Using different carriers is a procurement strategy, not a diversity concept. The cable type (fiber/copper) does not determine diversity type. The two terms describe distinct levels of physical separation."
+  },
+  {
+    "id": 362,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What must be included in all OSP conduits and innerducts during installation?",
+    "o": ["Lubricant pre-coating", "Pull cords", "Temporary fiber reels", "End caps only"],
+    "a": 1,
+    "w": "Pull cords must be installed in all conduits and innerducts during installation to facilitate future cable pulls without requiring re-excavation. Lubricant is applied during cable pulling, not pre-installed. Temporary fiber reels are not conduit accessories. End caps seal conduit ends but are separate from pull cord installation requirements."
+  },
+  {
+    "id": 363,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What type of warning tape should be buried above telecommunications and CATV cables?",
+    "o": ["Red warning tape", "Yellow warning tape", "Orange warning tape", "Blue warning tape"],
+    "a": 2,
+    "w": "Orange warning tape should be buried above telecommunications and CATV cables to alert excavators before they reach the cables. Red tape is used to mark electrical power cables. Yellow tape marks gas, oil, and steam lines. Blue tape marks potable water lines in the standard color coding system for buried utilities."
+  },
+  {
+    "id": 364,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What clearance is required on all sides of OSP terminals for maintenance access?",
+    "o": ["0.5 m (1.64 ft)", "0.75 m (2.46 ft)", "1 m (3.28 ft)", "1.5 m (4.92 ft)"],
+    "a": 2,
+    "w": "Terminals require 1 m (3.28 ft) of clearance on all sides for access to allow technicians to work safely and comfortably around the terminal. 0.5 m and 0.75 m do not provide enough room for equipment and technician movement. 1.5 m exceeds the requirement but would also be acceptable."
+  },
+  {
+    "id": 365,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What are the minimum dimensions of surface-mounted OSP cabinets?",
+    "o": ["305 mm wide, 100 mm deep, 610 mm tall", "457 mm wide, 127 mm deep, 762 mm tall", "610 mm wide, 152 mm deep, 1 m tall", "762 mm wide, 200 mm deep, 1.2 m tall"],
+    "a": 2,
+    "w": "Surface-mounted OSP cabinets must be at least 610 mm (24 in) wide, 152 mm (6 in) deep, and 1 m (3.28 ft) tall. Smaller dimensions would not accommodate the required cable termination hardware and cable slack storage. Larger dimensions would also be acceptable but are not the minimum."
+  },
+  {
+    "id": 366,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is a characteristic advantage of directional drilling in OSP installations?",
+    "o": ["Lowest cost installation method for all conditions", "Valuable for areas with difficult excavation such as under buildings or rivers", "Provides better cable protection than open-cut trenching", "Eliminates the need for conduit in buried installations"],
+    "a": 1,
+    "w": "Directional drilling is valuable for areas with difficult excavation such as under buildings, roads, or rivers, where open trenching is impractical or prohibited. It is not the lowest-cost method — it is typically more expensive than open-cut trenching. It does not inherently provide better cable protection. Conduit is still typically installed inside the drilled bore path."
+  },
+  {
+    "id": 367,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What must be provided when the underground building entry is not on the property line?",
+    "o": ["A single conduit from the building to the street", "Two conduits from inside the building to the property line or easement", "A minimum of four conduits to the nearest manhole", "A wireless backup path"],
+    "a": 1,
+    "w": "When the entrance isn't on the property line, two conduits must be provided from inside the building to the property line or easement to ensure adequate cable capacity and a spare path. A single conduit creates a single point of failure. Four conduits to the nearest manhole applies to the main conduit pathway design, not specifically the property line extension. Wireless backup is not a substitute for physical conduit."
+  },
+  {
+    "id": 368,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "For what size buildings are aerial plant building entrances limited?",
+    "o": ["Large buildings needing more than 144-strand fiber", "Small buildings needing ≤72-strand optical fiber cables", "Any building served by overhead utilities", "Buildings with no underground conduit access"],
+    "a": 1,
+    "w": "Aerial plant building entrances are limited to small buildings needing 72-strand or fewer optical fiber cables. Large buildings with high fiber count requirements must use underground conduit entries for capacity and protection reasons. Overhead utility availability does not determine whether aerial plant is permissible. Underground conduit absence is a site condition, not the limiting factor."
+  },
+  {
+    "id": 369,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What type of burial equipment causes minimal surface disruption?",
+    "o": ["Backhoe excavator", "Compact trenchers or vibratory plows", "Rock wheel saw", "Mechanical auger"],
+    "a": 1,
+    "w": "Compact trenchers or vibratory plows are used for buried installations requiring minimal surface disruption, ideal for landscaped areas or paved surfaces. Backhoe excavators cause significant surface disruption. Rock wheel saws are used in rocky terrain and create substantial disturbance. Mechanical augers are used for boring vertical or short horizontal holes, not for cable burial over long runs."
+  },
+  {
+    "id": 370,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What type of aerial duct includes a built-in support strand?",
+    "o": ["Innerduct", "Rigid conduit", "'Figure eight' duct", "Corrugated conduit"],
+    "a": 2,
+    "w": "'Figure eight' aerial ducts include a built-in support strand as part of their cross-sectional shape, allowing self-support between poles without a separate messenger cable. Standard innerduct is used inside conduit and has no self-supporting capability. Rigid conduit requires separate mounting hardware for aerial applications. Corrugated conduit is a flexible underground product without a built-in support strand."
+  },
+  {
+    "id": 371,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the separation between telecommunications and gas pipes at crossing points in a joint trench?",
+    "o": ["51 mm (2 in)", "77 mm (3 in)", "152 mm (6 in)", "305 mm (12 in)"],
+    "a": 2,
+    "w": "The required separation between telecommunications and gas pipes at crossing points is 152 mm (6 in). 51 mm and 77 mm are insufficient at crossing points. 305 mm is the parallel separation requirement for telecommunications and water pipes, not the crossing separation for gas."
+  },
+  {
+    "id": 372,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the minimum sump diameter required in maintenance holes (MHs)?",
+    "o": ["150 mm (6 in)", "250 mm (10 in)", "330 mm (13 in)", "450 mm (18 in)"],
+    "a": 2,
+    "w": "Maintenance holes must be equipped with sumps at least 330 mm (13 in) in diameter to collect and contain water infiltration. 150 mm and 250 mm would be too small to function effectively as sumps. 450 mm exceeds the minimum and would also be acceptable."
+  },
+  {
+    "id": 373,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "How far must conduit extend above the roofline as a vertical conduit mast?",
+    "o": ["No limitation", "Not more than 101.6 mm (4 in)", "Not more than 200 mm (8 in)", "At least 305 mm (12 in)"],
+    "a": 1,
+    "w": "Vertical conduit masts cannot extend more than 101.6 mm (4 in) above the roofline to limit wind loading and mechanical stress on the conduit and building penetration. No limitation would allow excessive extension. 200 mm and 305 mm exceed the specified maximum."
+  },
+  {
+    "id": 374,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the Network Interface (NI) in OSP design?",
+    "o": ["The point where two backbone cables join underground", "The point of connection between service provider and client networks", "The demarcation between indoor and outdoor cabling", "The splicing point within the main OSP conduit run"],
+    "a": 1,
+    "w": "The Network Interface (NI) is the point of connection between the service provider's network and the client's network, defining responsibility boundaries. It is not a cable junction underground. The indoor/outdoor transition is an entrance facility function, though the NI may be located nearby. The NI is a connection/demarcation point, not a splicing location."
+  },
+  {
+    "id": 375,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What is the weakest-rated pole class used in aerial plant design?",
+    "o": ["Class 1", "Class 5", "Class 7", "Class 10"],
+    "a": 3,
+    "w": "The weakest-rated pole class for aerial plant is Class 10. Class 1 is the strongest rating. Classes are numbered with Class 1 being the strongest and Class 10 being the weakest in the standard pole class rating system used in telecommunications OSP design."
+  }
+]
