@@ -8,7 +8,29 @@ const { useState, useEffect, useCallback, useMemo } = React;
 // ── Config ────────────────────────────────────────────────────────────────────
 const LABELS = ['A','B','C','D'];
 const STORAGE_KEY = 'rcdd_v3';
-const QUESTIONS_URL = 'data/questions.json';
+const CHAPTER_FILES = [
+  'data/chapter01 principles of transmission.json',
+  'data/chapter02 electromagnetic compatibility.json',
+  'data/chapter03 network design.json',
+  'data/chapter04 telecommunications spaces.json',
+  'data/chapter05 backbone distribution systems.json',
+  'data/chapter06 horizontal distribution systems.json',
+  'data/chapter07 ict cables and connecting hardware.json',
+  'data/chapter08 fire protection and firestopping.json',
+  'data/chapter09 telecommunications grounding and bonding.json',
+  'data/chapter10 power distribution.json',
+  'data/chapter12 field testing structured cabling.json',
+  'data/chapter13 outside plant osp.json',
+  'data/chapter14 audiovisual systems.json',
+  'data/chapter15 intelligent building systems.json',
+  'data/chapter16 wireless networks.json',
+  'data/chapter17 electronic access control.json',
+  'data/chapter18 data centers.json',
+  'data/chapter19 health care.json',
+  'data/chapter20 residential cabling systems.json',
+  'data/chapter21 project administration.json',
+  'data/chapter22 special design considerations.json',
+];
 
 const COLORS = {
   1:'#7c3aed', 2:'#0284c7', 3:'#059669', 4:'#d97706',
@@ -92,12 +114,16 @@ function App() {
   useEffect(() => { save(appData); }, [appData]);
 
   useEffect(() => {
-    fetch(QUESTIONS_URL + '?v=' + Date.now())
-      .then(r => {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .then(data => { setQuestions(data); setLoading(false); })
+    const ts = '?v=' + Date.now();
+    Promise.all(
+      CHAPTER_FILES.map(url =>
+        fetch(url + ts).then(r => {
+          if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + url);
+          return r.json();
+        })
+      )
+    )
+      .then(arrays => { setQuestions(arrays.flat()); setLoading(false); })
       .catch(err => { setFetchError(err.message); setLoading(false); });
   }, []);
 
