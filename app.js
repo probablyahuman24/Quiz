@@ -8,7 +8,7 @@ const { useState, useEffect, useCallback, useMemo } = React;
 // ── Config ────────────────────────────────────────────────────────────────────
 const LABELS = ['A','B','C','D'];
 const STORAGE_KEY = 'rcdd_v3';
-const QUESTIONS_URL = 'questions.json';
+const QUESTIONS_URL = 'data/questions.json';
 
 const COLORS = {
   1:'#7c3aed', 2:'#0284c7', 3:'#059669', 4:'#d97706',
