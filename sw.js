@@ -1,10 +1,12 @@
-const CACHE = 'rcdd-v1';
+const CACHE = 'rcdd-v2';
 const ASSETS = [
   '/Quiz/',
   '/Quiz/index.html',
   '/Quiz/app.js',
   '/Quiz/questions.json',
-  '/Quiz/manifest.json'
+  '/Quiz/manifest.json',
+  'https://unpkg.com/react@18/umd/react.production.min.js',
+  'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js'
 ];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
