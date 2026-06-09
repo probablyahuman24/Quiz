@@ -675,12 +675,16 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, on
                 el('span', { style: { fontSize:13, fontWeight:700, color:t.text } }, test.name),
                 isComplete && el('span', { style: { fontSize:10, fontWeight:700, padding:'1px 7px', borderRadius:20, background:light, color:color } }, '✓ Done')
               ),
-              el('div', { style: { fontSize:11, color:t.textMuted, marginBottom:5 } }, test.questions.length+' questions'),
+              el('div', { style: { fontSize:11, color:t.textMuted, marginBottom:5 } }, ts.done+'/'+ts.total+' questions'),
               el('div', { style: { height:3, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
                 el('div', { style: { height:'100%', background:color, borderRadius:2, width:fillPct+'%' } })
               )
             ),
-            ts.pct!==null ? el('span', { style: { fontSize:17, fontWeight:800, color:color } }, ts.pct+'%') : el('span', { style: { fontSize:13, color:t.border } }, '—'),
+            el('div', { style: { textAlign:'right', flexShrink:0 } },
+              ts.pct!==null
+                ? el('div', { style: { fontSize:17, fontWeight:800, color:color, lineHeight:1 } }, ts.pct+'%')
+                : el('div', { style: { fontSize:13, color:t.border, lineHeight:1 } }, '—')
+            ),
             el('button', { onClick:e=>{ e.stopPropagation(); setResetConfirm(test.id); }, style: { background:'none', border:'none', fontSize:16, color:t.textMuted, padding:'4px', flexShrink:0, lineHeight:1 }, title:'Reset this test' }, '↺'),
             !isConfirming && el('span', { style: { fontSize:20, color:t.border } }, '›')
           ),
