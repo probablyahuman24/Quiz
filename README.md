@@ -3,7 +3,7 @@
 **Live app:** https://probablyahuman24.github.io/Quiz/
 
 
-## Install as app (iOS / Android)
+## Install as app
 
 1. Open the link in Safari (iOS) or Chrome (Android)
 2. Tap **Share → Add to Home Screen**
