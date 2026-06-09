@@ -5,7 +5,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What three essential elements make up a telecommunications project design?",
-    "o": ["RFI, RFP, and RFQ", "Specifications, drawings, and cost estimates", "SOW, BIM model, and punch list", "Contract, schedule, and budget"],
+    "o": [
+      "RFI, RFP, and RFQ",
+      "Specifications, drawings, and cost estimates",
+      "SOW, BIM model, and punch list",
+      "Contract, schedule, and budget"
+    ],
     "a": 1,
     "w": "Telecommunications project design consists of three essential elements: specifications (detailed requirements), drawings (visual representation), and cost estimates (financial expectations). RFI, RFP, and RFQ are procurement documents. SOW, BIM, and punch list are project management tools, not the three design elements. Contract, schedule, and budget are project administration components."
   },
@@ -15,7 +20,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What word should a Scope of Work (SoW) use to indicate mandatory actions?",
-    "o": ["Should", "May", "Shall", "Will"],
+    "o": [
+      "Should",
+      "May",
+      "Shall",
+      "Will"
+    ],
     "a": 2,
     "w": "The SoW uses 'shall' to indicate mandatory actions that are non-negotiable requirements. 'Should' indicates a recommendation, not a requirement. 'May' indicates permission or optionality. 'Will' is used in some legal contexts but 'shall' is the standard technical specification term for mandatory requirements."
   },
@@ -25,7 +35,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What does a SoW explicitly exclude?",
-    "o": ["Deliverables and milestones", "Technical specifications for materials", "Legal, financial, and contract administration matters", "Drawing references and standards"],
+    "o": [
+      "Deliverables and milestones",
+      "Technical specifications for materials",
+      "Legal, financial, and contract administration matters",
+      "Drawing references and standards"
+    ],
     "a": 2,
     "w": "The SoW includes deliverables and milestones but excludes legal, financial, and contract administration matters, which are handled in separate contract documents. Technical specifications are a core part of the SoW. Drawing references are integral to the SoW. Legal and financial matters belong to the contract, not the technical SoW."
   },
@@ -35,7 +50,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What MasterFormat division covers Communications in construction projects?",
-    "o": ["Division 16", "Division 25", "Division 27", "Division 28"],
+    "o": [
+      "Division 16",
+      "Division 25",
+      "Division 27",
+      "Division 28"
+    ],
     "a": 2,
     "w": "MasterFormat Division 27 covers Communications. Division 16 is the legacy Electrical division from the older CSI format. Division 25 covers Integrated Automation. Division 28 covers Electronic Safety and Security."
   },
@@ -45,7 +65,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What MasterFormat division covers Electronic Safety and Security?",
-    "o": ["Division 22", "Division 25", "Division 27", "Division 28"],
+    "o": [
+      "Division 22",
+      "Division 25",
+      "Division 27",
+      "Division 28"
+    ],
     "a": 3,
     "w": "MasterFormat Division 28 covers Electronic Safety and Security, including fire alarm, access control, and video surveillance systems. Division 22 covers Plumbing. Division 25 covers Integrated Automation (BAS). Division 27 covers Communications."
   },
@@ -55,7 +80,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What project management tool identifies the sequence of activities that determines the total project duration?",
-    "o": ["Gantt Chart", "Work Breakdown Structure", "Critical Path Method (CPM)", "PERT"],
+    "o": [
+      "Gantt Chart",
+      "Work Breakdown Structure",
+      "Critical Path Method (CPM)",
+      "PERT"
+    ],
     "a": 2,
     "w": "The Critical Path Method (CPM) identifies the sequence of activities (critical path) that determines the minimum project duration. A Gantt Chart visualizes task timelines but doesn't identify the critical path analytically. Work Breakdown Structure diagrams task organization but doesn't determine schedule. PERT uses probabilistic estimates but the defining methodology for critical path identification is CPM."
   },
@@ -65,7 +95,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What estimates does PERT use in its analysis?",
-    "o": ["Actual cost, budgeted cost, and earned value", "Best case, most likely, and worst case durations", "Optimistic, pessimistic, and most likely estimates", "Fixed cost, variable cost, and contingency"],
+    "o": [
+      "Actual cost, budgeted cost, and earned value",
+      "Best case, most likely, and worst case durations",
+      "Optimistic, pessimistic, and most likely estimates",
+      "Fixed cost, variable cost, and contingency"
+    ],
     "a": 2,
     "w": "PERT (Program Evaluation and Review Technique) uses optimistic, pessimistic, and most likely time estimates to calculate a weighted average duration for each activity. Best/most likely/worst is essentially the same concept but 'optimistic, pessimistic, and most likely' is the precise PERT terminology. Actual/budgeted/earned value is Earned Value Management terminology. Cost estimates are separate from schedule estimates."
   },
@@ -75,7 +110,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "How many levels of hierarchy does MasterFormat support?",
-    "o": ["Three levels", "Four levels", "Five levels", "Six levels"],
+    "o": [
+      "Three levels",
+      "Four levels",
+      "Five levels",
+      "Six levels"
+    ],
     "a": 2,
     "w": "MasterFormat supports up to five levels of hierarchy in its numbering format (11 22 33.44.5555), providing granular categorization of construction activities. Three and four levels would limit the granularity available. Six levels would exceed the defined MasterFormat structure."
   },
@@ -85,7 +125,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What does Building Information Modeling (BIM) generate?",
-    "o": ["2D floor plans with cable routing", "3D models incorporating detailed product information, quantities, and properties", "Network diagrams for logical infrastructure", "Financial models for project cost estimation"],
+    "o": [
+      "2D floor plans with cable routing",
+      "3D models incorporating detailed product information, quantities, and properties",
+      "Network diagrams for logical infrastructure",
+      "Financial models for project cost estimation"
+    ],
     "a": 1,
     "w": "BIM generates 3D models incorporating detailed product information, quantities, and properties, enabling coordinated design and construction. 2D floor plans are traditional CAD drawings, not BIM. Network diagrams are ICT logical design tools. Financial models are project cost management tools, separate from BIM's physical modeling capability."
   },
@@ -95,7 +140,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "In the Design-Build (DB) delivery method, who oversees both design and construction phases?",
-    "o": ["The building owner directly", "The design professionals independently", "The contractor", "A separate construction manager"],
+    "o": [
+      "The building owner directly",
+      "The design professionals independently",
+      "The contractor",
+      "A separate construction manager"
+    ],
     "a": 2,
     "w": "In Design-Build, the contractor oversees both design and construction phases, with design professionals often working for or with the contractor. The owner has a single point of responsibility. In DBB, the owner engages design professionals directly. A separate construction manager defines the CMAR method, not DB."
   },
@@ -105,7 +155,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "In Design-Bid-Build (DBB), who do design professionals work directly with?",
-    "o": ["The general contractor", "The subcontractors", "The building owner", "The construction manager"],
+    "o": [
+      "The general contractor",
+      "The subcontractors",
+      "The building owner",
+      "The construction manager"
+    ],
     "a": 2,
     "w": "In DBB, design professionals work directly with the building owner during the design phase, after which construction is bid out to contractors. The contractor is engaged after design completion, not during design. Subcontractors are engaged by the general contractor, not directly with design professionals in DBB. A construction manager defines CMAR, not DBB."
   },
@@ -115,7 +170,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What dual role does the construction manager play in a CMAR delivery method?",
-    "o": ["Owner's representative and final inspector", "Consultant during design and general contractor during construction", "Designer and project financier", "Risk manager and insurance coordinator"],
+    "o": [
+      "Owner's representative and final inspector",
+      "Consultant during design and general contractor during construction",
+      "Designer and project financier",
+      "Risk manager and insurance coordinator"
+    ],
     "a": 1,
     "w": "In CMAR (Construction Manager at Risk), the construction manager acts as a consultant during the design phase and as the general contractor during construction. They are not the owner's representative; that role remains with the owner. They do not finance the project. Risk management and insurance are separate project functions."
   },
@@ -125,7 +185,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What sustainability framework does project design focus on balancing?",
-    "o": ["Cost, schedule, and quality", "Environmental, economic, and socio-cultural factors", "Design, construction, and operations", "Safety, security, and sustainability"],
+    "o": [
+      "Cost, schedule, and quality",
+      "Environmental, economic, and socio-cultural factors",
+      "Design, construction, and operations",
+      "Safety, security, and sustainability"
+    ],
     "a": 1,
     "w": "Sustainability goals focus on balancing environmental, economic, and socio-cultural factors while adhering to regulatory requirements. Cost/schedule/quality is the classic project management triple constraint, not the sustainability framework. Design/construction/operations is a project lifecycle framework. Safety/security/sustainability mixes different goal categories."
   },
@@ -135,7 +200,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What must disaster recovery and business continuity plans be protected from?",
-    "o": ["Physical damage and flooding", "Unauthorized disclosure", "Software viruses and cyber attacks", "Regulatory audit access"],
+    "o": [
+      "Physical damage and flooding",
+      "Unauthorized disclosure",
+      "Software viruses and cyber attacks",
+      "Regulatory audit access"
+    ],
     "a": 1,
     "w": "Disaster recovery and business continuity plans must be protected from unauthorized disclosure, as they contain sensitive information about vulnerabilities and system dependencies. Physical protection is also important but the specific stated requirement is unauthorized disclosure. Cyber protection is a separate security measure. Regulatory bodies may have legitimate access rights, so restricting audit access would be inappropriate."
   },
@@ -145,9 +215,14 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "How long should ICT infrastructure be designed to support technologies?",
-    "o": ["3–5 years", "7–10 years", "10–15 years", "20–25 years"],
+    "o": [
+      "3\u20135 years",
+      "7\u201310 years",
+      "10\u201315 years",
+      "20\u201325 years"
+    ],
     "a": 2,
-    "w": "ICT infrastructure should be designed to support technologies for 10–15 years to justify the investment and avoid premature replacement. 3–5 years is too short for major infrastructure investment. 7–10 years is below the recommended design horizon. 20–25 years would be overly optimistic given the rate of technology change in ICT."
+    "w": "ICT infrastructure should be designed to support technologies for 10\u201315 years to justify the investment and avoid premature replacement. 3\u20135 years is too short for major infrastructure investment. 7\u201310 years is below the recommended design horizon. 20\u201325 years would be overly optimistic given the rate of technology change in ICT."
   },
   {
     "id": 566,
@@ -155,7 +230,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "Are periodic progress reports classified as SoW deliverables?",
-    "o": ["Yes, they are primary SoW deliverables", "Yes, but only final reports", "No, they help track project health but are not SoW deliverables", "Only if specified by the client"],
+    "o": [
+      "Yes, they are primary SoW deliverables",
+      "Yes, but only final reports",
+      "No, they help track project health but are not SoW deliverables",
+      "Only if specified by the client"
+    ],
     "a": 2,
     "w": "Periodic progress reports help track project health but are not classified as SoW deliverables. The SoW defines formal project outputs and milestones. Progress reports are management tools used during execution, not deliverables that the contractor formally hands over to the client."
   },
@@ -165,7 +245,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What is the purpose of a Punch List in project administration?",
-    "o": ["To document all project risks identified during planning", "To list all change orders approved during construction", "To summarize corrections required before project acceptance", "To track daily progress against the project schedule"],
+    "o": [
+      "To document all project risks identified during planning",
+      "To list all change orders approved during construction",
+      "To summarize corrections required before project acceptance",
+      "To track daily progress against the project schedule"
+    ],
     "a": 2,
     "w": "A Punch List summarizes corrections required before project acceptance, identifying deficiencies that must be addressed for final sign-off. Risk documentation is a risk register function. Change orders are tracked in a change order log. Daily progress is tracked in construction reports, not a punch list."
   },
@@ -175,7 +260,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What type of specification focuses on achieving desired outcomes, allowing contractors to choose materials and methods?",
-    "o": ["Reference specification", "Descriptive specification", "Performance specification", "Prescriptive specification"],
+    "o": [
+      "Reference specification",
+      "Descriptive specification",
+      "Performance specification",
+      "Prescriptive specification"
+    ],
     "a": 2,
     "w": "Performance specifications focus on achieving desired outcomes and allow contractors freedom to choose materials and methods. Reference specifications are based on established standards. Descriptive specifications specify exact properties and installation methods. Prescriptive specification is another term for descriptive specifications."
   },
@@ -185,7 +275,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What TPM knowledge area covers document access and project communication systems?",
-    "o": ["Integration Management", "Scope Management", "Communications Management", "Human Resources Management"],
+    "o": [
+      "Integration Management",
+      "Scope Management",
+      "Communications Management",
+      "Human Resources Management"
+    ],
     "a": 2,
     "w": "Communications Management covers document access and project communication systems in telecommunications project management. Integration Management breaks large projects into smaller units. Scope Management defines project boundaries. Human Resources Management covers workforce safety and organization."
   },
@@ -195,7 +290,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "Which TPM knowledge area includes the calculation of critical paths?",
-    "o": ["Scope Management", "Time Management", "Cost Management", "Integration Management"],
+    "o": [
+      "Scope Management",
+      "Time Management",
+      "Cost Management",
+      "Integration Management"
+    ],
     "a": 1,
     "w": "Time Management in telecommunications project management includes the calculation of critical paths to determine the minimum project duration. Scope Management defines boundaries but not scheduling. Cost Management ensures budget compliance. Integration Management coordinates project components but does not calculate critical paths."
   },
@@ -205,7 +305,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "Which TPM knowledge area identifies and involves all interested parties?",
-    "o": ["Human Resources Management", "Communications Management", "Risk Management", "Stakeholder Management"],
+    "o": [
+      "Human Resources Management",
+      "Communications Management",
+      "Risk Management",
+      "Stakeholder Management"
+    ],
     "a": 3,
     "w": "Stakeholder Management identifies and involves all interested parties in the project. Human Resources Management focuses on the project team workforce. Communications Management manages information flow. Risk Management identifies and mitigates project risks."
   },
@@ -215,7 +320,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What does Integration Management in TPM do?",
-    "o": ["Manages BAS and ICT system integration", "Oversees acquisition of resources", "Breaks down large projects into smaller, manageable units", "Coordinates design and construction phases"],
+    "o": [
+      "Manages BAS and ICT system integration",
+      "Oversees acquisition of resources",
+      "Breaks down large projects into smaller, manageable units",
+      "Coordinates design and construction phases"
+    ],
     "a": 2,
     "w": "Integration Management in TPM breaks down large projects into smaller, manageable units for better control and coordination. Managing BAS and ICT integration is a technical design function. Procurement Management oversees resource acquisition. Phase coordination is a broader project management function not specific to Integration Management."
   },
@@ -225,7 +335,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What type of specification specifies exact properties and installation methods?",
-    "o": ["Performance specification", "Reference specification", "Proprietary specification", "Descriptive specification"],
+    "o": [
+      "Performance specification",
+      "Reference specification",
+      "Proprietary specification",
+      "Descriptive specification"
+    ],
     "a": 3,
     "w": "Descriptive specifications specify exact material properties and installation methods, leaving no contractor discretion. Performance specifications define outcomes and allow flexibility. Reference specifications cite existing standards. Proprietary specifications name specific manufacturer products or systems."
   },
@@ -235,7 +350,12 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What additional practice occurs after project completion in TPM?",
-    "o": ["Quarterly performance review", "Lessons learned meeting", "Annual infrastructure audit", "Client satisfaction survey only"],
+    "o": [
+      "Quarterly performance review",
+      "Lessons learned meeting",
+      "Annual infrastructure audit",
+      "Client satisfaction survey only"
+    ],
     "a": 1,
     "w": "A lessons learned meeting after project completion is an additional TPM practice to capture knowledge for future projects. Quarterly reviews are ongoing management tools, not a post-project activity. Annual audits are operational activities. Client satisfaction surveys may occur but the specific referenced practice is the lessons learned meeting."
   },
@@ -245,8 +365,313 @@
     "testName": "Project Administration, Execution, and Risk Management",
     "chapter": "Project Administration, Execution, and Risk Management",
     "q": "What are the two components of Change Orders in project administration?",
-    "o": ["Cost increase and schedule delay", "Project scope and time frame changes", "Material substitution and labor rate changes", "Design revision and re-inspection requirements"],
+    "o": [
+      "Cost increase and schedule delay",
+      "Project scope and time frame changes",
+      "Material substitution and labor rate changes",
+      "Design revision and re-inspection requirements"
+    ],
     "a": 1,
     "w": "Change Orders are formal documents defining required changes in project scope and time frame. Cost and schedule impacts are consequences of scope/time changes but are not the two defining components. Material substitution may be part of a scope change but is not the defining characteristic. Design revisions and re-inspections may result from change orders but are not the two components."
+  },
+  {
+    "id": 776,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What is the first step in creating a comprehensive business proposal for an ICT project?",
+    "o": [
+      "Drafting the Scope of Work",
+      "Conducting a client needs assessment",
+      "Developing a quality assurance plan",
+      "Preparing a disaster recovery plan"
+    ],
+    "a": 1,
+    "w": "A client needs assessment is the essential first step in creating a business proposal because it identifies the client's requirements, constraints, and objectives that will define all subsequent project planning activities. Drafting the Scope of Work comes after the needs assessment, as the SoW must be based on documented requirements (option A). Developing a quality assurance plan is a later project planning activity that cannot be completed without first understanding client needs (option C). Preparing a disaster recovery plan is a specific project deliverable that depends on knowing the client's systems and requirements (option D)."
+  },
+  {
+    "id": 777,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "Which of the following is a service that ICT professionals can provide?",
+    "o": [
+      "Feasibility studies",
+      "Master planning",
+      "Quality assurance",
+      "All of the above"
+    ],
+    "a": 3,
+    "w": "ICT professionals provide a comprehensive range of services including feasibility studies (evaluating technical and financial viability), master planning (long-term infrastructure strategy), and quality assurance (verifying installation meets standards). Feasibility studies alone represent only one of many ICT professional service offerings (option A). Master planning alone does not capture the full scope of ICT professional services (option B). Quality assurance is an important service but represents only one facet of ICT professional capabilities (option C)."
+  },
+  {
+    "id": 778,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What document outlines the project's performance details and is included in the RFP package?",
+    "o": [
+      "Work Breakdown Structure (WBS)",
+      "Scope of Work (SoW)",
+      "Lessons Learned",
+      "Client-Supplier Model"
+    ],
+    "a": 1,
+    "w": "The Scope of Work (SoW) is the document included in the RFP package that defines what work will be performed, the deliverables, performance requirements, and standards that must be met. The Work Breakdown Structure (WBS) decomposes project activities into manageable components but is typically an internal project management tool, not part of the RFP package (option A). Lessons Learned is a project closeout document capturing knowledge from completed projects, not an RFP document (option C). The Client-Supplier Model describes the project delivery structure, not the performance details (option D)."
+  },
+  {
+    "id": 779,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What project scheduling tool highlights the duration of activities using a bar chart?",
+    "o": [
+      "PERT",
+      "Milestone chart",
+      "Gantt chart",
+      "Calendar chart"
+    ],
+    "a": 2,
+    "w": "A Gantt chart displays project activities as horizontal bars plotted against a time axis, visually showing the duration, start, and end dates of each task and their sequence. PERT (Program Evaluation and Review Technique) uses a network diagram with nodes to show activity relationships and critical paths, not a bar chart format (option A). A milestone chart shows only key project milestones as points in time, not activity durations (option B). Calendar charts show work scheduled on calendar dates but are less commonly used for project scheduling than Gantt charts (option D)."
+  },
+  {
+    "id": 780,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What does the formula for PERT's optimal estimate include?",
+    "o": [
+      "Optimistic, likely, and pessimistic estimates",
+      "Budget, timeline, and risk assessment",
+      "Analogous, parametric, and engineering estimates",
+      "Start, finish, and milestone dates"
+    ],
+    "a": 0,
+    "w": "PERT's weighted average formula is (Optimistic + 4 x Most Likely + Pessimistic) / 6, combining three time estimates to calculate an expected duration that accounts for uncertainty and variability. Budget, timeline, and risk assessment are project management inputs, not the components of the PERT duration estimate formula (option B). Analogous, parametric, and engineering are cost estimating methods, not the components of PERT's time estimation formula (option C). Start, finish, and milestone dates are schedule outputs derived from PERT calculations, not inputs to the formula (option D)."
+  },
+  {
+    "id": 781,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "Which bid structure is described as 'design professionals working directly for the owner'?",
+    "o": [
+      "Design-Bid-Build (DBB)",
+      "Design-Build (DB)",
+      "Construction Manager at Risk (CMAR)",
+      "Integrated Project Delivery (IPD)"
+    ],
+    "a": 0,
+    "w": "In the Design-Bid-Build (DBB) delivery method, design professionals (architects and engineers) work directly for the owner to create complete design documents before contractors bid on the construction work. In Design-Build (DB), a single entity provides both design and construction services, so design professionals work for the contractor, not directly for the owner (option B). In CMAR, the construction manager is hired during design but the design professionals still work for the owner (option C). IPD is a collaborative delivery method where all parties share risk and reward, with a more complex contractual relationship (option D)."
+  },
+  {
+    "id": 782,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What is the minimum requirement for a Scope of Work document?",
+    "o": [
+      "Timeline and milestones only",
+      "Only project deliverables",
+      "What, who, where, when, and standards",
+      "Only contract terms"
+    ],
+    "a": 2,
+    "w": "A minimum Scope of Work must define what work will be done, who will perform it, where it will be performed, when it must be completed, and what standards apply to ensure all parties understand their obligations. Timeline and milestones alone are insufficient as they do not define the work scope, responsible parties, or applicable standards (option A). Deliverables alone do not specify who is responsible, the location, schedule, or standards (option B). Contract terms alone cover legal and commercial aspects but do not define the technical scope of work (option D)."
+  },
+  {
+    "id": 783,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "Which component is NOT included in a disaster recovery plan?",
+    "o": [
+      "Potential risks",
+      "Risk mitigation strategies",
+      "Project budget allocation",
+      "Testing scenarios"
+    ],
+    "a": 2,
+    "w": "Project budget allocation is a project management deliverable, not a component of a disaster recovery plan, which focuses on operational resilience rather than financial project management. Potential risks are a fundamental component of disaster recovery planning, identifying what events could disrupt operations (option A). Risk mitigation strategies define how identified risks will be prevented or minimized (option B). Testing scenarios are critical components that validate whether the recovery plan will work as designed (option D)."
+  },
+  {
+    "id": 784,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "Disaster recovery strategies can be categorized into which three types?",
+    "o": [
+      "Preventive, reactive, corrective",
+      "Preventive, detective, corrective",
+      "Reactive, detective, expansive",
+      "Mitigation, correction, simulation"
+    ],
+    "a": 1,
+    "w": "Disaster recovery strategies are classified as preventive (reducing likelihood of disasters), detective (identifying and alerting to disaster conditions), and corrective (restoring systems after a disaster occurs). Reactive strategies respond after an event but the recognized framework uses preventive, detective, and corrective as the three categories (option A). Expansive is not a recognized disaster recovery strategy category (option C). Mitigation, correction, and simulation do not represent the standard three-category framework for disaster recovery strategies (option D)."
+  },
+  {
+    "id": 785,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What does a Work Breakdown Structure (WBS) accomplish in a project?",
+    "o": [
+      "Outlines the timeline for all tasks",
+      "Breaks down project activities into manageable components",
+      "Tracks client and supplier communications",
+      "Establishes equipment and tools for installation"
+    ],
+    "a": 1,
+    "w": "A Work Breakdown Structure (WBS) hierarchically decomposes the total project scope into smaller, manageable work packages that can be assigned, scheduled, and cost-estimated. Outlining timelines is the function of Gantt charts and network schedules, not the WBS (option A). Tracking communications is a project communication management activity, not what a WBS accomplishes (option C). Establishing equipment and tools is a resource planning activity derived from the WBS but not what the WBS itself accomplishes (option D)."
+  },
+  {
+    "id": 786,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What tool is used to measure an activity's earliest start and latest finish dates?",
+    "o": [
+      "Milestone chart",
+      "Critical Path Method (CPM)",
+      "PERT",
+      "Gantt chart"
+    ],
+    "a": 1,
+    "w": "The Critical Path Method (CPM) calculates the earliest start (ES), earliest finish (EF), latest start (LS), and latest finish (LF) dates for each activity through forward and backward pass analysis of the project network. Milestone charts show only key dates and do not calculate early/late start and finish dates for individual activities (option A). PERT focuses on probabilistic duration estimates but CPM is the specific tool for early/late date calculations (option C). Gantt charts display activity durations visually but do not calculate early/late dates through network analysis (option D)."
+  },
+  {
+    "id": 787,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "Which of the following is a key type of telecommunications contract?",
+    "o": [
+      "Fixed-sum contract",
+      "Stipulated-sum contract",
+      "Lump-sum contract",
+      "Cost-overrun contract"
+    ],
+    "a": 1,
+    "w": "A stipulated-sum contract is a key contract type in telecommunications where the contractor agrees to complete the work for a fixed price, with all risk for cost overruns borne by the contractor. Fixed-sum and lump-sum contracts are alternative terms that describe similar concepts to stipulated-sum, but the recognized term in telecommunications project administration is stipulated-sum (options A and C). A cost-overrun contract is not a recognized contract type; contracts are typically structured to avoid or allocate cost overrun risk (option D)."
+  },
+  {
+    "id": 788,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What is the primary goal of a project's closeout process?",
+    "o": [
+      "Document lessons learned for future projects",
+      "Ensure compliance with codes, standards, and client requirements",
+      "Generate a final invoice",
+      "Deliver spare materials"
+    ],
+    "a": 1,
+    "w": "The primary goal of project closeout is to ensure the completed installation complies with applicable codes, standards, and client requirements through final inspections, testing, and documentation review. Documenting lessons learned is an important closeout activity but is a secondary benefit rather than the primary goal (option A). Generating a final invoice is an administrative closeout step, not the primary goal of the closeout process (option C). Delivering spare materials is a contractual requirement that may be part of closeout but is not the primary goal (option D)."
+  },
+  {
+    "id": 789,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What is the role of an ICT designer during coordination meetings?",
+    "o": [
+      "Oversee all financial documents",
+      "Approve contractor bids",
+      "Ensure compliance with project specifications and design intent",
+      "Resolve client disputes"
+    ],
+    "a": 2,
+    "w": "During coordination meetings, the ICT designer's primary role is to ensure that all construction activities comply with project specifications and maintain the design intent, coordinating with other trades and resolving technical conflicts. Financial document oversight is typically the responsibility of the project owner or construction manager, not the ICT designer (option A). Approving contractor bids occurs during the procurement phase, not during construction coordination meetings (option B). Resolving client disputes is a contract administration function for the owner's representative, not the ICT designer's primary coordination role (option D)."
+  },
+  {
+    "id": 790,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What is typically included in project closeout documentation?",
+    "o": [
+      "Test results and training records",
+      "Record drawings and warranties",
+      "O&M documents and spare parts",
+      "All of the above"
+    ],
+    "a": 3,
+    "w": "Complete project closeout documentation encompasses all deliverables: test results and training records (performance verification and knowledge transfer), record drawings and warranties (as-built conditions and guarantees), and O&M documents and spare parts (operational support materials). Test results and training records alone (option A) represent only a portion of required closeout deliverables. Record drawings and warranties (option B) are essential but insufficient alone for complete project closeout. O&M documents and spare parts (option C) are necessary components but do not represent all required closeout documentation."
+  },
+  {
+    "id": 791,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What is the first phase of the design process?",
+    "o": [
+      "Schematic design",
+      "Programming",
+      "Design development",
+      "Bidding"
+    ],
+    "a": 1,
+    "w": "Programming (also called pre-design) is the first phase where the designer gathers all project requirements, establishes the design program, and defines the project scope before any design drawings are created. Schematic design is the second phase where preliminary design concepts are developed based on the programming data (option A). Design development is the third phase where schematic designs are refined into more detailed drawings (option C). Bidding is a late-phase activity that occurs after design documents are complete (option D)."
+  },
+  {
+    "id": 792,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What is the recommended numbering division for 'Electronic Safety and Security' in MasterFormat 2020?",
+    "o": [
+      "Division 24",
+      "Division 26",
+      "Division 28",
+      "Division 30"
+    ],
+    "a": 2,
+    "w": "MasterFormat 2020 assigns Division 28 to Electronic Safety and Security systems, covering fire alarms, access control, intrusion detection, and video surveillance. Division 24 covers HVAC (Heating, Ventilating, and Air Conditioning) in MasterFormat (option A). Division 26 covers Electrical systems including lighting and power distribution (option B). Division 30 covers not a standard MasterFormat division for electronic safety and security (option D)."
+  },
+  {
+    "id": 793,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "Which estimating method involves calculating cost per foot or per drop?",
+    "o": [
+      "Analogous",
+      "Parametric",
+      "Subcontractor Bids",
+      "Engineering"
+    ],
+    "a": 1,
+    "w": "Parametric estimating calculates project costs using statistical relationships between project parameters such as cost per foot of cable, cost per outlet drop, or cost per rack unit installed. Analogous estimating uses historical project costs from similar past projects as a basis for the new estimate (option A). Subcontractor bid estimating obtains quotes from vendors and subcontractors for specific scopes of work (option C). Engineering (bottom-up) estimating breaks down every work component and calculates individual costs, which is more detailed than per-unit parametric rates (option D)."
+  },
+  {
+    "id": 794,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "During the kickoff meeting, what topic is discussed to address changes in the project?",
+    "o": [
+      "Change order process",
+      "RFP submission guidelines",
+      "Project closeout requirements",
+      "Permit applications"
+    ],
+    "a": 0,
+    "w": "The change order process is discussed during the kickoff meeting to establish the protocol for managing scope changes, ensuring all parties understand how modifications to the contract will be documented, approved, and priced. RFP submission guidelines are relevant during the procurement phase, not the project kickoff after award (option B). Project closeout requirements are typically discussed at the end of a project, not at the kickoff (option C). Permit applications are administrative pre-construction activities that may be referenced but are not the main topic of change management in the kickoff (option D)."
+  },
+  {
+    "id": 795,
+    "test": 21,
+    "testName": "Project Administration",
+    "chapter": "Project Administration",
+    "q": "What is the primary purpose of weekly progress meetings?",
+    "o": [
+      "Finalize contracts with subcontractors",
+      "Ensure project permits are submitted",
+      "Review budget, schedule, and current issues",
+      "Discuss changes to the project scope"
+    ],
+    "a": 2,
+    "w": "Weekly progress meetings are held to review the current project status including budget consumption, schedule adherence, and resolution of current issues to keep the project on track. Finalizing contracts with subcontractors occurs during procurement, not in weekly progress meetings (option A). Permit submission is a pre-construction administrative task that would not be the primary focus of recurring progress meetings (option B). Scope changes are discussed in change order meetings and coordination meetings, though they may be referenced in progress meetings (option D)."
   }
 ]
