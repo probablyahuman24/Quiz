@@ -791,11 +791,11 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
       el('p', { style: { fontSize:12.5, color:t.textSub, lineHeight:1.6 } }, q.w)
     ),
     el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', padding:'12px 18px 44px', marginTop:'auto' } },
-      el('button', { onClick:()=>qIdx>0&&setQIdx(q=>q-1), disabled:qIdx===0, style: { background:t.cardAlt, border:'1.5px solid '+t.border, borderRadius:10, padding:'9px 16px', fontSize:13, fontWeight:600, color:t.textSub, opacity:qIdx===0?0.35:1 } }, '‹ Prev'),
+      el('button', { onClick:()=>qIdx>0&&setQIdx(i=>i-1), disabled:qIdx===0, style: { background:t.cardAlt, border:'1.5px solid '+t.border, borderRadius:10, padding:'9px 16px', fontSize:13, fontWeight:600, color:t.textSub, opacity:qIdx===0?0.35:1 } }, '‹ Prev'),
       allDone
         ? el('button', { onClick:onFinish, style: { background:color, color:'#fff', border:'none', borderRadius:11, padding:'10px 22px', fontSize:14, fontWeight:700, boxShadow:'0 4px 14px '+color+'40' } }, 'Finish →')
         : isAnswered && qIdx<qs.length-1
-          ? el('button', { onClick:()=>setQIdx(q=>q+1), style: { background:color, color:'#fff', border:'none', borderRadius:11, padding:'10px 22px', fontSize:14, fontWeight:700 } }, 'Next →')
+          ? el('button', { onClick:()=>setQIdx(i=>i+1), style: { background:color, color:'#fff', border:'none', borderRadius:11, padding:'10px 22px', fontSize:14, fontWeight:700 } }, 'Next →')
           : el('div')
     )
   );
@@ -867,11 +867,11 @@ function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome, d
       el('div', { style: { fontSize:10, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:10 } }, 'QUESTION REVIEW'),
       ...qs.map((q,i) => {
         const correct=ans[i]===q.a, conf=confs[i], isDangerGap=!correct&&conf==='sure';
-        return el('div', { key:q.id, style: { border:'1.5px solid '+(isDangerGap?'#fca5a5':correct?'#dcfce7':'#fff1f2'), borderRadius:10, padding:'10px', marginBottom:8, background:isDangerGap?'#fff5f5':correct?'#f8fffe':'#fffafa' } },
+        return el('div', { key:q.id, style: { border:'1.5px solid '+(isDangerGap?'#fca5a5':correct?(dark?'#166534':'#dcfce7'):(dark?'#6b1325':'#fff1f2')), borderRadius:10, padding:'10px', marginBottom:8, background:isDangerGap?(dark?'#3b0d0d':'#fff5f5'):correct?(dark?'#052e16':'#f8fffe'):(dark?'#2d0a0a':'#fffafa') } },
           el('div', { style: { display:'flex', gap:8 } },
             el('span', { style: { minWidth:20, height:20, borderRadius:5, background:correct?'#22c55e':'#f43f5e', color:'#fff', display:'flex', alignItems:'center', justifyContent:'center', fontSize:10, fontWeight:700, flexShrink:0, marginTop:1 } }, correct?'✓':'✗'),
             el('div', null,
-              el('p', { style: { fontSize:12, fontWeight:600, color:'#0f172a', lineHeight:1.4, marginBottom:3 } }, q.q),
+              el('p', { style: { fontSize:12, fontWeight:600, color:t.text, lineHeight:1.4, marginBottom:3 } }, q.q),
               conf && el('span', { style: { fontSize:9, fontWeight:700, padding:'1px 6px', borderRadius:10, marginBottom:4, display:'inline-block', background:conf==='sure'?'#ecfdf5':conf==='guessing'?'#fef2f2':'#fffbeb', color:conf==='sure'?'#059669':conf==='guessing'?'#dc2626':'#d97706' } }, conf.charAt(0).toUpperCase()+conf.slice(1)),
               isDangerGap && el('span', { style: { fontSize:9, fontWeight:700, padding:'1px 6px', borderRadius:10, background:'#fee2e2', color:'#dc2626', marginLeft:4 } }, '⚠️ Danger Gap'),
               !correct && el('p', { style: { fontSize:11, color:'#dc2626', marginBottom:2, marginTop:3 } }, 'Your: '+(ans[i]!==null?LABELS[ans[i]]+'. '+q.o[ans[i]]:'—')),
