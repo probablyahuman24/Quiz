@@ -382,12 +382,22 @@ function App() {
   }, [questions]);
 
   const getOrCreateSession = useCallback((testId) => {
-    if (!appData.sessions[testId]) {
-      const t = tests.find(x => x.id === testId);
-      if (!t) return;
-      const qs = spacedShuffle(t.questions);
-      setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [testId]: { questions:qs, answers:Array(qs.length).fill(null), confidences:Array(qs.length).fill(null), mode:'normal' } } }));
+    const chapter = tests.find(x => x.id === testId);
+    if (!chapter) return;
+    const existing = appData.sessions[testId];
+    if (existing) {
+      if (existing.questions.length < chapter.questions.length) {
+        const seenIds = new Set(existing.questions.map(q => q.id));
+        const missing = spacedShuffle(chapter.questions.filter(q => !seenIds.has(q.id)));
+        const questions   = [...existing.questions, ...missing];
+        const answers     = [...existing.answers, ...Array(missing.length).fill(null)];
+        const confidences = [...(existing.confidences||Array(existing.questions.length).fill(null)), ...Array(missing.length).fill(null)];
+        setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [testId]: { ...existing, questions, answers, confidences } } }));
+      }
+      return;
     }
+    const qs = spacedShuffle(chapter.questions);
+    setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [testId]: { questions:qs, answers:Array(qs.length).fill(null), confidences:Array(qs.length).fill(null), mode:'normal' } } }));
   }, [appData.sessions, tests, spacedShuffle]);
 
   const answer = useCallback((testId, qIdx, optIdx) => {
