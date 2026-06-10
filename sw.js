@@ -1,4 +1,4 @@
-const CACHE = 'rcdd-v15';
+const CACHE = 'rcdd-v16';
 const ASSETS = [
   '/Quiz/',
   '/Quiz/index.html',

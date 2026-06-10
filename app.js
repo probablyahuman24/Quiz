@@ -332,7 +332,16 @@ function App() {
           const qById = {};
           questions.forEach(q => { qById[q.id] = q; });
           justLoadedRef.current = true;
-          setAppData({ sessions:expandSessions(p.sessions||{},qById), history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{}, dailyStats:p.dailyStats||{date:'',correct:0} });
+          const serverDaily = p.dailyStats || { date: '', correct: 0 };
+          const today = new Date().toDateString();
+          // Use setAppData(prev=>) so we can compare against any answers the user
+          // already gave before Firestore finished loading (race condition fix)
+          setAppData(prev => {
+            const localDaily = prev.dailyStats || { date: '', correct: 0 };
+            const dailyStats = localDaily.date === today && localDaily.correct > (serverDaily.date === today ? serverDaily.correct : 0)
+              ? localDaily : serverDaily;
+            return { sessions:expandSessions(p.sessions||{},qById), history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{}, dailyStats };
+          });
         }
         setProgressLoaded(true);
       })
@@ -340,19 +349,15 @@ function App() {
   }, [currentUser, questions]);
 
   // Cloud-first sync: write to Firestore with a short debounce.
-  // With offline persistence enabled, Firebase queues the write locally and
-  // flushes it automatically when the connection is restored.
-  // localStorage is kept as a secondary fallback only when Firestore is unavailable.
+  // localStorage is also kept in sync so the fast-load cache is never stale.
   useEffect(() => {
     if (!currentUser || !progressLoaded) return;
     if (justLoadedRef.current) { justLoadedRef.current = false; return; }
+    // Always write to localStorage so the startup cache stays current
+    saveUser(currentUser.username, appData);
     const compact = compactAppData(appData);
     const timer = setTimeout(() => {
-      db.collection('users').doc(currentUser.username).update({ progress: compact })
-        .catch(() => {
-          // Firestore unavailable (persistence unsupported) — fall back to localStorage
-          saveUser(currentUser.username, appData);
-        });
+      db.collection('users').doc(currentUser.username).update({ progress: compact }).catch(() => {});
     }, 500);
     return () => clearTimeout(timer);
   }, [appData, currentUser, progressLoaded]);
