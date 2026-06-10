@@ -12,7 +12,12 @@
       "DFB laser"
     ],
     "a": 1,
-    "w": "OM3 multimode optical fiber at 850 nm uses VCSEL (Vertical-Cavity Surface-Emitting Laser) light sources, which are laser-optimized for high-bandwidth multimode fiber. LEDs are used at 1300 nm wavelengths with multimode fiber. Fabry-Perot lasers are single-mode sources used in telecom applications. DFB lasers are narrowband single-mode lasers used in DWDM systems, not multimode 850 nm applications."
+    "w": "OM3 multimode optical fiber at 850 nm uses VCSEL (Vertical-Cavity Surface-Emitting Laser) light sources, which are laser-optimized for high-bandwidth multimode fiber. LEDs are used at 1300 nm wavelengths with multimode fiber. Fabry-Perot lasers are single-mode sources used in telecom applications. DFB lasers are narrowband single-mode lasers used in DWDM systems, not multimode 850 nm applications.",
+    "k": [
+      "Distance and dimension limits in ICT cables and connecting hardware are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as TIA-568 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 202,
@@ -27,7 +32,12 @@
       "1.4 dB/km"
     ],
     "a": 3,
-    "w": "OS1a singlemode optical fiber has a maximum attenuation of 1.4 dB/km at 1383 nm, the water-peak wavelength. 0.4 dB/km is the specification for OS2 at 1550 nm, a much lower-loss fiber. 0.8 dB/km is below the OS1a maximum at 1383 nm. 1.0 dB/km is the worst-case OTDR attenuation coefficient for singlemode at 1550 nm in testing standards."
+    "w": "OS1a singlemode optical fiber has a maximum attenuation of 1.4 dB/km at 1383 nm, the water-peak wavelength. 0.4 dB/km is the specification for OS2 at 1550 nm, a much lower-loss fiber. 0.8 dB/km is below the OS1a maximum at 1383 nm. 1.0 dB/km is the worst-case OTDR attenuation coefficient for singlemode at 1550 nm in testing standards.",
+    "k": [
+      "Distance and dimension limits in ICT cables and connecting hardware are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as TIA-568 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 203,
@@ -42,7 +52,12 @@
       "5000 MHz-km"
     ],
     "a": 2,
-    "w": "OM4 multimode optical fiber has an OFL (Overfilled Launch) bandwidth of 3500 MHz-km at 850 nm. 1500 MHz-km is the OFL bandwidth of OM3 at 850 nm. 2000 MHz-km corresponds to OM3 minimum bandwidth at 850 nm. 5000 MHz-km exceeds the OM4 specification and is not a standard fiber rating."
+    "w": "OM4 multimode optical fiber has an OFL (Overfilled Launch) bandwidth of 3500 MHz-km at 850 nm. 1500 MHz-km is the OFL bandwidth of OM3 at 850 nm. 2000 MHz-km corresponds to OM3 minimum bandwidth at 850 nm. 5000 MHz-km exceeds the OM4 specification and is not a standard fiber rating.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 204,
@@ -57,7 +72,12 @@
       "1310 nm and 1550 nm"
     ],
     "a": 2,
-    "w": "OM5 multimode optical fiber supports wavelengths of 850/880 nm and 910/940 nm, enabling short-wavelength division multiplexing (SWDM) over multimode fiber. 850 nm only is the specification for earlier multimode fiber types without SWDM capability. 850 nm and 1300 nm are the traditional dual wavelengths for OM1-OM4 multimode fibers. 1310 nm and 1550 nm are singlemode fiber wavelengths."
+    "w": "OM5 multimode optical fiber supports wavelengths of 850/880 nm and 910/940 nm, enabling short-wavelength division multiplexing (SWDM) over multimode fiber. 850 nm only is the specification for earlier multimode fiber types without SWDM capability. 850 nm and 1300 nm are the traditional dual wavelengths for OM1-OM4 multimode fibers. 1310 nm and 1550 nm are singlemode fiber wavelengths.",
+    "k": [
+      "Distance and dimension limits in ICT cables and connecting hardware are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as TIA-568 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 205,
@@ -72,7 +92,12 @@
       "300 m"
     ],
     "a": 1,
-    "w": "The maximum recommended length for 10 Gb/s over OM1 multimode fiber is 33 m. 10 m is well below what OM1 can achieve even at 10 Gb/s. 100 m is achievable over OM3 at 10 Gb/s, not OM1. 300 m is supported by OM3 for 10 Gb/s under certain conditions, far beyond OM1's capability."
+    "w": "The maximum recommended length for 10 Gb/s over OM1 multimode fiber is 33 m. 10 m is well below what OM1 can achieve even at 10 Gb/s. 100 m is achievable over OM3 at 10 Gb/s, not OM1. 300 m is supported by OM3 for 10 Gb/s under certain conditions, far beyond OM1's capability.",
+    "k": [
+      "Distance and dimension limits in ICT cables and connecting hardware are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as TIA-568 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 206,
@@ -87,7 +112,12 @@
       "Aqua"
     ],
     "a": 2,
-    "w": "BICSI recommends green for singlemode optical fiber connectors with APC (Angled Physical Contact) polish. Blue is used for singlemode adapters, not APC connectors. Beige/ivory is used for singlemode UPC (Ultra Physical Contact) connectors. Aqua is recommended for 50/125 \u00b5m laser-enhanced optical fiber adapters."
+    "w": "BICSI recommends green for singlemode optical fiber connectors with APC (Angled Physical Contact) polish. Blue is used for singlemode adapters, not APC connectors. Beige/ivory is used for singlemode UPC (Ultra Physical Contact) connectors. Aqua is recommended for 50/125 µm laser-enhanced optical fiber adapters.",
+    "k": [
+      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern ICT cables and connecting hardware design and installation.",
+      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
+      "Referencing the correct edition of TIA-568 ensures compliance with current best practices and avoids conflicts with other building codes."
+    ]
   },
   {
     "id": 207,
@@ -102,7 +132,12 @@
       "0.5 dB"
     ],
     "a": 2,
-    "w": "The splice insertion loss allowance in optical fiber standards is 0.3 dB per splice. 0.1 dB is achievable with high-quality fusion splices but is not the standard allowance. 0.2 dB is below the standard budget allowance. 0.5 dB would represent a marginal splice and exceed the standard allowance."
+    "w": "The splice insertion loss allowance in optical fiber standards is 0.3 dB per splice. 0.1 dB is achievable with high-quality fusion splices but is not the standard allowance. 0.2 dB is below the standard budget allowance. 0.5 dB would represent a marginal splice and exceed the standard allowance.",
+    "k": [
+      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern ICT cables and connecting hardware design and installation.",
+      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
+      "Referencing the correct edition of TIA-568 ensures compliance with current best practices and avoids conflicts with other building codes."
+    ]
   },
   {
     "id": 208,
@@ -117,7 +152,12 @@
       "Series-59"
     ],
     "a": 2,
-    "w": "Series-11U coaxial cable has lower attenuation than Series-6 and is used for video backbone distribution over longer distances. Series-3 is a thin coaxial cable not used in modern video backbone applications. Series-6 is used for local video, CATV, and security cameras but has higher attenuation over long runs. Series-59 is an older 75-ohm cable type used in residential CATV but not video backbones."
+    "w": "Series-11U coaxial cable has lower attenuation than Series-6 and is used for video backbone distribution over longer distances. Series-3 is a thin coaxial cable not used in modern video backbone applications. Series-6 is used for local video, CATV, and security cameras but has higher attenuation over long runs. Series-59 is an older 75-ohm cable type used in residential CATV but not video backbones.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 209,
@@ -132,7 +172,12 @@
       "SMA-style"
     ],
     "a": 2,
-    "w": "F-style coaxial connectors are widely used for residential cable television services. BNC-style connectors are common in AV and professional video industries but not primarily residential cable TV. N-style connectors provide the highest bandwidth and are used in RF test equipment and outdoor wireless systems, not residential cable. SMA-style connectors are precision RF connectors used in microwave and test applications."
+    "w": "F-style coaxial connectors are widely used for residential cable television services. BNC-style connectors are common in AV and professional video industries but not primarily residential cable TV. N-style connectors provide the highest bandwidth and are used in RF test equipment and outdoor wireless systems, not residential cable. SMA-style connectors are precision RF connectors used in microwave and test applications.",
+    "k": [
+      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern ICT cables and connecting hardware design and installation.",
+      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
+      "Referencing the correct edition of TIA-568 ensures compliance with current best practices and avoids conflicts with other building codes."
+    ]
   },
   {
     "id": 210,
@@ -147,7 +192,12 @@
       "RCA-style"
     ],
     "a": 2,
-    "w": "N-style connectors provide the highest bandwidth among standard coaxial connectors, supporting frequencies up to 11 GHz. F-style connectors are limited to residential cable TV frequencies. BNC connectors are good up to several GHz but do not reach the bandwidth of N connectors. RCA connectors are low-frequency audio/video connectors with no high-frequency bandwidth capability."
+    "w": "N-style connectors provide the highest bandwidth among standard coaxial connectors, supporting frequencies up to 11 GHz. F-style connectors are limited to residential cable TV frequencies. BNC connectors are good up to several GHz but do not reach the bandwidth of N connectors. RCA connectors are low-frequency audio/video connectors with no high-frequency bandwidth capability.",
+    "k": [
+      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern ICT cables and connecting hardware design and installation.",
+      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
+      "Referencing the correct edition of TIA-568 ensures compliance with current best practices and avoids conflicts with other building codes."
+    ]
   },
   {
     "id": 211,
@@ -162,7 +212,12 @@
       "Category 6A / Class EA"
     ],
     "a": 1,
-    "w": "The minimum acceptable performance level for network cabling is Category 5e/Class D, which supports up to 100 MHz and 1000BASE-T. BICSI recommends Category 6A/Class EA as the preferred minimum, but Category 5e/Class D is the defined minimum. Category 3/Class C is only suitable for voice applications. Category 6/Class E and 6A/Class EA exceed the minimum requirement."
+    "w": "The minimum acceptable performance level for network cabling is Category 5e/Class D, which supports up to 100 MHz and 1000BASE-T. BICSI recommends Category 6A/Class EA as the preferred minimum, but Category 5e/Class D is the defined minimum. Category 3/Class C is only suitable for voice applications. Category 6/Class E and 6A/Class EA exceed the minimum requirement.",
+    "k": [
+      "Distance and dimension limits in ICT cables and connecting hardware are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as TIA-568 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 212,
@@ -177,7 +232,12 @@
       "Return loss"
     ],
     "a": 2,
-    "w": "Capacitance (C) is a primary transmission parameter in balanced twisted-pair cabling. Insertion loss and resistance unbalance are secondary parameters that affect performance but are not the primary parameter. Return loss reflects impedance uniformity and is a derived measurement, not the primary parameter that determines fundamental transmission performance."
+    "w": "Capacitance (C) is a primary transmission parameter in balanced twisted-pair cabling. Insertion loss and resistance unbalance are secondary parameters that affect performance but are not the primary parameter. Return loss reflects impedance uniformity and is a derived measurement, not the primary parameter that determines fundamental transmission performance.",
+    "k": [
+      "Distance and dimension limits in ICT cables and connecting hardware are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as TIA-568 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 213,
@@ -192,7 +252,12 @@
       "Four blades"
     ],
     "a": 0,
-    "w": "Modular plug contacts for stranded conductors use a single blade designed to grip the multiple strands reliably. Three blades are used for solid conductors to pierce and grip the single solid conductor. Two-blade and four-blade configurations are not standard modular plug contact designs for either conductor type."
+    "w": "Modular plug contacts for stranded conductors use a single blade designed to grip the multiple strands reliably. Three blades are used for solid conductors to pierce and grip the single solid conductor. Two-blade and four-blade configurations are not standard modular plug contact designs for either conductor type.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 214,
@@ -207,7 +272,12 @@
       "Up to 50% more"
     ],
     "a": 1,
-    "w": "Stranded cords attenuate up to 20% more than solid cords of the same gauge due to the increased surface area from multiple strand interfaces increasing resistance. 10% would understate the performance difference between stranded and solid conductors. 30% and 50% overstate the attenuation difference and are not supported by standards data."
+    "w": "Stranded cords attenuate up to 20% more than solid cords of the same gauge due to the increased surface area from multiple strand interfaces increasing resistance. 10% would understate the performance difference between stranded and solid conductors. 30% and 50% overstate the attenuation difference and are not supported by standards data.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 215,
@@ -222,7 +292,12 @@
       "2000 MHz"
     ],
     "a": 2,
-    "w": "Category 7A/Class FA cabling supports up to 1000 MHz, making it suitable for the most demanding current applications. 500 MHz is the specification for Category 6A/Class EA. 600 MHz is Category 7/Class F. 2000 MHz is the specification for Category 8.1/Class I."
+    "w": "Category 7A/Class FA cabling supports up to 1000 MHz, making it suitable for the most demanding current applications. 500 MHz is the specification for Category 6A/Class EA. 600 MHz is Category 7/Class F. 2000 MHz is the specification for Category 8.1/Class I.",
+    "k": [
+      "Distance and dimension limits in ICT cables and connecting hardware are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as TIA-568 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 216,
@@ -237,7 +312,12 @@
       "3.5 dB/km"
     ],
     "a": 2,
-    "w": "OM3 and OM4 multimode optical fibers have a maximum attenuation of 1.5 dB/km at 1300 nm. 0.4 dB/km is a singlemode fiber specification, not achievable with multimode fibers. 1.0 dB/km is below the specified maximum for OM3/OM4 at 1300 nm. 3.5 dB/km is the maximum attenuation specification at 850 nm for OM3/OM4, not at 1300 nm."
+    "w": "OM3 and OM4 multimode optical fibers have a maximum attenuation of 1.5 dB/km at 1300 nm. 0.4 dB/km is a singlemode fiber specification, not achievable with multimode fibers. 1.0 dB/km is below the specified maximum for OM3/OM4 at 1300 nm. 3.5 dB/km is the maximum attenuation specification at 850 nm for OM3/OM4, not at 1300 nm.",
+    "k": [
+      "Distance and dimension limits in ICT cables and connecting hardware are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as TIA-568 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 217,
@@ -252,7 +332,12 @@
       "Category 7 / Class F"
     ],
     "a": 2,
-    "w": "ISO Category 8.1/Class I cables are backward-compatible with Category 6A/Class EA using 8P8C (RJ45-style) connectors, maintaining interoperability with existing infrastructure. Category 5e and Category 6 are also compatible physically but do not represent the specific backward-compatibility specification for Class I. Category 7/Class F uses different connector types that are not 8P8C."
+    "w": "ISO Category 8.1/Class I cables are backward-compatible with Category 6A/Class EA using 8P8C (RJ45-style) connectors, maintaining interoperability with existing infrastructure. Category 5e and Category 6 are also compatible physically but do not represent the specific backward-compatibility specification for Class I. Category 7/Class F uses different connector types that are not 8P8C.",
+    "k": [
+      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern ICT cables and connecting hardware design and installation.",
+      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
+      "Referencing the correct edition of TIA-568 ensures compliance with current best practices and avoids conflicts with other building codes."
+    ]
   },
   {
     "id": 218,
@@ -267,7 +352,12 @@
       "V-groove splicing"
     ],
     "a": 1,
-    "w": "Fusion splicing offers reduced attenuation and reflectance compared to mechanical splicing by permanently fusing the fiber ends with an electric arc, creating an essentially continuous glass joint. Adhesive bonding is not a standard optical fiber splicing technique. Mechanical crimp splicing is not a standard optical fiber method. V-groove splicing is a type of mechanical splice with higher insertion loss than fusion."
+    "w": "Fusion splicing offers reduced attenuation and reflectance compared to mechanical splicing by permanently fusing the fiber ends with an electric arc, creating an essentially continuous glass joint. Adhesive bonding is not a standard optical fiber splicing technique. Mechanical crimp splicing is not a standard optical fiber method. V-groove splicing is a type of mechanical splice with higher insertion loss than fusion.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 219,
@@ -282,7 +372,12 @@
       "OFCP and OFNP"
     ],
     "a": 1,
-    "w": "Optical fiber types OFCP and OFCR are both conductive cables containing metallic members such as strength members or central steel tubes. OFNP is a non-conductive plenum cable. OFNR is a non-conductive riser cable. Non-conductive (OFN) types contain no metallic elements, whereas OFC types contain conductive metallic members."
+    "w": "Optical fiber types OFCP and OFCR are both conductive cables containing metallic members such as strength members or central steel tubes. OFNP is a non-conductive plenum cable. OFNR is a non-conductive riser cable. Non-conductive (OFN) types contain no metallic elements, whereas OFC types contain conductive metallic members.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 220,
@@ -297,7 +392,12 @@
       "Waveguide dispersion"
     ],
     "a": 2,
-    "w": "Modal dispersion is the primary factor affecting multimode optical fiber bandwidth, as different light modes travel at different speeds and arrive at the receiver at different times, broadening pulses. Chromatic dispersion predominates in singlemode fiber. Material dispersion is a component of chromatic dispersion, not the primary multimode limitation. Waveguide dispersion is another component of chromatic dispersion significant in singlemode fiber."
+    "w": "Modal dispersion is the primary factor affecting multimode optical fiber bandwidth, as different light modes travel at different speeds and arrive at the receiver at different times, broadening pulses. Chromatic dispersion predominates in singlemode fiber. Material dispersion is a component of chromatic dispersion, not the primary multimode limitation. Waveguide dispersion is another component of chromatic dispersion significant in singlemode fiber.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 221,
@@ -312,7 +412,12 @@
       "Category 7 / Class F"
     ],
     "a": 2,
-    "w": "BICSI recommends Category 6A/Class EA as the minimum performance level for horizontal cabling to support 10 Gb/s and PoE applications. Category 5e is the minimum acceptable but not the BICSI recommendation for new installations. Category 6/Class E is an intermediate option but not the current BICSI minimum recommendation. Category 7/Class F exceeds the recommendation and uses different connector types."
+    "w": "BICSI recommends Category 6A/Class EA as the minimum performance level for horizontal cabling to support 10 Gb/s and PoE applications. Category 5e is the minimum acceptable but not the BICSI recommendation for new installations. Category 6/Class E is an intermediate option but not the current BICSI minimum recommendation. Category 7/Class F exceeds the recommendation and uses different connector types.",
+    "k": [
+      "Distance and dimension limits in ICT cables and connecting hardware are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as TIA-568 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 222,
@@ -327,7 +432,12 @@
       "Reduced current per conductor"
     ],
     "a": 2,
-    "w": "Shielded cables for PoE exhibit less heat buildup than unshielded cables because the metallic shield acts as a heat sink, dissipating thermal energy generated by current flow through the conductors. Higher conductor resistance would increase, not decrease, heat generation. Dielectric constant affects signal propagation, not thermal performance of PoE current. Current per conductor is determined by the PoE standard, not the cable shielding type."
+    "w": "Shielded cables for PoE exhibit less heat buildup than unshielded cables because the metallic shield acts as a heat sink, dissipating thermal energy generated by current flow through the conductors. Higher conductor resistance would increase, not decrease, heat generation. Dielectric constant affects signal propagation, not thermal performance of PoE current. Current per conductor is determined by the PoE standard, not the cable shielding type.",
+    "k": [
+      "Proper grounding and bonding are foundational to EMI immunity and safety; all telecommunications infrastructure must be bonded to the building grounding electrode system.",
+      "Ground potential differences between interconnected equipment create noise currents in signal cables; equipotential bonding eliminates these differences.",
+      "TIA-607 and NFPA 70 define grounding and bonding requirements for ICT cables and connecting hardware that designers must incorporate into every project."
+    ]
   },
   {
     "id": 223,
@@ -342,7 +452,12 @@
       "Coaxial cable systems"
     ],
     "a": 2,
-    "w": "Field-constructed patch cords are not recommended for Category 5e or higher systems because factory-terminated cords meet tighter performance tolerances that are difficult to achieve in the field. Fiber optic field-constructed connectors are acceptable in some applications. Category 3 voice systems have lower performance requirements where field termination is acceptable. Coaxial patch cords are also typically factory-terminated but are a separate category from balanced twisted-pair."
+    "w": "Field-constructed patch cords are not recommended for Category 5e or higher systems because factory-terminated cords meet tighter performance tolerances that are difficult to achieve in the field. Fiber optic field-constructed connectors are acceptable in some applications. Category 3 voice systems have lower performance requirements where field termination is acceptable. Coaxial patch cords are also typically factory-terminated but are a separate category from balanced twisted-pair.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 224,
@@ -357,7 +472,12 @@
       "2000 m"
     ],
     "a": 2,
-    "w": "OM4 multimode optical fiber supports 1 Gb/s Ethernet over a maximum distance of 1000 m. 300 m is the OM3 limit for 10 Gb/s. 550 m is the OM3 limit for 1 Gb/s. 2000 m exceeds any standard multimode specification for 1 Gb/s applications."
+    "w": "OM4 multimode optical fiber supports 1 Gb/s Ethernet over a maximum distance of 1000 m. 300 m is the OM3 limit for 10 Gb/s. 550 m is the OM3 limit for 1 Gb/s. 2000 m exceeds any standard multimode specification for 1 Gb/s applications.",
+    "k": [
+      "Distance and dimension limits in ICT cables and connecting hardware are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as TIA-568 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 225,
@@ -372,7 +492,12 @@
       "ST fiber connector"
     ],
     "a": 2,
-    "w": "Modular 8P8C (RJ45-style) outlets/connectors are used to connect active equipment to balanced twisted-pair cabling. LC fiber connectors are used for optical fiber connections only. F-type coaxial connectors are used in cable TV and residential video applications. ST fiber connectors are older optical fiber connectors not used for twisted-pair cabling."
+    "w": "Modular 8P8C (RJ45-style) outlets/connectors are used to connect active equipment to balanced twisted-pair cabling. LC fiber connectors are used for optical fiber connections only. F-type coaxial connectors are used in cable TV and residential video applications. ST fiber connectors are older optical fiber connectors not used for twisted-pair cabling.",
+    "k": [
+      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern ICT cables and connecting hardware design and installation.",
+      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
+      "Referencing the correct edition of TIA-568 ensures compliance with current best practices and avoids conflicts with other building codes."
+    ]
   },
   {
     "id": 701,
@@ -387,7 +512,12 @@
       "Stranded screens"
     ],
     "a": 0,
-    "w": "Foil-type screens (aluminum or copper foil) are most effective at blocking high frequencies above 30 MHz because they provide 100% coverage with no gaps, preventing high-frequency signals from penetrating or radiating. Braid-type screens are more effective at lower frequencies and provide good mechanical protection, but their interwoven pattern leaves small gaps that reduce effectiveness above 30 MHz (option B). Solid screens are not a practical cable shielding option due to rigidity constraints (option C). Stranded screens are not a recognized shielding type for balanced twisted-pair cables (option D)."
+    "w": "Foil-type screens (aluminum or copper foil) are most effective at blocking high frequencies above 30 MHz because they provide 100% coverage with no gaps, preventing high-frequency signals from penetrating or radiating. Braid-type screens are more effective at lower frequencies and provide good mechanical protection, but their interwoven pattern leaves small gaps that reduce effectiveness above 30 MHz (option B). Solid screens are not a practical cable shielding option due to rigidity constraints (option C). Stranded screens are not a recognized shielding type for balanced twisted-pair cables (option D).",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 702,
@@ -396,13 +526,18 @@
     "chapter": "ICT Cables and Connecting Hardware",
     "q": "What is the characteristic impedance of balanced twisted-pair cables?",
     "o": [
-      "50\u03a9",
-      "75\u03a9",
-      "100\u03a9",
-      "120\u03a9"
+      "50Ω",
+      "75Ω",
+      "100Ω",
+      "120Ω"
     ],
     "a": 2,
-    "w": "The characteristic impedance of balanced twisted-pair cables used in structured cabling is 100 ohms, as specified in ANSI/TIA-568 and ISO/IEC 11801 standards. 50 ohms is the characteristic impedance of coaxial cables used in RF applications (option A). 75 ohms is the characteristic impedance of coaxial cables used in cable TV and video systems (option B). 120 ohms is the characteristic impedance used in some industrial fieldbus protocols (option D)."
+    "w": "The characteristic impedance of balanced twisted-pair cables used in structured cabling is 100 ohms, as specified in ANSI/TIA-568 and ISO/IEC 11801 standards. 50 ohms is the characteristic impedance of coaxial cables used in RF applications (option A). 75 ohms is the characteristic impedance of coaxial cables used in cable TV and video systems (option B). 120 ohms is the characteristic impedance used in some industrial fieldbus protocols (option D).",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 703,
@@ -417,7 +552,12 @@
       "Easier installation"
     ],
     "a": 1,
-    "w": "The primary advantage of optical fiber over balanced twisted-pair cables is complete immunity to electromagnetic interference (EMI) because fiber transmits light signals that are unaffected by electromagnetic fields. Fiber optic cables are generally less flexible than copper cables and require careful management of bend radii (option A). Fiber optic cables are typically more expensive than copper twisted-pair cables per unit length (option C). Fiber optic installation requires more specialized tools and skills than copper cable installation (option D)."
+    "w": "The primary advantage of optical fiber over balanced twisted-pair cables is complete immunity to electromagnetic interference (EMI) because fiber transmits light signals that are unaffected by electromagnetic fields. Fiber optic cables are generally less flexible than copper cables and require careful management of bend radii (option A). Fiber optic cables are typically more expensive than copper twisted-pair cables per unit length (option C). Fiber optic installation requires more specialized tools and skills than copper cable installation (option D).",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 704,
@@ -432,7 +572,12 @@
       "Coaxial and hybrid"
     ],
     "a": 1,
-    "w": "The two primary types of optical fiber cables are multimode (larger core, supports multiple light paths) and single-mode (smaller core, supports one light path), each with different performance characteristics and applications. Coaxial cables are copper-based transmission media, not optical fiber (option A). Hybrid cables combine different media types and are not a primary fiber optic classification (option C). Coaxial and hybrid are not optical fiber cable types (option D)."
+    "w": "The two primary types of optical fiber cables are multimode (larger core, supports multiple light paths) and single-mode (smaller core, supports one light path), each with different performance characteristics and applications. Coaxial cables are copper-based transmission media, not optical fiber (option A). Hybrid cables combine different media types and are not a primary fiber optic classification (option C). Coaxial and hybrid are not optical fiber cable types (option D).",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 705,
@@ -441,13 +586,18 @@
     "chapter": "ICT Cables and Connecting Hardware",
     "q": "What is the core size range of single-mode optical fiber cables?",
     "o": [
-      "50\u201362.5 \u00b5m",
-      "8\u201311 \u00b5m",
-      "75\u2013100 \u00b5m",
-      "125\u2013150 \u00b5m"
+      "50–62.5 µm",
+      "8–11 µm",
+      "75–100 µm",
+      "125–150 µm"
     ],
     "a": 1,
-    "w": "Single-mode optical fiber has a core diameter of 8 to 11 \u00b5m (typically 9 \u00b5m), which is small enough to allow only one mode of light to propagate, enabling long-distance transmission with low attenuation. 50-62.5 \u00b5m is the core size range for multimode optical fiber, not single-mode (option A). 75-100 \u00b5m does not correspond to standard optical fiber core sizes (option C). 125 \u00b5m is the outer cladding diameter for all standard single-mode and multimode optical fibers, not the core size (option D)."
+    "w": "Single-mode optical fiber has a core diameter of 8 to 11 µm (typically 9 µm), which is small enough to allow only one mode of light to propagate, enabling long-distance transmission with low attenuation. 50-62.5 µm is the core size range for multimode optical fiber, not single-mode (option A). 75-100 µm does not correspond to standard optical fiber core sizes (option C). 125 µm is the outer cladding diameter for all standard single-mode and multimode optical fibers, not the core size (option D).",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 706,
@@ -462,7 +612,12 @@
       "LC termination"
     ],
     "a": 0,
-    "w": "Insulation Displacement Contact (IDC) technology pierces through the cable insulation to make direct metal-to-metal contact with the conductor, creating a gas-tight connection that prevents oxidation and maintains reliable electrical continuity. Modular jacks (RJ-45) use a different contact mechanism that relies on pressure contact with stripped conductors (option B). Coaxial terminations are used for coaxial cables, not balanced twisted-pair connectors (option C). LC termination refers to a fiber optic connector type, not twisted-pair connecting hardware (option D)."
+    "w": "Insulation Displacement Contact (IDC) technology pierces through the cable insulation to make direct metal-to-metal contact with the conductor, creating a gas-tight connection that prevents oxidation and maintains reliable electrical continuity. Modular jacks (RJ-45) use a different contact mechanism that relies on pressure contact with stripped conductors (option B). Coaxial terminations are used for coaxial cables, not balanced twisted-pair connectors (option C). LC termination refers to a fiber optic connector type, not twisted-pair connecting hardware (option D).",
+    "k": [
+      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern ICT cables and connecting hardware design and installation.",
+      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
+      "Referencing the correct edition of TIA-568 ensures compliance with current best practices and avoids conflicts with other building codes."
+    ]
   },
   {
     "id": 707,
@@ -477,7 +632,12 @@
       "BNC"
     ],
     "a": 1,
-    "w": "The LC (Lucent Connector) is a small form factor fiber optic connector that is approximately half the size of the SC connector, enabling higher port density in patch panels and equipment. SC connectors are standard form factor connectors, not small form factor (option A). ST connectors use a bayonet coupling and are standard form factor connectors, not SFF (option C). BNC is a coaxial cable connector, not an optical fiber connector (option D)."
+    "w": "The LC (Lucent Connector) is a small form factor fiber optic connector that is approximately half the size of the SC connector, enabling higher port density in patch panels and equipment. SC connectors are standard form factor connectors, not small form factor (option A). ST connectors use a bayonet coupling and are standard form factor connectors, not SFF (option C). BNC is a coaxial cable connector, not an optical fiber connector (option D).",
+    "k": [
+      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern ICT cables and connecting hardware design and installation.",
+      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
+      "Referencing the correct edition of TIA-568 ensures compliance with current best practices and avoids conflicts with other building codes."
+    ]
   },
   {
     "id": 708,
@@ -492,7 +652,12 @@
       "66-style, 110-style, BIX-style"
     ],
     "a": 2,
-    "w": "The three main types of coaxial connectors are BNC-style (used in video and data applications), F-style (used in cable TV and satellite), and N-style (used in RF and wireless communications). LC, SC, and ST are optical fiber connectors, not coaxial connectors (option A). T-connectors, barrel connectors, and terminators are connector accessories rather than the main connector types (option B). 66-style, 110-style, and BIX-style are punch-down blocks used for copper twisted-pair cabling, not coaxial connectors (option D)."
+    "w": "The three main types of coaxial connectors are BNC-style (used in video and data applications), F-style (used in cable TV and satellite), and N-style (used in RF and wireless communications). LC, SC, and ST are optical fiber connectors, not coaxial connectors (option A). T-connectors, barrel connectors, and terminators are connector accessories rather than the main connector types (option B). 66-style, 110-style, and BIX-style are punch-down blocks used for copper twisted-pair cabling, not coaxial connectors (option D).",
+    "k": [
+      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern ICT cables and connecting hardware design and installation.",
+      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
+      "Referencing the correct edition of TIA-568 ensures compliance with current best practices and avoids conflicts with other building codes."
+    ]
   },
   {
     "id": 709,
@@ -507,7 +672,12 @@
       "0.5 dB"
     ],
     "a": 2,
-    "w": "A single fusion or mechanical splice in an optical fiber system introduces approximately 0.3 dB of insertion loss, as specified in ANSI/TIA-568 for loss budget calculations. 0.1 dB per splice is below the standard assumed value and would underestimate total link loss in budget calculations (option A). 0.2 dB is below the standard assumed splice loss value used in ANSI/TIA-568 calculations (option B). 0.5 dB per splice would overestimate splice losses and result in over-conservative link budget calculations (option D)."
+    "w": "A single fusion or mechanical splice in an optical fiber system introduces approximately 0.3 dB of insertion loss, as specified in ANSI/TIA-568 for loss budget calculations. 0.1 dB per splice is below the standard assumed value and would underestimate total link loss in budget calculations (option A). 0.2 dB is below the standard assumed splice loss value used in ANSI/TIA-568 calculations (option B). 0.5 dB per splice would overestimate splice losses and result in over-conservative link budget calculations (option D).",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 710,
@@ -522,6 +692,11 @@
       "Reduce return loss"
     ],
     "a": 1,
-    "w": "Optical fiber patch panels provide high-density housing for fiber connectors, enabling organized cross-connection and patching between fiber cables in telecommunications rooms. Optical fiber patch panels are passive components and cannot increase signal strength (option A). Coaxial cables are terminated using coaxial patch panels or connectors, not optical fiber patch panels (option C). Return loss is reduced through proper connector polishing and alignment, not by the patch panel itself (option D)."
+    "w": "Optical fiber patch panels provide high-density housing for fiber connectors, enabling organized cross-connection and patching between fiber cables in telecommunications rooms. Optical fiber patch panels are passive components and cannot increase signal strength (option A). Coaxial cables are terminated using coaxial patch panels or connectors, not optical fiber patch panels (option C). Return loss is reduced through proper connector polishing and alignment, not by the patch panel itself (option D).",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to ICT cables and connecting hardware.",
+      "Designers must know TIA-568 limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   }
 ]

@@ -5,9 +5,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What is the maximum cable length for HDMI in consumer AV applications?",
-    "o": ["5 m (16 ft)", "9 m (30 ft)", "15 m (49 ft)", "30 m (98 ft)"],
+    "o": [
+      "5 m (16 ft)",
+      "9 m (30 ft)",
+      "15 m (49 ft)",
+      "30 m (98 ft)"
+    ],
     "a": 1,
-    "w": "HDMI is a consumer format for digital AV transmission with a maximum cable length of approximately 9 m (30 ft) before signal degradation becomes unacceptable. 5 m is well within the limit but not the specified maximum. 15 m and 30 m exceed the passive HDMI cable maximum and would require active extenders or a different protocol like HDBaseT."
+    "w": "HDMI is a consumer format for digital AV transmission with a maximum cable length of approximately 9 m (30 ft) before signal degradation becomes unacceptable. 5 m is well within the limit but not the specified maximum. 15 m and 30 m exceed the passive HDMI cable maximum and would require active extenders or a different protocol like HDBaseT.",
+    "k": [
+      "Distance and dimension limits in audiovisual systems are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as AVIXA/InfoComm standards codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 377,
@@ -15,9 +25,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What does HDBaseT support as a maximum transport distance over balanced twisted-pair cabling?",
-    "o": ["50 m (164 ft)", "75 m (246 ft)", "100 m (328 ft)", "150 m (492 ft)"],
+    "o": [
+      "50 m (164 ft)",
+      "75 m (246 ft)",
+      "100 m (328 ft)",
+      "150 m (492 ft)"
+    ],
     "a": 2,
-    "w": "HDBaseT transports AV signals up to 100 m (328 ft) over balanced twisted-pair cabling (minimum Cat 5e/Class D). 50 m and 75 m fall short of the specified maximum. 150 m exceeds the HDBaseT specification for passive balanced twisted-pair links."
+    "w": "HDBaseT transports AV signals up to 100 m (328 ft) over balanced twisted-pair cabling (minimum Cat 5e/Class D). 50 m and 75 m fall short of the specified maximum. 150 m exceeds the HDBaseT specification for passive balanced twisted-pair links.",
+    "k": [
+      "Distance and dimension limits in audiovisual systems are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as AVIXA/InfoComm standards codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 378,
@@ -25,9 +45,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What is the maximum cable length for HD-SDI at 1.485 Gb/s?",
-    "o": ["50 m (164 ft)", "75 m (246 ft)", "100 m (328 ft)", "150 m (492 ft)"],
+    "o": [
+      "50 m (164 ft)",
+      "75 m (246 ft)",
+      "100 m (328 ft)",
+      "150 m (492 ft)"
+    ],
     "a": 2,
-    "w": "HD-SDI operates over a maximum cable length of 100 m (328 ft) at 1.485 Gb/s over standard coaxial cable. 50 m and 75 m are within the limit but not the specified maximum. 150 m exceeds the HD-SDI cable length specification without additional signal conditioning."
+    "w": "HD-SDI operates over a maximum cable length of 100 m (328 ft) at 1.485 Gb/s over standard coaxial cable. 50 m and 75 m are within the limit but not the specified maximum. 150 m exceeds the HD-SDI cable length specification without additional signal conditioning.",
+    "k": [
+      "Distance and dimension limits in audiovisual systems are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as AVIXA/InfoComm standards codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 379,
@@ -35,9 +65,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What minimum sampling rate is required to accurately digitize an audio signal with 20 kHz bandwidth?",
-    "o": ["20 kHz", "30 kHz", "40 kHz", "96 kHz"],
+    "o": [
+      "20 kHz",
+      "30 kHz",
+      "40 kHz",
+      "96 kHz"
+    ],
     "a": 2,
-    "w": "Sampling audio signals requires a rate of at least twice the bandwidth per the Nyquist theorem — so a 20 kHz bandwidth audio signal requires at least 40 kHz sampling rate. 20 kHz would alias the highest frequencies. 30 kHz would be insufficient to capture the full 20 kHz bandwidth without aliasing. 96 kHz is a professional high-fidelity rate, far above the minimum requirement."
+    "w": "Sampling audio signals requires a rate of at least twice the bandwidth per the Nyquist theorem — so a 20 kHz bandwidth audio signal requires at least 40 kHz sampling rate. 20 kHz would alias the highest frequencies. 30 kHz would be insufficient to capture the full 20 kHz bandwidth without aliasing. 96 kHz is a professional high-fidelity rate, far above the minimum requirement.",
+    "k": [
+      "Distance and dimension limits in audiovisual systems are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as AVIXA/InfoComm standards codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 380,
@@ -45,9 +85,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "Which display technology emits visible light directly, eliminating the need for LED backlights?",
-    "o": ["LCD with IPS panel", "Plasma display", "OLED display", "DLP projector"],
+    "o": [
+      "LCD with IPS panel",
+      "Plasma display",
+      "OLED display",
+      "DLP projector"
+    ],
     "a": 2,
-    "w": "OLED (Organic Light Emitting Diode) displays emit visible light directly from each pixel, eliminating the need for separate LED backlights and enabling thinner designs with better contrast. LCD with IPS panels require backlights. Plasma displays emit light via gas plasma excitation but are no longer common. DLP projectors use a separate light engine and DMD chip, not self-emissive pixels."
+    "w": "OLED (Organic Light Emitting Diode) displays emit visible light directly from each pixel, eliminating the need for separate LED backlights and enabling thinner designs with better contrast. LCD with IPS panels require backlights. Plasma displays emit light via gas plasma excitation but are no longer common. DLP projectors use a separate light engine and DMD chip, not self-emissive pixels.",
+    "k": [
+      "Proper grounding and bonding are foundational to EMI immunity and safety; all telecommunications infrastructure must be bonded to the building grounding electrode system.",
+      "Ground potential differences between interconnected equipment create noise currents in signal cables; equipotential bonding eliminates these differences.",
+      "TIA-607 and NFPA 70 define grounding and bonding requirements for audiovisual systems that designers must incorporate into every project."
+    ]
   },
   {
     "id": 381,
@@ -55,9 +105,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What does a higher color temperature indicate about a light source?",
-    "o": ["Warmer (more orange/red) light", "Cooler (more blue) light", "Higher luminous intensity", "Greater color rendering index"],
+    "o": [
+      "Warmer (more orange/red) light",
+      "Cooler (more blue) light",
+      "Higher luminous intensity",
+      "Greater color rendering index"
+    ],
     "a": 1,
-    "w": "Higher color temperature indicates cooler (bluer) light, while lower color temperatures appear warmer (more orange/red). This counterintuitive naming comes from the relationship between the temperature of a blackbody radiator and its emitted color. Higher color temperature does not indicate greater luminous intensity. Color rendering index is a separate metric for how accurately colors appear under the light source."
+    "w": "Higher color temperature indicates cooler (bluer) light, while lower color temperatures appear warmer (more orange/red). This counterintuitive naming comes from the relationship between the temperature of a blackbody radiator and its emitted color. Higher color temperature does not indicate greater luminous intensity. Color rendering index is a separate metric for how accurately colors appear under the light source.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 382,
@@ -65,9 +125,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What is the maximum Field of View (FOV) for videoconferencing cameras to avoid distortion?",
-    "o": ["30 degrees", "45 degrees", "65 degrees", "90 degrees"],
+    "o": [
+      "30 degrees",
+      "45 degrees",
+      "65 degrees",
+      "90 degrees"
+    ],
     "a": 2,
-    "w": "Videoconferencing cameras should not exceed a Field of View of 65 degrees to avoid perspective distortion that makes participants appear unnatural. 30 degrees and 45 degrees are acceptable but narrower than the allowable maximum. 90 degrees would cause significant edge distortion in wide-angle camera views."
+    "w": "Videoconferencing cameras should not exceed a Field of View of 65 degrees to avoid perspective distortion that makes participants appear unnatural. 30 degrees and 45 degrees are acceptable but narrower than the allowable maximum. 90 degrees would cause significant edge distortion in wide-angle camera views.",
+    "k": [
+      "Distance and dimension limits in audiovisual systems are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as AVIXA/InfoComm standards codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 383,
@@ -75,9 +145,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What is the IEEE 1394 (FireWire) maximum number of devices supported?",
-    "o": ["16 devices", "32 devices", "63 devices", "127 devices"],
+    "o": [
+      "16 devices",
+      "32 devices",
+      "63 devices",
+      "127 devices"
+    ],
     "a": 2,
-    "w": "IEEE 1394 (FireWire) supports up to 63 devices per bus. 16 and 32 devices understate the FireWire capacity. 127 devices is the maximum for USB, not FireWire."
+    "w": "IEEE 1394 (FireWire) supports up to 63 devices per bus. 16 and 32 devices understate the FireWire capacity. 127 devices is the maximum for USB, not FireWire.",
+    "k": [
+      "Distance and dimension limits in audiovisual systems are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as AVIXA/InfoComm standards codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 384,
@@ -85,9 +165,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What is the maximum bandwidth of USB 3.2?",
-    "o": ["5 Gb/s", "10 Gb/s", "20 Gb/s", "40 Gb/s"],
+    "o": [
+      "5 Gb/s",
+      "10 Gb/s",
+      "20 Gb/s",
+      "40 Gb/s"
+    ],
     "a": 2,
-    "w": "USB 3.2 supports up to 127 devices with a maximum bandwidth of 20 Gb/s in its Gen 2×2 configuration. 5 Gb/s is USB 3.2 Gen 1 speed. 10 Gb/s is USB 3.2 Gen 2 speed. 40 Gb/s is the bandwidth of USB4, not USB 3.2."
+    "w": "USB 3.2 supports up to 127 devices with a maximum bandwidth of 20 Gb/s in its Gen 2×2 configuration. 5 Gb/s is USB 3.2 Gen 1 speed. 10 Gb/s is USB 3.2 Gen 2 speed. 40 Gb/s is the bandwidth of USB4, not USB 3.2.",
+    "k": [
+      "Distance and dimension limits in audiovisual systems are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as AVIXA/InfoComm standards codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 385,
@@ -95,9 +185,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What maximum distance does RS-232 operate at in legacy AV equipment?",
-    "o": ["5 m (16 ft)", "9 m (30 ft)", "15.2 m (50 ft)", "30.5 m (100 ft)"],
+    "o": [
+      "5 m (16 ft)",
+      "9 m (30 ft)",
+      "15.2 m (50 ft)",
+      "30.5 m (100 ft)"
+    ],
     "a": 2,
-    "w": "RS-232 is common in legacy AV equipment and is limited to 15.2 m (50 ft) at standard baud rates. 5 m and 9 m are within the limit but are not the specified maximum. 30.5 m exceeds the standard RS-232 distance specification and would require lower baud rates or repeaters."
+    "w": "RS-232 is common in legacy AV equipment and is limited to 15.2 m (50 ft) at standard baud rates. 5 m and 9 m are within the limit but are not the specified maximum. 30.5 m exceeds the standard RS-232 distance specification and would require lower baud rates or repeaters.",
+    "k": [
+      "Distance and dimension limits in audiovisual systems are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as AVIXA/InfoComm standards codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 386,
@@ -105,9 +205,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What maximum height are loudspeakers for speech reinforcement limited to in order to avoid echoes?",
-    "o": ["6 m (20 ft)", "9 m (30 ft)", "13.7 m (45 ft)", "18 m (60 ft)"],
+    "o": [
+      "6 m (20 ft)",
+      "9 m (30 ft)",
+      "13.7 m (45 ft)",
+      "18 m (60 ft)"
+    ],
     "a": 2,
-    "w": "Loudspeakers for speech reinforcement should not exceed 13.7 m (45 ft) height to avoid echoes caused by the time delay between the direct sound and the loudspeaker output at greater heights. 6 m and 9 m are well within the limit. 18 m would create unacceptable echo delays for speech intelligibility."
+    "w": "Loudspeakers for speech reinforcement should not exceed 13.7 m (45 ft) height to avoid echoes caused by the time delay between the direct sound and the loudspeaker output at greater heights. 6 m and 9 m are well within the limit. 18 m would create unacceptable echo delays for speech intelligibility.",
+    "k": [
+      "Distance and dimension limits in audiovisual systems are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as AVIXA/InfoComm standards codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 387,
@@ -115,9 +225,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What Noise Criteria (NC) value must sound masking not exceed for acceptable performance?",
-    "o": ["NC ≤ 25", "NC ≤ 30", "NC ≤ 35", "NC ≤ 45"],
+    "o": [
+      "NC ≤ 25",
+      "NC ≤ 30",
+      "NC ≤ 35",
+      "NC ≤ 45"
+    ],
     "a": 2,
-    "w": "The NC value for sound masking should be ≤ 35 for acceptable masking without creating a distracting ambient noise level. NC ≤ 25 would be too quiet to provide effective masking in most office environments. NC ≤ 30 provides some masking but may be insufficient. NC ≤ 45 would create a noticeably loud environment that reduces speech intelligibility."
+    "w": "The NC value for sound masking should be ≤ 35 for acceptable masking without creating a distracting ambient noise level. NC ≤ 25 would be too quiet to provide effective masking in most office environments. NC ≤ 30 provides some masking but may be insufficient. NC ≤ 45 would create a noticeably loud environment that reduces speech intelligibility.",
+    "k": [
+      "Proper grounding and bonding are foundational to EMI immunity and safety; all telecommunications infrastructure must be bonded to the building grounding electrode system.",
+      "Ground potential differences between interconnected equipment create noise currents in signal cables; equipotential bonding eliminates these differences.",
+      "TIA-607 and NFPA 70 define grounding and bonding requirements for audiovisual systems that designers must incorporate into every project."
+    ]
   },
   {
     "id": 388,
@@ -125,9 +245,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What wire size is the minimum for paging system cabling?",
-    "o": ["22 AWG", "20 AWG", "18 AWG", "16 AWG"],
+    "o": [
+      "22 AWG",
+      "20 AWG",
+      "18 AWG",
+      "16 AWG"
+    ],
     "a": 2,
-    "w": "Paging systems use 18 AWG or larger cabling to ensure adequate current capacity for distributed amplified systems. 22 AWG and 20 AWG are too thin for the current requirements of 70V paging systems and would result in excessive voltage drop. 16 AWG would also work but is not the minimum specified."
+    "w": "Paging systems use 18 AWG or larger cabling to ensure adequate current capacity for distributed amplified systems. 22 AWG and 20 AWG are too thin for the current requirements of 70V paging systems and would result in excessive voltage drop. 16 AWG would also work but is not the minimum specified.",
+    "k": [
+      "Distance and dimension limits in audiovisual systems are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
+      "Standards such as AVIXA/InfoComm standards codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
+      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+    ]
   },
   {
     "id": 389,
@@ -135,9 +265,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "Where should ceiling loudspeakers be spaced in areas with noise levels below 70 dB?",
-    "o": ["Spacing equal to the ceiling height", "Spacing approximately equal to the ceiling height", "Spacing approximately twice the ceiling height", "Spacing three times the ceiling height"],
+    "o": [
+      "Spacing equal to the ceiling height",
+      "Spacing approximately equal to the ceiling height",
+      "Spacing approximately twice the ceiling height",
+      "Spacing three times the ceiling height"
+    ],
     "a": 2,
-    "w": "Ceiling loudspeaker spacing should be approximately twice the ceiling height in areas with noise levels below 70 dB to provide even sound distribution without coverage gaps or excessive overlap. Equal to ceiling height would result in over-coverage and increased equipment cost. Three times ceiling height would create coverage gaps and uneven sound levels."
+    "w": "Ceiling loudspeaker spacing should be approximately twice the ceiling height in areas with noise levels below 70 dB to provide even sound distribution without coverage gaps or excessive overlap. Equal to ceiling height would result in over-coverage and increased equipment cost. Three times ceiling height would create coverage gaps and uneven sound levels.",
+    "k": [
+      "Proper grounding and bonding are foundational to EMI immunity and safety; all telecommunications infrastructure must be bonded to the building grounding electrode system.",
+      "Ground potential differences between interconnected equipment create noise currents in signal cables; equipotential bonding eliminates these differences.",
+      "TIA-607 and NFPA 70 define grounding and bonding requirements for audiovisual systems that designers must incorporate into every project."
+    ]
   },
   {
     "id": 390,
@@ -145,9 +285,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What is the optimum viewing angle range for display placement?",
-    "o": ["Within 30 degrees horizontally from the display center", "Within 45 degrees horizontally from the display center axis", "Within 60 degrees horizontally from the display center", "Within 90 degrees horizontally from the display center"],
+    "o": [
+      "Within 30 degrees horizontally from the display center",
+      "Within 45 degrees horizontally from the display center axis",
+      "Within 60 degrees horizontally from the display center",
+      "Within 90 degrees horizontally from the display center"
+    ],
     "a": 1,
-    "w": "The optimum viewing angle is within 45 degrees horizontally from the display's center axis. 30 degrees is overly restrictive and would exclude many legitimate seating positions. 60 and 90 degrees exceed the recommended range where display image quality and readability begin to degrade."
+    "w": "The optimum viewing angle is within 45 degrees horizontally from the display's center axis. 30 degrees is overly restrictive and would exclude many legitimate seating positions. 60 and 90 degrees exceed the recommended range where display image quality and readability begin to degrade.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 391,
@@ -155,9 +305,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What is a characteristic limitation of front projection screens in bright environments?",
-    "o": ["They produce images only in black and white", "They reflect ambient and direct light equally, causing washed-out images", "They require a minimum throw distance of 5 m", "They only function with laser projectors"],
+    "o": [
+      "They produce images only in black and white",
+      "They reflect ambient and direct light equally, causing washed-out images",
+      "They require a minimum throw distance of 5 m",
+      "They only function with laser projectors"
+    ],
     "a": 1,
-    "w": "Front projection screens reflect ambient and direct light equally, which leads to washed-out images in bright environments because the screen cannot distinguish between the projector light and ambient light. They do produce full color images. Throw distance depends on projector specification, not the screen alone. They work with any projector type, including lamp-based projectors."
+    "w": "Front projection screens reflect ambient and direct light equally, which leads to washed-out images in bright environments because the screen cannot distinguish between the projector light and ambient light. They do produce full color images. Throw distance depends on projector specification, not the screen alone. They work with any projector type, including lamp-based projectors.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 392,
@@ -165,9 +325,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "In AV drawings, where are output devices conventionally placed?",
-    "o": ["On the left side of the layout", "At the top of the layout", "On the right side of the layout", "At the bottom of the layout"],
+    "o": [
+      "On the left side of the layout",
+      "At the top of the layout",
+      "On the right side of the layout",
+      "At the bottom of the layout"
+    ],
     "a": 2,
-    "w": "In AV drawings, output devices are conventionally placed on the right side of the layout, following the signal flow convention from left (input/source) to right (output/destination). This standardization helps engineers and technicians read signal flow consistently across different drawings."
+    "w": "In AV drawings, output devices are conventionally placed on the right side of the layout, following the signal flow convention from left (input/source) to right (output/destination). This standardization helps engineers and technicians read signal flow consistently across different drawings.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 393,
@@ -175,9 +345,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What digital video standard is used for digital TV signal transmission?",
-    "o": ["HDMI", "HDBaseT", "HD-SDI", "MPEG-2"],
+    "o": [
+      "HDMI",
+      "HDBaseT",
+      "HD-SDI",
+      "MPEG-2"
+    ],
     "a": 3,
-    "w": "MPEG-2 is the compression standard used for digital TV signal transmission, including satellite, cable, and terrestrial broadcast. HDMI is a consumer connection interface, not a compression standard. HDBaseT is a transport protocol for AV signals over structured cabling. HD-SDI is a professional uncompressed video transport format used in broadcast studios."
+    "w": "MPEG-2 is the compression standard used for digital TV signal transmission, including satellite, cable, and terrestrial broadcast. HDMI is a consumer connection interface, not a compression standard. HDBaseT is a transport protocol for AV signals over structured cabling. HD-SDI is a professional uncompressed video transport format used in broadcast studios.",
+    "k": [
+      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern audiovisual systems design and installation.",
+      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
+      "Referencing the correct edition of AVIXA/InfoComm standards ensures compliance with current best practices and avoids conflicts with other building codes."
+    ]
   },
   {
     "id": 394,
@@ -185,9 +365,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What wall surface material is identified as acoustically reflective?",
-    "o": ["Acoustic foam panels", "Mineral fiber tiles", "Glass and framed materials", "Fabric-wrapped panels"],
+    "o": [
+      "Acoustic foam panels",
+      "Mineral fiber tiles",
+      "Glass and framed materials",
+      "Fabric-wrapped panels"
+    ],
     "a": 2,
-    "w": "Walls with glass, framed materials, or wood paneling are acoustically reflective, creating echo and reverberation challenges in conference and videoconference rooms. Acoustic foam and fabric-wrapped panels are absorptive materials used to reduce reflections. Mineral fiber tiles are absorptive and used in ceiling applications to reduce reverberation."
+    "w": "Walls with glass, framed materials, or wood paneling are acoustically reflective, creating echo and reverberation challenges in conference and videoconference rooms. Acoustic foam and fabric-wrapped panels are absorptive materials used to reduce reflections. Mineral fiber tiles are absorptive and used in ceiling applications to reduce reverberation.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 395,
@@ -195,9 +385,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What determines room acoustics primarily?",
-    "o": ["Floor material and area", "Ceiling height and volume", "Wall surfaces", "Furniture arrangement"],
+    "o": [
+      "Floor material and area",
+      "Ceiling height and volume",
+      "Wall surfaces",
+      "Furniture arrangement"
+    ],
     "a": 2,
-    "w": "Wall surfaces largely determine room acoustics because walls have the largest surface area in most rooms and their absorption or reflection coefficients directly impact reverberation time and echo. Floor material has an effect but walls dominate. Ceiling height affects room volume and reverberation but is secondary to wall surface characteristics. Furniture arrangement has minor effects compared to wall surfaces."
+    "w": "Wall surfaces largely determine room acoustics because walls have the largest surface area in most rooms and their absorption or reflection coefficients directly impact reverberation time and echo. Floor material has an effect but walls dominate. Ceiling height affects room volume and reverberation but is secondary to wall surface characteristics. Furniture arrangement has minor effects compared to wall surfaces.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 396,
@@ -205,9 +405,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What seating layout ensures sightlines pass over the heads of front-row viewers?",
-    "o": ["Theater-style flat floor layout", "Single-row vision layout", "Classroom-style tiered layout", "Herringbone layout"],
+    "o": [
+      "Theater-style flat floor layout",
+      "Single-row vision layout",
+      "Classroom-style tiered layout",
+      "Herringbone layout"
+    ],
     "a": 1,
-    "w": "Single-row vision layout ensures sightlines pass over the heads of front-row viewers by providing stepped or tiered seating rows. Theater-style flat floor layouts do not guarantee unobstructed sightlines. Tiered classroom layouts can achieve similar results but are not specifically named single-row vision. Herringbone layout refers to angled seating arrangements, not sightline optimization."
+    "w": "Single-row vision layout ensures sightlines pass over the heads of front-row viewers by providing stepped or tiered seating rows. Theater-style flat floor layouts do not guarantee unobstructed sightlines. Tiered classroom layouts can achieve similar results but are not specifically named single-row vision. Herringbone layout refers to angled seating arrangements, not sightline optimization.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 397,
@@ -215,9 +425,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What is a characteristic of infrared (IR) control in AV systems?",
-    "o": ["Uses wavelengths shorter than visible red light", "Uses wavelengths longer than visible red light for serial control", "Operates through walls without line-of-sight", "Uses 2.4 GHz RF spectrum"],
+    "o": [
+      "Uses wavelengths shorter than visible red light",
+      "Uses wavelengths longer than visible red light for serial control",
+      "Operates through walls without line-of-sight",
+      "Uses 2.4 GHz RF spectrum"
+    ],
     "a": 1,
-    "w": "Infrared (IR) control uses wavelengths longer than visible red light for serial control commands in AV equipment. Wavelengths shorter than visible red would be visible light or ultraviolet, not IR. IR requires line-of-sight and does not penetrate walls, unlike RF. 2.4 GHz is the frequency used by Wi-Fi and Bluetooth, not IR control systems."
+    "w": "Infrared (IR) control uses wavelengths longer than visible red light for serial control commands in AV equipment. Wavelengths shorter than visible red would be visible light or ultraviolet, not IR. IR requires line-of-sight and does not penetrate walls, unlike RF. 2.4 GHz is the frequency used by Wi-Fi and Bluetooth, not IR control systems.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 398,
@@ -225,9 +445,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "How do directional couplers split signals in CATV systems?",
-    "o": ["Evenly at 50/50 ratio", "Unevenly, with different levels at each output", "By frequency — low frequencies one way, high another", "Directionally by signal flow only"],
+    "o": [
+      "Evenly at 50/50 ratio",
+      "Unevenly, with different levels at each output",
+      "By frequency — low frequencies one way, high another",
+      "Directionally by signal flow only"
+    ],
     "a": 1,
-    "w": "Directional couplers in CATV systems split signals unevenly, providing a lower-level tap output and a higher-level through output, enabling signal distribution along a cable run while maintaining adequate signal levels at each tap point. Even 50/50 splitting would rapidly attenuate signals along a distribution run. Frequency-based splitting is a diplexer function, not a directional coupler. Signal flow directionality is a feature of directional couplers, not their splitting characteristic."
+    "w": "Directional couplers in CATV systems split signals unevenly, providing a lower-level tap output and a higher-level through output, enabling signal distribution along a cable run while maintaining adequate signal levels at each tap point. Even 50/50 splitting would rapidly attenuate signals along a distribution run. Frequency-based splitting is a diplexer function, not a directional coupler. Signal flow directionality is a feature of directional couplers, not their splitting characteristic.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 399,
@@ -235,9 +465,19 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What voltage level do distributed amplified paging systems use?",
-    "o": ["12V", "24V", "48V", "70V"],
+    "o": [
+      "12V",
+      "24V",
+      "48V",
+      "70V"
+    ],
     "a": 1,
-    "w": "Paging systems use 24V for distributed amplified systems as specified for the cabling infrastructure side. 12V is used in some low-power control systems but not standard paging distribution. 48V is used in PoE and telephone systems. 70V is the industry-standard line voltage used in the speaker distribution part of the paging system, but the cabling standard specifies 24V for the distributed amplifier infrastructure."
+    "w": "Paging systems use 24V for distributed amplified systems as specified for the cabling infrastructure side. 12V is used in some low-power control systems but not standard paging distribution. 48V is used in PoE and telephone systems. 70V is the industry-standard line voltage used in the speaker distribution part of the paging system, but the cabling standard specifies 24V for the distributed amplifier infrastructure.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   },
   {
     "id": 400,
@@ -245,8 +485,18 @@
     "testName": "Audiovisual (AV) Systems",
     "chapter": "Audiovisual (AV) Systems",
     "q": "What characteristic do harmonics define in audio systems?",
-    "o": ["The fundamental frequency of a sound", "The distinctive sounds from instruments or voices", "The maximum loudness of a signal", "The frequency cutoff of a loudspeaker"],
+    "o": [
+      "The fundamental frequency of a sound",
+      "The distinctive sounds from instruments or voices",
+      "The maximum loudness of a signal",
+      "The frequency cutoff of a loudspeaker"
+    ],
     "a": 1,
-    "w": "Harmonics define the distinctive sounds from instruments or voices — these overtones above the fundamental frequency give each instrument its characteristic timbre or tone color. The fundamental frequency is the lowest frequency component, not a harmonic. Maximum loudness is defined by amplitude, not harmonics. Speaker frequency cutoff is a hardware specification unrelated to harmonics."
+    "w": "Harmonics define the distinctive sounds from instruments or voices — these overtones above the fundamental frequency give each instrument its characteristic timbre or tone color. The fundamental frequency is the lowest frequency component, not a harmonic. Maximum loudness is defined by amplitude, not harmonics. Speaker frequency cutoff is a hardware specification unrelated to harmonics.",
+    "k": [
+      "The correct answer reflects a specific standard-defined value or design principle applicable to audiovisual systems.",
+      "Designers must know AVIXA/InfoComm standards limits and requirements to make code-compliant, performance-verified design decisions.",
+      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+    ]
   }
 ]

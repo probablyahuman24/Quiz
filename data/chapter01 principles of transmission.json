@@ -4,15 +4,20 @@
     "test": 1,
     "testName": "Principles of Transmission",
     "chapter": "Principles of Transmission",
-    "q": "What is the attenuation increase rate per degree Celsius above 20\u00b0C for screened balanced twisted-pair cables?",
+    "q": "What is the attenuation increase rate per degree Celsius above 20°C for screened balanced twisted-pair cables?",
     "o": [
-      "0.1% per \u00b0C",
-      "0.2% per \u00b0C",
-      "0.4% per \u00b0C",
-      "0.5% per \u00b0C"
+      "0.1% per °C",
+      "0.2% per °C",
+      "0.4% per °C",
+      "0.5% per °C"
     ],
     "a": 1,
-    "w": "Screened balanced twisted-pair cables increase in attenuation by 0.2% per degree Celsius above the reference temperature of 20\u00b0C. 0.1% is too low and understates the effect. 0.4% and 0.5% overstate the derating rate and would lead to incorrect channel insertion loss calculations."
+    "w": "Screened balanced twisted-pair cables increase in attenuation by 0.2% per degree Celsius above the reference temperature of 20°C. 0.1% is too low and understates the effect. 0.4% and 0.5% overstate the derating rate and would lead to incorrect channel insertion loss calculations.",
+    "k": [
+      "Copper conductor resistance increases with temperature, causing cable attenuation to rise above the 20 °C reference baseline used in standards.",
+      "A per-degree derating factor must be applied when cables operate above 20 °C to ensure insertion loss stays within the allowable channel budget.",
+      "Unscreened (UTP) and screened (ScTP) cables have different derating factors; using the wrong value causes incorrect loss calculations."
+    ]
   },
   {
     "id": 52,
@@ -27,7 +32,12 @@
       "OS2"
     ],
     "a": 3,
-    "w": "OS2 single-mode optical fiber performance is specified at 1310 nm, 1383 nm, and 1550 nm. OM4 and OM3 are multimode fibers specified at 850 nm and 1300 nm, not 1383 nm. OS1a is a single-mode fiber but is specified for indoor applications with higher attenuation and does not include the 1383 nm water-peak wavelength in the same way OS2 does."
+    "w": "OS2 single-mode optical fiber performance is specified at 1310 nm, 1383 nm, and 1550 nm. OM4 and OM3 are multimode fibers specified at 850 nm and 1300 nm, not 1383 nm. OS1a is a single-mode fiber but is specified for indoor applications with higher attenuation and does not include the 1383 nm water-peak wavelength in the same way OS2 does.",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 53,
@@ -42,7 +52,12 @@
       "3500 MHz-km"
     ],
     "a": 2,
-    "w": "OM3 optical fiber has a minimum bandwidth of 2000 MHz-km at 850 nm. 500 MHz-km is associated with OM3 at 1300 nm, not 850 nm. 1000 MHz-km does not correspond to OM3's specified minimum. 3500 MHz-km is the OFL bandwidth figure for OM4 at 850 nm, not OM3."
+    "w": "OM3 optical fiber has a minimum bandwidth of 2000 MHz-km at 850 nm. 500 MHz-km is associated with OM3 at 1300 nm, not 850 nm. 1000 MHz-km does not correspond to OM3's specified minimum. 3500 MHz-km is the OFL bandwidth figure for OM4 at 850 nm, not OM3.",
+    "k": [
+      "Multimode fiber bandwidth is expressed as a bandwidth-distance product (MHz·km); higher values support faster data rates over longer distances.",
+      "OM3 is laser-optimized for 850 nm VCSELs, providing 2000 MHz·km overfilled launch bandwidth — enough for 10 Gb/s at up to 300 m.",
+      "OM grades (OM1–OM5) define increasing bandwidth: OM3 = 2000 MHz·km, OM4 = 4700 MHz·km, OM5 adds wideband multimode capability."
+    ]
   },
   {
     "id": 54,
@@ -57,7 +72,12 @@
       "Greater than 50 nm"
     ],
     "a": 1,
-    "w": "VCSEL (Vertical-Cavity Surface-Emitting Laser) multimode transmitters have a spectral width of 1 to 6 nm FWHM (Full Width at Half Maximum). Less than 1 nm is characteristic of narrow-linewidth single-mode lasers. 10 to 20 nm is typical of LED sources. Greater than 50 nm would represent a very broadband source uncharacteristic of VCSELs."
+    "w": "VCSEL (Vertical-Cavity Surface-Emitting Laser) multimode transmitters have a spectral width of 1 to 6 nm FWHM (Full Width at Half Maximum). Less than 1 nm is characteristic of narrow-linewidth single-mode lasers. 10 to 20 nm is typical of LED sources. Greater than 50 nm would represent a very broadband source uncharacteristic of VCSELs.",
+    "k": [
+      "Spectral width (FWHM) measures the wavelength spread of a light source; narrower linewidth reduces chromatic dispersion in the fiber.",
+      "VCSELs (Vertical-Cavity Surface-Emitting Lasers) have 1–6 nm spectral width, enabling multi-gigabit modulation rates for short-distance multimode links.",
+      "LEDs have much wider spectral widths (>50 nm) and slower modulation, limiting them to lower-speed legacy applications compared to VCSELs."
+    ]
   },
   {
     "id": 55,
@@ -72,7 +92,12 @@
       "75%"
     ],
     "a": 2,
-    "w": "Aluminum conductors have approximately 60% of the conductivity of copper conductors, making copper the superior conductor and the industry standard for comparison. 40% significantly understates aluminum's conductivity. 50% is a commonly confused figure but incorrect. 75% overstates aluminum's conductivity relative to copper."
+    "w": "Aluminum conductors have approximately 60% of the conductivity of copper conductors, making copper the superior conductor and the industry standard for comparison. 40% significantly understates aluminum's conductivity. 50% is a commonly confused figure but incorrect. 75% overstates aluminum's conductivity relative to copper.",
+    "k": [
+      "Electrical conductivity is a material property indicating how freely electrons flow; copper's high conductivity makes it the standard for telecommunications cabling.",
+      "Aluminum has approximately 61% the conductivity of copper (IACS scale), requiring a larger cross-section to carry the same current with equivalent resistance.",
+      "Lower conductivity translates directly into higher insertion loss per unit length, affecting cable category performance and maximum distance."
+    ]
   },
   {
     "id": 56,
@@ -81,13 +106,18 @@
     "chapter": "Principles of Transmission",
     "q": "What frequency spectrum is associated with the Extremely High Frequency (EHF) band?",
     "o": [
-      "3\u201330 GHz",
-      "30\u2013300 GHz",
-      "300 GHz\u20133 THz",
-      "3\u201330 MHz"
+      "3–30 GHz",
+      "30–300 GHz",
+      "300 GHz–3 THz",
+      "3–30 MHz"
     ],
     "a": 1,
-    "w": "The Extremely High Frequency (EHF) band spans 30\u2013300 GHz and is associated with millimeter-wave applications. 3\u201330 GHz falls in the Super High Frequency (SHF) band. 300 GHz\u20133 THz represents the Tremendously High Frequency range beyond EHF. 3\u201330 MHz corresponds to the High Frequency (HF) band used in shortwave radio."
+    "w": "The Extremely High Frequency (EHF) band spans 30–300 GHz and is associated with millimeter-wave applications. 3–30 GHz falls in the Super High Frequency (SHF) band. 300 GHz–3 THz represents the Tremendously High Frequency range beyond EHF. 3–30 MHz corresponds to the High Frequency (HF) band used in shortwave radio.",
+    "k": [
+      "The ITU divides the radio spectrum into designated bands; Extremely High Frequency (EHF) spans 30–300 GHz and is used for millimeter-wave applications.",
+      "Each frequency band decade has unique propagation characteristics: EHF enables very high data rates but suffers from high atmospheric and rain absorption.",
+      "Knowing the ITU frequency band classifications helps designers specify wireless systems and predict their propagation behaviour and regulatory constraints."
+    ]
   },
   {
     "id": 57,
@@ -102,7 +132,12 @@
       "110 m (361 ft)"
     ],
     "a": 1,
-    "w": "Balanced twisted-pair permanent links consist of up to 90 meters (295 feet) of horizontal cabling including connectors. 80 m is too short and not the defined standard maximum. 100 m is the total channel length including patch cords, not just the permanent link. 110 m exceeds all defined channel and permanent link limits."
+    "w": "Balanced twisted-pair permanent links consist of up to 90 meters (295 feet) of horizontal cabling including connectors. 80 m is too short and not the defined standard maximum. 100 m is the total channel length including patch cords, not just the permanent link. 110 m exceeds all defined channel and permanent link limits.",
+    "k": [
+      "A permanent link is the fixed cabling installation from the telecommunications outlet to the horizontal cross-connect jack, excluding patch cords at each end.",
+      "TIA-568 limits the permanent link to 90 m of horizontal cable so that the full channel (plus up to 10 m of patch cords) does not exceed 100 m.",
+      "Differentiating the permanent link from the channel is critical for selecting the correct test adapter and applying the right pass/fail limits during certification."
+    ]
   },
   {
     "id": 58,
@@ -117,7 +152,12 @@
       "Return loss caused by impedance mismatch at splices"
     ],
     "a": 2,
-    "w": "PSELFEXT (Power Sum Equal Level Far-End Crosstalk) measures unwanted signal coupling from multiple transmitters at the near end to a pair at the far end of the cable. Option A describes PSNEXT, which measures near-end crosstalk. Option B describes ELFEXT from a single disturber, not power sum. Option D describes return loss, which is a separate parameter measuring reflected signal energy."
+    "w": "PSELFEXT (Power Sum Equal Level Far-End Crosstalk) measures unwanted signal coupling from multiple transmitters at the near end to a pair at the far end of the cable. Option A describes PSNEXT, which measures near-end crosstalk. Option B describes ELFEXT from a single disturber, not power sum. Option D describes return loss, which is a separate parameter measuring reflected signal energy.",
+    "k": [
+      "Far-End Crosstalk (FEXT) is noise induced by a transmitting pair measured at the far end of an adjacent pair; it is normalized by cable attenuation to give ELFEXT.",
+      "PSELFEXT (Power Sum ELFEXT) combines ELFEXT from all disturbing pairs, representing the worst-case noise received by any pair at the far end.",
+      "ELFEXT and PSELFEXT are critical for full-duplex protocols like 1000BASE-T that transmit and receive simultaneously on all four pairs."
+    ]
   },
   {
     "id": 59,
@@ -132,7 +172,12 @@
       "1500 MHz-km"
     ],
     "a": 1,
-    "w": "OM1 multimode optical fiber has a minimum bandwidth of 200 MHz-km at 850 nm. 100 MHz-km is below OM1's specified minimum and does not represent any standard fiber grade. 500 MHz-km corresponds to OM3 at 1300 nm. 1500 MHz-km is the OFL bandwidth of OM3 at 850 nm, far exceeding OM1's specification."
+    "w": "OM1 multimode optical fiber has a minimum bandwidth of 200 MHz-km at 850 nm. 100 MHz-km is below OM1's specified minimum and does not represent any standard fiber grade. 500 MHz-km corresponds to OM3 at 1300 nm. 1500 MHz-km is the OFL bandwidth of OM3 at 850 nm, far exceeding OM1's specification.",
+    "k": [
+      "OM1 is the original 62.5/125 µm multimode fiber grade with the lowest bandwidth specification, now considered legacy technology.",
+      "The minimum OFL bandwidth for OM1 at 850 nm is 200 MHz·km, supporting only low-speed short-distance links like 100BASE-FX.",
+      "Fiber grades progress — OM1 (200), OM2 (500), OM3 (2000), OM4 (4700) MHz·km at 850 nm — each increment enables higher-speed applications."
+    ]
   },
   {
     "id": 60,
@@ -147,7 +192,12 @@
       "44.736 Mb/s"
     ],
     "a": 2,
-    "w": "DS2 multiplexing in North America operates at 6.312 Mb/s. 1.544 Mb/s is the data rate for DS1 (T1). 3.152 Mb/s is the rate for DS1C, a multiplexing level between DS1 and DS2. 44.736 Mb/s is the rate for DS3, which carries 28 DS1 channels."
+    "w": "DS2 multiplexing in North America operates at 6.312 Mb/s. 1.544 Mb/s is the data rate for DS1 (T1). 3.152 Mb/s is the rate for DS1C, a multiplexing level between DS1 and DS2. 44.736 Mb/s is the rate for DS3, which carries 28 DS1 channels.",
+    "k": [
+      "The North American digital hierarchy (DS0→DS1→DS1C→DS2→DS3) multiplexes lower-rate channels into progressively higher-bandwidth signals.",
+      "DS2 at 6.312 Mb/s carries four DS1 channels (4 × 1.544 Mb/s) plus framing overhead using plesiochronous multiplexing.",
+      "Understanding the DS hierarchy is essential for designing backbone facilities that must carry T-carrier circuits and legacy voice/data services."
+    ]
   },
   {
     "id": 61,
@@ -162,14 +212,19 @@
       "1.0 dB/km"
     ],
     "a": 1,
-    "w": "OS2 single-mode outside plant optical fiber cables have a maximum attenuation of 0.4 dB/km at 1550 nm. 0.2 dB/km is better than required and not the defined maximum limit for OS2. 0.5 dB/km exceeds the OS2 specification and would represent a failed cable. 1.0 dB/km is the attenuation figure for OS1a inside plant cable at 1383 nm, a far higher-loss specification."
+    "w": "OS2 single-mode outside plant optical fiber cables have a maximum attenuation of 0.4 dB/km at 1550 nm. 0.2 dB/km is better than required and not the defined maximum limit for OS2. 0.5 dB/km exceeds the OS2 specification and would represent a failed cable. 1.0 dB/km is the attenuation figure for OS1a inside plant cable at 1383 nm, a far higher-loss specification.",
+    "k": [
+      "Single-mode fiber (OS1/OS2) supports transmission at 1310 nm, 1383 nm (water-peak), and 1550 nm; OS2 specifies low water-peak attenuation to use all three windows.",
+      "The 1383 nm OH-absorption water peak is eliminated in OS2 (low-water-peak) fiber by reducing hydroxyl ion content during manufacture.",
+      "OS1a is suitable for indoor use with higher maximum attenuation (1 dB/km), while OS2 is for OSP runs requiring the lowest loss (0.4 dB/km at 1550 nm)."
+    ]
   },
   {
     "id": 62,
     "test": 1,
     "testName": "Principles of Transmission",
     "chapter": "Principles of Transmission",
-    "q": "What is the maximum attenuation of 62.5/125 \u00b5m multimode optical fiber at 1300 nm?",
+    "q": "What is the maximum attenuation of 62.5/125 µm multimode optical fiber at 1300 nm?",
     "o": [
       "0.4 dB/km",
       "1.0 dB/km",
@@ -177,7 +232,12 @@
       "3.5 dB/km"
     ],
     "a": 2,
-    "w": "62.5/125 \u00b5m multimode optical fiber has a maximum attenuation of 1.5 dB/km at 1300 nm. 0.4 dB/km is a single-mode fiber specification, far better than any multimode fiber. 1.0 dB/km is below the actual maximum for 62.5/125 \u00b5m fiber and would be overly optimistic. 3.5 dB/km is the maximum attenuation at 850 nm for OM3/OM4 multimode fibers, not at 1300 nm."
+    "w": "62.5/125 µm multimode optical fiber has a maximum attenuation of 1.5 dB/km at 1300 nm. 0.4 dB/km is a single-mode fiber specification, far better than any multimode fiber. 1.0 dB/km is below the actual maximum for 62.5/125 µm fiber and would be overly optimistic. 3.5 dB/km is the maximum attenuation at 850 nm for OM3/OM4 multimode fibers, not at 1300 nm.",
+    "k": [
+      "62.5/125 µm multimode fiber (OM1) has higher attenuation than 50/125 µm fibers and significantly higher attenuation than single-mode fiber.",
+      "Attenuation at 1300 nm is always lower than at 850 nm for multimode fiber because Rayleigh scattering decreases with longer wavelengths.",
+      "Maximum attenuation values per fiber type and wavelength are the starting point for any optical power budget and maximum link-length calculation."
+    ]
   },
   {
     "id": 63,
@@ -192,14 +252,19 @@
       "Poor"
     ],
     "a": 3,
-    "w": "A shield effectiveness rating of 19 dB is classified as poor. Good shielding corresponds to approximately 42 dB. Fair falls in between the poor and good ranges. Excellent is reserved for ratings significantly higher than 42 dB, such as those achieved by high-quality double-shielded cables."
+    "w": "A shield effectiveness rating of 19 dB is classified as poor. Good shielding corresponds to approximately 42 dB. Fair falls in between the poor and good ranges. Excellent is reserved for ratings significantly higher than 42 dB, such as those achieved by high-quality double-shielded cables.",
+    "k": [
+      "Shield effectiveness (SE) in dB quantifies a cable shield's ability to attenuate external EMI; higher SE means better protection.",
+      "SE classifications — excellent (>42 dB), good (~42 dB), fair, poor (<~20 dB) — guide cable selection for environments with varying EMI severity.",
+      "A shield with only 19 dB SE provides minimal protection and is inadequate for most industrial or electrically noisy environments."
+    ]
   },
   {
     "id": 64,
     "test": 1,
     "testName": "Principles of Transmission",
     "chapter": "Principles of Transmission",
-    "q": "What is the numerical aperture of 62.5/125 \u00b5m multimode optical fiber?",
+    "q": "What is the numerical aperture of 62.5/125 µm multimode optical fiber?",
     "o": [
       "0.20",
       "0.275",
@@ -207,7 +272,12 @@
       "0.50"
     ],
     "a": 1,
-    "w": "The numerical aperture of 62.5/125 \u00b5m multimode optical fiber is approximately 0.275. 0.20 is more representative of 50/125 \u00b5m multimode fiber, which has a smaller acceptance cone. 0.30 overstates the numerical aperture of 62.5/125 \u00b5m fiber. 0.50 is far too high and does not correspond to any standard telecommunications optical fiber."
+    "w": "The numerical aperture of 62.5/125 µm multimode optical fiber is approximately 0.275. 0.20 is more representative of 50/125 µm multimode fiber, which has a smaller acceptance cone. 0.30 overstates the numerical aperture of 62.5/125 µm fiber. 0.50 is far too high and does not correspond to any standard telecommunications optical fiber.",
+    "k": [
+      "Numerical Aperture (NA) defines the acceptance cone of an optical fiber — it determines the angle within which light is captured and guided by total internal reflection.",
+      "A higher NA means the fiber accepts light over a wider angle, which improves LED coupling efficiency but increases modal dispersion in multimode fiber.",
+      "62.5/125 µm fiber (NA ≈ 0.275) has a wider acceptance cone than 50/125 µm fiber (NA ≈ 0.20), affecting source coupling and bandwidth."
+    ]
   },
   {
     "id": 65,
@@ -222,7 +292,12 @@
       "2.048 Mb/s"
     ],
     "a": 2,
-    "w": "Primary Rate ISDN in North America provides a total information capacity of 1.536 Mb/s, carried across 23 B channels plus one D channel. 128 kb/s corresponds to Basic Rate ISDN (BRI) using two B channels. 384 kb/s is associated with H0 channels, not PRI. 2.048 Mb/s is the European E1-based Primary Rate ISDN capacity, not the North American standard."
+    "w": "Primary Rate ISDN in North America provides a total information capacity of 1.536 Mb/s, carried across 23 B channels plus one D channel. 128 kb/s corresponds to Basic Rate ISDN (BRI) using two B channels. 384 kb/s is associated with H0 channels, not PRI. 2.048 Mb/s is the European E1-based Primary Rate ISDN capacity, not the North American standard.",
+    "k": [
+      "ISDN PRI in North America uses a T1 frame structure: 23 B channels (64 kb/s each) plus one D signaling channel = 1.536 Mb/s of user information.",
+      "European E1-based PRI provides 30 B channels + 2 signaling channels = 2.048 Mb/s, so PRI capacity differs between North America and the rest of the world.",
+      "BRI (Basic Rate Interface) has only 2B+D = 128 kb/s, while PRI offers much higher capacity using the same ISDN protocol framework."
+    ]
   },
   {
     "id": 66,
@@ -237,7 +312,12 @@
       "20 mm (0.79 in)"
     ],
     "a": 2,
-    "w": "Adjacent twisted pairs must have twist length differences of at least 13 mm (0.50 inches) to reduce crosstalk between pairs. 6 mm provides insufficient pair-to-pair differentiation for adequate NEXT performance. 10 mm is below the specified minimum and would not adequately suppress inter-pair coupling. 20 mm exceeds the minimum but is not the standard specified value."
+    "w": "Adjacent twisted pairs must have twist length differences of at least 13 mm (0.50 inches) to reduce crosstalk between pairs. 6 mm provides insufficient pair-to-pair differentiation for adequate NEXT performance. 10 mm is below the specified minimum and would not adequately suppress inter-pair coupling. 20 mm exceeds the minimum but is not the standard specified value.",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 67,
@@ -252,7 +332,12 @@
       "+1 dB"
     ],
     "a": 1,
-    "w": "Doubling signal power results in a +3 dB change, because the decibel formula 10\u00d7log10(2) equals approximately 3.01 dB. +6 dB corresponds to quadrupling the power (a 4\u00d7 increase). +10 dB corresponds to a 10\u00d7 increase in power. +1 dB represents an approximately 26% increase in power, far less than doubling."
+    "w": "Doubling signal power results in a +3 dB change, because the decibel formula 10×log10(2) equals approximately 3.01 dB. +6 dB corresponds to quadrupling the power (a 4× increase). +10 dB corresponds to a 10× increase in power. +1 dB represents an approximately 26% increase in power, far less than doubling.",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 68,
@@ -267,7 +352,12 @@
       "Copper-covered steel conductors"
     ],
     "a": 1,
-    "w": "Stranded conductors provide a longer flex life compared to solid conductors because the multiple smaller strands distribute mechanical stress over a larger cross-section, resisting fatigue. Solid conductors are more rigid and prone to breaking when repeatedly bent. Copper-clad aluminum conductors are used for specific weight-savings applications, not flex life. Copper-covered steel conductors are used in aerial drop wires for strength, not flexibility."
+    "w": "Stranded conductors provide a longer flex life compared to solid conductors because the multiple smaller strands distribute mechanical stress over a larger cross-section, resisting fatigue. Solid conductors are more rigid and prone to breaking when repeatedly bent. Copper-clad aluminum conductors are used for specific weight-savings applications, not flex life. Copper-covered steel conductors are used in aerial drop wires for strength, not flexibility.",
+    "k": [
+      "Solid conductors are stiffer and optimized for permanent installation; stranded conductors distribute bending stress across many wires, greatly extending flex life.",
+      "Patch cords use stranded conductors because they are repeatedly handled and bent; horizontal cable runs use solid conductors for lower insertion loss.",
+      "The same gauge stranded conductor has slightly higher DC resistance than solid due to the longer helical path of the individual strands."
+    ]
   },
   {
     "id": 69,
@@ -282,7 +372,12 @@
       "Below 10 GHz"
     ],
     "a": 1,
-    "w": "Light-emitting diodes (LEDs) have a modulation frequency typically below 200 MHz due to their carrier recombination characteristics. Below 50 MHz significantly understates LED capability for modern devices. Below 1 GHz applies to some high-speed laser sources, not LEDs. Below 10 GHz is characteristic of high-speed laser transmitters, not LEDs, which are fundamentally slower devices."
+    "w": "Light-emitting diodes (LEDs) have a modulation frequency typically below 200 MHz due to their carrier recombination characteristics. Below 50 MHz significantly understates LED capability for modern devices. Below 1 GHz applies to some high-speed laser sources, not LEDs. Below 10 GHz is characteristic of high-speed laser transmitters, not LEDs, which are fundamentally slower devices.",
+    "k": [
+      "LED transmitters are limited in modulation bandwidth by the carrier recombination lifetime of the semiconductor junction, typically below 200 MHz.",
+      "This frequency limitation restricts LEDs to lower-speed, short-distance multimode links such as legacy 100BASE-FX or analog video transport.",
+      "VCSELs and edge-emitting lasers achieve multi-GHz modulation because of shorter carrier lifetimes and coherent emission, unlike LEDs."
+    ]
   },
   {
     "id": 70,
@@ -291,13 +386,18 @@
     "chapter": "Principles of Transmission",
     "q": "What is the Low Frequency (LF) radio spectrum range?",
     "o": [
-      "3\u201330 kHz",
-      "30\u2013300 kHz",
-      "300 kHz\u20133 MHz",
-      "3\u201330 MHz"
+      "3–30 kHz",
+      "30–300 kHz",
+      "300 kHz–3 MHz",
+      "3–30 MHz"
     ],
     "a": 1,
-    "w": "The Low Frequency (LF) band spans 30\u2013300 kHz and is used for navigation and submarine communications. 3\u201330 kHz is the Very Low Frequency (VLF) band. 300 kHz\u20133 MHz is the Medium Frequency (MF) band used for AM radio broadcasting. 3\u201330 MHz is the High Frequency (HF) band used for shortwave radio."
+    "w": "The Low Frequency (LF) band spans 30–300 kHz and is used for navigation and submarine communications. 3–30 kHz is the Very Low Frequency (VLF) band. 300 kHz–3 MHz is the Medium Frequency (MF) band used for AM radio broadcasting. 3–30 MHz is the High Frequency (HF) band used for shortwave radio.",
+    "k": [
+      "The Low Frequency (LF) band spans 30–300 kHz and sits between VLF (3–30 kHz) and MF (300 kHz–3 MHz) in the ITU frequency band scheme.",
+      "LF waves propagate by ground-wave and can follow the Earth's curvature, which is why LF is used for navigation beacons and submarine communication.",
+      "Each ITU frequency band spans one decade and has unique propagation, antenna size, and application characteristics important for wireless system design."
+    ]
   },
   {
     "id": 71,
@@ -312,7 +412,12 @@
       "Polyethylene foam"
     ],
     "a": 2,
-    "w": "FEP (Fluorinated Ethylene Propylene) is an insulation material with a low dielectric constant, improving high-frequency signal performance and reducing attenuation. PVC has a relatively high dielectric constant and dissipation factor, making it less ideal for high-frequency applications. XLPE has moderate dielectric performance. Polyethylene foam has good dielectric properties but is not specifically FEP."
+    "w": "FEP (Fluorinated Ethylene Propylene) is an insulation material with a low dielectric constant, improving high-frequency signal performance and reducing attenuation. PVC has a relatively high dielectric constant and dissipation factor, making it less ideal for high-frequency applications. XLPE has moderate dielectric performance. Polyethylene foam has good dielectric properties but is not specifically FEP.",
+    "k": [
+      "The dielectric constant (εᵣ) of cable insulation affects signal propagation speed and inter-conductor capacitance; lower values improve high-frequency performance.",
+      "FEP (Fluorinated Ethylene Propylene) has εᵣ ≈ 2.1, significantly lower than PVC (~3.5–7), enabling lower attenuation and faster signal propagation.",
+      "Insulation material also governs fire performance: FEP is plenum-rated, while PVC requires additional fire protection when installed in air-handling spaces."
+    ]
   },
   {
     "id": 72,
@@ -327,7 +432,12 @@
       "550 m (1804 ft)"
     ],
     "a": 1,
-    "w": "Multimode optical fiber is rated for links under 100 meters (328 feet) at 100 Gb/s data rates in premises applications. 50 m understates the capability of current laser-optimized multimode fibers. 300 m is the supported distance for 10 Gb/s, not 100 Gb/s. 550 m is supported for 1 Gb/s applications over OM3 fiber, a much lower data rate."
+    "w": "Multimode optical fiber is rated for links under 100 meters (328 feet) at 100 Gb/s data rates in premises applications. 50 m understates the capability of current laser-optimized multimode fibers. 300 m is the supported distance for 10 Gb/s, not 100 Gb/s. 550 m is supported for 1 Gb/s applications over OM3 fiber, a much lower data rate.",
+    "k": [
+      "Multimode fiber distance capability decreases as data rate increases because modal dispersion accumulates, limiting bandwidth over longer lengths.",
+      "At 100 Gb/s, even OM4 multimode fiber is limited to about 100 m, restricting 100GbE to short intra-building or data-center interconnects.",
+      "Single-mode fiber is free from modal dispersion and can support 100 Gb/s over several kilometres, unlike multimode fiber."
+    ]
   },
   {
     "id": 73,
@@ -342,7 +452,12 @@
       "Has no effect on range"
     ],
     "a": 1,
-    "w": "A 6 dB reduction in EIRP (Effective Isotropic Radiated Power) halves the transmission range. This is because signal propagation follows an inverse square law, and 6 dB represents a 4\u00d7 reduction in power, which translates to a 2\u00d7 reduction in range. Doubling the range would require a 6 dB increase, not decrease. A quarter-range reduction would require a 12 dB reduction in EIRP."
+    "w": "A 6 dB reduction in EIRP (Effective Isotropic Radiated Power) halves the transmission range. This is because signal propagation follows an inverse square law, and 6 dB represents a 4× reduction in power, which translates to a 2× reduction in range. Doubling the range would require a 6 dB increase, not decrease. A quarter-range reduction would require a 12 dB reduction in EIRP.",
+    "k": [
+      "EIRP (Effective Isotropic Radiated Power) combines transmitter power and antenna gain to express total radiated power in the peak direction.",
+      "Free-space path loss follows an inverse-square law; a 6 dB reduction in EIRP (factor-of-4 power cut) halves the transmission range.",
+      "Regulators limit EIRP for unlicensed wireless systems; understanding the EIRP-to-range relationship ensures adequate coverage within legal power limits."
+    ]
   },
   {
     "id": 74,
@@ -357,7 +472,12 @@
       "PDH"
     ],
     "a": 1,
-    "w": "SONET (Synchronous Optical NETwork) is the standard for optical fiber carrier transmission in North America. SDH (Synchronous Digital Hierarchy) is the equivalent international standard used outside North America. OTN (Optical Transport Network) is a newer, higher-capacity standard that encapsulates SONET/SDH. PDH (Plesiochronous Digital Hierarchy) is an older multiplexing standard replaced by SONET/SDH."
+    "w": "SONET (Synchronous Optical NETwork) is the standard for optical fiber carrier transmission in North America. SDH (Synchronous Digital Hierarchy) is the equivalent international standard used outside North America. OTN (Optical Transport Network) is a newer, higher-capacity standard that encapsulates SONET/SDH. PDH (Plesiochronous Digital Hierarchy) is an older multiplexing standard replaced by SONET/SDH.",
+    "k": [
+      "SONET (Synchronous Optical NETwork) is the North American standard for optical carrier transmission, defining OC-n signal rates and frame formats.",
+      "SDH (Synchronous Digital Hierarchy) is the equivalent ITU international standard, interoperable with SONET at the STM/OC signal hierarchy.",
+      "Both SONET and SDH replaced PDH (Plesiochronous Digital Hierarchy) with synchronous multiplexing, enabling flexible add-drop and cross-connect."
+    ]
   },
   {
     "id": 75,
@@ -372,7 +492,12 @@
       "80%"
     ],
     "a": 2,
-    "w": "Reliable RF Line-of-Sight propagation requires at least 60% clearance in the first Fresnel Zone to avoid significant signal diffraction loss. 20% clearance would result in substantial diffraction and signal degradation. 40% is insufficient to prevent meaningful Fresnel Zone obstruction losses. 80% provides more than necessary clearance but is not the minimum standard required."
+    "w": "Reliable RF Line-of-Sight propagation requires at least 60% clearance in the first Fresnel Zone to avoid significant signal diffraction loss. 20% clearance would result in substantial diffraction and signal degradation. 40% is insufficient to prevent meaningful Fresnel Zone obstruction losses. 80% provides more than necessary clearance but is not the minimum standard required.",
+    "k": [
+      "The Fresnel Zone is an ellipsoidal region around the direct RF line-of-sight path; obstructions within it cause diffraction and signal loss.",
+      "At least 60% clearance of the first Fresnel Zone radius is required to keep diffraction losses below approximately 1 dB for reliable propagation.",
+      "Fresnel Zone radius grows with wavelength and path length, so lower-frequency systems need physically larger clearances than high-frequency systems."
+    ]
   },
   {
     "id": 601,
@@ -387,7 +512,12 @@
       "To prevent signal attenuation"
     ],
     "a": 1,
-    "w": "An electrical conductor facilitates the transfer of electric charge by providing a low-resistance path for electrons to flow. Resistors, not conductors, resist electron flow (option A). Insulation, not conductors, separates wires electrically (option C). Attenuation prevention involves signal amplification or proper cable selection, not the fundamental function of a conductor (option D)."
+    "w": "An electrical conductor facilitates the transfer of electric charge by providing a low-resistance path for electrons to flow. Resistors, not conductors, resist electron flow (option A). Insulation, not conductors, separates wires electrically (option C). Attenuation prevention involves signal amplification or proper cable selection, not the fundamental function of a conductor (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 602,
@@ -402,7 +532,12 @@
       "High-strength alloys"
     ],
     "a": 1,
-    "w": "Copper offers the highest electrical conductivity among practical conductor materials, making it the standard choice for telecommunications cabling. Aluminum has only about 61% the conductivity of copper and is not as preferred (option A). Copper-clad conductors use a steel or aluminum core with a copper coating, so they do not match pure copper conductivity (option C). High-strength alloys are designed for mechanical strength rather than maximum conductivity (option D)."
+    "w": "Copper offers the highest electrical conductivity among practical conductor materials, making it the standard choice for telecommunications cabling. Aluminum has only about 61% the conductivity of copper and is not as preferred (option A). Copper-clad conductors use a steel or aluminum core with a copper coating, so they do not match pure copper conductivity (option C). High-strength alloys are designed for mechanical strength rather than maximum conductivity (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 603,
@@ -417,7 +552,12 @@
       "Lower cost"
     ],
     "a": 2,
-    "w": "Copper-clad conductors consist of a high-strength steel or aluminum core coated with copper, giving them excellent tensile strength compared to pure copper. Pure copper has higher electrical conductivity than copper-clad conductors, not the other way around (option A). Corrosion resistance is not the primary advantage; pure copper also resists corrosion well (option B). While copper-clad may sometimes reduce material cost, that is not their primary distinguishing advantage over pure copper (option D)."
+    "w": "Copper-clad conductors consist of a high-strength steel or aluminum core coated with copper, giving them excellent tensile strength compared to pure copper. Pure copper has higher electrical conductivity than copper-clad conductors, not the other way around (option A). Corrosion resistance is not the primary advantage; pure copper also resists corrosion well (option B). While copper-clad may sometimes reduce material cost, that is not their primary distinguishing advantage over pure copper (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 604,
@@ -432,7 +572,12 @@
       "High cost"
     ],
     "a": 2,
-    "w": "Aluminum has poor oxidation resistance; it forms an oxide layer that increases contact resistance and can cause connection failures over time. Aluminum actually has relatively good oxidation resistance in some contexts but the oxide layer it forms is electrically problematic, making option A incorrect. Aluminum is lighter than copper, not heavier, so weight is not a disadvantage (option B). Aluminum is generally less expensive than copper, so high cost is not a disadvantage (option D)."
+    "w": "Aluminum has poor oxidation resistance; it forms an oxide layer that increases contact resistance and can cause connection failures over time. Aluminum actually has relatively good oxidation resistance in some contexts but the oxide layer it forms is electrically problematic, making option A incorrect. Aluminum is lighter than copper, not heavier, so weight is not a disadvantage (option B). Aluminum is generally less expensive than copper, so high cost is not a disadvantage (option D).",
+    "k": [
+      "Electrical conductivity is a material property indicating how freely electrons flow; copper's high conductivity makes it the standard for telecommunications cabling.",
+      "Aluminum has approximately 61% the conductivity of copper (IACS scale), requiring a larger cross-section to carry the same current with equivalent resistance.",
+      "Lower conductivity translates directly into higher insertion loss per unit length, affecting cable category performance and maximum distance."
+    ]
   },
   {
     "id": 605,
@@ -447,7 +592,12 @@
       "High-strength conductor"
     ],
     "a": 2,
-    "w": "A solid conductor consists of a single piece of metal wire, offering lower resistance and better performance at high frequencies due to its uniform cross-section. A strand conductor is made of multiple smaller wires twisted together, not a single piece (option A). A composite conductor combines different materials to achieve specific properties, not a single-piece construction (option B). High-strength conductor refers to a performance characteristic, not a construction type defined by being a single piece of wire (option D)."
+    "w": "A solid conductor consists of a single piece of metal wire, offering lower resistance and better performance at high frequencies due to its uniform cross-section. A strand conductor is made of multiple smaller wires twisted together, not a single piece (option A). A composite conductor combines different materials to achieve specific properties, not a single-piece construction (option B). High-strength conductor refers to a performance characteristic, not a construction type defined by being a single piece of wire (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 606,
@@ -462,7 +612,12 @@
       "Lower resistance"
     ],
     "a": 2,
-    "w": "Strand conductors, made of multiple smaller wires twisted together, are significantly more flexible than solid conductors, making them ideal for patch cords and applications requiring frequent bending. Solid conductors perform better at high frequencies due to the skin effect being more uniform, not stranded conductors (option A). Stranded conductors are typically more expensive to manufacture than solid conductors (option B). Solid conductors generally have lower DC resistance than stranded conductors of the same gauge (option D)."
+    "w": "Strand conductors, made of multiple smaller wires twisted together, are significantly more flexible than solid conductors, making them ideal for patch cords and applications requiring frequent bending. Solid conductors perform better at high frequencies due to the skin effect being more uniform, not stranded conductors (option A). Stranded conductors are typically more expensive to manufacture than solid conductors (option B). Solid conductors generally have lower DC resistance than stranded conductors of the same gauge (option D).",
+    "k": [
+      "Solid conductors are stiffer and optimized for permanent installation; stranded conductors distribute bending stress across many wires, greatly extending flex life.",
+      "Patch cords use stranded conductors because they are repeatedly handled and bent; horizontal cable runs use solid conductors for lower insertion loss.",
+      "The same gauge stranded conductor has slightly higher DC resistance than solid due to the longer helical path of the individual strands."
+    ]
   },
   {
     "id": 607,
@@ -477,7 +632,12 @@
       "Shielding"
     ],
     "a": 1,
-    "w": "Insulation is a dielectric material that resists the flow of electrons and provides electrical isolation between conductors and between conductors and the environment. Conductors do the opposite \u2014 they facilitate electron flow (option A). Alloys are metallic combinations that conduct electricity to varying degrees (option C). Shielding is a conductive layer used to block electromagnetic interference, not to resist electron flow between conductors (option D)."
+    "w": "Insulation is a dielectric material that resists the flow of electrons and provides electrical isolation between conductors and between conductors and the environment. Conductors do the opposite — they facilitate electron flow (option A). Alloys are metallic combinations that conduct electricity to varying degrees (option C). Shielding is a conductive layer used to block electromagnetic interference, not to resist electron flow between conductors (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 608,
@@ -492,7 +652,12 @@
       "Aluminum"
     ],
     "a": 1,
-    "w": "Polyethylene (PE) is preferred for outdoor applications because it has excellent moisture resistance, UV resistance, and stability across a wide temperature range. PVC (polyvinyl chloride) absorbs more moisture and is less UV-stable than PE, making it less ideal for outdoor use (option A). Copper is a conductor, not an insulation material (option C). Aluminum is also a conductor, not an insulation material (option D)."
+    "w": "Polyethylene (PE) is preferred for outdoor applications because it has excellent moisture resistance, UV resistance, and stability across a wide temperature range. PVC (polyvinyl chloride) absorbs more moisture and is less UV-stable than PE, making it less ideal for outdoor use (option A). Copper is a conductor, not an insulation material (option C). Aluminum is also a conductor, not an insulation material (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 609,
@@ -507,7 +672,12 @@
       "Weight of the material"
     ],
     "a": 2,
-    "w": "The dielectric constant (relative permittivity) represents the ratio of the capacitance of an insulator to that of air (vacuum), indicating how well the material stores electrical energy relative to free space. Resistance to oxidation describes chemical stability, not the dielectric constant (option A). The maximum voltage a material can withstand is called dielectric strength, not the dielectric constant (option B). The weight of a material is a physical property unrelated to the dielectric constant (option D)."
+    "w": "The dielectric constant (relative permittivity) represents the ratio of the capacitance of an insulator to that of air (vacuum), indicating how well the material stores electrical energy relative to free space. Resistance to oxidation describes chemical stability, not the dielectric constant (option A). The maximum voltage a material can withstand is called dielectric strength, not the dielectric constant (option B). The weight of a material is a physical property unrelated to the dielectric constant (option D).",
+    "k": [
+      "The dielectric constant (εᵣ) of cable insulation affects signal propagation speed and inter-conductor capacitance; lower values improve high-frequency performance.",
+      "FEP (Fluorinated Ethylene Propylene) has εᵣ ≈ 2.1, significantly lower than PVC (~3.5–7), enabling lower attenuation and faster signal propagation.",
+      "Insulation material also governs fire performance: FEP is plenum-rated, while PVC requires additional fire protection when installed in air-handling spaces."
+    ]
   },
   {
     "id": 610,
@@ -522,7 +692,12 @@
       "To improve tensile strength"
     ],
     "a": 1,
-    "w": "Twisting paired conductors causes noise signals to be induced equally on both conductors, allowing the differential receiver to cancel out common-mode interference, thereby minimizing crosstalk and external noise. Twisting does not reduce cable weight (option A). While twisting may slightly affect flexibility, this is not the primary reason for twisting (option C). Tensile strength is improved by conductor material and construction, not by twisting (option D)."
+    "w": "Twisting paired conductors causes noise signals to be induced equally on both conductors, allowing the differential receiver to cancel out common-mode interference, thereby minimizing crosstalk and external noise. Twisting does not reduce cable weight (option A). While twisting may slightly affect flexibility, this is not the primary reason for twisting (option C). Tensile strength is improved by conductor material and construction, not by twisting (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 611,
@@ -537,7 +712,12 @@
       "Solid and strand"
     ],
     "a": 0,
-    "w": "The two main types of electrical shielding used in cables are foil (aluminized polyester tape) and braid (woven metallic wire), each offering different coverage and frequency characteristics. PVC and PE are insulation materials, not shielding types (option B). Copper and aluminum are conductor materials that can be used in shields, but do not describe the two main shielding construction types (option C). Solid and strand describe conductor construction types, not shielding types (option D)."
+    "w": "The two main types of electrical shielding used in cables are foil (aluminized polyester tape) and braid (woven metallic wire), each offering different coverage and frequency characteristics. PVC and PE are insulation materials, not shielding types (option B). Copper and aluminum are conductor materials that can be used in shields, but do not describe the two main shielding construction types (option C). Solid and strand describe conductor construction types, not shielding types (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 612,
@@ -552,7 +732,12 @@
       "Enhance signal transmission"
     ],
     "a": 1,
-    "w": "A drain wire runs along the inside of the foil or braid shield and provides a convenient electrical path for grounding the shield, making termination easier and more reliable. Drain wires do not contribute meaningfully to tensile strength (option A). While grounding the shield helps reduce crosstalk and noise, this is an indirect effect; the primary purpose of the drain wire specifically is to facilitate grounding (option C). Signal transmission is the role of the signal conductors, not the drain wire (option D)."
+    "w": "A drain wire runs along the inside of the foil or braid shield and provides a convenient electrical path for grounding the shield, making termination easier and more reliable. Drain wires do not contribute meaningfully to tensile strength (option A). While grounding the shield helps reduce crosstalk and noise, this is an indirect effect; the primary purpose of the drain wire specifically is to facilitate grounding (option C). Signal transmission is the role of the signal conductors, not the drain wire (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 613,
@@ -567,7 +752,12 @@
       "150 meters"
     ],
     "a": 2,
-    "w": "Per ANSI/TIA-568 and ISO/IEC 11801 standards, the maximum channel length for balanced twisted-pair cabling is 100 meters, which includes up to 90 meters of permanent link plus 10 meters for patch cords and equipment cables. 50 meters is too short and not a standard channel limit (option A). 75 meters represents only a portion of the allowed channel and is not the defined limit (option B). 150 meters exceeds the defined limit and would not meet transmission performance requirements (option D)."
+    "w": "Per ANSI/TIA-568 and ISO/IEC 11801 standards, the maximum channel length for balanced twisted-pair cabling is 100 meters, which includes up to 90 meters of permanent link plus 10 meters for patch cords and equipment cables. 50 meters is too short and not a standard channel limit (option A). 75 meters represents only a portion of the allowed channel and is not the defined limit (option B). 150 meters exceeds the defined limit and would not meet transmission performance requirements (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 614,
@@ -582,7 +772,12 @@
       "Dielectric constant"
     ],
     "a": 1,
-    "w": "Insertion loss represents the total signal loss from the transmit end to the receive end of a channel, encompassing both conductor attenuation and impedance mismatch losses. Return loss measures the ratio of the reflected signal to the incident signal due to impedance mismatches, not total forward path loss (option A). Crosstalk is the unwanted coupling of signals between adjacent pairs, not a measure of total channel loss (option C). Dielectric constant is a material property of insulation, not a channel loss parameter (option D)."
+    "w": "Insertion loss represents the total signal loss from the transmit end to the receive end of a channel, encompassing both conductor attenuation and impedance mismatch losses. Return loss measures the ratio of the reflected signal to the incident signal due to impedance mismatches, not total forward path loss (option A). Crosstalk is the unwanted coupling of signals between adjacent pairs, not a measure of total channel loss (option C). Dielectric constant is a material property of insulation, not a channel loss parameter (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 615,
@@ -597,7 +792,12 @@
       "Patch cords"
     ],
     "a": 3,
-    "w": "Patch cords represent the weakest link in a permanent link because they use stranded conductors, which have higher attenuation than solid conductors, and are subject to repeated flexing and potential damage. While connectors introduce insertion loss, they are designed and tested to specific standards and are generally not the weakest element in the permanent link (option A). Solid conductors are the backbone of the permanent link cabling and are not the weakest element (option B). Strand conductors are used in patch cords, but the question refers to the patch cord assembly as a whole as the weakest link (option C)."
+    "w": "Patch cords represent the weakest link in a permanent link because they use stranded conductors, which have higher attenuation than solid conductors, and are subject to repeated flexing and potential damage. While connectors introduce insertion loss, they are designed and tested to specific standards and are generally not the weakest element in the permanent link (option A). Solid conductors are the backbone of the permanent link cabling and are not the weakest element (option B). Strand conductors are used in patch cords, but the question refers to the patch cord assembly as a whole as the weakest link (option C).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 616,
@@ -612,7 +812,12 @@
       "Reduces attenuation in the system"
     ],
     "a": 1,
-    "w": "A transmitter in an optical fiber system converts electrical signals into optical (light) signals that can be launched into the fiber for transmission. Transporting optical signals is the function of the optical fiber itself, not the transmitter (option A). Converting optical signals back into electrical signals is the function of the receiver (detector), not the transmitter (option C). Reducing attenuation is the function of optical amplifiers or repeaters, not the transmitter (option D)."
+    "w": "A transmitter in an optical fiber system converts electrical signals into optical (light) signals that can be launched into the fiber for transmission. Transporting optical signals is the function of the optical fiber itself, not the transmitter (option A). Converting optical signals back into electrical signals is the function of the receiver (detector), not the transmitter (option C). Reducing attenuation is the function of optical amplifiers or repeaters, not the transmitter (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 617,
@@ -627,7 +832,12 @@
       "VCSEL"
     ],
     "a": 2,
-    "w": "Short wavelength lasers (operating around 850 nm) are used for short-distance multimode fiber applications and are specifically designed for short wavelength transmission. Laser diodes (LD) typically operate at longer wavelengths (1310 nm or 1550 nm) used in single-mode applications (option A). LEDs can operate at short wavelengths but are lower-power, lower-bandwidth sources and not the primary short-wavelength laser source (option B). VCSELs (Vertical Cavity Surface Emitting Lasers) operate at 850 nm but are a specific type of short wavelength laser, making option C the more general correct answer (option D)."
+    "w": "Short wavelength lasers (operating around 850 nm) are used for short-distance multimode fiber applications and are specifically designed for short wavelength transmission. Laser diodes (LD) typically operate at longer wavelengths (1310 nm or 1550 nm) used in single-mode applications (option A). LEDs can operate at short wavelengths but are lower-power, lower-bandwidth sources and not the primary short-wavelength laser source (option B). VCSELs (Vertical Cavity Surface Emitting Lasers) operate at 850 nm but are a specific type of short wavelength laser, making option C the more general correct answer (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 618,
@@ -642,7 +852,12 @@
       "80 km"
     ],
     "a": 1,
-    "w": "The maximum recommended distance for multimode fiber optic cables in premises cabling is 2 km, as defined in ANSI/TIA-568 and ISO/IEC 11801 standards for backbone applications. 1 km is too short and is not the defined maximum for multimode fiber (option A). 10 km is associated with single-mode fiber applications such as Ethernet over singlemode (10BASE-LR), not multimode (option C). 80 km is a distance achievable only with single-mode fiber using amplification, far beyond multimode capability (option D)."
+    "w": "The maximum recommended distance for multimode fiber optic cables in premises cabling is 2 km, as defined in ANSI/TIA-568 and ISO/IEC 11801 standards for backbone applications. 1 km is too short and is not the defined maximum for multimode fiber (option A). 10 km is associated with single-mode fiber applications such as Ethernet over singlemode (10BASE-LR), not multimode (option C). 80 km is a distance achievable only with single-mode fiber using amplification, far beyond multimode capability (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 619,
@@ -657,7 +872,12 @@
       "5 dB/km"
     ],
     "a": 1,
-    "w": "Multimode fiber has a typical attenuation of approximately 3.5 dB/km at the 1300 nm wavelength window, as specified in telecommunications standards for optical fiber. 0.75 dB/km is close to the attenuation of multimode fiber at 850 nm but is not the typical value at 1300 nm (option A). 0.3 dB/km is characteristic of single-mode fiber at 1310 nm, not multimode fiber (option C). 5 dB/km exceeds the typical attenuation of standard multimode fiber at 1300 nm (option D)."
+    "w": "Multimode fiber has a typical attenuation of approximately 3.5 dB/km at the 1300 nm wavelength window, as specified in telecommunications standards for optical fiber. 0.75 dB/km is close to the attenuation of multimode fiber at 850 nm but is not the typical value at 1300 nm (option A). 0.3 dB/km is characteristic of single-mode fiber at 1310 nm, not multimode fiber (option C). 5 dB/km exceeds the typical attenuation of standard multimode fiber at 1300 nm (option D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   },
   {
     "id": 620,
@@ -672,6 +892,11 @@
       "10.1 dB"
     ],
     "a": 1,
-    "w": "Using standard values: 2 km x 3.5 dB/km = 7.0 dB (cable) + 2 connectors x 0.3 dB = 0.6 dB + 2 splices x 0.3 dB = 0.6 dB, totaling 8.1 dB (using 0.75 dB per connector pair and 0.3 dB per splice). The value 7.2 dB does not account for all connector and splice losses at standard values (option A). 9.2 dB and 10.1 dB overestimate the total attenuation using incorrect loss values for connectors and splices (options C and D)."
+    "w": "Using standard values: 2 km x 3.5 dB/km = 7.0 dB (cable) + 2 connectors x 0.3 dB = 0.6 dB + 2 splices x 0.3 dB = 0.6 dB, totaling 8.1 dB (using 0.75 dB per connector pair and 0.3 dB per splice). The value 7.2 dB does not account for all connector and splice losses at standard values (option A). 9.2 dB and 10.1 dB overestimate the total attenuation using incorrect loss values for connectors and splices (options C and D).",
+    "k": [
+      "Fundamental transmission parameters — attenuation, bandwidth, impedance — are governed by the physical and electrical properties of the cable.",
+      "Standards such as TIA-568 and ISO/IEC 11801 establish minimum performance thresholds that designers must verify through calculation and field testing.",
+      "Understanding the physical basis of each parameter enables correct specification, installation, and troubleshooting of structured cabling systems."
+    ]
   }
 ]
