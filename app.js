@@ -773,8 +773,7 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
             el('div', { style: { width:38, height:38, borderRadius:11, background:light, color:color, display:'flex', alignItems:'center', justifyContent:'center', fontSize:15, fontWeight:800, flexShrink:0 } }, test.id),
             el('div', { style: { flex:1, minWidth:0 } },
               el('div', { style: { display:'flex', alignItems:'center', gap:6, marginBottom:2 } },
-                el('span', { style: { fontSize:13, fontWeight:700, color:t.text } }, test.name),
-                isComplete && el('span', { style: { fontSize:10, fontWeight:700, padding:'1px 7px', borderRadius:20, background:light, color:color } }, '✓ Done')
+                el('span', { style: { fontSize:13, fontWeight:700, color:t.text } }, test.name)
               ),
               el('div', { style: { fontSize:11, color:t.textMuted, marginBottom:5 } }, ts.done+'/'+totalQsInChapter+' questions'),
               el('div', { style: { height:3, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
