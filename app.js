@@ -335,29 +335,6 @@ function App() {
     return () => clearTimeout(timer);
   }, [appData, currentUser, progressLoaded]);
 
-  // Extend any saved session that has fewer questions than its chapter (handles
-  // stale 25-question sessions and future question bank additions automatically)
-  useEffect(() => {
-    if (!progressLoaded || tests.length === 0) return;
-    setAppData(prev => {
-      const updates = {};
-      tests.forEach(chapter => {
-        const existing = prev.sessions[chapter.id];
-        if (!existing || existing.questions.length >= chapter.questions.length) return;
-        const seenIds = new Set(existing.questions.map(q => q.id));
-        const missing = chapter.questions.filter(q => !seenIds.has(q.id));
-        updates[chapter.id] = {
-          ...existing,
-          questions:   [...existing.questions, ...missing],
-          answers:     [...existing.answers, ...Array(missing.length).fill(null)],
-          confidences: [...(existing.confidences||Array(existing.questions.length).fill(null)), ...Array(missing.length).fill(null)],
-        };
-      });
-      if (Object.keys(updates).length === 0) return prev;
-      return { ...prev, sessions: { ...prev.sessions, ...updates } };
-    });
-  }, [tests, progressLoaded]);
-
   const signIn = useCallback(async (username, pin) => {
     setAuthLoading(true); setAuthError('');
     try {
@@ -403,6 +380,29 @@ function App() {
     questions.forEach(q => { const id=q.test; if(!map[id]) map[id]={id,name:q.testName||'Test '+id,questions:[]}; map[id].questions.push(q); });
     return Object.values(map).sort((a,b) => a.id-b.id);
   }, [questions]);
+
+  // Extend any saved session shorter than its chapter (handles stale sessions
+  // and future question bank additions automatically)
+  useEffect(() => {
+    if (!progressLoaded || tests.length === 0) return;
+    setAppData(prev => {
+      const updates = {};
+      tests.forEach(chapter => {
+        const existing = prev.sessions[chapter.id];
+        if (!existing || existing.questions.length >= chapter.questions.length) return;
+        const seenIds = new Set(existing.questions.map(q => q.id));
+        const missing = chapter.questions.filter(q => !seenIds.has(q.id));
+        updates[chapter.id] = {
+          ...existing,
+          questions:   [...existing.questions, ...missing],
+          answers:     [...existing.answers, ...Array(missing.length).fill(null)],
+          confidences: [...(existing.confidences||Array(existing.questions.length).fill(null)), ...Array(missing.length).fill(null)],
+        };
+      });
+      if (Object.keys(updates).length === 0) return prev;
+      return { ...prev, sessions: { ...prev.sessions, ...updates } };
+    });
+  }, [tests, progressLoaded]);
 
   const getOrCreateSession = useCallback((testId) => {
     const chapter = tests.find(x => x.id === testId);
