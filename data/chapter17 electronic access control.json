@@ -14,9 +14,9 @@
     "a": 2,
     "w": "EAC Level 3 includes field devices such as credential readers and locking mechanisms — the physical hardware at the door. Level 1 typically refers to the management software layer. Level 2 refers to the controller/panel layer. Level 4 is not a standard EAC hierarchy level.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern electronic access control design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of UL 294 and NFPA 101 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "EAC Level 3 is the field device layer — the physical hardware installed at each door, including credential readers, request-to-exit devices, door position switches, and electric locking hardware.",
+      "EAC Level 1 is the management software (workstation/server); Level 2 is the access control panel/controller; Level 3 is the field devices at the door — these three levels form the standard EAC architecture hierarchy.",
+      "Level 4 is not a defined EAC hierarchy level; recognizing the three-level EAC hierarchy (management, controller, field device) is fundamental to RCDD security system design questions."
     ]
   },
   {
@@ -34,9 +34,9 @@
     "a": 2,
     "w": "Cylindrical locks are mounted through the door via a cylindrical hole bored through the door face. Mortise locks are embedded into the door edge and latch to a strike in the doorframe. Electric bolts offer high security and are surface- or frame-mounted. Magnetic door locks are mounted on the door frame and door face, not through the door.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Cylindrical locks are installed by boring two cylindrical holes through the door face (cross-bored installation): one for the lock cylinder/knob and one for the latch mechanism.",
+      "Mortise locks require a rectangular pocket routed into the door edge, not a through-bore; they are more complex to install but offer higher security and more function options than cylindrical locks.",
+      "Magnetic locks and electric bolts are surface-mounted to the door frame/door face — neither requires boring through the door, making them suitable for applications where door integrity must be preserved."
     ]
   },
   {
@@ -54,9 +54,9 @@
     "a": 1,
     "w": "Magnetic door locks are typically fail-safe, meaning they unlock upon loss of power to allow egress in an emergency. Fail-secure locks (like electric bolts) lock upon loss of power. Remaining in the last state is neither fail-safe nor fail-secure. Triggering an alarm is a monitoring function separate from the mechanical lock state.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Magnetic locks are inherently fail-safe: they require continuous power to maintain the magnetic holding force; loss of power (power outage, fire alarm activation, or emergency) immediately releases the door.",
+      "Fail-safe operation is required by NFPA 101 Life Safety Code on egress doors: occupants must always be able to exit in an emergency, so the door must unlock when power fails.",
+      "Fail-secure locks (electric strikes, electric bolts) stay locked upon power loss, making them appropriate for high-security doors where unauthorized entry during a power outage is the primary concern."
     ]
   },
   {
@@ -74,9 +74,9 @@
     "a": 1,
     "w": "Electric strikes are fail-secure, meaning they remain locked upon loss of power, denying access. Fail-safe devices unlock on power loss (e.g., magnetic locks). Fail-neutral and fail-open are not standard lock classifications; fail-open is another term for fail-safe.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Electric strikes are fail-secure: when power is removed, the strike plate returns to its locked position, retaining the latch bolt and preventing the door from being opened without mechanical key override.",
+      "Fail-secure is appropriate for doors where controlling unauthorized entry is the priority (e.g., server rooms, pharmacies) and where a separate emergency egress path (push bar, panic hardware) is provided.",
+      "Fail-neutral and fail-open are not standard EAC lock classification terms; the two recognized categories are fail-safe (unlocks on power loss) and fail-secure (locks on power loss)."
     ]
   },
   {
@@ -94,9 +94,9 @@
     "a": 1,
     "w": "The Vestibule Lock function allows the inside lever to always permit egress while the outside lever's access is key-controlled, creating a controlled entry vestibule. Always free to turn describes an uncontrolled entry. Permanently locked outside lever would not allow any access. Biometric-only control describes a reader configuration, not the lock function definition.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The Vestibule Lock function permits unrestricted egress via the inside lever at all times while restricting entry from the outside by requiring a key or credential to operate the outside lever.",
+      "This function creates a controlled entry point (vestibule) where occupants can always exit freely but visitors/employees must use a key or credential to enter — a common design for building lobbies.",
+      "A permanently locked outside lever (no access function) would be a passage lock with no entry hardware; the Vestibule function specifically allows key-controlled entry, not no entry at all."
     ]
   },
   {
@@ -114,9 +114,9 @@
     "a": 2,
     "w": "Class A is a redundant signal pathway that continues to function past a single open circuit due to its loop topology. Class B has no redundancy and stops at a single open circuit. Class N uses Ethernet or network protocol-based pathways. Class E is used for supplemental equipment and is not monitored for integrity.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "NFPA 72 Class A wiring uses a loop topology: both ends of the circuit return to the FACP, so if a single wire breaks (open circuit), current can still reach all devices from the other direction.",
+      "Class B wiring is a dead-end (spur) topology: a single open circuit isolates all devices beyond the break from the panel, stopping signal transmission — no redundancy is provided.",
+      "Class N uses network (Ethernet/IP) pathways for fire alarm signaling; Class E is for non-monitored supplemental functions — neither provides the open-circuit fault tolerance that Class A's loop topology delivers."
     ]
   },
   {
@@ -134,9 +134,9 @@
     "a": 3,
     "w": "Class N designates Ethernet or network protocol-based pathways for fire alarm signaling. Class A is the traditional redundant wired loop pathway. Class B is a non-redundant wired pathway. Class C is used with addressable devices and appliances.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "NFPA 72 Class N designates network-based (Ethernet/IP) fire alarm signaling pathways, enabling fire alarm communication over building IT network infrastructure rather than dedicated wired circuits.",
+      "Class N pathways must meet NFPA 72 survivability requirements for network-based systems, including redundancy, priority over non-fire-alarm traffic, and monitoring for pathway integrity.",
+      "Classes A, B, C, and E are all traditional wired circuit configurations; Class N is the only network protocol-based class, introduced to accommodate modern IP-based fire alarm architectures."
     ]
   },
   {
@@ -154,9 +154,9 @@
     "a": 1,
     "w": "A Digital Alarm Communicator Transmitter (DACT) must verify the integrity of forwarded lines every 4 hours to ensure the transmission path to the monitoring station remains functional. Every hour would be excessively frequent and consume phone line resources. Every 12 hours or 24 hours would leave too long a window for an undetected failure of the communication path.",
     "k": [
-      "Field testing and certification of electronic access control verify that the installed system meets the specified performance category and will support the intended applications.",
-      "Test results must be documented and retained as part of the project record; they provide the baseline for future troubleshooting and maintenance.",
-      "Test equipment must be calibrated and set to the correct test limit for the installed link type (permanent link or channel) and category."
+      "A DACT must test call-forwarded phone lines every 4 hours per NFPA 72 to confirm the forwarded line is operational; if the test fails, the DACT must generate a trouble signal.",
+      "The 4-hour test interval ensures that a sabotaged or failed call-forwarding arrangement would be detected within 4 hours rather than going undetected indefinitely.",
+      "DACT line integrity testing every 24 hours (or less frequently) would leave an unacceptably long window during which a communication path failure could go undetected, potentially masking alarm transmission failures."
     ]
   },
   {
@@ -174,9 +174,9 @@
     "a": 2,
     "w": "A DART must complete test signals at least once every 24 hours to verify its radio transmission capability. Every 4 hours is the DACT line integrity check interval, not the DART test signal requirement. Every 12 hours is more frequent than required. Every 48 hours would leave too long an interval without verification of backup radio capability.",
     "k": [
-      "Distance and dimension limits in electronic access control are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as UL 294 and NFPA 101 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "A Digital Alarm Radio Transmitter (DART) must transmit a supervisory test signal at minimum every 24 hours per NFPA 72 to confirm its radio transmission path to the monitoring station is operational.",
+      "The 24-hour DART test interval is less frequent than the DACT 4-hour line integrity check, reflecting the different failure modes and reliability characteristics of radio versus telephone communication paths.",
+      "A 48-hour test interval would exceed the NFPA 72 maximum and leave the radio backup communication path unverified for an unacceptably long period, potentially allowing an undetected failure to persist."
     ]
   },
   {
@@ -194,9 +194,9 @@
     "a": 2,
     "w": "Per NFPA 72, public fire alarm signaling must achieve 15 dB above ambient sound levels to ensure audibility in occupied spaces. 5 dB and 10 dB would be insufficient to ensure the alarm is clearly heard above background noise. 20 dB is more than required and may cause hearing discomfort in low-ambient environments.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern electronic access control design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of UL 294 and NFPA 101 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "NFPA 72 requires public-mode fire alarm notification appliances to produce a sound pressure level at least 15 dB above the average ambient sound level, ensuring the alarm is clearly audible over background noise.",
+      "The 15 dB margin provides sufficient acoustic contrast to alert occupants even in noisy environments such as kitchens, manufacturing areas, or spaces with HVAC noise.",
+      "A minimum of 65 dB(A) or 15 dB above ambient (whichever is greater) applies per NFPA 72; in very quiet spaces, 65 dB(A) minimum applies even if that exceeds the 15 dB ambient margin."
     ]
   },
   {
@@ -214,9 +214,9 @@
     "a": 2,
     "w": "The minimum acceptable frame rate for digital video surveillance systems is 3.75 fps to capture useful motion evidence. 1 fps and 2 fps are too slow to capture meaningful motion and would miss many security events. 5 fps is above the minimum but would also be acceptable.",
     "k": [
-      "Distance and dimension limits in electronic access control are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as UL 294 and NFPA 101 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "The minimum acceptable frame rate for digital video surveillance is 3.75 fps, below which motion appears too choppy to be useful for identifying subjects, reading license plates, or reconstructing security events.",
+      "At 3.75 fps, approximately 25% of the frames captured by standard analog NTSC video (30 fps) are retained; this is the threshold below which video loses forensic utility for most security applications.",
+      "Higher frame rates (7.5, 15, or 30 fps) provide smoother video but require proportionally more storage; 3.75 fps is the minimum standard, and the appropriate rate for each camera is determined by the activity it monitors."
     ]
   },
   {
@@ -234,9 +234,9 @@
     "a": 1,
     "w": "IR cameras used for low-light conditions are also called starlight cameras due to their ability to capture images in near-darkness. Thermal cameras detect heat signatures, a different technology from IR-illuminated starlight cameras. PTZ cameras are pan-tilt-zoom cameras defined by their movement capability, not their illumination technology. IP cameras describe network connectivity, not illumination type.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "IR cameras (Starlight cameras) use active IR LED illuminators or highly sensitive sensors to capture visible-quality video in near-darkness; they produce black-and-white images in low-light using reflected infrared light.",
+      "Thermal cameras detect radiated heat (far-infrared) and produce images based on temperature differences — fundamentally different from IR/Starlight cameras, which use reflected near-IR light to produce conventional video.",
+      "PTZ (Pan-Tilt-Zoom) and IP camera are physical configuration and connectivity descriptors; a camera can simultaneously be PTZ, IP, and IR/Starlight — these classifications are not mutually exclusive."
     ]
   },
   {
@@ -254,9 +254,9 @@
     "a": 2,
     "w": "Grade 1 is the most durable lock hardware grade, used in high-security applications. Grade 2 is residential/light commercial use. Grade 3 is the lightest-duty grade for residential applications. Grade 0 is not a standard ANSI lock hardware grade.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "ANSI/BHMA lock hardware grades rate from Grade 1 (commercial/high-security, highest durability) to Grade 3 (residential light-duty); Grade 1 withstands the highest cycle counts and force resistance tests.",
+      "Grade 1 hardware is specified for high-traffic commercial and institutional applications where locks must withstand thousands of daily operations over many years without mechanical failure.",
+      "Grade 0 does not exist in ANSI/BHMA A156 lock hardware standards; recognizing it as a distractor prevents confusion with the valid Grade 1, 2, and 3 rating system."
     ]
   },
   {
@@ -274,9 +274,9 @@
     "a": 1,
     "w": "Level 1 shared pathways prioritize life safety data over non-life safety data on shared network infrastructure. Level 0 provides no segregation or prioritization of life safety data. Level 2 and Level 3 are not standard NFPA 72 shared pathway designations.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "NFPA 72 Level 1 shared pathway means the network gives prioritized Quality of Service (QoS) to fire alarm data over other traffic, ensuring that fire alarm signals are never delayed or dropped by competing network traffic.",
+      "Level 0 shared pathway has no QoS priority — life safety and non-life safety traffic compete equally, making it unsuitable for fire alarm systems where alarm transmission delays could be life-threatening.",
+      "Only Levels 0 and 1 are defined NFPA 72 shared pathway levels; Level 2 and Level 3 are not recognized NFPA 72 designations and should be identified as distractors."
     ]
   },
   {
@@ -294,9 +294,9 @@
     "a": 1,
     "w": "Common EAC network topologies include loop and star configurations. Bus and ring topologies are used in some legacy systems but are not the primary EAC network topologies. Mesh and tree are more complex and less commonly applied in standard EAC deployments. Ring and mesh are not the specified common EAC topologies.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "EAC networks commonly use loop and star topologies: loop for fault-tolerant wiring of field devices and star from central panels to field devices for simple home-run wiring.",
+      "The star topology (home-run wiring from each door device to the access control panel) is the simplest EAC wiring method; loop topologies provide fault tolerance by allowing signal to flow in both directions.",
+      "Bus and ring are legacy network topologies; mesh and tree are used in complex IT and fiber networks; loop and star are the most practical and commonly specified topologies for EAC field-device wiring."
     ]
   },
   {
@@ -314,9 +314,9 @@
     "a": 2,
     "w": "In traditional analog video surveillance systems, video is transmitted to the cross-point matrix at all times, whether or not it is being actively viewed. This continuous transmission distinguishes analog from digital IP systems, which transmit on demand or on trigger. Motion detection and scheduling are features of digital/IP systems, not traditional analog matrix systems.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Analog CCTV cameras transmit continuous video to the cross-point switching matrix regardless of whether any operator is actively viewing that camera — the video stream is always present on the matrix.",
+      "The cross-point matrix simply routes existing continuous analog video signals to monitors or recorders; it does not enable or disable the video stream — that would require cutting power to the camera.",
+      "Digital IP camera systems can transmit on-demand or motion-triggered, significantly reducing bandwidth and storage compared to analog; this fundamental difference is why IP systems have largely replaced analog CCTV."
     ]
   },
   {
@@ -334,9 +334,9 @@
     "a": 2,
     "w": "Threat analysis divides potential damage into seven categories to comprehensively assess the range of security risks. Three or five categories would be insufficient for a thorough security threat assessment. Ten categories would be overly granular and exceed the standard referenced in security design.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern electronic access control design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of UL 294 and NFPA 101 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "Security threat analysis organizes potential damage into seven categories to ensure comprehensive risk evaluation, covering property damage, injury, financial loss, data loss, reputational harm, operational disruption, and regulatory liability.",
+      "Using too few categories (e.g., three or five) risks overlooking entire classes of threats; the seven-category framework provides the right granularity for thorough security design risk assessment.",
+      "The seven-category threat analysis framework is a standard security design methodology referenced in RCDD security curriculum; knowing the number (seven) is required for the exam."
     ]
   },
   {
@@ -354,9 +354,9 @@
     "a": 1,
     "w": "An Exclusive Communication Network means EAC data is carried on a dedicated physical network separate from other building systems, providing the highest security and reliability. Sharing with BAS on one cable would create dependency and potential interference. Encryption on a shared IT network is a cybersecurity measure, not an exclusive physical network. Wireless-only transmission is a configuration option, not the definition of an exclusive network.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "An Exclusive Communication Network for EAC means the access control data travels on a physically separate, dedicated network infrastructure, isolated from IT, BAS, or any other building system network.",
+      "Physical network separation (not just logical/VLAN separation) eliminates the risk that a failure, cyber attack, or misconfiguration of another system can impact EAC operation or be exploited to gain access.",
+      "Encrypting EAC data on a shared IT network is a cybersecurity measure but still exposes EAC to network-level denial-of-service or shared-infrastructure failures; an exclusive network eliminates these shared-infrastructure risks."
     ]
   },
   {
@@ -374,9 +374,9 @@
     "a": 2,
     "w": "Guard posts and patrols are operational mitigation techniques, relying on human security personnel and procedures. Credential readers are electronic mitigation. Crime prevention through design is architectural mitigation. Electrified door locks are electronic mitigation devices.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Operational mitigation techniques rely on human actions and procedures to reduce security risk; guard posts, security patrols, badge checks, and security screening are all operational techniques.",
+      "Electronic mitigation (credential readers, electrified locks) uses technology; architectural mitigation (CPTED — Crime Prevention Through Environmental Design) uses physical design; these are the three primary mitigation categories.",
+      "All three mitigation categories (electronic, architectural, operational) are typically combined in a layered security design; no single category alone provides comprehensive security."
     ]
   },
   {
@@ -394,9 +394,9 @@
     "a": 2,
     "w": "Electric strikes often include monitoring switches like latch bolt monitors to confirm the latch has engaged the strike. Magnetic door locks monitor door position but do not use latch bolt monitors. Electric bolts are standalone locking devices without latch mechanisms. Cylindrical locks are mechanical and do not typically include electronic monitoring switches.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Electric strikes commonly include a latch bolt monitor switch that confirms the door's latch bolt has fully engaged the strike, verifying that the door is actually latched and secured, not just closed.",
+      "A latch bolt monitor is essential for EAC systems because a door that appears closed but whose latch has not engaged is a security vulnerability; the monitor generates an alarm if the latch fails to seat.",
+      "Magnetic locks monitor door position using a door contact (DPS — Door Position Switch) rather than a latch bolt monitor, because magnetic locks have no latch mechanism to monitor."
     ]
   },
   {
@@ -414,9 +414,9 @@
     "a": 1,
     "w": "A Digital Alarm Communicator Transmitter must connect to two separate transmission channels to provide redundancy in alarm communication. A single telephone line creates a single point of failure. An IP plus PSTN combination may meet requirements in some standards but the fundamental requirement is two separate channels. Cellular-only would be a single technology path.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern electronic access control design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of UL 294 and NFPA 101 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "NFPA 72 requires a DACT to connect to two separate, independent transmission channels so that if one channel fails (phone line cut, busy, or faulty), the alarm can be transmitted via the second channel.",
+      "A single telephone line is a single point of failure; if that line is cut or out of service, no alarm reaches the monitoring station, defeating the purpose of the alarm communicator.",
+      "The two channels may be two telephone lines, one telephone line and one IP path, or other combinations — the requirement is for two independent paths, not necessarily two telephone lines."
     ]
   },
   {
@@ -434,9 +434,9 @@
     "a": 1,
     "w": "ESS integrates video surveillance, access control, and alarm systems into a unified security platform. Fire alarm and lighting are life safety and building systems outside the core ESS scope. Perimeter detection and BAS are separate system categories. While CCTV is part of video surveillance, intercom and building management are not the three core ESS components.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Electronic Security Systems (ESS) integration covers three primary systems: video surveillance (CCTV/IP cameras), access control (credential readers, door hardware), and alarm systems (intrusion detection, sensors).",
+      "Integrating these three systems allows event-driven responses: an alarm trigger can automatically call up the associated camera view and unlock a response door — functions that standalone systems cannot perform.",
+      "Fire alarm, HVAC, and lighting are separate building systems; while they may interface with ESS for coordinated responses, they are not the three core ESS components and should not be confused with ESS scope."
     ]
   },
   {
@@ -454,9 +454,9 @@
     "a": 2,
     "w": "Class C is used with addressable devices and appliances in fire alarm systems, enabling individual device identification on the circuit. Class A is a redundant loop for conventional or addressable systems. Class B is a non-redundant conventional circuit. Class E is for supplemental, non-monitored equipment.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "NFPA 72 Class C is used for addressable device circuits, where each device has a unique address allowing the FACP to identify exactly which detector or appliance activated, without additional wiring for each device.",
+      "Class A and B circuits can be used with either conventional (zone-based) or addressable devices, but Class C is specifically defined for addressable system wiring configurations that support individual device polling.",
+      "Class E circuits are for supplementary, non-monitored equipment — they are not supervised for integrity and cannot be relied upon for life-safety alarm initiation or notification."
     ]
   },
   {
@@ -474,9 +474,9 @@
     "a": 1,
     "w": "BAS fire alarm integration sequences include elevator recall and shutdown, which returns elevators to a designated floor and opens the doors upon fire alarm activation. Elevator capture is an informal term sometimes used but not the standard designation. Elevator override and interlock protocol are not standard fire alarm integration terminology.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Fire alarm system integration triggers 'Elevator Recall and Shutdown': upon fire alarm activation, all elevators return to the primary recall floor (typically the ground floor), open their doors, and go out of normal service.",
+      "Elevator recall prevents occupants from using elevators during a fire (risk of entrapment if power fails or smoke fills the shaft) and makes elevators available for firefighter use.",
+      "Elevator capture, override sequence, and interlock protocol are informal or invented terms; 'Elevator Recall and Shutdown' is the correct NFPA 72 and BAS terminology for this fire alarm integration sequence."
     ]
   },
   {
@@ -494,9 +494,9 @@
     "a": 2,
     "w": "Electrified Exit Hardware (Panic Hardware) is commonly used in double-door applications to meet life safety egress requirements while allowing electronic access control. Magnetic door locks can be used on double doors but are not specifically characterized as panic hardware. Electric strikes are single-door latch devices. Electric bolts are high-security single-point locking devices.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to electronic access control.",
-      "Designers must know UL 294 and NFPA 101 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Electrified exit hardware (also called electrified panic hardware or electrified exit devices) is specifically designed for double-door egress applications, providing both NFPA 101 compliant egress via push-bar operation and EAC-controlled entry.",
+      "On double doors, electrified panic hardware covers the full door width with a cross-bar (touchbar) that users push to exit; the hardware's latch is electrically retracted for controlled access from the exterior.",
+      "Magnetic locks can secure double doors but must always be released before egress — they do not meet NFPA 101 requirements for panic hardware on life safety egress paths without a separate monitored release mechanism."
     ]
   }
 ]
