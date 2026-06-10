@@ -14,9 +14,9 @@
     "a": 1,
     "w": "Telecommunications project design consists of three essential elements: specifications (detailed requirements), drawings (visual representation), and cost estimates (financial expectations). RFI, RFP, and RFQ are procurement documents. SOW, BIM, and punch list are project management tools, not the three design elements. Contract, schedule, and budget are project administration components.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern project administration for telecommunications design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of BICSI project management guidelines ensures compliance with current best practices and avoids conflicts with other building codes."
+      "A telecommunications project design package has three essential elements: specifications (technical requirements and standards), drawings (plans, elevations, details), and cost estimates (quantities and pricing).",
+      "Specifications define what must be installed and to what standard; drawings show where and how; cost estimates quantify the financial scope — all three are required for a complete design package.",
+      "RFI, RFP, and RFQ are procurement tools used after the design is complete, not design elements themselves; contract and schedule are project administration outputs derived from the design package."
     ]
   },
   {
@@ -34,9 +34,9 @@
     "a": 2,
     "w": "The SoW uses 'shall' to indicate mandatory actions that are non-negotiable requirements. 'Should' indicates a recommendation, not a requirement. 'May' indicates permission or optionality. 'Will' is used in some legal contexts but 'shall' is the standard technical specification term for mandatory requirements.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "In technical specifications and Scope of Work documents, 'shall' is the mandatory keyword indicating a non-negotiable requirement that must be met for contract compliance.",
+      "'Should' indicates a recommendation or best practice that is strongly advised but not contractually required; 'may' indicates a permitted option that the contractor may or may not choose.",
+      "Using 'will' instead of 'shall' is ambiguous in technical writing — 'shall' is the unambiguous mandatory term defined in BICSI and general technical writing standards for SoW documents."
     ]
   },
   {
@@ -54,9 +54,9 @@
     "a": 2,
     "w": "The SoW includes deliverables and milestones but excludes legal, financial, and contract administration matters, which are handled in separate contract documents. Technical specifications are a core part of the SoW. Drawing references are integral to the SoW. Legal and financial matters belong to the contract, not the technical SoW.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A Scope of Work (SoW) is a technical document that explicitly excludes legal, financial, and contract administration matters — those belong in the separate contract agreement documents.",
+      "The SoW defines what work will be performed, deliverables, standards, and timelines; contract documents handle payment terms, liability, dispute resolution, and penalty clauses.",
+      "Including legal or financial terms in the SoW creates document conflicts and ambiguity; maintaining clean separation between the technical SoW and the legal contract simplifies administration and dispute resolution."
     ]
   },
   {
@@ -74,9 +74,9 @@
     "a": 2,
     "w": "MasterFormat Division 27 covers Communications. Division 16 is the legacy Electrical division from the older CSI format. Division 25 covers Integrated Automation. Division 28 covers Electronic Safety and Security.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "MasterFormat 2020 assigns Division 27 to Communications, encompassing structured cabling, telecommunications rooms, distributed antenna systems, and network infrastructure.",
+      "Division 16 was the legacy catch-all Electrical division in the older 16-division CSI format — it no longer exists in MasterFormat 2020, which reorganized these scopes into Divisions 26, 27, and 28.",
+      "Knowing the MasterFormat division assignments is essential for RCDD specifiers: Division 26 = Electrical, Division 27 = Communications, Division 28 = Electronic Safety and Security."
     ]
   },
   {
@@ -94,9 +94,9 @@
     "a": 3,
     "w": "MasterFormat Division 28 covers Electronic Safety and Security, including fire alarm, access control, and video surveillance systems. Division 22 covers Plumbing. Division 25 covers Integrated Automation (BAS). Division 27 covers Communications.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "MasterFormat 2020 Division 28 covers Electronic Safety and Security, including fire alarm systems, intrusion detection, access control, video surveillance, and related electronic safety systems.",
+      "Division 25 covers Integrated Automation (Building Automation Systems/BAS), not safety and security — BAS controls HVAC, lighting, and building operations, while Division 28 handles life-safety and security systems.",
+      "Division 22 covers Plumbing — remembering the sequence D26 (Electrical), D27 (Communications), D28 (Electronic Safety/Security) is the key MasterFormat knowledge for telecommunications specifiers."
     ]
   },
   {
@@ -114,9 +114,9 @@
     "a": 2,
     "w": "The Critical Path Method (CPM) identifies the sequence of activities (critical path) that determines the minimum project duration. A Gantt Chart visualizes task timelines but doesn't identify the critical path analytically. Work Breakdown Structure diagrams task organization but doesn't determine schedule. PERT uses probabilistic estimates but the defining methodology for critical path identification is CPM.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The Critical Path Method (CPM) analyzes all project activities and their dependencies to identify the longest sequence of dependent tasks — this critical path determines the minimum total project duration.",
+      "Activities on the critical path have zero float (slack); any delay to a critical path task directly extends the project end date by the same amount.",
+      "Gantt charts visually display task durations but do not analytically calculate the critical path; PERT calculates probabilistic durations but CPM is the specific methodology for identifying the duration-controlling activity sequence."
     ]
   },
   {
@@ -134,9 +134,9 @@
     "a": 2,
     "w": "PERT (Program Evaluation and Review Technique) uses optimistic, pessimistic, and most likely time estimates to calculate a weighted average duration for each activity. Best/most likely/worst is essentially the same concept but 'optimistic, pessimistic, and most likely' is the precise PERT terminology. Actual/budgeted/earned value is Earned Value Management terminology. Cost estimates are separate from schedule estimates.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "PERT uses three time estimates for each activity: optimistic (O — best-case duration), pessimistic (P — worst-case duration), and most likely (M — realistic expected duration).",
+      "These three estimates are combined using the PERT weighted average formula: Expected Duration = (O + 4M + P) ÷ 6, which weights the most likely estimate four times more than the extremes.",
+      "Actual cost, budgeted cost, and earned value are Earned Value Management (EVM) metrics for cost and schedule performance measurement — they are not inputs to the PERT duration estimation formula."
     ]
   },
   {
@@ -154,9 +154,9 @@
     "a": 2,
     "w": "MasterFormat supports up to five levels of hierarchy in its numbering format (11 22 33.44.5555), providing granular categorization of construction activities. Three and four levels would limit the granularity available. Six levels would exceed the defined MasterFormat structure.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "MasterFormat uses a hierarchical numbering system with up to five levels: Division (2 digits), Section (2 digits), Article (2 digits), Paragraph (.2 digits), and Sub-paragraph (.4 digits) — e.g., 27 15 01.23.4567.",
+      "The five-level hierarchy allows very granular specification of work types; telecommunications designers most commonly work at Levels 1–3 (Division, Section, Article) in their specification sections.",
+      "Three or four levels would be insufficient for the granular product and work classification needed in complex construction projects; six levels would exceed the defined MasterFormat numbering structure."
     ]
   },
   {
@@ -174,9 +174,9 @@
     "a": 1,
     "w": "BIM generates 3D models incorporating detailed product information, quantities, and properties, enabling coordinated design and construction. 2D floor plans are traditional CAD drawings, not BIM. Network diagrams are ICT logical design tools. Financial models are project cost management tools, separate from BIM's physical modeling capability.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "BIM (Building Information Modeling) creates intelligent 3D models where every element (cable tray, conduit, rack) contains embedded data including dimensions, material properties, manufacturer information, and quantities.",
+      "Unlike 2D CAD drawings that show geometry only, BIM models enable clash detection (identifying where telecom pathways conflict with structural or MEP systems) before construction begins.",
+      "Network diagrams represent logical ICT topology (IP addresses, VLANs, switch connections) and are separate from BIM's physical building model — BIM governs spatial design, not network architecture."
     ]
   },
   {
@@ -194,9 +194,9 @@
     "a": 2,
     "w": "In Design-Build, the contractor oversees both design and construction phases, with design professionals often working for or with the contractor. The owner has a single point of responsibility. In DBB, the owner engages design professionals directly. A separate construction manager defines the CMAR method, not DB.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "In Design-Build (DB), the owner contracts with a single entity — the contractor — who is responsible for both the design and construction phases, giving the owner one point of contact and accountability.",
+      "Design professionals in a DB project work for or alongside the contractor, not directly for the owner — this is the key structural difference from Design-Bid-Build (DBB).",
+      "A separate construction manager engaged as an independent party defines the CMAR (Construction Manager at Risk) delivery method, not DB; in DB, the contractor assumes both design and construction responsibility."
     ]
   },
   {
@@ -214,9 +214,9 @@
     "a": 2,
     "w": "In DBB, design professionals work directly with the building owner during the design phase, after which construction is bid out to contractors. The contractor is engaged after design completion, not during design. Subcontractors are engaged by the general contractor, not directly with design professionals in DBB. A construction manager defines CMAR, not DBB.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Design-Bid-Build (DBB) is the traditional linear delivery method where design professionals (architects, engineers) have a direct contract with and work for the building owner during the entire design phase.",
+      "After design completion, the owner issues a bid package to contractors; the contractor awarded the construction contract then executes the design — the designer and contractor have no direct contractual relationship in DBB.",
+      "In CMAR, the construction manager is hired during design as an advisor to the owner, but design professionals still work for the owner — CMAR is a DBB variant, not a fundamentally different ownership of the design relationship."
     ]
   },
   {
@@ -234,9 +234,9 @@
     "a": 1,
     "w": "In CMAR (Construction Manager at Risk), the construction manager acts as a consultant during the design phase and as the general contractor during construction. They are not the owner's representative; that role remains with the owner. They do not finance the project. Risk management and insurance are separate project functions.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "In CMAR (Construction Manager at Risk), the same firm serves two sequential roles: as a design-phase consultant (providing constructability review and cost input) and then as the general contractor during construction.",
+      "The 'at risk' designation means the CMAR guarantees a maximum price (GMP) for construction; if costs exceed the GMP, the CMAR absorbs the overrun — creating financial risk that a pure consultant does not carry.",
+      "The CMAR is not the owner's representative — the owner retains direct control over decision-making; the CMAR serves the owner but as an independent contractor, not as the owner's agent."
     ]
   },
   {
@@ -254,9 +254,9 @@
     "a": 1,
     "w": "Sustainability goals focus on balancing environmental, economic, and socio-cultural factors while adhering to regulatory requirements. Cost/schedule/quality is the classic project management triple constraint, not the sustainability framework. Design/construction/operations is a project lifecycle framework. Safety/security/sustainability mixes different goal categories.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Sustainable project design balances three pillars: environmental (reducing resource consumption and ecological impact), economic (long-term financial viability and lifecycle cost), and socio-cultural (community impact and occupant well-being).",
+      "The triple constraint of cost, schedule, and quality is a project management framework — it measures project performance, not sustainability goals, which are design and operational outcomes.",
+      "LEED, BREEAM, and similar green building rating systems evaluate all three sustainability pillars; an ICT designer contributes by specifying energy-efficient equipment and minimizing infrastructure waste."
     ]
   },
   {
@@ -274,9 +274,9 @@
     "a": 1,
     "w": "Disaster recovery and business continuity plans must be protected from unauthorized disclosure, as they contain sensitive information about vulnerabilities and system dependencies. Physical protection is also important but the specific stated requirement is unauthorized disclosure. Cyber protection is a separate security measure. Regulatory bodies may have legitimate access rights, so restricting audit access would be inappropriate.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Disaster recovery and business continuity plans contain detailed maps of system dependencies, recovery procedures, and infrastructure vulnerabilities — information that gives a malicious actor a roadmap for a targeted attack.",
+      "Unauthorized disclosure of DR/BC plans is the primary security concern because the plans identify the exact systems that are critical, the sequence for recovery, and the locations of backup infrastructure.",
+      "Physical damage protection and cybersecurity are important for the IT systems covered by the plan, but the plan document itself must be classified and access-controlled to prevent adversaries from exploiting the vulnerability information it contains."
     ]
   },
   {
@@ -294,9 +294,9 @@
     "a": 2,
     "w": "ICT infrastructure should be designed to support technologies for 10–15 years to justify the investment and avoid premature replacement. 3–5 years is too short for major infrastructure investment. 7–10 years is below the recommended design horizon. 20–25 years would be overly optimistic given the rate of technology change in ICT.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "BICSI guidelines recommend designing ICT infrastructure for a 10–15 year technology lifecycle, balancing the capital investment in cabling and spaces against the pace of technology evolution.",
+      "A 3–5 year design horizon is too short to justify the cost of structured cabling infrastructure; the physical cabling plant can last 20+ years, but the design must accommodate foreseeable technology changes within the 10–15 year window.",
+      "20–25 years would require designers to predict technology needs too far into the future — ICT standards and active equipment change significantly over that period, making such long-range design impractical."
     ]
   },
   {
@@ -314,9 +314,9 @@
     "a": 2,
     "w": "Periodic progress reports help track project health but are not classified as SoW deliverables. The SoW defines formal project outputs and milestones. Progress reports are management tools used during execution, not deliverables that the contractor formally hands over to the client.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "SoW deliverables are tangible project outputs formally handed to the client (drawings, test reports, as-built documentation) — periodic progress reports are internal management tools, not formal deliverables.",
+      "Progress reports inform all parties about schedule status and issues, but they are communication artifacts produced during execution rather than contractual deliverables that the client accepts as project outputs.",
+      "If a client requires progress reports as contractual outputs, they must be explicitly listed as deliverables in the contract — by default, progress reports are project management tools, not SoW deliverables."
     ]
   },
   {
@@ -334,9 +334,9 @@
     "a": 2,
     "w": "A Punch List summarizes corrections required before project acceptance, identifying deficiencies that must be addressed for final sign-off. Risk documentation is a risk register function. Change orders are tracked in a change order log. Daily progress is tracked in construction reports, not a punch list.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A Punch List is a closeout document listing all outstanding deficiencies, incomplete items, and corrections that the contractor must resolve before the project can be accepted and final payment released.",
+      "The Punch List is generated during a final walk-through inspection; each item is assigned to the responsible party (contractor, subcontractor) with a completion deadline.",
+      "Risk registers document project risks during planning, and change order logs track approved contract modifications — both are distinct documents from the Punch List, which focuses solely on physical installation deficiencies at project closeout."
     ]
   },
   {
@@ -354,9 +354,9 @@
     "a": 2,
     "w": "Performance specifications focus on achieving desired outcomes and allow contractors freedom to choose materials and methods. Reference specifications are based on established standards. Descriptive specifications specify exact properties and installation methods. Prescriptive specification is another term for descriptive specifications.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Performance specifications define the end results that must be achieved (e.g., a cabling system that passes Category 6A channel certification) without specifying which brand, cable type, or installation method the contractor must use.",
+      "This approach gives contractors flexibility to innovate and compete on method while guaranteeing the owner that the finished installation will meet defined measurable outcomes.",
+      "Descriptive (prescriptive) specifications are the opposite: they specify exact materials, dimensions, and installation steps, leaving the contractor no flexibility — useful when the owner requires specific products or methods."
     ]
   },
   {
@@ -374,9 +374,9 @@
     "a": 2,
     "w": "Communications Management covers document access and project communication systems in telecommunications project management. Integration Management breaks large projects into smaller units. Scope Management defines project boundaries. Human Resources Management covers workforce safety and organization.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Telecommunications Project Management (TPM) Communications Management governs how project information — including document control, drawing distribution, and meeting minutes — is created, stored, and accessed by project stakeholders.",
+      "Document access systems (project extranets, BIM collaboration platforms, drawing registers) are Communications Management tools because they control the flow of project information to authorized parties.",
+      "Integration Management in TPM focuses on breaking projects into manageable subprojects and coordinating their interfaces, not on how information is communicated among stakeholders."
     ]
   },
   {
@@ -394,9 +394,9 @@
     "a": 1,
     "w": "Time Management in telecommunications project management includes the calculation of critical paths to determine the minimum project duration. Scope Management defines boundaries but not scheduling. Cost Management ensures budget compliance. Integration Management coordinates project components but does not calculate critical paths.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "TPM Time Management encompasses all scheduling activities, including activity sequencing, duration estimation, schedule development using CPM and PERT, and critical path calculation.",
+      "The critical path is a scheduling calculation — it belongs to Time Management because it determines when the project will finish, not how much it costs (Cost Management) or what work is included (Scope Management).",
+      "Integration Management in TPM decomposes large projects into smaller workable units and coordinates their interfaces, but it does not perform the mathematical scheduling analysis that reveals the critical path."
     ]
   },
   {
@@ -414,9 +414,9 @@
     "a": 3,
     "w": "Stakeholder Management identifies and involves all interested parties in the project. Human Resources Management focuses on the project team workforce. Communications Management manages information flow. Risk Management identifies and mitigates project risks.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "TPM Stakeholder Management identifies all parties who have an interest in or are affected by the project — including owners, end users, regulators, neighboring occupants, and utility providers — and plans how to engage each.",
+      "Stakeholder engagement goes beyond just the project team (which is HR Management's focus): it includes external parties whose buy-in, approvals, or cooperation are necessary for project success.",
+      "Communications Management manages information flow after stakeholders are identified; Risk Management addresses project uncertainties — Stakeholder Management specifically handles the identification and engagement strategy for all interested parties."
     ]
   },
   {
@@ -434,9 +434,9 @@
     "a": 2,
     "w": "Integration Management in TPM breaks down large projects into smaller, manageable units for better control and coordination. Managing BAS and ICT integration is a technical design function. Procurement Management oversees resource acquisition. Phase coordination is a broader project management function not specific to Integration Management.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "TPM Integration Management decomposes large, complex telecommunications projects into smaller manageable sub-projects or work packages, then coordinates their interfaces to ensure seamless overall project delivery.",
+      "This decomposition is different from the Work Breakdown Structure (WBS) in that Integration Management actively coordinates the handoffs and dependencies between sub-projects, not just lists them.",
+      "Managing BAS-to-ICT technical integration is a design engineering activity — TPM Integration Management is a project governance process, not a technical system integration function."
     ]
   },
   {
@@ -454,9 +454,9 @@
     "a": 3,
     "w": "Descriptive specifications specify exact material properties and installation methods, leaving no contractor discretion. Performance specifications define outcomes and allow flexibility. Reference specifications cite existing standards. Proprietary specifications name specific manufacturer products or systems.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Descriptive (prescriptive) specifications define exact physical properties — cable diameter, jacket material, pair twist rate, installation bend radius — leaving the contractor no discretion in material selection or installation method.",
+      "Descriptive specifications are used when uniformity is critical (e.g., all cable must be the same manufacturer for consistent performance) or when specific installation techniques are required for safety or compatibility.",
+      "Performance specifications define what the end result must achieve (measurable test results); descriptive specifications define exactly how to achieve it — the designer must choose which approach matches the project's control requirements."
     ]
   },
   {
@@ -474,9 +474,9 @@
     "a": 1,
     "w": "A lessons learned meeting after project completion is an additional TPM practice to capture knowledge for future projects. Quarterly reviews are ongoing management tools, not a post-project activity. Annual audits are operational activities. Client satisfaction surveys may occur but the specific referenced practice is the lessons learned meeting.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "BICSI TPM guidelines specify that a lessons learned meeting is conducted after project completion to capture what worked well and what should be improved, creating institutional knowledge for future projects.",
+      "Lessons learned are documented and filed in an organizational knowledge base so future project managers can avoid repeating the same mistakes and replicate successful approaches.",
+      "Client satisfaction surveys and quarterly reviews are operational or ongoing activities; the lessons learned meeting is a specific, project-bounded closeout activity that happens once at the end of each project."
     ]
   },
   {
@@ -494,9 +494,9 @@
     "a": 1,
     "w": "Change Orders are formal documents defining required changes in project scope and time frame. Cost and schedule impacts are consequences of scope/time changes but are not the two defining components. Material substitution may be part of a scope change but is not the defining characteristic. Design revisions and re-inspections may result from change orders but are not the two components.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A Change Order is a formal contract amendment that modifies two components of the original contract: the project scope (what work is included) and the time frame (when it must be completed).",
+      "Cost changes are typically a consequence of scope and time frame modifications, but the defining contractual components of a Change Order are the scope and schedule revisions, not the cost adjustment itself.",
+      "Material substitution and design revisions may trigger a Change Order, but they are specific causes of scope changes, not the two defining components that all Change Orders must address."
     ]
   },
   {
@@ -514,9 +514,9 @@
     "a": 1,
     "w": "A client needs assessment is the essential first step in creating a business proposal because it identifies the client's requirements, constraints, and objectives that will define all subsequent project planning activities. Drafting the Scope of Work comes after the needs assessment, as the SoW must be based on documented requirements (option A). Developing a quality assurance plan is a later project planning activity that cannot be completed without first understanding client needs (option C). Preparing a disaster recovery plan is a specific project deliverable that depends on knowing the client's systems and requirements (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A client needs assessment is the mandatory first step in any ICT project proposal because all subsequent documents — SoW, design, cost estimate, QA plan — must be grounded in a clear understanding of what the client requires.",
+      "Without a needs assessment, the SoW and design will be based on assumptions rather than documented client requirements, leading to scope gaps, change orders, and client dissatisfaction.",
+      "Quality assurance plans and disaster recovery plans are deliverables that emerge from the project — they cannot be written meaningfully until the client's systems, criticality requirements, and operational constraints are fully understood."
     ]
   },
   {
@@ -534,9 +534,9 @@
     "a": 3,
     "w": "ICT professionals provide a comprehensive range of services including feasibility studies (evaluating technical and financial viability), master planning (long-term infrastructure strategy), and quality assurance (verifying installation meets standards). Feasibility studies alone represent only one of many ICT professional service offerings (option A). Master planning alone does not capture the full scope of ICT professional services (option B). Quality assurance is an important service but represents only one facet of ICT professional capabilities (option C).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "ICT professionals offer a full spectrum of services across the project lifecycle: pre-design services (feasibility studies, master planning), design services, and construction-phase services (quality assurance, commissioning).",
+      "Feasibility studies evaluate whether a proposed ICT system is technically achievable and financially justified; master planning develops long-term infrastructure roadmaps; QA verifies installed systems meet specified standards.",
+      "All three services are recognized professional offerings within the BICSI framework — selecting any individual option misrepresents the breadth of ICT professional practice."
     ]
   },
   {
@@ -554,9 +554,9 @@
     "a": 1,
     "w": "The Scope of Work (SoW) is the document included in the RFP package that defines what work will be performed, the deliverables, performance requirements, and standards that must be met. The Work Breakdown Structure (WBS) decomposes project activities into manageable components but is typically an internal project management tool, not part of the RFP package (option A). Lessons Learned is a project closeout document capturing knowledge from completed projects, not an RFP document (option C). The Client-Supplier Model describes the project delivery structure, not the performance details (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The Scope of Work (SoW) is the technical heart of an RFP package, defining the work to be performed, deliverables, performance standards, and applicable codes — it is what contractors price and respond to.",
+      "The WBS is an internal planning tool that the winning contractor develops to manage their work; it is not included in the RFP because it represents the contractor's execution strategy, not the owner's requirements.",
+      "Lessons Learned documents are retrospective closeout artifacts from completed projects — they inform future design decisions but are not contractual RFP documents for a new project."
     ]
   },
   {
@@ -574,9 +574,9 @@
     "a": 2,
     "w": "A Gantt chart displays project activities as horizontal bars plotted against a time axis, visually showing the duration, start, and end dates of each task and their sequence. PERT (Program Evaluation and Review Technique) uses a network diagram with nodes to show activity relationships and critical paths, not a bar chart format (option A). A milestone chart shows only key project milestones as points in time, not activity durations (option B). Calendar charts show work scheduled on calendar dates but are less commonly used for project scheduling than Gantt charts (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A Gantt chart represents each project activity as a horizontal bar on a time axis, with bar length proportional to activity duration, providing an immediate visual of start date, end date, and relative duration for every task.",
+      "PERT uses a node-and-arrow network diagram to show precedence relationships and calculates weighted duration estimates — it does not use bar chart format and does not directly show activity duration as a visual length.",
+      "Milestone charts show only key decision or delivery points as single markers on a timeline — they display no duration information for the activities between milestones, which is Gantt's primary function."
     ]
   },
   {
@@ -594,9 +594,9 @@
     "a": 0,
     "w": "PERT's weighted average formula is (Optimistic + 4 x Most Likely + Pessimistic) / 6, combining three time estimates to calculate an expected duration that accounts for uncertainty and variability. Budget, timeline, and risk assessment are project management inputs, not the components of the PERT duration estimate formula (option B). Analogous, parametric, and engineering are cost estimating methods, not the components of PERT's time estimation formula (option C). Start, finish, and milestone dates are schedule outputs derived from PERT calculations, not inputs to the formula (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "PERT calculates expected activity duration using three estimates: Optimistic (O), Most Likely (M), and Pessimistic (P), combined in the weighted formula: E = (O + 4M + P) ÷ 6.",
+      "The formula weights the most likely estimate four times more than either extreme, reflecting that typical durations cluster around the most likely scenario while the optimistic and pessimistic bounds are less probable.",
+      "Analogous, parametric, and engineering are cost estimating methods — they are independent of PERT's time estimation formula, which deals exclusively with activity duration uncertainty, not project cost."
     ]
   },
   {
@@ -614,9 +614,9 @@
     "a": 0,
     "w": "In the Design-Bid-Build (DBB) delivery method, design professionals (architects and engineers) work directly for the owner to create complete design documents before contractors bid on the construction work. In Design-Build (DB), a single entity provides both design and construction services, so design professionals work for the contractor, not directly for the owner (option B). In CMAR, the construction manager is hired during design but the design professionals still work for the owner (option C). IPD is a collaborative delivery method where all parties share risk and reward, with a more complex contractual relationship (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Design-Bid-Build (DBB) is the traditional delivery method where the design professional has a direct contract with the owner, independently completing all design documents before the project is put out to competitive bid.",
+      "The direct owner-designer relationship in DBB gives the owner full control over design intent — unlike DB, where the designer works for the contractor and may face pressure to reduce design quality to save construction cost.",
+      "CMAR also has design professionals working for the owner, but the defining characteristic that distinguishes pure DBB is that no construction entity is involved during design — in CMAR, the construction manager participates in design as an advisor."
     ]
   },
   {
@@ -634,9 +634,9 @@
     "a": 2,
     "w": "A minimum Scope of Work must define what work will be done, who will perform it, where it will be performed, when it must be completed, and what standards apply to ensure all parties understand their obligations. Timeline and milestones alone are insufficient as they do not define the work scope, responsible parties, or applicable standards (option A). Deliverables alone do not specify who is responsible, the location, schedule, or standards (option B). Contract terms alone cover legal and commercial aspects but do not define the technical scope of work (option D).",
     "k": [
-      "Distance and dimension limits in project administration for telecommunications are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as BICSI project management guidelines codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "A minimum SoW must answer five questions: What work will be performed, Who will perform it, Where the work will occur, When it must be completed, and What standards and codes apply.",
+      "Omitting any of these five elements creates an incomplete SoW that will generate disputes — for example, omitting 'who' creates ambiguity about subcontracting rights; omitting 'what standards' allows non-compliant installations.",
+      "Contract terms (payment, liability, dispute resolution) are important but belong in the contract agreement document — the SoW is the technical definition of work, separate from its commercial and legal framework."
     ]
   },
   {
@@ -654,9 +654,9 @@
     "a": 2,
     "w": "Project budget allocation is a project management deliverable, not a component of a disaster recovery plan, which focuses on operational resilience rather than financial project management. Potential risks are a fundamental component of disaster recovery planning, identifying what events could disrupt operations (option A). Risk mitigation strategies define how identified risks will be prevented or minimized (option B). Testing scenarios are critical components that validate whether the recovery plan will work as designed (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A disaster recovery plan (DRP) contains potential risks (what could go wrong), mitigation strategies (how to prevent or reduce impact), recovery procedures, and testing scenarios — project budget allocation belongs in a project management plan, not a DRP.",
+      "Budget allocation is a project management activity that occurs during project planning; a DRP is an operational document that addresses how to restore systems after a disaster, not how to fund a construction project.",
+      "Testing scenarios are a critical DRP component because an untested recovery plan provides false confidence — regular testing validates that recovery procedures actually work within acceptable recovery time objectives (RTOs)."
     ]
   },
   {
@@ -674,9 +674,9 @@
     "a": 1,
     "w": "Disaster recovery strategies are classified as preventive (reducing likelihood of disasters), detective (identifying and alerting to disaster conditions), and corrective (restoring systems after a disaster occurs). Reactive strategies respond after an event but the recognized framework uses preventive, detective, and corrective as the three categories (option A). Expansive is not a recognized disaster recovery strategy category (option C). Mitigation, correction, and simulation do not represent the standard three-category framework for disaster recovery strategies (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The three disaster recovery strategy categories are: Preventive (actions taken before a disaster to reduce probability or impact), Detective (monitoring and alerting systems that identify a disaster in progress), and Corrective (procedures and systems used to restore operations after a disaster).",
+      "Preventive strategies include redundant power, geographic site diversity, and fire suppression; detective strategies include monitoring systems and environmental alarms; corrective strategies include failover procedures and data restore processes.",
+      "'Reactive' is not the correct term — the accepted framework uses 'corrective' for post-disaster restoration activities; 'expansive' is not a recognized disaster recovery category at all."
     ]
   },
   {
@@ -694,9 +694,9 @@
     "a": 1,
     "w": "A Work Breakdown Structure (WBS) hierarchically decomposes the total project scope into smaller, manageable work packages that can be assigned, scheduled, and cost-estimated. Outlining timelines is the function of Gantt charts and network schedules, not the WBS (option A). Tracking communications is a project communication management activity, not what a WBS accomplishes (option C). Establishing equipment and tools is a resource planning activity derived from the WBS but not what the WBS itself accomplishes (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A Work Breakdown Structure (WBS) hierarchically decomposes the entire project scope into progressively smaller work packages until each package is small enough to be assigned, estimated, and scheduled independently.",
+      "The WBS is a scope decomposition tool, not a schedule — timelines are created in Gantt charts or CPM networks using WBS work packages as input; the WBS itself contains no time information.",
+      "Equipment and resource planning are downstream activities that use the WBS work packages as input; the WBS itself defines what work must be done, not what tools or materials are needed to do it."
     ]
   },
   {
@@ -714,9 +714,9 @@
     "a": 1,
     "w": "The Critical Path Method (CPM) calculates the earliest start (ES), earliest finish (EF), latest start (LS), and latest finish (LF) dates for each activity through forward and backward pass analysis of the project network. Milestone charts show only key dates and do not calculate early/late start and finish dates for individual activities (option A). PERT focuses on probabilistic duration estimates but CPM is the specific tool for early/late date calculations (option C). Gantt charts display activity durations visually but do not calculate early/late dates through network analysis (option D).",
     "k": [
-      "Field testing and certification of project administration for telecommunications verify that the installed system meets the specified performance category and will support the intended applications.",
-      "Test results must be documented and retained as part of the project record; they provide the baseline for future troubleshooting and maintenance.",
-      "Test equipment must be calibrated and set to the correct test limit for the installed link type (permanent link or channel) and category."
+      "CPM calculates four dates for every activity through network analysis: Earliest Start (ES) and Earliest Finish (EF) via a forward pass, and Latest Start (LS) and Latest Finish (LF) via a backward pass.",
+      "The difference between LS and ES (or LF and EF) gives each activity's float (slack) — zero float identifies critical path activities; positive float indicates schedule flexibility.",
+      "Gantt charts display ES and EF visually as bar positions and lengths but do not perform the mathematical network calculations that derive these dates — CPM is the analytical engine, Gantt is the display format."
     ]
   },
   {
@@ -734,9 +734,9 @@
     "a": 1,
     "w": "A stipulated-sum contract is a key contract type in telecommunications where the contractor agrees to complete the work for a fixed price, with all risk for cost overruns borne by the contractor. Fixed-sum and lump-sum contracts are alternative terms that describe similar concepts to stipulated-sum, but the recognized term in telecommunications project administration is stipulated-sum (options A and C). A cost-overrun contract is not a recognized contract type; contracts are typically structured to avoid or allocate cost overrun risk (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A stipulated-sum contract is the formal telecommunications project administration term for a fixed-price contract where the contractor agrees to complete the defined scope for a pre-agreed total price.",
+      "The contractor bears all cost risk in a stipulated-sum contract — if actual costs exceed the stipulated price, the contractor absorbs the difference; if below, the contractor retains the savings.",
+      "Although 'fixed-sum' and 'lump-sum' describe the same concept in common usage, BICSI and telecommunications industry documentation specifically use 'stipulated-sum' as the recognized formal contract type name."
     ]
   },
   {
@@ -754,9 +754,9 @@
     "a": 1,
     "w": "The primary goal of project closeout is to ensure the completed installation complies with applicable codes, standards, and client requirements through final inspections, testing, and documentation review. Documenting lessons learned is an important closeout activity but is a secondary benefit rather than the primary goal (option A). Generating a final invoice is an administrative closeout step, not the primary goal of the closeout process (option C). Delivering spare materials is a contractual requirement that may be part of closeout but is not the primary goal (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The primary goal of project closeout is to verify and document that the installed telecommunications infrastructure complies with all applicable codes, standards, and client requirements through final inspections and acceptance testing.",
+      "Closeout achieves compliance verification through a series of activities: final walk-through inspections, certification test review, punch list resolution, and as-built document submission — all focused on confirming the installation meets its requirements.",
+      "Lessons learned, final invoicing, and spare parts delivery are all closeout activities, but they are administrative byproducts of the primary compliance verification goal, not the goal itself."
     ]
   },
   {
@@ -774,9 +774,9 @@
     "a": 2,
     "w": "During coordination meetings, the ICT designer's primary role is to ensure that all construction activities comply with project specifications and maintain the design intent, coordinating with other trades and resolving technical conflicts. Financial document oversight is typically the responsibility of the project owner or construction manager, not the ICT designer (option A). Approving contractor bids occurs during the procurement phase, not during construction coordination meetings (option B). Resolving client disputes is a contract administration function for the owner's representative, not the ICT designer's primary coordination role (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "During construction coordination meetings, the ICT designer's primary role is to monitor compliance with project specifications and protect design intent — ensuring contractors install exactly what was specified and resolving technical field questions.",
+      "When field conditions require deviations from the design, the ICT designer evaluates proposed solutions against the original design intent and specification requirements before approving any change.",
+      "Financial oversight and contractor bid approval are owner and construction manager responsibilities — the ICT designer's authority in construction meetings is technical, not contractual or financial."
     ]
   },
   {
@@ -794,9 +794,9 @@
     "a": 3,
     "w": "Complete project closeout documentation encompasses all deliverables: test results and training records (performance verification and knowledge transfer), record drawings and warranties (as-built conditions and guarantees), and O&M documents and spare parts (operational support materials). Test results and training records alone (option A) represent only a portion of required closeout deliverables. Record drawings and warranties (option B) are essential but insufficient alone for complete project closeout. O&M documents and spare parts (option C) are necessary components but do not represent all required closeout documentation.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Complete project closeout documentation encompasses all categories: test/certification results (performance proof), training records (knowledge transfer documentation), record/as-built drawings (installed conditions), warranties, O&M manuals, and spare parts.",
+      "Each category serves a distinct purpose: test results prove compliance, as-built drawings support future modifications, warranties protect the owner, O&M manuals enable ongoing maintenance, and spare parts reduce repair downtime.",
+      "Providing only one or two of these categories — such as just test results and drawings — leaves the owner unable to properly maintain, modify, or support warranty claims for the installed infrastructure."
     ]
   },
   {
@@ -814,9 +814,9 @@
     "a": 1,
     "w": "Programming (also called pre-design) is the first phase where the designer gathers all project requirements, establishes the design program, and defines the project scope before any design drawings are created. Schematic design is the second phase where preliminary design concepts are developed based on the programming data (option A). Design development is the third phase where schematic designs are refined into more detailed drawings (option C). Bidding is a late-phase activity that occurs after design documents are complete (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Programming (pre-design) is the first design phase, during which the designer interviews stakeholders, surveys existing conditions, and establishes all project requirements before any design drawings or specifications are produced.",
+      "The design process sequence is: Programming → Schematic Design → Design Development → Construction Documents → Bidding/Procurement → Construction → Closeout; each phase builds on the previous one.",
+      "Jumping directly to schematic design without a programming phase risks designing a system that does not meet the client's actual needs — programming ensures the design is based on documented requirements, not assumptions."
     ]
   },
   {
@@ -834,9 +834,9 @@
     "a": 2,
     "w": "MasterFormat 2020 assigns Division 28 to Electronic Safety and Security systems, covering fire alarms, access control, intrusion detection, and video surveillance. Division 24 covers HVAC (Heating, Ventilating, and Air Conditioning) in MasterFormat (option A). Division 26 covers Electrical systems including lighting and power distribution (option B). Division 30 covers not a standard MasterFormat division for electronic safety and security (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "MasterFormat 2020 Division 28 is dedicated to Electronic Safety and Security systems, including fire detection/alarm (28 31), access control (28 13), intrusion detection (28 16), and video surveillance (28 23).",
+      "Division 26 covers Electrical (power distribution, lighting, grounding) and Division 27 covers Communications (structured cabling, DAS, AV) — Division 28 is the next tier covering life-safety and security electronics.",
+      "Division 24 does not exist as HVAC in MasterFormat 2020 — HVAC falls under Division 23; Division 24 is not a standard MasterFormat 2020 division number for any common building system."
     ]
   },
   {
@@ -854,9 +854,9 @@
     "a": 1,
     "w": "Parametric estimating calculates project costs using statistical relationships between project parameters such as cost per foot of cable, cost per outlet drop, or cost per rack unit installed. Analogous estimating uses historical project costs from similar past projects as a basis for the new estimate (option A). Subcontractor bid estimating obtains quotes from vendors and subcontractors for specific scopes of work (option C). Engineering (bottom-up) estimating breaks down every work component and calculates individual costs, which is more detailed than per-unit parametric rates (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Parametric estimating uses statistical cost-per-unit rates (e.g., cost per cable drop, cost per linear foot of conduit, cost per rack) to estimate total project cost by multiplying rates by quantities.",
+      "This method is faster than engineering (bottom-up) estimating because it does not require itemizing every component — it applies historical cost rates to measured quantities from the design drawings.",
+      "Analogous estimating uses total project cost from a similar past project as a benchmark, while parametric uses rate tables applied to current project quantities — analogous is less accurate but quicker for early-stage estimates."
     ]
   },
   {
@@ -874,9 +874,9 @@
     "a": 0,
     "w": "The change order process is discussed during the kickoff meeting to establish the protocol for managing scope changes, ensuring all parties understand how modifications to the contract will be documented, approved, and priced. RFP submission guidelines are relevant during the procurement phase, not the project kickoff after award (option B). Project closeout requirements are typically discussed at the end of a project, not at the kickoff (option C). Permit applications are administrative pre-construction activities that may be referenced but are not the main topic of change management in the kickoff (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Establishing the change order process during the kickoff meeting ensures all parties agree upfront on how scope changes will be identified, documented, priced, and approved — preventing disputes later in the project.",
+      "A change order process agreed to at kickoff prevents informal verbal agreements from creating undocumented scope changes that result in unpaid work or budget overruns.",
+      "RFP guidelines are pre-award documents; permit applications are handled in pre-construction activities — the kickoff meeting focuses on establishing the execution rules for the awarded contract."
     ]
   },
   {
@@ -894,9 +894,9 @@
     "a": 2,
     "w": "Weekly progress meetings are held to review the current project status including budget consumption, schedule adherence, and resolution of current issues to keep the project on track. Finalizing contracts with subcontractors occurs during procurement, not in weekly progress meetings (option A). Permit submission is a pre-construction administrative task that would not be the primary focus of recurring progress meetings (option B). Scope changes are discussed in change order meetings and coordination meetings, though they may be referenced in progress meetings (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to project administration for telecommunications.",
-      "Designers must know BICSI project management guidelines limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Weekly progress meetings have a specific primary purpose: reviewing actual progress against budget and schedule, and identifying and resolving current issues before they become delays or cost overruns.",
+      "The three pillars of a progress meeting — budget status, schedule status, and open issues — give the project team the information needed to take corrective action while there is still time to recover.",
+      "Scope changes and contract finalizations are handled in separate specific meetings (change order meetings, pre-construction meetings); weekly progress meetings maintain project momentum and team alignment, not contract or scope changes."
     ]
   }
 ]
