@@ -718,7 +718,10 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, on
 // ── Test Screen ───────────────────────────────────────────────────────────────
 function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfidence, onStar, onBack, onFinish, dark }) {
   const t = T(dark);
-  const [qIdx, setQIdx] = useState(0);
+  const [qIdx, setQIdx] = useState(() => {
+    const first = session.answers.findIndex(a => a === null);
+    return first === -1 ? 0 : first;
+  });
   const [showJump, setShowJump] = useState(false);
 
   const color = COLORS[testId]||'#6366f1';
