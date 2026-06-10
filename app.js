@@ -545,7 +545,7 @@ function App() {
 
   return el('div', { style: { maxWidth:430, margin:'0 auto', minHeight:'100vh', background:t.bg, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
     el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut }),
-    screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
+    screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, history:appData.history, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
     screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:()=>finishTest(activeTest), dark }),
     screen==='result' && session && el(ResultScreen, { testId:activeTest, session, onBack:()=>setScreen('test'), onRetry:()=>retryTest(activeTest), onReshuffle:()=>reshuffleTest(activeTest), onHome:()=>setScreen('home'), dark })
@@ -678,10 +678,16 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
 }
 
 // ── Home Screen ───────────────────────────────────────────────────────────────
-function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onCustomQuiz, onResetTest, dark, onToggleDark }) {
+const DAILY_TARGET = 50;
+function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, history, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onCustomQuiz, onResetTest, dark, onToggleDark }) {
   const t = T(dark);
   const pct = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
   const [resetConfirm, setResetConfirm] = useState(null);
+
+  const today = new Date().toDateString();
+  const todayCorrect = history.filter(h => new Date(h.date).toDateString() === today).reduce((s,h) => s+h.correct, 0);
+  const dailyPct = Math.min(Math.round(todayCorrect/DAILY_TARGET*100), 100);
+  const dailyDone = todayCorrect >= DAILY_TARGET;
 
   return el('div', { style: { minHeight:'100vh', background:t.bg, display:'flex', flexDirection:'column' } },
     el('div', { style: { background:t.card, borderBottom:'1px solid '+t.borderLight, padding:'52px 20px 14px', display:'flex', alignItems:'center', gap:14 } },
@@ -700,13 +706,20 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, on
         el('div', { style: { fontSize:10, color:t.textMuted } }, 'score')
       )
     ),
-    el('div', { style: { padding:'12px 20px 8px', background:t.card } },
+    el('div', { style: { padding:'12px 20px 10px', background:t.card } },
       el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
         el('span', { style: { fontSize:11, color:t.textSub } }, 'Overall Progress'),
         el('span', { style: { fontSize:11, fontWeight:700, color:'#7c3aed' } }, totalAnswered+' / '+totalQs)
       ),
-      el('div', { style: { height:5, background:t.borderLight, borderRadius:3, overflow:'hidden' } },
+      el('div', { style: { height:5, background:t.borderLight, borderRadius:3, overflow:'hidden', marginBottom:10 } },
         el('div', { style: { height:'100%', background:'linear-gradient(90deg,#7c3aed,#a855f7)', borderRadius:3, width:pct+'%' } })
+      ),
+      el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
+        el('span', { style: { fontSize:11, color:t.textSub } }, dailyDone ? '🎯 Daily Target Complete!' : 'Daily Target'),
+        el('span', { style: { fontSize:11, fontWeight:700, color: dailyDone?'#059669':'#16a34a' } }, todayCorrect+' / '+DAILY_TARGET+' correct')
+      ),
+      el('div', { style: { height:5, background:t.borderLight, borderRadius:3, overflow:'hidden' } },
+        el('div', { style: { height:'100%', background: dailyDone?'linear-gradient(90deg,#059669,#34d399)':'linear-gradient(90deg,#16a34a,#4ade80)', borderRadius:3, width:dailyPct+'%', transition:'width 0.5s' } })
       )
     ),
     el('div', { style: { flex:1, padding:'16px 20px', overflowY:'auto' } },
