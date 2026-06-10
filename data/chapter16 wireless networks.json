@@ -14,9 +14,9 @@
     "a": 1,
     "w": "Wi-Fi 6 is defined by IEEE 802.11ax and offers a 400% improvement in throughput compared to Wi-Fi 5. IEEE 802.11ac is Wi-Fi 5. IEEE 802.11n is Wi-Fi 4. IEEE 802.11ad is WiGig (60 GHz), a separate high-speed short-range standard.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern wireless network design design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of IEEE 802.11 and FCC regulations ensures compliance with current best practices and avoids conflicts with other building codes."
+      "Wi-Fi 6 is defined by IEEE 802.11ax and delivers approximately 4× (400%) throughput improvement over Wi-Fi 5 (802.11ac) through OFDMA, 1024-QAM, and MU-MIMO enhancements.",
+      "IEEE 802.11ac (Wi-Fi 5) preceded 802.11ax; 802.11n is Wi-Fi 4; knowing the Wi-Fi generation–to–standard mapping is essential for RCDD wireless system specification.",
+      "IEEE 802.11ad (WiGig) is a separate 60 GHz short-range standard unrelated to the Wi-Fi generational progression from 802.11n → 802.11ac → 802.11ax."
     ]
   },
   {
@@ -34,9 +34,9 @@
     "a": 1,
     "w": "PANs as defined by IEEE 802.15 typically operate within a 10 m (33 ft) radius of the personal space. 1 m is overly restrictive and describes only very short-range NFC or similar technologies. 100 m is more characteristic of WLAN (Wi-Fi) coverage. 1000 m is in the range of outdoor wireless links, far beyond PAN scope.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern wireless network design design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of IEEE 802.11 and FCC regulations ensures compliance with current best practices and avoids conflicts with other building codes."
+      "IEEE 802.15 defines Wireless Personal Area Networks (WPANs) operating within a 10 m (33 ft) personal space — the area within which a person's personal devices (phone, headset, laptop) communicate.",
+      "100 m is the typical WLAN (Wi-Fi/802.11) indoor range — significantly larger than the 10 m PAN range; PANs are designed for personal-space device communication, not room-level coverage.",
+      "Technologies under 802.15 include Bluetooth (802.15.1), ZigBee (802.15.4), and UWB (802.15.3); all operate within approximately 10 m, though some variants extend to 30 m at reduced data rates."
     ]
   },
   {
@@ -54,9 +54,9 @@
     "a": 1,
     "w": "An IBSS (Independent Basic Service Set) allows stations to communicate directly without an access point in an ad-hoc network configuration. Multiple APs linked for expanded coverage describes an ESS (Extended Service Set). A single AP managing all communication is a BSS (Basic Service Set). A centralized controller is a WLAN infrastructure management feature, not a BSS type.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "An IBSS (Independent BSS) is an ad-hoc WLAN in which client stations communicate directly peer-to-peer without any access point; it is a temporary, device-to-device network.",
+      "A BSS uses a single AP as the hub for all communications between stations; an ESS links multiple APs with a distribution system for wider coverage; an IBSS uses neither AP nor distribution system.",
+      "IBSS networks are useful for temporary connections (e.g., file transfer between two laptops) but are unsuitable for enterprise deployments because they lack AP management, security enforcement, and roaming support."
     ]
   },
   {
@@ -74,9 +74,9 @@
     "a": 2,
     "w": "AES (Advanced Encryption Standard) is recommended for WPANs (Wireless Personal Area Networks). WPA/WPA2 is recommended for WLANs. WEP is not recommended for any current wireless system due to known vulnerabilities. DES is an outdated symmetric encryption algorithm not used in modern wireless security.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern wireless network design design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of IEEE 802.11 and FCC regulations ensures compliance with current best practices and avoids conflicts with other building codes."
+      "AES (Advanced Encryption Standard) is the recommended encryption cipher for WPANs (Bluetooth, ZigBee/802.15.4) due to its strong security, computational efficiency, and suitability for low-power devices.",
+      "WPA/WPA2 is the WLAN-specific security protocol (used with 802.11 Wi-Fi); it uses AES internally but WPA/WPA2 as a full protocol is not applied to WPANs.",
+      "WEP is cryptographically broken and must not be used in any wireless system; DES is similarly obsolete — both have known vulnerabilities that allow attackers to decrypt traffic in minutes."
     ]
   },
   {
@@ -94,9 +94,9 @@
     "a": 2,
     "w": "Precoding transmits the same signal through multiple antennas with adjusted phase and amplitude to form a directed beam. Diversity Coding transmits orthogonal signals through multiple antennas for redundancy. Spatial Multiplexing splits a high-bandwidth signal into multiple lower-bandwidth streams. MIMO is the overarching technique that includes all these methods, not a specific beamforming sub-method.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Precoding is a MIMO beamforming method that transmits the same signal from multiple antennas with carefully adjusted phase and amplitude weights, constructively combining at the intended receiver to form a focused beam.",
+      "The three MIMO beamforming sub-methods are Precoding (same signal, phase-adjusted), Diversity Coding (orthogonal signals for redundancy), and Spatial Multiplexing (split streams for throughput); MIMO is the overarching framework.",
+      "Precoding is used for beamsteering in 802.11ac/ax (MU-MIMO) — directing energy toward a specific client improves SNR and allows higher modulation orders (e.g., 1024-QAM) at longer range."
     ]
   },
   {
@@ -114,9 +114,9 @@
     "a": 1,
     "w": "Frequency Division Duplex (FDD) transmits and receives simultaneously on separate frequencies, enabling full-duplex operation. Time Division Duplex (TDD) alternately transmits and receives in time slots on the same frequency. Half-duplex switching is a single-direction-at-a-time approach. MIMO spatial multiplexing increases throughput using multiple antennas, not a duplex method.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "FDD (Frequency Division Duplex) assigns separate frequency channels for uplink (device to AP) and downlink (AP to device), allowing simultaneous transmission and reception without self-interference.",
+      "TDD (Time Division Duplex) uses the same frequency channel for both uplink and downlink but alternates direction in time slots; it cannot truly transmit and receive simultaneously on the same frequency.",
+      "MIMO spatial multiplexing is a technique for increasing data throughput using multiple antennas — it is not a duplex method and does not describe how uplink and downlink channels are separated."
     ]
   },
   {
@@ -134,9 +134,9 @@
     "a": 1,
     "w": "Wi-Fi uses the unlicensed 2.4 GHz, 5 GHz, and 6 GHz spectrum bands. 900 MHz is used for some IoT and older cordless phones but is not a primary Wi-Fi band. 5 GHz and 6 GHz only would exclude the widely used 2.4 GHz band. 2.4 GHz only would exclude the 5 GHz and 6 GHz bands added in later Wi-Fi generations.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Wi-Fi currently operates in three unlicensed ISM/UNII bands: 2.4 GHz (Wi-Fi 4 and earlier), 5 GHz (Wi-Fi 5/6), and 6 GHz (Wi-Fi 6E), each added progressively to address congestion in the existing bands.",
+      "900 MHz is used by some IoT/LPWAN devices and older cordless phones but is not a Wi-Fi band; the 802.11 standard specifically defines 2.4, 5, and 6 GHz as its operating frequencies.",
+      "The addition of the 6 GHz band (Wi-Fi 6E) provides additional spectrum free from legacy device interference, enabling higher throughput and lower latency in dense deployment environments."
     ]
   },
   {
@@ -154,9 +154,9 @@
     "a": 2,
     "w": "The 5 GHz range is divided into 23 channels, each 20 MHz wide. 12 and 16 channels understate the 5 GHz channel count. 36 channels would require more spectrum than the defined 5 GHz unlicensed band provides with 20 MHz channel spacing.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The 5 GHz unlicensed band is divided into 23 non-overlapping 20 MHz-wide channels across the UNII-1, UNII-2, UNII-2e, and UNII-3 sub-bands, providing far more non-overlapping channels than the 2.4 GHz band's three.",
+      "The 23 channels in the 5 GHz band enable much denser AP deployments without co-channel interference compared to the 2.4 GHz band, which has only three non-overlapping 20 MHz channels.",
+      "Not all 23 channels are available in every country; some (UNII-2/2e) require Dynamic Frequency Selection (DFS) to avoid radar interference, effectively reducing the usable count in some deployments."
     ]
   },
   {
@@ -174,9 +174,9 @@
     "a": 1,
     "w": "High frequencies above 6 GHz are affected by rain fade and heavy moisture, which attenuate the signal. Rain fade is a well-documented phenomenon at microwave and millimeter-wave frequencies. Building reflections cause multipath at all frequencies, not specifically above 6 GHz. Fresnel zone clearance requirements are independent of rain fade. Antenna gain is not directly reduced by humidity at most operational frequencies.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "At frequencies above 6 GHz, rain fade becomes a significant impairment: raindrops and heavy moisture absorb and scatter microwave energy, reducing received signal strength and link availability.",
+      "Rain fade is frequency-dependent — it is negligible below 6 GHz but increases sharply above 10 GHz, making it a critical link budget factor for millimeter-wave and microwave backhaul systems.",
+      "Multipath affects all frequency bands; Fresnel zone clearance is a geometry requirement independent of frequency range; neither of these effects is specific to the >6 GHz rain fade phenomenon."
     ]
   },
   {
@@ -194,9 +194,9 @@
     "a": 2,
     "w": "Radiating Coax (Leaky Coax) operates from 70 MHz to 2.4 GHz in DAS applications, deliberately allowing RF signals to radiate along its length for in-building coverage. Category 6A is used for DAS backhaul but does not radiate RF signals. Single-mode optical fiber is used for long-haul DAS links but does not radiate RF. Series-11U coaxial cable is a video distribution cable, not a radiating antenna cable.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Radiating coax (leaky coax) is a special coaxial cable with a slotted outer conductor that deliberately allows RF energy to leak out along its length, providing continuous coverage in tunnels, stairwells, and corridors from 70 MHz to 2.4 GHz.",
+      "Unlike standard coaxial cable (which confines RF within the shielded conductor), leaky coax acts as a distributed antenna — both transmitting and receiving RF along its entire installed length.",
+      "Cat 6A and optical fiber carry DAS backhaul signals in digital form but cannot radiate RF; Series-11U is a video distribution coaxial cable, not designed for DAS RF radiation."
     ]
   },
   {
@@ -214,9 +214,9 @@
     "a": 1,
     "w": "The link budget refers to the sum of all gains and losses in the system, including transmission line loss, splitter/coupler losses, and antenna gains, determining whether adequate signal strength reaches all coverage areas. Financial budget is a project management consideration, not a technical DAS term. Antenna count is a design parameter, not the link budget. Maximum power output is a system specification, not the budget calculation.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A DAS link budget is an accounting of all signal gains (amplifier gain, antenna gain) and losses (cable loss, splitter loss, coupler loss) to determine the available signal strength at the coverage point.",
+      "If the link budget shows insufficient received signal strength at an antenna, the designer adds gain (higher-power amplifier or additional amplifier stages) or reduces losses (shorter cable runs, lower-loss splitters).",
+      "A positive link budget (more gain than loss) ensures that signal levels at all antennas exceed the minimum required for the target network (e.g., cellular coverage at −85 dBm or Wi-Fi at −70 dBm)."
     ]
   },
   {
@@ -234,9 +234,9 @@
     "a": 1,
     "w": "Diversity Coding transmits orthogonal signals through multiple antennas to provide redundancy and improve link reliability. Precoding transmits the same signal through multiple antennas with phase adjustments. Spatial Multiplexing splits a high-rate signal into independent streams. Adaptive beamsteering is a real-time antenna direction technique, not one of the three standard beamforming methods.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Diversity Coding transmits independent (orthogonal) copies of the same signal through multiple antennas; the receiver combines the multiple received copies to improve link reliability and resist fading.",
+      "By transmitting orthogonal signals, Diversity Coding ensures that at least one antenna's signal path is likely to be in a favorable fading condition at any given moment, improving link robustness.",
+      "The three MIMO sub-methods are: Precoding (same signal, phase-steered), Diversity Coding (orthogonal signals for reliability), and Spatial Multiplexing (separate data streams for throughput); these are distinct techniques with different benefits."
     ]
   },
   {
@@ -254,9 +254,9 @@
     "a": 1,
     "w": "Antenna support structures exceeding 60 m (200 ft) in height have additional considerations including structural analysis for wind loading and aviation obstruction lighting requirements. Standard antenna mount considerations are insufficient at this height. MIMO antenna type is not height-dependent. Backhaul medium is a system design choice unrelated to structure height.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Antenna support structures taller than 60 m (200 ft) require FAA/Transport Canada aviation obstruction lighting and additional structural engineering analysis for wind and ice loading at elevated heights.",
+      "The 60 m threshold is an FAA/FCC regulatory boundary; structures above this height may interfere with aviation navigation and must be marked and lit to warn aircraft pilots.",
+      "Antenna type (MIMO or otherwise) and backhaul medium (fiber or coax) are independent design choices not governed by structure height; the height only triggers structural and aviation regulatory requirements."
     ]
   },
   {
@@ -274,9 +274,9 @@
     "a": 2,
     "w": "Radome covers for parabolic antennas may cause 0.5 dB path loss due to signal absorption and reflection in the radome material. 0.1 dB and 0.3 dB understate the typical radome insertion loss. 1.0 dB would be an excessive loss for a standard radome and would indicate a poorly designed or damaged unit.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A radome cover on a parabolic antenna introduces approximately 0.5 dB of insertion loss due to dielectric absorption and reflections as the RF signal passes through the radome material twice (transmit and receive).",
+      "This 0.5 dB must be included in the point-to-point link budget as an additional loss; failing to account for it could cause a calculated-adequate link to fall below the minimum received signal threshold in practice.",
+      "A damaged, wet, or dirty radome can introduce significantly more than 0.5 dB of loss; regular inspection and cleaning of radome covers is part of outdoor antenna system maintenance."
     ]
   },
   {
@@ -294,9 +294,9 @@
     "a": 2,
     "w": "RF media on rooftops should be supported 38 mm (1.5 in) above the surface to prevent water pooling damage and allow for roof maintenance. 13 mm and 25 mm are insufficient to protect against water accumulation. 75 mm would be unnecessary additional height that complicates installation.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "RF coaxial cable and conduit on rooftops must be supported 38 mm (1.5 in) above the roof membrane to prevent ponding water from wicking into cable jackets and to allow roof membrane inspection and repairs beneath.",
+      "Cables resting directly on the roof membrane trap moisture, damage the membrane by abrasion, and restrict drainage; proper standoff height eliminates all three problems.",
+      "13 mm and 25 mm standoffs are insufficient because a typical rooftop can accumulate more than 25 mm of standing water during heavy rain events, which would submerge cables resting at those heights."
     ]
   },
   {
@@ -314,9 +314,9 @@
     "a": 2,
     "w": "Flexible or rigid waveguides provide low-loss transmission for frequencies above 1 GHz in outdoor wireless applications. Standard coaxial cable has increasing attenuation at higher frequencies and is not the lowest-loss option above 1 GHz. Balanced twisted-pair is unsuitable for RF transmission at these frequencies. Optical fiber requires O/E conversion and is used for DAS backhaul, not as antenna feed line.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Waveguides (flexible or rigid) provide the lowest RF signal loss at frequencies above 1 GHz by confining and guiding electromagnetic energy within a hollow metal tube, eliminating conductor resistance losses present in coaxial cable.",
+      "Coaxial cable loss increases with frequency (due to skin effect); at frequencies above 1 GHz, long coaxial feed runs can consume an unacceptable portion of the link budget, making waveguide the preferred alternative.",
+      "Optical fiber is used for DAS backhaul transport of digitized RF signals — not as an antenna feed line — because fiber cannot directly transmit RF signals without optical-to-electrical conversion at both ends."
     ]
   },
   {
@@ -334,9 +334,9 @@
     "a": 1,
     "w": "Digital DAS systems use time division duplex (TDD) transceivers for handling digital signals. AGC (Automatic Gain Control) is used in analog DAS systems. FDM is a legacy analog multiplexing technique. Analog-to-digital conversion is a component of the digital DAS process but not the defining signal handling technology.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Digital DAS systems use TDD (Time Division Duplex) transceivers to digitize, transport, and reconstruct RF signals; TDD allows both uplink and downlink signals to share the same digital transport medium by alternating time slots.",
+      "TDD transceivers in digital DAS convert RF signals to digital data streams at the headend, transport them over fiber or Cat cable, and convert them back to RF at each remote antenna unit.",
+      "AGC (Automatic Gain Control) is the key technology in analog DAS, maintaining consistent signal levels across the analog RF distribution; it is not the defining characteristic of digital DAS architecture."
     ]
   },
   {
@@ -354,9 +354,9 @@
     "a": 2,
     "w": "Infrared communication has a maximum allowable illumination of 10 lux to prevent interference from ambient IR sources such as sunlight and incandescent lighting. 1 and 5 lux would be overly restrictive limits for practical IR system deployment. 50 lux would be too permissive and would allow excessive ambient IR interference.",
     "k": [
-      "Distance and dimension limits in wireless network design are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as IEEE 802.11 and FCC regulations codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "IR wireless communication systems require ambient illumination to be limited to 10 lux maximum because strong IR sources (sunlight, incandescent lamps) at higher lux levels saturate the photodiode receivers with noise.",
+      "At ambient illumination above 10 lux, background IR from room lighting overwhelms the IR data signal, causing high bit error rates or complete loss of communication.",
+      "This 10 lux ambient light limit restricts IR communication systems to dimly lit spaces; in brighter environments, RF-based wireless systems (Wi-Fi, Bluetooth) must be used instead."
     ]
   },
   {
@@ -374,9 +374,9 @@
     "a": 1,
     "w": "PoE Mode B delivers power over unused pairs in a 4-pair cable, using the spare pairs not carrying data signals. Mode A delivers power over the same pairs carrying data (multiple pairs). Modes C and D are not standard IEEE PoE mode designations.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "PoE Mode B uses the spare (unused) pairs (pins 4/5 and 7/8) in a 4-pair cable for power delivery — the pairs not carrying 10/100BASE-T data signals — leaving the active data pairs free of DC current.",
+      "PoE Mode A injects DC power onto the active data pairs (pins 1/2 and 3/6) using phantom powering, allowing power and data to coexist on the same pair simultaneously.",
+      "IEEE 802.3af/at defines Modes A and B; Modes C and D are not defined IEEE PoE modes and should be recognized as distractors on the RCDD exam."
     ]
   },
   {
@@ -394,9 +394,9 @@
     "a": 2,
     "w": "Beamforming and MIMO (Multiple Input Multiple Output) enhance WLAN coverage and performance by directing RF energy toward connected clients and using multiple spatial streams. DSSS is an older spread-spectrum modulation technique. OFDM is a multi-carrier modulation scheme that improves spectral efficiency but is not a spatial technique. QAM-256 is a higher-order modulation used to increase throughput, not coverage.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Beamforming concentrates RF energy toward a specific client device using multiple transmit antennas, improving received signal strength and enabling higher modulation orders at greater distances.",
+      "MIMO uses multiple antennas at both transmitter and receiver to simultaneously create multiple independent spatial data streams, multiplying throughput by the number of streams.",
+      "DSSS, OFDM, and QAM are modulation techniques that improve spectral efficiency or data rates; none of them direct RF energy spatially or increase coverage through antenna diversity."
     ]
   },
   {
@@ -414,9 +414,9 @@
     "a": 0,
     "w": "Channels 5.150–5.250 GHz and 5.735–5.815 GHz are always permitted for WLAN use. 5.170–5.740 GHz are restricted when in use by government devices. 5.250–5.350 GHz requires Dynamic Frequency Selection (DFS) to avoid radar interference. 5.470–5.725 GHz also requires DFS in most regulatory domains.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The 5.150–5.250 GHz (UNII-1) and 5.735–5.815 GHz (UNII-3) sub-bands are always available for WLAN use without DFS requirements, providing reliable non-DFS channels for AP channel planning.",
+      "Channels in UNII-2 (5.250–5.350 GHz) and UNII-2e (5.470–5.725 GHz) require DFS to detect and avoid radar systems; APs must monitor for radar and change channels automatically, creating potential service interruptions.",
+      "DFS-capable channels can be used but may cause momentary outages when radar is detected; designing WLAN channel plans to use non-DFS channels as primary assignments improves stability."
     ]
   },
   {
@@ -434,9 +434,9 @@
     "a": 1,
     "w": "An ESS (Extended Service Set) links multiple APs together to expand wireless coverage beyond what a single AP can provide. Increasing transmit power is a single-AP approach limited by regulatory constraints. Lower frequencies improve range with a single AP but are not an ESS. Directional antennas extend coverage in one direction from a single AP, not across a multi-AP system.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "An ESS connects multiple BSSs (APs) through a wired distribution system, creating a seamless wireless network with a single SSID that enables client devices to roam between APs without losing connectivity.",
+      "Each individual AP in an ESS constitutes a BSS; the ESS is the union of all these APs sharing the same network name (SSID) and authentication infrastructure.",
+      "Increasing transmit power or using directional antennas still involves only a single AP (a BSS); only the combination of multiple APs with a shared distribution system qualifies as an ESS."
     ]
   },
   {
@@ -454,9 +454,9 @@
     "a": 2,
     "w": "The 2.4 GHz band has traditionally been used for indoor multi-point networks due to its better wall penetration and longer range compared to higher frequency bands. The 6 GHz band is the newest Wi-Fi 6E band with limited obstacle penetration. The 5 GHz band offers more channels and less interference but has shorter range and reduced wall penetration. The 60 GHz band (WiGig) is used only for very short-range, line-of-sight high-throughput applications.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The 2.4 GHz band has traditionally dominated indoor multi-point WLAN deployments because its longer wavelength penetrates walls, floors, and obstacles better than 5 or 6 GHz, providing wider coverage per AP.",
+      "Higher frequency bands (5 GHz, 6 GHz) have more available channels and less interference but attenuate more rapidly through building materials, requiring more APs per floor for equivalent coverage.",
+      "60 GHz (WiGig/802.11ad/ay) is a high-throughput, short-range band for line-of-sight kiosk or point-to-point use; it cannot penetrate walls and is unsuitable for general indoor multi-point coverage."
     ]
   },
   {
@@ -474,9 +474,9 @@
     "a": 2,
     "w": "Spatial Multiplexing splits a high-bandwidth RF signal into multiple low-bandwidth signals transmitted on separate spatial streams using multiple antennas. Precoding uses multiple antennas to direct the same signal. Diversity Coding provides redundancy through orthogonal transmission. Beamsteering physically redirects antenna patterns and is not one of the three primary beamforming methods.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern wireless network design design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of IEEE 802.11 and FCC regulations ensures compliance with current best practices and avoids conflicts with other building codes."
+      "Spatial Multiplexing divides a high-data-rate signal into multiple independent lower-rate streams, each transmitted simultaneously from a different antenna on the same frequency channel, multiplying throughput by the number of streams.",
+      "Each spatial stream is decoded independently at the receiver using the different propagation paths that result from multipath scattering; this requires rich multipath environments and multiple receive antennas.",
+      "The three MIMO methods serve different goals: Spatial Multiplexing maximizes throughput; Diversity Coding maximizes reliability; Precoding maximizes spatial focusing (beamforming). Beamsteering is not one of the three standard categories."
     ]
   },
   {
@@ -494,9 +494,9 @@
     "a": 1,
     "w": "Analog DAS uses Automatic Gain Control (AGC) to maintain consistent signal levels across the distributed antenna system. Digital DAS uses TDD transceivers. OFDM is a modulation technique used at the radio level, not a DAS signal handling method. MIMO spatial streams are a wireless access layer feature, not specific to DAS analog signal processing.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Analog DAS distributes RF signals in their native analog form throughout the building using splitters, couplers, and amplifiers with AGC to maintain consistent signal levels along each branch.",
+      "AGC (Automatic Gain Control) continuously adjusts amplifier gain to compensate for signal level variations caused by cable losses, splitter losses, and varying input signal strength from base stations.",
+      "Digital DAS converts RF to digital signals at the headend and uses TDD transceivers; analog DAS keeps signals in RF analog form throughout the entire distribution — no analog-to-digital conversion occurs within the distribution path."
     ]
   },
   {
@@ -514,9 +514,9 @@
     "a": 1,
     "w": "Line of Sight (LoS) refers to the direct, unobstructed path between a wireless transmitter and receiver, which is required for optimal signal transmission in many wireless systems. The Fresnel Zone is an elliptical region around the LoS path that must be kept clear of obstructions for optimal signal propagation, not the path itself (option A). Diffraction Path describes signal propagation around obstacles, which is the opposite of an unobstructed path (option C). Harmonic Zone is not a recognized wireless communications term related to signal transmission paths (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Line of Sight (LoS) describes a direct, unobstructed straight-line path between transmitter and receiver, where no physical objects block the direct propagation of the radio wave.",
+      "LoS is required for maximum signal strength and is the baseline for link budget calculations; Non-Line-of-Sight (NLoS) paths introduce additional path loss from diffraction, scattering, and absorption.",
+      "The Fresnel Zone is an elliptical volume around the LoS path that must also be kept clear of obstructions; even if the LoS is clear, obstacles within the first Fresnel zone cause signal degradation."
     ]
   },
   {
@@ -534,9 +534,9 @@
     "a": 0,
     "w": "Quadrature Amplitude Modulation (QAM) is a modulation technique that encodes data by altering both the amplitude and phase of a carrier signal simultaneously, enabling high data throughput in wireless systems. Diffraction Modulation is not a recognized wireless modulation technique (option B). Radio Frequency Modulation is a general description rather than a specific modulation technique used in wireless networking (option C). Orthogonal Wave Shifting is not a standard wireless modulation technique (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "QAM (Quadrature Amplitude Modulation) encodes data by simultaneously varying both the amplitude and phase of a carrier, allowing multiple bits per symbol; 256-QAM encodes 8 bits/symbol, 1024-QAM encodes 10 bits/symbol.",
+      "Higher-order QAM (256-QAM, 1024-QAM) increases spectral efficiency and throughput but requires higher SNR, meaning it is only usable at short distances or with strong signals.",
+      "Diffraction Modulation, Radio Frequency Modulation, and Orthogonal Wave Shifting are not recognized IEEE 802.11 or standard RF modulation technique names; QAM is the only valid answer among the options."
     ]
   },
   {
@@ -554,9 +554,9 @@
     "a": 1,
     "w": "The 3dB rule states that doubling the signal power results in a 3dB increase in gain because the decibel scale is logarithmic (10 x log10(2) ≈ 3dB). Doubling signal power increases gain by 3dB, not reduces it (option A). Dividing signal power by 3 would result in approximately a 4.8dB loss, not halving the gain (option C). Halving the signal power results in a 3dB loss, but this describes a reduction, not the doubling relationship of the 3dB rule (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The 3 dB rule states that doubling transmit power increases signal level by 3 dB; conversely, halving power reduces it by 3 dB — this follows directly from the logarithmic definition of the decibel: 10 × log₁₀(2) ≈ 3.01 dB.",
+      "This rule is useful for quick mental link budget calculations: increasing transmit power from 10 mW to 20 mW adds 3 dB, while cutting it to 5 mW loses 3 dB.",
+      "A 3 dB gain increase can also be achieved by increasing antenna gain by 3 dBi — the 3 dB rule applies to any power ratio of 2:1, regardless of whether it involves transmit power, antenna gain, or received signal level."
     ]
   },
   {
@@ -574,9 +574,9 @@
     "a": 1,
     "w": "Wireless networks operate in both licensed frequency bands (requiring FCC authorization for exclusive use) and unlicensed bands (available for general use without licensing, such as 2.4 GHz and 5 GHz ISM bands). High and low bands are general frequency descriptions, not the regulatory classification framework for wireless network bands (option A). Broad and narrow bands describe bandwidth characteristics, not frequency band authorization categories (option C). Static and dynamic bands are not recognized regulatory classifications for wireless frequency bands (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Wireless networks use licensed bands (requiring FCC/regulatory authorization for exclusive, interference-protected use) and unlicensed bands (available to all users without a license but with no interference protection).",
+      "Cellular networks operate in licensed bands assigned exclusively to each carrier; Wi-Fi operates in unlicensed ISM bands (2.4, 5, 6 GHz) shared by all users on a best-effort, non-interference-protected basis.",
+      "The distinction between licensed and unlicensed spectrum is fundamental to wireless system design: licensed bands cost money but guarantee interference-free operation; unlicensed bands are free but require interference mitigation design."
     ]
   },
   {
@@ -594,9 +594,9 @@
     "a": 1,
     "w": "IEEE 802.15 defines standards for Wireless Personal Area Networks (WPANs), including Bluetooth (802.15.1) and ZigBee (802.15.4), covering short-range wireless communication within an individual's personal space. IEEE 802.11 defines Wireless Local Area Network (WLAN) standards, not 802.15 (option A). Distributed Antenna Systems are covered by separate telecommunications standards, not IEEE 802.15 (option C). Cellular network standards are defined by 3GPP and ITU, not IEEE 802.15 (option D).",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern wireless network design design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of IEEE 802.11 and FCC regulations ensures compliance with current best practices and avoids conflicts with other building codes."
+      "IEEE 802.15 covers Wireless Personal Area Networks (WPANs), a family of short-range wireless standards including Bluetooth (802.15.1), UWB (802.15.3), and ZigBee (802.15.4).",
+      "IEEE 802.11 (not 802.15) defines WLANs (Wi-Fi); confusing these two IEEE working group numbers is a common error that must be avoided on RCDD exam questions about wireless standard families.",
+      "DAS standards are defined by telecommunications industry standards (TIA, NFPA, etc.), not by IEEE 802.15; cellular standards are from 3GPP (LTE, 5G), not the IEEE 802.15 committee."
     ]
   },
   {
@@ -614,9 +614,9 @@
     "a": 2,
     "w": "An Extended Service Set (ESS) consists of two or more Basic Service Sets (BSSs) connected via a distribution system, allowing seamless roaming between multiple APs throughout a coverage area. An IBSS (ad hoc mode) connects devices directly without any APs, using peer-to-peer connections (option A). A BSS uses a single AP to manage communications within its coverage area (option B). Distributed Service Set (DSS) is not a recognized 802.11 WLAN configuration type (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "An ESS is the multi-AP WLAN configuration defined by IEEE 802.11: two or more APs share the same SSID and are interconnected by a wired distribution system, enabling client devices to roam seamlessly between APs.",
+      "A BSS has exactly one AP; an IBSS has no AP (ad-hoc mode); an ESS has two or more APs connected by a distribution system — these are the three mutually exclusive IEEE 802.11 service set types.",
+      "Distributed Service Set (DSS) is not an IEEE 802.11 term; recognizing it as a distractor is important for RCDD candidates who must know precise 802.11 terminology."
     ]
   },
   {
@@ -634,9 +634,9 @@
     "a": 1,
     "w": "A DAS provides cellular and wireless coverage within buildings, tunnels, and other areas where outdoor signals cannot adequately penetrate, by distributing signal from a central source through antennas placed throughout the structure. DAS is primarily designed for indoor coverage, not to improve outdoor network bandwidth (option A). DAS supplements wired networks with wireless connectivity and does not replace wired infrastructure (option C). DAS is primarily used for indoor coverage in areas with poor outdoor signal penetration, not for extending WLAN range in open outdoor spaces (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A DAS solves the in-building coverage problem by routing RF signals from a central headend to multiple distributed antennas placed throughout a building, providing coverage in areas where outdoor signals cannot penetrate.",
+      "Outdoor macro-cell signals are attenuated by building materials (concrete, glass, metal framing) by 15–30 dB or more; a DAS captures these weak signals and redistributes them at adequate power levels throughout the interior.",
+      "DAS is a signal distribution infrastructure, not a replacement for wired networks; it complements the ICT infrastructure by providing wireless coverage while the structured cabling system provides the wired backbone."
     ]
   },
   {
@@ -654,9 +654,9 @@
     "a": 2,
     "w": "Shielded ribbon cable is not used in DAS systems; ribbon cable is used for mass-terminated fiber optic connections and data applications, not for distributing RF signals in DAS infrastructure. Singlemode optical fiber is commonly used in DAS systems to carry digitized RF signals over long distances (option A). Coaxial cable is the traditional medium used in DAS for carrying RF signals between components (option B). Balanced twisted pair is used in some DAS architectures for carrying digitized signal streams to remote antenna units (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Shielded ribbon cable is not used in DAS; ribbon cables are designed for mass-terminated data connections (e.g., flat ribbon fiber, IDE cables) and cannot carry RF signals in the frequencies and power levels required by DAS.",
+      "DAS uses coaxial cable for RF signal distribution, optical fiber for digital DAS transport links, and balanced twisted-pair for some digital DAS remote unit connections — all three are legitimate DAS cable types.",
+      "Recognizing shielded ribbon cable as the non-DAS option requires knowing what DAS cables look like: coax for analog RF, fiber for digital transport, and structured cabling (BTP) for some digital DAS backhaul."
     ]
   },
   {
@@ -674,9 +674,9 @@
     "a": 0,
     "w": "The Master Control Unit (MCU) is the headend component of a DAS system that connects to signal sources, processes the RF signals, and distributes them to remote antenna units throughout the coverage area. A Base Transceiver Station (BTS) is a cellular network component that connects to the DAS but is not the DAS headend unit itself (option B). Signal Distribution Unit (SDU) is not the standard term for the DAS headend unit (option C). Central Antenna Controller (CAC) is not a recognized DAS component designation (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The Master Control Unit (MCU) is the DAS headend: it aggregates RF signals from multiple signal sources (cellular carriers, Wi-Fi, public safety), processes them, and feeds them to remote antenna units throughout the building.",
+      "The BTS (Base Transceiver Station) is the cellular carrier's radio equipment that provides the RF signal input to the DAS MCU; it is a source device, not the DAS headend itself.",
+      "SDU and CAC are not recognized DAS nomenclature; the standard terms are MCU (headend), RAU or RU (Remote Antenna/Radio Unit at each antenna location), and cabling infrastructure connecting them."
     ]
   },
   {
@@ -694,9 +694,9 @@
     "a": 1,
     "w": "DAS backend (headend) equipment typically includes expansion modules (to scale capacity), signal repeaters (to boost signal levels), and remote units (to distribute signals to antenna locations). Omnidirectional antennas and coaxial cables are the distribution and radiation components at the frontend, not the backend equipment (option A). Line of Sight amplifiers are point-to-point wireless link components, not DAS backend equipment (option C). Transceivers and power converters may be internal components but do not define the primary DAS backend equipment categories (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to wireless network design.",
-      "Designers must know IEEE 802.11 and FCC regulations limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "DAS backend (headend) equipment includes expansion modules (for capacity scaling), signal repeaters (for amplification along long distribution paths), and remote units (which convert the transport signal back to RF at each antenna location).",
+      "Omnidirectional antennas and coaxial distribution cables are the front-end radiating elements — they deliver coverage to occupants — not the headend backend equipment that processes and routes the signals.",
+      "LoS amplifiers are for outdoor point-to-point microwave links; they are not part of a DAS headend. Transceivers may be internal sub-components but expansion modules, repeaters, and remote units are the primary backend DAS equipment categories."
     ]
   }
 ]
