@@ -122,7 +122,7 @@ function compactAppData(appData) {
       mode: sess.mode || 'normal'
     };
   });
-  return { sessions, history: appData.history, starred: appData.starred, wrongCounts: appData.wrongCounts, confidenceLog: appData.confidenceLog };
+  return { sessions, history: appData.history, starred: appData.starred, wrongCounts: appData.wrongCounts, confidenceLog: appData.confidenceLog, dailyStats: appData.dailyStats };
 }
 
 function expandSessions(compactSessions, questionsById) {
@@ -295,13 +295,13 @@ function App() {
       const user = JSON.parse(localStorage.getItem('rcdd_user'));
       if (user && user.username) {
         const cached = loadUser(user.username);
-        if (cached) return { sessions:cached.sessions||{}, history:cached.history||[], starred:cached.starred||[], wrongCounts:cached.wrongCounts||{}, confidenceLog:cached.confidenceLog||{} };
+        if (cached) return { sessions:cached.sessions||{}, history:cached.history||[], starred:cached.starred||[], wrongCounts:cached.wrongCounts||{}, confidenceLog:cached.confidenceLog||{}, dailyStats:cached.dailyStats||{date:'',correct:0} };
       }
     } catch(e) {}
     const saved = load();
     if (!saved) { try { const old=localStorage.getItem('rcdd_v2'); if(old){const p=JSON.parse(old);return{sessions:p.sessions||{},history:p.history||[],starred:p.starred||[],wrongCounts:{},confidenceLog:{}};} } catch(e) {} }
-    if (saved) return { sessions:saved.sessions||{}, history:saved.history||[], starred:saved.starred||[], wrongCounts:saved.wrongCounts||{}, confidenceLog:saved.confidenceLog||{} };
-    return { sessions:{}, history:[], starred:[], wrongCounts:{}, confidenceLog:{} };
+    if (saved) return { sessions:saved.sessions||{}, history:saved.history||[], starred:saved.starred||[], wrongCounts:saved.wrongCounts||{}, confidenceLog:saved.confidenceLog||{}, dailyStats:saved.dailyStats||{date:'',correct:0} };
+    return { sessions:{}, history:[], starred:[], wrongCounts:{}, confidenceLog:{}, dailyStats:{date:'',correct:0} };
   });
 
   useEffect(() => { save(appData); if (currentUser) saveUser(currentUser.username, appData); }, [appData, currentUser]);
@@ -321,7 +321,7 @@ function App() {
           const qById = {};
           questions.forEach(q => { qById[q.id] = q; });
           justLoadedRef.current = true;
-          setAppData({ sessions:expandSessions(p.sessions||{},qById), history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{} });
+          setAppData({ sessions:expandSessions(p.sessions||{},qById), history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{}, dailyStats:p.dailyStats||{date:'',correct:0} });
         }
         setProgressLoaded(true);
       })
@@ -428,7 +428,11 @@ function App() {
       const sess = prev.sessions[testId];
       if (!sess || sess.answers[qIdx] !== null) return prev;
       const answers = [...sess.answers]; answers[qIdx] = optIdx;
-      return { ...prev, sessions: { ...prev.sessions, [testId]: { ...sess, answers } } };
+      const isCorrect = optIdx === sess.questions[qIdx].a;
+      const today = new Date().toDateString();
+      const ds = prev.dailyStats || { date: '', correct: 0 };
+      const dailyStats = { date: today, correct: (ds.date === today ? ds.correct : 0) + (isCorrect ? 1 : 0) };
+      return { ...prev, sessions: { ...prev.sessions, [testId]: { ...sess, answers } }, dailyStats };
     });
   }, []);
 
@@ -545,7 +549,7 @@ function App() {
 
   return el('div', { style: { maxWidth:430, margin:'0 auto', minHeight:'100vh', background:t.bg, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
     el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut }),
-    screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, history:appData.history, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
+    screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
     screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:()=>finishTest(activeTest), dark }),
     screen==='result' && session && el(ResultScreen, { testId:activeTest, session, onBack:()=>setScreen('test'), onRetry:()=>retryTest(activeTest), onReshuffle:()=>reshuffleTest(activeTest), onHome:()=>setScreen('home'), dark })
@@ -679,13 +683,13 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
 
 // ── Home Screen ───────────────────────────────────────────────────────────────
 const DAILY_TARGET = 50;
-function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, history, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onCustomQuiz, onResetTest, dark, onToggleDark }) {
+function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, dailyStats, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onCustomQuiz, onResetTest, dark, onToggleDark }) {
   const t = T(dark);
   const pct = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
   const [resetConfirm, setResetConfirm] = useState(null);
 
   const today = new Date().toDateString();
-  const todayCorrect = history.filter(h => new Date(h.date).toDateString() === today).reduce((s,h) => s+h.correct, 0);
+  const todayCorrect = (dailyStats && dailyStats.date === today) ? dailyStats.correct : 0;
   const dailyPct = Math.min(Math.round(todayCorrect/DAILY_TARGET*100), 100);
   const dailyDone = todayCorrect >= DAILY_TARGET;
 
