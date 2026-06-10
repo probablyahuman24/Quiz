@@ -898,6 +898,15 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
       ),
       el('p', { style: { fontSize:12.5, color:t.textSub, lineHeight:1.6 } }, q.w)
     ),
+    isAnswered && q.k && q.k.length > 0 && el('div', { style: { margin:'8px 18px 0', background:dark?'#0f172a':'#f0f9ff', borderRadius:12, padding:'13px', border:'1px solid '+(dark?'#1e3a5f':'#bfdbfe') } },
+      el('div', { style: { fontSize:10, fontWeight:700, color:'#3b82f6', letterSpacing:1.5, marginBottom:8 } }, '📚 KEY CONCEPTS'),
+      el('div', { style: { display:'flex', flexDirection:'column', gap:7 } },
+        ...q.k.map((concept, ci) => el('div', { key:ci, style: { display:'flex', gap:8, alignItems:'flex-start' } },
+          el('span', { style: { color:'#3b82f6', fontWeight:700, fontSize:13, flexShrink:0, lineHeight:1.5 } }, '•'),
+          el('p', { style: { fontSize:12.5, color:t.text, lineHeight:1.55, margin:0 } }, concept)
+        ))
+      )
+    ),
     el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', padding:'12px 18px 44px', marginTop:'auto' } },
       el('button', { onClick:()=>qIdx>0&&setQIdx(i=>i-1), disabled:qIdx===0, style: { background:t.cardAlt, border:'1.5px solid '+t.border, borderRadius:10, padding:'9px 16px', fontSize:13, fontWeight:600, color:t.textSub, opacity:qIdx===0?0.35:1 } }, '‹ Prev'),
       allDone
