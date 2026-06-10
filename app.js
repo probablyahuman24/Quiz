@@ -562,12 +562,10 @@ function SessionChart({ history, dark }) {
         const x = xOf(i);
         const ya = yOf(d.total);
         const yc = yOf(d.correct);
-        const acc = d.total > 0 ? Math.round(d.correct/d.total*100) : 0;
         const dateStr = new Date(d.date).toLocaleDateString('en-GB', { day:'2-digit', month:'short' });
         return el('g', { key:'pt'+i },
           el('circle', { cx:x, cy:ya, r:2.5, fill:'#7c3aed' }),
           el('circle', { cx:x, cy:yc, r:2.5, fill:'#059669' }),
-          el('text', { x:x, y:Math.min(ya,yc)-4, textAnchor:'middle', fontSize:7, fill:t.textMuted, fontWeight:'600' }, acc+'%'),
           (i===0||i===data.length-1) ? el('text', { x:x, y:H-2, textAnchor:'middle', fontSize:7, fill:t.textMuted }, dateStr) : null
         );
       })
