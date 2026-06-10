@@ -14,9 +14,9 @@
     "a": 1,
     "w": "Grade 1 is the minimum residential system, including one Category 6 balanced twisted-pair cable and one 75-ohm Series-6 coaxial cable per outlet. Two of each cable is the Grade 2 specification. Category 5e is below the specified Category 6 for Grade 1. Two Category 5e cables without coaxial does not meet the Grade 1 minimum.",
     "k": [
-      "Distance and dimension limits in residential cabling are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as TIA-570 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "TIA-570 Grade 1 is the minimum residential cabling tier, requiring exactly one Category 6 balanced twisted-pair cable and one 75-ohm Series-6 coaxial cable per outlet location.",
+      "Grade 1 supports basic voice and single-channel video; the single Cat 6 provides telephony and basic data while the single coaxial delivers broadcast TV or cable service.",
+      "Grade 2 doubles the cable count to two Cat 6 and two coaxial per outlet, and adds optional multimode fiber — knowing exactly what changes between grades is an RCDD exam staple."
     ]
   },
   {
@@ -34,9 +34,9 @@
     "a": 1,
     "w": "Grade 2 supports current and advanced multimedia services with two Category 6 twisted-pair cables, two 75-ohm Series-6 coaxial cables, and optionally a two-strand multimode optical fiber cable. One of each describes Grade 1. Three Category 6 cables exceeds Grade 2 and approaches Grade 3. Category 5e is below the Category 6 specification for Grade 2.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 Grade 2 provides two Category 6 twisted-pair cables, two 75-ohm Series-6 coaxial cables, and optionally a two-strand multimode optical fiber cable per outlet to support advanced multimedia services.",
+      "The optional multimode fiber in Grade 2 enables future high-bandwidth applications such as FTTH (fiber to the home) extensions without requiring a wall-opening retrofit.",
+      "Grade 2 doubles Grade 1's copper count (2 Cat 6 vs. 1, and 2 coaxial vs. 1) to support simultaneous voice, high-speed data, and multiple video services at the same outlet."
     ]
   },
   {
@@ -54,9 +54,9 @@
     "a": 2,
     "w": "Twisted-pair and optical fiber cabling in residential systems are implemented in a star topology from the distribution device. Bus topology is one option for coaxial cabling only. Ring topology is not used in residential structured cabling. Mesh topology is impractical for residential premises cabling.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 requires twisted-pair and optical fiber residential cabling to use a star topology, with individual home runs from the Distribution Device (DD) to each outlet.",
+      "Star topology allows each outlet to be independently activated, tested, or reconfigured at the DD without affecting other outlets — essential for flexible residential service delivery.",
+      "Only coaxial cabling may use bus, star, or a combination in residential installations; twisted-pair and fiber are star-only, making this an important topology distinction to remember."
     ]
   },
   {
@@ -74,9 +74,9 @@
     "a": 2,
     "w": "Coaxial cabling in residential systems may be implemented in bus topology, star topology, or a combination of both. Star topology only is a valid option but not the only one. Bus only is also valid but not the complete answer. Ring topology is not used for residential coaxial distribution.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 allows residential coaxial cabling to use bus topology (daisy-chain splitters), star topology (home runs to a central splitter), or a hybrid of both — unlike twisted-pair which is star-only.",
+      "Bus topology uses passive RF splitters at intermediate points along a single coaxial run, distributing the signal without a dedicated home run from the DD to every outlet.",
+      "The topology flexibility for coaxial reflects its RF signal nature, where passive signal splitting at any point is technically valid — unlike digital Ethernet which requires dedicated point-to-point links."
     ]
   },
   {
@@ -94,9 +94,9 @@
     "a": 2,
     "w": "The DD should not be installed on exterior walls due to moisture penetration risk, temperature extremes, and potential cable damage. Interior load-bearing walls and partition walls are acceptable installation locations. Walls adjacent to utility rooms may actually be preferred for proximity to building services.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to residential cabling.",
-      "Designers must know TIA-570 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "TIA-570 prohibits installing the Distribution Device (DD) on exterior walls because exterior walls are subject to moisture infiltration, condensation, and temperature extremes that can damage cabling and active equipment.",
+      "Interior walls maintain more stable temperature and humidity conditions, protecting the DD and the cable terminations from environmental degradation over the life of the installation.",
+      "Walls adjacent to utility rooms are often preferred, not avoided, because proximity to electrical panels and ground bonding points simplifies power and grounding connections for the DD."
     ]
   },
   {
@@ -114,9 +114,9 @@
     "a": 1,
     "w": "The DD requires a dedicated 15-ampere, 120-volt AC outlet within 1.52 m (5 ft) to power active distribution devices. 20-ampere is a higher capacity than required. 240V is not the appropriate voltage for residential telecommunications distribution equipment. 0.5 m is unnecessarily restrictive and harder to achieve in all installation scenarios.",
     "k": [
-      "Distance and dimension limits in residential cabling are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as TIA-570 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "TIA-570 requires a dedicated 15-ampere, 120-volt AC electrical outlet located within 1.52 m (5 ft) of the Distribution Device (DD) to power active distribution equipment such as routers, switches, and amplifiers.",
+      "The outlet must be dedicated (not shared with other devices) to prevent power quality issues from appliances affecting sensitive distribution electronics.",
+      "20A and 240V outlets are over-specified for residential telecommunications equipment; 15A/120V matches the actual power requirements of typical home networking distribution hardware."
     ]
   },
   {
@@ -134,9 +134,9 @@
     "a": 1,
     "w": "A Grade 1 DD with up to 8 outlets requires a height of 254–457 mm (10–18 in). 150–300 mm is below the minimum specified for Grade 1. 457–914 mm corresponds to Grade 2 with up to 8 outlets. 711–1067 mm corresponds to Grade 2 with 17–24 outlets.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to residential cabling.",
-      "Designers must know TIA-570 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "TIA-570 specifies that a Grade 1 Distribution Device (DD) serving up to 8 outlets must have an enclosure height of 254–457 mm (10–18 in) to accommodate the required termination hardware.",
+      "The height specification ensures enough vertical space for patch panels, cable management, and any active equipment, while keeping the enclosure compact for Grade 1 installations.",
+      "Grade 2 DDs with up to 8 outlets require 457–914 mm (18–36 in) — the same outlet count requires a taller enclosure at Grade 2 because Grade 2 has twice as many cables per outlet."
     ]
   },
   {
@@ -154,9 +154,9 @@
     "a": 1,
     "w": "Residential cabling design should allow for 20–50% additional cable runs for future growth to avoid costly renovations later. 5–10% provides insufficient room for meaningful expansion. Doubling all runs (100%) would be excessively costly. Installing on demand only would require opening walls for future service additions.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 recommends designing residential cabling with 20–50% spare cable runs beyond current requirements to accommodate future services without requiring destructive wall-opening retrofits.",
+      "A 5–10% spare provision is too little to support meaningful technology evolution; residential cabling is typically installed during construction and cannot easily be augmented once walls are closed.",
+      "Installing cable on-demand after construction requires cutting drywall, painting, and patching — the cost of pre-installing 20–50% spare runs during initial construction is far lower than a post-occupancy retrofit."
     ]
   },
   {
@@ -174,9 +174,9 @@
     "a": 1,
     "w": "The ADO provides a disconnection point between the living unit and the access provider's network, allowing the service provider to disconnect individual units without entering them. It is not an emergency power device, a grounding point, or a fiber splice enclosure.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "The Auxiliary Disconnect Outlet (ADO) is the demarcation interface in MDU residential buildings that allows the access provider to connect or disconnect service to an individual living unit from outside the unit.",
+      "The ADO ensures the access provider never needs to enter a tenant's private space to connect, disconnect, or change services — maintaining tenant privacy and simplifying service management.",
+      "The ADO is distinct from the Distribution Device (DD), which is inside the living unit; the ADO is the boundary point between provider network and the tenant's internal cabling system."
     ]
   },
   {
@@ -194,9 +194,9 @@
     "a": 1,
     "w": "The ADO minimum requirement is one coaxial cable per living unit for coaxial services. Two coaxial cables at the ADO would exceed the minimum. Three coaxial cables and one per bedroom are not ADO minimum standards.",
     "k": [
-      "Distance and dimension limits in residential cabling are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as TIA-570 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "TIA-570 sets the ADO minimum for coaxial at one 75-ohm coaxial cable per living unit, providing a single coaxial service entry point for broadcast TV or cable television distribution.",
+      "The single coaxial at the ADO is then distributed to multiple room outlets via splitters within the living unit's internal cabling system, starting from the Distribution Device.",
+      "Two or more coaxial cables at the ADO exceed the minimum — the ADO is the entry point only, not the distribution point, so one coaxial is sufficient to feed the internal distribution system."
     ]
   },
   {
@@ -214,9 +214,9 @@
     "a": 1,
     "w": "The ADO minimum for twisted-pair is two 4-pair cables per living unit to support basic telecommunications services with a spare. One 4-pair cable provides no redundancy. Three 4-pair cables exceeds the minimum. One 25-pair cable is a multi-unit backbone cable, not an ADO minimum.",
     "k": [
-      "Distance and dimension limits in residential cabling are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as TIA-570 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "TIA-570 requires a minimum of two 4-pair Category 6 (or higher) balanced twisted-pair cables at the ADO per living unit — one for active service and one spare for redundancy or a second service.",
+      "A single 4-pair cable at the ADO leaves no room for a second service (e.g., both DSL and a dedicated voice line) or a spare in case of cable failure.",
+      "A 25-pair cable is used for multi-unit backbone distribution in the building, not as an ADO connection to an individual living unit — it serves many units, not one."
     ]
   },
   {
@@ -234,9 +234,9 @@
     "a": 1,
     "w": "The ADO minimum optical fiber requirement is two strands per living unit, providing one transmit and one receive path. One strand is insufficient for bidirectional duplex transmission. Four and six strands exceed the minimum requirement.",
     "k": [
-      "Distance and dimension limits in residential cabling are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as TIA-570 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "TIA-570 requires a minimum of two optical fiber strands at the ADO per living unit — one strand for transmit and one for receive, enabling bidirectional duplex optical communication.",
+      "A single fiber strand cannot support simultaneous full-duplex transmission and reception without wavelength-division multiplexing (WDM) equipment, making two strands the practical minimum.",
+      "Four or six strands exceed the minimum and may be used in Grade 2 or Grade 3 installations for higher performance or future capacity, but two strands is the defined ADO floor."
     ]
   },
   {
@@ -254,9 +254,9 @@
     "a": 2,
     "w": "The maximum twisted-pair outlet cable length in residential installations is 90 m (295 ft), including allowance for 10 m (33 ft) of patch cords, jumpers, or equipment cords. 75 m and 80 m are unnecessarily restrictive. 100 m is the total channel length maximum, not just the outlet cable segment.",
     "k": [
-      "Distance and dimension limits in residential cabling are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as TIA-570 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "TIA-570 sets the maximum fixed horizontal cable (outlet cable) length at 90 m (295 ft), consistent with ANSI/TIA-568 for commercial premises cabling.",
+      "The 10 m remaining in the 100 m total channel budget is reserved for patch cords at the DD and equipment cords at the outlet — the 90 m limit applies to the fixed installed cable only.",
+      "Exceeding 90 m for the fixed cable segment violates the channel budget even if total end-to-end length appears under 100 m, because the patch cord allowance is for connection flexibility, not distance extension."
     ]
   },
   {
@@ -274,9 +274,9 @@
     "a": 2,
     "w": "A CTR serving 5 tenant units at Grade 2 requires a minimum of 775 mm (30.5 in) wide and 610 mm (24 in) high. The smaller dimensions would be insufficient for the termination hardware and distribution equipment needed for 5 units. The larger dimension exceeds the minimum requirement.",
     "k": [
-      "Distance and dimension limits in residential cabling are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as TIA-570 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "TIA-570 specifies that a Common Telecommunications Room (CTR) serving 5 MDU tenant units at Grade 2 requires a minimum enclosure or cabinet size of 775 mm (30.5 in) wide by 610 mm (24 in) high.",
+      "Grade 2 requires two Cat 6 cables and two coaxial cables per unit plus optional fiber, so 5 units generate significantly more termination hardware than Grade 1, driving the larger CTR space requirement.",
+      "The smaller 457×457 mm dimension is insufficient to physically accommodate patch panels, cable management, and termination hardware for 5 Grade 2 units without severe overcrowding."
     ]
   },
   {
@@ -294,9 +294,9 @@
     "a": 1,
     "w": "CTRs should be located on each floor or every third floor and co-located with the entrance facility when possible to minimize backbone cable lengths. Basement-only placement would create very long vertical cable runs. Top-floor-only would create similar issues. One CTR per building would not meet cable distance requirements for taller buildings.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to residential cabling.",
-      "Designers must know TIA-570 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "TIA-570 recommends placing CTRs on each floor or every third floor of an MDU to keep backbone cable runs within the maximum allowed distance while minimizing the number of rooms required.",
+      "Co-locating the CTR with the entrance facility when possible reduces the backbone cable length between the external service provider connection point and the first distribution point.",
+      "A single basement CTR in a tall building would create vertical cable runs that exceed the horizontal cable maximum for upper floors — multiple CTRs stacked vertically solve this problem."
     ]
   },
   {
@@ -314,9 +314,9 @@
     "a": 2,
     "w": "Twisted-pair backbone cabling in MDU buildings uses a star topology from the CTR to individual living units. Ring topology is not used for MDU structured cabling backbones. Bus topology is used for coaxial cabling, not twisted-pair. Mesh topology is impractical for residential premises distribution.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 requires MDU twisted-pair backbone cabling to use a star topology, with individual cable runs from the Common Telecommunications Room (CTR) to each living unit's Distribution Device (DD).",
+      "Star topology provides unit-level isolation so that a cable fault or service change in one unit does not affect any other unit — essential for the independent service delivery model of MDU buildings.",
+      "Bus topology applies to coaxial backbone distribution in MDUs (via RF splitters), not to twisted-pair — the two media types use different backbone topologies in TIA-570."
     ]
   },
   {
@@ -334,9 +334,9 @@
     "a": 1,
     "w": "Verification testing occurs at two stages: after cabling installation (rough-in stage, before drywall) and during the termination stage (after painting). Testing before/after equipment installation is an equipment commissioning activity. Tenant occupancy testing is not a residential cabling verification stage. Design review and final inspection are project management activities, not physical testing stages.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 specifies two verification testing stages: after rough-in (cables pulled, before drywall closes the walls) to check for continuity and shorts, and after termination (once all connectors are punched down, after painting) to confirm complete termination.",
+      "Testing after rough-in catches installation damage or reversed pairs before walls are closed, when repairs are still easy and inexpensive.",
+      "Testing after termination and painting confirms that neither the termination work nor subsequent trades (painters, finish carpenters) have damaged the installed cabling — this is the final acceptance test."
     ]
   },
   {
@@ -354,9 +354,9 @@
     "a": 1,
     "w": "Qualification testing is preferred for voice and data cabling during the termination stage, providing more detailed performance verification than basic continuity checks. Verification testing is used at the earlier rough-in stage. Certification testing may replace both verification and qualification during trim-out but is not the preferred method at the termination stage alone. Continuity testing alone is insufficient for structured cabling acceptance.",
     "k": [
-      "Field testing and certification of residential cabling verify that the installed system meets the specified performance category and will support the intended applications.",
-      "Test results must be documented and retained as part of the project record; they provide the baseline for future troubleshooting and maintenance.",
-      "Test equipment must be calibrated and set to the correct test limit for the installed link type (permanent link or channel) and category."
+      "TIA-570 specifies qualification testing as the preferred method for voice and data cabling at the termination stage; qualification testing measures key parameters (wiremap, length, propagation delay) to confirm the link will support its intended applications.",
+      "Verification testing (used at rough-in) provides only basic wire continuity and mapping — it does not measure performance parameters needed to confirm Category compliance at the termination stage.",
+      "Certification testing (to a full TIA-568 standard) is acceptable in place of qualification but requires more expensive equipment; qualification testing is the cost-effective standard for residential termination-stage acceptance."
     ]
   },
   {
@@ -374,9 +374,9 @@
     "a": 2,
     "w": "The building telecommunications ground must be within 1.52 m (5 ft) of the DD to ensure a short, low-impedance grounding path. 0.5 m is unnecessarily restrictive. 1.0 m is below the 1.52 m specified distance. 3 m exceeds the maximum specified distance and could result in an unacceptably high-impedance grounding path.",
     "k": [
-      "Proper grounding and bonding are foundational to EMI immunity and safety; all telecommunications infrastructure must be bonded to the building grounding electrode system.",
-      "Ground potential differences between interconnected equipment create noise currents in signal cables; equipotential bonding eliminates these differences.",
-      "TIA-607 and NFPA 70 define grounding and bonding requirements for residential cabling that designers must incorporate into every project."
+      "TIA-570 requires the telecommunications bonding conductor to connect the DD to the building's grounding electrode system via a path no longer than 1.52 m (5 ft) to minimize conductor impedance.",
+      "A longer bonding path increases the inductance and resistance of the grounding conductor, reducing its ability to dissipate transient voltages such as lightning-induced surges that enter through external cables.",
+      "The 1.52 m (5 ft) limit ensures a low-impedance bond between the DD and the building ground — exceeding this distance may satisfy NEC requirements but violates TIA-570's more stringent telecommunications grounding specification."
     ]
   },
   {
@@ -394,9 +394,9 @@
     "a": 2,
     "w": "Network Interface Devices (NIDs) should not be used as distribution devices because their purpose is to demarcate the service provider's network from the customer premises, not to distribute cabling throughout the residence. Using the NID as a DD would blur this demarcation boundary and complicate service provider access.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 prohibits using the Network Interface Device (NID) as a Distribution Device because the NID is the service provider's demarcation point — combining it with the DD blurs the boundary between provider and customer-owned infrastructure.",
+      "Using the NID as a DD creates access problems: the service provider may need access to the NID for service testing, but the DD contains the customer's private internal cabling — these must remain separate.",
+      "The correct architecture places the NID at the network demarcation point (often the ADO) and the DD separately inside the living unit, maintaining a clear boundary between provider and customer premises."
     ]
   },
   {
@@ -414,9 +414,9 @@
     "a": 1,
     "w": "Each living area should have at least one telecommunications outlet to ensure basic connectivity throughout the residence. Two outlets per room exceeds the minimum. Area-based calculations are used for commercial spaces, not residential rooms. A defined minimum is established rather than leaving it to tenant request.",
     "k": [
-      "Distance and dimension limits in residential cabling are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as TIA-570 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "TIA-570 requires at least one telecommunications outlet in each living area (bedroom, living room, family room, etc.) to ensure every habitable space has at least basic connectivity.",
+      "Unlike commercial spaces where outlet density is calculated per square meter, residential standards specify a per-room minimum — at least one outlet regardless of room size.",
+      "Two outlets per room exceed the minimum and are commonly installed for flexibility, but the standard only mandates one — additional outlets are a design recommendation, not a requirement."
     ]
   },
   {
@@ -434,9 +434,9 @@
     "a": 1,
     "w": "Antenna entrances may be included in the EF for MDU buildings to accommodate broadcast TV or satellite antenna feed distribution. Solar inverter connections are electrical systems handled separately. BAS head-end equipment has its own dedicated space requirements. Building security control panels are housed in security equipment rooms, not the telecommunications EF.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 allows MDU Entrance Facilities to include antenna entrances — the physical pathway and termination point for roof-mounted broadcast TV or satellite dish antenna coaxial feeds entering the building.",
+      "Antenna entrances are cabling-related telecommunications infrastructure, making the EF the logical location for them, unlike solar inverters and security panels which are electrical and security systems respectively.",
+      "BAS head-end equipment requires its own room with specific environmental controls and has no structural reason to share the telecommunications EF — co-locating it there would violate separation requirements."
     ]
   },
   {
@@ -454,9 +454,9 @@
     "a": 1,
     "w": "Grade 3 optionally includes speaker cabling and security cabling in addition to the standard twisted-pair, coaxial, and multimode optical fiber. Category 7A and single-mode fiber are not defined Grade 3 optional components. BAS and CCTV cabling are commercial system elements. EV charging wiring is an electrical system, not a structured cabling component.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 Grade 3 is the highest residential cabling tier and optionally includes speaker cabling (for multi-room audio) and security cabling (for alarm sensors, cameras, and access control) beyond the standard twisted-pair, coaxial, and fiber.",
+      "Speaker and security cabling are the Grade 3 optional additions because they represent advanced smart-home and entertainment infrastructure beyond the basic voice, data, and video services of Grade 1 and 2.",
+      "Category 7A and single-mode fiber are not defined TIA-570 Grade 3 components — TIA-570 uses Category 6 and multimode fiber as its copper and fiber baselines even in Grade 3."
     ]
   },
   {
@@ -474,9 +474,9 @@
     "a": 1,
     "w": "Administration for MDU residential cabling should follow the same principles as commercial buildings to ensure organized, consistent record-keeping. A separate residential-only standard is not defined. Administration records are recommended for MDUs to support maintenance and service changes. While service providers maintain their own records, the building owner/manager has separate administration responsibilities.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 specifies that MDU residential cabling administration should follow the same principles as ANSI/TIA-606 commercial cabling administration, including labeling, documentation, and record-keeping for all cable, hardware, and spaces.",
+      "Consistent administration records in MDUs are essential for building managers to efficiently manage tenant moves, adds, and changes without re-surveying the infrastructure for each request.",
+      "Service providers maintain records of their network to the demarcation point; the building owner is responsible for administering everything beyond the ADO — these are separate, complementary record-keeping responsibilities."
     ]
   },
   {
@@ -494,9 +494,9 @@
     "a": 2,
     "w": "A Grade 2 DD with 17–24 outlets requires a height of 711–1067 mm (28–42 in). 254–457 mm applies to Grade 1 with up to 8 outlets. 457–914 mm applies to Grade 2 with up to 8 outlets. Installations with more than 24 outlets require multiple interconnected DDs, not a single taller unit.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to residential cabling.",
-      "Designers must know TIA-570 limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "TIA-570 specifies that a Grade 2 Distribution Device serving 17–24 outlets requires an enclosure height of 711–1067 mm (28–42 in) to accommodate the larger volume of termination hardware at this outlet count.",
+      "The height escalates with outlet count because each Grade 2 outlet requires two Cat 6 cables and two coaxial cables — 24 outlets generate 48 twisted-pair cable terminations plus 48 coaxial connections.",
+      "When outlet count exceeds 24, multiple interconnected DDs are required rather than a single oversized unit — there is no single-enclosure TIA-570 size rating above 24 outlets."
     ]
   },
   {
@@ -514,9 +514,9 @@
     "a": 2,
     "w": "In residential cabling, end users (homeowners) are responsible for the demarcation point and everything beyond it on their side, including internal wiring and devices. Access Providers (APs) are responsible for the network up to the demarcation point, not beyond it (option A). Network installers perform the installation work but are not the responsible party for the ongoing maintenance of the demarcation point (option B). Telecommunications Operators manage the public network but their responsibility ends at the DP (option D).",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "In residential cabling, the demarcation point (DP) is the boundary of ownership: the end user (homeowner) owns and is responsible for all cabling and equipment on the premises side of the DP.",
+      "The Access Provider's (AP) responsibility ends at the DP — they own and maintain the network infrastructure up to but not including the customer-side of the demarcation device.",
+      "Network installers perform the physical work of installing the DP and internal cabling, but legal and maintenance responsibility for the customer-side premises cabling rests with the end user after project completion."
     ]
   },
   {
@@ -534,9 +534,9 @@
     "a": 1,
     "w": "Category 6 cable is recommended for residential 4-pair balanced twisted-pair installations as it provides 250 MHz bandwidth and better performance margins than Category 5e for supporting current and emerging applications. Category 5e is the minimum but not the recommended category for new residential installations (option A). Category 6A is higher performance and may be specified in premium installations but is not the standard recommendation for typical residential use (option C). Category 7 is rarely used in residential applications due to cost and specialized connector requirements (option D).",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "TIA-570 recommends Category 6 (250 MHz) as the standard for new residential 4-pair balanced twisted-pair installations, providing significant performance headroom above the minimum Category 5e.",
+      "Category 5e is technically acceptable as a minimum but TIA-570 recommends Cat 6 for all new residential installations because the incremental cost over 5e is small while the performance improvement and future-proofing benefit is substantial.",
+      "Category 7 uses non-standard GG45 or TERA connectors that are incompatible with the standard 8P8C/RJ-45 outlets used in all residential consumer equipment, making it impractical for residential use."
     ]
   },
   {
@@ -554,9 +554,9 @@
     "a": 1,
     "w": "Star topology is the preferred topology for residential cabling because it runs individual cables from a central distribution device to each outlet, enabling easy troubleshooting, port isolation, and flexibility for service changes. Bus topology connects devices in a daisy-chain configuration that makes troubleshooting difficult and creates single points of failure (option A). Ring topology is primarily used in industrial network applications and is not recommended for residential cabling (option C). Tree topology creates a multi-level hierarchy that adds complexity without providing the isolation benefits of star topology (option D).",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "Star topology is the preferred topology for all residential twisted-pair and fiber cabling because each outlet is independently home-run to the Distribution Device, enabling per-port control and fault isolation.",
+      "Bus topology daisy-chains outlets along a single cable, meaning a single break or fault anywhere in the chain disrupts all outlets beyond that point — unacceptable for a reliable residential installation.",
+      "Ring and tree topologies add unnecessary complexity and redundancy overhead that is not cost-justified for residential applications where star topology already provides adequate flexibility and manageability."
     ]
   },
   {
@@ -574,9 +574,9 @@
     "a": 1,
     "w": "The Auxiliary Disconnect Outlet (ADO) and Distribution Device (DD) are typically co-located in a structured media center or distribution cabinet, providing the central connection point for all residential cabling runs. The Demarcation Point is the service provider's boundary point and is not typically co-located with the ADO in residential systems (option A). The Distribution Device and Network Termination Point are separate components serving different functions in the residential cabling hierarchy (option C). Coaxial and optical fiber are cable types, not co-located system components (option D).",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern residential cabling design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of TIA-570 ensures compliance with current best practices and avoids conflicts with other building codes."
+      "In residential cabling systems, the ADO and DD are typically co-located in the same structured media center or distribution enclosure, forming the central hub for all internal cable home runs and the external service connection.",
+      "Co-locating the ADO and DD in one enclosure simplifies installation, keeps service provider and homeowner connections at the same physical point, and minimizes the backbone cable length between them.",
+      "The Demarcation Point (DP) in single-family homes is often at or near the ADO location but it is not co-located with the ADO in the same hardware — DP is a conceptual boundary, while ADO is a physical disconnect device."
     ]
   },
   {
@@ -594,9 +594,9 @@
     "a": 1,
     "w": "The ADO minimum requirements per residential cabling standards are eight balanced twisted pairs, two coaxial cables, and four optical fiber strands to support all anticipated residential services including voice, data, video, and home networking. Four pairs with two coaxial cables and two fiber strands (option A) is insufficient for supporting all anticipated residential telecommunications services. Ten pairs, four coaxials, and four fiber strands (option C) exceeds the minimum requirement. Six pairs, one coaxial, and three fiber strands (option D) do not meet the minimum coaxial and fiber requirements for ADO.",
     "k": [
-      "Distance and dimension limits in residential cabling are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as TIA-570 codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "TIA-570 sets the ADO minimum at eight balanced twisted pairs (two 4-pair cables), two coaxial cables, and four optical fiber strands per living unit to support all anticipated residential telecommunications services.",
+      "Eight twisted pairs (two 4-pair cables) provide capacity for voice, DSL, and data services with a spare pair group; two coaxials support dual-service video delivery; four fiber strands provide two duplex paths.",
+      "Four twisted pairs (one cable) and two fiber strands — option A — falls below the ADO minimum because it does not provide sufficient pair count for multi-service delivery plus redundancy."
     ]
   }
 ]

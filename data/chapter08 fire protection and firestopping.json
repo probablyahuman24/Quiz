@@ -14,9 +14,9 @@
     "a": 1,
     "w": "ASTM E1966 or UL 2079 standards evaluate expansion and control joints. ASTM E814 or UL 1479 evaluate through-penetration firestop systems. ASTM E119 or UL 263 evaluate floors, walls, beams, and structural elements. NFPA 70 is the National Electrical Code and IBC is the International Building Code, neither of which specifically evaluates expansion joints.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern fire protection and firestopping in telecommunications design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of NFPA 70/NEC and NFPA 90A ensures compliance with current best practices and avoids conflicts with other building codes."
+      "ASTM E1966/UL 2079 specifically tests fire-resistant joint systems (expansion joints, construction joints, perimeter fire barriers) that must accommodate movement while maintaining a fire-rated seal.",
+      "ASTM E814/UL 1479 evaluates through-penetration firestop systems where cables, pipes, or conduit pass through a rated wall or floor — a different application from the dynamic joints tested by E1966.",
+      "ASTM E119/UL 263 is used to rate the fire resistance of floor, wall, and beam assemblies themselves, not the sealing of penetrations or joints within those assemblies."
     ]
   },
   {
@@ -34,9 +34,9 @@
     "a": 1,
     "w": "The 'T' rating measures firestop resistance to temperature rise on the unexposed side, expressed in minutes or hours. The 'F' rating measures the time a firestop resists flame passage. The 'L' rating measures air leakage to predict smoke movement. The 'W' rating evaluates water leakage over 72 hours.",
     "k": [
-      "Field testing and certification of fire protection and firestopping in telecommunications verify that the installed system meets the specified performance category and will support the intended applications.",
-      "Test results must be documented and retained as part of the project record; they provide the baseline for future troubleshooting and maintenance.",
-      "Test equipment must be calibrated and set to the correct test limit for the installed link type (permanent link or channel) and category."
+      "The T (Temperature) rating measures the time in hours before the unexposed side of a firestop assembly reaches 181°C (325°F) above ambient — the threshold at which adjacent combustibles can ignite from conducted heat.",
+      "A firestop assembly can have different F and T ratings: for example, F-2/T-1 means it prevents flame passage for 2 hours but limits temperature rise on the unexposed side for only 1 hour.",
+      "Metallic conduits readily conduct heat through a firestop, making T ratings harder to achieve with metal than with plastic conduits; intumescent materials around conduits are required to achieve acceptable T ratings."
     ]
   },
   {
@@ -54,9 +54,9 @@
     "a": 2,
     "w": "Cementitious firestop materials are ideal for large openings due to their ability to fill large voids and harden to provide structural fire resistance. Caulk/sealant is suitable for permanent installations in small-to-medium openings. Putty is best for small-to-medium openings with future entry requirements. Foam backer rods are used as backing material and must be compressed 25% for firestopping, making them unsuitable for large openings alone.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Cementitious firestop materials (mortar-like compounds) can be poured, troweled, or packed into large cable tray or conduit openings, hardening into a rigid, structural fire-resistant fill capable of withstanding hose stream tests.",
+      "Caulk and sealant are appropriate for small gaps and joints around individual cables or conduits but lack the volume and structural rigidity needed to fill large cable tray penetrations without slumping or cracking.",
+      "Putty pads are designed for small-to-medium individual cable penetrations and remain workable for MAC work; they cannot structurally fill the large open area of a cable tray penetration the way cementitious material can."
     ]
   },
   {
@@ -74,9 +74,9 @@
     "a": 2,
     "w": "Pillows (bags) are ideal for areas anticipating frequent cable changes because they can be removed, rearranged, and replaced without damaging the surrounding structure. Caulk/sealant is for permanent installations and requires cutting for re-entry. Cementitious material hardens permanently and is extremely difficult to modify. Intumescent wrap strips are designed for permanent installation around cables that may burn away.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Firestop pillows (bags) filled with intumescent material can be removed and reinstalled without tools or damage to the surrounding wall or floor, making them the preferred choice for frequently modified cable penetrations.",
+      "Caulk/sealant must be cut away and reapplied for every cable change — an acceptable approach for permanent installations but impractical in active telecommunications rooms with regular MAC activity.",
+      "Cementitious fill hardens like concrete; once cured, adding or removing cables requires chipping out the material, making it incompatible with areas expecting future cable changes."
     ]
   },
   {
@@ -94,9 +94,9 @@
     "a": 1,
     "w": "Foam backer rods must be compressed 25% of their thickness for effective firestopping to ensure a tight seal that prevents flame and smoke passage. 10% compression is insufficient to create the necessary seal density. Expanding to 150% of opening size is not a standard installation method for backer rods. Installing without compression would leave gaps that defeat the firestop purpose.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Foam backer rods must be compressed 25% of their thickness when installed in a penetration to create sufficient contact pressure against the surrounding structure, preventing gaps that would allow flame or smoke passage.",
+      "At less than 25% compression, the foam does not form a sufficiently dense seal; the 25% minimum ensures the cellular structure is collapsed enough to eliminate pathways for fire and combustion gases.",
+      "Foam backer rods are a backing component used in conjunction with firestop sealant — the rod fills the bulk of the void, and sealant is applied over it; the rod alone without proper compression does not constitute a rated system."
     ]
   },
   {
@@ -114,9 +114,9 @@
     "a": 0,
     "w": "Canadian standards require a hose stream test for FH or FTH ratings, which represent the Canadian equivalent of F and T ratings with the addition of the hose stream requirement. F and T ratings are the U.S. equivalents that do not mandatorily include the hose stream. E and I ratings are European equivalents. L and W ratings are U.S.-specific tests for air leakage and water leakage.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern fire protection and firestopping in telecommunications design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of NFPA 70/NEC and NFPA 90A ensures compliance with current best practices and avoids conflicts with other building codes."
+      "Canadian firestop ratings append 'H' to indicate the assembly passed a hose stream test: FH means the assembly resisted flame passage and survived the hose stream; FTH adds temperature rise resistance.",
+      "The hose stream test simulates the thermal shock of fire hose water hitting a hot firestop assembly; Canadian standards mandate this test as part of the rating, while U.S. ASTM E814 ratings (F and T) may not include it.",
+      "European standards use E (integrity = equivalent to F) and I (insulation = equivalent to T) ratings under EN 1366; comparing firestop ratings across jurisdictions requires understanding these different rating designation systems."
     ]
   },
   {
@@ -134,9 +134,9 @@
     "a": 1,
     "w": "Suppression systems such as sprinklers are active fire protection because they actively respond to fire conditions to suppress or extinguish fires. Passive fire protection includes compartmentation through fire-rated barriers, which contain fire without requiring activation. Structural fire protection refers to fire-resistant construction elements. Compartmentation is a type of passive fire protection, not a separate category from passive.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Active fire protection systems (sprinklers, gaseous suppression, fire alarms) require detection of fire and an activation response to function; they actively intervene to suppress or signal the fire.",
+      "Passive fire protection (compartmentation, firestopping, fire-rated assemblies) works continuously without any activation or detection; it limits fire spread simply by virtue of its physical presence in the building structure.",
+      "Firestopping is passive fire protection: once installed, it maintains the fire rating of a barrier regardless of whether a fire alarm sounds or a sprinkler activates, providing continuous protection."
     ]
   },
   {
@@ -154,9 +154,9 @@
     "a": 1,
     "w": "Bags for firestopping must be installed with heavy-gauge wire mesh to retain the bags in the opening and prevent them from being displaced by fire-driven pressure or mechanical contact. Steel mesh clips alone would not provide full retention. Intumescent sealant is a separate product not required over pillows. Ceramic fiber blanket is an optional thermal backing but not the specified requirement for bag installation.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Firestop bags (pillows) must be retained with heavy-gauge wire mesh secured over the opening; without mechanical retention, fire-generated pressure or the weight of stacked pillows can displace them, creating a gap in the firestop.",
+      "The wire mesh acts as a physical barrier holding the pillows in place during a fire event, when expanding gases would otherwise push loose fill materials out of the penetration and defeat the firestop.",
+      "Unlike cured cementitious or caulk systems that are self-retaining, pillows remain individual loose units that depend on the wire mesh for retention — the mesh is a mandatory installation component, not an optional accessory."
     ]
   },
   {
@@ -174,9 +174,9 @@
     "a": 1,
     "w": "Electrical boxes or single cable drops penetrating one side of a barrier are classified as membrane penetrations. Through-penetrations pass completely through the barrier from one side to the other. Expansion joint penetrations involve movement joints, not box or cable penetrations. Open-hole penetrations refer to unprotected openings that require firestopping.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A membrane penetration occurs when an item (electrical box, single cable drop, outlet) penetrates only one face (membrane) of a fire-rated assembly — it does not pass all the way through to the other side.",
+      "A through-penetration passes entirely through a fire-rated barrier (both faces), requiring a firestop system on both sides; membrane penetrations affect only one face and have different firestop requirements.",
+      "The NEC limits the size and spacing of back-to-back membrane penetrations in fire-rated walls to prevent them from compromising the assembly's overall fire resistance by creating too much void within the wall cavity."
     ]
   },
   {
@@ -194,9 +194,9 @@
     "a": 2,
     "w": "Firestop materials must be sealed symmetrically on both sides of floor/ceiling assemblies to ensure consistent protection regardless of which side is exposed to fire. Applying only to the fire side leaves the non-fire side unsealed and vulnerable if fire direction changes. Non-fire-side-only application would fail to protect from fire below. Top surface only would not meet through-penetration firestopping requirements.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Floor/ceiling assemblies are rated assemblies where fire can originate from either side; applying firestop sealant symmetrically on both faces ensures the penetration is protected regardless of fire direction.",
+      "A firestop system tested and listed for a specific floor assembly must be installed exactly as tested — 'symmetrical' application on both top and bottom faces is a common tested configuration that must be replicated in the field.",
+      "Applying sealant on only one side may achieve the listed F rating from that direction but leaves the opposite face unsealed, violating the listed system configuration and potentially invalidating the rating."
     ]
   },
   {
@@ -214,9 +214,9 @@
     "a": 1,
     "w": "Electrical apparatus penetrations in framed walls should not exceed 10,000 mm² (16 ft²) per face to limit the fire exposure area. 5,000 mm² would be an overly conservative restriction. 15,000 mm² and 20,000 mm² exceed the standard maximum and would create a larger fire risk area.",
     "k": [
-      "Distance and dimension limits in fire protection and firestopping in telecommunications are derived from signal budgets, safety requirements, or physical installation constraints — not arbitrary choices.",
-      "Standards such as NFPA 70/NEC and NFPA 90A codify these limits based on testing and industry consensus, ensuring interoperability and reliable performance.",
-      "RCDD designers must apply the correct limit from the appropriate standard and verify that the installed system meets it through calculation and field testing."
+      "Building codes limit electrical apparatus penetrations (outlet boxes, junction boxes) in fire-rated framed walls to a maximum aggregate area of 10,000 mm² (approximately 16 in²) per wall face to preserve the assembly's fire resistance.",
+      "Exceeding this limit creates too much void volume within the wall cavity, which can allow fire, smoke, and hot gases to spread through the wall assembly and compromise its fire rating.",
+      "Back-to-back electrical boxes on opposite faces of the same wall stud cavity are also restricted; they must be offset a minimum distance to prevent the combined void from creating a fire pathway through the assembly."
     ]
   },
   {
@@ -234,9 +234,9 @@
     "a": 2,
     "w": "Vertical shafts with cable trays do not require firestopping within the shaft at floor assemblies because the shaft itself is a rated fire enclosure and the cable trays are contained within it. Firestopping at every floor would unnecessarily block cable management in a rated shaft. The shaft walls provide the required fire compartmentation. Firestopping is required where cables exit the shaft into adjacent spaces.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A vertical shaft (riser shaft) constructed with fire-rated walls forms its own fire compartment; cable trays running inside the shaft do not need firestopping at each floor level because the shaft walls already provide the required fire separation.",
+      "Firestopping is required at the point where cables leave the shaft and penetrate the shaft wall to enter an adjacent floor space — that penetration breaks the rated shaft enclosure and must be firestopped.",
+      "This distinction prevents unnecessary installation of firestop materials inside the shaft that would obstruct cable management, while still maintaining the fire compartmentation principle at shaft wall penetrations."
     ]
   },
   {
@@ -254,9 +254,9 @@
     "a": 1,
     "w": "Factory-fabricated sleeve systems come with escutcheon plates for attachment to the wall or floor surface, providing a finished appearance and secure mounting. Cable management rings are a separate product used for cable routing. Fire dampers are used for HVAC penetrations, not cable sleeves. Sealant nozzles are application tools, not components of sleeve systems.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Factory-fabricated sleeve systems are pre-engineered assemblies that include escutcheon plates — trim rings or cover plates that secure the sleeve to the wall/floor surface and provide a neat, finished appearance around the penetration.",
+      "The escutcheon plate is structural as well as cosmetic: it distributes the attachment load of the sleeve and prevents the sleeve from being pushed through the penetration during installation or cable pulling.",
+      "Factory-fabricated sleeves are listed systems tested as a complete assembly; substituting non-listed components (like using different fastening hardware instead of the included escutcheon) could invalidate the firestop listing."
     ]
   },
   {
@@ -274,9 +274,9 @@
     "a": 2,
     "w": "Substituting components in a tested firestop system may invalidate its rating because the system was tested and listed as a specific combination of materials. Using similar materials is not an acceptable substitute for tested components. Fire ratings are not increased by substitutions; this misunderstands the listed system concept. All ratings (F, T, L, W) are potentially affected by substitution, not only the T rating.",
     "k": [
-      "Field testing and certification of fire protection and firestopping in telecommunications verify that the installed system meets the specified performance category and will support the intended applications.",
-      "Test results must be documented and retained as part of the project record; they provide the baseline for future troubleshooting and maintenance.",
-      "Test equipment must be calibrated and set to the correct test limit for the installed link type (permanent link or channel) and category."
+      "A firestop system's listing is valid only for the exact combination of materials, dimensions, and installation method documented in the listing; substituting any component — even a 'similar' product — voids the tested rating.",
+      "Listing bodies (UL, Intertek) test firestop systems as complete assemblies; the rating cannot be extrapolated to substitute materials because performance is a result of the specific chemical and physical interactions of the listed components.",
+      "Installers and inspectors must verify that the installed system matches the published listing exactly; the listing document specifies maximum opening size, maximum cable fill, and specific product part numbers that cannot be freely substituted."
     ]
   },
   {
@@ -294,9 +294,9 @@
     "a": 1,
     "w": "Non-conductive plastic conduits easily achieve higher 'T' ratings because they do not conduct heat like metallic conduits, so less heat transfers through them to the unexposed side. Metal conduits are thermally conductive and can transfer heat, raising the temperature on the non-fire side. Plastic conduits do not have higher thermal mass; they typically have lower thermal mass. Plastic conduits melt and are not self-sealing; intumescent materials are used to seal the resulting void.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "The T rating measures heat transmission through a firestop to the unexposed side; metal conduits are thermally conductive, acting as a heat bridge that transfers fire temperatures through the assembly, making high T ratings difficult to achieve.",
+      "Plastic conduits have very low thermal conductivity — they insulate rather than conduct heat — so very little heat transfers through the conduit wall to the unexposed side, easily achieving high T ratings.",
+      "When plastic conduit melts in a fire, it leaves a void; intumescent materials around plastic conduit expand to fill this void, maintaining the F rating; the initial low heat conductivity of plastic also helps achieve a superior T rating before the conduit melts."
     ]
   },
   {
@@ -314,9 +314,9 @@
     "a": 1,
     "w": "Hose stream tests in the U.S. must be conducted within 10 minutes of furnace exposure to simulate the impact of fire hose water on a still-hot assembly. 5 minutes would not allow adequate time to set up and execute the hose stream test. 15 and 30 minutes would allow excessive cooling of the assembly before the hose stream, not accurately representing fire fighting conditions.",
     "k": [
-      "Field testing and certification of fire protection and firestopping in telecommunications verify that the installed system meets the specified performance category and will support the intended applications.",
-      "Test results must be documented and retained as part of the project record; they provide the baseline for future troubleshooting and maintenance.",
-      "Test equipment must be calibrated and set to the correct test limit for the installed link type (permanent link or channel) and category."
+      "The hose stream test must begin within 10 minutes of removing the test assembly from the furnace to ensure the assembly is still thermally stressed (hot) when subjected to the mechanical and thermal shock of high-pressure water.",
+      "The 10-minute window simulates real fire fighting conditions where firefighters apply water to a hot structure; testing on a cooled assembly would be easier to pass and would not accurately represent real-world durability.",
+      "Assemblies that pass hose stream testing demonstrate they will not shatter or collapse when firefighters apply water, which would otherwise create new fire pathways through previously firestopped penetrations."
     ]
   },
   {
@@ -334,9 +334,9 @@
     "a": 1,
     "w": "The 'L' rating measures air leakage to predict smoke movement through a firestop assembly in U.S. standards. Load-bearing capacity is a structural rather than firestop rating. The tested assembly length is not an 'L' designation. Luminescent characteristics are not a firestop test criterion.",
     "k": [
-      "Field testing and certification of fire protection and firestopping in telecommunications verify that the installed system meets the specified performance category and will support the intended applications.",
-      "Test results must be documented and retained as part of the project record; they provide the baseline for future troubleshooting and maintenance.",
-      "Test equipment must be calibrated and set to the correct test limit for the installed link type (permanent link or channel) and category."
+      "The L (Leakage) rating quantifies air leakage through a firestop assembly in cubic feet per minute per square foot at a specified pressure differential, used to predict smoke migration potential before flame breakthrough.",
+      "Since smoke inhalation kills more fire victims than flames, the L rating is important for life safety design: a low L rating indicates the firestop resists smoke passage even before the fire reaches the penetration.",
+      "L ratings are optional in the U.S. (unlike F and T ratings which are the primary required performance metrics), but they are increasingly specified on projects with stringent smoke control requirements."
     ]
   },
   {
@@ -354,9 +354,9 @@
     "a": 2,
     "w": "Cable transit systems are examples of mechanical firestop systems, which use modular components to seal penetrations. Caulk sealant is a non-mechanical material firestop. Putty pads are also non-mechanical firestop materials. Intumescent foam is a material-based firestop, not a mechanical system.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Mechanical firestop systems use engineered physical components — frames, fill blocks, intumescent bricks — assembled into a modular seal; cable transit systems are the most common example, using a bolted frame with removable fill modules.",
+      "Unlike material-based systems (caulk, putty, foam) that are applied as liquids or pastes, mechanical systems are pre-fabricated devices that are installed as hardware and can be disassembled for cable changes.",
+      "Cable transit systems are especially suited for areas with many cables in large grouped openings; the modular fill blocks can be swapped out individually when cables are added or removed without disturbing the entire firestop."
     ]
   },
   {
@@ -374,9 +374,9 @@
     "a": 1,
     "w": "Intumescent materials expand when exposed to fire, filling gaps and voids left by cables that may burn away or melt. Shrinking would open gaps and defeat the firestop purpose. Absorbing heat is a passive function; intumescents work mechanically by expanding. They do not activate chemical suppression, which is the function of active fire suppression systems.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Intumescent materials contain a chemical compound (typically graphite or pentaerythritol) that expands 7–10 times its original volume when heated above approximately 200°C, filling the void left by burned or melted cables.",
+      "This expansion is critical for maintaining a firestop's F rating after plastic cables burn away: without intumescence, the cavity left by the cable would become an open pathway for flame and hot gases.",
+      "Intumescent materials do not rely on absorption, suppression, or chemical reaction with fire gases — they work purely mechanically through volumetric expansion driven by heat, making them passive and reliable over long service lives."
     ]
   },
   {
@@ -394,9 +394,9 @@
     "a": 1,
     "w": "Putty is best for small-to-medium openings with future entry requirements because it can be removed and re-applied more easily than cured caulk. Large openings require cementitious materials. Areas anticipating frequent cable changes should use pillows/bags for ease of repeated re-entry. Outdoor penetrations require weather-resistant sealants or specific outdoor-rated products.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Non-hardening firestop putty remains workable (pliable) after installation, allowing it to be cut or removed for infrequent cable additions without requiring the structural chipping needed to remove cementitious fill.",
+      "Putty is appropriate for small-to-medium penetrations (individual conduit or cable drops) where future access is anticipated but not frequent; for high-frequency MAC areas, removable pillows are more practical.",
+      "Large openings require cementitious fill for structural integrity and volume; putty is available only in pads or sticks sized for individual cable or conduit penetrations, not large cable tray openings."
     ]
   },
   {
@@ -414,9 +414,9 @@
     "a": 2,
     "w": "Air leakage tests for firestop systems are optional in the U.S. and are not a standard mandatory requirement for all installations. They are only required when specifically mandated by the AHJ or project specifications. The L rating test is available but not universally required. European and Canadian standards have different requirements that may mandate air leakage testing.",
     "k": [
-      "Field testing and certification of fire protection and firestopping in telecommunications verify that the installed system meets the specified performance category and will support the intended applications.",
-      "Test results must be documented and retained as part of the project record; they provide the baseline for future troubleshooting and maintenance.",
-      "Test equipment must be calibrated and set to the correct test limit for the installed link type (permanent link or channel) and category."
+      "In the U.S., the L (air leakage/smoke) rating test is optional — only the F (flame) rating is universally required for firestop systems; the L rating is tested and specified only when the project or AHJ specifically requires smoke-resistance documentation.",
+      "The optional status of U.S. L rating testing contrasts with some European standards where smoke resistance testing is mandatory; designers working on international projects must confirm which ratings are required under local codes.",
+      "When an L rating is specified, it is typically expressed as the maximum allowable air leakage (in cfm/ft²) at both ambient and elevated temperature; a lower L value indicates better smoke sealing performance."
     ]
   },
   {
@@ -434,9 +434,9 @@
     "a": 1,
     "w": "The European 'E' rating for firestopping is equivalent to the U.S./Canada 'F' rating, measuring resistance to flame passage. The European 'I' rating is equivalent to the U.S. 'T' rating, measuring resistance to temperature rise. The 'W' rating is U.S.-specific for water leakage. The 'R' rating is used in European structural standards for load-bearing capacity, not firestopping.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "European firestop ratings under EN 1366 use E (Integrity) for flame/smoke resistance — equivalent to the U.S. F (Flame) rating — both measuring the time before flame or hot gases breach the unexposed side.",
+      "The European I (Insulation) rating is equivalent to the U.S. T (Temperature) rating; both measure the time before the unexposed face reaches 181°C above ambient, indicating risk of igniting adjacent combustibles.",
+      "The U.S. W rating (water leakage) has no direct European equivalent in the standard firestop rating scheme; the R rating in European structural standards (load-bearing capacity) is an entirely different concept unrelated to firestopping."
     ]
   },
   {
@@ -454,9 +454,9 @@
     "a": 1,
     "w": "Fire-rated cables and junction boxes often require no additional firestopping when their fire rating matches the wall or floor assembly, as the listed product itself provides the required protection. Metal conduit alone does not eliminate the need for firestopping at penetrations. Non-combustible wall material does not automatically waive firestopping requirements. Being the sole penetration does not exempt a product from firestopping requirements.",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A fire-rated cable (e.g., FPLR, FPLP) or junction box listed with a specific fire rating equal to or greater than the wall assembly rating may be self-firestopping — its listing already provides the required protection level without additional material.",
+      "The 'matching rating' principle means the product's listed fire resistance must be verified against the specific wall or floor assembly rating (e.g., a 2-hour cable used in a 2-hour wall); a mismatch requires additional firestopping.",
+      "Metal conduit alone does not exempt a penetration from firestopping requirements; the conduit may conduct heat and the annular space around it must still be sealed with an appropriate listed firestop material."
     ]
   },
   {
@@ -474,9 +474,9 @@
     "a": 1,
     "w": "PASS/FAIL criteria in firestop qualification testing determine whether flaming occurs on the unexposed side of the assembly, directly measuring the fire containment performance. Structural integrity is a separate concern addressed by the rated assembly itself. The hose stream test is a separate component of some fire ratings. Temperature rise is measured for the T rating separately from the PASS/FAIL flame criteria.",
     "k": [
-      "Field testing and certification of fire protection and firestopping in telecommunications verify that the installed system meets the specified performance category and will support the intended applications.",
-      "Test results must be documented and retained as part of the project record; they provide the baseline for future troubleshooting and maintenance.",
-      "Test equipment must be calibrated and set to the correct test limit for the installed link type (permanent link or channel) and category."
+      "The fundamental PASS/FAIL criterion for the F rating in ASTM E814 is whether any flame appears on the unexposed side of the firestop assembly during the test exposure — flame appearance = FAIL regardless of elapsed time.",
+      "The F rating is the duration until flame breakthrough on the unexposed side; as long as no flaming occurs, the test continues accumulating time toward a higher F rating.",
+      "Temperature rise (T rating) and hose stream performance are evaluated separately from the flame PASS/FAIL criterion; a system can pass F while failing T if too much heat conducts through to the unexposed side."
     ]
   },
   {
@@ -494,9 +494,9 @@
     "a": 1,
     "w": "Silicone foam firestop systems may shrink over time, creating voids and potential hazards. Intumescent silicone sealants expand on heating and do not suffer from shrinkage in the same way. Silicone putty systems are used for small penetrations and are not known for shrinkage hazards. Silicone caulk sealants are long-lasting when properly installed and do not typically shrink enough to create hazards.",
     "k": [
-      "Standards bodies (TIA, ISO/IEC, ANSI, IEEE, NFPA) develop and maintain the technical specifications that govern fire protection and firestopping in telecommunications design and installation.",
-      "Standards are minimum requirements; designers often specify performance that exceeds the minimum to provide a margin for installation variability and future growth.",
-      "Referencing the correct edition of NFPA 70/NEC and NFPA 90A ensures compliance with current best practices and avoids conflicts with other building codes."
+      "Silicone foam firestop systems (expanded foam injected into penetrations) are known to shrink and pull away from the surrounding construction over time, creating gaps that compromise the firestop's ability to prevent flame and smoke passage.",
+      "This long-term shrinkage hazard is why silicone foam systems require periodic inspection and reapplication; their use is often discouraged in critical applications where long-term reliability without inspection is required.",
+      "Intumescent silicone sealants and standard silicone caulk do not share this shrinkage problem — their cured form is dimensionally stable; the foam variant's cellular structure is what makes it prone to long-term volume reduction."
     ]
   },
   {
@@ -514,9 +514,9 @@
     "a": 2,
     "w": "Compartmentation limits the spread of fire and smoke by dividing buildings into fire-resistive compartments using walls, floors, and firestop systems that contain fire within a defined area. Fire and smoke detection is performed by alarm systems, which are a different fire protection category (option A). Active suppression using extinguishing agents is the function of suppression systems like sprinklers, not compartmentation (option B). Temperature reduction is achieved by suppression systems, not compartmentation, which focuses on containment (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Compartmentation divides a building into fire-resistive zones using rated walls, floors, and firestop systems so that a fire in one compartment cannot spread to adjacent compartments for a defined time period.",
+      "The primary life-safety benefit of compartmentation is buying time — it allows occupants in adjacent compartments to evacuate and firefighters to respond before fire breaches the rated barriers.",
+      "Firestopping is integral to compartmentation: every cable, conduit, or pipe that penetrates a fire-rated barrier creates a potential breach; firestopping restores the barrier's rating at each penetration point."
     ]
   },
   {
@@ -534,9 +534,9 @@
     "a": 2,
     "w": "Compartmentation is passive fire protection because it requires no active response or triggering mechanism and continuously limits fire spread through the inherent fire resistance of barriers. Suppression systems are active fire protection because they require activation (manual or automatic) to discharge extinguishing agents (option A). Detection systems are active because they actively monitor for fire conditions and generate alerts (option B). Sprinkler systems are active fire protection that activates in response to heat (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Passive fire protection (compartmentation, fire-rated walls, firestopping) provides continuous protection without any activation, detection, or power supply — it is always 'on' simply by virtue of its physical construction.",
+      "Active fire protection systems (sprinklers, alarms, suppression) require a triggering event (heat, smoke, manual activation) and are subject to failure if the detection mechanism or activation system malfunctions.",
+      "Building codes require both passive and active systems to work together: passive compartmentation contains fire even if sprinklers fail, and active suppression limits damage even if compartmentation is breached."
     ]
   },
   {
@@ -554,9 +554,9 @@
     "a": 1,
     "w": "Non-hardening putties used in firestop systems typically possess intumescent properties, meaning they expand significantly when exposed to heat, sealing gaps around penetrating items during a fire. Flame retardance alone is insufficient for firestopping; the material must also expand to seal the opening when penetrating items are consumed (option A). Conductivity is not a relevant or desirable property for firestop materials and would be hazardous in electrical penetrations (option C). General insulation properties do not provide the active gap-sealing function needed in firestopping applications (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Non-hardening firestop putties combine workability (remaining pliable for MAC work) with intumescent properties — they expand when heated to fill the void left by cables that melt or burn during a fire.",
+      "Without intumescence, a putty could seal an opening against air leakage but would leave a gap when plastic cables burn away; the expansion mechanism is what gives putty its F rating for cable penetrations.",
+      "Flame retardance (resisting ignition) is a property of cable jackets and structural materials, not a firestop mechanism; firestopping works by sealing openings, not by preventing materials from burning."
     ]
   },
   {
@@ -574,9 +574,9 @@
     "a": 1,
     "w": "Firestopping as compartmentation aims to constrain fire and smoke to a specific area for as long as possible, giving occupants time to evacuate and limiting property damage. Early fire detection is the function of fire alarm systems, not firestopping (option A). Automatic suppression using water or chemicals is the function of sprinkler or suppression systems (option C). While firestopping supports occupant evacuation by containing fire, its primary goal is containment rather than evacuation planning (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Firestopping's role in compartmentation is to maintain the integrity of fire-rated barriers at cable penetrations, constraining fire and smoke to its compartment of origin for the duration of the assembly's rated period.",
+      "The rated period (e.g., 1-hour, 2-hour) is designed to provide enough time for occupant evacuation and firefighter response; the firestop's F rating must match or exceed the rated assembly's fire resistance.",
+      "Detection systems identify fire early and active suppression systems fight fire; firestopping does neither — it passively delays fire's spread by sealing penetrations so that compartment boundaries remain intact."
     ]
   },
   {
@@ -594,9 +594,9 @@
     "a": 0,
     "w": "A through-penetration is where a cable, pipe, or conduit passes completely through a fire-rated wall or floor assembly, requiring a firestop system to restore the fire rating at the penetration point. A joint between two walls is a construction joint application, not a through-penetration (option B). A fire-rated ceiling is a rated assembly itself, not a through-penetration application (option C). A perimeter fire barrier system addresses the gap between the floor slab and exterior curtain wall, which is a different firestop application (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A through-penetration occurs when a cable, conduit, or pipe passes entirely through both faces of a fire-rated wall or floor — breaking the fire-rated barrier at both surfaces and requiring a firestop system to restore the full rating.",
+      "The through-penetration firestop system must achieve an F rating equal to the assembly rating; ASTM E814 (UL 1479) is the standard test used to qualify through-penetration firestop systems for listing.",
+      "A construction joint (two walls meeting) and a perimeter gap (curtain wall/floor gap) are different firestop applications tested under ASTM E1966; understanding the distinction is essential for specifying the correct listed system."
     ]
   },
   {
@@ -614,9 +614,9 @@
     "a": 1,
     "w": "A firestop system consists of the penetrating item (cable, pipe, conduit), the wall or floor assembly being penetrated, and the firestop material (putty, caulk, intumescent device) that restores the fire rating. Wall assemblies, fire alarms, and sprinklers are separate building systems, not the three components of a firestop system (option A). Fire detection systems are not part of a firestop system (option C). Cables, insulation, and caulk do not comprehensively describe the three system components as cables are just one type of penetrating item (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "A listed firestop system is defined by three interdependent components: the rated wall or floor assembly (host barrier), the penetrating item (cable, conduit, pipe), and the firestop material applied around the penetration.",
+      "The listing is valid only when all three components match the tested configuration; changing any one component (different wall type, different cable type, or different sealant) may require selecting a different listed system.",
+      "The penetrating item is as important as the sealant to the system's fire performance: a plastic pipe behaves very differently from a copper pipe during fire, requiring different firestop material types to seal the resulting void."
     ]
   },
   {
@@ -634,9 +634,9 @@
     "a": 1,
     "w": "The F Rating measures the duration in hours that a firestop assembly prevents the passage of flame through a penetration, as tested per ASTM E814 or UL 1479. Air leakage resistance is not measured by the F Rating; this relates to smoke sealing performance (option A). Water leakage resistance is not part of the F Rating test protocol (option C). The time for the unexposed side to reach 181°C above ambient is the T Rating, not the F Rating (option D).",
     "k": [
-      "Field testing and certification of fire protection and firestopping in telecommunications verify that the installed system meets the specified performance category and will support the intended applications.",
-      "Test results must be documented and retained as part of the project record; they provide the baseline for future troubleshooting and maintenance.",
-      "Test equipment must be calibrated and set to the correct test limit for the installed link type (permanent link or channel) and category."
+      "The F (Flame) rating is the time in hours that a firestop assembly resists the passage of flame through the penetration, as tested per ASTM E814 (UL 1479); the rated time must equal or exceed the host assembly's fire resistance rating.",
+      "The F rating only measures flame resistance, not heat conduction; a system with F-2 might still allow the unexposed side to heat up above 181°C within those 2 hours, which is separately captured by the T rating.",
+      "Air leakage (L rating) and water leakage (W rating) are distinct measurements unrelated to the F rating; the F rating is the primary required rating that every firestop installation must achieve."
     ]
   },
   {
@@ -654,9 +654,9 @@
     "a": 2,
     "w": "Cementitious firestop materials are best suited for large openings because they can be poured or troweled into large penetrations and provide structural fill that withstands hose stream tests. Non-hardening putties are best for small individual cable penetrations and are not practical for large openings (option A). Caulks or sealants are better suited for medium-sized gaps and joints rather than large structural openings (option B). Intumescent collars are designed specifically for plastic pipes and are not appropriate for large general openings (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Cementitious firestop materials harden into a rigid, concrete-like mass that can fill large cable tray openings (hundreds of square centimeters) and provide the structural integrity needed to withstand hose stream tests.",
+      "Putties and sealants are available in limited volumes (tubes, pads) sized for individual cable or conduit penetrations; scaling these up to fill a large cable tray opening is impractical and the materials would not have sufficient structural body.",
+      "Intumescent collars are device-based solutions designed specifically for the circular cross-section of individual plastic pipes — they cannot be used to fill the rectangular void of a large multi-cable penetration."
     ]
   },
   {
@@ -674,9 +674,9 @@
     "a": 2,
     "w": "Caulks or sealants are non-mechanical firestop systems that are applied in liquid or paste form and cure in place, requiring no moving parts or special installation tools beyond standard application equipment. Cable transit systems are mechanical systems that use frames and fill blocks to create modular, reconfigurable penetrations (option A). Fire-rated pathway devices are mechanical systems that incorporate intumescent material within a structured device (option B). Cast-in-place devices are mechanical systems installed during construction that expand when activated by fire (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Non-mechanical firestop systems (caulks, sealants, putties, cementitious fill) are applied as viscous or paste materials that conform to the penetration geometry and cure or harden in place without any mechanical assembly.",
+      "Mechanical firestop systems (cable transit frames, cast-in-place devices, intumescent wrap strips) consist of fabricated components that are assembled, bolted, or physically attached to the structure — they are installed as hardware.",
+      "The non-mechanical vs. mechanical distinction matters for MAC work: non-mechanical caulk must be cut out and reapplied for cable changes, while mechanical systems can be partially disassembled and reassembled."
     ]
   },
   {
@@ -694,9 +694,9 @@
     "a": 2,
     "w": "Non-hardening putties remain workable and pliable after installation, making them ideal for MAC projects because they can be easily removed to add new cables and then replaced to restore the firestop rating. Being permanent and difficult to replace would make MAC work difficult, which is the opposite of what is needed (option A). While some putties provide air and water resistance, this is not the primary reason they are preferred for MAC applications (option B). Large openings require cementitious materials or other products, not putties (option D).",
     "k": [
-      "The correct answer reflects a specific standard-defined value or design principle applicable to fire protection and firestopping in telecommunications.",
-      "Designers must know NFPA 70/NEC and NFPA 90A limits and requirements to make code-compliant, performance-verified design decisions.",
-      "RCDD exam questions test the ability to apply standards knowledge to real design scenarios, not just memorise isolated facts."
+      "Non-hardening putty does not cure or harden after installation — it remains permanently pliable, so installers can pinch off a piece, add a cable through the remaining putty, and plug the hole back with fresh putty without disturbing adjacent cables.",
+      "This re-workability makes putty the preferred firestop for active telecommunications rooms where cables are regularly added or removed; the alternative (caulk) would require cutting, cleaning, and re-applying sealant for every MAC event.",
+      "Putty's MAC suitability is limited to small-to-medium penetrations; large cable tray openings with frequent changes are better served by mechanical cable transit systems whose modular fill blocks can be individually replaced."
     ]
   }
 ]
