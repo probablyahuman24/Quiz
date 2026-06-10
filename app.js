@@ -471,15 +471,6 @@ function App() {
     setSessionMode('focus'); setActiveTest('focus'); setScreen('test');
   }, [questions, tests, appData]);
 
-  const startReviewSession = useCallback(() => {
-    if (!questions.length) return;
-    const wrongQs = questions.filter(q=>(appData.wrongCounts[q.id]||0)>0).sort((a,b)=>(appData.wrongCounts[b.id]||0)-(appData.wrongCounts[a.id]||0));
-    if (!wrongQs.length) return;
-    const sess={questions:wrongQs,answers:Array(wrongQs.length).fill(null),confidences:Array(wrongQs.length).fill(null),mode:'review'};
-    setAppData(prev=>({...prev,sessions:{...prev.sessions,review:sess}}));
-    setSessionMode('review'); setActiveTest('review'); setScreen('test');
-  }, [questions, appData.wrongCounts]);
-
   const startCustomSession = useCallback((pool) => {
     const sess={questions:pool,answers:Array(pool.length).fill(null),confidences:Array(pool.length).fill(null),mode:'custom'};
     setAppData(prev=>({...prev,sessions:{...prev.sessions,custom:sess}}));
@@ -499,8 +490,6 @@ function App() {
   const totalCorrect  = testStats.reduce((s,ts)=>s+ts.correct, 0);
   const overallScore  = totalAnswered > 0 ? Math.round(totalCorrect/totalAnswered*100) : null;
   const allTestsDone  = tests.length > 0 && tests.every(t => { const s=appData.sessions[t.id]; return s&&s.answers.every(a=>a!==null); });
-  const hasWrongAnswers = useMemo(() => Object.values(appData.wrongCounts).some(c=>c>0), [appData.wrongCounts]);
-
   const t = T(dark);
 
   if (loading || (currentUser && !progressLoaded)) {
@@ -522,7 +511,7 @@ function App() {
   const session = activeTest ? (appData.sessions[activeTest]||null) : null;
 
   return el('div', { style: { maxWidth:430, margin:'0 auto', minHeight:'100vh', background:t.bg, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
-    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), testStats, history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut }),
+    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut }),
     screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
     screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:()=>finishTest(activeTest), dark }),
@@ -530,8 +519,64 @@ function App() {
   );
 }
 
+// ── Session Chart ─────────────────────────────────────────────────────────────
+function SessionChart({ history, dark }) {
+  const t = T(dark);
+  const data = history.slice(0, 10).reverse();
+  if (data.length < 2) return null;
+
+  const W = 240, H = 118;
+  const PL = 26, PR = 6, PT = 18, PB = 20;
+  const innerW = W - PL - PR;
+  const innerH = H - PT - PB;
+  const maxVal = Math.max(...data.map(d => d.total), 1);
+
+  const xOf = i => PL + (i / (data.length - 1)) * innerW;
+  const yOf = v => PT + innerH - (v / maxVal) * innerH;
+
+  const attemptedPts = data.map((d, i) => xOf(i) + ',' + yOf(d.total)).join(' ');
+  const correctPts   = data.map((d, i) => xOf(i) + ',' + yOf(d.correct)).join(' ');
+
+  return el('div', { style: { background:t.cardAlt, borderRadius:12, padding:'12px 14px', marginBottom:14, border:'1px solid '+t.borderLight } },
+    el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:6 } },
+      el('span', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2 } }, 'SESSION CHART'),
+      el('div', { style: { display:'flex', gap:10 } },
+        el('div', { style: { display:'flex', alignItems:'center', gap:3 } },
+          el('div', { style: { width:12, height:2, background:'#7c3aed', borderRadius:1 } }),
+          el('span', { style: { fontSize:8, color:t.textSub } }, 'Attempted')
+        ),
+        el('div', { style: { display:'flex', alignItems:'center', gap:3 } },
+          el('div', { style: { width:12, height:2, background:'#059669', borderRadius:1 } }),
+          el('span', { style: { fontSize:8, color:t.textSub } }, 'Correct')
+        )
+      )
+    ),
+    el('svg', { width:'100%', viewBox:'0 0 '+W+' '+H, style:{ display:'block', overflow:'visible' } },
+      [0, 0.5, 1].map((frac, gi) => el('g', { key:'g'+gi },
+        el('line', { x1:PL, y1:yOf(maxVal*frac), x2:W-PR, y2:yOf(maxVal*frac), stroke:t.borderLight, strokeWidth:0.5 }),
+        el('text', { x:PL-3, y:yOf(maxVal*frac)+3, textAnchor:'end', fontSize:7, fill:t.textMuted }, String(Math.round(maxVal*frac)))
+      )),
+      el('polyline', { points:attemptedPts, fill:'none', stroke:'#7c3aed', strokeWidth:1.5, strokeLinejoin:'round', strokeLinecap:'round' }),
+      el('polyline', { points:correctPts, fill:'none', stroke:'#059669', strokeWidth:1.5, strokeLinejoin:'round', strokeLinecap:'round' }),
+      data.map((d, i) => {
+        const x = xOf(i);
+        const ya = yOf(d.total);
+        const yc = yOf(d.correct);
+        const acc = d.total > 0 ? Math.round(d.correct/d.total*100) : 0;
+        const dateStr = new Date(d.date).toLocaleDateString('en-GB', { day:'2-digit', month:'short' });
+        return el('g', { key:'pt'+i },
+          el('circle', { cx:x, cy:ya, r:2.5, fill:'#7c3aed' }),
+          el('circle', { cx:x, cy:yc, r:2.5, fill:'#059669' }),
+          el('text', { x:x, y:Math.min(ya,yc)-4, textAnchor:'middle', fontSize:7, fill:t.textMuted, fontWeight:'600' }, acc+'%'),
+          (i===0||i===data.length-1) ? el('text', { x:x, y:H-2, textAnchor:'middle', fontSize:7, fill:t.textMuted }, dateStr) : null
+        );
+      })
+    )
+  );
+}
+
 // ── Side Menu ─────────────────────────────────────────────────────────────────
-function SideMenu({ open, onClose, testStats, history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut }) {
+function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut }) {
   const t = T(dark);
   const accuracy   = totalAnswered > 0 ? Math.round(totalCorrect/totalAnswered*100) : 0;
   const completion = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
@@ -578,19 +623,10 @@ function SideMenu({ open, onClose, testStats, history, totalAnswered, totalQs, t
             el('div', { style: { height:'100%', background:'linear-gradient(90deg,#7c3aed,#a855f7)', borderRadius:3, width:completion+'%', transition:'width 0.5s' } })
           )
         ),
-        el('p', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:10 } }, 'TEST BREAKDOWN'),
-        ...testStats.map(ts => el('div', { key:ts.testId, style: { marginBottom:10 } },
-          el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:4 } },
-            el('span', { style: { fontSize:11, fontWeight:600, color:t.textSub } }, ts.name),
-            el('span', { style: { fontSize:11, fontWeight:700, color: ts.pct===null?t.border:ts.pct>=80?'#059669':ts.pct>=60?'#d97706':'#dc2626' } }, ts.pct!==null?ts.pct+'%':'—')
-          ),
-          el('div', { style: { height:4, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
-            el('div', { style: { height:'100%', background:COLORS[ts.testId]||'#6366f1', borderRadius:2, width:(ts.pct||0)+'%', transition:'width 0.4s' } })
-          )
-        )),
+        el(SessionChart, { history, dark }),
         history.length > 0 && el('div', null,
           el('p', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2, margin:'14px 0 10px' } }, 'RECENT SESSIONS'),
-          ...history.slice(0,10).map(h => el('div', { key:h.date+'_'+h.testId, style: { display:'flex', alignItems:'center', gap:8, paddingBottom:9, borderBottom:'1px solid '+t.borderLight } },
+          ...history.slice(0,5).map(h => el('div', { key:h.date+'_'+h.testId, style: { display:'flex', alignItems:'center', gap:8, paddingBottom:9, borderBottom:'1px solid '+t.borderLight } },
             el('div', { style: { width:8, height:8, borderRadius:'50%', background:COLORS[h.testId]||'#6366f1', flexShrink:0 } }),
             el('span', { style: { fontSize:11, color:t.textSub, flex:1 } }, 'Test '+h.testId),
             el('span', { style: { fontSize:11, fontWeight:700, color: h.pct>=80?'#059669':h.pct>=60?'#d97706':'#dc2626' } }, h.pct+'%'),
