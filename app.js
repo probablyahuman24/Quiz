@@ -104,6 +104,9 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+// Enable offline persistence — Firebase queues writes to IndexedDB when offline
+// and syncs automatically when the connection is restored
+db.enablePersistence({ synchronizeTabs: false }).catch(() => {});
 
 async function hashPin(pin) {
   const data = new TextEncoder().encode('rcdd:' + pin);
@@ -277,6 +280,16 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sessionMode, setSessionMode] = useState('normal');
 
+  // ── Online/Offline ──
+  const [isOnline, setIsOnline] = useState(() => navigator.onLine);
+  useEffect(() => {
+    const up = () => setIsOnline(true);
+    const dn = () => setIsOnline(false);
+    window.addEventListener('online', up);
+    window.addEventListener('offline', dn);
+    return () => { window.removeEventListener('online', up); window.removeEventListener('offline', dn); };
+  }, []);
+
   // ── Dark mode ──
   const [dark, setDark] = useState(() => { try { return localStorage.getItem('rcdd_dark') === '1'; } catch(e) { return false; } });
   const toggleDark = useCallback(() => setDark(d => { const n=!d; try{localStorage.setItem('rcdd_dark',n?'1':'0');}catch(e){} return n; }), []);
@@ -304,8 +317,6 @@ function App() {
     return { sessions:{}, history:[], starred:[], wrongCounts:{}, confidenceLog:{}, dailyStats:{date:'',correct:0} };
   });
 
-  useEffect(() => { save(appData); if (currentUser) saveUser(currentUser.username, appData); }, [appData, currentUser]);
-
   useEffect(() => {
     Promise.all(CHAPTER_FILES.map(url => fetch(url).then(r => { if(!r.ok) throw new Error('HTTP '+r.status+' — '+url); return r.json(); })))
       .then(arrays => { setQuestions(arrays.flat()); setLoading(false); })
@@ -328,10 +339,21 @@ function App() {
       .catch(() => setProgressLoaded(true));
   }, [currentUser, questions]);
 
+  // Cloud-first sync: write to Firestore with a short debounce.
+  // With offline persistence enabled, Firebase queues the write locally and
+  // flushes it automatically when the connection is restored.
+  // localStorage is kept as a secondary fallback only when Firestore is unavailable.
   useEffect(() => {
     if (!currentUser || !progressLoaded) return;
     if (justLoadedRef.current) { justLoadedRef.current = false; return; }
-    const timer = setTimeout(() => { db.collection('users').doc(currentUser.username).update({ progress: compactAppData(appData) }).catch(()=>{}); }, 2000);
+    const compact = compactAppData(appData);
+    const timer = setTimeout(() => {
+      db.collection('users').doc(currentUser.username).update({ progress: compact })
+        .catch(() => {
+          // Firestore unavailable (persistence unsupported) — fall back to localStorage
+          saveUser(currentUser.username, appData);
+        });
+    }, 500);
     return () => clearTimeout(timer);
   }, [appData, currentUser, progressLoaded]);
 
@@ -548,6 +570,7 @@ function App() {
   const session = activeTest ? (appData.sessions[activeTest]||null) : null;
 
   return el('div', { style: { maxWidth:430, margin:'0 auto', minHeight:'100vh', background:t.bg, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
+    !isOnline && el('div', { style: { position:'fixed', top:0, left:'50%', transform:'translateX(-50%)', zIndex:100, background:'#b45309', color:'#fff', fontSize:11, fontWeight:700, padding:'5px 14px', borderRadius:'0 0 10px 10px', letterSpacing:0.5, boxShadow:'0 2px 8px rgba(0,0,0,0.2)' } }, '⚡ Offline — changes will sync when reconnected'),
     el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut }),
     screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
