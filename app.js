@@ -569,11 +569,12 @@ function SessionChart({ history, dark }) {
 
   const attemptedPts = data.map((d, i) => xOf(i) + ',' + yOf(d.total)).join(' ');
   const correctPts   = data.map((d, i) => xOf(i) + ',' + yOf(d.correct)).join(' ');
+  const wrongPts     = data.map((d, i) => xOf(i) + ',' + yOf(d.total - d.correct)).join(' ');
 
   return el('div', { style: { background:t.cardAlt, borderRadius:12, padding:'12px 14px', marginBottom:14, border:'1px solid '+t.borderLight } },
     el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:6 } },
       el('span', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2 } }, 'SESSION CHART'),
-      el('div', { style: { display:'flex', gap:10 } },
+      el('div', { style: { display:'flex', gap:8 } },
         el('div', { style: { display:'flex', alignItems:'center', gap:3 } },
           el('div', { style: { width:12, height:2, background:'#7c3aed', borderRadius:1 } }),
           el('span', { style: { fontSize:8, color:t.textSub } }, 'Attempted')
@@ -581,6 +582,10 @@ function SessionChart({ history, dark }) {
         el('div', { style: { display:'flex', alignItems:'center', gap:3 } },
           el('div', { style: { width:12, height:2, background:'#059669', borderRadius:1 } }),
           el('span', { style: { fontSize:8, color:t.textSub } }, 'Correct')
+        ),
+        el('div', { style: { display:'flex', alignItems:'center', gap:3 } },
+          el('div', { style: { width:12, height:2, background:'#dc2626', borderRadius:1 } }),
+          el('span', { style: { fontSize:8, color:t.textSub } }, 'Wrong')
         )
       )
     ),
@@ -590,15 +595,18 @@ function SessionChart({ history, dark }) {
         el('text', { x:PL-3, y:yOf(maxVal*frac)+3, textAnchor:'end', fontSize:7, fill:t.textMuted }, String(Math.round(maxVal*frac)))
       )),
       el('polyline', { points:attemptedPts, fill:'none', stroke:'#7c3aed', strokeWidth:1.5, strokeLinejoin:'round', strokeLinecap:'round' }),
-      el('polyline', { points:correctPts, fill:'none', stroke:'#059669', strokeWidth:1.5, strokeLinejoin:'round', strokeLinecap:'round' }),
+      el('polyline', { points:correctPts,   fill:'none', stroke:'#059669', strokeWidth:1.5, strokeLinejoin:'round', strokeLinecap:'round' }),
+      el('polyline', { points:wrongPts,     fill:'none', stroke:'#dc2626', strokeWidth:1.5, strokeLinejoin:'round', strokeLinecap:'round' }),
       data.map((d, i) => {
         const x = xOf(i);
         const ya = yOf(d.total);
         const yc = yOf(d.correct);
+        const yw = yOf(d.total - d.correct);
         const dateStr = new Date(d.date).toLocaleDateString('en-GB', { day:'2-digit', month:'short' });
         return el('g', { key:'pt'+i },
           el('circle', { cx:x, cy:ya, r:2.5, fill:'#7c3aed' }),
           el('circle', { cx:x, cy:yc, r:2.5, fill:'#059669' }),
+          el('circle', { cx:x, cy:yw, r:2.5, fill:'#dc2626' }),
           (i===0||i===data.length-1) ? el('text', { x:x, y:H-2, textAnchor:'middle', fontSize:7, fill:t.textMuted }, dateStr) : null
         );
       })
