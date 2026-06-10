@@ -716,7 +716,7 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, hi
       ),
       el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
         el('span', { style: { fontSize:11, color:t.textSub } }, dailyDone ? '🎯 Daily Target Complete!' : 'Daily Target'),
-        el('span', { style: { fontSize:11, fontWeight:700, color: dailyDone?'#059669':'#16a34a' } }, todayCorrect+' / '+DAILY_TARGET+' correct')
+        el('span', { style: { fontSize:11, fontWeight:700, color: dailyDone?'#059669':'#16a34a' } }, todayCorrect+' / '+DAILY_TARGET)
       ),
       el('div', { style: { height:5, background:t.borderLight, borderRadius:3, overflow:'hidden' } },
         el('div', { style: { height:'100%', background: dailyDone?'linear-gradient(90deg,#059669,#34d399)':'linear-gradient(90deg,#16a34a,#4ade80)', borderRadius:3, width:dailyPct+'%', transition:'width 0.5s' } })
