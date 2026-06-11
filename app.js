@@ -6,10 +6,7 @@ const { useState, useEffect, useCallback, useMemo, useRef } = React;
 // ── Config ────────────────────────────────────────────────────────────────────
 const LABELS = ['A','B','C','D'];
 const STORAGE_KEY = 'rcdd_v3';
-// APP_MAJOR: 0 = original question bank, bump to 1 when new questions are added
-// APP_MINOR: keep in sync with the rcdd-vN number in sw.js
-const APP_MAJOR = 0;
-const APP_MINOR = 21;
+// Version is defined in version.js (shared with sw.js) — edit only that file.
 const CHAPTER_FILES = [
   'data/chapter01 principles of transmission.json',
   'data/chapter02 electromagnetic compatibility.json',
@@ -710,7 +707,7 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
         ),
         el('div', { style: { textAlign:'center', marginTop:20, paddingTop:14, borderTop:'1px solid '+t.borderLight } },
           el('span', { style: { fontSize:10, color:t.textMuted, fontWeight:600, letterSpacing:1 } },
-            'v' + APP_MAJOR + '.' + APP_MINOR + '  ·  RCDD Exam Prep'
+            'v' + APP_VERSION.major + '.' + APP_VERSION.minor + '  ·  RCDD Exam Prep'
           )
         )
       )
