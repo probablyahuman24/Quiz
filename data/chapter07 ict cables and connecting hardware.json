@@ -12,7 +12,12 @@
       "DFB laser"
     ],
     "a": 1,
-    "w": "OM3 multimode optical fiber at 850 nm uses VCSEL (Vertical-Cavity Surface-Emitting Laser) light sources, which are laser-optimized for high-bandwidth multimode fiber. LEDs are used at 1300 nm wavelengths with multimode fiber. Fabry-Perot lasers are single-mode sources used in telecom applications. DFB lasers are narrowband single-mode lasers used in DWDM systems, not multimode 850 nm applications."
+    "w": "OM3 multimode optical fiber at 850 nm uses VCSEL (Vertical-Cavity Surface-Emitting Laser) light sources, which are laser-optimized for high-bandwidth multimode fiber. LEDs are used at 1300 nm wavelengths with multimode fiber. Fabry-Perot lasers are single-mode sources used in telecom applications. DFB lasers are narrowband single-mode lasers used in DWDM systems, not multimode 850 nm applications.",
+    "k": [
+      "OM3 and OM4 multimode fibers are 'laser-optimized,' designed specifically for VCSEL (Vertical-Cavity Surface-Emitting Laser) sources at 850 nm, unlike OM1/OM2 which used LEDs.",
+      "VCSELs emit a tighter, more coherent beam than LEDs, enabling the higher bandwidths required for 10 Gb/s and beyond over multimode fiber.",
+      "DFB and Fabry-Perot lasers are singlemode sources; using them with multimode fiber causes significant modal noise rather than the bandwidth improvement they provide in singlemode systems."
+    ]
   },
   {
     "id": 202,
@@ -27,7 +32,12 @@
       "1.4 dB/km"
     ],
     "a": 3,
-    "w": "OS1a singlemode optical fiber has a maximum attenuation of 1.4 dB/km at 1383 nm, the water-peak wavelength. 0.4 dB/km is the specification for OS2 at 1550 nm, a much lower-loss fiber. 0.8 dB/km is below the OS1a maximum at 1383 nm. 1.0 dB/km is the worst-case OTDR attenuation coefficient for singlemode at 1550 nm in testing standards."
+    "w": "OS1a singlemode optical fiber has a maximum attenuation of 1.4 dB/km at 1383 nm, the water-peak wavelength. 0.4 dB/km is the specification for OS2 at 1550 nm, a much lower-loss fiber. 0.8 dB/km is below the OS1a maximum at 1383 nm. 1.0 dB/km is the worst-case OTDR attenuation coefficient for singlemode at 1550 nm in testing standards.",
+    "k": [
+      "1383 nm is the 'water-peak' wavelength where residual OH-ion absorption in optical fiber causes elevated attenuation; OS1a is not water-peak eliminated.",
+      "OS1a singlemode fiber specifies a maximum attenuation of 1.4 dB/km at 1383 nm, significantly higher than its 1310 nm or 1550 nm attenuation due to this OH absorption peak.",
+      "OS2 fiber is water-peak eliminated (E-band compatible), achieving ≤0.4 dB/km at 1550 nm and much lower loss at 1383 nm than OS1a."
+    ]
   },
   {
     "id": 203,
@@ -42,7 +52,12 @@
       "5000 MHz-km"
     ],
     "a": 2,
-    "w": "OM4 multimode optical fiber has an OFL (Overfilled Launch) bandwidth of 3500 MHz-km at 850 nm. 1500 MHz-km is the OFL bandwidth of OM3 at 850 nm. 2000 MHz-km corresponds to OM3 minimum bandwidth at 850 nm. 5000 MHz-km exceeds the OM4 specification and is not a standard fiber rating."
+    "w": "OM4 multimode optical fiber has an OFL (Overfilled Launch) bandwidth of 3500 MHz-km at 850 nm. 1500 MHz-km is the OFL bandwidth of OM3 at 850 nm. 2000 MHz-km corresponds to OM3 minimum bandwidth at 850 nm. 5000 MHz-km exceeds the OM4 specification and is not a standard fiber rating.",
+    "k": [
+      "OFL (Overfilled Launch) bandwidth measures the worst-case bandwidth when all modes are equally excited; OM4 achieves 3500 MHz-km at 850 nm versus OM3's 1500 MHz-km.",
+      "Higher OFL bandwidth means OM4 supports longer distances at a given bit rate: OM4 reaches 400 m for 10 Gb/s while OM3 is limited to 300 m.",
+      "The OM classification hierarchy (OM1 < OM2 < OM3 < OM4 < OM5) directly corresponds to increasing minimum bandwidth at 850 nm, from 200 MHz-km (OM1) up to 3500 MHz-km (OM4)."
+    ]
   },
   {
     "id": 204,
@@ -57,7 +72,12 @@
       "1310 nm and 1550 nm"
     ],
     "a": 2,
-    "w": "OM5 multimode optical fiber supports wavelengths of 850/880 nm and 910/940 nm, enabling short-wavelength division multiplexing (SWDM) over multimode fiber. 850 nm only is the specification for earlier multimode fiber types without SWDM capability. 850 nm and 1300 nm are the traditional dual wavelengths for OM1-OM4 multimode fibers. 1310 nm and 1550 nm are singlemode fiber wavelengths."
+    "w": "OM5 multimode optical fiber supports wavelengths of 850/880 nm and 910/940 nm, enabling short-wavelength division multiplexing (SWDM) over multimode fiber. 850 nm only is the specification for earlier multimode fiber types without SWDM capability. 850 nm and 1300 nm are the traditional dual wavelengths for OM1-OM4 multimode fibers. 1310 nm and 1550 nm are singlemode fiber wavelengths.",
+    "k": [
+      "OM5 (wideband multimode fiber, WBMMF) is designed for Short-Wavelength Division Multiplexing (SWDM), transmitting across four channels spanning 850–950 nm to multiply capacity over a single fiber.",
+      "Unlike OM1–OM4 which operate at 850 nm and 1300 nm only, OM5 is specified across the 850–950 nm range, supporting 850/880/910/940 nm SWDM wavelengths.",
+      "OM5 retains full backward compatibility with OM4 at 850 nm and 1300 nm while adding the SWDM wavelength capability that distinguishes it."
+    ]
   },
   {
     "id": 205,
@@ -72,7 +92,12 @@
       "300 m"
     ],
     "a": 1,
-    "w": "The maximum recommended length for 10 Gb/s over OM1 multimode fiber is 33 m. 10 m is well below what OM1 can achieve even at 10 Gb/s. 100 m is achievable over OM3 at 10 Gb/s, not OM1. 300 m is supported by OM3 for 10 Gb/s under certain conditions, far beyond OM1's capability."
+    "w": "The maximum recommended length for 10 Gb/s over OM1 multimode fiber is 33 m. 10 m is well below what OM1 can achieve even at 10 Gb/s. 100 m is achievable over OM3 at 10 Gb/s, not OM1. 300 m is supported by OM3 for 10 Gb/s under certain conditions, far beyond OM1's capability.",
+    "k": [
+      "OM1 (62.5/125 µm, 200 MHz-km OFL bandwidth) was designed for 1 Gb/s and earlier applications; its limited bandwidth restricts 10 Gb/s (10GBASE-SR) to only 33 m.",
+      "OM3 and OM4 were specifically developed to support 10 Gb/s at 300 m and 400 m respectively; OM1's much lower bandwidth makes it unsuitable for modern 10 Gb/s deployments beyond 33 m.",
+      "The dramatic distance differences across OM grades at 10 Gb/s (OM1=33 m, OM3=300 m, OM4=400 m) illustrate why BICSI recommends OM3 or higher for new installations."
+    ]
   },
   {
     "id": 206,
@@ -87,7 +112,12 @@
       "Aqua"
     ],
     "a": 2,
-    "w": "BICSI recommends green for singlemode optical fiber connectors with APC (Angled Physical Contact) polish. Blue is used for singlemode adapters, not APC connectors. Beige/ivory is used for singlemode UPC (Ultra Physical Contact) connectors. Aqua is recommended for 50/125 \u00b5m laser-enhanced optical fiber adapters."
+    "w": "BICSI recommends green for singlemode optical fiber connectors with APC (Angled Physical Contact) polish. Blue is used for singlemode adapters, not APC connectors. Beige/ivory is used for singlemode UPC (Ultra Physical Contact) connectors. Aqua is recommended for 50/125 µm laser-enhanced optical fiber adapters.",
+    "k": [
+      "APC (Angled Physical Contact) connectors have an 8° angled endface that reflects back-reflections away from the fiber core; they are color-coded green to distinguish them from UPC connectors.",
+      "Mixing APC and UPC connectors causes high insertion loss (>3 dB) because the angled and flat endfaces cannot mate properly; the green/beige color distinction prevents accidental mating.",
+      "APC connectors provide better return loss (≥60 dB) than UPC (≥50 dB), making them preferred for analog video, CATV, and high-sensitivity singlemode applications."
+    ]
   },
   {
     "id": 207,
@@ -102,7 +132,12 @@
       "0.5 dB"
     ],
     "a": 2,
-    "w": "The splice insertion loss allowance in optical fiber standards is 0.3 dB per splice. 0.1 dB is achievable with high-quality fusion splices but is not the standard allowance. 0.2 dB is below the standard budget allowance. 0.5 dB would represent a marginal splice and exceed the standard allowance."
+    "w": "The splice insertion loss allowance in optical fiber standards is 0.3 dB per splice. 0.1 dB is achievable with high-quality fusion splices but is not the standard allowance. 0.2 dB is below the standard budget allowance. 0.5 dB would represent a marginal splice and exceed the standard allowance.",
+    "k": [
+      "ANSI/TIA-568 assigns a 0.3 dB per-splice loss allowance in optical fiber link budget calculations, representing a conservative value that covers both fusion and mechanical splice types.",
+      "Field fusion splices routinely achieve <0.1 dB, but the 0.3 dB budget allowance provides margin for poor technique, fiber mismatch, and long-term aging.",
+      "Link budget calculations multiply the number of splices by 0.3 dB and add connector losses (0.75 dB each) plus fiber attenuation to determine total channel loss."
+    ]
   },
   {
     "id": 208,
@@ -117,7 +152,12 @@
       "Series-59"
     ],
     "a": 2,
-    "w": "Series-11U coaxial cable has lower attenuation than Series-6 and is used for video backbone distribution over longer distances. Series-3 is a thin coaxial cable not used in modern video backbone applications. Series-6 is used for local video, CATV, and security cameras but has higher attenuation over long runs. Series-59 is an older 75-ohm cable type used in residential CATV but not video backbones."
+    "w": "Series-11U coaxial cable has lower attenuation than Series-6 and is used for video backbone distribution over longer distances. Series-3 is a thin coaxial cable not used in modern video backbone applications. Series-6 is used for local video, CATV, and security cameras but has higher attenuation over long runs. Series-59 is an older 75-ohm cable type used in residential CATV but not video backbones.",
+    "k": [
+      "Series-11U (RG-11 equivalent) has a larger center conductor and greater diameter than Series-6 (RG-6), resulting in significantly lower attenuation per unit length, making it ideal for long video backbone runs.",
+      "Series-6 is the standard for horizontal video distribution to outlets; Series-11U is reserved for backbone/riser runs where lower attenuation outweighs the cost and handling difficulty of the larger cable.",
+      "Both Series-6 and Series-11U are 75-ohm coaxial cables used in video systems; the choice between them depends on run length and acceptable signal loss budget."
+    ]
   },
   {
     "id": 209,
@@ -132,7 +172,12 @@
       "SMA-style"
     ],
     "a": 2,
-    "w": "F-style coaxial connectors are widely used for residential cable television services. BNC-style connectors are common in AV and professional video industries but not primarily residential cable TV. N-style connectors provide the highest bandwidth and are used in RF test equipment and outdoor wireless systems, not residential cable. SMA-style connectors are precision RF connectors used in microwave and test applications."
+    "w": "F-style coaxial connectors are widely used for residential cable television services. BNC-style connectors are common in AV and professional video industries but not primarily residential cable TV. N-style connectors provide the highest bandwidth and are used in RF test equipment and outdoor wireless systems, not residential cable. SMA-style connectors are precision RF connectors used in microwave and test applications.",
+    "k": [
+      "F-type connectors use the cable's center conductor directly as the connector pin, making them inexpensive to manufacture; this design is universal for residential CATV, satellite, and cable modem connections.",
+      "F-type connectors are designed for 75-ohm Series-6 and Series-59 coaxial cable; their threaded coupling ensures a secure connection for stationary residential installations.",
+      "BNC connectors offer a bayonet quick-disconnect mechanism suited for professional video (SDI) and test equipment; N-type connectors support up to 11 GHz for RF/wireless — both are far more expensive than F-type."
+    ]
   },
   {
     "id": 210,
@@ -147,7 +192,12 @@
       "RCA-style"
     ],
     "a": 2,
-    "w": "N-style connectors provide the highest bandwidth among standard coaxial connectors, supporting frequencies up to 11 GHz. F-style connectors are limited to residential cable TV frequencies. BNC connectors are good up to several GHz but do not reach the bandwidth of N connectors. RCA connectors are low-frequency audio/video connectors with no high-frequency bandwidth capability."
+    "w": "N-style connectors provide the highest bandwidth among standard coaxial connectors, supporting frequencies up to 11 GHz. F-style connectors are limited to residential cable TV frequencies. BNC connectors are good up to several GHz but do not reach the bandwidth of N connectors. RCA connectors are low-frequency audio/video connectors with no high-frequency bandwidth capability.",
+    "k": [
+      "N-type connectors are designed for high-frequency RF applications up to 11 GHz; their precision threaded coupling maintains 50-ohm impedance at microwave frequencies.",
+      "BNC connectors are rated to about 4 GHz; F-type to about 1 GHz; RCA connectors are only suitable for audio/video below 100 MHz — N-type far exceeds all of these.",
+      "N-type connectors are used with outdoor antennas, wireless access point cables, and RF test equipment where the high frequency performance justifies their larger size and higher cost."
+    ]
   },
   {
     "id": 211,
@@ -162,7 +212,12 @@
       "Category 6A / Class EA"
     ],
     "a": 1,
-    "w": "The minimum acceptable performance level for network cabling is Category 5e/Class D, which supports up to 100 MHz and 1000BASE-T. BICSI recommends Category 6A/Class EA as the preferred minimum, but Category 5e/Class D is the defined minimum. Category 3/Class C is only suitable for voice applications. Category 6/Class E and 6A/Class EA exceed the minimum requirement."
+    "w": "The minimum acceptable performance level for network cabling is Category 5e/Class D, which supports up to 100 MHz and 1000BASE-T. BICSI recommends Category 6A/Class EA as the preferred minimum, but Category 5e/Class D is the defined minimum. Category 3/Class C is only suitable for voice applications. Category 6/Class E and 6A/Class EA exceed the minimum requirement.",
+    "k": [
+      "Category 5e (Class D) supports 100 MHz bandwidth and 1000BASE-T (1 Gb/s) Ethernet; it is the lowest cable category considered capable of supporting modern network applications.",
+      "Category 3 (Class C) supports only 16 MHz and is limited to voice (POTS) and legacy 10BASE-T; it cannot support current data networking, making Cat 5e the minimum acceptable data cabling level.",
+      "While Cat 5e is the defined minimum, BICSI recommends Cat 6A as the preferred minimum for new installations because Cat 5e cannot support 10 Gb/s or high-wattage PoE without performance concerns."
+    ]
   },
   {
     "id": 212,
@@ -177,7 +232,12 @@
       "Return loss"
     ],
     "a": 2,
-    "w": "Capacitance (C) is a primary transmission parameter in balanced twisted-pair cabling. Insertion loss and resistance unbalance are secondary parameters that affect performance but are not the primary parameter. Return loss reflects impedance uniformity and is a derived measurement, not the primary parameter that determines fundamental transmission performance."
+    "w": "Capacitance (C) is a primary transmission parameter in balanced twisted-pair cabling. Insertion loss and resistance unbalance are secondary parameters that affect performance but are not the primary parameter. Return loss reflects impedance uniformity and is a derived measurement, not the primary parameter that determines fundamental transmission performance.",
+    "k": [
+      "Capacitance between conductors in a twisted-pair cable is a primary transmission parameter because it directly determines the cable's characteristic impedance and high-frequency signal propagation behavior.",
+      "Higher capacitance per unit length increases insertion loss and limits bandwidth; tight manufacturing tolerances on capacitance are essential for achieving consistent 100-ohm impedance across all Category grades.",
+      "Resistance unbalance and return loss are secondary parameters derived from construction quality; capacitance is the fundamental electrical characteristic set by conductor diameter, insulation thickness, and dielectric constant."
+    ]
   },
   {
     "id": 213,
@@ -192,7 +252,12 @@
       "Four blades"
     ],
     "a": 0,
-    "w": "Modular plug contacts for stranded conductors use a single blade designed to grip the multiple strands reliably. Three blades are used for solid conductors to pierce and grip the single solid conductor. Two-blade and four-blade configurations are not standard modular plug contact designs for either conductor type."
+    "w": "Modular plug contacts for stranded conductors use a single blade designed to grip the multiple strands reliably. Three blades are used for solid conductors to pierce and grip the single solid conductor. Two-blade and four-blade configurations are not standard modular plug contact designs for either conductor type.",
+    "k": [
+      "Stranded conductor modular plugs use a single-blade contact that wraps around and grips the bundle of strands, since a sharp piercing blade would only contact a few strands and create a high-resistance joint.",
+      "Solid conductor modular plugs use a three-blade contact that cuts through the insulation and bites into the single solid wire on both sides, creating a gas-tight insulation displacement connection.",
+      "Using a solid-conductor plug on stranded wire (or vice versa) causes premature contact failure — specifying the correct plug type for the cord conductor construction is critical for Cat 5e and higher performance."
+    ]
   },
   {
     "id": 214,
@@ -207,7 +272,12 @@
       "Up to 50% more"
     ],
     "a": 1,
-    "w": "Stranded cords attenuate up to 20% more than solid cords of the same gauge due to the increased surface area from multiple strand interfaces increasing resistance. 10% would understate the performance difference between stranded and solid conductors. 30% and 50% overstate the attenuation difference and are not supported by standards data."
+    "w": "Stranded cords attenuate up to 20% more than solid cords of the same gauge due to the increased surface area from multiple strand interfaces increasing resistance. 10% would understate the performance difference between stranded and solid conductors. 30% and 50% overstate the attenuation difference and are not supported by standards data.",
+    "k": [
+      "Stranded conductors consist of multiple thin wires bundled together; the increased total surface area and inter-strand contact resistance cause up to 20% higher attenuation compared to a single solid conductor of the same AWG.",
+      "This 20% attenuation penalty for stranded patch cords is why horizontal cabling uses solid conductors — stranded cords are limited to short patch cord applications where flexibility outweighs the small attenuation increase.",
+      "TIA-568 accounts for the higher attenuation of stranded cords by allowing shorter maximum cord lengths in channel calculations compared to the total 100 m horizontal channel budget."
+    ]
   },
   {
     "id": 215,
@@ -222,7 +292,12 @@
       "2000 MHz"
     ],
     "a": 2,
-    "w": "Category 7A/Class FA cabling supports up to 1000 MHz, making it suitable for the most demanding current applications. 500 MHz is the specification for Category 6A/Class EA. 600 MHz is Category 7/Class F. 2000 MHz is the specification for Category 8.1/Class I."
+    "w": "Category 7A/Class FA cabling supports up to 1000 MHz, making it suitable for the most demanding current applications. 500 MHz is the specification for Category 6A/Class EA. 600 MHz is Category 7/Class F. 2000 MHz is the specification for Category 8.1/Class I.",
+    "k": [
+      "The Category/Class hierarchy maps to specific frequency limits: Cat 6A/EA = 500 MHz, Cat 7/F = 600 MHz, Cat 7A/FA = 1000 MHz, Cat 8.1/I = 2000 MHz.",
+      "Category 7A/Class FA uses individually shielded pairs plus an overall shield (S/FTP construction), enabling 1000 MHz performance required for 40GBASE-T at shorter distances.",
+      "Cat 7 and 7A use non-RJ45 connector types (GG45 or TERA); their 1000 MHz bandwidth is overkill for current structured cabling but future-proofs installations for emerging high-speed protocols."
+    ]
   },
   {
     "id": 216,
@@ -237,7 +312,12 @@
       "3.5 dB/km"
     ],
     "a": 2,
-    "w": "OM3 and OM4 multimode optical fibers have a maximum attenuation of 1.5 dB/km at 1300 nm. 0.4 dB/km is a singlemode fiber specification, not achievable with multimode fibers. 1.0 dB/km is below the specified maximum for OM3/OM4 at 1300 nm. 3.5 dB/km is the maximum attenuation specification at 850 nm for OM3/OM4, not at 1300 nm."
+    "w": "OM3 and OM4 multimode optical fibers have a maximum attenuation of 1.5 dB/km at 1300 nm. 0.4 dB/km is a singlemode fiber specification, not achievable with multimode fibers. 1.0 dB/km is below the specified maximum for OM3/OM4 at 1300 nm. 3.5 dB/km is the maximum attenuation specification at 850 nm for OM3/OM4, not at 1300 nm.",
+    "k": [
+      "OM3 and OM4 multimode fibers specify maximum attenuation of 3.5 dB/km at 850 nm and 1.5 dB/km at 1300 nm; the lower 1300 nm attenuation is due to reduced scattering and absorption at longer wavelengths.",
+      "Singlemode fibers achieve 0.4 dB/km at 1310 nm and 0.2 dB/km at 1550 nm — far lower than multimode because the smaller 9 µm core eliminates modal dispersion and uses a different dopant profile.",
+      "The 3.5 dB/km vs 1.5 dB/km difference between 850 nm and 1300 nm in multimode fiber explains why 1300 nm applications achieve longer distances for the same optical power budget."
+    ]
   },
   {
     "id": 217,
@@ -252,7 +332,12 @@
       "Category 7 / Class F"
     ],
     "a": 2,
-    "w": "ISO Category 8.1/Class I cables are backward-compatible with Category 6A/Class EA using 8P8C (RJ45-style) connectors, maintaining interoperability with existing infrastructure. Category 5e and Category 6 are also compatible physically but do not represent the specific backward-compatibility specification for Class I. Category 7/Class F uses different connector types that are not 8P8C."
+    "w": "ISO Category 8.1/Class I cables are backward-compatible with Category 6A/Class EA using 8P8C (RJ45-style) connectors, maintaining interoperability with existing infrastructure. Category 5e and Category 6 are also compatible physically but do not represent the specific backward-compatibility specification for Class I. Category 7/Class F uses different connector types that are not 8P8C.",
+    "k": [
+      "Category 8.1/Class I is specifically designed to be backward-compatible with Category 6A/Class EA, using the same 8P8C (RJ45) interface so it can be deployed in existing 6A patch panels and outlets.",
+      "Category 8 supports 40GBASE-T at up to 30 m and is intended for data center top-of-rack switch-to-server connections, not the 100 m horizontal runs of Cat 6A.",
+      "Category 8.2/Class II uses TERA or GG45 connectors and is backward-compatible with Cat 7A; the '.1' vs '.2' designation indicates which connector ecosystem each variant supports."
+    ]
   },
   {
     "id": 218,
@@ -267,7 +352,12 @@
       "V-groove splicing"
     ],
     "a": 1,
-    "w": "Fusion splicing offers reduced attenuation and reflectance compared to mechanical splicing by permanently fusing the fiber ends with an electric arc, creating an essentially continuous glass joint. Adhesive bonding is not a standard optical fiber splicing technique. Mechanical crimp splicing is not a standard optical fiber method. V-groove splicing is a type of mechanical splice with higher insertion loss than fusion."
+    "w": "Fusion splicing offers reduced attenuation and reflectance compared to mechanical splicing by permanently fusing the fiber ends with an electric arc, creating an essentially continuous glass joint. Adhesive bonding is not a standard optical fiber splicing technique. Mechanical crimp splicing is not a standard optical fiber method. V-groove splicing is a type of mechanical splice with higher insertion loss than fusion.",
+    "k": [
+      "Fusion splicing uses an electric arc to melt and fuse two fiber endfaces into a continuous glass joint, achieving insertion loss <0.1 dB and return loss >60 dB — far better than mechanical splices.",
+      "Mechanical splices align fiber ends with a V-groove or alignment sleeve and use index-matching gel; they introduce 0.2–0.5 dB insertion loss and higher reflectance because the glass interface is not truly continuous.",
+      "Fusion splicing is preferred for permanent backbone installations; mechanical splices are used for emergency repairs or field terminations where fusion equipment is unavailable."
+    ]
   },
   {
     "id": 219,
@@ -282,7 +372,12 @@
       "OFCP and OFNP"
     ],
     "a": 1,
-    "w": "Optical fiber types OFCP and OFCR are both conductive cables containing metallic members such as strength members or central steel tubes. OFNP is a non-conductive plenum cable. OFNR is a non-conductive riser cable. Non-conductive (OFN) types contain no metallic elements, whereas OFC types contain conductive metallic members."
+    "w": "Optical fiber types OFCP and OFCR are both conductive cables containing metallic members such as strength members or central steel tubes. OFNP is a non-conductive plenum cable. OFNR is a non-conductive riser cable. Non-conductive (OFN) types contain no metallic elements, whereas OFC types contain conductive metallic members.",
+    "k": [
+      "The NEC optical fiber cable designation uses 'OFC' (Optical Fiber Conductive) for cables containing metallic elements and 'OFN' (Optical Fiber Non-conductive) for all-dielectric cables with no metal.",
+      "OFCR (conductive riser) and OFCP (conductive plenum) are both conductive because they contain metallic members (armor, steel strength members, or copper conductors); the R/P suffix denotes the fire rating.",
+      "All-dielectric OFN cables (OFNR, OFNP) are preferred near power lines and in high-voltage environments because they cannot carry induced electrical current or ground potential differences."
+    ]
   },
   {
     "id": 220,
@@ -297,7 +392,12 @@
       "Waveguide dispersion"
     ],
     "a": 2,
-    "w": "Modal dispersion is the primary factor affecting multimode optical fiber bandwidth, as different light modes travel at different speeds and arrive at the receiver at different times, broadening pulses. Chromatic dispersion predominates in singlemode fiber. Material dispersion is a component of chromatic dispersion, not the primary multimode limitation. Waveguide dispersion is another component of chromatic dispersion significant in singlemode fiber."
+    "w": "Modal dispersion is the primary factor affecting multimode optical fiber bandwidth, as different light modes travel at different speeds and arrive at the receiver at different times, broadening pulses. Chromatic dispersion predominates in singlemode fiber. Material dispersion is a component of chromatic dispersion, not the primary multimode limitation. Waveguide dispersion is another component of chromatic dispersion significant in singlemode fiber.",
+    "k": [
+      "Multimode fiber supports hundreds of propagating modes, each traveling a slightly different path and arriving at the receiver at different times — this time spread (modal dispersion) limits bandwidth.",
+      "Modal dispersion is why multimode fiber bandwidth is specified in MHz-km; longer cables or wider modal delay spreads reduce maximum bit rate by widening the received pulse beyond the bit period.",
+      "Singlemode fiber eliminates modal dispersion entirely by restricting propagation to one mode; its bandwidth is then limited by chromatic dispersion (material + waveguide), which is orders of magnitude smaller."
+    ]
   },
   {
     "id": 221,
@@ -312,7 +412,12 @@
       "Category 7 / Class F"
     ],
     "a": 2,
-    "w": "BICSI recommends Category 6A/Class EA as the minimum performance level for horizontal cabling to support 10 Gb/s and PoE applications. Category 5e is the minimum acceptable but not the BICSI recommendation for new installations. Category 6/Class E is an intermediate option but not the current BICSI minimum recommendation. Category 7/Class F exceeds the recommendation and uses different connector types."
+    "w": "BICSI recommends Category 6A/Class EA as the minimum performance level for horizontal cabling to support 10 Gb/s and PoE applications. Category 5e is the minimum acceptable but not the BICSI recommendation for new installations. Category 6/Class E is an intermediate option but not the current BICSI minimum recommendation. Category 7/Class F exceeds the recommendation and uses different connector types.",
+    "k": [
+      "BICSI recommends Cat 6A/Class EA as the minimum for new horizontal cabling because it natively supports 10GBASE-T at 100 m and handles high-wattage PoE (IEEE 802.3bt) with better thermal management than Cat 6.",
+      "Cat 5e remains the standards-defined minimum but was designed before 10 Gb/s and PoE++ existed; BICSI's Cat 6A recommendation reflects current application requirements and 25-year infrastructure lifespans.",
+      "Cat 6A's 500 MHz bandwidth, improved alien crosstalk (AXT) performance, and larger conductors (typically 23 AWG) make it better suited for both 10 Gb/s data and heat dissipation from PoE current."
+    ]
   },
   {
     "id": 222,
@@ -327,7 +432,12 @@
       "Reduced current per conductor"
     ],
     "a": 2,
-    "w": "Shielded cables for PoE exhibit less heat buildup than unshielded cables because the metallic shield acts as a heat sink, dissipating thermal energy generated by current flow through the conductors. Higher conductor resistance would increase, not decrease, heat generation. Dielectric constant affects signal propagation, not thermal performance of PoE current. Current per conductor is determined by the PoE standard, not the cable shielding type."
+    "w": "Shielded cables for PoE exhibit less heat buildup than unshielded cables because the metallic shield acts as a heat sink, dissipating thermal energy generated by current flow through the conductors. Higher conductor resistance would increase, not decrease, heat generation. Dielectric constant affects signal propagation, not thermal performance of PoE current. Current per conductor is determined by the PoE standard, not the cable shielding type.",
+    "k": [
+      "In PoE applications, DC current through twisted-pair conductors generates I²R heat; shielded cables (F/UTP, S/FTP) dissipate this heat through the metallic foil or braid acting as an additional thermal conductor.",
+      "TIA-568 testing shows that shielded Cat 6A cables in bundled installations exhibit significantly lower temperature rise than unshielded Cat 6A under high-wattage PoE (IEEE 802.3bt, up to 90 W), preserving signal performance.",
+      "Unshielded cables in large bundles trap heat from adjacent cables, raising conductor temperature and increasing resistance, which compounds the heating problem — shielded cables mitigate this bundle heating effect."
+    ]
   },
   {
     "id": 223,
@@ -342,7 +452,12 @@
       "Coaxial cable systems"
     ],
     "a": 2,
-    "w": "Field-constructed patch cords are not recommended for Category 5e or higher systems because factory-terminated cords meet tighter performance tolerances that are difficult to achieve in the field. Fiber optic field-constructed connectors are acceptable in some applications. Category 3 voice systems have lower performance requirements where field termination is acceptable. Coaxial patch cords are also typically factory-terminated but are a separate category from balanced twisted-pair."
+    "w": "Field-constructed patch cords are not recommended for Category 5e or higher systems because factory-terminated cords meet tighter performance tolerances that are difficult to achieve in the field. Fiber optic field-constructed connectors are acceptable in some applications. Category 3 voice systems have lower performance requirements where field termination is acceptable. Coaxial patch cords are also typically factory-terminated but are a separate category from balanced twisted-pair.",
+    "k": [
+      "Factory-manufactured patch cords for Cat 5e and above are produced under controlled conditions with precise untwisting limits, contact alignment, and 100% electrical testing that field construction cannot reliably replicate.",
+      "Field-terminated patch cords risk excessive untwisting at the modular plug, introducing near-end crosstalk (NEXT) that can cause the entire channel to fail certification at Cat 5e or higher frequencies.",
+      "Cat 3 voice cords tolerate field construction because 16 MHz performance requirements are easily achieved with minimal precision; Cat 5e's 100 MHz and Cat 6A's 500 MHz demand factory tolerances."
+    ]
   },
   {
     "id": 224,
@@ -357,7 +472,12 @@
       "2000 m"
     ],
     "a": 2,
-    "w": "OM4 multimode optical fiber supports 1 Gb/s Ethernet over a maximum distance of 1000 m. 300 m is the OM3 limit for 10 Gb/s. 550 m is the OM3 limit for 1 Gb/s. 2000 m exceeds any standard multimode specification for 1 Gb/s applications."
+    "w": "OM4 multimode optical fiber supports 1 Gb/s Ethernet over a maximum distance of 1000 m. 300 m is the OM3 limit for 10 Gb/s. 550 m is the OM3 limit for 1 Gb/s. 2000 m exceeds any standard multimode specification for 1 Gb/s applications.",
+    "k": [
+      "1000BASE-SX (1 Gb/s) over OM4 supports 1000 m because the lower bit rate requires far less bandwidth from the fiber, allowing the modal dispersion limit to be reached at a much greater distance.",
+      "For comparison, OM3 supports 1 Gb/s at 550 m and 10 Gb/s at 300 m; OM4's higher bandwidth (3500 vs 1500 MHz-km) extends the 10 Gb/s limit to 400 m but the 1 Gb/s limit to 1000 m for both OM3 and OM4.",
+      "Singlemode fiber supports 1 Gb/s at distances exceeding 10 km; multimode fiber's 1 km maximum for 1 Gb/s reflects the bandwidth-distance product constraint imposed by modal dispersion."
+    ]
   },
   {
     "id": 225,
@@ -372,7 +492,12 @@
       "ST fiber connector"
     ],
     "a": 2,
-    "w": "Modular 8P8C (RJ45-style) outlets/connectors are used to connect active equipment to balanced twisted-pair cabling. LC fiber connectors are used for optical fiber connections only. F-type coaxial connectors are used in cable TV and residential video applications. ST fiber connectors are older optical fiber connectors not used for twisted-pair cabling."
+    "w": "Modular 8P8C (RJ45-style) outlets/connectors are used to connect active equipment to balanced twisted-pair cabling. LC fiber connectors are used for optical fiber connections only. F-type coaxial connectors are used in cable TV and residential video applications. ST fiber connectors are older optical fiber connectors not used for twisted-pair cabling.",
+    "k": [
+      "The 8P8C modular plug/jack (commonly called RJ45) is the standardized interface for balanced twisted-pair structured cabling from Cat 3 through Cat 6A, connecting network equipment, computers, and phones to the cabling system.",
+      "8P8C connectors have 8 positions and 8 contacts, accommodating all 4 pairs of a twisted-pair cable in a standardized pinout (T568A or T568B) that ensures cross-vendor interoperability.",
+      "LC connectors are small-form-factor fiber connectors; ST connectors are bayonet-style fiber connectors; F-type is for coaxial video — none interface with twisted-pair horizontal cabling."
+    ]
   },
   {
     "id": 701,
@@ -387,7 +512,12 @@
       "Stranded screens"
     ],
     "a": 0,
-    "w": "Foil-type screens (aluminum or copper foil) are most effective at blocking high frequencies above 30 MHz because they provide 100% coverage with no gaps, preventing high-frequency signals from penetrating or radiating. Braid-type screens are more effective at lower frequencies and provide good mechanical protection, but their interwoven pattern leaves small gaps that reduce effectiveness above 30 MHz (option B). Solid screens are not a practical cable shielding option due to rigidity constraints (option C). Stranded screens are not a recognized shielding type for balanced twisted-pair cables (option D)."
+    "w": "Foil-type screens (aluminum or copper foil) are most effective at blocking high frequencies above 30 MHz because they provide 100% coverage with no gaps, preventing high-frequency signals from penetrating or radiating. Braid-type screens are more effective at lower frequencies and provide good mechanical protection, but their interwoven pattern leaves small gaps that reduce effectiveness above 30 MHz (option B). Solid screens are not a practical cable shielding option due to rigidity constraints (option C). Stranded screens are not a recognized shielding type for balanced twisted-pair cables (option D).",
+    "k": [
+      "Foil shields (aluminum polyester laminate) achieve 100% optical coverage, completely wrapping the conductors with no gaps; this full coverage is essential for blocking high-frequency signals above 30 MHz.",
+      "Braid shields have inherent gaps between the woven wires; while effective at lower frequencies and providing excellent mechanical protection, the gaps allow high-frequency signals to pass through, reducing shielding effectiveness above 30 MHz.",
+      "Shielded structured cabling (F/UTP, S/FTP) combines foil and braid layers: foil for high-frequency isolation and braid for low-frequency shielding and physical protection, providing broadband shielding effectiveness."
+    ]
   },
   {
     "id": 702,
@@ -396,13 +526,18 @@
     "chapter": "ICT Cables and Connecting Hardware",
     "q": "What is the characteristic impedance of balanced twisted-pair cables?",
     "o": [
-      "50\u03a9",
-      "75\u03a9",
-      "100\u03a9",
-      "120\u03a9"
+      "50Ω",
+      "75Ω",
+      "100Ω",
+      "120Ω"
     ],
     "a": 2,
-    "w": "The characteristic impedance of balanced twisted-pair cables used in structured cabling is 100 ohms, as specified in ANSI/TIA-568 and ISO/IEC 11801 standards. 50 ohms is the characteristic impedance of coaxial cables used in RF applications (option A). 75 ohms is the characteristic impedance of coaxial cables used in cable TV and video systems (option B). 120 ohms is the characteristic impedance used in some industrial fieldbus protocols (option D)."
+    "w": "The characteristic impedance of balanced twisted-pair cables used in structured cabling is 100 ohms, as specified in ANSI/TIA-568 and ISO/IEC 11801 standards. 50 ohms is the characteristic impedance of coaxial cables used in RF applications (option A). 75 ohms is the characteristic impedance of coaxial cables used in cable TV and video systems (option B). 120 ohms is the characteristic impedance used in some industrial fieldbus protocols (option D).",
+    "k": [
+      "All TIA-568 structured cabling (Cat 3 through Cat 8) specifies 100-ohm characteristic impedance; this standardized value enables interoperability between cables and connecting hardware from different manufacturers.",
+      "Impedance mismatches in a cabling link cause signal reflections measured as return loss; maintaining 100 ± 15 ohms throughout the link is essential to meet the return loss requirements of each category.",
+      "The 50-ohm standard applies to RF coaxial cabling; 75-ohm to video coaxial; 120-ohm to RS-485 fieldbus — the 100-ohm balanced twisted-pair standard is unique to structured data/voice cabling."
+    ]
   },
   {
     "id": 703,
@@ -417,7 +552,12 @@
       "Easier installation"
     ],
     "a": 1,
-    "w": "The primary advantage of optical fiber over balanced twisted-pair cables is complete immunity to electromagnetic interference (EMI) because fiber transmits light signals that are unaffected by electromagnetic fields. Fiber optic cables are generally less flexible than copper cables and require careful management of bend radii (option A). Fiber optic cables are typically more expensive than copper twisted-pair cables per unit length (option C). Fiber optic installation requires more specialized tools and skills than copper cable installation (option D)."
+    "w": "The primary advantage of optical fiber over balanced twisted-pair cables is complete immunity to electromagnetic interference (EMI) because fiber transmits light signals that are unaffected by electromagnetic fields. Fiber optic cables are generally less flexible than copper cables and require careful management of bend radii (option A). Fiber optic cables are typically more expensive than copper twisted-pair cables per unit length (option C). Fiber optic installation requires more specialized tools and skills than copper cable installation (option D).",
+    "k": [
+      "Optical fiber transmits data as light pulses through glass, which is a non-conductive medium; electromagnetic fields cannot induce currents in light, making fiber inherently immune to EMI, RFI, and ground loop interference.",
+      "This EMI immunity makes fiber essential in electrically noisy environments — near motors, generators, MRI machines, power substations, and airport radar — where copper cabling would pick up disruptive interference.",
+      "Copper twisted-pair cabling uses balanced signal transmission and shielding to minimize EMI susceptibility; fiber achieves total EMI immunity inherently, without requiring shielding or careful grounding."
+    ]
   },
   {
     "id": 704,
@@ -432,7 +572,12 @@
       "Coaxial and hybrid"
     ],
     "a": 1,
-    "w": "The two primary types of optical fiber cables are multimode (larger core, supports multiple light paths) and single-mode (smaller core, supports one light path), each with different performance characteristics and applications. Coaxial cables are copper-based transmission media, not optical fiber (option A). Hybrid cables combine different media types and are not a primary fiber optic classification (option C). Coaxial and hybrid are not optical fiber cable types (option D)."
+    "w": "The two primary types of optical fiber cables are multimode (larger core, supports multiple light paths) and single-mode (smaller core, supports one light path), each with different performance characteristics and applications. Coaxial cables are copper-based transmission media, not optical fiber (option A). Hybrid cables combine different media types and are not a primary fiber optic classification (option C). Coaxial and hybrid are not optical fiber cable types (option D).",
+    "k": [
+      "Singlemode fiber has a 9 µm core that supports only one propagation mode, eliminating modal dispersion and enabling long-distance transmission (kilometers to hundreds of km) with low attenuation.",
+      "Multimode fiber has a 50 µm (OM2–OM5) or 62.5 µm (OM1) core that supports many modes simultaneously; modal dispersion limits bandwidth-distance product but lower-cost VCSELs and transceivers reduce system cost for shorter runs.",
+      "The choice between singlemode and multimode is driven by distance and cost: singlemode for campus backbone and beyond (>550 m), multimode for building backbone and horizontal applications (≤550 m) where transceiver savings outweigh fiber cost."
+    ]
   },
   {
     "id": 705,
@@ -441,13 +586,18 @@
     "chapter": "ICT Cables and Connecting Hardware",
     "q": "What is the core size range of single-mode optical fiber cables?",
     "o": [
-      "50\u201362.5 \u00b5m",
-      "8\u201311 \u00b5m",
-      "75\u2013100 \u00b5m",
-      "125\u2013150 \u00b5m"
+      "50–62.5 µm",
+      "8–11 µm",
+      "75–100 µm",
+      "125–150 µm"
     ],
     "a": 1,
-    "w": "Single-mode optical fiber has a core diameter of 8 to 11 \u00b5m (typically 9 \u00b5m), which is small enough to allow only one mode of light to propagate, enabling long-distance transmission with low attenuation. 50-62.5 \u00b5m is the core size range for multimode optical fiber, not single-mode (option A). 75-100 \u00b5m does not correspond to standard optical fiber core sizes (option C). 125 \u00b5m is the outer cladding diameter for all standard single-mode and multimode optical fibers, not the core size (option D)."
+    "w": "Single-mode optical fiber has a core diameter of 8 to 11 µm (typically 9 µm), which is small enough to allow only one mode of light to propagate, enabling long-distance transmission with low attenuation. 50-62.5 µm is the core size range for multimode optical fiber, not single-mode (option A). 75-100 µm does not correspond to standard optical fiber core sizes (option C). 125 µm is the outer cladding diameter for all standard single-mode and multimode optical fibers, not the core size (option D).",
+    "k": [
+      "Singlemode fiber has a core diameter of 8–11 µm (typically 9 µm), narrow enough that only the fundamental LP01 mode can propagate; this single-mode condition eliminates modal dispersion entirely.",
+      "Multimode fiber cores of 50 µm (OM2–OM5) or 62.5 µm (OM1) allow hundreds of modes; the much larger core makes multimode easier to connect and splice but limits bandwidth due to modal dispersion.",
+      "All standard optical fibers — both singlemode and multimode — share the same 125 µm outer cladding diameter, which is why the same connectors, cleaving tools, and fusion splicers work with both fiber types."
+    ]
   },
   {
     "id": 706,
@@ -462,7 +612,12 @@
       "LC termination"
     ],
     "a": 0,
-    "w": "Insulation Displacement Contact (IDC) technology pierces through the cable insulation to make direct metal-to-metal contact with the conductor, creating a gas-tight connection that prevents oxidation and maintains reliable electrical continuity. Modular jacks (RJ-45) use a different contact mechanism that relies on pressure contact with stripped conductors (option B). Coaxial terminations are used for coaxial cables, not balanced twisted-pair connectors (option C). LC termination refers to a fiber optic connector type, not twisted-pair connecting hardware (option D)."
+    "w": "Insulation Displacement Contact (IDC) technology pierces through the cable insulation to make direct metal-to-metal contact with the conductor, creating a gas-tight connection that prevents oxidation and maintains reliable electrical continuity. Modular jacks (RJ-45) use a different contact mechanism that relies on pressure contact with stripped conductors (option B). Coaxial terminations are used for coaxial cables, not balanced twisted-pair connectors (option C). LC termination refers to a fiber optic connector type, not twisted-pair connecting hardware (option D).",
+    "k": [
+      "IDC (Insulation Displacement Contact) technology uses a sharp bifurcated blade that slices through the wire insulation and grips the conductor metal-to-metal, excluding air and moisture to create a gas-tight, oxidation-resistant joint.",
+      "IDC connections are used in 110-style, BIX, and Krone patch panels and wall outlets; the gas-tight contact remains reliable for decades without re-termination, unlike screw-type connections that oxidize and loosen.",
+      "The alternative — stripping insulation and using compression or screw terminals — risks inconsistent contact pressure and oxidation; IDC's controlled displacement geometry ensures uniform, repeatable contact resistance."
+    ]
   },
   {
     "id": 707,
@@ -477,7 +632,12 @@
       "BNC"
     ],
     "a": 1,
-    "w": "The LC (Lucent Connector) is a small form factor fiber optic connector that is approximately half the size of the SC connector, enabling higher port density in patch panels and equipment. SC connectors are standard form factor connectors, not small form factor (option A). ST connectors use a bayonet coupling and are standard form factor connectors, not SFF (option C). BNC is a coaxial cable connector, not an optical fiber connector (option D)."
+    "w": "The LC (Lucent Connector) is a small form factor fiber optic connector that is approximately half the size of the SC connector, enabling higher port density in patch panels and equipment. SC connectors are standard form factor connectors, not small form factor (option A). ST connectors use a bayonet coupling and are standard form factor connectors, not SFF (option C). BNC is a coaxial cable connector, not an optical fiber connector (option D).",
+    "k": [
+      "LC connectors use a 1.25 mm ferrule, approximately half the diameter of the 2.5 mm ferrule used by SC and ST connectors, allowing twice the port density in patch panels and transceivers.",
+      "The LC's push-pull latch mechanism (similar to SC but smaller) is the dominant connector in modern SFP, SFP+, and SFP28 transceivers, making it the de facto standard for high-density data center fiber connections.",
+      "SC connectors were once the TIA-568 recommended connector; LC has largely replaced SC in new high-density installations because of its smaller size, while ST connectors are found mainly in legacy multimode installations."
+    ]
   },
   {
     "id": 708,
@@ -492,7 +652,12 @@
       "66-style, 110-style, BIX-style"
     ],
     "a": 2,
-    "w": "The three main types of coaxial connectors are BNC-style (used in video and data applications), F-style (used in cable TV and satellite), and N-style (used in RF and wireless communications). LC, SC, and ST are optical fiber connectors, not coaxial connectors (option A). T-connectors, barrel connectors, and terminators are connector accessories rather than the main connector types (option B). 66-style, 110-style, and BIX-style are punch-down blocks used for copper twisted-pair cabling, not coaxial connectors (option D)."
+    "w": "The three main types of coaxial connectors are BNC-style (used in video and data applications), F-style (used in cable TV and satellite), and N-style (used in RF and wireless communications). LC, SC, and ST are optical fiber connectors, not coaxial connectors (option A). T-connectors, barrel connectors, and terminators are connector accessories rather than the main connector types (option B). 66-style, 110-style, and BIX-style are punch-down blocks used for copper twisted-pair cabling, not coaxial connectors (option D).",
+    "k": [
+      "BNC (Bayonet Neill-Concelman) connectors provide quick quarter-turn locking and are used for professional video (SDI), oscilloscopes, and legacy 10BASE-2 network connections.",
+      "F-type connectors are the lowest-cost coaxial connector, used universally in residential CATV and satellite TV installations; N-type connectors handle the highest frequencies (up to 11 GHz) for RF, microwave, and outdoor wireless applications.",
+      "All three — BNC, F-type, and N-type — are designed for 75-ohm or 50-ohm coaxial cable; choosing the correct type depends on the application's frequency range, environment, and required impedance."
+    ]
   },
   {
     "id": 709,
@@ -507,7 +672,12 @@
       "0.5 dB"
     ],
     "a": 2,
-    "w": "A single fusion or mechanical splice in an optical fiber system introduces approximately 0.3 dB of insertion loss, as specified in ANSI/TIA-568 for loss budget calculations. 0.1 dB per splice is below the standard assumed value and would underestimate total link loss in budget calculations (option A). 0.2 dB is below the standard assumed splice loss value used in ANSI/TIA-568 calculations (option B). 0.5 dB per splice would overestimate splice losses and result in over-conservative link budget calculations (option D)."
+    "w": "A single fusion or mechanical splice in an optical fiber system introduces approximately 0.3 dB of insertion loss, as specified in ANSI/TIA-568 for loss budget calculations. 0.1 dB per splice is below the standard assumed value and would underestimate total link loss in budget calculations (option A). 0.2 dB is below the standard assumed splice loss value used in ANSI/TIA-568 calculations (option B). 0.5 dB per splice would overestimate splice losses and result in over-conservative link budget calculations (option D).",
+    "k": [
+      "ANSI/TIA-568 specifies a 0.3 dB per-splice budget allowance for optical fiber link loss calculations; this figure is conservative enough to cover both fusion and mechanical splice types in real-world conditions.",
+      "Actual high-quality fusion splices achieve <0.05 dB, but using 0.3 dB in the loss budget provides a safety margin for splice aging, temperature cycling, and poor technique by installers.",
+      "Each splice contributes 0.3 dB to the total channel attenuation budget; minimizing the number of splices in a link is therefore important for long runs or when approaching the maximum allowable channel loss."
+    ]
   },
   {
     "id": 710,
@@ -522,6 +692,511 @@
       "Reduce return loss"
     ],
     "a": 1,
-    "w": "Optical fiber patch panels provide high-density housing for fiber connectors, enabling organized cross-connection and patching between fiber cables in telecommunications rooms. Optical fiber patch panels are passive components and cannot increase signal strength (option A). Coaxial cables are terminated using coaxial patch panels or connectors, not optical fiber patch panels (option C). Return loss is reduced through proper connector polishing and alignment, not by the patch panel itself (option D)."
+    "w": "Optical fiber patch panels provide high-density housing for fiber connectors, enabling organized cross-connection and patching between fiber cables in telecommunications rooms. Optical fiber patch panels are passive components and cannot increase signal strength (option A). Coaxial cables are terminated using coaxial patch panels or connectors, not optical fiber patch panels (option C). Return loss is reduced through proper connector polishing and alignment, not by the patch panel itself (option D).",
+    "k": [
+      "Optical fiber patch panels (fiber distribution units) provide a high-density, organized termination point where backbone and horizontal fiber cables are terminated and cross-connected using patch cords.",
+      "Patch panels enable moves, adds, and changes (MAC) to the fiber distribution without disturbing permanently installed cable runs; only the patch cords are reconfigured at the panel.",
+      "Patch panels are passive hardware — they house adapters and connectors but cannot amplify signals; signal regeneration in fiber systems requires active optical amplifiers or repeaters, not patch panels."
+    ]
+  },
+  {
+    "id": 946,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What type of light source is typically used for transmission over singlemode optical fiber?",
+    "o": [
+      "LED",
+      "Laser",
+      "VCSEL operating at 850 nm",
+      "Superluminescent diode"
+    ],
+    "a": 1,
+    "w": "Singlemode optical fiber typically uses laser light sources, whose narrow spectral width and coherent output can be efficiently coupled into the small singlemode core. LEDs produce a broad, divergent output that cannot couple efficiently into a singlemode core and are instead paired with multimode fiber at 1300 nm. VCSELs at 850 nm are the standard source for laser-optimized multimode fibers such as OM3/OM4, not singlemode. Superluminescent diodes are broadband sources used mainly in sensing and test instrumentation rather than typical singlemode data transmission.",
+    "k": [
+      "Singlemode optical fiber has a very small core (roughly 8-10 µm) that propagates only one mode of light, making it the medium of choice for long-distance, high-bandwidth links.",
+      "Only a laser produces light that is sufficiently narrow and coherent to launch efficiently into that tiny singlemode core, which is why singlemode systems are laser-driven.",
+      "Source pairing memory aid: singlemode = laser, multimode at 850 nm = VCSEL, multimode at 1300 nm = LED."
+    ]
+  },
+  {
+    "id": 947,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Which light source is paired with multimode optical fiber operating at the 1300 nm wavelength?",
+    "o": [
+      "LED",
+      "VCSEL",
+      "DFB laser",
+      "Fabry-Perot laser"
+    ],
+    "a": 0,
+    "w": "Multimode optical fiber at the 1300 nm wavelength uses LED light sources, a legacy pairing from earlier multimode applications. VCSELs are the multimode source at 850 nm, not 1300 nm. DFB lasers are narrowband singlemode sources used in long-haul and DWDM systems. Fabry-Perot lasers are also singlemode-system sources and are not the standard companion for 1300 nm multimode operation.",
+    "k": [
+      "Multimode fiber supports two classic operating windows: 850 nm and 1300 nm, each historically tied to a specific transmitter technology.",
+      "At 1300 nm the standard multimode source is the LED, whereas the 850 nm window moved to VCSELs to support higher data rates.",
+      "Think chronologically: LEDs (slow, broad output) belong to the older 1300 nm multimode window; VCSELs took over at 850 nm when gigabit-class speeds demanded a faster source."
+    ]
+  },
+  {
+    "id": 948,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What is the maximum attenuation specified for OM3 and OM4 multimode optical fibers at 850 nm?",
+    "o": [
+      "1.5 dB/km",
+      "2.3 dB/km",
+      "3.5 dB/km",
+      "4.5 dB/km"
+    ],
+    "a": 2,
+    "w": "OM3 and OM4 multimode fibers are limited to a maximum attenuation of 3.5 dB/km at the 850 nm wavelength. The 1.5 dB/km figure is the maximum for these same fibers at 1300 nm, where attenuation is inherently lower. 2.3 dB/km is not a specified multimode attenuation limit at either window. 4.5 dB/km exceeds the standard and would represent a non-compliant fiber at 850 nm.",
+    "k": [
+      "OM3 and OM4 are laser-optimized 50/125 µm multimode fibers specified at two wavelengths, with a separate attenuation ceiling for each window.",
+      "The 850 nm window suffers higher intrinsic loss, so its limit is 3.5 dB/km, while the 1300 nm window is held to 1.5 dB/km.",
+      "Memory aid: shorter wavelength = more scattering = more loss; 850 nm (3.5) loses more than 1300 nm (1.5)."
+    ]
+  },
+  {
+    "id": 949,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What is the maximum attenuation of OS2 singlemode optical fiber at 1550 nm?",
+    "o": [
+      "0.4 dB/km",
+      "1.0 dB/km",
+      "1.4 dB/km",
+      "3.5 dB/km"
+    ],
+    "a": 0,
+    "w": "OS2 singlemode optical fiber is specified with a maximum attenuation of 0.4 dB/km at 1550 nm, reflecting the extremely low loss of outside-plant singlemode fiber in that window. 1.0 dB/km is well above the OS2 limit and is not a standard singlemode value. 1.4 dB/km is the maximum attenuation of OS1a fiber at 1383 nm, a different fiber grade and wavelength. 3.5 dB/km is a multimode figure (OM3/OM4 at 850 nm), nearly an order of magnitude higher than singlemode loss.",
+    "k": [
+      "OS2 is the low-water-peak singlemode fiber grade typically used for outside plant and long links, specified at very low attenuation values.",
+      "Its ceiling of 0.4 dB/km at 1550 nm is the lowest attenuation figure among the standard fiber grades, enabling multi-kilometer spans.",
+      "Contrast pair to memorize: OS2 = 0.4 dB/km at 1550 nm versus OS1a = 1.4 dB/km at 1383 nm."
+    ]
+  },
+  {
+    "id": 950,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "A designer plans a 5 km OS2 singlemode link operating at 1550 nm. Using the maximum specified fiber attenuation, what cable attenuation should be budgeted (excluding splices and connectors)?",
+    "o": [
+      "0.4 dB",
+      "1.0 dB",
+      "1.4 dB",
+      "2.0 dB"
+    ],
+    "a": 3,
+    "w": "OS2 fiber has a maximum attenuation of 0.4 dB/km at 1550 nm, so a 5 km run contributes 5 km × 0.4 dB/km = 2.0 dB of cable loss. 0.4 dB would be the loss of only 1 km, not the full span. 1.0 dB would correspond to just 2.5 km of fiber. 1.4 dB confuses the per-kilometer rating of OS1a fiber at 1383 nm with a total link loss — it is neither the right grade, wavelength, nor calculation.",
+    "k": [
+      "A fiber loss budget multiplies the per-kilometer attenuation rating by the route length, then adds allowances for splices and connectors.",
+      "For OS2 at 1550 nm the rating is 0.4 dB/km, so cable loss scales at 0.4 dB for every kilometer of installed fiber.",
+      "Always confirm the wavelength before multiplying — picking the wrong window or fiber grade (such as OS1a's 1.4 dB/km) can more than triple the calculated loss."
+    ]
+  },
+  {
+    "id": 951,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Which form of dispersion predominates in singlemode optical fiber?",
+    "o": [
+      "Modal dispersion",
+      "Chromatic dispersion",
+      "Multipath dispersion",
+      "Intermodal delay skew"
+    ],
+    "a": 1,
+    "w": "In singlemode fiber only one mode propagates, so the dominant bandwidth-limiting effect is chromatic dispersion — different wavelengths within the source's spectrum traveling at slightly different speeds. Modal dispersion is the primary limiting factor in multimode fiber, where many modes take paths of different lengths, but it cannot dominate in a fiber that carries a single mode. Multipath dispersion describes RF signal behavior in wireless systems, not guided fiber optics. Intermodal delay skew is not a recognized singlemode impairment; skew terminology applies to multi-pair copper and parallel fiber lanes.",
+    "k": [
+      "Dispersion is the spreading of an optical pulse as it travels, which limits how closely pulses (bits) can be spaced and therefore caps bandwidth.",
+      "With only one propagation path available, singlemode fiber is limited by chromatic dispersion — wavelength-dependent velocity differences — rather than by mode-to-mode path differences.",
+      "Pairing to remember: multimode = modal dispersion dominates; singlemode = chromatic dispersion dominates."
+    ]
+  },
+  {
+    "id": 952,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What is the overfilled launch (OFL) bandwidth of OM3 multimode optical fiber at 850 nm?",
+    "o": [
+      "500 MHz-km",
+      "1500 MHz-km",
+      "2000 MHz-km",
+      "3500 MHz-km"
+    ],
+    "a": 1,
+    "w": "OM3 multimode fiber is specified with an overfilled launch bandwidth of 1500 MHz-km at 850 nm. 500 MHz-km is characteristic of older OM2-class fiber rather than laser-optimized OM3. 2000 MHz-km is not the standard OFL value for either OM3 or OM4. 3500 MHz-km is the OFL bandwidth of OM4 at 850 nm, the next grade up from OM3.",
+    "k": [
+      "Overfilled launch (OFL) bandwidth measures a multimode fiber's modal bandwidth when the entire core is excited, expressed in MHz-km.",
+      "OM3 delivers 1500 MHz-km at 850 nm, which is what allows it to carry 10 Gb/s traffic over useful building-backbone distances.",
+      "Grade ladder at 850 nm: OM3 = 1500 MHz-km, OM4 = 3500 MHz-km — OM4 slightly more than doubles OM3's figure."
+    ]
+  },
+  {
+    "id": 953,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What is the recommended maximum length for a 1 Gb/s application running over OM3 multimode optical fiber?",
+    "o": [
+      "33 m",
+      "300 m",
+      "550 m",
+      "1000 m"
+    ],
+    "a": 2,
+    "w": "For 1 Gb/s applications, OM3 multimode fiber supports a recommended length of 550 m. 33 m is the recommended limit for 10 Gb/s over legacy OM1 fiber, a much more demanding application on a lower-grade fiber. 300 m is a common 10 Gb/s OM3 figure, not the 1 Gb/s recommendation. 1000 m is the recommended 1 Gb/s distance for OM4, whose higher modal bandwidth nearly doubles OM3's reach at that rate.",
+    "k": [
+      "Supported distance over multimode fiber depends on both the application data rate and the fiber's modal bandwidth grade.",
+      "At 1 Gb/s the recommended distances are 550 m on OM3 and 1000 m on OM4, reflecting OM4's higher 850 nm bandwidth.",
+      "Keep the extremes straight: the same OM3/OM4 fibers that carry 1 Gb/s for 550-1000 m carry 10 Gb/s only a fraction as far, and OM1 manages just 33 m at 10 Gb/s."
+    ]
+  },
+  {
+    "id": 954,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Per BICSI recommendations, what color identifies singlemode optical fiber adapters?",
+    "o": [
+      "Green",
+      "Blue",
+      "Aqua",
+      "Beige"
+    ],
+    "a": 1,
+    "w": "BICSI recommends blue for singlemode optical fiber adapters, providing instant visual confirmation of fiber type at the patch field. Green is reserved for singlemode APC connectors, identifying the angled polish rather than the standard adapter. Aqua designates adapters for 50/125 µm laser-enhanced (laser-optimized) multimode fiber. Beige is traditionally associated with legacy 62.5/125 µm multimode hardware, not singlemode.",
+    "k": [
+      "Optical fiber hardware color coding lets technicians distinguish fiber types and polish styles at a glance, preventing damaging mismatched connections.",
+      "Standard singlemode adapters are blue, while the green color is specifically a flag for angled physical contact (APC) singlemode connectors.",
+      "Color trio to memorize: blue = singlemode UPC hardware, green = singlemode APC, aqua = laser-optimized 50 µm multimode."
+    ]
+  },
+  {
+    "id": 955,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "An aqua-colored optical fiber adapter on a patch panel indicates compatibility with which fiber type?",
+    "o": [
+      "62.5/125 µm multimode fiber",
+      "OS2 singlemode fiber",
+      "50/125 µm laser-enhanced multimode fiber",
+      "Plastic optical fiber"
+    ],
+    "a": 2,
+    "w": "Aqua is the BICSI-recommended color for adapters serving 50/125 µm laser-enhanced multimode fiber, the laser-optimized grades used with VCSEL sources. 62.5/125 µm multimode fiber is legacy OM1, conventionally associated with beige/slate hardware rather than aqua. OS2 singlemode fiber uses blue adapters (or green for APC), never aqua. Plastic optical fiber is a consumer/industrial medium outside the structured cabling color scheme entirely.",
+    "k": [
+      "Adapter colors encode the fiber class a port is built for, so a mismatched patch cord can be spotted before it is plugged in.",
+      "Aqua specifically signals 50/125 µm laser-enhanced multimode — the OM3/OM4 family designed for 850 nm VCSEL transmission.",
+      "Visual cue: aqua's bright 'modern' tint marks the modern laser-optimized multimode grades, while muted beige marks the legacy 62.5 µm generation."
+    ]
+  },
+  {
+    "id": 956,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "For which optical fiber combinations can mechanical splices be used?",
+    "o": [
+      "Multimode fibers only",
+      "Singlemode fibers only",
+      "Only fibers having identical buffer sizes",
+      "Multimode and singlemode fibers, including different buffer sizes"
+    ],
+    "a": 3,
+    "w": "Mechanical splices are versatile devices usable on both multimode and singlemode optical fibers, and they can join fibers with different buffer sizes. Limiting them to multimode only understates their application range, since singlemode mechanical splicing is routine for restoration and low-count work. Likewise they are not restricted to singlemode. Requiring identical buffer sizes is exactly the limitation mechanical splices do not have — many designs accommodate dissimilar buffers.",
+    "k": [
+      "A mechanical splice aligns and clamps two fiber ends in a precision housing with index-matching gel, requiring no fusion arc or expensive equipment.",
+      "Their key flexibility is breadth of application: they work across multimode and singlemode fibers and can mate fibers of different buffer sizes.",
+      "Trade-off to recall: mechanical splices win on versatility and low tooling cost, but fusion splices win on lower attenuation and reflectance."
+    ]
+  },
+  {
+    "id": 957,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Why is coaxial cable classified as an unbalanced transmission medium?",
+    "o": [
+      "Its two conductors are twisted at unequal lay lengths",
+      "Its centered inner conductor is insulated from the surrounding outer conductor, which also serves as the signal reference",
+      "It can only carry signals in one direction",
+      "Its impedance varies along the cable length"
+    ],
+    "a": 1,
+    "w": "Coaxial cable is unbalanced because the signal travels on a centered inner conductor that is insulated from a surrounding outer conductor, and that outer conductor doubles as the grounded signal reference — the two conductors are not electrically symmetric. Unequal twisted lay lengths describe a defect in twisted-pair construction, not coax geometry. Direction of signal flow has nothing to do with balance; coax supports bidirectional services such as CATV. A well-made coax maintains uniform impedance along its length, so varying impedance is neither true nor the definition of unbalanced.",
+    "k": [
+      "Balanced media (like twisted pairs) use two symmetric conductors carrying equal and opposite signals, while unbalanced media reference the signal to a grounded conductor.",
+      "Coax is the classic unbalanced design: a center conductor carries the signal while the concentric shield acts as both return path and ground reference.",
+      "Picture the cross-section — a bullseye, not twins: the asymmetry between center pin and surrounding shield is what makes coax unbalanced."
+    ]
+  },
+  {
+    "id": 958,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Series-6 coaxial cable is commonly specified for which group of applications?",
+    "o": [
+      "Video, CATV, and security cameras",
+      "Video backbone distribution between buildings",
+      "High-speed data center switch uplinks",
+      "Telephone riser cabling"
+    ],
+    "a": 0,
+    "w": "Series-6 coaxial cable is the workhorse for video, CATV, and security camera applications, balancing cost, size, and performance for those services. Video backbone distribution is the role of Series-11U, whose lower attenuation suits longer backbone runs. High-speed data center uplinks use twisted-pair, twinax, or optical fiber rather than Series-6 coax. Telephone riser cabling uses multipair balanced copper, not coaxial cable.",
+    "k": [
+      "Coaxial cable series numbers (Series-6, Series-11U) denote standardized constructions with different diameters and attenuation characteristics.",
+      "Series-6 is the general-purpose distribution coax chosen for video, CATV, and security camera circuits at horizontal distances.",
+      "Division of labor: Series-6 covers the drops and horizontal video runs; step up to Series-11U when the run becomes a video backbone needing lower loss."
+    ]
+  },
+  {
+    "id": 959,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Why are BNC-style coaxial connectors common in audiovisual (AV) industries?",
+    "o": [
+      "They are the least expensive coaxial connector available",
+      "They provide the highest bandwidth of any coaxial connector",
+      "They can be installed without any tools",
+      "They offer reliability and ruggedness"
+    ],
+    "a": 3,
+    "w": "BNC-style connectors are favored in AV work because of their reliability and ruggedness — the bayonet coupling locks positively and withstands repeated mating in production environments. Low cost is more characteristic of F-style connectors used in residential services, and price is not the BNC's claim to fame. The highest bandwidth among coaxial connectors belongs to the N-style connector, not BNC. BNC connectors still require proper termination tooling; tool-free installation describes screw-on F connectors, which are not recommended for commercial use.",
+    "k": [
+      "BNC (bayonet) connectors twist-lock onto the jack, giving a fast yet positive mechanical connection on coaxial cable.",
+      "Their AV-industry dominance comes from dependable, rugged performance under constant plugging, unplugging, and field handling.",
+      "Connector niches: F-style = residential cable services, BNC = rugged AV/broadcast use, N-style = highest bandwidth applications."
+    ]
+  },
+  {
+    "id": 960,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "How do cable length and conductor size affect attenuation in coaxial cable?",
+    "o": [
+      "Attenuation increases with length and decreases with larger outside diameter",
+      "Attenuation decreases with length and increases with larger outside diameter",
+      "Attenuation is unaffected by length but increases with diameter",
+      "Attenuation increases with both shorter length and smaller diameter equally"
+    ],
+    "a": 0,
+    "w": "Coaxial attenuation accumulates with distance, so longer cables lose more signal, while larger outside diameters provide bigger conductors and lower resistive loss, reducing attenuation. The reversed relationship — less loss with more length — is physically impossible for a passive cable. Length always matters because loss is specified per unit distance, so attenuation cannot be unaffected by it. The final option wrongly suggests shorter cables attenuate more, which inverts the actual distance relationship.",
+    "k": [
+      "Attenuation is the progressive weakening of a signal as it travels through a medium, normally quoted in dB per unit length.",
+      "In coax the two design levers are opposite: more length adds loss, while a fatter cable (larger outside diameter) cuts loss.",
+      "This is why Series-11U, with its larger diameter, beats Series-6 on attenuation and earns the video backbone role."
+    ]
+  },
+  {
+    "id": 961,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Which F-style coaxial connector attachment method is NOT recommended for commercial installations?",
+    "o": [
+      "Compression",
+      "Crimp",
+      "Hex-crimp",
+      "Screw-on"
+    ],
+    "a": 3,
+    "w": "Screw-on F-style connectors simply thread onto the cable jacket without a permanent mechanical bond, so they loosen, leak RF, and are not recommended for commercial use. Compression connectors are the preferred professional method, forming a weather-resistant 360-degree grip. Crimp attachment, while older, creates a permanent mechanical termination acceptable in commercial work. Hex-crimp is simply a crimp variant using a hexagonal die and is likewise a legitimate permanent termination.",
+    "k": [
+      "F-style connectors terminate Series-type coax for cable TV and broadband services, and they can be attached by compression, crimping, or screwing on.",
+      "Because a screw-on connector relies only on threads biting the jacket, it lacks the permanent retention and shielding integrity required for commercial-grade work.",
+      "Field rule: if the F connector can be removed by hand without tools, it should not be in a commercial plant."
+    ]
+  },
+  {
+    "id": 962,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Up to what frequency is Category 5e/Class D balanced twisted-pair cabling specified?",
+    "o": [
+      "16 MHz",
+      "100 MHz",
+      "250 MHz",
+      "500 MHz"
+    ],
+    "a": 1,
+    "w": "Category 5e/Class D cabling is characterized up to 100 MHz, the bandwidth that supports applications such as 1000BASE-T. 16 MHz is the Category 3 specification limit, a much older grade. 250 MHz corresponds to Category 6/Class E. 500 MHz is the Category 6A/Class EA limit, five times the Cat 5e bandwidth.",
+    "k": [
+      "TIA categories and ISO classes pair up to define balanced twisted-pair performance grades, each certified to a maximum characterization frequency.",
+      "Category 5e/Class D tops out at 100 MHz, which is also the minimum acceptable performance level for network cabling.",
+      "Frequency ladder to memorize: 5e = 100 MHz, 6 = 250 MHz, 6A = 500 MHz, 7A = 1000 MHz, 8.1 = 2000 MHz."
+    ]
+  },
+  {
+    "id": 963,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Category 6A/Class EA cabling is specified for transmission performance up to what frequency?",
+    "o": [
+      "250 MHz",
+      "330 MHz",
+      "500 MHz",
+      "600 MHz"
+    ],
+    "a": 2,
+    "w": "Category 6A/Class EA extends balanced twisted-pair characterization to 500 MHz, double Category 6, enabling 10GBASE-T over a full 100 m channel. 250 MHz is the Category 6/Class E limit that 6A doubles. 330 MHz is not a standard category boundary in the TIA/ISO hierarchy. 600 MHz is the Category 7/Class F specification, a shielded grade above 6A.",
+    "k": [
+      "Category 6A/Class EA is BICSI's recommended minimum performance level for new horizontal cabling installations.",
+      "Its 500 MHz bandwidth — twice Category 6 — is what makes 10 Gb/s Ethernet possible over 100 m of balanced twisted-pair.",
+      "Doubling pattern: each major step roughly doubles bandwidth (250 → 500 → 1000 → 2000 MHz for Cat 6 → 6A → 7A → 8.1)."
+    ]
+  },
+  {
+    "id": 964,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What is the maximum specified frequency for Category 8.1/Class I cabling?",
+    "o": [
+      "1000 MHz",
+      "1200 MHz",
+      "1600 MHz",
+      "2000 MHz"
+    ],
+    "a": 3,
+    "w": "Category 8.1/Class I is specified to 2000 MHz, the highest characterization frequency in the balanced twisted-pair hierarchy, supporting 25/40GBASE-T over short data center links. 1000 MHz is the Category 7A/Class FA limit, exactly half of Category 8.1. 1200 MHz and 1600 MHz are not standardized category boundaries. Remembering that 8.1 doubles 7A's bandwidth eliminates the intermediate values.",
+    "k": [
+      "Category 8.1/Class I is the data-center-oriented twisted-pair grade designed for short, high-speed switch-to-server channels.",
+      "Its 2000 MHz specification doubles Category 7A's 1000 MHz, continuing the bandwidth-doubling progression of cabling grades.",
+      "Despite its extreme bandwidth, Category 8.1 keeps the familiar 8P8C interface, preserving backward compatibility with Category 6A/Class EA."
+    ]
+  },
+  {
+    "id": 965,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In the T568A pin assignment scheme, pins 4 and 5 carry which pair?",
+    "o": [
+      "Pair 1",
+      "Pair 2",
+      "Pair 3",
+      "Pair 4"
+    ],
+    "a": 0,
+    "w": "Under T568A, Pair 1 (blue) occupies the center pins 4 and 5 of the 8P8C connector. Pair 2 terminates on pins 3 and 6, straddling the center pair. Pair 3 lands on pins 1 and 2 at the edge of the connector. Pair 4 takes pins 7 and 8 on the opposite edge. Only Pair 1 sits on the two centermost positions.",
+    "k": [
+      "T568A is one of the two standardized pin/pair assignments for terminating four-pair cable on 8P8C modular jacks and plugs.",
+      "Pair 1 always occupies center pins 4-5 — a position inherited from single-line telephone wiring so legacy plugs stay compatible.",
+      "Layout picture for T568A: Pair 3 on pins 1-2, Pair 2 straddling on 3 and 6, Pair 1 in the center on 4-5, Pair 4 on 7-8."
+    ]
+  },
+  {
+    "id": 966,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Under the T568B pin assignment scheme, Pair 3 terminates on which pins?",
+    "o": [
+      "Pins 1 and 2",
+      "Pins 4 and 5",
+      "Pins 7 and 8",
+      "Pins 3 and 6"
+    ],
+    "a": 3,
+    "w": "In T568B, Pair 3 terminates on pins 3 and 6, the positions that straddle the center pair. Pins 1 and 2 carry Pair 2 in T568B (they belong to Pair 3 only under T568A). Pins 4 and 5 are Pair 1's center position in both schemes. Pins 7 and 8 carry Pair 4 in both schemes as well — the two outer-right positions never change.",
+    "k": [
+      "T568B is the alternate 8P8C pin/pair assignment; it differs from T568A only in that Pairs 2 and 3 swap positions.",
+      "In T568B Pair 3 sits on pins 3 and 6, whereas in T568A those same pins belong to Pair 2 — this swap is the entire difference between the schemes.",
+      "Constants to anchor on: Pair 1 = pins 4/5 and Pair 4 = pins 7/8 in both standards; only Pairs 2 and 3 trade places."
+    ]
+  },
+  {
+    "id": 967,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Why should copper patch cords be constructed with stranded conductors?",
+    "o": [
+      "Stranded conductors provide the flexibility needed for repeated handling",
+      "Stranded conductors provide lower insertion loss",
+      "Stranded conductors are easier to terminate on IDC blocks",
+      "Stranded conductors eliminate the need for strain relief"
+    ],
+    "a": 0,
+    "w": "Patch cords are flexed, routed, and re-routed constantly, so they are built with stranded conductors whose multiple thin strands tolerate repeated bending without fatigue. Insertion loss actually favors solid conductors — stranded cords attenuate up to 20% more, so loss is a drawback of stranding, not a benefit. IDC blocks are designed around solid conductors; stranded wire is the harder case for insulation displacement termination. Strain relief is still required on stranded cords; flexibility does not remove that mechanical need.",
+    "k": [
+      "Patch cords are the movable jumpers of a cabling system, repeatedly plugged, unplugged, and bent during moves, adds, and changes.",
+      "Stranding is chosen purely for mechanical endurance: many fine strands flex freely where a solid conductor would work-harden and break.",
+      "The trade-off to remember: stranded = flexible but up to 20% more attenuation; solid = lower loss but meant for fixed, permanent runs."
+    ]
+  },
+  {
+    "id": 968,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "A solid-conductor cord of a given length and gauge exhibits 2.0 dB of attenuation. What worst-case attenuation should be expected from a stranded-conductor cord of the same length and gauge?",
+    "o": [
+      "1.6 dB",
+      "2.2 dB",
+      "2.4 dB",
+      "4.0 dB"
+    ],
+    "a": 2,
+    "w": "Stranded cords attenuate up to 20% more than solid cords of the same gauge, so the worst case is 2.0 dB × 1.20 = 2.4 dB. 1.6 dB would imply stranded cable performs 20% better than solid, which reverses the relationship. 2.2 dB reflects only a 10% penalty, understating the allowance. 4.0 dB doubles the loss, treating the penalty as 100% instead of 20%.",
+    "k": [
+      "Attenuation derating accounts for the extra resistive loss of stranded conductors, whose current path through multiple strands is less efficient than a single solid conductor.",
+      "The standard planning figure is a 20% maximum attenuation increase for stranded versus solid cords of identical gauge, applied multiplicatively (× 1.20).",
+      "This 20% penalty is precisely why channel calculations treat patch cord lengths differently from the solid-conductor permanent link."
+    ]
+  },
+  {
+    "id": 969,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "An installer must terminate a modular plug directly onto solid-conductor horizontal cable. Which plug contact design is required?",
+    "o": [
+      "Single-blade contacts",
+      "Two-blade contacts",
+      "Three-blade contacts",
+      "Insulation-piercing ring contacts"
+    ],
+    "a": 2,
+    "w": "Modular plug contacts for solid conductors use a three-blade design that straddles and grips the round solid conductor from multiple points for a reliable gas-tight connection. Single-blade contacts are made for stranded conductors, where the blade pierces between the strands; on solid wire a single blade can slip off the conductor. Two-blade contacts are not a standard modular plug configuration. Insulation-piercing ring contacts describe other connector families, not 8P8C modular plug designs.",
+    "k": [
+      "Modular (8P8C) plugs terminate by driving contact blades through the conductor insulation, and the blade geometry must match the conductor construction.",
+      "Solid conductors require three blades so the contact cradles the single rigid wire securely, while stranded conductors need only a single blade driven into the strand bundle.",
+      "Match-up mnemonic: one wire body of many strands = one blade; one solid wire = three blades to trap it."
+    ]
+  },
+  {
+    "id": 970,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Which cord type is used for cross-connecting passive infrastructure rather than connecting directly to active equipment?",
+    "o": [
+      "Equipment cord",
+      "Hybrid cord",
+      "Consolidation cord",
+      "Patch cord"
+    ],
+    "a": 3,
+    "w": "Patch cords serve cross-connections between passive infrastructure elements, such as linking two patch panel ports in a cross-connect field. Equipment cords are the ones that plug directly into active equipment like switches and servers. A hybrid cord refers to a cord containing different cable or connector types, not a defined role in the cross-connect/equipment distinction. 'Consolidation cord' is not a standard term; consolidation points are interconnection hardware in horizontal cabling, not a cord classification.",
+    "k": [
+      "Cords are the flexible, stranded-conductor links at the ends of a channel, divided by role into patch cords and equipment cords.",
+      "The defining split is what they touch: patch cords join passive facility cabling at cross-connects, while equipment cords attach to active electronics.",
+      "Naming logic: you 'patch' between panels (passive-to-passive) but you cord 'equipment' into the network (passive-to-active)."
+    ]
   }
 ]

@@ -1,8 +1,10 @@
-const CACHE = 'rcdd-v10';
+importScripts('/Quiz/version.js');
+const CACHE = 'rcdd-v' + APP_VERSION.minor;
 const ASSETS = [
   '/Quiz/',
   '/Quiz/index.html',
   '/Quiz/app.js',
+  '/Quiz/version.js',
   '/Quiz/manifest.json',
   'https://unpkg.com/react@18/umd/react.production.min.js',
   'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js',

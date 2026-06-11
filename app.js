@@ -1,4 +1,4 @@
-// RCDD Quiz Bank — app.js
+// RCDD Exam Prep — app.js
 // Vanilla React (no JSX, no build step needed)
 
 const { useState, useEffect, useCallback, useMemo, useRef } = React;
@@ -6,6 +6,7 @@ const { useState, useEffect, useCallback, useMemo, useRef } = React;
 // ── Config ────────────────────────────────────────────────────────────────────
 const LABELS = ['A','B','C','D'];
 const STORAGE_KEY = 'rcdd_v3';
+// Version is defined in version.js (shared with sw.js) — edit only that file.
 const CHAPTER_FILES = [
   'data/chapter01 principles of transmission.json',
   'data/chapter02 electromagnetic compatibility.json',
@@ -104,6 +105,9 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+// Enable offline persistence — Firebase queues writes to IndexedDB when offline
+// and syncs automatically when the connection is restored
+db.enablePersistence({ synchronizeTabs: false }).catch(() => {});
 
 async function hashPin(pin) {
   const data = new TextEncoder().encode('rcdd:' + pin);
@@ -122,7 +126,7 @@ function compactAppData(appData) {
       mode: sess.mode || 'normal'
     };
   });
-  return { sessions, history: appData.history, starred: appData.starred, wrongCounts: appData.wrongCounts, confidenceLog: appData.confidenceLog };
+  return { sessions, history: appData.history, starred: appData.starred, wrongCounts: appData.wrongCounts, confidenceLog: appData.confidenceLog, dailyStats: appData.dailyStats };
 }
 
 function expandSessions(compactSessions, questionsById) {
@@ -159,7 +163,7 @@ function AuthScreen({ onSignIn, onSignUp, loading, error, dark }) {
     el('div', { style: { width:'100%', maxWidth:360 } },
       el('div', { style: { textAlign:'center', marginBottom:32 } },
         el('div', { style: { fontSize:52, marginBottom:10, lineHeight:1 } }, '💡'),
-        el('h1', { style: { fontSize:26, fontWeight:800, color:t.text, margin:0 } }, 'RCDD Quiz Bank'),
+        el('h1', { style: { fontSize:26, fontWeight:800, color:t.text, margin:0 } }, 'RCDD Exam Prep'),
         el('p', { style: { fontSize:13, color:t.textMuted, marginTop:6 } }, 'BICSI · RCDD Exam Prep')
       ),
       el('div', { style: { background:t.card, borderRadius:20, padding:24, boxShadow:'0 4px 24px rgba(0,0,0,0.12)' } },
@@ -277,6 +281,16 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sessionMode, setSessionMode] = useState('normal');
 
+  // ── Online/Offline ──
+  const [isOnline, setIsOnline] = useState(() => navigator.onLine);
+  useEffect(() => {
+    const up = () => setIsOnline(true);
+    const dn = () => setIsOnline(false);
+    window.addEventListener('online', up);
+    window.addEventListener('offline', dn);
+    return () => { window.removeEventListener('online', up); window.removeEventListener('offline', dn); };
+  }, []);
+
   // ── Dark mode ──
   const [dark, setDark] = useState(() => { try { return localStorage.getItem('rcdd_dark') === '1'; } catch(e) { return false; } });
   const toggleDark = useCallback(() => setDark(d => { const n=!d; try{localStorage.setItem('rcdd_dark',n?'1':'0');}catch(e){} return n; }), []);
@@ -285,9 +299,10 @@ function App() {
   const [currentUser, setCurrentUser] = useState(() => { try { return JSON.parse(localStorage.getItem('rcdd_user')) || null; } catch(e) { return null; } });
   const [authLoading, setAuthLoading] = useState(false);
   const [authError, setAuthError] = useState('');
-  const [progressLoaded, setProgressLoaded] = useState(() => {
-    try { const user = JSON.parse(localStorage.getItem('rcdd_user')); return user ? !!localStorage.getItem(STORAGE_KEY+'_'+user.username) : false; } catch(e) { return false; }
-  });
+  // Always false on start — Firestore writes are blocked until server data has been read.
+  // localStorage still populates the initial appData render but we never write back
+  // until we've confirmed what the server has, preventing stale-device overwrites.
+  const [progressLoaded, setProgressLoaded] = useState(false);
   const justLoadedRef = useRef(false);
 
   const [appData, setAppData] = useState(() => {
@@ -295,16 +310,14 @@ function App() {
       const user = JSON.parse(localStorage.getItem('rcdd_user'));
       if (user && user.username) {
         const cached = loadUser(user.username);
-        if (cached) return { sessions:cached.sessions||{}, history:cached.history||[], starred:cached.starred||[], wrongCounts:cached.wrongCounts||{}, confidenceLog:cached.confidenceLog||{} };
+        if (cached) return { sessions:cached.sessions||{}, history:cached.history||[], starred:cached.starred||[], wrongCounts:cached.wrongCounts||{}, confidenceLog:cached.confidenceLog||{}, dailyStats:cached.dailyStats||{date:'',correct:0} };
       }
     } catch(e) {}
     const saved = load();
     if (!saved) { try { const old=localStorage.getItem('rcdd_v2'); if(old){const p=JSON.parse(old);return{sessions:p.sessions||{},history:p.history||[],starred:p.starred||[],wrongCounts:{},confidenceLog:{}};} } catch(e) {} }
-    if (saved) return { sessions:saved.sessions||{}, history:saved.history||[], starred:saved.starred||[], wrongCounts:saved.wrongCounts||{}, confidenceLog:saved.confidenceLog||{} };
-    return { sessions:{}, history:[], starred:[], wrongCounts:{}, confidenceLog:{} };
+    if (saved) return { sessions:saved.sessions||{}, history:saved.history||[], starred:saved.starred||[], wrongCounts:saved.wrongCounts||{}, confidenceLog:saved.confidenceLog||{}, dailyStats:saved.dailyStats||{date:'',correct:0} };
+    return { sessions:{}, history:[], starred:[], wrongCounts:{}, confidenceLog:{}, dailyStats:{date:'',correct:0} };
   });
-
-  useEffect(() => { save(appData); if (currentUser) saveUser(currentUser.username, appData); }, [appData, currentUser]);
 
   useEffect(() => {
     Promise.all(CHAPTER_FILES.map(url => fetch(url).then(r => { if(!r.ok) throw new Error('HTTP '+r.status+' — '+url); return r.json(); })))
@@ -312,26 +325,52 @@ function App() {
       .catch(err => { setFetchError(err.message); setLoading(false); });
   }, []);
 
+  const applyServerProgress = useCallback((doc) => {
+    if (doc.exists && doc.data().progress) {
+      const p = doc.data().progress;
+      const qById = {};
+      questions.forEach(q => { qById[q.id] = q; });
+      justLoadedRef.current = true;
+      const serverDaily = p.dailyStats || { date: '', correct: 0 };
+      const today = new Date().toDateString();
+      setAppData(prev => {
+        const localDaily = prev.dailyStats || { date: '', correct: 0 };
+        const dailyStats = localDaily.date === today && localDaily.correct > (serverDaily.date === today ? serverDaily.correct : 0)
+          ? localDaily : serverDaily;
+        return { sessions:expandSessions(p.sessions||{},qById), history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{}, dailyStats };
+      });
+    }
+  }, [questions]);
+
+  const [syncing, setSyncing] = useState(false);
+  const [syncMsg, setSyncMsg] = useState('');
+  const syncProgress = useCallback(() => {
+    if (!currentUser) return;
+    setSyncing(true); setSyncMsg('');
+    db.collection('users').doc(currentUser.username).get({ source: 'server' })
+      .then(doc => { applyServerProgress(doc); setSyncing(false); setSyncMsg('Synced ✓'); setTimeout(() => setSyncMsg(''), 2500); })
+      .catch(() => { setSyncing(false); setSyncMsg('Sync failed'); setTimeout(() => setSyncMsg(''), 2500); });
+  }, [currentUser, applyServerProgress]);
+
   useEffect(() => {
     if (!currentUser || questions.length === 0) return;
-    db.collection('users').doc(currentUser.username).get()
-      .then(doc => {
-        if (doc.exists && doc.data().progress) {
-          const p = doc.data().progress;
-          const qById = {};
-          questions.forEach(q => { qById[q.id] = q; });
-          justLoadedRef.current = true;
-          setAppData({ sessions:expandSessions(p.sessions||{},qById), history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{} });
-        }
-        setProgressLoaded(true);
-      })
+    // Force server fetch so we always get the latest data, not the IndexedDB cache
+    db.collection('users').doc(currentUser.username).get({ source: 'server' })
+      .then(doc => { applyServerProgress(doc); setProgressLoaded(true); })
       .catch(() => setProgressLoaded(true));
   }, [currentUser, questions]);
 
+  // Cloud-first sync: write to Firestore with a short debounce.
+  // localStorage is also kept in sync so the fast-load cache is never stale.
   useEffect(() => {
     if (!currentUser || !progressLoaded) return;
     if (justLoadedRef.current) { justLoadedRef.current = false; return; }
-    const timer = setTimeout(() => { db.collection('users').doc(currentUser.username).update({ progress: compactAppData(appData) }).catch(()=>{}); }, 2000);
+    // Always write to localStorage so the startup cache stays current
+    saveUser(currentUser.username, appData);
+    const compact = compactAppData(appData);
+    const timer = setTimeout(() => {
+      db.collection('users').doc(currentUser.username).update({ progress: compact }).catch(() => {});
+    }, 500);
     return () => clearTimeout(timer);
   }, [appData, currentUser, progressLoaded]);
 
@@ -381,13 +420,46 @@ function App() {
     return Object.values(map).sort((a,b) => a.id-b.id);
   }, [questions]);
 
+  // Extend any saved session shorter than its chapter (handles stale sessions
+  // and future question bank additions automatically)
+  useEffect(() => {
+    if (!progressLoaded || tests.length === 0) return;
+    setAppData(prev => {
+      const updates = {};
+      tests.forEach(chapter => {
+        const existing = prev.sessions[chapter.id];
+        if (!existing || existing.questions.length >= chapter.questions.length) return;
+        const seenIds = new Set(existing.questions.map(q => q.id));
+        const missing = chapter.questions.filter(q => !seenIds.has(q.id));
+        updates[chapter.id] = {
+          ...existing,
+          questions:   [...existing.questions, ...missing],
+          answers:     [...existing.answers, ...Array(missing.length).fill(null)],
+          confidences: [...(existing.confidences||Array(existing.questions.length).fill(null)), ...Array(missing.length).fill(null)],
+        };
+      });
+      if (Object.keys(updates).length === 0) return prev;
+      return { ...prev, sessions: { ...prev.sessions, ...updates } };
+    });
+  }, [tests, progressLoaded]);
+
   const getOrCreateSession = useCallback((testId) => {
-    if (!appData.sessions[testId]) {
-      const t = tests.find(x => x.id === testId);
-      if (!t) return;
-      const qs = spacedShuffle(t.questions);
-      setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [testId]: { questions:qs, answers:Array(qs.length).fill(null), confidences:Array(qs.length).fill(null), mode:'normal' } } }));
+    const chapter = tests.find(x => x.id === testId);
+    if (!chapter) return;
+    const existing = appData.sessions[testId];
+    if (existing) {
+      if (existing.questions.length < chapter.questions.length) {
+        const seenIds = new Set(existing.questions.map(q => q.id));
+        const missing = spacedShuffle(chapter.questions.filter(q => !seenIds.has(q.id)));
+        const questions   = [...existing.questions, ...missing];
+        const answers     = [...existing.answers, ...Array(missing.length).fill(null)];
+        const confidences = [...(existing.confidences||Array(existing.questions.length).fill(null)), ...Array(missing.length).fill(null)];
+        setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [testId]: { ...existing, questions, answers, confidences } } }));
+      }
+      return;
     }
+    const qs = spacedShuffle(chapter.questions);
+    setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, [testId]: { questions:qs, answers:Array(qs.length).fill(null), confidences:Array(qs.length).fill(null), mode:'normal' } } }));
   }, [appData.sessions, tests, spacedShuffle]);
 
   const answer = useCallback((testId, qIdx, optIdx) => {
@@ -395,7 +467,11 @@ function App() {
       const sess = prev.sessions[testId];
       if (!sess || sess.answers[qIdx] !== null) return prev;
       const answers = [...sess.answers]; answers[qIdx] = optIdx;
-      return { ...prev, sessions: { ...prev.sessions, [testId]: { ...sess, answers } } };
+      const isCorrect = optIdx === sess.questions[qIdx].a;
+      const today = new Date().toDateString();
+      const ds = prev.dailyStats || { date: '', correct: 0 };
+      const dailyStats = { date: today, correct: (ds.date === today ? ds.correct : 0) + (isCorrect ? 1 : 0) };
+      return { ...prev, sessions: { ...prev.sessions, [testId]: { ...sess, answers } }, dailyStats };
     });
   }, []);
 
@@ -511,8 +587,9 @@ function App() {
   const session = activeTest ? (appData.sessions[activeTest]||null) : null;
 
   return el('div', { style: { maxWidth:430, margin:'0 auto', minHeight:'100vh', background:t.bg, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
-    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut }),
-    screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
+    !isOnline && el('div', { style: { position:'fixed', top:0, left:'50%', transform:'translateX(-50%)', zIndex:100, background:'#b45309', color:'#fff', fontSize:11, fontWeight:700, padding:'5px 14px', borderRadius:'0 0 10px 10px', letterSpacing:0.5, boxShadow:'0 2px 8px rgba(0,0,0,0.2)' } }, '⚡ Offline — changes will sync when reconnected'),
+    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg }),
+    screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
     screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:()=>finishTest(activeTest), dark }),
     screen==='result' && session && el(ResultScreen, { testId:activeTest, session, onBack:()=>setScreen('test'), onRetry:()=>retryTest(activeTest), onReshuffle:()=>reshuffleTest(activeTest), onHome:()=>setScreen('home'), dark })
@@ -536,11 +613,12 @@ function SessionChart({ history, dark }) {
 
   const attemptedPts = data.map((d, i) => xOf(i) + ',' + yOf(d.total)).join(' ');
   const correctPts   = data.map((d, i) => xOf(i) + ',' + yOf(d.correct)).join(' ');
+  const wrongPts     = data.map((d, i) => xOf(i) + ',' + yOf(d.total - d.correct)).join(' ');
 
   return el('div', { style: { background:t.cardAlt, borderRadius:12, padding:'12px 14px', marginBottom:14, border:'1px solid '+t.borderLight } },
     el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:6 } },
       el('span', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2 } }, 'SESSION CHART'),
-      el('div', { style: { display:'flex', gap:10 } },
+      el('div', { style: { display:'flex', gap:8 } },
         el('div', { style: { display:'flex', alignItems:'center', gap:3 } },
           el('div', { style: { width:12, height:2, background:'#7c3aed', borderRadius:1 } }),
           el('span', { style: { fontSize:8, color:t.textSub } }, 'Attempted')
@@ -548,6 +626,10 @@ function SessionChart({ history, dark }) {
         el('div', { style: { display:'flex', alignItems:'center', gap:3 } },
           el('div', { style: { width:12, height:2, background:'#059669', borderRadius:1 } }),
           el('span', { style: { fontSize:8, color:t.textSub } }, 'Correct')
+        ),
+        el('div', { style: { display:'flex', alignItems:'center', gap:3 } },
+          el('div', { style: { width:12, height:2, background:'#dc2626', borderRadius:1 } }),
+          el('span', { style: { fontSize:8, color:t.textSub } }, 'Wrong')
         )
       )
     ),
@@ -557,17 +639,18 @@ function SessionChart({ history, dark }) {
         el('text', { x:PL-3, y:yOf(maxVal*frac)+3, textAnchor:'end', fontSize:7, fill:t.textMuted }, String(Math.round(maxVal*frac)))
       )),
       el('polyline', { points:attemptedPts, fill:'none', stroke:'#7c3aed', strokeWidth:1.5, strokeLinejoin:'round', strokeLinecap:'round' }),
-      el('polyline', { points:correctPts, fill:'none', stroke:'#059669', strokeWidth:1.5, strokeLinejoin:'round', strokeLinecap:'round' }),
+      el('polyline', { points:correctPts,   fill:'none', stroke:'#059669', strokeWidth:1.5, strokeLinejoin:'round', strokeLinecap:'round' }),
+      el('polyline', { points:wrongPts,     fill:'none', stroke:'#dc2626', strokeWidth:1.5, strokeLinejoin:'round', strokeLinecap:'round' }),
       data.map((d, i) => {
         const x = xOf(i);
         const ya = yOf(d.total);
         const yc = yOf(d.correct);
-        const acc = d.total > 0 ? Math.round(d.correct/d.total*100) : 0;
+        const yw = yOf(d.total - d.correct);
         const dateStr = new Date(d.date).toLocaleDateString('en-GB', { day:'2-digit', month:'short' });
         return el('g', { key:'pt'+i },
           el('circle', { cx:x, cy:ya, r:2.5, fill:'#7c3aed' }),
           el('circle', { cx:x, cy:yc, r:2.5, fill:'#059669' }),
-          el('text', { x:x, y:Math.min(ya,yc)-4, textAnchor:'middle', fontSize:7, fill:t.textMuted, fontWeight:'600' }, acc+'%'),
+          el('circle', { cx:x, cy:yw, r:2.5, fill:'#dc2626' }),
           (i===0||i===data.length-1) ? el('text', { x:x, y:H-2, textAnchor:'middle', fontSize:7, fill:t.textMuted }, dateStr) : null
         );
       })
@@ -576,7 +659,7 @@ function SessionChart({ history, dark }) {
 }
 
 // ── Side Menu ─────────────────────────────────────────────────────────────────
-function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut }) {
+function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut, onSync, syncing, syncMsg }) {
   const t = T(dark);
   const accuracy   = totalAnswered > 0 ? Math.round(totalCorrect/totalAnswered*100) : 0;
   const completion = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
@@ -607,6 +690,12 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
           ),
           el('button', { onClick:onSignOut, style: { background:'#fff1f2', border:'1px solid #fca5a5', borderRadius:8, padding:'6px 12px', fontSize:12, fontWeight:700, color:'#dc2626', cursor:'pointer' } }, 'Sign Out')
         ),
+        el('button', {
+          onClick: onSync, disabled: syncing,
+          style: { width:'100%', display:'flex', alignItems:'center', justifyContent:'center', gap:7, background: syncing ? t.cardAlt : '#f0fdf4', border:'1px solid '+(syncing?t.border:'#86efac'), borderRadius:10, padding:'9px 12px', fontSize:12, fontWeight:700, color: syncing ? t.textMuted : '#16a34a', cursor: syncing ? 'default' : 'pointer', marginBottom:14 }
+        },
+          syncing ? '⟳  Syncing…' : syncMsg ? syncMsg : '⟳  Sync Progress'
+        ),
         el('p', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:10 } }, 'OVERALL'),
         el('div', { style: { display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, marginBottom:14 } },
           ...stats.map(s => el('div', { key:s.label, style: { background:t.cardAlt, borderRadius:10, padding:'10px 12px', border:'1px solid '+t.borderLight } },
@@ -632,6 +721,11 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
             el('span', { style: { fontSize:11, fontWeight:700, color: h.pct>=80?'#059669':h.pct>=60?'#d97706':'#dc2626' } }, h.pct+'%'),
             el('span', { style: { fontSize:10, color:t.textMuted } }, new Date(h.date).toLocaleDateString('en-GB',{day:'2-digit',month:'short'}))
           ))
+        ),
+        el('div', { style: { textAlign:'center', marginTop:20, paddingTop:14, borderTop:'1px solid '+t.borderLight } },
+          el('span', { style: { fontSize:10, color:t.textMuted, fontWeight:600, letterSpacing:1 } },
+            'v' + APP_VERSION.major + '.' + APP_VERSION.minor + '  ·  RCDD Exam Prep'
+          )
         )
       )
     )
@@ -639,10 +733,16 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
 }
 
 // ── Home Screen ───────────────────────────────────────────────────────────────
-function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onCustomQuiz, onResetTest, dark, onToggleDark }) {
+const DAILY_TARGET = 50;
+function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, dailyStats, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onCustomQuiz, onResetTest, dark, onToggleDark }) {
   const t = T(dark);
   const pct = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
   const [resetConfirm, setResetConfirm] = useState(null);
+
+  const today = new Date().toDateString();
+  const todayCorrect = (dailyStats && dailyStats.date === today) ? dailyStats.correct : 0;
+  const dailyPct = Math.min(Math.round(todayCorrect/DAILY_TARGET*100), 100);
+  const dailyDone = todayCorrect >= DAILY_TARGET;
 
   return el('div', { style: { minHeight:'100vh', background:t.bg, display:'flex', flexDirection:'column' } },
     el('div', { style: { background:t.card, borderBottom:'1px solid '+t.borderLight, padding:'52px 20px 14px', display:'flex', alignItems:'center', gap:14 } },
@@ -661,13 +761,20 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, on
         el('div', { style: { fontSize:10, color:t.textMuted } }, 'score')
       )
     ),
-    el('div', { style: { padding:'12px 20px 8px', background:t.card } },
+    el('div', { style: { padding:'12px 20px 10px', background:t.card } },
       el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
         el('span', { style: { fontSize:11, color:t.textSub } }, 'Overall Progress'),
         el('span', { style: { fontSize:11, fontWeight:700, color:'#7c3aed' } }, totalAnswered+' / '+totalQs)
       ),
-      el('div', { style: { height:5, background:t.borderLight, borderRadius:3, overflow:'hidden' } },
+      el('div', { style: { height:5, background:t.borderLight, borderRadius:3, overflow:'hidden', marginBottom:10 } },
         el('div', { style: { height:'100%', background:'linear-gradient(90deg,#7c3aed,#a855f7)', borderRadius:3, width:pct+'%' } })
+      ),
+      el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
+        el('span', { style: { fontSize:11, color:t.textSub } }, dailyDone ? '🎯 Daily Target Complete!' : 'Daily Target'),
+        el('span', { style: { fontSize:11, fontWeight:700, color: dailyDone?'#059669':'#16a34a' } }, todayCorrect+' / '+DAILY_TARGET)
+      ),
+      el('div', { style: { height:5, background:t.borderLight, borderRadius:3, overflow:'hidden' } },
+        el('div', { style: { height:'100%', background: dailyDone?'linear-gradient(90deg,#059669,#34d399)':'linear-gradient(90deg,#16a34a,#4ade80)', borderRadius:3, width:dailyPct+'%', transition:'width 0.5s' } })
       )
     ),
     el('div', { style: { flex:1, padding:'16px 20px', overflowY:'auto' } },
@@ -689,8 +796,7 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, on
             el('div', { style: { width:38, height:38, borderRadius:11, background:light, color:color, display:'flex', alignItems:'center', justifyContent:'center', fontSize:15, fontWeight:800, flexShrink:0 } }, test.id),
             el('div', { style: { flex:1, minWidth:0 } },
               el('div', { style: { display:'flex', alignItems:'center', gap:6, marginBottom:2 } },
-                el('span', { style: { fontSize:13, fontWeight:700, color:t.text } }, test.name),
-                isComplete && el('span', { style: { fontSize:10, fontWeight:700, padding:'1px 7px', borderRadius:20, background:light, color:color } }, '✓ Done')
+                el('span', { style: { fontSize:13, fontWeight:700, color:t.text } }, test.name)
               ),
               el('div', { style: { fontSize:11, color:t.textMuted, marginBottom:5 } }, ts.done+'/'+totalQsInChapter+' questions'),
               el('div', { style: { height:3, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
@@ -720,7 +826,10 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, on
 // ── Test Screen ───────────────────────────────────────────────────────────────
 function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfidence, onStar, onBack, onFinish, dark }) {
   const t = T(dark);
-  const [qIdx, setQIdx] = useState(0);
+  const [qIdx, setQIdx] = useState(() => {
+    const first = session.answers.findIndex(a => a === null);
+    return first === -1 ? 0 : first;
+  });
   const [showJump, setShowJump] = useState(false);
 
   const color = COLORS[testId]||'#6366f1';
@@ -810,6 +919,15 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
         selected!==q.a && confs[qIdx]==='sure' && el('span', { style: { fontSize:10, fontWeight:700, color:'#dc2626', background:'#fff1f2', borderRadius:20, padding:'2px 9px' } }, '⚠️ Danger Gap')
       ),
       el('p', { style: { fontSize:12.5, color:t.textSub, lineHeight:1.6 } }, q.w)
+    ),
+    isAnswered && q.k && q.k.length > 0 && el('div', { style: { margin:'8px 18px 0', background:dark?'#0f172a':'#f0f9ff', borderRadius:12, padding:'13px', border:'1px solid '+(dark?'#1e3a5f':'#bfdbfe') } },
+      el('div', { style: { fontSize:10, fontWeight:700, color:'#3b82f6', letterSpacing:1.5, marginBottom:8 } }, '📚 KEY CONCEPTS'),
+      el('div', { style: { display:'flex', flexDirection:'column', gap:7 } },
+        ...q.k.map((concept, ci) => el('div', { key:ci, style: { display:'flex', gap:8, alignItems:'flex-start' } },
+          el('span', { style: { color:'#3b82f6', fontWeight:700, fontSize:13, flexShrink:0, lineHeight:1.5 } }, '•'),
+          el('p', { style: { fontSize:12.5, color:t.text, lineHeight:1.55, margin:0 } }, concept)
+        ))
+      )
     ),
     el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', padding:'12px 18px 44px', marginTop:'auto' } },
       el('button', { onClick:()=>qIdx>0&&setQIdx(i=>i-1), disabled:qIdx===0, style: { background:t.cardAlt, border:'1.5px solid '+t.border, borderRadius:10, padding:'9px 16px', fontSize:13, fontWeight:600, color:t.textSub, opacity:qIdx===0?0.35:1 } }, '‹ Prev'),
@@ -904,7 +1022,6 @@ function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome, d
     ),
     el('div', { style: { padding:'12px 18px', display:'flex', flexDirection:'column', gap:9 } },
       !isSpecial && el('button', { onClick:onReshuffle, style: { width:'100%', background:color, color:'#fff', border:'none', borderRadius:13, padding:'14px', fontSize:14, fontWeight:700 } }, '↺ Reshuffle & Retry'),
-      !isSpecial && el('button', { onClick:onRetry, style: { width:'100%', background:t.card, color:color, border:'1.5px solid '+color, borderRadius:13, padding:'13px', fontSize:14, fontWeight:700 } }, 'Retry Same Questions'),
       el('button', { onClick:onHome, style: { width:'100%', background:t.cardAlt, color:t.textSub, border:'1.5px solid '+t.border, borderRadius:13, padding:'13px', fontSize:13, fontWeight:600 } }, '← All Tests')
     )
   );
