@@ -299,9 +299,10 @@ function App() {
   const [currentUser, setCurrentUser] = useState(() => { try { return JSON.parse(localStorage.getItem('rcdd_user')) || null; } catch(e) { return null; } });
   const [authLoading, setAuthLoading] = useState(false);
   const [authError, setAuthError] = useState('');
-  const [progressLoaded, setProgressLoaded] = useState(() => {
-    try { const user = JSON.parse(localStorage.getItem('rcdd_user')); return user ? !!localStorage.getItem(STORAGE_KEY+'_'+user.username) : false; } catch(e) { return false; }
-  });
+  // Always false on start — Firestore writes are blocked until server data has been read.
+  // localStorage still populates the initial appData render but we never write back
+  // until we've confirmed what the server has, preventing stale-device overwrites.
+  const [progressLoaded, setProgressLoaded] = useState(false);
   const justLoadedRef = useRef(false);
 
   const [appData, setAppData] = useState(() => {
@@ -324,28 +325,38 @@ function App() {
       .catch(err => { setFetchError(err.message); setLoading(false); });
   }, []);
 
+  const applyServerProgress = useCallback((doc) => {
+    if (doc.exists && doc.data().progress) {
+      const p = doc.data().progress;
+      const qById = {};
+      questions.forEach(q => { qById[q.id] = q; });
+      justLoadedRef.current = true;
+      const serverDaily = p.dailyStats || { date: '', correct: 0 };
+      const today = new Date().toDateString();
+      setAppData(prev => {
+        const localDaily = prev.dailyStats || { date: '', correct: 0 };
+        const dailyStats = localDaily.date === today && localDaily.correct > (serverDaily.date === today ? serverDaily.correct : 0)
+          ? localDaily : serverDaily;
+        return { sessions:expandSessions(p.sessions||{},qById), history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{}, dailyStats };
+      });
+    }
+  }, [questions]);
+
+  const [syncing, setSyncing] = useState(false);
+  const [syncMsg, setSyncMsg] = useState('');
+  const syncProgress = useCallback(() => {
+    if (!currentUser) return;
+    setSyncing(true); setSyncMsg('');
+    db.collection('users').doc(currentUser.username).get({ source: 'server' })
+      .then(doc => { applyServerProgress(doc); setSyncing(false); setSyncMsg('Synced ✓'); setTimeout(() => setSyncMsg(''), 2500); })
+      .catch(() => { setSyncing(false); setSyncMsg('Sync failed'); setTimeout(() => setSyncMsg(''), 2500); });
+  }, [currentUser, applyServerProgress]);
+
   useEffect(() => {
     if (!currentUser || questions.length === 0) return;
-    db.collection('users').doc(currentUser.username).get()
-      .then(doc => {
-        if (doc.exists && doc.data().progress) {
-          const p = doc.data().progress;
-          const qById = {};
-          questions.forEach(q => { qById[q.id] = q; });
-          justLoadedRef.current = true;
-          const serverDaily = p.dailyStats || { date: '', correct: 0 };
-          const today = new Date().toDateString();
-          // Use setAppData(prev=>) so we can compare against any answers the user
-          // already gave before Firestore finished loading (race condition fix)
-          setAppData(prev => {
-            const localDaily = prev.dailyStats || { date: '', correct: 0 };
-            const dailyStats = localDaily.date === today && localDaily.correct > (serverDaily.date === today ? serverDaily.correct : 0)
-              ? localDaily : serverDaily;
-            return { sessions:expandSessions(p.sessions||{},qById), history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{}, dailyStats };
-          });
-        }
-        setProgressLoaded(true);
-      })
+    // Force server fetch so we always get the latest data, not the IndexedDB cache
+    db.collection('users').doc(currentUser.username).get({ source: 'server' })
+      .then(doc => { applyServerProgress(doc); setProgressLoaded(true); })
       .catch(() => setProgressLoaded(true));
   }, [currentUser, questions]);
 
@@ -577,7 +588,7 @@ function App() {
 
   return el('div', { style: { maxWidth:430, margin:'0 auto', minHeight:'100vh', background:t.bg, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
     !isOnline && el('div', { style: { position:'fixed', top:0, left:'50%', transform:'translateX(-50%)', zIndex:100, background:'#b45309', color:'#fff', fontSize:11, fontWeight:700, padding:'5px 14px', borderRadius:'0 0 10px 10px', letterSpacing:0.5, boxShadow:'0 2px 8px rgba(0,0,0,0.2)' } }, '⚡ Offline — changes will sync when reconnected'),
-    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut }),
+    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg }),
     screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
     screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:()=>finishTest(activeTest), dark }),
@@ -648,7 +659,7 @@ function SessionChart({ history, dark }) {
 }
 
 // ── Side Menu ─────────────────────────────────────────────────────────────────
-function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut }) {
+function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut, onSync, syncing, syncMsg }) {
   const t = T(dark);
   const accuracy   = totalAnswered > 0 ? Math.round(totalCorrect/totalAnswered*100) : 0;
   const completion = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
@@ -678,6 +689,12 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
             el('div', { style: { fontSize:14, fontWeight:700, color:t.text, marginTop:2 } }, currentUser.username)
           ),
           el('button', { onClick:onSignOut, style: { background:'#fff1f2', border:'1px solid #fca5a5', borderRadius:8, padding:'6px 12px', fontSize:12, fontWeight:700, color:'#dc2626', cursor:'pointer' } }, 'Sign Out')
+        ),
+        el('button', {
+          onClick: onSync, disabled: syncing,
+          style: { width:'100%', display:'flex', alignItems:'center', justifyContent:'center', gap:7, background: syncing ? t.cardAlt : '#f0fdf4', border:'1px solid '+(syncing?t.border:'#86efac'), borderRadius:10, padding:'9px 12px', fontSize:12, fontWeight:700, color: syncing ? t.textMuted : '#16a34a', cursor: syncing ? 'default' : 'pointer', marginBottom:14 }
+        },
+          syncing ? '⟳  Syncing…' : syncMsg ? syncMsg : '⟳  Sync Progress'
         ),
         el('p', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:10 } }, 'OVERALL'),
         el('div', { style: { display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, marginBottom:14 } },
