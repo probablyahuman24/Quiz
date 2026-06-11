@@ -1005,7 +1005,6 @@ function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome, d
     ),
     el('div', { style: { padding:'12px 18px', display:'flex', flexDirection:'column', gap:9 } },
       !isSpecial && el('button', { onClick:onReshuffle, style: { width:'100%', background:color, color:'#fff', border:'none', borderRadius:13, padding:'14px', fontSize:14, fontWeight:700 } }, '↺ Reshuffle & Retry'),
-      !isSpecial && el('button', { onClick:onRetry, style: { width:'100%', background:t.card, color:color, border:'1.5px solid '+color, borderRadius:13, padding:'13px', fontSize:14, fontWeight:700 } }, 'Retry Same Questions'),
       el('button', { onClick:onHome, style: { width:'100%', background:t.cardAlt, color:t.textSub, border:'1.5px solid '+t.border, borderRadius:13, padding:'13px', fontSize:13, fontWeight:600 } }, '← All Tests')
     )
   );
