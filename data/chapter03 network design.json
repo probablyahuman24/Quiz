@@ -698,5 +698,505 @@
       "Component-level redundancy survives single-component failures within one device; it does NOT protect against complete chassis failure, which requires system-level (device-level) redundancy.",
       "SAN redundancy and OSI redundancy are either highly specific or non-standard terms; component vs. system redundancy is the standard classification used in enterprise network design."
     ]
+  },
+  {
+    "id": 846,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which OSI layer is responsible for routing packets between different networks?",
+    "o": [
+      "Layer 2 – Data Link",
+      "Layer 3 – Network",
+      "Layer 4 – Transport",
+      "Layer 5 – Session"
+    ],
+    "a": 1,
+    "w": "Layer 3 (Network) handles logical addressing and routing, moving packets across different networks using IP addresses. Layer 2 handles intranetwork frame transfer within a single network segment. Layer 4 provides end-to-end data transport quality and reliability. Layer 5 manages session establishment and teardown between applications.",
+    "k": [
+      "The OSI Network layer (Layer 3) is where IP addressing and routing live; it decides the path a packet takes across interconnected networks.",
+      "Layer 3 switches and routers operate at this layer — the key distinction is that Layer 3 processing enables inter-network communication, not just intra-network switching.",
+      "Memory aid: Layers 1-2 stay 'local'; Layer 3 and above cross network boundaries."
+    ]
+  },
+  {
+    "id": 847,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What function does OSI Layer 5 (Session layer) primarily perform?",
+    "o": [
+      "Logical addressing and packet routing",
+      "Establishing, managing, and terminating sessions between applications",
+      "Translating data formats between different systems",
+      "Reliable end-to-end data delivery with flow control"
+    ],
+    "a": 1,
+    "w": "The Session layer establishes, manages, and terminates communication sessions between applications on different hosts. Logical addressing belongs to Layer 3 (Network). Data format translation (encryption, compression, encoding) belongs to Layer 6 (Presentation). Reliable end-to-end delivery with flow control and error recovery is the role of Layer 4 (Transport).",
+    "k": [
+      "OSI Layer 5 – Session – controls the dialogue between two computers: it sets up the session, keeps it alive, and tears it down cleanly when done.",
+      "A real-world example is NetBIOS operating at the Session layer to manage file-sharing dialogues between Windows hosts.",
+      "Layers 5, 6, and 7 are all 'upper layers' but have distinct roles: Session (dialogue), Presentation (format), Application (user interface)."
+    ]
+  },
+  {
+    "id": 848,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What key characteristic of the OSI model allows vendors to update one layer's technology without redesigning the entire network stack?",
+    "o": [
+      "Peer-to-peer protocol matching",
+      "Layer independence — changes to one layer do not affect other layers",
+      "Hierarchical addressing at every layer",
+      "Uniform data encapsulation across all seven layers"
+    ],
+    "a": 1,
+    "w": "OSI layer independence means each layer interacts only with the layers directly above and below it through well-defined interfaces; a vendor can replace a Layer 2 technology (e.g., Token Ring to Ethernet) without touching Layer 3 or above. Peer-to-peer matching describes how corresponding layers communicate across systems but is not the independence principle. Hierarchical addressing applies only to certain layers. Encapsulation is a process, not the independence property.",
+    "k": [
+      "Layer independence is one of the founding principles of the OSI model: protocols within a layer can change as long as the interface to adjacent layers remains consistent.",
+      "This modularity is why Ethernet could replace Token Ring at Layer 2 while IP continued to work unchanged at Layer 3.",
+      "In exam questions, this concept often appears as 'changes can be made to any OSI layer without affecting other layers.'"
+    ]
+  },
+  {
+    "id": 849,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which OSI layer provides data format translation, encryption, and compression services?",
+    "o": [
+      "Layer 4 – Transport",
+      "Layer 5 – Session",
+      "Layer 6 – Presentation",
+      "Layer 7 – Application"
+    ],
+    "a": 2,
+    "w": "Layer 6 (Presentation) translates data between the format used by the application and a common network format; it also handles encryption and compression. Layer 4 manages end-to-end transport reliability. Layer 5 establishes and controls dialogue sessions. Layer 7 provides network services directly to end-user applications such as email and file transfer.",
+    "k": [
+      "Layer 6 – Presentation – is the 'translator': it converts data between application-specific formats (e.g., ASCII ↔ EBCDIC) and provides encryption/compression before data enters the network.",
+      "Common Presentation layer protocols include SSL/TLS (encryption) and JPEG/MPEG (compression/formatting).",
+      "Mnemonic: 'Presentation = Prettify the data' — format, encrypt, compress."
+    ]
+  },
+  {
+    "id": 850,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "How does the OSI model describe the communication relationship between the same-numbered layers on two different systems?",
+    "o": [
+      "Vertical communication via adjacent layers",
+      "Peer-to-peer relationship using a common protocol",
+      "Hierarchical addressing through the protocol stack",
+      "Serial encapsulation across all seven layers"
+    ],
+    "a": 1,
+    "w": "Corresponding layers on two systems communicate as peers using a common protocol (e.g., Layer 3 on System A talks to Layer 3 on System B via IP). Actual data flows vertically down through the layers on the sender and back up on the receiver — it never jumps directly across in physical reality. Hierarchical addressing is an IP concept, not an OSI model relationship term. Serial encapsulation occurs at each layer but does not describe the peer relationship.",
+    "k": [
+      "Peer-to-peer communication is the OSI concept that says Layer N on one machine acts as if it is talking directly to Layer N on another machine, using a shared protocol.",
+      "Physically, data travels down all seven layers on the sender and up all seven on the receiver; the peer-to-peer view is a logical abstraction.",
+      "Service Access Points (SAPs) are the defined connection points between adjacent OSI layers that enable this vertical passage of data."
+    ]
+  },
+  {
+    "id": 851,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "A LAN typically covers which geographic scope?",
+    "o": [
+      "Multiple buildings across a campus",
+      "A building or part of a building",
+      "Multiple sites within a single city",
+      "Distances spanning beyond a single city"
+    ],
+    "a": 1,
+    "w": "A Local Area Network (LAN) covers a building or part of a building — it is the smallest of the main enterprise network types. A campus network spanning multiple buildings is a CAN (Campus Area Network). Multiple sites within a city describes a MAN (Metropolitan Area Network). Distances beyond a single city define a WAN (Wide Area Network).",
+    "k": [
+      "LAN = Local Area Network — the smallest enterprise network scope, confined to a building or portion of one.",
+      "The four main geographic network types from smallest to largest: LAN → CAN → MAN → WAN.",
+      "BICSI and TIA treat LAN cabling as horizontal cabling (within a floor) and backbone cabling (between floors/buildings within a campus)."
+    ]
+  },
+  {
+    "id": 852,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What minimum number of entrance rooms (ERs) does a Class 3 or higher data center require?",
+    "o": [
+      "One entrance room is sufficient",
+      "Multiple entrance rooms",
+      "Two access-provider connections per room",
+      "A single combined entrance facility"
+    ],
+    "a": 1,
+    "w": "Class 3 and above data centers must have multiple entrance rooms to eliminate any single point of failure at the building entry level. One entrance room is only acceptable for lower-class (Class 1 or 2) facilities. Two AP connections per room is a Class 2 requirement, not a Class 3 structural requirement. A single combined entrance facility is a Class 1 or 2 design.",
+    "k": [
+      "Data center classification determines the required level of infrastructure redundancy; Class 3+ demands multiple entrance rooms so no single physical entry point can take the site offline.",
+      "Class 4 goes even further — it has no single point of failure anywhere in the infrastructure and requires 2 HDAs per equipment distribution area.",
+      "Compare: Class 2 = two AP connections; Class 3+ = multiple entrance rooms; Class 4 = zero single points of failure."
+    ]
+  },
+  {
+    "id": 853,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "In a computer room (CR), which topology uses less cabling compared to a centralized topology?",
+    "o": [
+      "Top-of-rack topology",
+      "End-of-row topology",
+      "Spine-leaf topology",
+      "Fully distributed topology"
+    ],
+    "a": 1,
+    "w": "The end-of-row topology places switches at the end of each row of equipment, so server-to-switch cable runs are shorter than in a centralized topology where all equipment connects to a central switch room. The centralized topology uses fewer switches overall (not less cabling). Top-of-rack and spine-leaf are distinct topologies not referenced in this context.",
+    "k": [
+      "In data center computer rooms, end-of-row places row distribution switches at the row ends — shorter individual cable runs but more switches than a centralized design.",
+      "Centralized topology uses fewer total switches because one central switch serves the whole room, but cable lengths are longer since all equipment must reach the central point.",
+      "The trade-off: end-of-row saves cabling materials; centralized simplifies switch management."
+    ]
+  },
+  {
+    "id": 854,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "A partial mesh WAN design achieves which network benefit compared to a hub-and-spoke design?",
+    "o": [
+      "It reduces the total number of links required",
+      "It eliminates single points of failure",
+      "It guarantees every site is connected to every other site",
+      "It maximizes bandwidth on all links simultaneously"
+    ],
+    "a": 1,
+    "w": "A partial mesh provides redundant paths so that failure of a single link or node does not disconnect any site, eliminating single points of failure without the cost of full connectivity. A hub-and-spoke design has a single point of failure at the hub. A full mesh connects every site to every other site but requires significantly more links than a partial mesh. Maximizing bandwidth on all links is not a design goal specific to mesh topology.",
+    "k": [
+      "Partial mesh WAN = selected redundant paths between key sites; eliminates single points of failure at lower cost than full mesh.",
+      "Full mesh = every site connected to every other; zero single points of failure but O(n²) links required — expensive.",
+      "The design choice is a cost-vs-redundancy trade-off; partial mesh is the practical middle ground for most enterprise WANs."
+    ]
+  },
+  {
+    "id": 855,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "In networking, what alternative term is used for a broadcast domain?",
+    "o": [
+      "Collision domain",
+      "Subnet",
+      "VLAN segment",
+      "Autonomous system"
+    ],
+    "a": 1,
+    "w": "A broadcast domain is also called a subnet — it is the set of devices that receive a Layer 2 broadcast from any member device. A collision domain is a segment where data collisions can occur (a Layer 1/2 concept, now largely eliminated by full-duplex switches). A VLAN segment is a mechanism for creating broadcast domains but is not the synonymous term. An autonomous system is a routing concept at Layer 3.",
+    "k": [
+      "Broadcast domain / subnet: the group of devices that all receive a broadcast frame sent by any one member — defined at Layer 2 by switches and at Layer 3 by routers.",
+      "Routers segment broadcast domains; switches extend them (unless VLANs are configured to divide them).",
+      "Each VLAN creates a separate broadcast domain, which is why VLANs are used to reduce unnecessary broadcast traffic in large LANs."
+    ]
+  },
+  {
+    "id": 856,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Campus network cabling — the cabling that interconnects buildings across a campus — is classified as which cabling type in structured cabling standards?",
+    "o": [
+      "Horizontal cabling",
+      "Backbone cabling",
+      "Work area cabling",
+      "Equipment cabling"
+    ],
+    "a": 1,
+    "w": "Campus network cabling is part of the backbone cabling system, which connects telecommunications spaces within and between buildings. Horizontal cabling runs from the telecommunications room to individual work area outlets on a single floor. Work area cabling connects end-user equipment to outlets. Equipment cabling connects active equipment within a room.",
+    "k": [
+      "Backbone cabling = the 'highway' of the structured cabling hierarchy; it includes both intrabuilding (floor-to-floor) and interbuilding (building-to-building) runs.",
+      "Campus backbone cabling is the interbuilding segment that links each building's entrance facility or main cross-connect back to the campus distributor.",
+      "In ANSI/TIA terminology: backbone = vertical risers + campus runs; horizontal = floor-level runs to work area outlets."
+    ]
+  },
+  {
+    "id": 857,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What software component links a workstation's NIC to the operating system to enable network communication?",
+    "o": [
+      "Network bridge",
+      "Device driver",
+      "Protocol gateway",
+      "Network interface card firmware"
+    ],
+    "a": 1,
+    "w": "A device driver is the software layer that interfaces the NIC hardware to the operating system, allowing the OS to send and receive data through the network adapter. A network bridge operates at Layer 2 to connect network segments. A protocol gateway translates between different network protocols at higher layers. NIC firmware is embedded software that controls the NIC hardware internally but does not interface with the OS application layer.",
+    "k": [
+      "Device drivers are the software 'translators' between hardware (the NIC) and the operating system, enabling the OS to issue standardized commands regardless of NIC brand or model.",
+      "Without the correct driver, the OS cannot communicate with the NIC — a common troubleshooting point when installing new network hardware.",
+      "Drivers sit conceptually between the physical hardware and the OS network stack, mapping OS network calls to specific NIC hardware commands."
+    ]
+  },
+  {
+    "id": 858,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which organization developed the network framework (OSI model) for message exchange that defines how network equipment communicates?",
+    "o": [
+      "IEEE",
+      "IETF",
+      "ISO",
+      "ITU-T"
+    ],
+    "a": 2,
+    "w": "The International Organization for Standardization (ISO) developed the OSI Reference Model as a framework for network message exchange and interoperability. IEEE defines standards like Ethernet (802.3) and Wi-Fi (802.11) at the hardware/protocol level. IETF develops Internet protocols like TCP/IP (RFC documents). ITU-T publishes telecommunications standards but did not author the OSI model.",
+    "k": [
+      "ISO (International Organization for Standardization) created the OSI model in 1984 as a conceptual framework to guide development of interoperable network protocols.",
+      "The 'ISO' in ISO/OSI is why the OSI model is sometimes called the 'ISO OSI model' — it was explicitly an ISO standardization effort.",
+      "Today TCP/IP (IETF) dominates in practice, but the OSI model remains the universal teaching framework and exam reference for structured cabling design."
+    ]
+  },
+  {
+    "id": 859,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Class 4 data centers require how many horizontal distribution areas (HDAs) per equipment distribution area (EDA)?",
+    "o": [
+      "One HDA per EDA",
+      "Two HDAs per EDA",
+      "Three HDAs per EDA",
+      "Four HDAs per EDA"
+    ],
+    "a": 1,
+    "w": "Class 4 data centers require two HDAs per EDA to eliminate any single point of failure in the distribution layer — if one HDA fails, the other maintains service. One HDA per EDA would create a single point of failure within the distribution hierarchy. Three or four HDAs per EDA is excessive and not a standard requirement.",
+    "k": [
+      "Class 4 = highest availability tier with zero single points of failure; requiring 2 HDAs per EDA ensures the distribution layer is fully redundant.",
+      "An HDA (Horizontal Distribution Area) houses the switches that serve equipment in the EDA rows; having two means each rack can have dual-home connections.",
+      "This mirrors the 2(N+N) power topology required at Class 4: every critical element has a fully independent redundant path."
+    ]
+  },
+  {
+    "id": 860,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which characteristic describes virtual servers in a data center environment?",
+    "o": [
+      "They require dedicated physical hardware that cannot be shared",
+      "They can be added, deleted, or transferred to optimize service delivery",
+      "They provide lower reliability than physical servers",
+      "They cannot run multiple operating systems simultaneously"
+    ],
+    "a": 1,
+    "w": "Virtual servers can be dynamically added, deleted, or live-migrated between physical hosts to optimize workloads and service delivery — a core benefit of virtualization. Dedicated non-shared hardware describes physical servers, not virtual ones. Virtual servers typically improve reliability through redundancy and live migration. Running multiple operating systems is a fundamental capability of virtualization platforms.",
+    "k": [
+      "Virtualization allows a single physical host to run multiple isolated virtual servers (VMs), each appearing as a standalone system with its own OS and resources.",
+      "The ability to add, delete, or transfer VMs without downtime is called live migration and is a key feature in modern data center management.",
+      "From an ICT design perspective, virtualization reduces physical server count but increases demands on network bandwidth and redundancy."
+    ]
+  },
+  {
+    "id": 861,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Each port on a network switch serves as both a separate collision domain AND a separate what?",
+    "o": [
+      "Broadcast domain",
+      "Communication channel",
+      "Routing instance",
+      "VLAN segment"
+    ],
+    "a": 1,
+    "w": "Each switch port is a separate collision domain (only one device per port eliminates collisions in full-duplex) AND a separate dedicated communication channel, providing dedicated bandwidth to each connected device. A broadcast domain spans all ports in the same VLAN/switch — not per-port. A routing instance is a higher-layer concept. A VLAN segment spans multiple ports.",
+    "k": [
+      "Modern full-duplex switches give each port its own dedicated collision domain AND its own dedicated bandwidth channel — no sharing with other ports.",
+      "This is the key reason switches replaced hubs: hubs created one shared collision domain; switches give each device its own channel.",
+      "In structured cabling design, this means each horizontal run terminating on a switch port receives dedicated bandwidth to the switch."
+    ]
+  },
+  {
+    "id": 862,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "OSI layers are commonly visualized in what form?",
+    "o": [
+      "A horizontal bus diagram",
+      "A vertical form called a protocol stack",
+      "A circular ring representing peer relationships",
+      "A hierarchical tree showing parent-child layers"
+    ],
+    "a": 1,
+    "w": "The seven OSI layers are conventionally drawn vertically (Layer 1 at the bottom, Layer 7 at the top), forming what is called a protocol stack. A horizontal bus diagram would suggest a shared medium, not a layered hierarchy. A circular ring does not represent the OSI model. A hierarchical tree applies to network topology design, not OSI layer visualization.",
+    "k": [
+      "Protocol stack = the vertical representation of the OSI or TCP/IP layers, with lower (physical) layers at the bottom and higher (application) layers at the top.",
+      "When data is transmitted, it is 'pushed down' the stack on the sender (each layer adds its header/trailer) and 'pulled up' on the receiver (each layer strips its header).",
+      "The term 'stack' reflects this push/pop analogy — data flows down through layers on transmit and up through layers on receive."
+    ]
+  },
+  {
+    "id": 863,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What is a server in the context of data center network design?",
+    "o": [
+      "A passive cabling element that routes signals between switches",
+      "A computing device that manages and provides shared resources on a network",
+      "A dedicated hardware appliance only used for firewall functions",
+      "A network switch operating at OSI Layer 3"
+    ],
+    "a": 1,
+    "w": "A server is a computing device that manages and provides shared resources (files, applications, databases) to other devices on the network. Passive cabling elements route physical signals but are not computing devices. A firewall appliance is a specialized security device. A Layer 3 switch performs routing functions but is not a server.",
+    "k": [
+      "In ICT infrastructure design, servers are the compute resources that justify the network — they process requests from clients and provide services like DNS, file storage, and applications.",
+      "Data centers exist primarily to house, power, cool, and connect servers in a controlled environment with high availability.",
+      "For capacity planning, server count and type (physical vs. virtual, density) drive cabling pathway and cooling design in the data center."
+    ]
+  },
+  {
+    "id": 864,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Network redundancy in an enterprise design relies on which two infrastructure components?",
+    "o": [
+      "Optical fiber cabling and copper cabling",
+      "Telecommunications infrastructure and hardware infrastructure",
+      "Physical security and logical security systems",
+      "Power distribution and HVAC systems"
+    ],
+    "a": 1,
+    "w": "Network redundancy requires both the telecommunications infrastructure (cabling paths, diverse routing) and the hardware infrastructure (redundant switches, UPS, generators) to be redundant. Optical fiber vs. copper is a media choice, not a redundancy framework. Physical and logical security are risk-management concerns. Power and HVAC are facility systems, not the network redundancy pairing referenced in design standards.",
+    "k": [
+      "True network redundancy demands both redundant cabling paths (telecommunications infrastructure) and redundant active equipment (hardware infrastructure) — a single weak link in either cancels the redundancy benefit.",
+      "A common design error is installing redundant cables but terminating both on the same switch — hardware failure still takes down the network.",
+      "The RCDD exam often tests this paired concept: redundancy = path redundancy + equipment redundancy working together."
+    ]
+  },
+  {
+    "id": 865,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What effect does an excessive number of broadcasts have on a Layer 2 LAN?",
+    "o": [
+      "It increases available bandwidth for unicast traffic",
+      "It limits the number of devices that can effectively communicate on switches",
+      "It improves collision avoidance in full-duplex environments",
+      "It forces switches to operate at Layer 3"
+    ],
+    "a": 1,
+    "w": "Excessive broadcasts consume bandwidth and require every device on the broadcast domain to process each frame, limiting the number of devices that can coexist effectively on a shared Layer 2 network. Broadcasts consume, not increase, available unicast bandwidth. Full-duplex eliminates collisions independent of broadcast volume. Switches do not upgrade themselves to Layer 3 due to broadcast load.",
+    "k": [
+      "In a flat Layer 2 network, every device must process every broadcast frame — as device count grows, broadcast storms can degrade performance significantly.",
+      "This is why VLANs and subnets exist: they segment broadcast domains, reducing the number of devices that must process each broadcast.",
+      "RCDD design principle: large flat networks are broadcast-storm-prone; segmenting with VLANs and routing is best practice for enterprise LANs."
+    ]
+  },
+  {
+    "id": 866,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "In which OSI layer does physical addressing (MAC addresses) and frame delivery within a single network segment occur?",
+    "o": [
+      "Layer 1 – Physical",
+      "Layer 2 – Data Link",
+      "Layer 3 – Network",
+      "Layer 4 – Transport"
+    ],
+    "a": 1,
+    "w": "Layer 2 (Data Link) handles MAC-address-based frame delivery within a single network segment — this is where Ethernet switches operate. Layer 1 deals with the physical signals (bits, voltages, timing) but has no concept of addressing. Layer 3 uses logical IP addresses for inter-network routing. Layer 4 provides end-to-end transport services between applications.",
+    "k": [
+      "OSI Layer 2 – Data Link – uses hardware MAC addresses to deliver frames within a broadcast domain; switches learn MAC-to-port mappings to forward frames correctly.",
+      "Layer 2 is split into two sublayers: LLC (Logical Link Control) and MAC (Media Access Control) — MAC sublayer handles physical addressing and channel access.",
+      "Key exam distinction: MAC = Layer 2 address (hardware, permanent); IP = Layer 3 address (logical, configurable)."
+    ]
+  },
+  {
+    "id": 867,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "A network's architecture is described as encompassing which three elements?",
+    "o": [
+      "Cables, connectors, and pathways",
+      "Hardware, software, and applications",
+      "Routers, switches, and firewalls",
+      "Physical, logical, and management planes"
+    ],
+    "a": 1,
+    "w": "A network's architecture encompasses hardware (switches, routers, servers), software (operating systems, protocols), and applications (services running on the network). Cables, connectors, and pathways describe the physical cabling infrastructure, not the full network architecture. Routers, switches, and firewalls are specific hardware elements. Physical, logical, and management planes describe network operations frameworks, not architecture definition.",
+    "k": [
+      "Network architecture = hardware + software + applications — the complete system view that an RCDD must design to support.",
+      "This holistic definition is important in design: specifying only cabling without considering the software and application requirements leads to under-designed networks.",
+      "When a client describes their application needs (e.g., VoIP, video conferencing), the RCDD translates those application requirements into hardware specifications and cabling designs."
+    ]
+  },
+  {
+    "id": 868,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What does unified communications (UC) integrate as a platform?",
+    "o": [
+      "Optical fiber, copper, and wireless cabling systems",
+      "VoIP, video communications, instant messaging, and presence indicators",
+      "Physical security, fire alarm, and BAS systems",
+      "LAN, WAN, and MAN network infrastructure"
+    ],
+    "a": 1,
+    "w": "Unified communications integrates voice (VoIP), video communications, instant messaging, and presence indicators into a single communications platform. Cabling systems are the physical infrastructure that supports UC but are not UC itself. Physical security, fire alarm, and BAS are separate building systems. LAN/WAN/MAN are network types, not UC components.",
+    "k": [
+      "UC (Unified Communications) converges multiple real-time communication modalities — voice, video, chat, and presence — onto a common IP network infrastructure.",
+      "For cabling design, UC dramatically increases bandwidth demands on horizontal cabling and requires careful QoS planning for voice and video traffic.",
+      "The 'presence' component of UC shows whether a person is available, on a call, or away — enabling intelligent call routing and collaboration workflows."
+    ]
+  },
+  {
+    "id": 869,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "When would a network designer choose physical network design over functional network design?",
+    "o": [
+      "When all network characteristics and performance data are fully known",
+      "When detailed network characteristics are unavailable",
+      "When the project budget is unlimited",
+      "When the project is for a new building with no existing infrastructure"
+    ],
+    "a": 1,
+    "w": "Physical network design is used when detailed network characteristics (traffic volumes, application types, QoS requirements) are unavailable, so the designer works from physical constraints and standards-based minimum specifications. Functional (top-down) design is used when detailed characteristics ARE known, allowing design to follow application requirements. Budget and whether the building is new or existing are separate considerations.",
+    "k": [
+      "Physical design = bottom-up approach: start from physical constraints (building layout, cable lengths) when application/traffic data is incomplete.",
+      "Functional (top-down) design = start from business and application requirements, then translate those into network specifications.",
+      "In practice, RCDD designers often start with functional design during discovery, then apply physical design where data gaps exist."
+    ]
+  },
+  {
+    "id": 870,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What does a storage area network (SAN) use a core storage director for?",
+    "o": [
+      "To route IP packets between servers and storage",
+      "To ensure storage availability for all servers by centralizing storage management",
+      "To provide wireless access to shared storage resources",
+      "To replace the main cross-connect in a backbone cabling system"
+    ],
+    "a": 1,
+    "w": "A core storage director in a SAN provides centralized management of storage resources, ensuring all servers can access shared storage and improving availability through redundant paths. A SAN does not route IP packets — it uses fiber channel or iSCSI protocols. SANs are high-speed wired networks, not wireless. A SAN core director is a data network device, not a telecommunications cabling component.",
+    "k": [
+      "A SAN (Storage Area Network) is a high-speed dedicated network for block-level data storage — separate from the regular LAN — connecting servers to shared storage arrays.",
+      "The core storage director is the high-port-count fiber channel switch that centralizes all server-to-storage paths, providing the redundancy and performance SANs require.",
+      "For cabling design, SANs typically use OM4 or OM5 multimode fiber or single-mode fiber in larger data centers due to high bandwidth and low latency requirements."
+    ]
   }
 ]

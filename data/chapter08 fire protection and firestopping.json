@@ -698,5 +698,505 @@
       "This re-workability makes putty the preferred firestop for active telecommunications rooms where cables are regularly added or removed; the alternative (caulk) would require cutting, cleaning, and re-applying sealant for every MAC event.",
       "Putty's MAC suitability is limited to small-to-medium penetrations; large cable tray openings with frequent changes are better served by mechanical cable transit systems whose modular fill blocks can be individually replaced."
     ]
+  },
+  {
+    "id": 971,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Which U.S. standard evaluates through-penetration firestop systems?",
+    "o": [
+      "ASTM E119 / UL 263",
+      "ASTM E1966 / UL 2079",
+      "ASTM E814 / UL 1479",
+      "NFPA 101"
+    ],
+    "a": 2,
+    "w": "ASTM E814 (or its equivalent UL 1479) evaluates through-penetration firestop systems — systems that seal openings where cables, pipes, or conduits pass through a rated barrier. ASTM E119/UL 263 evaluates structural elements (floors, walls, beams). ASTM E1966/UL 2079 evaluates expansion and control joints. NFPA 101 is the Life Safety Code governing building egress, not firestop evaluation.",
+    "k": [
+      "ASTM E814/UL 1479 = through-penetration firestop testing: simulates fire on one side of a barrier and measures how long the firestop prevents flame, heat, and smoke from passing through.",
+      "A 'through penetration' means the opening goes completely through the barrier (floor or wall) — cable sleeves, conduit penetrations, and pipe sleeves all require ASTM E814-rated firestop systems.",
+      "The test produces F, T, and L ratings; the F rating (flame) is the primary compliance criterion in U.S. building codes."
+    ]
+  },
+  {
+    "id": 972,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "The 'W' rating in U.S. firestopping standards measures what property?",
+    "o": [
+      "Weather resistance over 24 hours",
+      "Water leakage resistance evaluated over 72 hours",
+      "Wind load capacity of the firestop assembly",
+      "Width of the maximum penetration allowed"
+    ],
+    "a": 1,
+    "w": "The 'W' rating measures a firestop system's resistance to water leakage, evaluated over a 72-hour period. It is relevant for floor assemblies where water from fire suppression systems or flooding could migrate through penetrations. Weather resistance is not a firestop rating. Wind load is a structural engineering parameter. Penetration width is described by the system's listed dimensions, not a letter rating.",
+    "k": [
+      "W rating = water leakage test (72 hours): applied to floor penetrations where hydrostatic pressure from above could force water through unsealed gaps — relevant after a floor above is flooded or when sprinklers activate.",
+      "The W rating is evaluated separately from F and T ratings; a system may achieve F and T ratings without a W rating if water resistance is not required.",
+      "Floor firestop systems in below-grade or flood-prone buildings should specify a W-rated system to prevent water migration between floors."
+    ]
+  },
+  {
+    "id": 973,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "What does the Canadian 'FTH' or 'FH' firestop rating specifically require that U.S. ratings do not always mandate?",
+    "o": [
+      "Higher temperature resistance on the unexposed side",
+      "A hose stream test as part of the qualification procedure",
+      "Lower air leakage through the penetration",
+      "Extended furnace exposure time beyond 2 hours"
+    ],
+    "a": 1,
+    "w": "Canadian standards require a hose stream test as part of the FH and FTH firestop rating procedures — this simulates the mechanical impact of firefighting water streams, which can dislodge or wash out firestop materials. U.S. standards allow but do not always mandate the hose stream test. Temperature resistance is covered by the T rating in both systems. Air leakage is the L rating (U.S.). Extended exposure time is not the distinction.",
+    "k": [
+      "The hose stream test (Canada mandatory for FH/FTH ratings) simulates water impact from fire hoses, testing whether the firestop remains intact under the mechanical and thermal shock of firefighting operations.",
+      "In the U.S., the hose stream test is conducted within 10 minutes of furnace exposure when required, but it is not mandatory for all ratings.",
+      "Canada's FT rating is equivalent to the U.S. T rating; FH is equivalent to F; FTH includes both flame and temperature resistance — the 'H' suffix indicates hose stream tested."
+    ]
+  },
+  {
+    "id": 974,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Intumescent wrap strips are specifically designed to address which firestopping challenge?",
+    "o": [
+      "Large masonry wall openings too big for caulk",
+      "Cable bundles with mixed conductor types",
+      "Materials that may burn away during a fire, leaving voids in the barrier",
+      "Gaps that require periodic access for cable changes"
+    ],
+    "a": 2,
+    "w": "Intumescent wrap strips are designed to seal around combustible materials (plastic conduit, cable jacketing) that may burn away during a fire, leaving voids. The intumescent material expands when heated, filling the void that the burned material left behind and restoring barrier integrity. Large masonry openings are better served by cementitious materials. Mixed conductor types do not determine firestop material selection. Pillows are the preferred material for areas needing periodic access.",
+    "k": [
+      "Intumescent wrap strips work on a thermal trigger: normal temperature = compressed; fire temperature = expands up to 10× volume to seal the void left by combustible pipe or cable insulation.",
+      "The wrap strip is installed around the penetrating item; when the item burns away, the expanding intumescent material presses inward from the wrap, closing the gap.",
+      "This application is critical for plastic conduits and cable bundles — without intumescent protection, the plastic would burn away and create an unprotected void through the fire barrier."
+    ]
+  },
+  {
+    "id": 975,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Firestop caulk or sealant is characterized as best suited for which application type?",
+    "o": [
+      "Temporary installations anticipating future cable additions",
+      "Large openings in masonry or concrete walls",
+      "Permanent installations in small to medium-sized openings",
+      "Vertical shafts with heavy cable tray loads"
+    ],
+    "a": 2,
+    "w": "Firestop caulk and sealant are ideal for permanent installations in small to medium openings — once cured, caulk is difficult to remove cleanly for future cable additions. Temporary or re-enterable installations should use pillows or putty instead. Large masonry openings are better served by cementitious materials. Vertical shafts with cable trays require mechanical firestop systems designed for large-load applications.",
+    "k": [
+      "Firestop caulk: best for small-to-medium permanent penetrations where future cable changes are not anticipated — it cures hard and bonds to both the penetrating item and the barrier.",
+      "For MAC-heavy environments (frequent moves, adds, changes), pillows or putty are specified because they can be removed and reinstalled without destroying the firestop seal.",
+      "Caulk applications require careful tooling to ensure void-free installation — any voids in the caulk can compromise the fire rating of the assembly."
+    ]
+  },
+  {
+    "id": 976,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Silicone foam firestop systems carry what specific long-term risk that other materials do not?",
+    "o": [
+      "They become brittle and crack under normal temperature cycling",
+      "They may shrink over time, creating gaps that reduce fire resistance",
+      "They are incompatible with metal conduit penetrations",
+      "They increase the fire spread rate through the barrier"
+    ],
+    "a": 1,
+    "w": "Silicone foam firestop systems may shrink over time as the foam cures and ages, potentially creating gaps between the foam and the penetrating items or barrier edges. These gaps reduce the system's fire resistance below its rated performance. Brittleness and cracking are concerns for some cementitious materials. Silicone foam is compatible with metal conduit. Firestop materials prevent fire spread — they do not increase it.",
+    "k": [
+      "Silicone foam shrinkage is a documented long-term performance concern: as the silicone cures and ages, volumetric contraction creates gaps that were not present at installation.",
+      "For critical applications, shrinkage-prone systems should be inspected periodically and replaced if gaps develop — a maintenance requirement that must be documented in the administration system.",
+      "Intumescent materials and cementitious firestops are preferred over silicone foam in many applications specifically because they do not shrink under normal service conditions."
+    ]
+  },
+  {
+    "id": 977,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "What three components must every firestop system consist of to maintain its listed rating?",
+    "o": [
+      "Conduit, cable, and sealant",
+      "Floor/wall assembly, penetrating items, and firestop materials",
+      "Escutcheon plate, backstop, and intumescent insert",
+      "Caulk, backing rod, and mechanical anchor"
+    ],
+    "a": 1,
+    "w": "Every firestop system must include the floor/wall assembly (the rated barrier being penetrated), the penetrating items (cables, pipes, conduit), and the firestop materials (caulk, putty, etc.) — any of these three components defines the tested system. Substituting one component with an unlisted substitute may void the system's fire rating. Conduit and cable are penetrating items, not complete system components. Escutcheon plates and backstops are optional accessories, not mandatory system components.",
+    "k": [
+      "The three firestop system components form a tested assembly — the specific combination of barrier type, penetrating item, and firestop product was tested together to produce the listed rating.",
+      "Changing any component (e.g., using a different brand of caulk, a different conduit size, or a different wall assembly) creates an untested combination that may not perform as rated.",
+      "UL Fire Resistance Directory lists complete firestop systems as assemblies: a specific wall assembly + specific penetrating items + specific firestop product = one listed system."
+    ]
+  },
+  {
+    "id": 978,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "What is the primary purpose of compartmentation through fire-rated barriers in building fire protection?",
+    "o": [
+      "Active detection of fire and smoke conditions",
+      "Suppression of fire using water or chemical agents",
+      "Passive containment of fire within a defined area",
+      "Providing emergency egress lighting paths"
+    ],
+    "a": 2,
+    "w": "Compartmentation through fire-rated barriers is passive fire protection — it contains fire and smoke within a defined compartment to slow spread and allow evacuation. Detection systems (active) sense fire. Suppression systems (active) extinguish it. Emergency lighting is a life safety system, not compartmentation.",
+    "k": [
+      "Passive fire protection = built-in structural measures (rated walls, floors, doors, firestops) that contain fire without requiring activation or power.",
+      "Active fire protection = systems that respond to fire (sprinklers, alarm systems, smoke control) — they need to be triggered to function.",
+      "Firestopping is passive: it doesn't detect or suppress fire — it simply maintains the integrity of the rated barrier that confines fire to its compartment of origin."
+    ]
+  },
+  {
+    "id": 979,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Positive pressure tests in firestopping evaluation measure what?",
+    "o": [
+      "The maximum cable fill percentage before the firestop fails",
+      "The firestop system's ability to resist fire and gas passage under positive pressure",
+      "The compressive strength of cementitious firestop materials",
+      "The water resistance of the firestop during flooding conditions"
+    ],
+    "a": 1,
+    "w": "Positive pressure tests evaluate whether a firestop system can resist the passage of fire, gases, and smoke when air pressure on the fire side exceeds pressure on the unexposed side — simulating real fire conditions where hot gases are driven under pressure through the barrier. Cable fill percentage is a design parameter, not a test measurement. Compressive strength is tested separately. Water resistance is the W-rating test.",
+    "k": [
+      "During a building fire, the heated air on the fire side creates positive pressure that drives combustion gases through any barrier gaps — positive pressure testing validates the firestop against this real-world condition.",
+      "A system that passes F and T ratings without positive pressure may still fail in a real fire if pressurized gas forces through improperly sealed edges.",
+      "Positive pressure testing is part of the comprehensive qualification that produces the listed firestop system ratings published in the UL Fire Resistance Directory."
+    ]
+  },
+  {
+    "id": 980,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Why do non-conductive plastic conduits easily achieve higher 'T' ratings than metal conduit in firestop systems?",
+    "o": [
+      "Plastic conducts heat away from the firestop faster than metal",
+      "Plastic does not conduct heat, preventing temperature rise on the unexposed side",
+      "Plastic conduits expand to fill gaps, sealing the penetration during a fire",
+      "Plastic conduits are thicker-walled, providing more insulation"
+    ],
+    "a": 1,
+    "w": "Non-conductive plastic conduits do not conduct heat through the barrier the way metal conduits do — metal is an excellent thermal conductor that transfers heat from the fire side to the unexposed side, raising the temperature above the T-rating limit. Plastic's low thermal conductivity prevents this conduction path. Plastic conduits do not expand to seal gaps (intumescent wrap strips do that for plastic conduits). Wall thickness does not determine thermal conduction as significantly as material conductivity.",
+    "k": [
+      "T rating measures temperature rise on the unexposed side: materials that conduct heat through the barrier make achieving a T rating harder.",
+      "Metal conduits are thermal bridges: fire heats the metal on one side, heat flows through the metal, and the temperature rises on the protected side, potentially igniting nearby combustibles.",
+      "This is why plastic conduits get higher T ratings without special treatment, while metal conduits often require thick cementitious packing to achieve the same T rating."
+    ]
+  },
+  {
+    "id": 981,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "What do fire-rated cables and junction boxes typically eliminate the need for in firestopping applications?",
+    "o": [
+      "Fire-rated wall assemblies",
+      "Additional firestopping material at penetration points",
+      "Electrical conduit protection",
+      "Grounding and bonding connections"
+    ],
+    "a": 1,
+    "w": "Fire-rated cables and junction boxes often require no additional firestopping at penetrations because the cable or box assembly itself is listed as a fire-stopping element — the rating is built into the component. Standard non-rated cables still require firestop material at each penetration. Fire-rated cables do not eliminate the need for fire-rated walls. Conduit protection and grounding are separate requirements.",
+    "k": [
+      "Fire-rated (plenum-rated or fire-resistive) cables are tested and listed for use in specific assembly configurations; their rating may allow them to penetrate barriers without additional firestop if installed per their listing.",
+      "Examples: OFNP (plenum optical fiber, non-conductive) and FPLP (fire alarm plenum) cables have specific installation listings that may not require additional firestopping.",
+      "Always check the specific cable's listing and the applicable building code — local AHJ interpretations vary, and some jurisdictions require firestopping regardless of cable rating."
+    ]
+  },
+  {
+    "id": 982,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Air leakage (L-rating) tests for firestop systems have what status under U.S. requirements?",
+    "o": [
+      "Mandatory for all through-penetration systems",
+      "Required only for floor assemblies with water exposure",
+      "Optional — they are not mandated for all firestop applications",
+      "Required by all state building codes but not federal standards"
+    ],
+    "a": 2,
+    "w": "Air leakage tests (L rating) for firestop systems are optional in the U.S. — they are not universally required for all firestop applications. The L rating predicts smoke movement capability; some jurisdictions or specific applications may require it, but it is not a baseline U.S. requirement for all systems. Floor assemblies with water exposure use the W rating, not the L rating.",
+    "k": [
+      "L rating = air leakage measurement at ambient temperature; predicts smoke migration before a fire reaches temperatures that activate F and T ratings.",
+      "L ratings become important in smoke-control applications (hospitals, high-rises) where preventing smoke migration is as critical as preventing flame spread.",
+      "In the U.S., the L rating is available as an add-on to tested systems but is not required unless the AHJ or project specifications specifically call for it."
+    ]
+  },
+  {
+    "id": 983,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "What maximum area may electrical apparatus penetrations occupy per face in framed wall assemblies?",
+    "o": [
+      "5,000 mm² (8 in²)",
+      "10,000 mm² (16 in²)",
+      "20,000 mm² (32 in²)",
+      "50,000 mm² (80 in²)"
+    ],
+    "a": 1,
+    "w": "Electrical apparatus penetrations (outlet boxes, switch boxes) in framed wall assemblies must not exceed 10,000 mm² (16 in²) per face. Smaller areas are within the limit. 20,000 and 50,000 mm² exceed the allowable limit and would require additional fire protection measures.",
+    "k": [
+      "10,000 mm² (approximately 4 in × 4 in or 16 square inches) is the maximum electrical apparatus opening area per wall face — this limits the total unprotected opening that a box creates in a rated wall assembly.",
+      "This limit is why back-to-back electrical boxes on opposite sides of a rated wall are not permitted: two boxes that share the same cavity create a through-penetration that negates the wall's fire rating.",
+      "Electrical boxes exceeding this area or placed in rated walls must use listed fire-rated electrical boxes or additional firestop protection."
+    ]
+  },
+  {
+    "id": 984,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Factory-fabricated firestop sleeve systems are distinguished from field-applied systems by what feature?",
+    "o": [
+      "They can only be used for horizontal penetrations",
+      "They come with escutcheon plates for attachment to wall or floor surfaces",
+      "They provide higher F ratings than any field-applied material",
+      "They are only approved for metal conduit penetrations"
+    ],
+    "a": 1,
+    "w": "Factory-fabricated sleeve systems come with escutcheon plates that attach the sleeve assembly to the wall or floor surface, providing a finished appearance and mechanical attachment. They can be used for horizontal and vertical penetrations. Their ratings are determined by testing and may be equivalent to or different from field-applied materials. They can accommodate various penetrating items, not only metal conduit.",
+    "k": [
+      "Factory-fabricated sleeve systems are pre-engineered, pre-tested assemblies that simplify installation by providing all necessary components (sleeve, intumescent liner, escutcheon) in one package.",
+      "The escutcheon plate serves dual purposes: aesthetic (covers the rough penetration edges) and functional (provides mechanical support and compresses the intumescent liner against the sleeve).",
+      "These systems are popular in high-traffic areas where appearance matters and where repeated cable additions are anticipated, as the sleeve provides a guided entry point."
+    ]
+  },
+  {
+    "id": 985,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Firestop materials must be applied symmetrically on both sides of which type of assembly?",
+    "o": [
+      "Single-sided wall assemblies only",
+      "Floor/ceiling assemblies",
+      "Cavity wall assemblies only",
+      "All framed wall assemblies regardless of configuration"
+    ],
+    "a": 1,
+    "w": "Firestop materials must be sealed symmetrically on both sides of floor/ceiling assemblies to ensure the fire rating is maintained from both below and above the floor. Single-sided wall assemblies and cavity walls have different requirements. Symmetric application for all framed walls is not the standard specification — it applies specifically to horizontal floor/ceiling assemblies.",
+    "k": [
+      "Floor/ceiling assemblies are penetrated from both sides during a building fire: fire from below heats the firestop from one direction, and the floor above may have a fire event from the other — symmetric sealing handles both scenarios.",
+      "Symmetrical application also ensures the mechanical integrity of the firestop — unsupported on one side, the material could be pushed through by pressurized fire gases.",
+      "For wall penetrations, firestop is typically applied on the fire side only (the pressure side), but floor assemblies require both-sides treatment per ASTM E814 testing protocols."
+    ]
+  },
+  {
+    "id": 986,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "In firestopping, a 'membrane penetration' describes which specific scenario?",
+    "o": [
+      "A cable penetrating completely through a rated floor from one side to the other",
+      "An electrical box or single cable drop that penetrates only one side of a rated barrier",
+      "A conduit penetrating a rated wall without an intumescent wrap",
+      "A through-penetration with multiple cables of different sizes"
+    ],
+    "a": 1,
+    "w": "A membrane penetration involves items (like electrical outlet boxes or individual cable drops) that penetrate only one face (membrane) of a rated barrier, not passing completely through it. A complete through-penetration from one side to the other is a through-penetration, not a membrane penetration. Conduit without intumescent wrap is a through-penetration installation issue. Multiple cables in a through-penetration is still a through-penetration scenario.",
+    "k": [
+      "Membrane penetrations: only one face (membrane) of the assembly is penetrated — the item does not pass all the way through. Example: an outlet box set into a rated wall from one side but not breaking through the other side.",
+      "Through-penetrations: the item passes completely through the rated assembly from one side to the other — the more common scenario for cables and conduits.",
+      "Building codes treat membrane and through-penetrations differently; each requires its own listed firestop system or approach."
+    ]
+  },
+  {
+    "id": 987,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Do vertical shafts with cable trays require firestopping within the shaft at floor assemblies?",
+    "o": [
+      "Yes — firestopping is required at every floor level within the shaft",
+      "Yes — only for shaft heights exceeding three floors",
+      "No — vertical shafts with cable trays do not require firestopping within the shaft at floor assemblies",
+      "Only if the shaft is not enclosed in a fire-rated chase"
+    ],
+    "a": 2,
+    "w": "Vertical shafts with cable trays do not require firestopping within the shaft at floor assemblies — the shaft itself is the rated enclosure. Firestopping is required at the top and bottom of the shaft (where the shaft penetrates the building's rated floor assemblies) and at any horizontal penetration out of the shaft. Requiring firestopping at every floor within the shaft would prevent the cable trays from running continuously.",
+    "k": [
+      "A vertical shaft is treated as a single rated enclosure — the shaft walls provide fire containment, eliminating the need for additional firestopping at each floor level within the shaft.",
+      "Firestopping IS required where cables exit the shaft at each floor (the penetration from the shaft wall into the floor's horizontal space) and where the shaft enters and exits the building's rated floors.",
+      "This principle allows continuous cable tray runs through multiple floors without interruption — the shaft walls, not firestop materials within the shaft, provide the compartmentation."
+    ]
+  },
+  {
+    "id": 988,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Foam backer rods used in firestopping must be compressed by what percentage of their thickness?",
+    "o": [
+      "10%",
+      "15%",
+      "25%",
+      "50%"
+    ],
+    "a": 2,
+    "w": "Foam backer rods must be compressed by 25% of their thickness when installed. This compression ensures the rod fills the opening snugly and provides the backing support needed for the firestop sealant applied over it. 10% and 15% compression are insufficient to provide a tight fit. 50% compression would overcompress the rod, potentially damaging it and reducing its effectiveness as a backer.",
+    "k": [
+      "Backer rods are compressible foam cylinders installed behind firestop caulk to limit sealant depth and provide a backing surface — the 25% compression ensures a snug fit that prevents the rod from shifting.",
+      "Without a backer rod, caulk in deep joints would require excessive material and would be prone to cracking as it cures, potentially creating voids in the firestop.",
+      "The 25% compression specification is listed in the firestop system's installation instructions — it must be followed to maintain the system's listed fire rating."
+    ]
+  },
+  {
+    "id": 989,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Heavy-duty firestop systems are specifically required for which type of high-risk penetration?",
+    "o": [
+      "Single conductor electrical cables",
+      "Small optical fiber bundle penetrations",
+      "Cable tray penetrations through fire-rated barriers",
+      "Twisted-pair data cable penetrations"
+    ],
+    "a": 2,
+    "w": "Heavy-duty firestop systems are required for cable tray penetrations because of the large opening size, the weight of the cable tray and cables, and the structural loading imposed on the firestop system. Single conductors and small fiber bundles use lighter firestop approaches. Twisted-pair data cables use caulk or putty for small to medium openings.",
+    "k": [
+      "Cable tray penetrations are the most mechanically demanding firestop application: the firestop must seal a large opening (potentially 600 mm × 100 mm or larger) while supporting the weight of cables and the tray frame.",
+      "Heavy-duty systems typically use a combination of mechanical supports, firestop pillows or blocks, and intumescent materials to fill the large opening completely.",
+      "The structural component (wire mesh, forming material) in heavy-duty systems prevents firestop fill from falling through large openings before it can cure or activate."
+    ]
+  },
+  {
+    "id": 990,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "The European 'I' firestop rating is equivalent to which U.S. firestop rating?",
+    "o": [
+      "F rating (flame resistance)",
+      "T rating (temperature rise)",
+      "L rating (air leakage)",
+      "W rating (water resistance)"
+    ],
+    "a": 1,
+    "w": "The European 'I' (Insulation) rating measures temperature rise on the unexposed side of a barrier, making it equivalent to the U.S. 'T' rating. The European 'E' (Integrity) rating is equivalent to the U.S. 'F' (Flame) rating. The L (air leakage) and W (water) ratings are U.S. concepts without direct European equivalents.",
+    "k": [
+      "European to U.S. firestop rating equivalents: E (Europe) = F (U.S.) for flame integrity; I (Europe) = T (U.S.) for insulation/temperature.",
+      "This mapping is important for international projects where European equipment or test reports must be evaluated against U.S. code requirements.",
+      "The European notation 'EI 60' means the firestop maintains integrity (E) and insulation (I) for 60 minutes — equivalent to a U.S. FT60 rating."
+    ]
+  },
+  {
+    "id": 991,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Firestopping bags installed as a firestop system must be installed with what support material?",
+    "o": [
+      "Foam backer rods",
+      "Heavy-gauge wire mesh",
+      "Intumescent wrap strips",
+      "Cementitious backing compound"
+    ],
+    "a": 1,
+    "w": "Firestopping bags must be installed with heavy-gauge wire mesh to provide structural support, preventing the bags from being pushed through the opening by fire pressure or falling due to gravity in horizontal applications. Foam backer rods are used with caulk applications, not bags. Intumescent wrap strips seal around combustible items, not support bags. Cementitious backing is used for large masonry openings, not to support bags.",
+    "k": [
+      "Firestop bags are used in large cable tray penetrations — the bags are stacked in the remaining open space around and between cable trays and cables, then wire mesh is installed over them to keep them in position.",
+      "Heavy-gauge wire mesh prevents bags from being displaced by: (1) positive pressure from fire gases, (2) gravity in floor-mounted applications, and (3) vibration from nearby mechanical equipment.",
+      "The wire mesh must be sized and anchored per the firestop system's listed installation instructions to maintain the system's tested configuration."
+    ]
+  },
+  {
+    "id": 992,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Detection systems in a building are classified as what type of fire protection?",
+    "o": [
+      "Passive fire protection",
+      "Active fire protection",
+      "Structural fire protection",
+      "Administrative fire protection"
+    ],
+    "a": 1,
+    "w": "Detection systems (smoke detectors, heat detectors, fire alarm systems) are classified as active fire protection because they require power and activation to function — they actively sense conditions and respond by signaling. Passive fire protection includes structural elements (rated walls, floors, firestops) that work without activation. Structural and administrative fire protection are not standard classification categories.",
+    "k": [
+      "Active fire protection = requires activation/power to function: detection systems, suppression systems (sprinklers), smoke control fans, and emergency lighting.",
+      "Passive fire protection = built-in structural resistance: fire-rated walls/floors, intumescent coatings, firestops — works continuously without power or activation.",
+      "The RCDD's firestopping work is passive fire protection; the building's fire alarm system (a separate discipline) is active — both are required for comprehensive fire safety."
+    ]
+  },
+  {
+    "id": 993,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "When substituting a component in a listed firestop system with an unlisted substitute, what is the consequence?",
+    "o": [
+      "Performance is enhanced because newer materials are superior",
+      "The fire rating may be reduced but remains valid",
+      "The system's listed fire rating is potentially invalidated",
+      "Performance remains unchanged if the substitute is from the same manufacturer"
+    ],
+    "a": 2,
+    "w": "Substituting any component in a listed firestop system with an unlisted substitute potentially invalidates the system's fire rating — the rating was tested for a specific combination of components, and changing any element creates an untested assembly. Newer materials are not automatically superior for fire ratings. Even a partial substitution invalidates the specific listing. Manufacturer consistency does not substitute for testing.",
+    "k": [
+      "Listed firestop systems are tested as complete assemblies: the specific wall/floor assembly type, the specific penetrating item (cable type, conduit size), and the specific firestop product all contribute to the achieved rating.",
+      "Substituting 'equivalent' materials without retesting creates a non-listed system — the AHJ may reject it during inspection, requiring costly removal and replacement.",
+      "Best practice: specify complete listed systems (e.g., 'UL System WL1234') and purchase all components from the same listing to ensure compliance."
+    ]
+  },
+  {
+    "id": 994,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "In U.S. firestopping standards, PASS/FAIL criteria for qualification testing are determined by what observation?",
+    "o": [
+      "Whether the firestop material maintains its original color",
+      "Whether flaming occurs on the unexposed side of the assembly",
+      "Whether the temperature rise exceeds 100°C on the unexposed side",
+      "Whether the firestop material maintains its original volume"
+    ],
+    "a": 1,
+    "w": "The PASS/FAIL criterion in U.S. qualification testing is whether flaming (active combustion) occurs on the unexposed (protected) side of the test assembly. If flames are observed on the unexposed side, the system fails. Temperature rise is evaluated for the T rating separately but is not the primary PASS/FAIL criterion. Color and volume changes are observation points, not PASS/FAIL criteria.",
+    "k": [
+      "PASS/FAIL in firestop testing: FAIL = observable flaming on the unexposed side; PASS = no flaming on the unexposed side for the duration of the test period.",
+      "This criterion aligns with the F (Flame) rating: the firestop must prevent flames from reaching the protected side for the rated duration (e.g., 1 hour, 2 hours).",
+      "The T rating is a separate evaluation within the same test: monitoring thermocouples on the unexposed side measure temperature rise; exceeding 163°C above ambient constitutes a T-rating failure."
+    ]
+  },
+  {
+    "id": 995,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Which firestopping material type is ideal for large openings in masonry or concrete barriers?",
+    "o": [
+      "Firestop caulk",
+      "Silicone foam",
+      "Cementitious firestop material",
+      "Intumescent wrap strips"
+    ],
+    "a": 2,
+    "w": "Cementitious firestop materials are ideal for large masonry and concrete openings because they can fill large voids, achieve high compressive strength, and are compatible with the masonry/concrete substrate. Firestop caulk is better suited for small to medium openings. Silicone foam has shrinkage concerns and is not optimal for large masonry openings. Intumescent wrap strips are designed for combustible penetrating items, not large open masonry voids.",
+    "k": [
+      "Cementitious firestops are mixed to a mortarlike consistency and troweled into large openings — they cure hard, are non-combustible, and bond well to concrete/masonry substrates.",
+      "For large cable tray penetrations in concrete walls, cementitious material can be formed around the cable tray and cables, creating a monolithic fill that is as strong as the surrounding concrete.",
+      "The main limitation of cementitious firestops is that future cable additions require chipping out the cured material — they are permanent installations."
+    ]
   }
 ]

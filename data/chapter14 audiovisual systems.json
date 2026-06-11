@@ -72,11 +72,11 @@
       "96 kHz"
     ],
     "a": 2,
-    "w": "Sampling audio signals requires a rate of at least twice the bandwidth per the Nyquist theorem — so a 20 kHz bandwidth audio signal requires at least 40 kHz sampling rate. 20 kHz would alias the highest frequencies. 30 kHz would be insufficient to capture the full 20 kHz bandwidth without aliasing. 96 kHz is a professional high-fidelity rate, far above the minimum requirement.",
+    "w": "Sampling audio signals requires a rate of at least twice the bandwidth per the Nyquist theorem \u2014 so a 20 kHz bandwidth audio signal requires at least 40 kHz sampling rate. 20 kHz would alias the highest frequencies. 30 kHz would be insufficient to capture the full 20 kHz bandwidth without aliasing. 96 kHz is a professional high-fidelity rate, far above the minimum requirement.",
     "k": [
       "The Nyquist sampling theorem states that a signal must be sampled at least twice its highest frequency to reconstruct it accurately without aliasing; for 20 kHz audio, the minimum sampling rate is 40 kHz.",
       "Sampling at exactly 20 kHz (the signal bandwidth) would cause aliasing of the highest audio frequencies, creating distortion artifacts in the digitized audio.",
-      "CD audio uses 44.1 kHz (above the 40 kHz Nyquist minimum) and professional audio uses 48 kHz or 96 kHz — both exceed the minimum but provide varying margins for anti-aliasing filter performance."
+      "CD audio uses 44.1 kHz (above the 40 kHz Nyquist minimum) and professional audio uses 48 kHz or 96 kHz \u2014 both exceed the minimum but provide varying margins for anti-aliasing filter performance."
     ]
   },
   {
@@ -136,7 +136,7 @@
     "k": [
       "A maximum 65-degree horizontal FOV for videoconferencing cameras prevents the wide-angle lens distortion that makes participants at the camera edges appear unnaturally stretched or curved.",
       "FOVs beyond 65 degrees introduce significant barrel distortion and perspective exaggeration, making remote participants look distorted and reducing meeting quality.",
-      "Narrower FOVs (30–45 degrees) are fully acceptable but may require more cameras to cover a wide conference table; 65 degrees is the maximum, not the recommended value."
+      "Narrower FOVs (30\u201345 degrees) are fully acceptable but may require more cameras to cover a wide conference table; 65 degrees is the maximum, not the recommended value."
     ]
   },
   {
@@ -155,7 +155,7 @@
     "w": "IEEE 1394 (FireWire) supports up to 63 devices per bus. 16 and 32 devices understate the FireWire capacity. 127 devices is the maximum for USB, not FireWire.",
     "k": [
       "IEEE 1394 (FireWire) supports a maximum of 63 devices per bus in a peer-to-peer topology without requiring a hub, compared to USB's host-centric architecture.",
-      "127 devices is the USB specification maximum — commonly confused with FireWire; knowing which standard maps to which device count is essential for AV interface selection.",
+      "127 devices is the USB specification maximum \u2014 commonly confused with FireWire; knowing which standard maps to which device count is essential for AV interface selection.",
       "FireWire is commonly used in professional AV and video production equipment; its 63-device limit and peer-to-peer data transfer distinguish it from USB's 127-device host-dependent model."
     ]
   },
@@ -172,11 +172,11 @@
       "40 Gb/s"
     ],
     "a": 2,
-    "w": "USB 3.2 supports up to 127 devices with a maximum bandwidth of 20 Gb/s in its Gen 2×2 configuration. 5 Gb/s is USB 3.2 Gen 1 speed. 10 Gb/s is USB 3.2 Gen 2 speed. 40 Gb/s is the bandwidth of USB4, not USB 3.2.",
+    "w": "USB 3.2 supports up to 127 devices with a maximum bandwidth of 20 Gb/s in its Gen 2\u00d72 configuration. 5 Gb/s is USB 3.2 Gen 1 speed. 10 Gb/s is USB 3.2 Gen 2 speed. 40 Gb/s is the bandwidth of USB4, not USB 3.2.",
     "k": [
-      "USB 3.2 Gen 2×2 (dual-lane) achieves the maximum bandwidth of 20 Gb/s by using two 10 Gb/s lanes simultaneously over a single USB-C cable.",
-      "USB 3.2 is a three-tier standard: Gen 1 = 5 Gb/s, Gen 2 = 10 Gb/s, Gen 2×2 = 20 Gb/s; the 20 Gb/s figure is only achievable with dual-lane Gen 2×2 configuration.",
-      "USB4 (not USB 3.2) reaches 40 Gb/s; confusing USB 3.2 Gen 2×2 (20 Gb/s) with USB4 (40 Gb/s) is a common error in AV interface specification."
+      "USB 3.2 Gen 2\u00d72 (dual-lane) achieves the maximum bandwidth of 20 Gb/s by using two 10 Gb/s lanes simultaneously over a single USB-C cable.",
+      "USB 3.2 is a three-tier standard: Gen 1 = 5 Gb/s, Gen 2 = 10 Gb/s, Gen 2\u00d72 = 20 Gb/s; the 20 Gb/s figure is only achievable with dual-lane Gen 2\u00d72 configuration.",
+      "USB4 (not USB 3.2) reaches 40 Gb/s; confusing USB 3.2 Gen 2\u00d72 (20 Gb/s) with USB4 (40 Gb/s) is a common error in AV interface specification."
     ]
   },
   {
@@ -195,7 +195,7 @@
     "w": "RS-232 is common in legacy AV equipment and is limited to 15.2 m (50 ft) at standard baud rates. 5 m and 9 m are within the limit but are not the specified maximum. 30.5 m exceeds the standard RS-232 distance specification and would require lower baud rates or repeaters.",
     "k": [
       "RS-232 serial control is limited to 15.2 m (50 ft) at standard baud rates (up to 9600 baud) due to capacitance and signal attenuation on the unbalanced cable.",
-      "RS-232 uses single-ended (unbalanced) signaling and ±12 V logic levels, which are susceptible to ground noise and capacitive loading, restricting its practical range to 15.2 m.",
+      "RS-232 uses single-ended (unbalanced) signaling and \u00b112 V logic levels, which are susceptible to ground noise and capacitive loading, restricting its practical range to 15.2 m.",
       "For longer control runs, RS-422 (balanced differential, up to ~1200 m) or RS-485 (multi-drop balanced) are preferred alternatives to RS-232 in AV control system design."
     ]
   },
@@ -226,17 +226,17 @@
     "chapter": "Audiovisual (AV) Systems",
     "q": "What Noise Criteria (NC) value must sound masking not exceed for acceptable performance?",
     "o": [
-      "NC ≤ 25",
-      "NC ≤ 30",
-      "NC ≤ 35",
-      "NC ≤ 45"
+      "NC \u2264 25",
+      "NC \u2264 30",
+      "NC \u2264 35",
+      "NC \u2264 45"
     ],
     "a": 2,
-    "w": "The NC value for sound masking should be ≤ 35 for acceptable masking without creating a distracting ambient noise level. NC ≤ 25 would be too quiet to provide effective masking in most office environments. NC ≤ 30 provides some masking but may be insufficient. NC ≤ 45 would create a noticeably loud environment that reduces speech intelligibility.",
+    "w": "The NC value for sound masking should be \u2264 35 for acceptable masking without creating a distracting ambient noise level. NC \u2264 25 would be too quiet to provide effective masking in most office environments. NC \u2264 30 provides some masking but may be insufficient. NC \u2264 45 would create a noticeably loud environment that reduces speech intelligibility.",
     "k": [
-      "Sound masking systems must achieve NC ≤ 35 to provide effective speech privacy without creating an ambient noise level so high that it becomes distracting or fatiguing for occupants.",
-      "NC 35 is equivalent to approximately 47–52 dB(A) depending on frequency content; this level masks conversational speech at a few meters while remaining below the threshold of audible distraction.",
-      "NC > 45 would result in an unacceptably loud background that reduces speech intelligibility for nearby conversations and causes occupant complaints; the NC ≤ 35 limit balances privacy with comfort."
+      "Sound masking systems must achieve NC \u2264 35 to provide effective speech privacy without creating an ambient noise level so high that it becomes distracting or fatiguing for occupants.",
+      "NC 35 is equivalent to approximately 47\u201352 dB(A) depending on frequency content; this level masks conversational speech at a few meters while remaining below the threshold of audible distraction.",
+      "NC > 45 would result in an unacceptably loud background that reduces speech intelligibility for nearby conversations and causes occupant complaints; the NC \u2264 35 limit balances privacy with comfort."
     ]
   },
   {
@@ -294,8 +294,8 @@
     "a": 1,
     "w": "The optimum viewing angle is within 45 degrees horizontally from the display's center axis. 30 degrees is overly restrictive and would exclude many legitimate seating positions. 60 and 90 degrees exceed the recommended range where display image quality and readability begin to degrade.",
     "k": [
-      "Viewers should be seated within ±45 degrees of the display's center horizontal axis; beyond 45 degrees, image contrast, color shift, and resolution become progressively degraded on most display technologies.",
-      "The ±45-degree limit defines the primary seating zone; viewers outside this range experience reduced image quality and difficulty reading text or fine detail on the screen.",
+      "Viewers should be seated within \u00b145 degrees of the display's center horizontal axis; beyond 45 degrees, image contrast, color shift, and resolution become progressively degraded on most display technologies.",
+      "The \u00b145-degree limit defines the primary seating zone; viewers outside this range experience reduced image quality and difficulty reading text or fine detail on the screen.",
       "This 45-degree horizontal limit applies to both the display's position and the seating layout; neither the display nor the seating should be placed such that viewers are routinely beyond this angle."
     ]
   },
@@ -355,8 +355,8 @@
     "w": "MPEG-2 is the compression standard used for digital TV signal transmission, including satellite, cable, and terrestrial broadcast. HDMI is a consumer connection interface, not a compression standard. HDBaseT is a transport protocol for AV signals over structured cabling. HD-SDI is a professional uncompressed video transport format used in broadcast studios.",
     "k": [
       "MPEG-2 is the video compression codec used for digital television broadcasting (DVB, ATSC, and cable TV); it compresses video for efficient transmission over broadcast channels.",
-      "HDMI and HDBaseT are physical interface protocols for connecting or extending AV equipment — they describe how signals travel between devices, not how video is compressed for broadcast.",
-      "HD-SDI is an uncompressed professional broadcast studio interface used over coaxial cable — it does not compress video and is not used for over-the-air or satellite TV transmission."
+      "HDMI and HDBaseT are physical interface protocols for connecting or extending AV equipment \u2014 they describe how signals travel between devices, not how video is compressed for broadcast.",
+      "HD-SDI is an uncompressed professional broadcast studio interface used over coaxial cable \u2014 it does not compress video and is not used for over-the-air or satellite TV transmission."
     ]
   },
   {
@@ -395,7 +395,7 @@
     "w": "Wall surfaces largely determine room acoustics because walls have the largest surface area in most rooms and their absorption or reflection coefficients directly impact reverberation time and echo. Floor material has an effect but walls dominate. Ceiling height affects room volume and reverberation but is secondary to wall surface characteristics. Furniture arrangement has minor effects compared to wall surfaces.",
     "k": [
       "Wall surfaces are the primary determinant of room acoustics because walls represent the largest combined surface area in most rooms and dominate the reflection and absorption of sound energy.",
-      "Wall surface materials — whether absorptive (foam, fabric) or reflective (glass, concrete) — directly control how long sound persists (reverberation time) in the space.",
+      "Wall surface materials \u2014 whether absorptive (foam, fabric) or reflective (glass, concrete) \u2014 directly control how long sound persists (reverberation time) in the space.",
       "While ceiling height and volume affect the decay rate of sound energy, it is the surface absorption coefficients of the walls that most directly control reverberation time (T60) in typical AV spaces."
     ]
   },
@@ -448,15 +448,15 @@
     "o": [
       "Evenly at 50/50 ratio",
       "Unevenly, with different levels at each output",
-      "By frequency — low frequencies one way, high another",
+      "By frequency \u2014 low frequencies one way, high another",
       "Directionally by signal flow only"
     ],
     "a": 1,
     "w": "Directional couplers in CATV systems split signals unevenly, providing a lower-level tap output and a higher-level through output, enabling signal distribution along a cable run while maintaining adequate signal levels at each tap point. Even 50/50 splitting would rapidly attenuate signals along a distribution run. Frequency-based splitting is a diplexer function, not a directional coupler. Signal flow directionality is a feature of directional couplers, not their splitting characteristic.",
     "k": [
-      "Directional couplers provide an asymmetric split: a small, fixed portion of the signal is diverted to the tap output (e.g., −20 dB) while the majority passes through to the next coupler, maintaining signal level along the run.",
+      "Directional couplers provide an asymmetric split: a small, fixed portion of the signal is diverted to the tap output (e.g., \u221220 dB) while the majority passes through to the next coupler, maintaining signal level along the run.",
       "A 50/50 power split would halve the signal at every coupler; a cascade of even splitters rapidly depletes signal level, making it impossible to serve distant outlets at adequate level.",
-      "Frequency-based signal splitting is performed by diplexers or triplexers — not directional couplers; diplexers route forward and return path signals without level splitting."
+      "Frequency-based signal splitting is performed by diplexers or triplexers \u2014 not directional couplers; diplexers route forward and return path signals without level splitting."
     ]
   },
   {
@@ -492,11 +492,511 @@
       "The frequency cutoff of a loudspeaker"
     ],
     "a": 1,
-    "w": "Harmonics define the distinctive sounds from instruments or voices — these overtones above the fundamental frequency give each instrument its characteristic timbre or tone color. The fundamental frequency is the lowest frequency component, not a harmonic. Maximum loudness is defined by amplitude, not harmonics. Speaker frequency cutoff is a hardware specification unrelated to harmonics.",
+    "w": "Harmonics define the distinctive sounds from instruments or voices \u2014 these overtones above the fundamental frequency give each instrument its characteristic timbre or tone color. The fundamental frequency is the lowest frequency component, not a harmonic. Maximum loudness is defined by amplitude, not harmonics. Speaker frequency cutoff is a hardware specification unrelated to harmonics.",
     "k": [
       "Harmonics are integer multiples of the fundamental frequency; their presence, relative amplitude, and phase determine the timbre (tone color) that makes a violin sound different from a trumpet playing the same note.",
       "The fundamental frequency determines perceived pitch; harmonics shape the waveform and are responsible for the distinctive character of individual instruments, voices, and sound sources.",
       "Total Harmonic Distortion (THD) in audio equipment measures unwanted added harmonics; excessive THD degrades audio quality by introducing coloration not present in the original source signal."
+    ]
+  },
+  {
+    "id": 1121,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What standard defines MPEG-2 and its use in digital TV signal transmission?",
+    "o": [
+      "MPEG-2 transmits analog TV signals over coaxial cable",
+      "MPEG-2 is used for digital TV signal transmission in distribution systems",
+      "MPEG-2 defines uncompressed HD video over fiber",
+      "MPEG-2 covers audio-only streaming protocols"
+    ],
+    "a": 1,
+    "w": "MPEG-2 is used for digital TV signal transmission in broadcast and distribution systems. MPEG-2 is a digital standard \u2014 not analog. MPEG-2 is not specifically for fiber or for audio-only; it covers both audio and video in compressed digital form.",
+    "k": [
+      "MPEG-2 (ISO/IEC 13818) is the compression standard used for digital television broadcast, satellite TV (DVB), cable TV (CATV), and Blu-ray disc \u2014 it compresses video by encoding differences between frames rather than storing each frame completely.",
+      "In CATV distribution systems, MPEG-2 signals are modulated onto RF carriers and distributed through the cable plant; each 6 MHz channel can carry multiple MPEG-2 standard-definition TV streams or one high-definition stream.",
+      "MPEG-2's widespread adoption in broadcast infrastructure (ATSC, DVB-T, DVB-S, DVB-C) means existing AV systems using legacy satellite, cable, or antenna inputs rely on MPEG-2 decoding, even as newer systems adopt MPEG-4/H.264 and H.265."
+    ]
+  },
+  {
+    "id": 1122,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What is the maximum transmission distance for HDBaseT signals, and what cabling minimum is required?",
+    "o": [
+      "50 m over Cat 5 cabling",
+      "100 m over Cat 5e/Class D minimum balanced twisted-pair cabling",
+      "150 m over Cat 6A cabling",
+      "200 m over single-mode optical fiber"
+    ],
+    "a": 1,
+    "w": "HDBaseT transports signals up to 100 m (328 ft) over balanced twisted-pair cabling with a minimum of Category 5e/Class D. 50 m understates the maximum distance. 150 m and 200 m exceed HDBaseT's specified range. Cat 6A improves margin but Cat 5e is the specified minimum.",
+    "k": [
+      "HDBaseT achieves 100 m transmission by encoding video, audio, power, Ethernet, and control signals into a single broadband signal optimized for balanced twisted-pair cable; the Cat 5e/Class D minimum ensures adequate bandwidth and low enough attenuation for the signal to travel 100 m with acceptable signal quality.",
+      "The 100 m limit aligns with the standard structured cabling horizontal cable limit, making HDBaseT a natural fit for AV distribution using existing data cabling infrastructure \u2014 an HDMI source at the AV equipment rack can distribute to displays throughout the building using the existing horizontal cable plant.",
+      "Power over HDBaseT can deliver up to 100 W through the same cable that carries the AV signal, enabling powered displays, cameras, or meeting room equipment to be installed without a separate power circuit, simplifying installation in retrofit or difficult access locations."
+    ]
+  },
+  {
+    "id": 1123,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What is the maximum cable length for HDMI in consumer AV applications?",
+    "o": [
+      "3 m (10 ft)",
+      "9 m (30 ft)",
+      "15 m (50 ft)",
+      "25 m (82 ft)"
+    ],
+    "a": 1,
+    "w": "HDMI is a consumer format with a practical maximum cable length of approximately 9 m (30 ft) at HD resolutions. 3 m is a shorter run well within specification. 15 m and 25 m exceed standard HDMI passive cable limits without active extender technology.",
+    "k": [
+      "HDMI's 9 m practical limit stems from the signal attenuation characteristics of the cable: at higher resolutions (4K, 8K) and refresh rates, the high-frequency components of the TMDS signal attenuate more rapidly, limiting reliable transmission distance.",
+      "Beyond 9 m, active HDMI cables (with built-in amplifiers) or HDMI extenders using HDBaseT, fiber, or IP-based distribution are required; passive HDMI cables beyond 9 m may work at lower resolutions but are unreliable for 4K60 content.",
+      "HDMI's 9 m limit distinguishes it from professional formats like HD-SDI (100 m on coax) and HDBaseT (100 m on Cat 5e), making HDMI appropriate for consumer source-to-display connections but impractical for long-run commercial AV distribution without additional technology."
+    ]
+  },
+  {
+    "id": 1124,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What data rate does HD-SDI operate at, and what is its maximum cable distance?",
+    "o": [
+      "720 Mb/s over 200 m",
+      "1.485 Gb/s over 100 m (328 ft)",
+      "3 Gb/s over 50 m",
+      "6 Gb/s over 30 m"
+    ],
+    "a": 1,
+    "w": "HD-SDI operates at 1.485 Gb/s with a maximum cable length of 100 m (328 ft) on appropriate coaxial cable. 720 Mb/s is the SD-SDI rate. 3 Gb/s is the 3G-SDI rate, and 6 Gb/s describes 6G-SDI \u2014 different standards than HD-SDI.",
+    "k": [
+      "HD-SDI (High Definition Serial Digital Interface) at 1.485 Gb/s supports 1080i and 720p video formats over a single coaxial cable, commonly Series-6 or better; the 100 m cable length limit applies to this data rate on standard broadcast coax.",
+      "HD-SDI's 100 m coaxial reach makes it far more suitable for in-building broadcast distribution than HDMI's 9 m limit; broadcast trucks, studios, and sports venues use HD-SDI for signal routing between cameras, switchers, and monitors over longer runs.",
+      "The 1.485 Gb/s rate is the defining data rate of HD-SDI; it was chosen to provide the bandwidth for 1080i50/60 and 720p50/60 video with embedded audio, establishing a standard that remains widely used in professional broadcast infrastructure."
+    ]
+  },
+  {
+    "id": 1125,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What determines whether video is described as interlaced or progressive scanning?",
+    "o": [
+      "Interlaced uses fewer color bits than progressive",
+      "Progressive uses higher frame rates than interlaced by definition",
+      "Interlaced scans alternating lines per frame; progressive scans all lines sequentially in each frame",
+      "Progressive uses compressed video; interlaced uses uncompressed video"
+    ],
+    "a": 2,
+    "w": "Interlaced scanning draws alternating lines of the frame (odd lines in one field, even lines in the next), while progressive scanning draws all lines of each frame in sequence. Color bit depth and compression format are unrelated to the interlaced/progressive distinction. Frame rates can vary independently of the scan method.",
+    "k": [
+      "Interlaced scanning (i suffix: 1080i, 480i) was developed for cathode ray tube televisions; by alternating between odd and even scan lines, it achieves 60 fields per second with less bandwidth than scanning all lines at 60 complete frames per second.",
+      "Progressive scanning (p suffix: 1080p, 720p) scans all lines in each frame in order; it eliminates interlace artifacts (combing, motion blur on fast-moving objects) at the cost of higher bandwidth for the same resolution and frame rate.",
+      "Modern displays are progressive-scan panels; when displaying interlaced content, they deinterlace the signal to progressive before rendering; understanding the difference is important for AV system designers specifying source equipment, cabling bandwidth, and display compatibility."
+    ]
+  },
+  {
+    "id": 1126,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What is the minimum audio sampling rate required to accurately represent an audio signal with a 20 kHz bandwidth?",
+    "o": [
+      "20 kHz sampling rate",
+      "30 kHz sampling rate",
+      "40 kHz sampling rate",
+      "96 kHz sampling rate"
+    ],
+    "a": 2,
+    "w": "The Nyquist theorem requires a sampling rate of at least twice the bandwidth: 2 \u00d7 20 kHz = 40 kHz minimum to accurately represent a 20 kHz audio signal. 20 kHz equals the signal bandwidth, not twice it. 30 kHz is below the 2\u00d7 requirement. 96 kHz is used in professional audio for quality headroom but is above the minimum.",
+    "k": [
+      "The Nyquist-Shannon sampling theorem establishes that a signal must be sampled at a rate of at least twice its highest frequency component (Nyquist rate) to avoid aliasing \u2014 frequencies above half the sampling rate fold back into the audio band as distortion artifacts.",
+      "Standard CD audio sampling at 44.1 kHz (just above the 40 kHz Nyquist minimum for 20 kHz audio) reflects the theoretical minimum with a small guard band; professional audio uses 48 kHz (broadcast standard) or 96 kHz for additional headroom.",
+      "AV designers specify sampling rates when selecting audio ADC/DAC equipment and digital audio distribution formats; understanding the 2\u00d7 bandwidth relationship ensures that audio equipment accurately captures the full audible spectrum without aliasing."
+    ]
+  },
+  {
+    "id": 1127,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "How do OLED displays differ from LED-backlit LCD displays in their light emission method?",
+    "o": [
+      "OLED uses a blue laser to illuminate individual pixels",
+      "OLED pixels emit visible light directly without requiring a backlight",
+      "OLED uses a distributed fluorescent tube behind the panel",
+      "OLED relies on ambient light reflection for image formation"
+    ],
+    "a": 1,
+    "w": "OLED displays emit visible light directly from each pixel without requiring an LED backlight. LED-backlit LCD panels use a separate backlight layer (LEDs) to illuminate the liquid crystal panel from behind. Lasers are used in laser projectors, not OLED. Fluorescent backlights are used in older CCFL-based LCD panels. OLED is an emissive technology, not reflective.",
+    "k": [
+      "In OLED (Organic Light-Emitting Diode) displays, each pixel contains organic compound layers that emit light when current flows through them; the pixel itself is the light source \u2014 when a pixel is black, it emits no light at all, achieving true black and infinite contrast ratio.",
+      "LED-backlit LCD panels cannot achieve true black because the backlight always illuminates the liquid crystal panel from behind; local dimming reduces but cannot eliminate backlight bleed-through to dark areas of the image.",
+      "OLED's direct emission also enables thinner display panels (no backlight layer) and faster pixel response times; the organic compounds' ability to turn completely off eliminates the backlight leakage that limits contrast in LED LCD displays."
+    ]
+  },
+  {
+    "id": 1128,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What does a higher color temperature value indicate about a light source?",
+    "o": [
+      "Higher intensity (brighter light)",
+      "Lower energy consumption",
+      "Bluer, cooler-appearing light",
+      "Warmer, more red-tinted light"
+    ],
+    "a": 2,
+    "w": "Higher color temperature indicates bluer, cooler-appearing light (daylight quality at 6500K vs. incandescent warmth at 2700K). Color temperature does not directly indicate intensity. Energy consumption is independent of color temperature. Lower color temperatures produce warmer, red-tinted light \u2014 the opposite of higher temperatures.",
+    "k": [
+      "Color temperature is defined by the Planckian locus \u2014 the curve of colors produced by a blackbody radiator at different temperatures; at lower temperatures (2000\u20133000K), the radiator emits predominantly red/orange light; at higher temperatures (6000\u20137000K), the spectrum shifts toward blue/white.",
+      "AV designers specify display color temperature settings to match the intended viewing environment: video editing suites standardize at 6500K (D65) to match the mastering reference, while warm (3000K) settings are preferred in hospitality environments for ambient comfort.",
+      "Camera white balance settings use color temperature to correct for the illuminant: a tungsten light source at 3200K appears neutral when the camera is set to 3200K; shooting tungsten-lit subjects with a 6500K (daylight) setting produces orange-tinted images."
+    ]
+  },
+  {
+    "id": 1129,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What is IEEE 1394 (FireWire) and how many devices can it support on a single bus?",
+    "o": [
+      "A wireless AV standard supporting 32 devices",
+      "A serial bus supporting up to 63 devices per bus",
+      "An Ethernet variant supporting up to 127 devices",
+      "A parallel bus supporting up to 255 devices"
+    ],
+    "a": 1,
+    "w": "IEEE 1394 (FireWire) is a high-speed serial bus interface supporting up to 63 devices per bus. It is a wired standard, not wireless. USB supports 127 devices (not FireWire). 255 devices would describe a larger network, not a FireWire bus.",
+    "k": [
+      "IEEE 1394 (FireWire, i.LINK) supports up to 63 devices per single bus, with data rates from 100 Mb/s (FireWire 400) to 3.2 Gb/s (FireWire 3200); it provides both asynchronous (guaranteed delivery) and isochronous (time-critical, constant-rate) data transfer modes.",
+      "The isochronous mode makes FireWire particularly well-suited for real-time AV applications: DV camcorders, audio interfaces, and hard drive recorders used FireWire because its guaranteed bandwidth delivery prevents dropped frames in live capture applications.",
+      "While largely replaced by USB 3.x and Thunderbolt in consumer devices, FireWire connections remain in AV legacy equipment inventories; understanding FireWire's 63-device bus limit and dual transfer modes is relevant for AV systems integrators managing existing installations."
+    ]
+  },
+  {
+    "id": 1130,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What is the maximum bandwidth and device count for USB 3.2?",
+    "o": [
+      "5 Gb/s maximum bandwidth, 63 devices",
+      "10 Gb/s maximum bandwidth, 100 devices",
+      "20 Gb/s maximum bandwidth, 127 devices",
+      "40 Gb/s maximum bandwidth, 255 devices"
+    ],
+    "a": 2,
+    "w": "USB 3.2 supports up to 127 devices on a USB bus with a maximum bandwidth of 20 Gb/s (in the Gen 2x2 configuration). 5 Gb/s is USB 3.1 Gen 1. 10 Gb/s is USB 3.2 Gen 2x1. 40 Gb/s is USB4. The 63-device limit belongs to FireWire (IEEE 1394).",
+    "k": [
+      "USB 3.2 Gen 2x2 achieves 20 Gb/s by using two 10 Gb/s lanes simultaneously over a single cable; this makes it the highest standard USB 3.x bandwidth, supporting high-resolution video capture, external NVMe drives, and multi-channel audio interfaces.",
+      "The 127-device limit for USB reflects the 7-bit address space used in the USB protocol (2^7 = 128 addresses, minus address 0 reserved for enumeration = 127 usable devices); in practice, hubs limit practical device counts well below 127 per controller.",
+      "USB 3.2 is increasingly used in AV systems for connecting cameras, audio interfaces, and capture cards; understanding its bandwidth (20 Gb/s maximum) and device limit (127) allows AV system designers to correctly specify USB hubs and host controllers."
+    ]
+  },
+  {
+    "id": 1131,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What is the maximum cable length for RS-232 serial control in AV equipment?",
+    "o": [
+      "5 m (16 ft)",
+      "9 m (30 ft)",
+      "15.2 m (50 ft)",
+      "30 m (100 ft)"
+    ],
+    "a": 2,
+    "w": "RS-232 serial control is limited to approximately 15.2 m (50 ft) cable length under standard specifications. 5 m and 9 m are well within the limit. 30 m exceeds the standard RS-232 specification and would require RS-422 or RS-485 for longer runs.",
+    "k": [
+      "The 15.2 m (50 ft) RS-232 limit derives from the TIA-232 specification's capacitance limit (2500 pF maximum cable capacitance) combined with signal voltage levels; higher capacitance causes signal edge rounding that prevents reliable bit detection at RS-232 baud rates.",
+      "RS-232 remains common in legacy AV control systems (projectors, displays, switchers) for serial command communication; when control cable runs exceed 15.2 m, RS-422 balanced signaling or RS-485 multi-drop bus can extend control distances to hundreds of meters.",
+      "AV designers must identify RS-232 control cable paths during design to ensure runs stay within the 15.2 m limit; in large auditoriums or boardrooms where equipment racks are far from controlled devices, converter hardware is required to extend RS-232 control beyond the standard limit."
+    ]
+  },
+  {
+    "id": 1132,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What is the wavelength characteristic of infrared (IR) used for AV control?",
+    "o": [
+      "IR uses wavelengths shorter than visible violet light",
+      "IR uses wavelengths in the visible green spectrum",
+      "IR uses wavelengths longer than visible red light",
+      "IR uses wavelengths in the microwave range"
+    ],
+    "a": 2,
+    "w": "Infrared (IR) used for AV control uses wavelengths longer than visible red light, in the near-infrared range (typically 850\u2013950 nm). Wavelengths shorter than visible violet are ultraviolet. Green-spectrum wavelengths are visible light. Microwave wavelengths are much longer than IR and are used for radar and wireless communications.",
+    "k": [
+      "Near-infrared wavelengths (850\u2013950 nm) used in AV IR control are just beyond the visible red spectrum (700 nm); they are invisible to the human eye under normal conditions but detectable by photodiodes in IR receivers and visible on smartphone cameras that lack IR filters.",
+      "AV IR control systems require line-of-sight between the remote control (transmitter) and the equipment IR receiver; unlike RF signals, IR does not pass through walls or around corners, which limits IR to direct-view applications and drives the need for IR emitters at equipment positions in enclosed racks.",
+      "IR wavelengths longer than visible light mean IR signals are not distorted by visible room lighting (visible light cannot trigger an IR detector); however, intense incandescent lights, sunlight, and infrared heating lamps can saturate IR receivers, causing control failures."
+    ]
+  },
+  {
+    "id": 1133,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What coaxial cable types are commonly used in AV distribution systems?",
+    "o": [
+      "RG-6 and RG-11",
+      "Series-6 and Series-11",
+      "RG-59 and RG-6 only",
+      "50-ohm and 75-ohm hybrid types"
+    ],
+    "a": 1,
+    "w": "Series-6 and Series-11 are the common coaxial cable types used in AV distribution. RG-6 and RG-11 are older MIL-spec designations that have largely been replaced by Series designations. RG-59 and RG-6 are still used but the standard classification uses Series designations. 50-ohm/75-ohm hybrid types are not a standard AV cable category.",
+    "k": [
+      "Series-6 is the most common 75-ohm coaxial cable for AV distribution, equivalent to what was previously called RG-6; its characteristic impedance of 75 ohms matches the impedance of video signals, antennas, and CATV distribution systems.",
+      "Series-11 is a larger-diameter, lower-attenuation 75-ohm cable used for longer runs and trunk lines where Series-6 attenuation would be unacceptable; its larger conductor diameter reduces resistive losses, making it suitable for CATV trunk and feeder runs.",
+      "The Series designation (Series-6, Series-11) replaces the older RG (Radio Guide) designation in modern telecommunications and AV standards; an AV specification calling for 'Series-6 coaxial cable' is specifying the same product that older specifications called 'RG-6.'"
+    ]
+  },
+  {
+    "id": 1134,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "How do directional couplers function in CATV signal distribution?",
+    "o": [
+      "They split signals equally between all output ports",
+      "They amplify signals before distributing them to multiple outputs",
+      "They split signals unevenly, sending different signal levels to each output port",
+      "They combine signals from multiple sources onto a single coaxial cable"
+    ],
+    "a": 2,
+    "w": "Directional couplers split signals unevenly in CATV systems, allocating different amounts of signal power to different output ports \u2014 the tap port receives a predetermined fraction while the through port receives the remaining higher-level signal for further distribution. Equal splitting is done by splitters, not couplers. Amplification is done by amplifiers. Signal combining is done by combiners/diplexers.",
+    "k": [
+      "A directional coupler's tap value (e.g., 6 dB, 12 dB) specifies how much of the signal is diverted to the tap port; a 12 dB coupler sends approximately 6% of signal power to the tap and 94% continues through \u2014 the unequal split compensates for signals that have traveled different distances in the distribution network.",
+      "CATV trunk distribution uses a cascade of directional couplers to tap off portions of the signal to subscribers (tap ports) at each location while maintaining adequate signal level on the main trunk (through port) for the remaining downstream subscribers.",
+      "Splitters divide signal equally among output ports (a 2-way splitter provides 50%/50%), which would over-supply nearby subscribers and under-supply distant ones in a long distribution run; directional couplers with appropriate tap values level-match signal delivery across varying cable distances."
+    ]
+  },
+  {
+    "id": 1135,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "How should microphones be positioned for optimal Echo Return Loss in speech reinforcement systems?",
+    "o": [
+      "Placed as close to loudspeakers as possible for maximum coupling",
+      "Positioned to maximize Echo Return Loss by avoiding loudspeaker pickup",
+      "Aimed directly at the ceiling for even room coverage",
+      "Placed at the back of the room facing the speaker's position"
+    ],
+    "a": 1,
+    "w": "Microphones should be placed to maximize Echo Return Loss (ERL) \u2014 meaning they should be positioned to minimize loudspeaker audio pickup, which would create feedback loops. Proximity to loudspeakers increases coupling and feedback, reducing ERL. Ceiling-aimed and back-of-room placements increase loudspeaker pickup.",
+    "k": [
+      "Echo Return Loss (ERL) measures how much the direct loudspeaker sound is attenuated before reaching the microphone; higher ERL means less loudspeaker audio enters the microphone, reducing the risk of acoustic feedback and echo in the speech reinforcement system.",
+      "Maximizing ERL is achieved by placing microphones in positions where the speaker's mouth is in the microphone's pickup pattern but the loudspeakers are in the microphone's rejection zone (rear hemisphere for cardioid mics, off-axis for directional mics).",
+      "In teleconference and AV systems, poor ERL causes remote participants to hear their own voices echoed back through the far-end loudspeaker and local microphone chain; acoustic echo cancellation (AEC) processors also depend on adequate ERL to function effectively."
+    ]
+  },
+  {
+    "id": 1136,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What maximum height are loudspeakers limited to in speech reinforcement systems to avoid echo problems?",
+    "o": [
+      "6.1 m (20 ft)",
+      "9.1 m (30 ft)",
+      "13.7 m (45 ft)",
+      "18.3 m (60 ft)"
+    ],
+    "a": 2,
+    "w": "Loudspeakers for speech reinforcement should not exceed 13.7 m (45 ft) in height to prevent echoes. Below 6.1 m and 9.1 m would be overly restrictive for large-volume spaces. 18.3 m would allow loudspeaker placement at heights where path length delays cause audible echoes.",
+    "k": [
+      "The 13.7 m (45 ft) height limit reflects the time delay between a loudspeaker's direct sound and its reflection off the floor and other surfaces; at greater heights, the path length difference between direct sound and reflected sound exceeds the approximately 35 ms echo threshold perception.",
+      "Loudspeakers installed at or below 13.7 m allow the reflected sound to arrive within a time window that the human brain integrates with the direct sound (Haas effect precedence), making the reflected sound appear to come from the same direction as the direct sound.",
+      "For very large spaces (atria, sports arenas) where 13.7 m cannot be observed, distributed loudspeaker arrays with delay compensation are used; each cluster is time-delayed to align with the expected direct sound arrival, preventing spatially distributed echoes."
+    ]
+  },
+  {
+    "id": 1137,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What Noise Criteria (NC) value defines the maximum acceptable background noise level for sound masking systems?",
+    "o": [
+      "NC \u2264 25",
+      "NC \u2264 30",
+      "NC \u2264 35",
+      "NC \u2264 45"
+    ],
+    "a": 2,
+    "w": "A Noise Criteria value of \u2264 35 is specified as acceptable for sound masking applications. NC \u2264 25 would result in a room that feels uncomfortably quiet to occupants. NC \u2264 30 is below the specified acceptable level. NC \u2264 45 would produce a noticeably loud background that would distract occupants.",
+    "k": [
+      "NC 35 represents the upper bound of the comfortable open-plan office range; at this level, HVAC and sound masking noise is present enough to provide speech privacy (preventing conversations from being understood at a distance) without being distracting.",
+      "NC values above 35 in sound masking systems risk creating a masking environment that is louder than the conversations being masked, defeating the privacy goal and creating a noisy, uncomfortable work environment.",
+      "NC ratings are measured using octave-band sound pressure levels compared to NC contour curves; NC 35 corresponds to approximately 40\u201345 dB(A) depending on the spectrum, which falls within the range that provides adequate speech privacy without listener fatigue."
+    ]
+  },
+  {
+    "id": 1138,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What cabling and voltage specification is used for distributed amplified paging systems?",
+    "o": [
+      "22 AWG minimum, 48V DC power",
+      "18 AWG or larger, 24V for distributed amplified systems",
+      "16 AWG minimum, 70V constant voltage",
+      "14 AWG minimum, 100V distributed audio"
+    ],
+    "a": 1,
+    "w": "Paging systems use 18 AWG or larger cabling with 24V for distributed amplified speaker systems. 22 AWG and 48V do not match the specified paging standard. 70V constant voltage systems use different impedance and voltage levels than the specified 24V. 100V distributed audio is a European standard not applicable here.",
+    "k": [
+      "18 AWG cabling for paging systems provides adequate conductor cross-section to deliver the 24V signal over the cable lengths typical in commercial building paging distribution without excessive voltage drop that would reduce amplifier output to end speakers.",
+      "The 24V standard for distributed amplified paging systems contrasts with constant-voltage (70V/100V) loudspeaker distribution systems; constant-voltage systems use step-up/step-down transformers at each speaker to match impedance, while the 24V distributed amplified approach uses lower-impedance connections.",
+      "AWG 18 is specified as the minimum to ensure the cabling can handle the current draw of distributed paging speakers without excessive heating; smaller gauges would increase resistance, causing voltage drops that reduce speaker output in distant zones."
+    ]
+  },
+  {
+    "id": 1139,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What camera Field of View (FOV) maximum prevents image distortion in video conferencing?",
+    "o": [
+      "30 degrees",
+      "45 degrees",
+      "65 degrees",
+      "90 degrees"
+    ],
+    "a": 2,
+    "w": "Video conferencing cameras should not exceed a Field of View of 65 degrees to avoid the wide-angle distortion that makes participants appear stretched or disproportionate. 30 degrees and 45 degrees would be narrower than necessary, excluding participants at the room edges. 90 degrees would introduce significant wide-angle (barrel) distortion.",
+    "k": [
+      "A FOV greater than 65 degrees introduces visible wide-angle distortion: participants at the frame edges appear stretched and faces look unnatural; beyond approximately 90 degrees, fisheye distortion becomes obvious and distracting to remote participants.",
+      "The 65-degree maximum FOV ensures that for a typical conference room table width, participants seated at the sides of the table appear at a natural perspective, comparable to how they would appear if viewed from across the room in person.",
+      "Camera placement distance from the table should be adjusted so that all participants are within the 65-degree FOV; if the room is wider than the 65-degree FOV can capture from the camera position, using two cameras or a PTZ camera with preset positions is preferred over using a wider lens."
+    ]
+  },
+  {
+    "id": 1140,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What types of wall materials are acoustically reflective in video conferencing room design?",
+    "o": [
+      "Acoustic foam panels and fabric-wrapped baffles",
+      "Carpet and thick drapes",
+      "Glass, framed materials, and wood paneling",
+      "Perforated metal and fiberglass ceiling tiles"
+    ],
+    "a": 2,
+    "w": "Walls with glass, framed materials, or wood paneling are acoustically reflective. Acoustic foam, fabric baffles, carpet, and drapes are absorptive materials. Perforated metal and fiberglass ceiling tiles have absorption properties, not reflective ones.",
+    "k": [
+      "Glass is a hard, smooth, rigid surface that reflects incident sound waves with minimal absorption; a glass-walled conference room creates strong specular reflections that cause echo, flutter echo (rapid repeated reflections), and reverberation that degrade speech clarity.",
+      "Wood paneling, while aesthetically warm, is a relatively rigid surface that reflects mid-frequency sound; hollow-backed wood panels may absorb some low-frequency energy through panel resonance, but remain reflective at the speech frequencies (500 Hz\u20134 kHz) most critical for intelligibility.",
+      "Acoustically reflective surfaces must be balanced with absorptive and diffusive materials in conference room design; the designer's goal is a room with controlled RT60 (reverberation time) that supports natural speech without echoes \u2014 typically RT60 between 0.4\u20130.6 seconds for conference rooms."
+    ]
+  },
+  {
+    "id": 1141,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "Why do front projection screens perform poorly in brightly lit environments?",
+    "o": [
+      "Front projection screens reflect only the projector light, blocking ambient light",
+      "Front projection screens reflect both ambient light and projected light equally, reducing image contrast",
+      "Front projection screens absorb ambient light while reflecting projector light",
+      "Front projection screens require polarized light sources to function properly"
+    ],
+    "a": 1,
+    "w": "Front projection screens reflect both ambient light and projected light equally, which washes out the image contrast when ambient light levels are high. Screens do not selectively block ambient light. Reflective screens cannot distinguish between projector and ambient light. Polarization is used in stereoscopic 3D projection, not standard front projection.",
+    "k": [
+      "A front projection screen is a passive, uniformly reflective surface: it reflects incident light (from any source) based on the screen's gain and diffusion characteristics, without distinguishing between the projector's image light and the room's ambient light.",
+      "When ambient light level is high relative to projected image brightness (measured as ANSI lumens), the ambient light reflected by the screen reduces the perceived contrast ratio of the image; a scene with black areas appears gray because the screen also reflects the ambient light falling on it.",
+      "Solutions for bright-environment projection include ultra-short-throw (UST) projectors with ambient light-rejecting screens (which use optical coatings to preferentially reflect light from a specific angle), or substituting a direct-view display (LCD, LED) which is unaffected by ambient light."
+    ]
+  },
+  {
+    "id": 1142,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "How should output devices be positioned in conventional AV system drawings?",
+    "o": [
+      "On the left side of the signal flow diagram",
+      "In the center of the drawing",
+      "On the right side of the signal flow diagram",
+      "At the top of the drawing above all source devices"
+    ],
+    "a": 2,
+    "w": "In conventional AV drawings, output devices (displays, projectors, speakers, recorders) are placed on the right side of the layout. Signal flow in AV diagrams conventionally progresses from left (sources) to right (outputs), mirroring the left-to-right reading direction.",
+    "k": [
+      "The left-to-right signal flow convention in AV drawings places sources (cameras, microphones, players) on the left, processing equipment (mixers, switchers, amplifiers) in the center, and output devices (displays, projectors, speakers) on the right \u2014 consistent with how signal flow is described in narrative form.",
+      "Following this convention makes AV drawings readable without explanation: anyone familiar with AV system documentation can immediately identify signal sources, processing paths, and outputs based on their position on the drawing.",
+      "Deviating from the right-side output convention (e.g., placing outputs on the left or mixing them with sources) creates confusion during system commissioning and maintenance; technicians tracing signal paths expect outputs on the right side and may misidentify components if the convention is not followed."
+    ]
+  },
+  {
+    "id": 1143,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What does a single-row vision seating layout ensure regarding sightlines?",
+    "o": [
+      "All viewers sit equidistant from the display screen",
+      "No viewer's head blocks another viewer's view of the display",
+      "Sightlines pass over the heads of front-row viewers for viewers behind them",
+      "Each row is elevated progressively higher than the row in front"
+    ],
+    "a": 2,
+    "w": "Single-row vision seating ensures that sightlines for viewers pass over the heads of front-row viewers, not through them. This is distinct from multi-row vision or staggered seating. Equal distance from the screen and progressively elevated rows are separate design approaches for different seating scenarios.",
+    "k": [
+      "Single-row vision is designed for shallow seating configurations (a single row of seats) where the critical requirement is that every viewer in the row has an unobstructed sightline to the display without needing to look over the head of a person in the next row.",
+      "This layout differs from theater-style seating where rows are progressively elevated (cinema-style) \u2014 single-row vision applies to flat-floor environments (conference rooms, boardrooms) where row elevation is not practical and the display must be positioned high enough that the front row's head height does not block rear-row sightlines.",
+      "Single-row vision design calculates the minimum display bottom height based on the maximum seated eye height of front-row viewers plus a sight margin; the display must be mounted above this height to guarantee unobstructed viewing for all subsequent rows."
+    ]
+  },
+  {
+    "id": 1144,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What do harmonics represent in audio signals from musical instruments or voices?",
+    "o": [
+      "Fundamental frequencies of bass instruments only",
+      "Electrical interference in audio cables from power lines",
+      "The distinctive overtones that characterize the unique sound of instruments or voices",
+      "Random noise in the frequency range above 10 kHz"
+    ],
+    "a": 2,
+    "w": "Harmonics define the distinctive sounds (timbre/tone quality) of instruments or voices by providing the overtone structure above the fundamental frequency. Harmonics are not limited to bass instruments. Power line interference produces specific frequency artifacts, not musical harmonics. High-frequency noise is different from harmonics.",
+    "k": [
+      "Every acoustic instrument produces sound at a fundamental frequency plus multiple harmonics (integer multiples of the fundamental): a guitar string vibrating at 440 Hz (A4) also produces energy at 880 Hz (2nd harmonic), 1320 Hz (3rd harmonic), etc.; the relative amplitudes of these harmonics create the distinctive timbre of each instrument.",
+      "Two instruments playing the same fundamental pitch sound different because they produce different harmonic series: a clarinet has strong odd harmonics (1st, 3rd, 5th), giving it a hollow sound, while a violin has a rich mix of both odd and even harmonics, creating a brighter timbre.",
+      "AV system microphone and preamplifier selection must preserve harmonic structure to maintain sound quality; amplifiers with high total harmonic distortion (THD) add false harmonics not present in the original signal, coloring the sound in ways that the performer or engineer did not intend."
+    ]
+  },
+  {
+    "id": 1145,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What ceiling loudspeaker spacing provides adequate coverage in areas with background noise below 70 dB?",
+    "o": [
+      "Spacing equal to the ceiling height",
+      "Spacing equal to 1.5\u00d7 the ceiling height",
+      "Spacing equal to twice the ceiling height",
+      "Spacing equal to 3\u00d7 the ceiling height"
+    ],
+    "a": 2,
+    "w": "Ceiling loudspeaker spacing should be approximately twice the ceiling height in areas with background noise levels below 70 dB. Spacing equal to ceiling height would over-cover, increasing cost unnecessarily. 1.5\u00d7 spacing would also be closer than needed. 3\u00d7 spacing would under-cover, creating dead spots between loudspeakers.",
+    "k": [
+      "The 2\u00d7 ceiling height spacing rule ensures that adjacent loudspeaker coverage patterns overlap sufficiently to provide even sound pressure level distribution across the floor; at this spacing, the coverage boundary of each loudspeaker (at half-power, -6 dB point) aligns with the edge of the adjacent speaker's coverage.",
+      "The rule applies specifically to areas with less than 70 dB background noise; in noisier environments (industrial, near mechanical equipment), closer spacing may be required to overcome the background noise and maintain intelligibility.",
+      "Ceiling height directly determines the speaker-to-listener distance in a ceiling-mounted distributed system; the 2\u00d7 ceiling height spacing maintains a consistent coverage geometry that delivers consistent sound levels regardless of absolute ceiling height."
     ]
   }
 ]

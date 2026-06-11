@@ -898,5 +898,505 @@
       "2 km × 3.5 dB/km = 7.0 dB cable loss + (2 × 0.3 dB) connectors + (2 × 0.3 dB) splices = 7.0 + 0.6 + 0.6 = 8.2 dB, rounded to 8.1 dB using the problem's assumed values.",
       "Accurate power budget calculations prevent under-designing optical links; using incorrect per-component loss values leads to links that fail during acceptance testing."
     ]
+  },
+  {
+    "id": 796,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "In IEEE 802.11 systems using Quadrature Phase Shift Keying (QPSK), by how many degrees do the carrier phase angles differ?",
+    "o": [
+      "45 degrees",
+      "90 degrees",
+      "120 degrees",
+      "180 degrees"
+    ],
+    "a": 1,
+    "w": "QPSK encodes data by shifting the carrier among four phase states separated by 90 degrees, allowing each symbol to carry 2 bits. 45-degree separation would describe 8-PSK with eight phase states, not QPSK. 120-degree separation would yield only three states, which cannot map cleanly to binary data. 180-degree separation describes BPSK, which uses just two phase states and carries only 1 bit per symbol.",
+    "k": [
+      "Phase Shift Keying (PSK) is a modulation technique that encodes data by altering the phase of a carrier signal; QPSK ('Quadrature' = four) uses four phase states spaced 90 degrees apart.",
+      "Because QPSK has four states, each symbol represents 2 bits — doubling the data rate of BPSK at the same symbol rate, which is why IEEE 802.11 adopted it as a standard modulation technique.",
+      "Remember the divide-by rule: 360° ÷ number of phase states = phase separation, so QPSK is 360° ÷ 4 = 90°."
+    ]
+  },
+  {
+    "id": 797,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "In balanced twisted-pair transmission, how is PSAACRF calculated?",
+    "o": [
+      "Minimum PSAFEXT loss minus minimum attenuation",
+      "Minimum PSANEXT loss minus maximum attenuation",
+      "The sum of PSAFEXT loss and insertion loss",
+      "Maximum attenuation minus minimum PSAFEXT loss"
+    ],
+    "a": 0,
+    "w": "PSAACRF is derived by subtracting the minimum attenuation from the minimum PSAFEXT loss, yielding the margin between the received signal and far-end alien crosstalk. PSANEXT is a near-end parameter and plays no role in a far-end ratio. Adding PSAFEXT and insertion loss would combine two losses instead of expressing their difference. Reversing the subtraction (attenuation minus PSAFEXT) would produce a negative, meaningless figure since crosstalk loss normally exceeds attenuation.",
+    "k": [
+      "PSAACRF (power sum attenuation to alien crosstalk ratio, far end) expresses how much stronger the attenuated signal is than the combined alien crosstalk arriving at the far end of a pair.",
+      "Because decibels are logarithmic, dividing two power ratios becomes a simple subtraction: PSAACRF = minimum PSAFEXT loss − minimum attenuation.",
+      "Spot the embedded acronym: 'ACR' always means Attenuation-to-Crosstalk Ratio, so any ACR parameter is computed as crosstalk loss minus attenuation."
+    ]
+  },
+  {
+    "id": 798,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "What are ISDN B channels used for?",
+    "o": [
+      "Signaling and call setup control",
+      "Voice and data transmission",
+      "Network clock synchronization",
+      "Error correction overhead"
+    ],
+    "a": 1,
+    "w": "ISDN B (bearer) channels carry the user payload — voice and data transmission. Signaling and call setup are handled by the separate D channel, not the B channels. Clock synchronization and error correction are framing and protocol overhead functions, not the purpose of a bearer channel.",
+    "k": [
+      "ISDN (Integrated Services Digital Network) splits its capacity into B channels for user traffic and a D channel for signaling.",
+      "The defining principle is out-of-band signaling: B channels stay fully available for voice and data because control messages travel on the D channel.",
+      "Memory aid: B = Bearer (bears the payload), D = Data-about-the-call (signaling)."
+    ]
+  },
+  {
+    "id": 799,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "What happens when a transmitted signal encounters a discontinuity in impedance along a cabling link?",
+    "o": [
+      "The signal accelerates through the discontinuity",
+      "All of the signal power is absorbed at that point",
+      "Some of the signal power is reflected, causing echo",
+      "The signal frequency shifts downward"
+    ],
+    "a": 2,
+    "w": "At an impedance discontinuity, part of the signal power is reflected back toward the source, which manifests as echo. The propagation velocity is set by the dielectric, so the signal does not accelerate. Total absorption would require a perfectly matched terminating load, the opposite of a discontinuity. Frequency is preserved through passive cabling; a mismatch changes amplitude distribution, not frequency.",
+    "k": [
+      "Impedance matching is the practice of keeping characteristic impedance uniform along a transmission path so power transfers without reflection.",
+      "Any abrupt impedance change (connector, kink, mixed cable types) reflects a portion of the incident power back to the source — the basis of return loss and echo.",
+      "Think of light hitting a window: most passes through, but the impedance 'boundary' bounces some back — the same physics behind echo on copper links."
+    ]
+  },
+  {
+    "id": 800,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Which combination of factors determines the bandwidth of a multimode optical fiber system?",
+    "o": [
+      "Numerical aperture, connector count, and core diameter",
+      "Chromatic dispersion and attenuation only",
+      "Splice loss, wavelength, and jacket type",
+      "Chromatic dispersion, modal dispersion, and length"
+    ],
+    "a": 3,
+    "w": "Multimode system bandwidth is set by chromatic dispersion, modal dispersion, and the link length over which both accumulate. Numerical aperture and core diameter influence coupling and mode count but are not the stated bandwidth determinants, and connector count affects loss, not bandwidth. Attenuation reduces power rather than limiting bandwidth. Splice loss and jacket type are loss and mechanical considerations with no bearing on dispersion-limited bandwidth.",
+    "k": [
+      "Bandwidth in optical fiber describes how fast pulses can be sent before they smear together; in multimode fiber it is quoted in MHz-km because it scales with distance.",
+      "Pulse spreading comes from two mechanisms — modal dispersion (different ray paths) and chromatic dispersion (different wavelengths travel at different speeds) — and both grow with length.",
+      "Memory hook: 'modes + colors + kilometers' — the three things that stretch a multimode pulse."
+    ]
+  },
+  {
+    "id": 801,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "What is the purpose of applying power penalties in an optical fiber system design?",
+    "o": [
+      "To adjust the system gain",
+      "To increase the transmitter output power",
+      "To extend the maximum allowable cable length",
+      "To eliminate the need for an operating margin"
+    ],
+    "a": 0,
+    "w": "Power penalties are subtracted from the link budget to adjust the system gain, accounting for impairments such as dispersion and reflections. They do not raise transmitter output — that is a hardware characteristic. They reduce, rather than extend, the usable reach because they consume budget. They supplement, not replace, the operating margin reserved for aging and repairs.",
+    "k": [
+      "A link power budget is the difference between transmitter output and receiver sensitivity, representing the total loss a fiber system can tolerate.",
+      "Power penalties are deliberate deductions applied to that budget — they trim the effective system gain to reflect real-world impairments beyond simple attenuation.",
+      "Treat penalties like bank fees: they do not change your income (transmit power); they shrink what you can actually spend (system gain)."
+    ]
+  },
+  {
+    "id": 802,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Which term describes the loss of energy in an electromagnetic signal as it passes through a medium?",
+    "o": [
+      "Diffraction",
+      "Absorption",
+      "Reflection",
+      "Scattering"
+    ],
+    "a": 1,
+    "w": "Absorption is the conversion of signal energy into heat or other forms as the wave travels through a medium. Diffraction is the bending of waves around an obstacle, not an energy-conversion loss in the medium. Reflection returns energy at a boundary rather than dissipating it within the material. Scattering redirects energy in many directions but is a distinct mechanism from absorption.",
+    "k": [
+      "RF propagation impairments include reflection, refraction, scattering, diffraction, and absorption — each removes or redirects energy in a different way.",
+      "Absorption is unique among them: the medium itself soaks up the wave's energy, typically converting it to heat (the microwave-oven effect on water molecules).",
+      "Distinguish by destination: reflected energy bounces back, scattered energy sprays around, diffracted energy bends past — only absorbed energy disappears into the material."
+    ]
+  },
+  {
+    "id": 803,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "What conductor configuration does single-pair Ethernet (SPE) use for connectivity?",
+    "o": [
+      "Two pairs of unshielded copper conductors",
+      "Four-pair category-rated cabling only",
+      "Shielded or unshielded single twisted-pair copper conductors",
+      "A coaxial conductor with a foil shield"
+    ],
+    "a": 2,
+    "w": "SPE runs Ethernet over one twisted pair of copper conductors, which may be either shielded or unshielded. Two-pair and four-pair configurations describe traditional Ethernet cabling such as 10BASE-T or 1000BASE-T, not SPE. Coaxial construction is unbalanced and belongs to legacy Ethernet (10BASE2/5) and video applications, not single-pair Ethernet.",
+    "k": [
+      "Single-pair Ethernet (SPE) is an Ethernet physical layer designed for one balanced copper pair, targeting building automation, industrial sensors, and IoT endpoints.",
+      "Its key principle is doing both data and power (PoDL) over a single pair, cutting cable size, weight, and termination cost versus four-pair designs.",
+      "The name is the spec: 'single-pair' literally means one twisted pair — shielded or unshielded — never two or four."
+    ]
+  },
+  {
+    "id": 804,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Which statement best describes an analog signal?",
+    "o": [
+      "A series of discrete voltage pulses representing bits",
+      "A signal that must be regenerated to travel any distance",
+      "A carrier that switches between exactly two phase states",
+      "A continuous waveform that varies with time to carry information"
+    ],
+    "a": 3,
+    "w": "Analog signals are continuous waveforms whose time-varying amplitude, frequency, or phase carries the information. Discrete voltage pulses describe digital signals. Regeneration to extend distance is the hallmark of digital transmission; analog signals are amplified (along with their noise) instead. A two-phase-state carrier describes BPSK digital modulation, not an analog waveform.",
+    "k": [
+      "Signals divide into analog (continuous) and digital (discrete) forms; analog waveforms can take any value within their range at any instant.",
+      "Because every point of an analog waveform is information, accumulated noise cannot be stripped out — unlike digital pulses, which can be regenerated cleanly.",
+      "Picture a dimmer switch versus a light switch: analog sweeps smoothly through values, digital snaps between fixed states."
+    ]
+  },
+  {
+    "id": 805,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "In ISO/IEC 11801-1, what do 'classes' and 'categories' respectively define for balanced twisted-pair cabling?",
+    "o": [
+      "Classes define channel performance; categories define components",
+      "Classes define components; categories define channel performance",
+      "Both terms define installation workmanship requirements",
+      "Classes define shielding type; categories define conductor gauge"
+    ],
+    "a": 0,
+    "w": "ISO/IEC 11801-1 assigns classes (D, E, EA, etc.) to end-to-end channel performance and categories (5e, 6, 6A, etc.) to the individual components that build those channels. The reversed pairing is the common trap answer. Neither term addresses installation workmanship, which is covered by installation standards. Shielding type and conductor gauge are construction attributes, not what these designations define.",
+    "k": [
+      "ISO/IEC 11801-1 is the international generic cabling standard that parallels the TIA-568 series used in North America.",
+      "Its naming logic: components (cable, connectors, cords) earn a category rating, and a complete channel assembled from them earns a class rating.",
+      "Memory aid: 'C for parts, Class for paths' — categories rate the pieces, classes rate the assembled transmission path."
+    ]
+  },
+  {
+    "id": 806,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "The decibel (dB) is best described as what type of measurement?",
+    "o": [
+      "An absolute voltage measurement",
+      "A relative power measurement",
+      "An absolute power measurement referenced to 1 mW",
+      "A measurement of frequency drift"
+    ],
+    "a": 1,
+    "w": "The decibel expresses a ratio between two power levels, making it a relative measurement. It is not an absolute voltage unit — volts serve that purpose. An absolute power level referenced to 1 mW is dBm, a related but distinct unit. Frequency drift is measured in hertz or parts per million, not decibels.",
+    "k": [
+      "The decibel is a logarithmic unit comparing two quantities, most often power out versus power in across a link or component.",
+      "Because dB is relative, it is meaningless without a reference; adding a suffix (dBm, dBµV) anchors it to an absolute reference value.",
+      "Quick check: '3 dB' alone tells you something doubled or halved — it cannot tell you how many watts you have, proving it is a ratio, not a level."
+    ]
+  },
+  {
+    "id": 807,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Which characteristics of a carrier signal can modulation alter to add information such as voice or video?",
+    "o": [
+      "Impedance, capacitance, or inductance",
+      "Wavelength stability, polarity, or jitter",
+      "Amplitude, frequency, or phase",
+      "Attenuation, delay, or crosstalk"
+    ],
+    "a": 2,
+    "w": "Modulation impresses information onto a carrier by varying its amplitude, frequency, or phase — the basis of AM, FM, and PM/PSK families. Impedance, capacitance, and inductance are passive circuit properties of the medium, not modulated carrier attributes. Polarity and jitter are signal-quality descriptors rather than modulation dimensions. Attenuation, delay, and crosstalk are transmission impairments, not information-carrying parameters.",
+    "k": [
+      "Modulation is the process of encoding data (voice, video, information) onto a carrier wave for transmission.",
+      "A sine-wave carrier has exactly three adjustable properties — amplitude, frequency, and phase — so every modulation scheme manipulates one or more of these.",
+      "Memory aid: A-F-P covers it all; even complex schemes like QAM are just amplitude plus phase varied together."
+    ]
+  },
+  {
+    "id": 808,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Which center wavelength is NOT characteristic of LED optical fiber sources?",
+    "o": [
+      "850 nm",
+      "1300 nm",
+      "780 nm",
+      "870 nm"
+    ],
+    "a": 2,
+    "w": "A 780 nm center wavelength is not characteristic of LED sources; that wavelength is associated with short-wavelength laser devices such as those developed for optical disc players. LEDs for multimode fiber are characterized in the 850 nm window, including center wavelengths around 870 nm, and in the 1300 nm window — making the other three options legitimate LED territory.",
+    "k": [
+      "LEDs are low-cost, broad-spectrum optical sources used with multimode fiber, operating in the 850 nm and 1300 nm transmission windows.",
+      "Knowing the standard windows (850/1300 nm for multimode, 1310/1550 nm for single-mode) lets you reject 780 nm as an outlier for LED transmitters.",
+      "Association trick: 780 nm = CD-player laser diode, not a datacom LED."
+    ]
+  },
+  {
+    "id": 809,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "In circuit analysis, transmission lines are represented by passive component circuits arranged in what configuration?",
+    "o": [
+      "A bridge network",
+      "A delta network",
+      "A series resonant loop",
+      "A ladder network"
+    ],
+    "a": 3,
+    "w": "A transmission line is modeled as distributed series inductance/resistance and shunt capacitance/conductance repeated along its length, forming a ladder network. A bridge network is a measurement topology (e.g., Wheatstone bridge), not a line model. Delta networks describe three-phase power connections. A series resonant loop models a tuned circuit at one frequency, not the distributed nature of a line.",
+    "k": [
+      "A transmission line model breaks a cable into infinitely many small segments, each containing series R and L plus shunt C and G elements.",
+      "Repeating those identical RLCG segments end-to-end produces the characteristic 'ladder' schematic, from which characteristic impedance is derived.",
+      "Visualize the schematic: series elements form the rails and shunt elements the rungs — it literally looks like a ladder."
+    ]
+  },
+  {
+    "id": 810,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Instead of bandwidth, what parameter do single-mode optical fiber systems often use to define capacity?",
+    "o": [
+      "Pulse distortion",
+      "Numerical aperture",
+      "Modal dispersion",
+      "Return loss"
+    ],
+    "a": 0,
+    "w": "Single-mode systems often define their capacity by pulse distortion rather than a bandwidth figure, because only one mode propagates and the MHz-km bandwidth concept of multimode fiber does not apply. Numerical aperture relates to light-gathering ability, not capacity. Modal dispersion is absent in single-mode fiber since there is only one mode. Return loss quantifies reflections, not information capacity.",
+    "k": [
+      "Single-mode fiber carries one propagation mode in a tiny core (~9 µm), eliminating the modal dispersion that limits multimode bandwidth.",
+      "Its capacity limit is instead expressed through pulse distortion effects (chromatic and polarization-mode dispersion) acting on each transmitted pulse.",
+      "Contrast for recall: multimode datasheets quote MHz-km bandwidth; single-mode datasheets quote dispersion (ps/nm-km) — i.e., pulse distortion."
+    ]
+  },
+  {
+    "id": 811,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Symmetrical Digital Subscriber Line (SDSL) is a single-pair version of which technology?",
+    "o": [
+      "ADSL",
+      "HDSL",
+      "VDSL",
+      "ISDN BRI"
+    ],
+    "a": 1,
+    "w": "SDSL delivers the symmetric service of High Bit-rate Digital Subscriber Line (HDSL) over a single pair instead of HDSL's multiple pairs. ADSL is inherently asymmetric and already single-pair, so SDSL is not derived from it. VDSL is a later, higher-speed variant, not the parent of SDSL. ISDN BRI is a switched digital service, not a DSL technology.",
+    "k": [
+      "The xDSL family reuses existing telephone copper pairs for digital transmission, with variants differing in speed, symmetry, and pair count.",
+      "SDSL keeps HDSL's equal upstream/downstream rates while reducing the requirement to one twisted pair — 'S' for symmetrical, single-pair.",
+      "Lineage memory aid: HDSL (2-3 pairs, symmetric) shrank to SDSL (1 pair, symmetric); ADSL is the asymmetric cousin for residential internet."
+    ]
+  },
+  {
+    "id": 812,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "A cable shield effectiveness rating of 42 dB falls into which classification?",
+    "o": [
+      "Poor",
+      "Fair",
+      "Good",
+      "Excellent"
+    ],
+    "a": 2,
+    "w": "Shield effectiveness ratings are graded poor, fair, good, and excellent, and 42 dB sits in the 'good' band. 'Poor' describes much lower figures such as 19 dB. 'Fair' covers the intermediate range below the good threshold. 'Excellent' is reserved for ratings higher than the good band, so 42 dB does not qualify.",
+    "k": [
+      "Shield effectiveness quantifies, in dB, how much external electromagnetic energy a cable shield blocks from reaching the conductors.",
+      "The grading scale runs poor → fair → good → excellent as dB values climb; 42 dB lands squarely in the 'good' tier.",
+      "Anchor two reference points: 19 dB = poor, 42 dB = good — interpolate other values between these markers."
+    ]
+  },
+  {
+    "id": 813,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "In the North American digital multiplexing hierarchy, which level sits between DS1 and DS2?",
+    "o": [
+      "DS0",
+      "DS4",
+      "DS3",
+      "DS1C"
+    ],
+    "a": 3,
+    "w": "DS1C is a North American multiplexing level that combines two DS1s, placing it between DS1 (1.544 Mb/s) and DS2 (6.312 Mb/s). DS0 is the 64 kb/s base channel below DS1. DS3 (44.736 Mb/s) and DS4 both sit above DS2 in the hierarchy, not between DS1 and DS2.",
+    "k": [
+      "The North American digital hierarchy stacks multiplexing levels from DS0 (64 kb/s) upward through DS1, DS1C, DS2, DS3, and DS4.",
+      "DS1C exists as an intermediate step: two DS1 streams combined (~3.152 Mb/s), filling the gap before DS2's four-DS1 capacity.",
+      "Read the suffix: the 'C' in DS1C means 'concatenated/combined' DS1s — more than one DS1 but less than a DS2."
+    ]
+  },
+  {
+    "id": 814,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Which description correctly characterizes OM3 optical fiber?",
+    "o": [
+      "A 50/125 µm laser-optimized multimode fiber for 850 nm wavelengths",
+      "A 62.5/125 µm LED-optimized multimode fiber",
+      "A 9/125 µm dispersion-shifted single-mode fiber",
+      "A 50/125 µm fiber optimized for 1550 nm transmission"
+    ],
+    "a": 0,
+    "w": "OM3 is a 50/125 µm laser-optimized multimode fiber engineered for 850 nm VCSEL transmission. The 62.5/125 µm LED-optimized construction describes legacy OM1. A 9/125 µm dispersion-shifted fiber is a single-mode type (ITU-T G.653 territory), not multimode. The 1550 nm window belongs to single-mode systems; OM3's optimization target is 850 nm.",
+    "k": [
+      "The OM (optical multimode) designations grade multimode fibers: OM1 (62.5 µm legacy) through OM5, with OM3 and above being 50 µm laser-optimized types.",
+      "OM3's defining feature is a refractive index profile tuned for 850 nm VCSEL launches, enabling 10 Gb/s over 300 m.",
+      "Shorthand: 'OM3 = 50 µm + VCSEL + 850 nm' — if any of those three elements is missing, the description is not OM3."
+    ]
+  },
+  {
+    "id": 815,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "In what frequency range do analog voice telephone circuits operate?",
+    "o": [
+      "20 Hz to 20 kHz",
+      "300 Hz to 3400 Hz",
+      "0 Hz to 4000 Hz",
+      "300 Hz to 3.4 MHz"
+    ],
+    "a": 1,
+    "w": "Analog voice telephone circuits are band-limited to 300 Hz to 3400 Hz, which preserves speech intelligibility while conserving spectrum. 20 Hz to 20 kHz is the full range of human hearing, far wider than a phone channel. 0 Hz to 4000 Hz describes the nominal 4 kHz channel spacing, not the actual passband. 300 Hz to 3.4 MHz confuses kilohertz with megahertz and is a thousand times too wide.",
+    "k": [
+      "The voice band is the slice of audio spectrum a telephone channel passes; everything outside it is filtered off before transmission.",
+      "300-3400 Hz captures the energy needed for intelligible speech, allowing channels to be stacked at 4 kHz spacing in carrier systems.",
+      "Distinguish: humans hear 20 Hz-20 kHz, but the phone network only passes 300-3400 Hz — which is why music on hold sounds thin."
+    ]
+  },
+  {
+    "id": 816,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "What is the maximum attenuation of single-mode optical fiber at 1383 nm for inside plant cables?",
+    "o": [
+      "0.4 dB/km",
+      "0.5 dB/km",
+      "1.0 dB/km",
+      "1.5 dB/km"
+    ],
+    "a": 2,
+    "w": "Inside plant single-mode cable is specified at a maximum of 1.0 dB/km at 1383 nm, the water-peak wavelength where hydroxyl absorption historically raised loss. 0.4 dB/km is the outside plant limit at 1310/1550 nm, not the 1383 nm inside plant figure. 0.5 dB/km belongs to no specification point here. 1.5 dB/km is a multimode attenuation value at 1300 nm, not single-mode at 1383 nm.",
+    "k": [
+      "1383 nm is the 'water peak' where residual OH ions in glass absorb light, traditionally the worst-loss point between the 1310 and 1550 nm windows.",
+      "Inside plant single-mode cable tolerates up to 1.0 dB/km at this wavelength — higher than the 0.4 dB/km allowed at 1310/1550 nm for outside plant.",
+      "Pattern to remember: tight low numbers (0.4) for long outdoor hauls, relaxed 1.0 dB/km at the water peak indoors where runs are short."
+    ]
+  },
+  {
+    "id": 817,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Near which wavelength do most optical fibers exhibit minimal chromatic dispersion?",
+    "o": [
+      "850 nm",
+      "1550 nm",
+      "1383 nm",
+      "1300 nm"
+    ],
+    "a": 3,
+    "w": "Standard optical fibers have a chromatic dispersion null near 1300 nm, where material and waveguide dispersion cancel. At 850 nm chromatic dispersion is large, which is why wide-spectrum sources suffer there. 1550 nm offers minimum attenuation but significant positive dispersion in standard fiber. 1383 nm is the water-peak attenuation point, unrelated to the dispersion minimum.",
+    "k": [
+      "Chromatic dispersion is pulse spreading caused by different wavelengths within a source's spectrum traveling at slightly different speeds.",
+      "In standard fiber the dispersion zero falls near 1300 nm, making that window forgiving for broad-spectrum LED sources.",
+      "Keep the two minima straight: ~1300 nm = minimum dispersion, ~1550 nm = minimum attenuation — dispersion-shifted fibers exist precisely to move the null to 1550 nm."
+    ]
+  },
+  {
+    "id": 818,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Which multimode optical fiber type is considered legacy and is not recommended for new installations?",
+    "o": [
+      "OM1",
+      "OM3",
+      "OM4",
+      "OM5"
+    ],
+    "a": 0,
+    "w": "OM1, the 62.5/125 µm LED-era fiber, is legacy and not recommended for new installations because its 200 MHz-km bandwidth cannot support modern data rates at useful distances. OM3 and OM4 are laser-optimized 50 µm fibers that remain standard choices for premises backbones. OM5 is the newest wideband multimode type designed for short-wavelength division multiplexing, the opposite of legacy.",
+    "k": [
+      "Multimode fiber generations run OM1 through OM5, with each step raising effective modal bandwidth for faster Ethernet over longer spans.",
+      "OM1's combination of a 62.5 µm core and LED optimization caps it at low bandwidth, so standards bodies steer new designs to OM4 or higher.",
+      "Rule of thumb: the lower the OM number, the older the fiber — OM1 is the only one with a 62.5 µm core in the family."
+    ]
+  },
+  {
+    "id": 819,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Which transmission mode allows signals to travel in only one direction at a time, alternating between directions?",
+    "o": [
+      "Simplex",
+      "Half-duplex",
+      "Full duplex",
+      "Multiplex"
+    ],
+    "a": 1,
+    "w": "Half-duplex permits two-way communication but only one direction at a time, like a push-to-talk radio. Simplex is strictly one-way with no return path at all. Full duplex carries both directions simultaneously. Multiplex is not a directionality mode — it describes combining multiple signals onto one medium.",
+    "k": [
+      "Directionality modes classify links by how traffic flows: simplex (one way), half-duplex (both ways, alternating), and full duplex (both ways at once).",
+      "Half-duplex's defining constraint is turn-taking: the channel reverses direction, so stations must wait for the medium to clear.",
+      "Anchor with examples: broadcast TV = simplex, walkie-talkie = half-duplex, telephone call = full duplex."
+    ]
+  },
+  {
+    "id": 820,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "A screened balanced twisted-pair cable operates at 30 °C (86 °F). Approximately how much higher is its attenuation than at the 20 °C (68 °F) reference temperature?",
+    "o": [
+      "0.2%",
+      "1%",
+      "4%",
+      "2%"
+    ],
+    "a": 3,
+    "w": "Screened cables derate at 0.2% per degree Celsius above 20 °C, so a 10 °C rise yields 10 × 0.2% = 2% additional attenuation. 0.2% would be the increase for just one degree. 1% corresponds to only a 5 °C rise. 4% would require a 20 °C rise to 40 °C, double the temperature increase in this scenario.",
+    "k": [
+      "Copper cable attenuation rises with temperature because conductor resistance increases, so insertion loss specs are referenced to 20 °C.",
+      "The calculation is linear: total increase = (operating °C − 20 °C) × 0.2% for screened balanced twisted-pair cables.",
+      "Quick mental math: every 5 °C above reference costs a screened cable about 1% extra attenuation."
+    ]
   }
 ]

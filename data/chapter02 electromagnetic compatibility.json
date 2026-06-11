@@ -698,5 +698,505 @@
       "A 100% coverage foil shield with poor termination (floating at one end) provides almost no practical EMI protection; proper grounding is as important as the shield material itself.",
       "Shield material and thickness are secondary to these two factors; a well-grounded basic foil shield often outperforms a sophisticated braid shield with poor termination connections."
     ]
+  },
+  {
+    "id": 821,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "From which two types of emissions do EMI problems typically arise?",
+    "o": [
+      "Conducted and radiated emissions",
+      "Harmonic and transient emissions",
+      "Inductive and capacitive emissions",
+      "Thermal and acoustic emissions"
+    ],
+    "a": 0,
+    "w": "EMI problems typically arise from conducted emissions (traveling along wiring) and radiated emissions (propagating through space). Harmonics and transients are waveform phenomena that may ride on either path but are not the two emission classes. Inductive and capacitive describe coupling mechanisms, not the standard emission categories. Thermal and acoustic energy are not electromagnetic emissions at all.",
+    "k": [
+      "Electromagnetic interference (EMI) is unwanted electromagnetic energy that degrades equipment performance, and every EMI problem reaches its victim somehow.",
+      "The two recognized delivery routes are conduction (over conductors such as power and signal lines) and radiation (through the air as fields).",
+      "Sort any EMI complaint with one question: did the noise arrive by wire (conducted) or by air (radiated)?"
+    ]
+  },
+  {
+    "id": 822,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Through which paths does conducted coupling typically affect electronic devices?",
+    "o": [
+      "Free-space propagation between antennas",
+      "Input/output signal lines or utility power distribution",
+      "Magnetic field linkage between adjacent wire loops",
+      "Electrostatic arcing through air gaps"
+    ],
+    "a": 1,
+    "w": "Conducted coupling reaches devices over their physical wiring — input/output signal lines or the utility power distribution feeding them. Free-space propagation describes radiated, not conducted, interference. Magnetic field linkage between loops is inductive coupling, a field mechanism. Electrostatic arcing through air is an ESD event, not conduction along installed conductors.",
+    "k": [
+      "Coupling is the means by which interference energy transfers from a source to a victim circuit; it can be conducted, radiated, inductive, or capacitive.",
+      "Conducted coupling requires a metallic path, so its entry points are always the cables attached to the device — signal I/O lines and power wiring.",
+      "Inspection shortcut: unplug the suspect cable and the noise stops — that confirms a conducted path rather than a radiated one."
+    ]
+  },
+  {
+    "id": 823,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Which phenomenon is identified as a common cause of EMI?",
+    "o": [
+      "The photoelectric effect",
+      "Thermal (Johnson) noise",
+      "Electrostatic discharge (ESD)",
+      "The piezoelectric effect"
+    ],
+    "a": 2,
+    "w": "Electrostatic discharge — the sudden transfer of accumulated static charge — is a common cause of EMI, generating fast, broadband transients. The photoelectric effect concerns electron emission under light and does not disturb cabling systems. Thermal noise is an intrinsic random noise floor in components, not an interference event. The piezoelectric effect converts mechanical stress to voltage and is not a recognized EMI source in buildings.",
+    "k": [
+      "ESD occurs when static charge built up on people or objects discharges abruptly, producing a steep current spike rich in high-frequency energy.",
+      "That spike couples into nearby circuits and cabling, making ESD one of the classic EMI culprits alongside motors, switches, and radio transmitters.",
+      "Remember the doorknob spark: a single discharge lasting nanoseconds can radiate interference across hundreds of megahertz."
+    ]
+  },
+  {
+    "id": 824,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Why should metallic raceways and enclosures be electrically continuous?",
+    "o": [
+      "To increase their mechanical load rating",
+      "To reduce cable pulling tension during installation",
+      "To improve heat dissipation from enclosed cables",
+      "To ensure proper grounding"
+    ],
+    "a": 3,
+    "w": "Electrical continuity across raceway joints and enclosure sections ensures proper grounding, so the metal acts as an effective shield and fault path. Continuity has no bearing on mechanical load rating, which depends on the hardware itself. Pulling tension relates to bends and lubrication, not bonding. Heat dissipation depends on ventilation and fill, not on whether the sections are electrically joined.",
+    "k": [
+      "Metallic raceways and enclosures double as shields and grounding paths for the cabling they contain — but only if current can flow along their full length.",
+      "Any gap, painted joint, or missing bonding jumper breaks continuity, leaving floating metal segments that can re-radiate noise instead of draining it.",
+      "Inspection cue: every raceway joint should be treated like a circuit connection — clean metal-to-metal contact or a bonding jumper."
+    ]
+  },
+  {
+    "id": 825,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Under what condition does EMI potential arise between two devices?",
+    "o": [
+      "When they share an electromagnetic environment with overlapping frequencies",
+      "Only when they are physically connected by cabling",
+      "Only when one device operates above 1 GHz",
+      "When they are powered from different electrical phases"
+    ],
+    "a": 0,
+    "w": "EMI potential exists when devices share an electromagnetic environment and their operating frequencies overlap, allowing one device's emissions to fall within another's sensitive band. A physical cable connection is not required — radiated coupling needs no wires. EMI occurs across the whole spectrum, not just above 1 GHz. Power phase assignment does not by itself create or prevent interference.",
+    "k": [
+      "An electromagnetic environment is the sum of all fields and signals present in a space; every device both emits into and receives from it.",
+      "Interference requires two overlaps: shared space (coupling opportunity) and shared spectrum (frequency overlap between emission and susceptibility).",
+      "Think of two conversations in one room: trouble only starts when both speak at the same time in the same language — same place, same frequency."
+    ]
+  },
+  {
+    "id": 826,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "What is the frequency range of the Very Low Frequency (VLF) band?",
+    "o": [
+      "300 Hz to 3000 Hz",
+      "3 kHz to 30 kHz",
+      "30 kHz to 300 kHz",
+      "3 Hz to 30 Hz"
+    ],
+    "a": 1,
+    "w": "The VLF band spans 3 kHz to 30 kHz. 300 Hz to 3000 Hz is the Ultra Low Frequency (ULF) band one decade below. 30 kHz to 300 kHz is the Low Frequency (LF) band one decade above. 3 Hz to 30 Hz is the Extremely Low Frequency (ELF) band at the bottom of the chart.",
+    "k": [
+      "The ITU divides the radio spectrum into named decade bands; VLF (Very Low Frequency) occupies 3-30 kHz.",
+      "Each band runs from 3×10^n to 30×10^n Hz, so locating VLF just requires counting decades: ELF, SLF, ULF, then VLF starting at 3 kHz.",
+      "Anchor point: VLF is the first band measured in kilohertz — everything below it (ULF, SLF, ELF) is still in plain hertz."
+    ]
+  },
+  {
+    "id": 827,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Which statement best defines electromagnetic interference (EMI)?",
+    "o": [
+      "Any signal transmitted above 30 MHz",
+      "The intentional radiation of RF energy for communication",
+      "Electromagnetic fields with undesirable effects on devices or systems",
+      "The attenuation of signals inside shielded enclosures"
+    ],
+    "a": 2,
+    "w": "EMI refers to electromagnetic fields that have undesirable effects on devices or systems — the energy is defined by its harmful result, not its frequency. Signals above 30 MHz are simply VHF-and-up transmissions, many of them wanted. Intentional radiation for communication is the opposite of interference; it becomes EMI only when it disrupts something else. Attenuation inside enclosures describes shielding performance, not interference itself.",
+    "k": [
+      "EMI is defined functionally: any electromagnetic energy — intentional or accidental — that degrades the performance of equipment it reaches.",
+      "The same transmission can be a service to one receiver and EMI to another; what matters is the undesirable effect on the victim system.",
+      "Litmus test: no victim, no interference — EMI exists only relative to a device it disturbs."
+    ]
+  },
+  {
+    "id": 828,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "What types of noise can electrical power converters such as rectifiers and inverters produce?",
+    "o": [
+      "Only differential mode (DM) noise",
+      "Only common mode (CM) noise",
+      "Neither CM nor DM noise",
+      "Both CM and DM noise"
+    ],
+    "a": 3,
+    "w": "Rectifiers and inverters switch large currents rapidly, generating both common-mode noise (appearing identically on conductors relative to ground) and differential-mode noise (appearing between the conductors). Limiting them to only DM or only CM understates their behavior — their switching edges couple through both paths. Claiming they produce neither contradicts their nature as one of the most prolific noise classes in buildings.",
+    "k": [
+      "Power converters (rectifiers, inverters, switch-mode supplies) chop current at high speed, making them rich sources of switching noise.",
+      "Their noise exits via two simultaneous mechanisms: differential mode between line conductors and common mode through parasitic capacitance to ground.",
+      "Design consequence: converter filtering needs both X capacitors (DM, line-to-line) and Y capacitors (CM, line-to-ground) — one type alone leaves half the noise untreated."
+    ]
+  },
+  {
+    "id": 829,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Why does radiated interference enter devices?",
+    "o": [
+      "Due to proximity and inadequate shielding, grounding, or bonding",
+      "Only through direct conductive connections to the source",
+      "Because of excessive cable length alone",
+      "Due to low humidity in the equipment room"
+    ],
+    "a": 0,
+    "w": "Radiated interference enters equipment because of proximity to the source combined with inadequate shielding, grounding, or bonding — the defenses that should block or drain the field. Direct conductive connections describe conducted, not radiated, entry. Cable length can worsen antenna behavior but is not by itself the stated cause. Low humidity promotes static buildup (ESD) rather than radiated field ingress.",
+    "k": [
+      "Radiated interference travels through space as electromagnetic fields and needs no wired path to reach a victim device.",
+      "Whether it gets inside depends on distance (field strength falls with separation) and on the integrity of shielding, grounding, and bonding barriers.",
+      "Defense checklist: move it away, shield it, bond it, ground it — radiated ingress means one of those four failed."
+    ]
+  },
+  {
+    "id": 830,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Crosstalk within a balanced cable results from what mechanism?",
+    "o": [
+      "Reflections at impedance discontinuities",
+      "Coupling between two or more pairs inside the cable",
+      "External RF fields penetrating the cable jacket",
+      "Resistance unbalance within a single conductor"
+    ],
+    "a": 1,
+    "w": "Crosstalk results from electromagnetic coupling between two or more pairs running inside the same balanced cable. Reflections at impedance discontinuities produce return loss and echo, a different impairment. External RF penetrating the jacket is alien or environmental noise, not crosstalk between the cable's own pairs. Resistance unbalance degrades balance but is not the coupling mechanism that defines crosstalk.",
+    "k": [
+      "Crosstalk is the unwanted transfer of signal energy from one transmission pair to a neighboring pair sharing the same sheath.",
+      "It arises from capacitive and inductive coupling between closely spaced pairs, which is why varied twist rates are used to decorrelate them.",
+      "Scope marker: crosstalk is internal (pair-to-pair in one cable); noise from other cables is 'alien' crosstalk, and noise from the environment is EMI."
+    ]
+  },
+  {
+    "id": 831,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "How do unshielded and untwisted cables in balanced twisted-pair systems behave with respect to external signals?",
+    "o": [
+      "They reject external signals through balance alone",
+      "They act as low-pass filters for interference",
+      "They are susceptible to external signals and behave like antennas",
+      "They convert external noise into harmless heat"
+    ],
+    "a": 2,
+    "w": "Conductors that are neither shielded nor twisted are susceptible to external signals and behave like antennas, both picking up and radiating energy. Balance alone cannot save an untwisted run, because the conductors no longer experience equal coupling. Cables provide no useful low-pass filtering of interference. Passive copper does not convert received noise into harmless heat — it delivers it to the connected equipment.",
+    "k": [
+      "Twisting and shielding are the two physical defenses of balanced cabling: twists equalize coupling onto both conductors, and shields block fields outright.",
+      "Strip both defenses away and the wire is just an open antenna — any conductor of meaningful length efficiently couples to ambient fields.",
+      "Field reminder: untwisted cross-connect jumpers and stripped-back terminations are miniature antennas; keep untwisted lengths to a minimum."
+    ]
+  },
+  {
+    "id": 832,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "How should equipment be tested for immunity to radiated fields?",
+    "o": [
+      "Only at the device's single operating frequency",
+      "Only at frequencies below 30 MHz",
+      "Only at power line harmonic frequencies",
+      "Over a wide frequency range"
+    ],
+    "a": 3,
+    "w": "Immunity testing must sweep radiated fields over a wide frequency range, since real-world interferers occupy the whole spectrum. Testing only at the device's operating frequency would miss out-of-band susceptibilities such as demodulation of strong carriers. Below 30 MHz is conventionally the conducted measurement region, not the limit of radiated threats. Power line harmonics cover only the low kilohertz region and ignore RF transmitters entirely.",
+    "k": [
+      "Immunity (susceptibility) testing exposes equipment to controlled interference to verify it keeps working in its intended electromagnetic environment.",
+      "Because the threat spectrum is broad — from switching transients to GHz radio sources — radiated immunity tests sweep wide frequency ranges rather than spot frequencies.",
+      "Pairing to remember: emissions testing asks 'what does it transmit?', immunity testing asks 'what can it survive?' — both across the spectrum."
+    ]
+  },
+  {
+    "id": 833,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Which combination of deficiencies increases a system's EMI susceptibility?",
+    "o": [
+      "Poor shielding, filtering, or grounding",
+      "Oversized conductors and short cable runs",
+      "Excessive pair twisting and double shielding",
+      "Low-impedance bonding and short ground leads"
+    ],
+    "a": 0,
+    "w": "Poor shielding, poor filtering, or poor grounding each removes a layer of defense, so any of them increases EMI susceptibility. Oversized conductors and short runs tend to reduce pickup, not increase it. Extra twisting and double shielding are protective measures, the opposite of deficiencies. Low-impedance bonding with short ground leads is exactly the good practice that keeps susceptibility down.",
+    "k": [
+      "Susceptibility is the tendency of equipment to malfunction in the presence of electromagnetic energy — the mirror image of emissions.",
+      "Protection is layered: shields block fields, filters strip noise from conductors, and grounding drains what gets through; weakening any layer opens a door.",
+      "Audit order for a susceptible system: check the shield integrity, then the filters, then the ground connections — the three pillars named in the standard guidance."
+    ]
+  },
+  {
+    "id": 834,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Which building electrical elements can act as an additional source of EMI?",
+    "o": [
+      "Dielectric optical fiber cables",
+      "AC electrical grounding components",
+      "Plastic raceways and J-hooks",
+      "Cable tray support rods"
+    ],
+    "a": 1,
+    "w": "AC electrical grounding components can themselves be an additional source of EMI, since fault currents, harmonics, and ground loops circulate noise through them. Dielectric optical fiber contains no metal and neither emits nor conducts interference. Plastic raceways and J-hooks are non-conductive supports with no electrical role. Cable tray support rods are passive hardware and not identified as EMI sources.",
+    "k": [
+      "Grounding systems carry more than fault current: harmonic-rich neutral currents and loop currents can ride the AC grounding network through a building.",
+      "Because telecommunications bonding ties into that same network, noisy AC grounding components can inject interference into ICT systems — ground is not automatically 'clean.'",
+      "Counterintuitive flag worth memorizing: the grounding system, normally the cure for EMI, can also be a carrier of it when improperly designed."
+    ]
+  },
+  {
+    "id": 835,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "What do bonding and grounding standards for commercial buildings often do regarding RFI and EMI mitigation?",
+    "o": [
+      "Mandate ferrite cores on all installed cables",
+      "Require shielded cabling for every horizontal run",
+      "Exclude specific methods for RFI and EMI mitigation",
+      "Specify exact filter component values for equipment"
+    ],
+    "a": 2,
+    "w": "Commercial bonding and grounding standards often exclude specific methods for RFI and EMI mitigation — they cover safety and potential equalization, leaving interference engineering to the designer. They do not mandate ferrites, which are in fact rarely used in ICT cabling. Shielded cabling everywhere is a design choice, not a standards requirement. Filter component values are product-level engineering decisions outside the scope of building standards.",
+    "k": [
+      "Standards such as bonding and grounding documents define safety-driven infrastructure: busbars, backbones, and conductor sizing for commercial buildings.",
+      "Their scope gap matters: they generally stop short of prescribing RFI/EMI mitigation techniques, so interference control remains the ICT designer's responsibility.",
+      "Exam nuance: 'grounded per standard' guarantees safety compliance — it does not guarantee an interference-free system."
+    ]
+  },
+  {
+    "id": 836,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Practical measurements of radiated emissions focus on what quantity?",
+    "o": [
+      "Magnetic flux density inside the equipment chassis",
+      "Total radiated power integrated over a sphere",
+      "Current induced on the equipment grounding conductor",
+      "Electrical field strength at specific distances"
+    ],
+    "a": 3,
+    "w": "Practical radiated emission measurements focus on electrical field strength measured at specified distances from the equipment. Magnetic flux inside the chassis is neither accessible nor representative of what reaches victims. Integrating total power over a sphere is a laboratory ideal too cumbersome for compliance work. Ground conductor current relates to conducted phenomena, not the radiated field being characterized.",
+    "k": [
+      "Radiated emissions are characterized by the field a product produces at a defined measurement distance, captured with calibrated antennas on a test site.",
+      "The practical metric is electric field strength in volts per meter (or dBµV/m) at standard distances such as 3 m or 10 m.",
+      "Two-part recipe to recall: E-field + fixed distance — that pairing defines virtually every radiated emissions limit."
+    ]
+  },
+  {
+    "id": 837,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Which of the following is an example of a radiated EMI source rather than a conducted one?",
+    "o": [
+      "RF equipment and systems",
+      "Utility power lines feeding the equipment",
+      "Motors sharing the same branch circuit",
+      "Switch contacts on a common power bus"
+    ],
+    "a": 0,
+    "w": "RF equipment and systems are classic radiated sources — their energy reaches victims through space as electromagnetic fields. Utility power lines deliver noise along conductors, the definition of a conducted source. Motors and switch contacts sharing circuits inject their transients into the common wiring, again conducted paths. The distinguishing feature of the correct answer is transfer without any wired connection.",
+    "k": [
+      "EMI sources are categorized by delivery route: conducted sources (power lines, motors, switches) use wiring, while radiated sources launch fields through space.",
+      "RF transmitters, radar, and similar systems are inherently radiated sources because radiating energy is their function.",
+      "Quick classifier: if removing all cable connections would still let the noise arrive, the source is radiated."
+    ]
+  },
+  {
+    "id": 838,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Compared with external EMI sources, internal EMI sources are generally what?",
+    "o": [
+      "Impossible to locate precisely",
+      "Easier to control",
+      "Higher in frequency",
+      "Always lower in amplitude"
+    ],
+    "a": 1,
+    "w": "Internal EMI sources are easier to control than external ones because the building owner can specify, relocate, filter, or shield equipment within the facility. They are not impossible to locate — being on-site usually makes them easier to find. There is no rule that internal sources operate at higher frequencies. Nor are they always lower in amplitude; a nearby internal motor can dwarf a distant broadcast transmitter.",
+    "k": [
+      "EMI sources split by ownership: internal sources live inside the facility (elevators, copiers, ICT logic), external ones outside it (broadcast, radar, utility events).",
+      "Control follows ownership — internal sources can be replaced, filtered, separated, or scheduled, while external sources can only be defended against.",
+      "Design implication: spend mitigation effort on hardening against external sources, and on managing internal sources at their origin."
+    ]
+  },
+  {
+    "id": 839,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "How frequently are ferrites used to mitigate interference in ICT cabling systems?",
+    "o": [
+      "On every installed cable as standard practice",
+      "As a code requirement for backbone cabling",
+      "Rarely",
+      "Only with optical fiber cabling"
+    ],
+    "a": 2,
+    "w": "Ferrites are rarely used to mitigate interference in ICT cabling systems; they are a niche, after-the-fact fix rather than a standard design element. They are not standard practice on every cable, and no code requires them on backbone cabling. Applying them to optical fiber would be pointless, since dielectric fiber neither carries nor picks up electromagnetic interference.",
+    "k": [
+      "A ferrite is a lossy magnetic sleeve clamped around a cable to absorb common-mode RF current as heat.",
+      "In structured ICT cabling, balance, separation, shielding, and grounding do the interference work, leaving ferrites as a rarely used last resort.",
+      "Context contrast: ferrites are everywhere on consumer power bricks and monitor cords, but almost never in standards-based structured cabling design."
+    ]
+  },
+  {
+    "id": 840,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "According to electromagnetic field theory, magnetic fields result from what?",
+    "o": [
+      "Stationary electric charges",
+      "Dielectric polarization of insulators",
+      "Voltage potential differences alone",
+      "Moving charges"
+    ],
+    "a": 3,
+    "w": "Magnetic fields result from moving charges — current flow is what generates magnetism. Stationary charges produce only electric fields. Dielectric polarization describes how insulators respond to electric fields and creates no magnetic component. A voltage difference without current likewise yields only an electric field; until charge moves, no magnetic field exists.",
+    "k": [
+      "An electromagnetic field consists of electric and magnetic components varying in time; each component has a distinct origin.",
+      "Charge at rest creates an electric field, while charge in motion (current) creates a magnetic field — the cornerstone for understanding inductive coupling from current-carrying conductors.",
+      "Cabling takeaway: high-voltage, low-current circuits threaten via E-fields (foil shields help); high-current circuits threaten via H-fields (distance and twisting help)."
+    ]
+  },
+  {
+    "id": 841,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Twisting conductors together in pairs primarily minimizes which type of interference?",
+    "o": [
+      "Differential mode (DM) interference",
+      "Common mode (CM) interference only",
+      "Ground loop circulating currents",
+      "Radiated emissions above 5 GHz"
+    ],
+    "a": 0,
+    "w": "Twisting conductors in pairs minimizes differential mode interference: each successive twist reverses the loop orientation so induced voltages cancel between the conductors. Twisting does not primarily address common-mode energy, which appears equally on both wires and must be rejected by the balanced receiver. Ground loops are broken by bonding design, not by twists. And twisting is not a remedy aimed at emissions above 5 GHz.",
+    "k": [
+      "A twisted pair is two conductors wound around each other so both occupy, on average, the same position relative to any noise source.",
+      "The twist geometry cancels differential pickup — alternating half-twists induce equal and opposite voltages that sum to nearly zero across the pair.",
+      "Division of labor to remember: twists fight DM noise, circuit balance and CMRR fight CM noise, shields fight external fields."
+    ]
+  },
+  {
+    "id": 842,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Which cabling approach is ideal for reducing EMI in joint-use tunnels?",
+    "o": [
+      "Unshielded cables isolated from all grounds",
+      "Balanced shielded cables grounded at both ends",
+      "Coaxial cables grounded at one end only",
+      "Untwisted flat cables inside plastic conduit"
+    ],
+    "a": 1,
+    "w": "In joint-use tunnels shared with power circuits, balanced shielded cables grounded at both ends are ideal: balance rejects common-mode pickup while the double-grounded shield diverts induced currents. Unshielded, ungrounded cables would be fully exposed in such a hostile environment. Coax is unbalanced and a single-ended ground forfeits magnetic-field protection at power frequencies. Untwisted flat cable in plastic conduit offers neither balance nor shielding.",
+    "k": [
+      "Joint-use tunnels place telecommunications cabling alongside power feeders, creating sustained strong-field exposure at power frequencies and their harmonics.",
+      "Grounding a shield at both ends lets induced current circulate in the shield instead of the pairs, countering magnetic coupling along the run.",
+      "Exception to the one-end rule: single-point shield grounding suits short, capacitively coupled cases; long parallel power exposure calls for both-ends grounding."
+    ]
+  },
+  {
+    "id": 843,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Which group of building equipment is listed among common EMI sources?",
+    "o": [
+      "Fluorescent exit signs only",
+      "Smoke detectors and sprinkler heads",
+      "Copiers, door openers, elevator systems, and factory equipment",
+      "Passive patch panels and busbars"
+    ],
+    "a": 2,
+    "w": "Copiers, door openers, elevator systems, and factory equipment are cited as common EMI sources because they contain motors, solenoids, and switching electronics. Exit signs alone are a trivial subset, not the listed group. Smoke detectors and sprinklers are low-power or non-electrical safety devices, not notable interferers. Passive patch panels and busbars carry signals or bonding current but generate no emissions of their own.",
+    "k": [
+      "Everyday building machinery hides aggressive EMI generators: motor commutation, relay switching, and variable-speed drives all produce broadband transients.",
+      "Copiers, door openers, elevators, and factory equipment recur on source lists because each combines motors with rapid electrical switching.",
+      "Survey habit: when siting telecommunications spaces or pathways, map the elevator machine rooms and large motor loads first."
+    ]
+  },
+  {
+    "id": 844,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "Electrical power line EMI filters in modern electronics are widely used to mitigate what?",
+    "o": [
+      "Radiated emissions from external antennas",
+      "Electrostatic discharge events at connectors",
+      "Modal dispersion on attached cabling",
+      "Conducted emissions"
+    ],
+    "a": 3,
+    "w": "Power line EMI filters sit at the equipment's power inlet to block conducted emissions from leaving (and entering) via the mains wiring. They cannot influence energy radiated from external antennas, which never touches the power port. ESD at connectors is addressed by transient suppressors and discharge paths, not mains filters. Modal dispersion is an optical fiber phenomenon entirely unrelated to power filtering.",
+    "k": [
+      "A power line EMI filter is an LC network at the AC inlet that passes 50/60 Hz power while attenuating higher-frequency noise in both directions.",
+      "Its target is conducted emissions over roughly 100 kHz-30 MHz — the band regulators measure on power leads.",
+      "Location reveals function: a filter on the power cord can only treat what travels on the power cord, i.e., conducted noise."
+    ]
+  },
+  {
+    "id": 845,
+    "test": 2,
+    "testName": "Electromagnetic Compatibility",
+    "chapter": "Electromagnetic Compatibility",
+    "q": "In what unit is the electrical field strength of radiated emissions measured?",
+    "o": [
+      "Volts per meter (V/m)",
+      "Amperes per meter (A/m)",
+      "Watts per square meter (W/m²)",
+      "Teslas (T)"
+    ],
+    "a": 0,
+    "w": "Electrical field strength for radiated emissions is measured in volts per meter. Amperes per meter is the unit for the magnetic field component, the companion measurement. Watts per square meter expresses power density rather than field strength. Teslas measure magnetic flux density, again a magnetic-side quantity rather than the electric field.",
+    "k": [
+      "A radiated electromagnetic wave has paired components: an electric field and a magnetic field, each with its own measurement unit.",
+      "The electric component is quantified in volts per meter (V/m), the figure quoted in emission limits and immunity test levels.",
+      "Unit pairing to memorize: E-field → V/m, H-field → A/m — voltage-like quantity per meter versus current-like quantity per meter."
+    ]
   }
 ]

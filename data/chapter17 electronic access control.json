@@ -12,10 +12,10 @@
       "Level 4"
     ],
     "a": 2,
-    "w": "EAC Level 3 includes field devices such as credential readers and locking mechanisms — the physical hardware at the door. Level 1 typically refers to the management software layer. Level 2 refers to the controller/panel layer. Level 4 is not a standard EAC hierarchy level.",
+    "w": "EAC Level 3 includes field devices such as credential readers and locking mechanisms \u2014 the physical hardware at the door. Level 1 typically refers to the management software layer. Level 2 refers to the controller/panel layer. Level 4 is not a standard EAC hierarchy level.",
     "k": [
-      "EAC Level 3 is the field device layer — the physical hardware installed at each door, including credential readers, request-to-exit devices, door position switches, and electric locking hardware.",
-      "EAC Level 1 is the management software (workstation/server); Level 2 is the access control panel/controller; Level 3 is the field devices at the door — these three levels form the standard EAC architecture hierarchy.",
+      "EAC Level 3 is the field device layer \u2014 the physical hardware installed at each door, including credential readers, request-to-exit devices, door position switches, and electric locking hardware.",
+      "EAC Level 1 is the management software (workstation/server); Level 2 is the access control panel/controller; Level 3 is the field devices at the door \u2014 these three levels form the standard EAC architecture hierarchy.",
       "Level 4 is not a defined EAC hierarchy level; recognizing the three-level EAC hierarchy (management, controller, field device) is fundamental to RCDD security system design questions."
     ]
   },
@@ -36,7 +36,7 @@
     "k": [
       "Cylindrical locks are installed by boring two cylindrical holes through the door face (cross-bored installation): one for the lock cylinder/knob and one for the latch mechanism.",
       "Mortise locks require a rectangular pocket routed into the door edge, not a through-bore; they are more complex to install but offer higher security and more function options than cylindrical locks.",
-      "Magnetic locks and electric bolts are surface-mounted to the door frame/door face — neither requires boring through the door, making them suitable for applications where door integrity must be preserved."
+      "Magnetic locks and electric bolts are surface-mounted to the door frame/door face \u2014 neither requires boring through the door, making them suitable for applications where door integrity must be preserved."
     ]
   },
   {
@@ -95,7 +95,7 @@
     "w": "The Vestibule Lock function allows the inside lever to always permit egress while the outside lever's access is key-controlled, creating a controlled entry vestibule. Always free to turn describes an uncontrolled entry. Permanently locked outside lever would not allow any access. Biometric-only control describes a reader configuration, not the lock function definition.",
     "k": [
       "The Vestibule Lock function permits unrestricted egress via the inside lever at all times while restricting entry from the outside by requiring a key or credential to operate the outside lever.",
-      "This function creates a controlled entry point (vestibule) where occupants can always exit freely but visitors/employees must use a key or credential to enter — a common design for building lobbies.",
+      "This function creates a controlled entry point (vestibule) where occupants can always exit freely but visitors/employees must use a key or credential to enter \u2014 a common design for building lobbies.",
       "A permanently locked outside lever (no access function) would be a passage lock with no entry hardware; the Vestibule function specifically allows key-controlled entry, not no entry at all."
     ]
   },
@@ -115,8 +115,8 @@
     "w": "Class A is a redundant signal pathway that continues to function past a single open circuit due to its loop topology. Class B has no redundancy and stops at a single open circuit. Class N uses Ethernet or network protocol-based pathways. Class E is used for supplemental equipment and is not monitored for integrity.",
     "k": [
       "NFPA 72 Class A wiring uses a loop topology: both ends of the circuit return to the FACP, so if a single wire breaks (open circuit), current can still reach all devices from the other direction.",
-      "Class B wiring is a dead-end (spur) topology: a single open circuit isolates all devices beyond the break from the panel, stopping signal transmission — no redundancy is provided.",
-      "Class N uses network (Ethernet/IP) pathways for fire alarm signaling; Class E is for non-monitored supplemental functions — neither provides the open-circuit fault tolerance that Class A's loop topology delivers."
+      "Class B wiring is a dead-end (spur) topology: a single open circuit isolates all devices beyond the break from the panel, stopping signal transmission \u2014 no redundancy is provided.",
+      "Class N uses network (Ethernet/IP) pathways for fire alarm signaling; Class E is for non-monitored supplemental functions \u2014 neither provides the open-circuit fault tolerance that Class A's loop topology delivers."
     ]
   },
   {
@@ -235,8 +235,8 @@
     "w": "IR cameras used for low-light conditions are also called starlight cameras due to their ability to capture images in near-darkness. Thermal cameras detect heat signatures, a different technology from IR-illuminated starlight cameras. PTZ cameras are pan-tilt-zoom cameras defined by their movement capability, not their illumination technology. IP cameras describe network connectivity, not illumination type.",
     "k": [
       "IR cameras (Starlight cameras) use active IR LED illuminators or highly sensitive sensors to capture visible-quality video in near-darkness; they produce black-and-white images in low-light using reflected infrared light.",
-      "Thermal cameras detect radiated heat (far-infrared) and produce images based on temperature differences — fundamentally different from IR/Starlight cameras, which use reflected near-IR light to produce conventional video.",
-      "PTZ (Pan-Tilt-Zoom) and IP camera are physical configuration and connectivity descriptors; a camera can simultaneously be PTZ, IP, and IR/Starlight — these classifications are not mutually exclusive."
+      "Thermal cameras detect radiated heat (far-infrared) and produce images based on temperature differences \u2014 fundamentally different from IR/Starlight cameras, which use reflected near-IR light to produce conventional video.",
+      "PTZ (Pan-Tilt-Zoom) and IP camera are physical configuration and connectivity descriptors; a camera can simultaneously be PTZ, IP, and IR/Starlight \u2014 these classifications are not mutually exclusive."
     ]
   },
   {
@@ -275,7 +275,7 @@
     "w": "Level 1 shared pathways prioritize life safety data over non-life safety data on shared network infrastructure. Level 0 provides no segregation or prioritization of life safety data. Level 2 and Level 3 are not standard NFPA 72 shared pathway designations.",
     "k": [
       "NFPA 72 Level 1 shared pathway means the network gives prioritized Quality of Service (QoS) to fire alarm data over other traffic, ensuring that fire alarm signals are never delayed or dropped by competing network traffic.",
-      "Level 0 shared pathway has no QoS priority — life safety and non-life safety traffic compete equally, making it unsuitable for fire alarm systems where alarm transmission delays could be life-threatening.",
+      "Level 0 shared pathway has no QoS priority \u2014 life safety and non-life safety traffic compete equally, making it unsuitable for fire alarm systems where alarm transmission delays could be life-threatening.",
       "Only Levels 0 and 1 are defined NFPA 72 shared pathway levels; Level 2 and Level 3 are not recognized NFPA 72 designations and should be identified as distractors."
     ]
   },
@@ -314,8 +314,8 @@
     "a": 2,
     "w": "In traditional analog video surveillance systems, video is transmitted to the cross-point matrix at all times, whether or not it is being actively viewed. This continuous transmission distinguishes analog from digital IP systems, which transmit on demand or on trigger. Motion detection and scheduling are features of digital/IP systems, not traditional analog matrix systems.",
     "k": [
-      "Analog CCTV cameras transmit continuous video to the cross-point switching matrix regardless of whether any operator is actively viewing that camera — the video stream is always present on the matrix.",
-      "The cross-point matrix simply routes existing continuous analog video signals to monitors or recorders; it does not enable or disable the video stream — that would require cutting power to the camera.",
+      "Analog CCTV cameras transmit continuous video to the cross-point switching matrix regardless of whether any operator is actively viewing that camera \u2014 the video stream is always present on the matrix.",
+      "The cross-point matrix simply routes existing continuous analog video signals to monitors or recorders; it does not enable or disable the video stream \u2014 that would require cutting power to the camera.",
       "Digital IP camera systems can transmit on-demand or motion-triggered, significantly reducing bandwidth and storage compared to analog; this fundamental difference is why IP systems have largely replaced analog CCTV."
     ]
   },
@@ -375,7 +375,7 @@
     "w": "Guard posts and patrols are operational mitigation techniques, relying on human security personnel and procedures. Credential readers are electronic mitigation. Crime prevention through design is architectural mitigation. Electrified door locks are electronic mitigation devices.",
     "k": [
       "Operational mitigation techniques rely on human actions and procedures to reduce security risk; guard posts, security patrols, badge checks, and security screening are all operational techniques.",
-      "Electronic mitigation (credential readers, electrified locks) uses technology; architectural mitigation (CPTED — Crime Prevention Through Environmental Design) uses physical design; these are the three primary mitigation categories.",
+      "Electronic mitigation (credential readers, electrified locks) uses technology; architectural mitigation (CPTED \u2014 Crime Prevention Through Environmental Design) uses physical design; these are the three primary mitigation categories.",
       "All three mitigation categories (electronic, architectural, operational) are typically combined in a layered security design; no single category alone provides comprehensive security."
     ]
   },
@@ -396,7 +396,7 @@
     "k": [
       "Electric strikes commonly include a latch bolt monitor switch that confirms the door's latch bolt has fully engaged the strike, verifying that the door is actually latched and secured, not just closed.",
       "A latch bolt monitor is essential for EAC systems because a door that appears closed but whose latch has not engaged is a security vulnerability; the monitor generates an alarm if the latch fails to seat.",
-      "Magnetic locks monitor door position using a door contact (DPS — Door Position Switch) rather than a latch bolt monitor, because magnetic locks have no latch mechanism to monitor."
+      "Magnetic locks monitor door position using a door contact (DPS \u2014 Door Position Switch) rather than a latch bolt monitor, because magnetic locks have no latch mechanism to monitor."
     ]
   },
   {
@@ -416,7 +416,7 @@
     "k": [
       "NFPA 72 requires a DACT to connect to two separate, independent transmission channels so that if one channel fails (phone line cut, busy, or faulty), the alarm can be transmitted via the second channel.",
       "A single telephone line is a single point of failure; if that line is cut or out of service, no alarm reaches the monitoring station, defeating the purpose of the alarm communicator.",
-      "The two channels may be two telephone lines, one telephone line and one IP path, or other combinations — the requirement is for two independent paths, not necessarily two telephone lines."
+      "The two channels may be two telephone lines, one telephone line and one IP path, or other combinations \u2014 the requirement is for two independent paths, not necessarily two telephone lines."
     ]
   },
   {
@@ -435,7 +435,7 @@
     "w": "ESS integrates video surveillance, access control, and alarm systems into a unified security platform. Fire alarm and lighting are life safety and building systems outside the core ESS scope. Perimeter detection and BAS are separate system categories. While CCTV is part of video surveillance, intercom and building management are not the three core ESS components.",
     "k": [
       "Electronic Security Systems (ESS) integration covers three primary systems: video surveillance (CCTV/IP cameras), access control (credential readers, door hardware), and alarm systems (intrusion detection, sensors).",
-      "Integrating these three systems allows event-driven responses: an alarm trigger can automatically call up the associated camera view and unlock a response door — functions that standalone systems cannot perform.",
+      "Integrating these three systems allows event-driven responses: an alarm trigger can automatically call up the associated camera view and unlock a response door \u2014 functions that standalone systems cannot perform.",
       "Fire alarm, HVAC, and lighting are separate building systems; while they may interface with ESS for coordinated responses, they are not the three core ESS components and should not be confused with ESS scope."
     ]
   },
@@ -456,7 +456,7 @@
     "k": [
       "NFPA 72 Class C is used for addressable device circuits, where each device has a unique address allowing the FACP to identify exactly which detector or appliance activated, without additional wiring for each device.",
       "Class A and B circuits can be used with either conventional (zone-based) or addressable devices, but Class C is specifically defined for addressable system wiring configurations that support individual device polling.",
-      "Class E circuits are for supplementary, non-monitored equipment — they are not supervised for integrity and cannot be relied upon for life-safety alarm initiation or notification."
+      "Class E circuits are for supplementary, non-monitored equipment \u2014 they are not supervised for integrity and cannot be relied upon for life-safety alarm initiation or notification."
     ]
   },
   {
@@ -496,7 +496,507 @@
     "k": [
       "Electrified exit hardware (also called electrified panic hardware or electrified exit devices) is specifically designed for double-door egress applications, providing both NFPA 101 compliant egress via push-bar operation and EAC-controlled entry.",
       "On double doors, electrified panic hardware covers the full door width with a cross-bar (touchbar) that users push to exit; the hardware's latch is electrically retracted for controlled access from the exterior.",
-      "Magnetic locks can secure double doors but must always be released before egress — they do not meet NFPA 101 requirements for panic hardware on life safety egress paths without a separate monitored release mechanism."
+      "Magnetic locks can secure double doors but must always be released before egress \u2014 they do not meet NFPA 101 requirements for panic hardware on life safety egress paths without a separate monitored release mechanism."
+    ]
+  },
+  {
+    "id": 1196,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What type of electronic lock is typically classified as fail-safe?",
+    "o": [
+      "Electric strikes",
+      "Cylindrical locks",
+      "Magnetic door locks",
+      "Electric bolts"
+    ],
+    "a": 2,
+    "w": "Magnetic door locks are typically fail-safe, meaning they release (unlock) when power is lost, ensuring egress during emergencies like power outages or fire alarms. Electric strikes are fail-secure. Cylindrical locks are mechanical. Electric bolts provide high security and are not typically fail-safe.",
+    "k": [
+      "Fail-safe locks are required by life-safety codes on emergency egress paths: if power fails during a fire alarm activation, fail-safe magnetic locks release automatically, allowing occupants to exit without needing to operate any hardware.",
+      "Magnetic door locks (maglocks) use an electromagnet embedded in the door frame and an armature plate on the door; when energized, they hold the door closed with 300\u2013600 lbs of holding force; when de-energized (power removed), the magnetic field collapses instantly and the door opens freely.",
+      "The fail-safe characteristic of maglocks must be balanced with access control requirements: the lock releases on power failure or fire alarm, but during normal operation it provides secure access control; request-to-exit sensors and timers manage the trade-off between security and life safety."
+    ]
+  },
+  {
+    "id": 1197,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What distinguishes a mortise lock from a cylindrical lock in terms of installation?",
+    "o": [
+      "Mortise locks are surface-mounted; cylindrical locks are embedded",
+      "Mortise locks are embedded into the door and latch to a strike in the doorframe; cylindrical locks are mounted through the door",
+      "Mortise locks require electronic actuation; cylindrical locks are mechanical only",
+      "Mortise locks work only on metal doors; cylindrical locks work on any door material"
+    ],
+    "a": 1,
+    "w": "Mortise locks are embedded within a pocket cut into the door's edge and engage a strike in the doorframe. Cylindrical locks are installed through a cylindrical bore in the door face. Installation method (surface, embedded, through-bore) is the key difference. Both types can be mechanical or electrified. Both work on various door materials.",
+    "k": [
+      "The mortise pocket (cut into the door edge) houses the lock body, latch bolt, and dead bolt mechanism; the concealed installation makes mortise locks more resistant to forced entry than cylindrical locks because the lock body cannot be attacked from the exposed surface.",
+      "Cylindrical locks are easier and less expensive to install: a hole through the door face accepts the cylindrical lock body, which is secured with a mounting plate; this simpler installation makes cylindrical locks the most common choice for office and residential interior doors.",
+      "When electrifying a mortise lock for access control, the electric actuator replaces or supplements the key cylinder, allowing the EAC system to retract the dead bolt remotely; electrified mortise locks provide the security of the mortise design with the convenience of electronic access control."
+    ]
+  },
+  {
+    "id": 1198,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What is the security characteristic of an electric strike compared to a magnetic lock?",
+    "o": [
+      "Electric strikes are fail-safe; maglocks are fail-secure",
+      "Electric strikes are fail-secure; maglocks are fail-safe",
+      "Both electric strikes and maglocks are fail-safe",
+      "Both electric strikes and maglocks are fail-secure"
+    ],
+    "a": 1,
+    "w": "Electric strikes are typically fail-secure (remain locked when power is lost) while magnetic door locks are typically fail-safe (unlock when power is lost). Their failure modes are opposite by design intention.",
+    "k": [
+      "Electric strikes are fail-secure because the strike mechanism holds the latch bolt captive until electrically actuated; when power is removed, the strike closes (locks), preventing unauthorized entry through the door during a power failure.",
+      "This fail-secure characteristic makes electric strikes appropriate for high-security doors where unauthorized entry during a power failure (accidental or malicious) is a greater concern than egress; however, fail-secure doors on egress paths require additional mechanical egress hardware (panic hardware) to meet life-safety codes.",
+      "The fail-safe (maglock) vs. fail-secure (electric strike) choice is a fundamental EAC design decision: exit-path doors require fail-safe or the addition of a fail-safe release; interior security doors prioritize fail-secure to prevent entry during outages."
+    ]
+  },
+  {
+    "id": 1199,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What characterizes a FACP Class A pathway in fire alarm systems?",
+    "o": [
+      "No redundancy; single path stops working at the first open circuit",
+      "Addressable devices only",
+      "Not monitored for circuit integrity",
+      "Redundant pathway; continues to function past a single open circuit fault"
+    ],
+    "a": 3,
+    "w": "Class A fire alarm pathways have a redundant signal path (loop) that allows continued operation past a single open circuit fault. Class B stops at a single open circuit (option A). Class C is for addressable devices (option B). Class E is not monitored for integrity (option C).",
+    "k": [
+      "Class A FACP pathways are configured as loops: the signal path leaves the FACP, passes through all devices, and returns to the FACP from the other end; if a single open circuit occurs anywhere in the loop, signaling continues in both directions from the break point.",
+      "This looped topology requires additional wiring compared to Class B (which uses a simpler spur/branch configuration) but provides significantly higher reliability; a single cable break anywhere in the loop does not disable any devices.",
+      "Class A is required in areas with high reliability demands (high-rise buildings, certain hazardous occupancies) where a single conductor break would unacceptably compromise fire detection coverage; standard offices may use Class B for cost savings."
+    ]
+  },
+  {
+    "id": 1200,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What FACP class designation uses Ethernet or network protocol-based signaling pathways?",
+    "o": [
+      "Class A",
+      "Class B",
+      "Class C",
+      "Class N"
+    ],
+    "a": 3,
+    "w": "Class N fire alarm pathways use Ethernet or other network protocol-based communication paths. Class A and Class B are conventional wired pathway classes. Class C is for addressable devices using digital addressing.",
+    "k": [
+      "Class N pathways leverage IP network infrastructure (Ethernet, Wi-Fi, or other network protocols) for fire alarm signaling; this allows fire alarm circuits to share network infrastructure while maintaining the required reliability and supervision of fire alarm systems.",
+      "Class N enables fire alarm system designers to use existing IT network infrastructure for connecting intelligent fire alarm devices, reducing dedicated cabling requirements; however, the network must meet fire alarm reliability standards, typically requiring redundant network paths.",
+      "The introduction of Class N reflects the convergence of fire alarm and IT infrastructure; as buildings become more networked, using network protocols for life-safety systems reduces the total infrastructure cost while leveraging network management tools for system supervision."
+    ]
+  },
+  {
+    "id": 1201,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What is the key difference between Level 1 and Level 0 shared fire alarm pathways?",
+    "o": [
+      "Level 1 uses copper; Level 0 uses fiber",
+      "Level 1 prioritizes life safety data over non-life safety data; Level 0 has no segregation or priority",
+      "Level 1 is wireless; Level 0 is wired",
+      "Level 1 requires encryption; Level 0 does not"
+    ],
+    "a": 1,
+    "w": "Level 1 shared pathways prioritize life-safety data over non-life-safety data on the shared medium. Level 0 has no segregation or prioritization \u2014 all data types share the medium equally. Cable media and encryption are not the distinguishing factors.",
+    "k": [
+      "Level 1 shared pathway priority ensures that when network congestion occurs, fire alarm messages are not delayed by lower-priority data traffic (BAS data, building management messages); life-safety signals must arrive at the FACP within required response time limits.",
+      "Level 0 shared pathways provide no guarantee that fire alarm signals will not be delayed by competing non-life-safety data; this lack of priority makes Level 0 appropriate only where fire alarm traffic is minimal relative to total bandwidth and delay is not a concern.",
+      "The Level 1 vs Level 0 distinction matters during system design: if fire alarm and BAS signals share a network, Level 1 QoS (Quality of Service) must be configured to guarantee fire alarm packet delivery latency; Level 0 leaves this to chance."
+    ]
+  },
+  {
+    "id": 1202,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What is a Digital Alarm Communicator Transmitter (DACT) and how many transmission channels must it connect to?",
+    "o": [
+      "A digital door reader that communicates via TCP/IP; one channel",
+      "A device that transmits fire alarm status to monitoring stations; must connect to two separate transmission channels",
+      "A video surveillance transmitter with dual-channel backup",
+      "A card reader controller with two wired communication paths"
+    ],
+    "a": 1,
+    "w": "A DACT transmits fire alarm status to a central monitoring station and must connect to two separate transmission channels for redundancy. It is not a door reader, video transmitter, or card reader controller. One channel would provide no backup.",
+    "k": [
+      "The DACT's two-channel requirement provides a primary path (typically phone line 1 or VoIP) and a backup path (phone line 2 or broadband); if the primary channel is unavailable (line cut, outage), the DACT automatically uses the backup channel to report alarms.",
+      "The two separate channels must be physically separate communications paths \u2014 both on the same telephone company building entry point would not meet the separation requirement; one channel may be a PSTN line and the other a cellular or broadband connection.",
+      "NFPA 72 specifies that if forwarded line calls are used, the DACT must verify the integrity of the forwarded lines by testing communication every 4 hours; this periodic test ensures the communication path is functional before a real emergency occurs."
+    ]
+  },
+  {
+    "id": 1203,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "How frequently must a Digital Alarm Radio Transmitter (DART) complete test signals?",
+    "o": [
+      "Every 4 hours",
+      "Every 8 hours",
+      "Every 12 hours",
+      "At least once every 24 hours"
+    ],
+    "a": 3,
+    "w": "A DART must complete test signals at least once every 24 hours to verify communication path integrity with the central monitoring station. 4 hours is the DACT call-forwarding line verification interval, not the DART test interval. 8 and 12 hours are not the specified test intervals for DART.",
+    "k": [
+      "The 24-hour DART test interval ensures that the radio communication path between the protected premises and the monitoring center is verified at least daily; a DART that fails to communicate would be detected within 24 hours under this protocol.",
+      "The DART serves as a backup if the DACT fails: if the DACT's phone lines are cut or unavailable, the DART uses radio (cellular or licensed radio) to transmit the alarm; the DART's 24-hour self-test verifies this backup path remains operational.",
+      "The 4-hour call-forwarding verification interval for DACT (more frequent than DART's 24-hour interval) reflects the higher risk associated with forwarded telephone lines \u2014 calls forwarded to monitoring stations are more susceptible to being inadvertently disconnected than direct radio transmissions."
+    ]
+  },
+  {
+    "id": 1204,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "By how much must public fire alarm signaling exceed ambient sound levels per NFPA 72?",
+    "o": [
+      "5 dB above ambient",
+      "10 dB above ambient",
+      "15 dB above ambient",
+      "20 dB above ambient"
+    ],
+    "a": 2,
+    "w": "Per NFPA 72, public fire alarm notification appliances must achieve sound levels at least 15 dB above average ambient sound levels. 5 and 10 dB are insufficient to ensure the alarm is clearly audible over typical background noise. 20 dB would provide more margin than required.",
+    "k": [
+      "The 15 dB above ambient requirement ensures that fire alarm audible devices (horns, speakers) are clearly distinguishable from background noise even in moderately noisy environments; without this margin, occupants may not hear or recognize the alarm in busy spaces.",
+      "NFPA 72 also specifies minimum absolute sound levels (75 dBA at bed locations for sleeping areas, 65 dBA minimum generally) in addition to the 15 dB above ambient requirement; whichever produces the higher sound level requirement governs the design.",
+      "Measuring ambient sound level for NFPA 72 compliance typically uses the average ambient over a 24-hour period or the average during occupied hours; in spaces with highly variable ambient (cafeterias, gyms), the peak ambient level may drive the required alarm level."
+    ]
+  },
+  {
+    "id": 1205,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What minimum digital frame rate is acceptable in digital video surveillance systems?",
+    "o": [
+      "1 fps (frame per second)",
+      "2.5 fps",
+      "3.75 fps",
+      "15 fps"
+    ],
+    "a": 2,
+    "w": "The minimum acceptable digital video frame rate for surveillance systems is 3.75 fps. 1 and 2.5 fps are below the acceptable minimum for useful surveillance footage. 15 fps is above the minimum and is common for smooth playback but exceeds the stated minimum.",
+    "k": [
+      "3.75 fps represents the minimum at which human movement can be adequately captured for identification purposes in surveillance footage; below this rate, significant motion blur and missed events occur between frames, making footage less useful for forensic purposes.",
+      "In practice, modern IP surveillance cameras operate at 15\u201330 fps for smooth video; the 3.75 fps minimum is the threshold below which footage becomes legally or operationally unreliable for most security applications.",
+      "Storage requirements scale directly with frame rate: at 3.75 fps, storage requirements are approximately 4 times less than at 15 fps; systems with limited storage must balance minimum acceptable frame rate against storage constraints and retention period requirements."
+    ]
+  },
+  {
+    "id": 1206,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What type of surveillance camera is also called a starlight camera, and what is its specialty?",
+    "o": [
+      "PTZ cameras for tracking moving subjects",
+      "Thermal cameras for detecting body heat",
+      "IR cameras used for low-light conditions",
+      "Dome cameras for wide-angle room coverage"
+    ],
+    "a": 2,
+    "w": "IR cameras are also called starlight cameras and are specifically used for low-light or no-light conditions by detecting near-infrared light. PTZ cameras provide pan/tilt/zoom capability, unrelated to low-light. Thermal cameras detect heat signatures. Dome cameras are a form factor, not a low-light technology.",
+    "k": [
+      "Starlight (IR) cameras use silicon-based image sensors with extended sensitivity into the near-infrared spectrum (700\u20131000 nm), allowing them to capture useful video at illumination levels below 0.1 lux \u2014 conditions where standard cameras produce only dark, unusable footage.",
+      "The 'starlight' name refers to the camera's ability to produce clear video under starlight illumination conditions (approximately 0.001 lux) with active IR illuminators; without IR illuminators, starlight cameras can capture usable footage at around 0.1\u20131 lux from available ambient light.",
+      "Understanding the IR camera's low-light specialty matters for EAC system design: security areas with inadequate lighting (loading docks, parking structures, stairwells after hours) benefit from starlight cameras rather than standard cameras that would produce unusable footage in those conditions."
+    ]
+  },
+  {
+    "id": 1207,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "How does an analog Video Surveillance System (VSS) transmit and route video signals?",
+    "o": [
+      "Video is digitized at each camera and transmitted over IP networks",
+      "Video is transmitted only when motion is detected to save bandwidth",
+      "Video is transmitted to a cross-point matrix continuously, whether viewed or not",
+      "Video is stored on-site only, with no live monitoring capability"
+    ],
+    "a": 2,
+    "w": "Traditional analog VSS transmits video continuously from each camera to a cross-point matrix at all times, whether or not the video is actively being viewed. Digital IP systems use network transmission. Motion detection is a recording trigger, not a transmission method. Analog systems support live monitoring.",
+    "k": [
+      "The cross-point matrix in a traditional analog CCTV system is the hardware switching core: each camera has a dedicated coaxial cable running to the matrix, where the operator can route any camera's live video to any monitor by selecting the cross-point (row and column intersection) for that camera-monitor pair.",
+      "Continuous transmission to the matrix means that even cameras not currently displayed on a monitor are actively transmitting their video; the matrix receives all cameras simultaneously and the operator directs specific cameras to specific monitors by activating the appropriate cross-points.",
+      "This continuous-transmission architecture contrasts with IP video surveillance where bandwidth is shared; analog's continuous transmission guarantees zero latency (no encoding/decoding delay) but consumes dedicated coaxial cable infrastructure for each camera, making scalability expensive."
+    ]
+  },
+  {
+    "id": 1208,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What is the primary purpose of a threat analysis in security system design?",
+    "o": [
+      "To calculate the installation cost for each security system component",
+      "To verify compliance with local building codes",
+      "To identify sources of risk to data, property, and personnel well-being, dividing potential damage into categories",
+      "To select the most advanced technology available for the security system"
+    ],
+    "a": 2,
+    "w": "Threat analysis identifies sources of risk and potential damage categories to guide security system design. Cost calculation is a design estimating function. Code compliance is a separate requirement. Technology selection follows the threat analysis, not the other way around.",
+    "k": [
+      "A comprehensive threat analysis categorizes potential threats into seven damage categories (life, information, tangible assets, financial, reputation, operations, regulatory) to ensure the security design addresses the full range of consequences, not just physical security.",
+      "Threat analysis is performed before specifying EAC, VSS, or alarm systems; without identifying which threats the facility faces and their likelihood, the designer may over-specify protection for low-probability threats while under-protecting against high-probability vulnerabilities.",
+      "The threat analysis result directly informs security level selection: a facility with high-consequence threats (data center with sensitive government information) requires higher-grade hardware (Grade 1 locks, multi-factor authentication, comprehensive VSS) than a low-consequence retail environment."
+    ]
+  },
+  {
+    "id": 1209,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What grade of mechanical lock hardware is considered most durable for high-security applications?",
+    "o": [
+      "Grade 1",
+      "Grade 2",
+      "Grade 3",
+      "Commercial Grade"
+    ],
+    "a": 0,
+    "w": "Grade 1 hardware is the most durable, rated for the highest security applications including commercial high-traffic and high-security installations. Grade 2 is residential/light commercial. Grade 3 is residential entry grade. 'Commercial Grade' is not a standardized lock grade designation.",
+    "k": [
+      "ANSI/BHMA (American National Standards Institute/Builders Hardware Manufacturers Association) grades lock hardware into three grades: Grade 1 (commercial, highest durability, rated for >250,000 operational cycles), Grade 2 (residential/light commercial, 250,000 cycles), and Grade 3 (residential entry, 125,000 cycles).",
+      "Grade 1 hardware uses heavier gauge metal, stronger latch/dead bolt mechanisms, and more durable internal components; it is specified for exterior doors, high-traffic commercial entries, and any door where forced entry resistance and long service life are critical.",
+      "EAC designers specify lock hardware grade based on the threat level and operational requirements identified in the threat analysis; a Grade 1 electric strike or electrified mortise lock costs more than lower grades but provides the durability needed in 24/7 commercial access control applications."
+    ]
+  },
+  {
+    "id": 1210,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What level of EAC system design includes field devices such as credential readers and locking mechanisms?",
+    "o": [
+      "Level 1",
+      "Level 2",
+      "Level 3",
+      "Level 4"
+    ],
+    "a": 2,
+    "w": "EAC Level 3 includes field devices \u2014 credential readers (card readers, biometric readers, keypads) and locking mechanisms. Level 3 is the outermost system layer closest to the physical access points.",
+    "k": [
+      "EAC Level 3 field devices are the physical interface between the person seeking access and the access control system: the credential reader captures the access credential (card swipe, fingerprint, PIN) and the locking mechanism mechanically controls whether the door can be opened.",
+      "Level 3 devices communicate with Level 2 controllers (local controllers, door controllers) that make the access decision based on the credential and programmed access rules; the Level 3 devices execute the decision (unlock the door) but do not make the access decision themselves.",
+      "Designing Level 3 field devices requires careful consideration of environmental factors: outdoor readers must be weatherproof and vandal-resistant; high-security areas require tamper-detected readers; loading docks may require readers rated for forklift traffic areas."
+    ]
+  },
+  {
+    "id": 1211,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What physical attribute credentials are used in biometric EAC systems?",
+    "o": [
+      "Access cards and key fobs",
+      "Fingerprints, facial recognition, and similar physical attributes",
+      "Magnetic stripe cards only",
+      "One-time passwords and smart tokens"
+    ],
+    "a": 1,
+    "w": "Biometric credentials use physical attributes of the person (fingerprints, facial recognition, iris scans, palm geometry). Access cards and key fobs are possession-based credentials. Magnetic stripe cards are memory-based. One-time passwords are knowledge-based credentials.",
+    "k": [
+      "Biometric credentials provide the highest assurance that the person is who they claim to be: unlike a card that can be loaned or stolen, and unlike a PIN that can be shared or guessed, a fingerprint or facial geometry is unique to one person and cannot be easily duplicated.",
+      "Biometric systems face implementation challenges: enrollment (capturing and storing the biometric template), accuracy (false accept rate vs. false reject rate), and privacy concerns (biometric data is sensitive personal information subject to privacy regulations).",
+      "Multi-factor authentication (MFA) in EAC combines biometrics (something you are) with possession-based credentials (something you have) or knowledge-based credentials (something you know); MFA is required in high-security applications where any single factor can be compromised."
+    ]
+  },
+  {
+    "id": 1212,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What does an entrance lock function allow from the inside versus the outside of a door?",
+    "o": [
+      "Inside lever is locked; outside lever requires key or credential",
+      "Inside lever always allows egress; outside lever can be locked or unlocked via key",
+      "Both inside and outside levers require key access",
+      "Inside lever is key-controlled; outside lever always allows entry"
+    ],
+    "a": 1,
+    "w": "An entrance lock function allows the inside lever always to permit free egress (always allows exit without a key), while the outside lever can be locked or unlocked via key or electronic credential. The inside lever is never locked for egress in an entrance lock. Both sides requiring a key describes a corridor function.",
+    "k": [
+      "Entrance lock function (commonly called 'entrance' or 'hotel' function) is required by life-safety codes: the inside lever must always allow free egress without a key to satisfy building code and NFPA 101 life safety requirements.",
+      "The outside lever lockable by key feature is what provides access control: the outside lever is unlocked during business hours (free entry) and locked after hours (credential required to enter); the inside lever remains free-exiting regardless of outside lever state.",
+      "When electrifying a lock with entrance function for EAC, the electronic credential controls the outside lever locking mechanism; the inside lever free-exit function is maintained mechanically, independent of the electronic system state."
+    ]
+  },
+  {
+    "id": 1213,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What network topology options are common for EAC data communication in dedicated EAC networks?",
+    "o": [
+      "Mesh and ring topologies only",
+      "Bus and ring topologies only",
+      "Loop and star topologies",
+      "Hierarchical tree topology only"
+    ],
+    "a": 2,
+    "w": "Common EAC network topologies include loop (ring) and star configurations for dedicated physical EAC networks. Mesh is not listed as common for EAC. Bus topology is used in BAS, not specified for EAC as the common option here. Hierarchical tree is used in enterprise networks, not the specified EAC topologies.",
+    "k": [
+      "Star topology for EAC networks connects all field controllers directly back to a central panel or controller; any single field device or cable failure affects only that device, providing high fault isolation but requiring home-run cabling from each controller to the central location.",
+      "Loop (ring) topology connects EAC controllers in a daisy chain that ultimately returns to the central panel; less cabling is required than star topology, and Class A loop wiring provides continuity past a single cable break \u2014 important for life-safety applications where a cable break must not disable multiple doors.",
+      "Topology choice depends on the EAC system architecture, cable infrastructure, and desired fault tolerance; many modern EAC systems support both topologies or use IP Ethernet (star topology through the network switch) for field controller communication."
+    ]
+  },
+  {
+    "id": 1214,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What is the function of electrified exit hardware (panic hardware) in access control systems?",
+    "o": [
+      "Prevents all egress in high-security areas",
+      "Provides high security that requires credential authentication to exit",
+      "Used primarily on double-door applications to secure both doors simultaneously with electronic control",
+      "Controls access to maintenance areas not covered by other EAC hardware"
+    ],
+    "a": 2,
+    "w": "Electrified panic hardware (electrified exit devices) is commonly used in double-door applications to provide EAC-integrated exit control on both door leaves. It does not prevent egress \u2014 exit hardware always allows free egress by code. It is not credential-controlled for exit.",
+    "k": [
+      "Electrified panic hardware (electrified exit devices, electrified push bars) combines the NFPA 101 life-safety-required free-exit function with an electronic signal output when the panic bar is operated; this allows the EAC system to log exits and unlock companion electronic hardware (magnetic locks on vestibule doors) when someone exits.",
+      "On double-door applications, one leaf has the panic bar and the other has a coordinator latch or mullion; electrifying the hardware allows the EAC system to electronically retract the center mullion and operate coordinators, managing proper door closure sequence for both leaves.",
+      "Panic hardware maintains free-exit mechanical operation regardless of power or EAC system status; the electrification adds monitoring and ancillary control outputs, not restrictions on egress \u2014 any attempt to restrict egress with electrified panic hardware would violate life-safety codes."
+    ]
+  },
+  {
+    "id": 1215,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What type of EAC mitigation technique uses credential readers, cameras, and electrified locks?",
+    "o": [
+      "Operational mitigation",
+      "Architectural mitigation",
+      "Electronic mitigation",
+      "Physical barrier mitigation"
+    ],
+    "a": 2,
+    "w": "Electronic mitigation uses credential readers, cameras, and electrified locking hardware to control access and monitor activity. Operational mitigation uses guard posts and patrols. Architectural mitigation uses building design (CPTED). Physical barriers are a form of architectural mitigation.",
+    "k": [
+      "Electronic mitigation provides the most scalable and auditable access control approach: every credential event is logged with timestamp and credential identifier, providing forensic evidence of who was where and when \u2014 a capability unavailable with mechanical locks or guard-based operational mitigation.",
+      "The integration of credential readers, cameras, and electrified locks in electronic mitigation creates a multi-layer verification system: the reader verifies the credential, the camera provides visual confirmation of who used the credential, and the electrified lock physically controls access to the space.",
+      "Electronic mitigation's logging capability also enables proactive security management: administrators can identify access pattern anomalies (after-hours access, repeated denied-access attempts) and respond before a security incident occurs, rather than reviewing footage only after a breach."
+    ]
+  },
+  {
+    "id": 1216,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What characterizes an exclusive communication network in EAC design?",
+    "o": [
+      "A shared network where EAC and IT traffic coexist with QoS prioritization",
+      "An encrypted overlay network using VPN for EAC communications",
+      "EAC data running on a dedicated physical network separated from general data networks",
+      "A wireless network reserved for access control devices only"
+    ],
+    "a": 2,
+    "w": "Exclusive communication networks in EAC place access control data on a dedicated physical network, completely separated from general IT data networks. Shared networks with QoS describe Level 1 shared pathways. Encrypted VPN overlay uses shared infrastructure. Wireless-only is not the definition of exclusive.",
+    "k": [
+      "Exclusive EAC networks prevent IT network faults, congestion, or security breaches from affecting the physical access control system; a network outage in the IT infrastructure does not disrupt card access, door control, or alarm transmission on the dedicated EAC network.",
+      "Physical network separation also provides a security benefit: an attacker who compromises the IT network cannot directly access EAC controllers and modify access permissions or unlock doors; the separate physical plant creates an air-gap equivalent for the access control infrastructure.",
+      "The trade-off of exclusive networks is higher installation cost (additional cables, switches, and management for the second network); organizations must weigh this cost against the security and reliability benefits of complete separation."
+    ]
+  },
+  {
+    "id": 1217,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "How does an Electronic Security System (ESS) integrate multiple security technologies?",
+    "o": [
+      "ESS uses only video surveillance without access control integration",
+      "ESS standardizes on a single vendor's technology to prevent integration",
+      "ESS integrates video surveillance, access control, and alarm systems into a unified security platform",
+      "ESS replaces all physical security with electronic-only controls"
+    ],
+    "a": 2,
+    "w": "An Electronic Security System integrates video surveillance, access control, and alarm monitoring systems into a unified platform. ESS by definition includes multiple security technologies. Single-vendor standardization is a procurement decision, not ESS's definition. ESS complements, not replaces, physical security.",
+    "k": [
+      "ESS integration creates event correlation between systems: when an access control system reports a denied-access attempt, the ESS can automatically direct a nearby PTZ camera to the door for live monitoring; when a fire alarm activates, the ESS can automatically record all cameras in the affected area.",
+      "The unified platform of an ESS allows security operators to manage all security systems from a single workstation: one software interface shows camera feeds, access events, alarm status, and door control \u2014 reducing operator workload and response time to security incidents.",
+      "ESS integration requires careful system design: each subsystem (VSS, EAC, alarm) must have open APIs or standardized communication protocols that allow the integration platform to receive events and send commands; proprietary closed systems that resist integration limit the ESS's effectiveness."
+    ]
+  },
+  {
+    "id": 1218,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What architectural mitigation technique uses building design principles to prevent crime?",
+    "o": [
+      "Electronic mitigation using cameras and readers",
+      "Operational mitigation using guard patrols",
+      "Crime Prevention Through Environmental Design (CPTED)",
+      "Technical mitigation using motion sensors"
+    ],
+    "a": 2,
+    "w": "Architectural mitigation uses Crime Prevention Through Environmental Design (CPTED), which applies building design principles (sight lines, lighting, access flow) to reduce crime opportunities. Electronic mitigation uses technology. Operational mitigation uses personnel. Technical mitigation is a subset of electronic mitigation.",
+    "k": [
+      "CPTED principles include natural surveillance (designing spaces so criminal activity is visible from populated areas), natural access control (using landscaping, fencing, and building layout to define public vs. private zones), and territorial reinforcement (using design to establish a sense of ownership).",
+      "Unlike electronic and operational mitigation, CPTED is built into the physical structure at design or renovation time; once implemented, it provides passive deterrence 24/7 without ongoing operating costs for hardware maintenance or personnel.",
+      "Combining CPTED architectural mitigation with electronic mitigation (cameras, access control) and operational mitigation (guards, patrols) creates defense in depth: each layer addresses vulnerabilities that the others cannot fully eliminate alone."
+    ]
+  },
+  {
+    "id": 1219,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What is the behavioral authentication factor that can optionally supplement primary EAC authentication?",
+    "o": [
+      "Access card swipe pattern",
+      "Typing patterns and behavioral biometrics",
+      "GPS location verification",
+      "Social media identity verification"
+    ],
+    "a": 1,
+    "w": "Behavioral authentication uses patterns such as typing patterns (keystroke dynamics), gait recognition, or similar behavioral biometrics as optional supplemental authentication factors. Access card patterns are usage analytics, not behavioral authentication. GPS and social media verification are not the specified behavioral authentication types.",
+    "k": [
+      "Behavioral authentication analyzes how a person performs a task \u2014 typing speed, pressure patterns, rhythm \u2014 rather than what they possess or know; the behavioral pattern is unique enough to serve as a continuous authentication signal while the user performs normal work.",
+      "Typing patterns (keystroke dynamics) are the most mature behavioral authentication technology: they analyze interkey timing, press duration, and rhythm across a user's typical typing sessions; significant deviation from the user's normal pattern can trigger re-authentication requests.",
+      "Behavioral authentication's 'optional' status reflects its use as a supplemental factor rather than a primary one; alone, behavioral biometrics have higher false rejection rates than physical biometrics, but combined with a primary factor (card + behavioral pattern), they significantly increase security."
+    ]
+  },
+  {
+    "id": 1220,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What latch monitoring device is commonly included with electric strike installations?",
+    "o": [
+      "Piezoelectric force sensor",
+      "Optical fiber presence detector",
+      "Latch bolt monitor switch",
+      "Thermal imaging camera"
+    ],
+    "a": 2,
+    "w": "Electric strikes often include monitoring switches such as latch bolt monitors that detect whether the door latch is properly engaged. Piezoelectric force sensors and optical fiber detectors are not standard electric strike accessories. Thermal imaging cameras are VSS devices.",
+    "k": [
+      "A latch bolt monitor switch within the electric strike detects whether the door's mechanical latch bolt is fully extended into the strike (door properly latched) or retracted (door not fully closed or latch bolt not engaged); this status is reported to the EAC system.",
+      "Latch bolt monitoring enables the access control system to detect a 'door ajar' condition where the door is not properly latching (from worn latches, over-compression of weatherstripping, or deliberate propping); this information triggers an alarm before an intruder can exploit the unlatched door.",
+      "In combination with door position switches (which detect whether the door is open or closed), latch bolt monitors provide complete door status reporting: open/closed and latched/unlatched states can be independently monitored and combined to detect conditions such as 'closed but unlatched.'"
     ]
   }
 ]
