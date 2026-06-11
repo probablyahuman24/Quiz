@@ -1,4 +1,4 @@
-// RCDD Quiz Bank — app.js
+// RCDD Exam Prep — app.js
 // Vanilla React (no JSX, no build step needed)
 
 const { useState, useEffect, useCallback, useMemo, useRef } = React;
@@ -6,6 +6,8 @@ const { useState, useEffect, useCallback, useMemo, useRef } = React;
 // ── Config ────────────────────────────────────────────────────────────────────
 const LABELS = ['A','B','C','D'];
 const STORAGE_KEY = 'rcdd_v3';
+// APP_MAJOR: 0 = original question bank, bump to 1 when new questions are added
+const APP_MAJOR = 0;
 const CHAPTER_FILES = [
   'data/chapter01 principles of transmission.json',
   'data/chapter02 electromagnetic compatibility.json',
@@ -162,7 +164,7 @@ function AuthScreen({ onSignIn, onSignUp, loading, error, dark }) {
     el('div', { style: { width:'100%', maxWidth:360 } },
       el('div', { style: { textAlign:'center', marginBottom:32 } },
         el('div', { style: { fontSize:52, marginBottom:10, lineHeight:1 } }, '💡'),
-        el('h1', { style: { fontSize:26, fontWeight:800, color:t.text, margin:0 } }, 'RCDD Quiz Bank'),
+        el('h1', { style: { fontSize:26, fontWeight:800, color:t.text, margin:0 } }, 'RCDD Exam Prep'),
         el('p', { style: { fontSize:13, color:t.textMuted, marginTop:6 } }, 'BICSI · RCDD Exam Prep')
       ),
       el('div', { style: { background:t.card, borderRadius:20, padding:24, boxShadow:'0 4px 24px rgba(0,0,0,0.12)' } },
@@ -703,6 +705,11 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
             el('span', { style: { fontSize:11, fontWeight:700, color: h.pct>=80?'#059669':h.pct>=60?'#d97706':'#dc2626' } }, h.pct+'%'),
             el('span', { style: { fontSize:10, color:t.textMuted } }, new Date(h.date).toLocaleDateString('en-GB',{day:'2-digit',month:'short'}))
           ))
+        ),
+        el('div', { style: { textAlign:'center', marginTop:20, paddingTop:14, borderTop:'1px solid '+t.borderLight } },
+          el('span', { style: { fontSize:10, color:t.textMuted, fontWeight:600, letterSpacing:1 } },
+            'v' + APP_MAJOR + '.' + CACHE.replace('rcdd-v','') + '  ·  RCDD Exam Prep'
+          )
         )
       )
     )
