@@ -58,7 +58,9 @@
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/Quiz/sw.js').then(reg => {
-        // Re-check for a new SW whenever the user returns to the tab
+        // Check for a new SW immediately on every page load
+        reg.update();
+        // Re-check again whenever the user returns to the tab
         document.addEventListener('visibilitychange', () => {
           if (document.visibilityState === 'visible') reg.update();
         });
