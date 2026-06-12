@@ -1,5 +1,7 @@
-importScripts('/Quiz/version.js');
-const CACHE = 'rcdd-v' + APP_VERSION.minor;
+// CACHE version must be updated manually here on every version bump.
+// Hardcoded (not importScripts) so the browser detects this file changed
+// and installs the new service worker automatically.
+const CACHE = 'rcdd-v26';
 
 // These are always fetched fresh from the network (network-first + cache fallback).
 // Keeping them out of the precache list breaks the stale-cache loop: the browser
