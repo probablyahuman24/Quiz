@@ -348,7 +348,23 @@ function App() {
     if (!currentUser) return;
     setSyncing(true); setSyncMsg('');
     db.collection('users').doc(currentUser.username).get({ source: 'server' })
-      .then(doc => { applyServerProgress(doc); setSyncing(false); setSyncMsg('Synced ✓'); setTimeout(() => setSyncMsg(''), 2500); })
+      .then(doc => {
+        applyServerProgress(doc);
+        // Check for a new app version by fetching version.js fresh from the server
+        return fetch('/Quiz/version.js?_=' + Date.now(), { cache: 'no-store' })
+          .then(r => r.text())
+          .then(text => {
+            const m = /minor:\s*(\d+)/.exec(text);
+            const serverMinor = m ? parseInt(m[1], 10) : null;
+            if (serverMinor !== null && serverMinor > APP_VERSION.minor) {
+              setSyncMsg('New version! Reloading…');
+              setTimeout(() => window.location.reload(), 1200);
+            } else {
+              setSyncing(false); setSyncMsg('Synced ✓'); setTimeout(() => setSyncMsg(''), 2500);
+            }
+          })
+          .catch(() => { setSyncing(false); setSyncMsg('Synced ✓'); setTimeout(() => setSyncMsg(''), 2500); });
+      })
       .catch(() => { setSyncing(false); setSyncMsg('Sync failed'); setTimeout(() => setSyncMsg(''), 2500); });
   }, [currentUser, applyServerProgress]);
 
