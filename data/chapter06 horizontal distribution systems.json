@@ -36,7 +36,7 @@
     "k": [
       "Access floor pathways route cables beneath raised floor panels; the gap between the top of cable trays and the underside of floor panels must allow cable installation and future adds.",
       "The 50 mm (2 in) minimum above underfloor trays ensures cables can be laid flat, bend radii are maintained, and technicians can manipulate cables without damaging them.",
-      "This clearance requirement is distinct from the overall access floor height — a 150 mm low-profile floor may still meet the 50 mm tray-clearance rule if tray depth is managed accordingly."
+      "This clearance requirement is distinct from the overall access floor height \u2014 a 150 mm low-profile floor may still meet the 50 mm tray-clearance rule if tray depth is managed accordingly."
     ]
   },
   {
@@ -55,7 +55,7 @@
     "w": "In ceiling-based pathways, at least 75 mm (3 in) of clear vertical space should be available above conduits and cables to allow installation, removal, and maintenance. 25 mm and 50 mm do not provide sufficient clearance for pulling cables or routing new cables. 150 mm exceeds the minimum but may not always be available in tight ceiling plenum spaces.",
     "k": [
       "Ceiling-based horizontal pathways (trays, conduits, J-hooks) must leave clearance above them so that cables can be laid in, laced, and removed without crushing against structural elements.",
-      "The 75 mm (3 in) clear vertical space above ceiling pathways is the TIA design guideline — it allows a cable to be placed alongside existing bundles and ensures minimum bend radii are not violated.",
+      "The 75 mm (3 in) clear vertical space above ceiling pathways is the TIA design guideline \u2014 it allows a cable to be placed alongside existing bundles and ensures minimum bend radii are not violated.",
       "Ceiling plenum spaces are often shared with HVAC ductwork; the 75 mm rule helps coordinate with other trades and avoids code violations where cables may not rest on duct surfaces."
     ]
   },
@@ -75,7 +75,7 @@
     "w": "The minimum pull box length should be 16 times the diameter of the largest conduit it serves to ensure sufficient space for cable bending radius and pulling tension management. 8 times would create too tight a radius, potentially damaging cables. 12 times is below the minimum standard. 20 times is more generous than required but would also comply.",
     "k": [
       "Pull boxes are installed in conduit runs to provide an access point for pulling cables and to break up excessive accumulated bend angles between outlet and TR.",
-      "The 16× conduit-diameter rule for pull box length preserves the minimum cable bend radius inside the box — a shorter box forces tighter bends that can crack insulation or kink fiber.",
+      "The 16\u00d7 conduit-diameter rule for pull box length preserves the minimum cable bend radius inside the box \u2014 a shorter box forces tighter bends that can crack insulation or kink fiber.",
       "Pull box sizing is driven by the largest conduit entering it; if a 50 mm conduit feeds the box, the box must be at least 800 mm long on the pulling axis."
     ]
   },
@@ -115,8 +115,8 @@
     "w": "In MUTOA designs, the derating factor for 26 AWG equipment cords is 50%, meaning they are counted at half their length for channel compliance. 30% is not a standard derating factor for AWG-based cords. 70% is the derating factor for 28 AWG cords, not 26 AWG. 90% would not adequately account for the higher attenuation of thinner-gauge stranded patch cords.",
     "k": [
       "Stranded-conductor patch cords have higher attenuation per metre than solid-conductor horizontal cable; thinner gauges (26/28 AWG) attenuate more, so TIA-568 requires derating their length when calculating MUTOA channel compliance.",
-      "The 50% derating for 26 AWG means a 10 m cord counts as 5 m against the horizontal channel length budget — preventing the designer from underestimating signal loss on thin stranded cords.",
-      "AWG derating hierarchy: 24 AWG = 1:1 (no derating), 26 AWG = 50% (counts double), 28 AWG = 70% (counts at ~1.43×) — finer wire requires heavier penalty."
+      "The 50% derating for 26 AWG means a 10 m cord counts as 5 m against the horizontal channel length budget \u2014 preventing the designer from underestimating signal loss on thin stranded cords.",
+      "AWG derating hierarchy: 24 AWG = 1:1 (no derating), 26 AWG = 50% (counts double), 28 AWG = 70% (counts at ~1.43\u00d7) \u2014 finer wire requires heavier penalty."
     ]
   },
   {
@@ -135,7 +135,7 @@
     "w": "A CP (Consolidation Point) is an interconnection point within a horizontal cabling system, typically used in open-plan offices for flexible cable management. A midpoint between two TRs would be a backbone element, not a horizontal CP. A cross-connect between horizontal and backbone cabling is performed at the HC/FD. Conversion between optical fiber and copper is done by media converters, not consolidation points.",
     "k": [
       "A Consolidation Point (CP) is a passive interconnection housed in the ceiling or floor zone; it allows flexible re-routing of horizontal cable to reconfigured work areas without running new cable all the way back to the TR.",
-      "Unlike a cross-connect (which involves two cable runs and administration), a CP is a direct interconnect — the two cable segments are spliced together electrically without an active device or patch cord between them.",
+      "Unlike a cross-connect (which involves two cable runs and administration), a CP is a direct interconnect \u2014 the two cable segments are spliced together electrically without an active device or patch cord between them.",
       "TIA-568 allows only one CP per horizontal run; a CP and MUTOA cannot both appear in the same channel, and the CP must be at least 15 m from the HC."
     ]
   },
@@ -156,7 +156,7 @@
     "k": [
       "A PON uses unpowered optical splitters to share a single feeder fibre from the central office among multiple subscribers, eliminating active electronics in the outside plant.",
       "The OLT (Optical Line Terminal) sits at the provider head-end and manages time-division or wavelength-division multiplexing to/from all ONUs on the tree; it is the sole aggregation and control point for the PON.",
-      "The ONU (Optical Network Unit) is the subscriber-premises device — it converts optical signals to electrical for customer equipment; confusing OLT and ONU is a common error on the RCDD exam."
+      "The ONU (Optical Network Unit) is the subscriber-premises device \u2014 it converts optical signals to electrical for customer equipment; confusing OLT and ONU is a common error on the RCDD exam."
     ]
   },
   {
@@ -174,7 +174,7 @@
     "a": 2,
     "w": "The maximum distance for ITU G.984 GPON (C optics) is 60 km (37 mi). 20 km represents a shorter-reach GPON variant. 40 km is the maximum distance for ITU G.987 10GPON/XG-PON, not GPON. 100 km exceeds any standard GPON specification and is associated with long-haul terrestrial single-mode fiber systems.",
     "k": [
-      "ITU G.984 GPON (Gigabit Passive Optical Network) uses 2.5 Gbps downstream / 1.25 Gbps upstream and defines three optical budget classes (A, B, C) — Class C optics support the longest reach.",
+      "ITU G.984 GPON (Gigabit Passive Optical Network) uses 2.5 Gbps downstream / 1.25 Gbps upstream and defines three optical budget classes (A, B, C) \u2014 Class C optics support the longest reach.",
       "The 60 km maximum for G.984 GPON C optics is driven by the optical power budget; the unpowered splitter (typically 1:32) consumes most of the loss budget, leaving limited margin for fibre length.",
       "Contrast with G.987 XG-PON (10 Gbps downstream): its maximum reach is 40 km, shorter than GPON C because higher bit-rate signals have less tolerance for chromatic dispersion over long distances."
     ]
@@ -194,9 +194,9 @@
     "a": 1,
     "w": "The maximum current per conductor for PoE Type 1 is 175 mA. 100 mA is below the Type 1 specification and would underestimate cable heating. 300 mA and 600 mA correspond to higher PoE types (Type 3 and Type 4), which deliver more power per conductor.",
     "k": [
-      "IEEE 802.3af (PoE Type 1) delivers up to 15.4 W at the PSE across two conductor pairs; at 44–57 V DC, this yields up to 175 mA per conductor, which sets the thermal design requirement for cabling.",
-      "Per-conductor current matters because current through DC resistance generates I²R heat; bundled cables trap heat, so the 175 mA limit for Type 1 is the basis for bundle-size and derating calculations.",
-      "Higher PoE types increase current significantly — Type 3 reaches 300 mA and Type 4 reaches 600 mA per conductor — which is why 24 AWG minimum and controlled bundle sizes are mandatory for higher-power PoE."
+      "IEEE 802.3af (PoE Type 1) delivers up to 15.4 W at the PSE across two conductor pairs; at 44\u201357 V DC, this yields up to 175 mA per conductor, which sets the thermal design requirement for cabling.",
+      "Per-conductor current matters because current through DC resistance generates I\u00b2R heat; bundled cables trap heat, so the 175 mA limit for Type 1 is the basis for bundle-size and derating calculations.",
+      "Higher PoE types increase current significantly \u2014 Type 3 reaches 300 mA and Type 4 reaches 600 mA per conductor \u2014 which is why 24 AWG minimum and controlled bundle sizes are mandatory for higher-power PoE."
     ]
   },
   {
@@ -215,8 +215,8 @@
     "w": "The maximum power at source for PoE Type 4 is 90 W, which is the highest power level defined in the IEEE 802.3bt standard. 15.4 W corresponds to PoE Type 1 (802.3af). 30 W corresponds to PoE Type 2 (802.3at). 60 W corresponds to PoE Type 3, not Type 4.",
     "k": [
       "IEEE 802.3bt (PoE++) defines Types 3 and 4; Type 4 uses all four pairs simultaneously and supplies up to 90 W at the PSE (power sourcing equipment), enabling devices like high-wattage PTZ cameras and thin clients.",
-      "The four-type PoE power ladder: Type 1 = 15.4 W, Type 2 = 30 W, Type 3 = 60 W, Type 4 = 90 W — each step doubles the power and increases per-conductor current, raising cable thermal management requirements.",
-      "At 90 W (Type 4), conductor current reaches 600 mA; cable temperature rise in large bundles can exceed 10°C, reducing effective channel length and mandating derating per TIA-568 TSB-184-A."
+      "The four-type PoE power ladder: Type 1 = 15.4 W, Type 2 = 30 W, Type 3 = 60 W, Type 4 = 90 W \u2014 each step doubles the power and increases per-conductor current, raising cable thermal management requirements.",
+      "At 90 W (Type 4), conductor current reaches 600 mA; cable temperature rise in large bundles can exceed 10\u00b0C, reducing effective channel length and mandating derating per TIA-568 TSB-184-A."
     ]
   },
   {
@@ -234,9 +234,9 @@
     "a": 2,
     "w": "In T568A pin assignments, the Blue pair is connected to pins 4 and 5. The Green pair occupies pins 1 and 2. The Orange pair occupies pins 3 and 6 in T568A. The Brown pair occupies pins 7 and 8.",
     "k": [
-      "T568A pin-pair assignment (8P8C/RJ-45): pins 1-2 = Green pair, pins 3-6 = Orange pair, pins 4-5 = Blue pair, pins 7-8 = Brown pair — this is the TIA-568 preferred wiring scheme.",
+      "T568A pin-pair assignment (8P8C/RJ-45): pins 1-2 = Green pair, pins 3-6 = Orange pair, pins 4-5 = Blue pair, pins 7-8 = Brown pair \u2014 this is the TIA-568 preferred wiring scheme.",
       "Pins 4 and 5 (Blue pair) carry the primary voice pair in traditional telephony; the Blue pair sits at the center of the connector, which was historically the position for the main voice line.",
-      "T568A differs from T568B only in the swap of the Green and Orange pairs; pins 4-5 (Blue) and 7-8 (Brown) are identical in both schemes — knowing this prevents mis-termination errors during installation."
+      "T568A differs from T568B only in the swap of the Green and Orange pairs; pins 4-5 (Blue) and 7-8 (Brown) are identical in both schemes \u2014 knowing this prevents mis-termination errors during installation."
     ]
   },
   {
@@ -256,7 +256,7 @@
     "k": [
       "Fiber slack stored inside termination hardware (splice/patch enclosures) provides the working length needed if a connector must be re-polished or a fibre re-spliced after a break or poor splice loss.",
       "The 3 m (10 ft) TR slack standard balances two competing concerns: too little slack means a damaged end cannot be re-terminated without running new cable; too much slack creates congestion and bend-radius violations inside the enclosure.",
-      "Slack is coiled inside the enclosure on storage spools or cassette trays designed to maintain the fibre's minimum bend radius — typically 30 mm for standard OS1/OS2 fibre during storage."
+      "Slack is coiled inside the enclosure on storage spools or cassette trays designed to maintain the fibre's minimum bend radius \u2014 typically 30 mm for standard OS1/OS2 fibre during storage."
     ]
   },
   {
@@ -274,7 +274,7 @@
     "a": 3,
     "w": "Optical splitters in PON systems are unpowered and typically have a 1:32 splitter output ratio, allowing one fiber to serve 32 subscribers. 1:4 is a lower ratio used in smaller or commercial installations. 1:8 is used in some enterprise PON applications. 1:16 is a valid ratio but not the typical standard for residential PON systems.",
     "k": [
-      "PON optical splitters are passive fused-fibre or planar lightwave circuit (PLC) devices that divide one input fibre into N outputs without any active electronics, introducing approximately 3 dB of loss per 2× split ratio.",
+      "PON optical splitters are passive fused-fibre or planar lightwave circuit (PLC) devices that divide one input fibre into N outputs without any active electronics, introducing approximately 3 dB of loss per 2\u00d7 split ratio.",
       "A 1:32 splitter introduces ~15 dB of splitting loss alone; the OLT optical budget must account for this plus fibre attenuation, connector losses, and ageing margin to maintain adequate power at each ONU.",
       "Residential GPON systems standardised on 1:32 to balance cost-per-subscriber (fewer feeder fibres) with reach; enterprise PON often uses 1:16 or 1:8 to preserve power budget for longer or more loss-sensitive runs."
     ]
@@ -294,9 +294,9 @@
     "a": 2,
     "w": "Optical fiber cabling for PONs should be tested for bidirectional loss at 1310 nm and 1550 nm, which are the two primary operating wavelengths for PON downstream and upstream transmission. 850 nm and 1300 nm are multimode fiber testing wavelengths, not applicable to single-mode PON systems. 1383 nm is the water-peak wavelength tested for OS2 fiber qualification, not standard PON testing. 1550 nm and 1625 nm are wavelengths used in OTDR testing for fault location, not standard PON acceptance testing.",
     "k": [
-      "PON systems operate on single-mode fibre using 1310 nm for upstream (ONU→OLT) and 1490 nm or 1550 nm for downstream (OLT→ONU); the two test wavelengths bracket the full operating window of the installed plant.",
+      "PON systems operate on single-mode fibre using 1310 nm for upstream (ONU\u2192OLT) and 1490 nm or 1550 nm for downstream (OLT\u2192ONU); the two test wavelengths bracket the full operating window of the installed plant.",
       "Bidirectional OTDR testing at both 1310 nm and 1550 nm is required because connector and splice events can show different loss in opposite directions, and 1550 nm is more sensitive to bend-induced loss than 1310 nm.",
-      "Testing at 850/1300 nm would indicate multimode fibre — PON uses OS1/OS2 single-mode fibre; a test kit presenting those wavelengths is the wrong tool and the results would not validate PON performance."
+      "Testing at 850/1300 nm would indicate multimode fibre \u2014 PON uses OS1/OS2 single-mode fibre; a test kit presenting those wavelengths is the wrong tool and the results would not validate PON performance."
     ]
   },
   {
@@ -316,7 +316,7 @@
     "k": [
       "ITU G.987 XG-PON (10GPON) provides 10 Gbps downstream and 2.5 Gbps upstream, offering a ten-fold capacity increase over GPON while reusing the same single-mode fibre plant.",
       "XG-PON's 40 km maximum reach is shorter than GPON Class C (60 km) because the higher bit rate increases chromatic dispersion sensitivity and tightens the optical power budget at 10 Gbps.",
-      "Key PON standard reach comparison: GPON (G.984) Class C = 60 km; XG-PON (G.987) = 40 km; NG-PON2 (G.989) = 40 km — knowing which standard applies determines the design maximum for any given PON deployment."
+      "Key PON standard reach comparison: GPON (G.984) Class C = 60 km; XG-PON (G.987) = 40 km; NG-PON2 (G.989) = 40 km \u2014 knowing which standard applies determines the design maximum for any given PON deployment."
     ]
   },
   {
@@ -334,8 +334,8 @@
     "a": 1,
     "w": "J-hooks are an example of non-continuous pathways, characterized by discrete support points with gaps between them rather than a continuous cable tray or conduit. Continuous pathways like cable trays or conduits provide support along the entire cable run. Enclosed pathways are conduits or raceways that fully enclose the cable. Under-carpet pathways are flat cable systems installed beneath carpet tiles.",
     "k": [
-      "Horizontal pathway types: continuous (cable tray, wireway), non-continuous (J-hooks, bridle rings), enclosed (conduit, raceway), and specialty (under-carpet, modular furniture, access floor) — each carries different support, fill, and protection rules.",
-      "J-hooks are non-continuous because they provide point support at 0.91–1.52 m intervals with open space between; cables are exposed to the ceiling plenum environment between hooks, unlike fully enclosed conduit.",
+      "Horizontal pathway types: continuous (cable tray, wireway), non-continuous (J-hooks, bridle rings), enclosed (conduit, raceway), and specialty (under-carpet, modular furniture, access floor) \u2014 each carries different support, fill, and protection rules.",
+      "J-hooks are non-continuous because they provide point support at 0.91\u20131.52 m intervals with open space between; cables are exposed to the ceiling plenum environment between hooks, unlike fully enclosed conduit.",
       "Non-continuous pathways are faster and less costly to install than conduit but provide no physical protection for cables and cannot be used in areas requiring fire-rated or mechanical protection."
     ]
   },
@@ -354,7 +354,7 @@
     "a": 1,
     "w": "TO boxes should be installed at the same height as electrical outlets to maintain a consistent and professional appearance and to ensure compliance with accessibility and installation standards. 500 mm above or 300 mm below would create inconsistency and potential accessibility issues. Placing them on the opposite wall could create cable management challenges and is not a standard installation practice.",
     "k": [
-      "Telecommunications outlet boxes should be co-located with electrical outlets — same wall face, same mounting height — to simplify cable management at the work area and ensure a coordinated, accessible installation.",
+      "Telecommunications outlet boxes should be co-located with electrical outlets \u2014 same wall face, same mounting height \u2014 to simplify cable management at the work area and ensure a coordinated, accessible installation.",
       "Consistent mounting height with electrical outlets also satisfies ADA/accessibility requirements; deviating from that height can create reach problems for mobility-impaired users without any cabling benefit.",
       "Separation between telecom and power outlets is also important: TIA-568 recommends at least 50 mm (2 in) horizontal separation to reduce EMI induction from AC power conductors onto unshielded data cables."
     ]
@@ -376,7 +376,7 @@
     "k": [
       "Perimeter raceways (surface-mounted wall-level ducts) are a horizontal pathway option for retrofit installations where cutting into walls is impractical; they are limited to dry, interior, conditioned spaces.",
       "Moisture in a perimeter raceway degrades cable jacket insulation over time, reduces conductor-to-conductor isolation, and eventually causes pair crosstalk and resistance increases that fail channel tests.",
-      "For wet or damp locations — building exteriors, parking garages, mechanical rooms — sealed conduit or appropriately rated cable (CMX, direct-burial) must replace perimeter raceways."
+      "For wet or damp locations \u2014 building exteriors, parking garages, mechanical rooms \u2014 sealed conduit or appropriately rated cable (CMX, direct-burial) must replace perimeter raceways."
     ]
   },
   {
@@ -394,7 +394,7 @@
     "a": 2,
     "w": "Standard-height access floors in general office areas require 200 mm (8 in) clearance above the structural floor. 100 mm is below low-profile access floor classification. 150 mm is classified as a low-profile access floor. 250 mm would be a high-access-floor system used in data centers with significant underfloor cable volumes.",
     "k": [
-      "Raised access floors are classified by finished floor height above the structural slab: low-profile (<150 mm), standard (≈200 mm for general office), and high (>300 mm for data centres).",
+      "Raised access floors are classified by finished floor height above the structural slab: low-profile (<150 mm), standard (\u2248200 mm for general office), and high (>300 mm for data centres).",
       "The 200 mm standard-height office access floor provides enough plenum depth for cable trays and pathway infrastructure while keeping the step-height modest enough for ADA-compliant ramp transitions.",
       "Access floor height directly affects underfloor airflow capacity in data centres; for cabling-only office environments, the 200 mm height balances cable management space against increased floor-to-ceiling height loss."
     ]
@@ -416,7 +416,7 @@
     "k": [
       "Access floors are rated by concentrated load (point load on a rolling caster) and distributed load (uniform load across a panel); duty classifications ensure panels can withstand both office equipment and foot traffic.",
       "Medium-duty access floors at 8.8 kN (2000 lbf) concentrated load are specified for general office environments where standard office chairs, equipment carts, and personnel loading are expected.",
-      "Heavier equipment — server racks, UPS systems, raised-floor data centres — requires heavy-duty or data-centre-grade access floors rated at 11+ kN (2500+ lbf) to prevent panel deflection and structural failure."
+      "Heavier equipment \u2014 server racks, UPS systems, raised-floor data centres \u2014 requires heavy-duty or data-centre-grade access floors rated at 11+ kN (2500+ lbf) to prevent panel deflection and structural failure."
     ]
   },
   {
@@ -455,7 +455,7 @@
     "w": "Cable trays and wireways are typically supported at 1.5 m (5 ft) centers unless designed for longer spans. 0.75 m centers would be excessive support frequency and increase installation cost. 1.0 m provides adequate support but is more frequent than the standard recommendation. 2.0 m may be acceptable for heavy-duty cable tray systems specifically designed for longer spans.",
     "k": [
       "Support intervals for cable trays and wireways limit midspan deflection under cable weight; the 1.5 m (5 ft) standard balances structural integrity with the cost of threaded rod hangers and hardware.",
-      "Support spacing is also a fire code concern — NFPA 70 and building codes require supports at specified intervals to prevent cable tray collapse during a fire before suppression systems activate.",
+      "Support spacing is also a fire code concern \u2014 NFPA 70 and building codes require supports at specified intervals to prevent cable tray collapse during a fire before suppression systems activate.",
       "Tray manufacturers publish span tables showing allowable support intervals for different tray widths, depths, and load ratings; 1.5 m is the default unless the tray is specifically designed and tested for longer spans."
     ]
   },
@@ -475,7 +475,7 @@
     "w": "If a conduit run has more than two 90-degree bends, a pull box or pull point must be included to maintain manageable cable pulling tension. One 90-degree bend does not require a pull box and is easily accommodated. Two 90-degree bends are the maximum before a pull box is required. Three or four bends without a pull box would require excessive pulling force and risk cable damage.",
     "k": [
       "Each 90-degree bend in a conduit adds friction during cable pulling; the accumulated friction from multiple bends increases tension exponentially, risking jacket deformation or pair damage in UTP cables.",
-      "The two-bend rule means that after two 90-degree turns (or equivalent accumulated angles totalling 180°), a pull box must interrupt the conduit to reset the pulling baseline and limit total pull tension.",
+      "The two-bend rule means that after two 90-degree turns (or equivalent accumulated angles totalling 180\u00b0), a pull box must interrupt the conduit to reset the pulling baseline and limit total pull tension.",
       "Pull boxes should also be added whenever conduit exceeds 30 m (100 ft) between access points, regardless of bend count, to prevent pull tension from exceeding the cable manufacturer's maximum."
     ]
   },
@@ -495,8 +495,8 @@
     "w": "BAS pathways should anticipate one cable per system or coverage area to simplify installation and future expansion planning. Two cables would overestimate the typical BAS cabling requirement. Three cables per BAS device would significantly overprovision the pathway design. The standard does provide specific guidance rather than leaving it undefined.",
     "k": [
       "Building Automation System (BAS) cabling covers HVAC controls, lighting, access control, and fire/life-safety sensors; pathway planning must accommodate all these systems in a coordinated horizontal design.",
-      "The one-cable-per-coverage-area guideline is a planning basis for conduit and pathway fill calculations — each sensor zone or BAS device is assumed to need one cable route back to the BAS controller or field panel.",
-      "BAS cables are often low-voltage twisted-pair or shielded multi-conductor types; they share horizontal pathways with ICT cabling but must be separated from power wiring to avoid EMI — hence the need for dedicated BAS pathway sizing."
+      "The one-cable-per-coverage-area guideline is a planning basis for conduit and pathway fill calculations \u2014 each sensor zone or BAS device is assumed to need one cable route back to the BAS controller or field panel.",
+      "BAS cables are often low-voltage twisted-pair or shielded multi-conductor types; they share horizontal pathways with ICT cabling but must be separated from power wiring to avoid EMI \u2014 hence the need for dedicated BAS pathway sizing."
     ]
   },
   {
@@ -515,7 +515,7 @@
     "w": "The horizontal cabling system includes all components from the telecommunications outlet at the work area to the horizontal cross-connect (HC) in the telecommunications room, including the cable run, any consolidation points, and patch cords. Components from the backbone to the work area describes the entire structured cabling system, not just horizontal cabling (option A). Backbone cabling is a separate subsystem from horizontal cabling (option C). Connections between multiple buildings are handled by outside plant or campus backbone cabling, not horizontal distribution (option D).",
     "k": [
       "TIA-568 structured cabling has three subsystems: horizontal cabling (TO to HC), backbone cabling (HC to MC/IC), and work area cabling (equipment to TO); each subsystem has its own distance limits and component rules.",
-      "The horizontal cabling subsystem begins at the face of the telecommunications outlet (TO) at the work area and ends at the horizontal cross-connect (HC) patch panel in the TR — everything in between belongs to horizontal.",
+      "The horizontal cabling subsystem begins at the face of the telecommunications outlet (TO) at the work area and ends at the horizontal cross-connect (HC) patch panel in the TR \u2014 everything in between belongs to horizontal.",
       "Consolidation points and MUTOAs are optional intermediate components within the horizontal subsystem; they do not extend the boundary, which is always TO to HC regardless of the pathway used."
     ]
   },
@@ -536,7 +536,7 @@
     "k": [
       "A work area is defined as the space served by a single TO location; TIA-568 mandates at least two outlets per work area so that voice (analog/VoIP) and data can each have a dedicated connection without sharing adapters.",
       "The two-outlet minimum also provides a spare port for future service needs or device additions, avoiding the cost of retrofitting cabling when a second device is added to an existing workstation.",
-      "Both outlets must be individually home-run to the HC — they may not daisy-chain from one another; this ensures each outlet's channel meets full TIA-568 permanent link and channel performance specifications."
+      "Both outlets must be individually home-run to the HC \u2014 they may not daisy-chain from one another; this ensures each outlet's channel meets full TIA-568 permanent link and channel performance specifications."
     ]
   },
   {
@@ -555,8 +555,8 @@
     "w": "ANSI/TIA-568 allows a maximum of 4 connection points in a horizontal channel: the outlet/connector at the work area, a consolidation point or MUTOA (optional), the patch panel at the HC, and patch cords at each end. 2 connection points would represent a simple permanent link without consolidation points or patch cords counted (option A). 3 connection points does not account for all permitted connection types in a full channel configuration (option B). 5 connection points would exceed the standard limit and degrade channel performance (option D).",
     "k": [
       "The horizontal channel model includes the permanent link plus all cords and jumpers end-to-end; each mated plug-jack pair is a connection point that introduces insertion loss and return loss.",
-      "Four connection points maximum: TO outlet (1), optional CP or MUTOA (2), HC patch panel (3), and the combined patch cords at each end (counted as a single fourth point in some model interpretations — or two points depending on which TIA channel model revision is applied).",
-      "Adding a fifth connection point — e.g., an unauthorised in-line coupler or second CP — degrades the channel budget below category compliance minimums, which is why field testing after installation is mandatory."
+      "Four connection points maximum: TO outlet (1), optional CP or MUTOA (2), HC patch panel (3), and the combined patch cords at each end (counted as a single fourth point in some model interpretations \u2014 or two points depending on which TIA channel model revision is applied).",
+      "Adding a fifth connection point \u2014 e.g., an unauthorised in-line coupler or second CP \u2014 degrades the channel budget below category compliance minimums, which is why field testing after installation is mandatory."
     ]
   },
   {
@@ -575,7 +575,7 @@
     "w": "ANSI/TIA-568-C.2 specifies Category 5e as the minimum acceptable balanced twisted-pair cable for horizontal installations, supporting 100 MHz bandwidth. Category 3 cable is only rated for voice applications and does not meet the minimum bandwidth requirements for modern horizontal data cabling (option A). Category 6 exceeds the minimum requirement and provides improved performance margins (option C). Category 6A exceeds the minimum requirement and is required for 10 Gigabit Ethernet applications (option D).",
     "k": [
       "Category 5e (enhanced) is rated to 100 MHz and supports 1000BASE-T (Gigabit Ethernet) over 100 m; it was the first UTP category designed with a Power Sum NEXT specification, making it the TIA-568 minimum for new horizontal data cabling.",
-      "Category 3 supports only up to 16 MHz (adequate for 10BASE-T and POTS voice) and cannot reliably carry Gigabit Ethernet — it is permitted for voice-only outlets but not as a general data horizontal cable.",
+      "Category 3 supports only up to 16 MHz (adequate for 10BASE-T and POTS voice) and cannot reliably carry Gigabit Ethernet \u2014 it is permitted for voice-only outlets but not as a general data horizontal cable.",
       "While Cat 5e is the minimum, current best practice is to install Cat 6A (500 MHz, 10GBASE-T) to future-proof new construction; Cat 5e is only appropriate for like-for-like replacements in existing buildings."
     ]
   },
@@ -616,7 +616,7 @@
     "k": [
       "T568A and T568B are the only two ANSI/TIA-568-recognised wiring schemes for 8P8C (RJ-45) modular outlets; they differ only in swapping the green and orange pairs (pins 1-2 vs. 3-6).",
       "T568A is preferred by TIA for new installations and is required for US Government work; T568B is commonly used in commercial buildings and is backward-compatible with the older AT&T 258A scheme.",
-      "Mixing T568A and T568B within the same horizontal run creates a cross-over wiring condition that will fail channel testing and prevent straight-through Ethernet connectivity — consistent use of one scheme throughout a building is critical."
+      "Mixing T568A and T568B within the same horizontal run creates a cross-over wiring condition that will fail channel testing and prevent straight-through Ethernet connectivity \u2014 consistent use of one scheme throughout a building is critical."
     ]
   },
   {
@@ -636,7 +636,7 @@
     "k": [
       "A MUTOA consolidates multiple outlets into one ceiling or floor cluster, served by bundled horizontal cables from the HC; users connect their workstations via long furniture cords rather than individual wall outlets.",
       "The 12 work area cap exists because each furniture cord consumes channel length; beyond 12 users, the cumulative cord length plus derating would exhaust the 100 m channel budget even with a short permanent link.",
-      "MUTOAs are distinct from Consolidation Points — a CP is a passive interconnect inside the pathway, while a MUTOA terminates cable at an accessible multi-port outlet; a channel may use one or the other but not both."
+      "MUTOAs are distinct from Consolidation Points \u2014 a CP is a passive interconnect inside the pathway, while a MUTOA terminates cable at an accessible multi-port outlet; a channel may use one or the other but not both."
     ]
   },
   {
@@ -654,9 +654,9 @@
     "a": 1,
     "w": "ANSI/TIA-568 recommends 24 AWG as the minimum conductor size for PoE applications to minimize resistive power loss and heat generation when carrying both data and power simultaneously. 22 AWG is larger (lower resistance) than required and would work well, but is not the minimum recommended size for standard PoE (option A). 26 AWG has higher resistance than 24 AWG and can cause excessive heat buildup in bundled PoE cables (option C). 28 AWG has even higher resistance and is not recommended for PoE applications due to potential overheating issues (option D).",
     "k": [
-      "Conductor DC resistance determines I²R heat generation in PoE cables; 24 AWG solid conductors have approximately 9.4 Ω/100 m resistance — thin enough for flexible UTP construction while keeping resistive heating manageable at PoE currents.",
-      "Thinner conductors (26, 28 AWG) used in some patch cables have 40–70% higher resistance per unit length; in bundled PoE installations this raises cable core temperature, which degrades insulation and increases pair resistance further in a compounding cycle.",
-      "TIA-568 TSB-184-A mandates 24 AWG minimum for horizontal PoE runs and requires bundle-size derating to account for mutual heating — thinner cables disqualify an installation from standard PoE compliance."
+      "Conductor DC resistance determines I\u00b2R heat generation in PoE cables; 24 AWG solid conductors have approximately 9.4 \u03a9/100 m resistance \u2014 thin enough for flexible UTP construction while keeping resistive heating manageable at PoE currents.",
+      "Thinner conductors (26, 28 AWG) used in some patch cables have 40\u201370% higher resistance per unit length; in bundled PoE installations this raises cable core temperature, which degrades insulation and increases pair resistance further in a compounding cycle.",
+      "TIA-568 TSB-184-A mandates 24 AWG minimum for horizontal PoE runs and requires bundle-size derating to account for mutual heating \u2014 thinner cables disqualify an installation from standard PoE compliance."
     ]
   },
   {
@@ -695,7 +695,7 @@
     "w": "The permanent link for both balanced twisted-pair and centralized optical fiber horizontal cabling is limited to 90 meters, leaving 10 meters for patch cords and equipment cables to maintain the 100-meter total channel limit. 80 meters is more restrictive than the standard permanent link limit and would unnecessarily reduce installation flexibility (option A). 100 meters is the total channel limit, not the permanent link limit (option C). 120 meters exceeds the total channel limit and is not permitted for horizontal permanent links (option D).",
     "k": [
       "The horizontal permanent link is the fixed installed cable between the HC and the TO, excluding patch cords at either end; TIA-568 limits it to 90 m so that 10 m remains available for combined patch cords/equipment cables.",
-      "The 90 m / 10 m split (permanent link / cords) applies to both Cat 5e/6/6A balanced twisted-pair and to centralized optical fibre horizontal runs — the channel model is the same regardless of media type.",
+      "The 90 m / 10 m split (permanent link / cords) applies to both Cat 5e/6/6A balanced twisted-pair and to centralized optical fibre horizontal runs \u2014 the channel model is the same regardless of media type.",
       "Installers sometimes confuse permanent link (90 m tested without patch cords) with channel length (100 m tested end-to-end including cords); field testers must be configured for the correct model or results will be misleading."
     ]
   },
@@ -734,9 +734,9 @@
     "a": 1,
     "w": "The minimum dimension for a telecommunications outlet box is 10 cm x 10 cm (approximately 4 inches x 4 inches) to accommodate the required connectors, cable management, and proper bend radii. 8 cm x 8 cm is too small to properly accommodate connectors and maintain minimum cable bend radii (option A). 12 cm x 12 cm exceeds the minimum requirement but is acceptable (option C). 15 cm x 15 cm also exceeds the minimum requirement and would be unnecessarily large for a standard outlet box (option D).",
     "k": [
-      "The outlet box must be large enough to house the faceplate connectors, secure the cable, and maintain the minimum cable bend radius (typically 4× cable OD for UTP) immediately behind the connector termination.",
-      "A 10 cm × 10 cm (4 in × 4 in) single-gang box provides sufficient depth and area for two RJ-45 keystone jacks plus the cable stub without kinking the cable against the back of the box.",
-      "Boxes smaller than 10 cm × 10 cm risk forcing the cable into a tight bend radius right at the termination point — a common cause of NEXT/FEXT failures that are difficult to diagnose without physically inspecting each outlet."
+      "The outlet box must be large enough to house the faceplate connectors, secure the cable, and maintain the minimum cable bend radius (typically 4\u00d7 cable OD for UTP) immediately behind the connector termination.",
+      "A 10 cm \u00d7 10 cm (4 in \u00d7 4 in) single-gang box provides sufficient depth and area for two RJ-45 keystone jacks plus the cable stub without kinking the cable against the back of the box.",
+      "Boxes smaller than 10 cm \u00d7 10 cm risk forcing the cable into a tight bend radius right at the termination point \u2014 a common cause of NEXT/FEXT failures that are difficult to diagnose without physically inspecting each outlet."
     ]
   },
   {
@@ -754,8 +754,8 @@
     "a": 1,
     "w": "A low profile access floor system is raised less than 15 cm (6 inches) above the structural floor, providing cable routing space while minimizing the step-up height and floor-to-ceiling height loss. Standard height access floors are raised 30 cm or more, providing much greater cable management space (option A). Modular floor systems describe a construction type rather than a height classification (option C). Suspended floor is another term for raised access floor in general, not a specific height category (option D).",
     "k": [
-      "Access floor height classifications: low profile (<150 mm / 6 in), standard height (≈200 mm / 8 in for general office), and high (>300 mm / 12 in for data centres with high cable and airflow volumes).",
-      "Low-profile access floors are chosen for retrofit projects where ceiling heights are limited — the minimal slab-to-finish-floor step reduces ADA ramp length and avoids a significant loss of usable ceiling height.",
+      "Access floor height classifications: low profile (<150 mm / 6 in), standard height (\u2248200 mm / 8 in for general office), and high (>300 mm / 12 in for data centres with high cable and airflow volumes).",
+      "Low-profile access floors are chosen for retrofit projects where ceiling heights are limited \u2014 the minimal slab-to-finish-floor step reduces ADA ramp length and avoids a significant loss of usable ceiling height.",
       "The trade-off with low-profile systems is reduced underfloor space: cable trays and conduits must be shallower, and the 50 mm minimum clearance above trays becomes a tighter constraint to satisfy within the available plenum depth."
     ]
   },
@@ -775,8 +775,8 @@
     "w": "J-hooks should be spaced at 0.91 m to 1.52 m (3 to 5 feet) intervals in ceiling distribution systems to adequately support cable weight, prevent sag, and maintain proper bend radii. 0.75 m to 1.25 m spacing is closer than recommended and would require more hardware without additional benefit (option A). 1.5 m to 2.0 m is slightly wider than the recommended maximum and may allow cable sag in some installations (option C). 2.0 m to 2.5 m spacing is too wide and would allow excessive cable sag between supports (option D).",
     "k": [
       "J-hooks provide point support for cable bundles at discrete intervals; spacing must be close enough to prevent cable sag that could violate minimum bend radius or cause cables to contact suspended ceiling grid components.",
-      "The 0.91–1.52 m (3–5 ft) range balances installation hardware cost against the need to keep cables from drooping; beyond 1.52 m, heavier bundles may sag enough to form tight bends at the hook lip.",
-      "J-hooks must be sized for the cable bundle diameter — overfilled hooks pinch cables and can deform UTP pairs, degrading NEXT performance — and the hook lip should have a smooth radius, not a sharp edge."
+      "The 0.91\u20131.52 m (3\u20135 ft) range balances installation hardware cost against the need to keep cables from drooping; beyond 1.52 m, heavier bundles may sag enough to form tight bends at the hook lip.",
+      "J-hooks must be sized for the cable bundle diameter \u2014 overfilled hooks pinch cables and can deform UTP pairs, degrading NEXT performance \u2014 and the hook lip should have a smooth radius, not a sharp edge."
     ]
   },
   {
@@ -794,7 +794,7 @@
     "a": 0,
     "w": "Over-floor ducts are not recommended for horizontal distribution because they create tripping hazards, are difficult to manage, and impede traffic flow in occupied spaces. Partition pathways built into wall partitions are an acceptable method for routing cables to work areas (option B). Poke-throughs are an accepted method for providing cable access through floors in specific locations (option C). Modular furniture pathways integrated into office furniture systems are a recognized and recommended method for cable distribution (option D).",
     "k": [
-      "Over-floor ducts run across the finished floor surface and present tripping hazards, restrict furniture placement, and are vulnerable to physical damage from foot traffic and equipment — making them unsuitable for permanent horizontal distribution.",
+      "Over-floor ducts run across the finished floor surface and present tripping hazards, restrict furniture placement, and are vulnerable to physical damage from foot traffic and equipment \u2014 making them unsuitable for permanent horizontal distribution.",
       "TIA-568 pathway guidance explicitly discourages over-floor ducts in occupied spaces; acceptable surface-level alternatives include perimeter raceways (at baseboard height), modular furniture raceways, and poke-through assemblies.",
       "When a true underfloor or overhead pathway is not feasible, perimeter raceways mounted at wall base are the preferred alternative to over-floor routing because they do not cross open floor areas or create trip hazards."
     ]
@@ -814,7 +814,7 @@
     "a": 1,
     "w": "A minimum clearance of 7.5 cm (3 inches) must be maintained above conduits and cables in ceiling distribution systems to provide access for installation, maintenance, and inspection. 5.5 cm is below the minimum required clearance for ceiling-mounted cable systems (option A). 10 cm provides more clearance than the minimum but is not the specified minimum (option C). 15 cm exceeds the minimum clearance requirement and would only be needed where more access is required (option D).",
     "k": [
-      "The 7.5 cm (3 in) clearance above ceiling conduits and cable trays is equivalent to the 75 mm requirement stated elsewhere in TIA guidelines — the same physical rule expressed in metric vs. centimetre units.",
+      "The 7.5 cm (3 in) clearance above ceiling conduits and cable trays is equivalent to the 75 mm requirement stated elsewhere in TIA guidelines \u2014 the same physical rule expressed in metric vs. centimetre units.",
       "This clearance allows a cable to be placed on top of an existing bundle without exceeding bend radius and gives a technician hand access to grasp and reposition cables without damaging them against the structure above.",
       "In practice, plenum HVAC ductwork often reduces available headroom; the 7.5 cm rule must be coordinated with mechanical drawings during design to ensure the pathway location is viable before cables are installed."
     ]
@@ -834,8 +834,8 @@
     "a": 2,
     "w": "The NEC and ANSI/TIA standards limit conduit bends to a maximum of 180 degrees (equivalent of two 90-degree bends) between any two pull boxes to ensure cables can be pulled through without excessive friction. 90 degrees allows only a single right-angle bend between boxes, which is overly restrictive for many installations (option A). 120 degrees allows limited bends and does not correspond to standard bend combination limits (option B). 270 degrees of total bends would make cable pulling through the conduit extremely difficult and potentially damage cables (option D).",
     "k": [
-      "The 180-degree total bend limit between pull boxes is based on cable pulling tension physics: beyond 180° of accumulated direction change, friction forces on the cable rise to levels that can exceed the cable's maximum rated pull tension.",
-      "180° total bends equals two standard 90° elbows (or any equivalent combination, e.g., three 60° bends); a pull box resets the baseline so the next conduit segment can again accumulate up to 180° before requiring another pull point.",
+      "The 180-degree total bend limit between pull boxes is based on cable pulling tension physics: beyond 180\u00b0 of accumulated direction change, friction forces on the cable rise to levels that can exceed the cable's maximum rated pull tension.",
+      "180\u00b0 total bends equals two standard 90\u00b0 elbows (or any equivalent combination, e.g., three 60\u00b0 bends); a pull box resets the baseline so the next conduit segment can again accumulate up to 180\u00b0 before requiring another pull point.",
       "This rule applies to telecommunications conduit under ANSI/TIA-568 and NEC Article 800; it is separate from the minimum conduit bend radius rule, which governs how tight each individual bend can be."
     ]
   },
@@ -874,7 +874,7 @@
     "a": 2,
     "w": "The Americans with Disabilities Act (ADA) specifies a maximum side reach height of 122 cm (48 inches) for telephones and controls without obstruction to ensure accessibility for wheelchair users. 100 cm (approximately 39 inches) is below the specified ADA maximum side reach height (option A). 110 cm does not correspond to the ADA's specified maximum side reach height of 122 cm (option B). 130 cm exceeds the ADA maximum side reach height and would not be accessible for many wheelchair users (option D).",
     "k": [
-      "ADA Standards for Accessible Design define reach range limits for side-reach (unobstructed): maximum 122 cm (48 in) high, minimum 38 cm (15 in) above finish floor — TO and telephone outlets must fall within this range to comply.",
+      "ADA Standards for Accessible Design define reach range limits for side-reach (unobstructed): maximum 122 cm (48 in) high, minimum 38 cm (15 in) above finish floor \u2014 TO and telephone outlets must fall within this range to comply.",
       "The 122 cm (48 in) limit is the outstretched side-reach maximum for a person in a wheelchair; mounting telephones or TO outlets higher than this prevents independent use by mobility-impaired occupants.",
       "ADA reach requirements directly influence TO box mounting height decisions; where electrical outlets are mounted at a height that conflicts with ADA limits, the telecom outlets must be independently positioned to comply."
     ]
@@ -912,11 +912,11 @@
       "The intermediate cross-connect (IC)"
     ],
     "a": 2,
-    "w": "The horizontal cabling system extends from the work area telecommunications outlet/connector (TO) to the horizontal cross-connect (HC/FD) in the telecommunications room. It does not extend to the entrance facility or the main or intermediate cross-connects — those are part of the backbone system. The HC/FD is the demarcation between horizontal and backbone cabling.",
+    "w": "The horizontal cabling system extends from the work area telecommunications outlet/connector (TO) to the horizontal cross-connect (HC/FD) in the telecommunications room. It does not extend to the entrance facility or the main or intermediate cross-connects \u2014 those are part of the backbone system. The HC/FD is the demarcation between horizontal and backbone cabling.",
     "k": [
-      "Horizontal cabling boundary: from the TO/outlet in the work area to the HC/FD in the TR — this entire span is the horizontal cabling system.",
+      "Horizontal cabling boundary: from the TO/outlet in the work area to the HC/FD in the TR \u2014 this entire span is the horizontal cabling system.",
       "The permanent link for horizontal cabling is the HC/FD to TO/connector segment (excluding the work area cord and equipment cord at both ends).",
-      "Anything beyond the HC/FD toward the entrance facility belongs to the backbone cabling system — a critical boundary to understand for design and testing."
+      "Anything beyond the HC/FD toward the entrance facility belongs to the backbone cabling system \u2014 a critical boundary to understand for design and testing."
     ]
   },
   {
@@ -932,11 +932,11 @@
       "When the work area is served by a MUTOA"
     ],
     "a": 2,
-    "w": "The one permitted exception to the direct TO-to-HC/FD rule is when connecting to under-carpet cabling via a transition point — the transition point connects the round cable from the HC to the flat under-carpet cable. Cable length exceeding 80 m requires redesign, not an exception to the direct-cabling rule. Consolidation points (CPs) are used in open office systems and are permitted connection points but do not break the direct-cabling rule in the same way. MUTOAs have their own rules but serve multiple outlets from a single HC run.",
+    "w": "The one permitted exception to the direct TO-to-HC/FD rule is when connecting to under-carpet cabling via a transition point \u2014 the transition point connects the round cable from the HC to the flat under-carpet cable. Cable length exceeding 80 m requires redesign, not an exception to the direct-cabling rule. Consolidation points (CPs) are used in open office systems and are permitted connection points but do not break the direct-cabling rule in the same way. MUTOAs have their own rules but serve multiple outlets from a single HC run.",
     "k": [
       "Transition points are the specifically named exception: they are used only where flat under-carpet cable connects to round cable, and the transition point hardware provides the mechanical transition.",
       "Consolidation points (CPs) are a separate permitted connection point in horizontal cabling but are used in open office systems for ease of moves and adds.",
-      "The direct-cabling requirement ensures each TO has a dedicated run from the HC/FD — this one-to-one relationship is fundamental to the star topology horizontal design."
+      "The direct-cabling requirement ensures each TO has a dedicated run from the HC/FD \u2014 this one-to-one relationship is fundamental to the star topology horizontal design."
     ]
   },
   {
@@ -952,11 +952,11 @@
       "The termination point for multiple MUTOA cable feeds"
     ],
     "a": 1,
-    "w": "A Consolidation Point (CP) is an interconnection point within the horizontal cabling system — it is placed in an open office area to enable flexible reconfiguration of work area connections without running new cables back to the HC. It is not a backbone-to-horizontal transition point (that is the HC/FD). The work area connector is the TO/outlet. A CP is not a MUTOA aggregate — it handles individual cable runs differently.",
+    "w": "A Consolidation Point (CP) is an interconnection point within the horizontal cabling system \u2014 it is placed in an open office area to enable flexible reconfiguration of work area connections without running new cables back to the HC. It is not a backbone-to-horizontal transition point (that is the HC/FD). The work area connector is the TO/outlet. A CP is not a MUTOA aggregate \u2014 it handles individual cable runs differently.",
     "k": [
-      "CP (Consolidation Point) is placed in the floor or ceiling of an open office area and allows short patch cables to connect from the CP to individual work area outlets — enabling quick desk reconfigurations.",
+      "CP (Consolidation Point) is placed in the floor or ceiling of an open office area and allows short patch cables to connect from the CP to individual work area outlets \u2014 enabling quick desk reconfigurations.",
       "Unlike a MUTOA, a CP does not terminate the horizontal cable; it is an interconnection point (cross-connect) within the horizontal run.",
-      "CPs add one connection point to the horizontal channel — the standard allows a maximum of four connection points total, so CP use consumes one of those four allowed points."
+      "CPs add one connection point to the horizontal channel \u2014 the standard allows a maximum of four connection points total, so CP use consumes one of those four allowed points."
     ]
   },
   {
@@ -972,11 +972,10 @@
       "90%"
     ],
     "a": 2,
-    "w": "28 AWG equipment cords used with MUTOAs are derated by 70% — meaning the allowable equipment cord length is reduced to 70% of the calculated maximum. 26 AWG cords are derated by 50%. 25% derating is not a MUTOA standard. 90% derating is not specified — it would make the cord too short to be practical.",
+    "w": "28 AWG equipment cords used with MUTOAs are derated by 70% \u2014 meaning the allowable equipment cord length is reduced to 70% of the value calculated for 24 AWG cords. Thinner conductors (28 AWG) have higher insertion loss per metre, so the maximum permitted cord length is shorter than for 26 AWG (which is derated to 50%). The 70% derating for 28 AWG means a shorter cord allowance than the 50% derating figure alone might suggest, because the 50% applies to the already-shorter 26 AWG limit.",
     "k": [
-      "MUTOA equipment cord derating: 50% for 26 AWG cords; 70% for 28 AWG cords. The thinner 28 AWG has higher insertion loss per unit length, requiring a LONGER allowed cord despite the 'higher' derating percentage.",
-      "The derating percentage represents how much of the calculated maximum cord length is allowed: 26 AWG = 50% (shorter); 28 AWG = 70% (longer allowed because derating is less restrictive).",
-      "The work area side of the MUTOA must be labeled with the maximum allowable equipment cord length so installers can select the correct cord for each gauge."
+      "TIA-568 derating factors for MUTOA cords: 26 AWG = 50% of maximum, 28 AWG = 70% reduction; thinner wire = stricter limit",
+      "Derating compensates for the higher insertion loss per metre of thinner conductors by reducing the maximum permitted cord length"
     ]
   },
   {
@@ -992,9 +991,9 @@
       "Networking equipment such as switches and routers"
     ],
     "a": 3,
-    "w": "Most PON installations do not include active networking equipment (switches, routers) in telecommunications spaces — the PON uses passive components (splitters, optical fiber, APC connectors) from the OLT to the ONU. The OLT at the service provider end and the ONU at the customer end are the only active components. Optical fiber terminations, APC connectors, and optical splitters are all present in PON telecommunications spaces.",
+    "w": "Most PON installations do not include active networking equipment (switches, routers) in telecommunications spaces \u2014 the PON uses passive components (splitters, optical fiber, APC connectors) from the OLT to the ONU. The OLT at the service provider end and the ONU at the customer end are the only active components. Optical fiber terminations, APC connectors, and optical splitters are all present in PON telecommunications spaces.",
     "k": [
-      "Passive optical networks are 'passive' precisely because there is no active electronics between the OLT and ONU — only fiber, connectors, and passive splitters.",
+      "Passive optical networks are 'passive' precisely because there is no active electronics between the OLT and ONU \u2014 only fiber, connectors, and passive splitters.",
       "This passive infrastructure reduces power consumption, eliminates heat-generating equipment from customer premises TRs, and reduces maintenance requirements.",
       "The absence of active equipment in the PON path means telecommunications spaces only house termination hardware and passive splitters, not powered switches or routers."
     ]
@@ -1016,7 +1015,7 @@
     "k": [
       "APC connectors have an 8-degree angled endface that deflects reflected light at an angle away from the fiber core, achieving superior return loss (-65 dB vs. -25 dB for flat-polish UPC connectors).",
       "PONs are especially sensitive to back-reflection because analog video (CATV overlay) and high-power GPON signals can cause noise from even small reflections.",
-      "APC connectors are identifiable by their green housing — a color code standardized by BICSI and TIA for APC single-mode fiber connections."
+      "APC connectors are identifiable by their green housing \u2014 a color code standardized by BICSI and TIA for APC single-mode fiber connections."
     ]
   },
   {
@@ -1034,9 +1033,9 @@
     "a": 1,
     "w": "Shielded cables for PoE exhibit less heat buildup than unshielded cables because the shield acts as a thermal conductor, distributing heat away from the current-carrying pairs. Shielded and unshielded cables of the same AWG have similar resistance. Maximum current per conductor is determined by AWG, not shielding. Bundled cable derating still applies to both shielded and unshielded PoE installations.",
     "k": [
-      "PoE cable heating occurs because DC power flows through the data pairs — the resistance of the conductors converts some electrical energy to heat, which concentrates in tightly bundled cables.",
+      "PoE cable heating occurs because DC power flows through the data pairs \u2014 the resistance of the conductors converts some electrical energy to heat, which concentrates in tightly bundled cables.",
       "The shield in shielded cables provides a metallic heat dissipation path that spreads thermal energy laterally, reducing peak temperature and preventing insulation degradation.",
-      "For high-power PoE (Type 3 and 4, up to 90W), cable bundling and heat management are critical — using shielded cables and limiting bundle sizes reduces thermal risk."
+      "For high-power PoE (Type 3 and 4, up to 90W), cable bundling and heat management are critical \u2014 using shielded cables and limiting bundle sizes reduces thermal risk."
     ]
   },
   {
@@ -1052,11 +1051,11 @@
       "Brown pair"
     ],
     "a": 2,
-    "w": "In T568B, the orange pair occupies pins 1 and 2 — this is the key difference from T568A, where the green pair is on pins 1 and 2. The blue pair is on pins 4 and 5 in both T568A and T568B. The green pair is on pins 3 and 6 in T568B (moved from pins 1 and 2). The brown pair is on pins 7 and 8 in both standards.",
+    "w": "In T568B, the orange pair occupies pins 1 and 2 \u2014 this is the key difference from T568A, where the green pair is on pins 1 and 2. The blue pair is on pins 4 and 5 in both T568A and T568B. The green pair is on pins 3 and 6 in T568B (moved from pins 1 and 2). The brown pair is on pins 7 and 8 in both standards.",
     "k": [
-      "T568B pin assignments: Pins 1-2 = Orange; Pins 3-6 = Green; Pins 4-5 = Blue; Pins 7-8 = Brown. T568A: Pins 1-2 = Green; Pins 3-6 = Orange — only Orange and Green pairs swap.",
+      "T568B pin assignments: Pins 1-2 = Orange; Pins 3-6 = Green; Pins 4-5 = Blue; Pins 7-8 = Brown. T568A: Pins 1-2 = Green; Pins 3-6 = Orange \u2014 only Orange and Green pairs swap.",
       "T568B is the more commonly used standard in North America for new horizontal cabling; T568A is required by some government installations and for crossover cable wiring.",
-      "Creating a crossover cable: wire one end T568A and the other T568B — this swaps transmit and receive pairs for direct device-to-device connection without a switch."
+      "Creating a crossover cable: wire one end T568A and the other T568B \u2014 this swaps transmit and receive pairs for direct device-to-device connection without a switch."
     ]
   },
   {
@@ -1075,7 +1074,7 @@
     "w": "28 AWG conductors are thinner than 26 AWG, which means they have higher resistance per unit length, resulting in higher insertion loss for the same cord length. Category rating defines minimum performance requirements but does not eliminate the fundamental physics of conductor resistance increasing as diameter decreases. Attenuation increases (not decreases) with thinner wire.",
     "k": [
       "AWG and insertion loss: as AWG number increases (thinner wire), resistance per unit length increases, causing higher insertion loss for a given length.",
-      "28 AWG patch cords are thinner and more flexible than 26 AWG — attractive for dense patching environments — but their higher insertion loss must be accounted for in the channel loss budget.",
+      "28 AWG patch cords are thinner and more flexible than 26 AWG \u2014 attractive for dense patching environments \u2014 but their higher insertion loss must be accounted for in the channel loss budget.",
       "The derating requirements for 28 AWG cords in MUTOA designs reflect this higher insertion loss: thinner cords must be kept shorter to keep total channel insertion loss within limits."
     ]
   },
@@ -1115,7 +1114,7 @@
     "w": "The ITU G.984 GPON (Gigabit Passive Optical Network) with C optics supports a maximum distance of 60 km (37 mi). 20 km is below the standard. 40 km is the limit for ITU G.987 10GPON/XG-PON. 100 km exceeds the G.984 GPON specification.",
     "k": [
       "GPON distance comparison: G.984 GPON (C optics) = 60 km; G.987 10GPON/XG-PON = 40 km. Higher data rate PONs have shorter reach due to higher optical power requirements.",
-      "The 'C optics' designation in GPON refers to the highest optical budget class, enabling the longest 60 km reach — other optics classes have shorter distances.",
+      "The 'C optics' designation in GPON refers to the highest optical budget class, enabling the longest 60 km reach \u2014 other optics classes have shorter distances.",
       "In most premises applications, PON distances are much shorter than the standard maximum; the 60 km limit is relevant for campus or metro-area deployments."
     ]
   },
@@ -1132,9 +1131,9 @@
       "1625 nm"
     ],
     "a": 2,
-    "w": "10 Gb/s PONs require connectors to reduce back-reflection above the 1500 nm wavelength — at these high data rates, even small reflections can corrupt the high-speed signal. 850 nm is a multimode fiber wavelength, not relevant to PON systems. 1310 nm is a standard PON downstream wavelength where reflection requirements are met by standard UPC connectors. 1625 nm is the OTDR testing wavelength for live PON testing.",
+    "w": "10 Gb/s PONs require connectors to reduce back-reflection above the 1500 nm wavelength \u2014 at these high data rates, even small reflections can corrupt the high-speed signal. 850 nm is a multimode fiber wavelength, not relevant to PON systems. 1310 nm is a standard PON downstream wavelength where reflection requirements are met by standard UPC connectors. 1625 nm is the OTDR testing wavelength for live PON testing.",
     "k": [
-      "10G PON (XG-PON) uses wavelengths above 1500 nm where analog video overlay (1550 nm) and OTDR testing (1625 nm) also operate — back-reflection control prevents crosstalk between these signals.",
+      "10G PON (XG-PON) uses wavelengths above 1500 nm where analog video overlay (1550 nm) and OTDR testing (1625 nm) also operate \u2014 back-reflection control prevents crosstalk between these signals.",
       "APC connectors are specified for 10G PON because their -65 dB return loss far exceeds the reflection requirements above 1500 nm.",
       "The practical implication: all fiber connectors in a 10G PON system must be APC type to maintain system performance across all wavelengths above 1500 nm."
     ]
@@ -1154,7 +1153,7 @@
     "a": 2,
     "w": "3 m (10 ft) of optical fiber slack should be stored inside the fiber hardware (cassettes, splice enclosures) in the telecommunications room. 1 m is insufficient for future splicing or re-termination if connectors are damaged. 2 m provides limited serviceability. 5 m creates excessive slack that is difficult to manage and increases attenuation risk from tight coils.",
     "k": [
-      "3 m (10 ft) of stored fiber slack allows technicians to cut and re-terminate a damaged connector without pulling new cable — each re-termination consumes approximately 0.5–1 m of slack.",
+      "3 m (10 ft) of stored fiber slack allows technicians to cut and re-terminate a damaged connector without pulling new cable \u2014 each re-termination consumes approximately 0.5\u20131 m of slack.",
       "Fiber slack should be coiled in the hardware with bend radius protection to prevent exceeding the fiber's minimum bend radius specification.",
       "This 3 m minimum applies at the TR; similar slack storage at the work area TO box provides serviceability at both ends of the horizontal fiber run."
     ]
@@ -1174,8 +1173,8 @@
     "a": 1,
     "w": "PoE Type 1 (IEEE 802.3af) allows a maximum of 175 mA per conductor. 100 mA is below the Type 1 specification. 300 mA and 400 mA are specifications for higher power PoE types (Type 3 and 4). Understanding per-conductor current is essential for calculating conductor heating in bundled cable installations.",
     "k": [
-      "PoE Type 1 (802.3af): max 175 mA/conductor; Type 2 (802.3at): max 350 mA/conductor; Type 3/4 (802.3bt): 600–960 mA/conductor. Higher types require larger AWG conductors.",
-      "Per-conductor current determines I²R heating in the cable — bundled cables heat each other, reducing the effective ampacity and requiring derating of the allowed bundle size.",
+      "PoE Type 1 (802.3af): max 175 mA/conductor; Type 2 (802.3at): max 350 mA/conductor; Type 3/4 (802.3bt): 600\u2013960 mA/conductor. Higher types require larger AWG conductors.",
+      "Per-conductor current determines I\u00b2R heating in the cable \u2014 bundled cables heat each other, reducing the effective ampacity and requiring derating of the allowed bundle size.",
       "175 mA at Type 1 was selected to be safely within the ampacity of 24 AWG conductors in Cat 5e/6 cables, even in bundled conditions."
     ]
   },
@@ -1192,10 +1191,10 @@
       "20 times"
     ],
     "a": 2,
-    "w": "The minimum pull box length must be at least 16 times the diameter of the largest conduit entering the box. 8 and 10 times are insufficient — they do not allow cables to make smooth bends without violating minimum bend radius. 20 times is acceptable but exceeds the minimum specification.",
+    "w": "The minimum pull box length must be at least 16 times the diameter of the largest conduit entering the box. 8 and 10 times are insufficient \u2014 they do not allow cables to make smooth bends without violating minimum bend radius. 20 times is acceptable but exceeds the minimum specification.",
     "k": [
-      "16× conduit diameter for pull box length ensures cables can exit the conduit and make a 90-degree turn (or be pulled straight through) without the bend radius being violated.",
-      "For a 4-trade-size (103 mm diameter) conduit, the minimum pull box length = 16 × 103 mm = 1,648 mm (approximately 65 in / 5.4 ft) — pull boxes are often quite large.",
+      "16\u00d7 conduit diameter for pull box length ensures cables can exit the conduit and make a 90-degree turn (or be pulled straight through) without the bend radius being violated.",
+      "For a 4-trade-size (103 mm diameter) conduit, the minimum pull box length = 16 \u00d7 103 mm = 1,648 mm (approximately 65 in / 5.4 ft) \u2014 pull boxes are often quite large.",
       "Pull boxes are required when conduit runs have more than two 90-degree bends between endpoints, and their size must accommodate the largest conduit in the system."
     ]
   },
@@ -1214,9 +1213,9 @@
     "a": 1,
     "w": "Wireways and gutters provide more pulling space than pull boxes because they are enclosed metal channels that can be opened along their length, allowing cables to be laid in rather than pulled through. Pull boxes are fixed enclosures with limited interior space and specific access points. Wireways are not fire-rated enclosures. Cost comparison depends on specific products. Wireways are specified for dry locations.",
     "k": [
-      "Wireway (gutter): an enclosed cable management channel with removable covers — cables are laid in from the side rather than pulled through, making installations with many cables far easier.",
+      "Wireway (gutter): an enclosed cable management channel with removable covers \u2014 cables are laid in from the side rather than pulled through, making installations with many cables far easier.",
       "The additional space in wireways allows multiple cable routes to merge, change direction, and separate again without the tight bends that pull boxes would impose.",
-      "Wireways are used where cable density is high (e.g., transition zones between ceiling pathway and vertical conduit runs) — they simplify installation and future cable additions."
+      "Wireways are used where cable density is high (e.g., transition zones between ceiling pathway and vertical conduit runs) \u2014 they simplify installation and future cable additions."
     ]
   },
   {
@@ -1232,11 +1231,11 @@
       "Wireway"
     ],
     "a": 2,
-    "w": "J-hooks are an example of a non-continuous pathway — they are individual cable support devices spaced at intervals along the ceiling or wall, with gaps between each hook. Conduit, cable tray, and wireways are continuous pathways that enclose or contain the cable along the entire length of the route without gaps.",
+    "w": "J-hooks are an example of a non-continuous pathway \u2014 they are individual cable support devices spaced at intervals along the ceiling or wall, with gaps between each hook. Conduit, cable tray, and wireways are continuous pathways that enclose or contain the cable along the entire length of the route without gaps.",
     "k": [
       "Continuous pathways (conduit, cable tray, wireway) enclose the cable along its entire length; non-continuous pathways (J-hooks, D-rings, bridle rings) support cables at intervals with open spans between them.",
-      "Non-continuous pathways are faster to install and less expensive for open-ceiling areas, but they leave cables exposed between support points — appropriate for accessible above-ceiling spaces, not plenums or high-traffic areas.",
-      "J-hooks must be spaced at intervals to prevent cable sag — BICSI recommends following manufacturer specifications for spacing, typically 1.2–1.5 m (4–5 ft) for horizontal runs."
+      "Non-continuous pathways are faster to install and less expensive for open-ceiling areas, but they leave cables exposed between support points \u2014 appropriate for accessible above-ceiling spaces, not plenums or high-traffic areas.",
+      "J-hooks must be spaced at intervals to prevent cable sag \u2014 BICSI recommends following manufacturer specifications for spacing, typically 1.2\u20131.5 m (4\u20135 ft) for horizontal runs."
     ]
   },
   {
@@ -1252,11 +1251,11 @@
       "Four 90-degree bends"
     ],
     "a": 1,
-    "w": "No more than two 90-degree bends are permitted between pull boxes in a standard conduit run — each additional bend significantly increases cable pulling tension, risking cable damage. A third 90-degree bend may be acceptable only if the conduit size is increased. Four bends would require pull boxes after every other bend.",
+    "w": "No more than two 90-degree bends are permitted between pull boxes in a standard conduit run \u2014 each additional bend significantly increases cable pulling tension, risking cable damage. A third 90-degree bend may be acceptable only if the conduit size is increased. Four bends would require pull boxes after every other bend.",
     "k": [
-      "Two 90-degree bend maximum between pull boxes is the standard design rule — each bend multiplies the pulling tension by an exponential factor (Capstan equation), so two bends already creates significant tension.",
+      "Two 90-degree bend maximum between pull boxes is the standard design rule \u2014 each bend multiplies the pulling tension by an exponential factor (Capstan equation), so two bends already creates significant tension.",
       "If a conduit route requires more than two 90-degree bends, add a pull box at the second bend to reset the accumulated tension.",
-      "A third 90-degree bend is allowed only if the conduit trade size is increased (larger diameter reduces tension) — the larger conduit exception requires careful calculation."
+      "A third 90-degree bend is allowed only if the conduit trade size is increased (larger diameter reduces tension) \u2014 the larger conduit exception requires careful calculation."
     ]
   },
   {
@@ -1274,8 +1273,8 @@
     "a": 1,
     "w": "Low-profile access floors are defined as those with a finished height of less than 150 mm (6 in). 100 mm is within the low-profile range. 200 mm is the standard-height access floor specification. 305 mm (12 in) is the maximum height for freestanding access floors.",
     "k": [
-      "Access floor height categories: low-profile = under 150 mm (6 in); standard height = 200 mm (8 in) for general offices; data center raised floors are typically 300–600 mm for airflow management.",
-      "Low-profile floors are used in retrofit situations where floor-to-ceiling height is limited — they can still accommodate flat cables and small cable bundles.",
+      "Access floor height categories: low-profile = under 150 mm (6 in); standard height = 200 mm (8 in) for general offices; data center raised floors are typically 300\u2013600 mm for airflow management.",
+      "Low-profile floors are used in retrofit situations where floor-to-ceiling height is limited \u2014 they can still accommodate flat cables and small cable bundles.",
       "The 150 mm threshold is important for structural and fire code compliance: floors above 150 mm may require additional fire protection under the floor space."
     ]
   },
@@ -1294,9 +1293,9 @@
     "a": 3,
     "w": "Freestanding access floors are limited to a maximum finished height of 305 mm (12 in). 150 mm is the low-profile threshold. 200 mm is the standard-height specification. 254 mm (10 in) is within the allowed range but is not the maximum limit.",
     "k": [
-      "Freestanding access floor maximum = 305 mm (12 in) = approximately 1 ft — above this height, structural support requirements change significantly.",
-      "Freestanding floors above 305 mm would require engineering assessment for lateral stability, seismic loads, and load distribution — beyond the scope of standard freestanding installations.",
-      "In data center design, raised floors often exceed 305 mm to accommodate under-floor air distribution; these are not freestanding floors — they use structural pedestal systems."
+      "Freestanding access floor maximum = 305 mm (12 in) = approximately 1 ft \u2014 above this height, structural support requirements change significantly.",
+      "Freestanding floors above 305 mm would require engineering assessment for lateral stability, seismic loads, and load distribution \u2014 beyond the scope of standard freestanding installations.",
+      "In data center design, raised floors often exceed 305 mm to accommodate under-floor air distribution; these are not freestanding floors \u2014 they use structural pedestal systems."
     ]
   },
   {
@@ -1314,9 +1313,9 @@
     "a": 1,
     "w": "Cable trays and wireways are typically supported at 1.5 m (5 ft) centers unless the design calls for longer spans based on structural analysis. 1.0 m centers are more frequent than standard and unnecessarily increase hardware costs. 2.0 and 3.0 m spans may cause excessive sag in cable trays under full cable load without engineering justification.",
     "k": [
-      "1.5 m (5 ft) is the standard support interval for cable trays and wireways — balancing structural adequacy against installation hardware cost.",
+      "1.5 m (5 ft) is the standard support interval for cable trays and wireways \u2014 balancing structural adequacy against installation hardware cost.",
       "Support intervals must account for the full loaded weight of the cable tray plus all cables; heavily loaded trays may require closer supports than 1.5 m.",
-      "Specific cable tray manufacturers specify maximum span lengths for their products based on tray gauge and width — always verify against the manufacturer's load tables."
+      "Specific cable tray manufacturers specify maximum span lengths for their products based on tray gauge and width \u2014 always verify against the manufacturer's load tables."
     ]
   },
   {
@@ -1336,7 +1335,7 @@
     "k": [
       "75 mm (3 in) clear vertical space above ceiling cables allows technicians to route new cables alongside existing ones without moving existing infrastructure.",
       "This clearance also ensures cables are not crushed between conduit bundles and ceiling structure elements such as beams, HVAC ducts, or sprinkler pipes.",
-      "For horizontal pathways using access floors, a minimum of 50 mm (2 in) free space above underfloor cable trays is required — slightly less than the ceiling 75 mm requirement."
+      "For horizontal pathways using access floors, a minimum of 50 mm (2 in) free space above underfloor cable trays is required \u2014 slightly less than the ceiling 75 mm requirement."
     ]
   },
   {
@@ -1352,11 +1351,11 @@
       "High-humidity mechanical rooms"
     ],
     "a": 1,
-    "w": "Perimeter raceways (surface-mounted wall raceways) are permitted only in dry locations — they are not designed for moisture resistance and would corrode or allow water infiltration in wet or outdoor environments. Wet locations require conduit with appropriate fittings. Outdoor applications require outdoor-rated conduit or duct. High-humidity mechanical rooms fall into the wet or damp location category.",
+    "w": "Perimeter raceways (surface-mounted wall raceways) are permitted only in dry locations \u2014 they are not designed for moisture resistance and would corrode or allow water infiltration in wet or outdoor environments. Wet locations require conduit with appropriate fittings. Outdoor applications require outdoor-rated conduit or duct. High-humidity mechanical rooms fall into the wet or damp location category.",
     "k": [
-      "Perimeter raceways are plastic or metal surface-mounted channels installed at baseboard or mid-wall height for office cable distribution — they are interior dry-location products only.",
+      "Perimeter raceways are plastic or metal surface-mounted channels installed at baseboard or mid-wall height for office cable distribution \u2014 they are interior dry-location products only.",
       "Using a perimeter raceway in a damp or wet environment violates the NEC and the manufacturer's listed installation conditions, potentially causing insulation failure and fire risk.",
-      "Perimeter raceways are popular in retrofit applications where cutting walls for conduit is impractical — but only appropriate in normal dry office environments."
+      "Perimeter raceways are popular in retrofit applications where cutting walls for conduit is impractical \u2014 but only appropriate in normal dry office environments."
     ]
   },
   {
@@ -1374,9 +1373,9 @@
     "a": 1,
     "w": "BAS pathways should anticipate one cable per system or coverage area as the planning guideline. Planning for two or four cables per area would overprovision pathway capacity and waste conduit fill. 'As many as required' provides no design guidance. The one-cable-per-coverage-area rule provides a consistent starting point for pathway capacity calculations.",
     "k": [
-      "BAS cable density planning: one cable per BAS system or coverage area — this assumes each BAS sensor or device generates one horizontal cable run back to the HCP.",
+      "BAS cable density planning: one cable per BAS system or coverage area \u2014 this assumes each BAS sensor or device generates one horizontal cable run back to the HCP.",
       "This guideline is conservative: some BAS devices may share a cable (bus topology), but planning for one cable per zone ensures adequate pathway capacity for worst-case deployments.",
-      "BAS cabling uses 16–22 AWG balanced twisted-pair conductors; even though smaller than data cables, their pathways must still meet the same minimum bend radius and fill requirements."
+      "BAS cabling uses 16\u201322 AWG balanced twisted-pair conductors; even though smaller than data cables, their pathways must still meet the same minimum bend radius and fill requirements."
     ]
   },
   {
@@ -1392,10 +1391,10 @@
       "A pull string is installed in the conduit"
     ],
     "a": 1,
-    "w": "A third conduit bend may be acceptable without derating if the conduit trade size is increased — the larger diameter reduces pulling tension sufficiently to compensate for the additional bend. Conduit run length alone does not justify a third bend; tension accumulates with bends regardless of length. Changing to 45-degree bends reduces tension but is not the stated condition for a third bend without derating. Pull strings are required in all conduits but do not permit additional bends.",
+    "w": "A third conduit bend may be acceptable without derating if the conduit trade size is increased \u2014 the larger diameter reduces pulling tension sufficiently to compensate for the additional bend. Conduit run length alone does not justify a third bend; tension accumulates with bends regardless of length. Changing to 45-degree bends reduces tension but is not the stated condition for a third bend without derating. Pull strings are required in all conduits but do not permit additional bends.",
     "k": [
       "The third-bend exception: increasing conduit trade size provides additional internal area and reduces cable-to-wall friction force, allowing the extra bend without exceeding safe pulling tension.",
-      "Pull tension in conduits follows the Capstan equation: T_out = T_in × e^(μθ) — each bend multiplies tension exponentially, which is why bend count is strictly controlled.",
+      "Pull tension in conduits follows the Capstan equation: T_out = T_in \u00d7 e^(\u03bc\u03b8) \u2014 each bend multiplies tension exponentially, which is why bend count is strictly controlled.",
       "Whenever a conduit route requires more than two 90-degree bends, the designer must either add a pull box or increase the conduit size to keep cable pulling tension within limits."
     ]
   }

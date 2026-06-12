@@ -471,12 +471,11 @@
       "48V",
       "70V"
     ],
-    "a": 1,
-    "w": "Paging systems use 24V for distributed amplified systems as specified for the cabling infrastructure side. 12V is used in some low-power control systems but not standard paging distribution. 48V is used in PoE and telephone systems. 70V is the industry-standard line voltage used in the speaker distribution part of the paging system, but the cabling standard specifies 24V for the distributed amplifier infrastructure.",
+    "a": 3,
+    "w": "Distributed amplified paging systems use 70V (70.7V RMS constant-voltage) as the industry standard distribution voltage. This 70V standard allows long cable runs to multiple speakers with simple impedance matching transformers at each speaker. 24V is a DC supply voltage for amplifier electronics and control circuits, not the signal distribution voltage. 12V and 48V are not standard paging distribution voltages.",
     "k": [
-      "Distributed amplified paging systems use 24V DC for powering amplifier modules and control circuits on the cabling infrastructure side, separate from the 70V speaker distribution voltage.",
-      "70V is the standard audio line voltage on the speaker distribution cable for paging; 24V is the power supply voltage for the distributed amplifier/control electronics, not the speaker signal level.",
-      "Confusing the 24V infrastructure power supply with the 70V speaker signal voltage is a common error; each serves a different function within the same paging system."
+      "Distributed paging and speaker systems use the 70V constant-voltage standard (70.7V RMS) for signal distribution to multiple speakers",
+      "The 70V standard enables long cable runs and simple tap-transformer impedance matching at each speaker without complex impedance calculations"
     ]
   },
   {

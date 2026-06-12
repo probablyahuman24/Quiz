@@ -586,17 +586,16 @@
     "chapter": "Residential Cabling Systems",
     "q": "What are the minimum requirements for an Auxiliary Disconnect Outlet (ADO)?",
     "o": [
-      "Four balanced twisted pairs, two coaxial cables, two optical fiber strands",
+      "Eight balanced twisted pairs, one coaxial cable, two optical fiber strands",
       "Eight balanced twisted pairs, two coaxial cables, four optical fiber strands",
       "Ten balanced twisted pairs, four coaxial cables, four optical fiber strands",
       "Six balanced twisted pairs, one coaxial cable, three optical fiber strands"
     ],
-    "a": 1,
-    "w": "The ADO minimum requirements per residential cabling standards are eight balanced twisted pairs, two coaxial cables, and four optical fiber strands to support all anticipated residential services including voice, data, video, and home networking. Four pairs with two coaxial cables and two fiber strands (option A) is insufficient for supporting all anticipated residential telecommunications services. Ten pairs, four coaxials, and four fiber strands (option C) exceeds the minimum requirement. Six pairs, one coaxial, and three fiber strands (option D) do not meet the minimum coaxial and fiber requirements for ADO.",
+    "a": 0,
+    "w": "Per TIA-570, the Auxiliary Disconnect Outlet (ADO) minimum requirements are: eight balanced twisted pairs (two 4-pair cables), one Series-6 coaxial cable, and two optical fiber strands. This provides the minimum backbone capacity to serve each living unit. Two coaxial cables and four fiber strands exceed the minimum standard and represent Grade 2 or above.",
     "k": [
-      "TIA-570 sets the ADO minimum at eight balanced twisted pairs (two 4-pair cables), two coaxial cables, and four optical fiber strands per living unit to support all anticipated residential telecommunications services.",
-      "Eight twisted pairs (two 4-pair cables) provide capacity for voice, DSL, and data services with a spare pair group; two coaxials support dual-service video delivery; four fiber strands provide two duplex paths.",
-      "Four twisted pairs (one cable) and two fiber strands \u2014 option A \u2014 falls below the ADO minimum because it does not provide sufficient pair count for multi-service delivery plus redundancy."
+      "TIA-570 ADO minimum: eight balanced twisted pairs (two 4-pair), one coaxial cable, two optical fiber strands",
+      "The ADO provides the separation point between building backbone and individual living unit cabling in MDU/residential installations"
     ]
   },
   {

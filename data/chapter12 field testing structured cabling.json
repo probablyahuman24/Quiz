@@ -55,7 +55,7 @@
     "w": "Level III field test instruments are required for Category 6A and Class EA cabling to meet the accuracy requirements at frequencies up to 500 MHz. Level I instruments lack the accuracy for high-performance categories. Level II instruments may be used for lower categories but are insufficient for 6A/EA. Level IV is not a defined level in standard field tester classification.",
     "k": [
       "Field tester accuracy is classified as Level I, Level II, and Level III; Level III provides the highest accuracy, required for Cat 6A/Class EA testing at frequencies up to 500 MHz.",
-      "Category 6A operates up to 500 MHz, which demands tighter measurement uncertainty than lower categories — hence the Level III instrument requirement.",
+      "Category 6A operates up to 500 MHz, which demands tighter measurement uncertainty than lower categories \u2014 hence the Level III instrument requirement.",
       "Level IV is not a defined IEC/TIA field tester accuracy level; only Levels I, II, and III are defined in the standards."
     ]
   },
@@ -67,7 +67,7 @@
     "q": "What does Return Loss indicate about a cabling link?",
     "o": [
       "The total signal loss from one end to the other",
-      "Impedance uniformity and mismatch — smaller dB loss means better performance",
+      "Impedance uniformity and mismatch \u2014 smaller dB loss means better performance",
       "The noise coupling from adjacent cables",
       "The delay difference between the fastest and slowest pairs"
     ],
@@ -92,7 +92,7 @@
       "The ratio of alien crosstalk to insertion loss"
     ],
     "a": 1,
-    "w": "ACR-F (Attenuation to Crosstalk Ratio – Far End) measures crosstalk at the opposite end from the disturbing signal, normalized by the attenuation loss; larger ACR-F values indicate better performance. Crosstalk at the same end is NEXT (Near-End Crosstalk). Combined crosstalk from all pairs at the near end is PSNEXT. Alien crosstalk ratio is a separate measurement related to cables in adjacent bundles.",
+    "w": "ACR-F (Attenuation to Crosstalk Ratio \u2013 Far End) measures crosstalk at the opposite end from the disturbing signal, normalized by the attenuation loss; larger ACR-F values indicate better performance. Crosstalk at the same end is NEXT (Near-End Crosstalk). Combined crosstalk from all pairs at the near end is PSNEXT. Alien crosstalk ratio is a separate measurement related to cables in adjacent bundles.",
     "k": [
       "ACR-F (formerly ELFEXT) is the ratio of Far-End Crosstalk (FEXT) to Insertion Loss, measured at the end opposite the disturbing transmitter; higher ACR-F values mean better performance.",
       "ACR-F represents the signal-to-noise ratio at the far end of the link, indicating how well a receiver can distinguish a useful signal from crosstalk arriving at the same end.",
@@ -124,7 +124,7 @@
     "test": 12,
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
-    "q": "What is the worst-case attenuation coefficient for 50/125 µm laser-optimized OM3 fiber at 850 nm?",
+    "q": "What is the worst-case attenuation coefficient for 50/125 \u00b5m laser-optimized OM3 fiber at 850 nm?",
     "o": [
       "1.5 dB/km",
       "2.0 dB/km",
@@ -132,9 +132,9 @@
       "3.5 dB/km"
     ],
     "a": 2,
-    "w": "The worst-case attenuation coefficient for 50/125 µm laser-optimized OM3 fiber at 850 nm is 3.0 dB/km for OTDR testing purposes. 1.5 dB/km is the specification at 1300 nm, not 850 nm. 2.0 dB/km understates the worst-case coefficient at 850 nm. 3.5 dB/km is the maximum attenuation specification in some product standards but not the worst-case OTDR test coefficient.",
+    "w": "The worst-case attenuation coefficient for 50/125 \u00b5m laser-optimized OM3 fiber at 850 nm is 3.0 dB/km for OTDR testing purposes. 1.5 dB/km is the specification at 1300 nm, not 850 nm. 2.0 dB/km understates the worst-case coefficient at 850 nm. 3.5 dB/km is the maximum attenuation specification in some product standards but not the worst-case OTDR test coefficient.",
     "k": [
-      "OM3 50/125 µm laser-optimized multimode fiber has a worst-case OTDR attenuation coefficient of 3.0 dB/km at 850 nm, used when calculating link loss budgets.",
+      "OM3 50/125 \u00b5m laser-optimized multimode fiber has a worst-case OTDR attenuation coefficient of 3.0 dB/km at 850 nm, used when calculating link loss budgets.",
       "Attenuation is higher at 850 nm than at 1300 nm for multimode fiber; the 1300 nm worst-case coefficient for OM3 is 1.5 dB/km.",
       "The 3.0 dB/km figure is used as a conservative planning value; actual installed fiber typically performs better, providing positive loss margin."
     ]
@@ -146,15 +146,15 @@
     "chapter": "Field Testing of Structured Cabling",
     "q": "For singlemode OTDR testing, what wavelengths are used?",
     "o": [
-      "850 nm ± 30 nm or 1300 nm ± 20 nm",
-      "1310 nm ± 10 nm or 1550 nm ± 20 nm",
-      "1383 nm ± 5 nm or 1490 nm ± 10 nm",
-      "1625 nm ± 10 nm only"
+      "850 nm \u00b1 30 nm or 1300 nm \u00b1 20 nm",
+      "1310 nm \u00b1 10 nm or 1550 nm \u00b1 20 nm",
+      "1383 nm \u00b1 5 nm or 1490 nm \u00b1 10 nm",
+      "1625 nm \u00b1 10 nm only"
     ],
     "a": 1,
-    "w": "Singlemode OTDR testing operates at 1310 nm ± 10 nm or 1550 nm ± 20 nm. 850 nm and 1300 nm are the multimode testing wavelengths. 1383 nm is the water-peak wavelength for OS2 fiber qualification, not standard OTDR testing. 1625 nm is used for in-service testing of live fiber, not standard acceptance testing.",
+    "w": "Singlemode OTDR testing operates at 1310 nm \u00b1 10 nm or 1550 nm \u00b1 20 nm. 850 nm and 1300 nm are the multimode testing wavelengths. 1383 nm is the water-peak wavelength for OS2 fiber qualification, not standard OTDR testing. 1625 nm is used for in-service testing of live fiber, not standard acceptance testing.",
     "k": [
-      "Singlemode OTDR acceptance testing uses 1310 nm (±10 nm) or 1550 nm (±20 nm), matching the operating wavelengths of singlemode transceivers.",
+      "Singlemode OTDR acceptance testing uses 1310 nm (\u00b110 nm) or 1550 nm (\u00b120 nm), matching the operating wavelengths of singlemode transceivers.",
       "850 nm and 1300 nm are multimode OTDR/OLTS wavelengths; using them on singlemode fiber would not yield valid acceptance measurements.",
       "1625 nm is reserved for in-service monitoring of live fiber links and is not a standard acceptance test wavelength for installed singlemode plant."
     ]
@@ -166,17 +166,16 @@
     "chapter": "Field Testing of Structured Cabling",
     "q": "At what wavelength does multimode OTDR testing typically operate?",
     "o": [
-      "850 nm ± 10 nm",
-      "1300 nm ± 20 nm",
-      "1310 nm ± 10 nm",
-      "1550 nm ± 20 nm"
+      "Both 850 nm \u00b1 10 nm and 1300 nm \u00b1 20 nm",
+      "1300 nm \u00b1 20 nm",
+      "1310 nm \u00b1 10 nm",
+      "1550 nm \u00b1 20 nm"
     ],
-    "a": 1,
-    "w": "Multimode OTDR testing operates at 1300 nm ± 20 nm for standard acceptance testing. 850 nm is used for light source/power meter (OLTS) measurements of multimode fiber, not OTDR. 1310 nm and 1550 nm are singlemode testing wavelengths.",
+    "a": 0,
+    "w": "Multimode OTDR testing is performed at both 850 nm and 1300 nm per TIA-568 and IEC 61935-2 acceptance testing requirements. Both wavelengths must be tested to fully characterise multimode fiber segments, as events visible at one wavelength may not be apparent at the other. Single-mode OTDR testing uses 1310 nm and 1550 nm. Testing at 1550 nm or 1310 nm alone is not appropriate for multimode fiber.",
     "k": [
-      "Multimode OTDR testing is performed at 1300 nm (±20 nm); this is distinct from OLTS power measurements, which use both 850 nm and 1300 nm for multimode fiber.",
-      "850 nm is used in OLTS (light source and power meter) insertion loss testing of multimode fiber, not for OTDR backscatter measurements.",
-      "1310 nm and 1550 nm are the standard OTDR test wavelengths for singlemode fiber and must not be confused with the 1300 nm multimode OTDR wavelength."
+      "Multimode fiber OTDR acceptance testing requires measurements at both 850 nm and 1300 nm per TIA-568/IEC 61935-2",
+      "Single-mode OTDR testing uses 1310 nm and 1550 nm; multimode OTDR uses 850 nm and 1300 nm \u2014 both wavelengths required"
     ]
   },
   {
@@ -192,10 +191,10 @@
       "Due to chromatic dispersion broadening the test pulse"
     ],
     "a": 1,
-    "w": "Optical length can exceed physical length because of fiber lay — in stranded loose tube cables, the fibers wind around the cable core and are longer than the cable jacket itself. Signal reflections can cause measurement artifacts but do not add optical length in a properly designed system. Splice losses affect power budget, not apparent length. Chromatic dispersion broadens pulses but does not make the fiber appear longer in OTDR measurements.",
+    "w": "Optical length can exceed physical length because of fiber lay \u2014 in stranded loose tube cables, the fibers wind around the cable core and are longer than the cable jacket itself. Signal reflections can cause measurement artifacts but do not add optical length in a properly designed system. Splice losses affect power budget, not apparent length. Chromatic dispersion broadens pulses but does not make the fiber appear longer in OTDR measurements.",
     "k": [
       "In stranded loose-tube fiber cable designs, individual fibers follow a helical path around the central core, making each fiber physically longer than the cable's outer jacket.",
-      "OTDR measures the optical path length of the fiber itself, not the cable jacket; fiber lay factor means optical length is typically 1–3% greater than the cable's physical length.",
+      "OTDR measures the optical path length of the fiber itself, not the cable jacket; fiber lay factor means optical length is typically 1\u20133% greater than the cable's physical length.",
       "This difference between physical and optical length is important when calculating maximum link distances and verifying that measurement results are within expected ranges."
     ]
   },
@@ -214,7 +213,7 @@
     "a": 1,
     "w": "Total splice attenuation is calculated as the number of splices multiplied by individual splice loss (typically 0.3 dB per splice). Dividing would give a nonsensical result. Squaring would grossly overestimate attenuation. Using only the highest single splice loss ignores all other splices in the link.",
     "k": [
-      "Total splice attenuation = number of splices × individual splice loss (typically 0.3 dB per splice for fusion splicing); each splice contributes independently and additively to link loss.",
+      "Total splice attenuation = number of splices \u00d7 individual splice loss (typically 0.3 dB per splice for fusion splicing); each splice contributes independently and additively to link loss.",
       "This value is one of three additive components in the optical link loss budget formula: link attenuation = cable loss + connector loss + splice loss.",
       "Using only the worst single splice loss would undercount total attenuation, potentially causing a link to pass budget calculations but fail in practice."
     ]
@@ -272,9 +271,9 @@
       "Alien Crosstalk (AXT)"
     ],
     "a": 3,
-    "w": "Alien Crosstalk (AXT) measures noise caused by adjacent data communication cables — cables from separate bundles disturbing the measured cable. NEXT measures crosstalk between pairs within the same cable. PSNEXT measures the combined near-end crosstalk from all other pairs within the same cable. Return Loss measures impedance mismatch reflections within the cable itself.",
+    "w": "Alien Crosstalk (AXT) measures noise caused by adjacent data communication cables \u2014 cables from separate bundles disturbing the measured cable. NEXT measures crosstalk between pairs within the same cable. PSNEXT measures the combined near-end crosstalk from all other pairs within the same cable. Return Loss measures impedance mismatch reflections within the cable itself.",
     "k": [
-      "Alien Crosstalk (AXT) is electromagnetic coupling from cables external to the cable under test — specifically other cables in the same bundle or tray, not pairs within the same cable.",
+      "Alien Crosstalk (AXT) is electromagnetic coupling from cables external to the cable under test \u2014 specifically other cables in the same bundle or tray, not pairs within the same cable.",
       "NEXT and PSNEXT measure intra-cable crosstalk (between pairs inside the same cable sheath); AXT measures inter-cable crosstalk from neighboring cables.",
       "AXT is particularly critical for 10GBASE-T (Cat 6A) installations because high-speed signals in adjacent cables can degrade performance; Cat 6A requires AXT testing."
     ]
@@ -312,11 +311,11 @@
       "ACR-N"
     ],
     "a": 2,
-    "w": "NEXT Loss measures signal coupling between two pairs within a cable; higher NEXT loss values indicate less coupling and therefore better performance. Insertion Loss measures signal attenuation — lower values are better. Return Loss measures reflected signal — higher values (less reflection) are better but the parameter describes mismatch not pair-to-pair coupling. ACR-N (Attenuation to Crosstalk Ratio at the Near End) is a derived parameter, not a direct coupling measurement.",
+    "w": "NEXT Loss measures signal coupling between two pairs within a cable; higher NEXT loss values indicate less coupling and therefore better performance. Insertion Loss measures signal attenuation \u2014 lower values are better. Return Loss measures reflected signal \u2014 higher values (less reflection) are better but the parameter describes mismatch not pair-to-pair coupling. ACR-N (Attenuation to Crosstalk Ratio at the Near End) is a derived parameter, not a direct coupling measurement.",
     "k": [
       "NEXT Loss (Near-End Crosstalk Loss) measures inductive and capacitive coupling between two pairs at the same end of the cable as the disturbing transmitter; higher dB values mean less crosstalk.",
       "NEXT is measured at the transmitter end because that is where the strongest disturbing signal is present and where coupling is greatest, making it the worst-case measurement point.",
-      "A high NEXT Loss value (e.g., 60 dB) indicates that only 1/1,000,000 of the disturber's power appears on the victim pair — better isolation and better link performance."
+      "A high NEXT Loss value (e.g., 60 dB) indicates that only 1/1,000,000 of the disturber's power appears on the victim pair \u2014 better isolation and better link performance."
     ]
   },
   {
@@ -334,7 +333,7 @@
     "a": 1,
     "w": "Power Sum Crosstalk testing is required for applications that communicate over multiple pairs simultaneously, such as 1000BASE-T and 10GBASE-T, where signals on all pairs can interfere with each other. Single-pair applications only need standard NEXT. Category 3 voice systems operate at too low a frequency to require power sum crosstalk testing. Optical fiber does not use twisted-pair crosstalk parameters.",
     "k": [
-      "Power Sum Crosstalk (PSNEXT, PSACR-F) is required when all pairs carry signals simultaneously — as in 1000BASE-T and 10GBASE-T — because each active pair adds crosstalk to all other pairs.",
+      "Power Sum Crosstalk (PSNEXT, PSACR-F) is required when all pairs carry signals simultaneously \u2014 as in 1000BASE-T and 10GBASE-T \u2014 because each active pair adds crosstalk to all other pairs.",
       "Single-pair applications (e.g., 100BASE-TX) only need pair-to-pair NEXT because only one transmitting pair affects each receiving pair at any given time.",
       "Cat 3 voice systems operate at audio frequencies (below 4 MHz) where crosstalk is negligible and power sum testing is neither required nor meaningful."
     ]
@@ -371,12 +370,11 @@
       "Shortest electrical length measured by the tester",
       "Average of all four pair lengths"
     ],
-    "a": 2,
-    "w": "The shortest electrical length is used for pass/fail decisions because it represents the most conservative estimate, ensuring compliance when pair lengths vary. Physical length does not account for NVP (Nominal Velocity of Propagation) variations. The longest electrical length would give a more lenient result and may allow a technically failing installation to pass. The average could mask individual pairs that exceed limits.",
+    "a": 1,
+    "w": "For pass/fail length compliance, TIA-568 uses the longest electrical length measured across all four pairs. If any pair exceeds the maximum channel or permanent link length limit, the link fails. Using the shortest pair would mask over-length pairs and falsely pass failing installations. The longest pair is the most conservative (strictest) criterion and ensures that every pair in the link is within specification.",
     "k": [
-      "The shortest electrical length among all pairs is used for pass/fail decisions to provide the most conservative (worst-case) measurement, ensuring all pairs comply with length limits.",
-      "Electrical length is calculated from the pair's propagation delay and NVP; pairs within the same cable can differ slightly because twist rates differ between pairs.",
-      "Using the longest or average length would be non-conservative and could allow a link with one pair exceeding the maximum length to incorrectly pass the length test."
+      "TIA-568 pass/fail for cable length uses the longest electrical pair length; any pair exceeding the limit causes a fail",
+      "Using the shortest pair for pass/fail is non-conservative and would falsely pass links where longer pairs exceed the limit"
     ]
   },
   {
@@ -516,7 +514,7 @@
     "k": [
       "A wire map test verifies conductor continuity at each pin position end-to-end, identifying opens (broken conductors), shorts (conductors touching), and mis-wiring faults such as crossed or split pairs.",
       "The wire map test is a DC continuity test and does not measure any AC performance parameters; it confirms physical connectivity before higher-frequency electrical tests are run.",
-      "Split pairs — where conductors from different pairs are terminated together on the same pin numbers — can pass continuity but will fail crosstalk tests and are identified by the wire map test."
+      "Split pairs \u2014 where conductors from different pairs are terminated together on the same pin numbers \u2014 can pass continuity but will fail crosstalk tests and are identified by the wire map test."
     ]
   },
   {
@@ -574,8 +572,8 @@
     "a": 1,
     "w": "Total link attenuation equals the sum of cable attenuation (dB/km x length), connector insertion losses (dB per connector), and splice losses (dB per splice), providing the total optical power budget consumed by the link. Cable attenuation alone (option A) does not account for connector and splice losses, making it an incomplete link loss calculation. Multiplying splices by 0.75 dB (option C) only accounts for splice losses and ignores cable and connector attenuation. Worst-case power x total length (option D) does not correspond to a recognized optical link loss calculation formula.",
     "k": [
-      "Optical fiber link attenuation = cable attenuation (dB/km × km) + connector insertion loss (dB × number of connectors) + splice loss (dB × number of splices).",
-      "All three components — distributed cable loss, discrete connector loss, and discrete splice loss — must be summed to obtain the total link loss for optical power budget compliance.",
+      "Optical fiber link attenuation = cable attenuation (dB/km \u00d7 km) + connector insertion loss (dB \u00d7 number of connectors) + splice loss (dB \u00d7 number of splices).",
+      "All three components \u2014 distributed cable loss, discrete connector loss, and discrete splice loss \u2014 must be summed to obtain the total link loss for optical power budget compliance.",
       "Omitting any component (e.g., connectors) from the calculation will produce an optimistic (too low) link loss estimate that may fail in practice even though it passes on paper."
     ]
   },
@@ -664,7 +662,7 @@
     "test": 12,
     "testName": "Field Testing of Structured Cabling",
     "chapter": "Field Testing of Structured Cabling",
-    "q": "Using the worst-case attenuation coefficient, what is the maximum acceptable fiber attenuation for a 500 m run of 50/125 µm laser-optimized OM3 multimode fiber tested at 850 nm?",
+    "q": "Using the worst-case attenuation coefficient, what is the maximum acceptable fiber attenuation for a 500 m run of 50/125 \u00b5m laser-optimized OM3 multimode fiber tested at 850 nm?",
     "o": [
       "1.5 dB",
       "3.0 dB",
@@ -672,7 +670,7 @@
       "2.5 dB"
     ],
     "a": 0,
-    "w": "The worst-case attenuation coefficient for 50/125 µm laser-optimized OM3 fiber at 850 nm is 3.0 dB/km, so a 500 m (0.5 km) run may exhibit at most 3.0 x 0.5 = 1.5 dB. The 3.0 dB answer mistakenly applies the full per-kilometer value to a half-kilometer run. The 0.75 dB answer halves the result a second time, and 2.5 dB does not correspond to any correct combination of the coefficient and distance.",
+    "w": "The worst-case attenuation coefficient for 50/125 \u00b5m laser-optimized OM3 fiber at 850 nm is 3.0 dB/km, so a 500 m (0.5 km) run may exhibit at most 3.0 x 0.5 = 1.5 dB. The 3.0 dB answer mistakenly applies the full per-kilometer value to a half-kilometer run. The 0.75 dB answer halves the result a second time, and 2.5 dB does not correspond to any correct combination of the coefficient and distance.",
     "k": [
       "An attenuation coefficient expresses how much optical power a fiber loses per unit length, in dB/km, at a stated wavelength.",
       "Allowed fiber loss scales linearly with distance: multiply the dB/km coefficient by the route length in kilometers.",
@@ -832,7 +830,7 @@
       "OM3 multimode fiber at 850 nm, at 0.5 dB/km"
     ],
     "a": 0,
-    "w": "Singlemode fiber at 1550 nm has the lower worst-case coefficient, 1.0 dB/km, versus 3.0 dB/km for 50/125 µm laser-optimized OM3 at 850 nm. Attributing 1.0 dB/km to OM3 at 850 nm assigns the singlemode value to the wrong fiber. The two are not identical, so the 3.0 dB/km-for-both option is wrong. The 0.5 dB/km figure for OM3 understates multimode loss by a factor of six.",
+    "w": "Singlemode fiber at 1550 nm has the lower worst-case coefficient, 1.0 dB/km, versus 3.0 dB/km for 50/125 \u00b5m laser-optimized OM3 at 850 nm. Attributing 1.0 dB/km to OM3 at 850 nm assigns the singlemode value to the wrong fiber. The two are not identical, so the 3.0 dB/km-for-both option is wrong. The 0.5 dB/km figure for OM3 understates multimode loss by a factor of six.",
     "k": [
       "Worst-case attenuation coefficients set the maximum per-kilometer loss a compliant fiber may exhibit at a given wavelength.",
       "Longer wavelengths in singlemode fiber suffer far less scattering loss: 1550 nm singlemode is capped at 1.0 dB/km while 850 nm OM3 multimode is allowed 3.0 dB/km.",
@@ -991,12 +989,11 @@
       "Pass, because the shortest electrical length is used for the pass/fail decision",
       "Pass, because electrical length is ignored and only physical length applies"
     ],
-    "a": 2,
-    "w": "The link passes: standards-based pass/fail decisions use the shortest electrical length, which is 98 m and under the limit. Judging by the longest pair (103 m) contradicts the rule and would incorrectly fail compliant links whose tighter twist rates inflate some pairs' electrical lengths. The average (100.25 m) is not a recognized decision basis. Electrical length is precisely what the tester evaluates, so physical length does not override it.",
+    "a": 0,
+    "w": "This link fails: two of the four pairs (101 m and 103 m) exceed the 100 m limit. TIA-568 compliance requires that the longest electrical pair length be within the maximum \u2014 if any pair exceeds the limit, the entire link fails. The shortest pair (98 m) is within the limit, but pass/fail is determined by the worst-case (longest) pair, not the best-case (shortest) pair.",
     "k": [
-      "Electrical length is the length a tester computes from signal travel time, which exceeds the jacket's physical length on tightly twisted pairs.",
-      "Compliance rule: the shortest electrical length among the pairs is compared against the limit, because it best approximates the true sheath length.",
-      "Why it works: the pair with the least twist adds the least extra conductor length, so its reading sits closest to the actual cable run."
+      "A link fails if any pair's electrical length exceeds the TIA-568 maximum; here two pairs at 101 m and 103 m exceed 100 m",
+      "Pass/fail length decisions always use the longest measured pair; links where all four pairs are \u2264 the limit pass"
     ]
   },
   {

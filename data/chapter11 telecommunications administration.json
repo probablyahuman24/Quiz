@@ -732,11 +732,10 @@
       "Class 4"
     ],
     "a": 3,
-    "w": "Class 4 administration is recommended for multi-site system environments where telecommunications infrastructure spans multiple buildings or campuses. Class 1 is for single equipment room premises. Class 2 is for single-site tenants with multiple telecom spaces. Class 3 is not a defined class in this context.",
+    "w": "Class 4 administration is recommended for multi-site system environments where telecommunications infrastructure spans multiple geographic locations. ANSI/TIA-606 defines four administration classes: Class 1 (single ER), Class 2 (multiple ERs in one building), Class 3 (multi-building campus), and Class 4 (multi-site/enterprise). Class 4 adds multi-site identifiers and cross-site linkages to the administration system.",
     "k": [
-      "Class 4 administration encompasses the record-keeping and management requirements for organizations operating telecommunications infrastructure across multiple geographic sites \u2014 a level of complexity that single-site classes (1 and 2) cannot adequately address.",
-      "Multi-site environments require administration records that cross-reference circuits spanning different buildings, cities, or countries; Class 4 provides the framework for managing these inter-site connections, including route diversity records and service provider interface documentation.",
-      "Organizations with even modest multi-site presence (e.g., headquarters and two branch offices) benefit from Class 4 administration practices to maintain accurate records of which circuits connect which sites and through which service providers."
+      "ANSI/TIA-606 Class 4 is for multi-site enterprise environments spanning multiple geographic locations",
+      "The four ANSI/TIA-606 classes are: Class 1 (single ER), Class 2 (multi-ER building), Class 3 (campus), Class 4 (multi-site)"
     ]
   },
   {
@@ -1072,11 +1071,10 @@
       "Class 1"
     ],
     "a": 3,
-    "w": "Class 1 administration is recommended for premises served by a single equipment room; it is the simplest class and administers only that single ER. Class 4 is for multi-site environments. Class 3 does not exist as a defined administration class. Class 2 is for tenants with multiple telecommunications spaces.",
+    "w": "Class 1 administration is recommended for premises served by a single equipment room. It is the simplest ANSI/TIA-606 class, covering one ER and its served telecommunications spaces. Class 2 covers multiple ERs within a single building, Class 3 applies to multi-building campuses, and Class 4 is for multi-site enterprise environments.",
     "k": [
-      "Class 1 is appropriate for small premises (branch offices, retail locations) with a single equipment room that serves as both the main cross-connect and the building entrance facility \u2014 there is no complex multi-space hierarchy to administer.",
-      "The simplicity of Class 1 means administration records cover only the ports, cables, and equipment within the single ER; there are no inter-space backbone records, no multiple firestop location records, and no campus-wide routing documentation.",
-      "Class 1 can still be implemented with rigorous record-keeping practices (using the color coding, identifier standards, and record formats of ANSI/TIA-606); the classification defines scope, not quality \u2014 even a single-ER facility benefits from accurate, complete records."
+      "ANSI/TIA-606 Class 1 is the simplest administration class, covering a premises with a single equipment room",
+      "The four classes scale from Class 1 (simplest, single ER) through Class 4 (most complex, multi-site enterprise)"
     ]
   },
   {

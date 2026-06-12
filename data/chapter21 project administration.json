@@ -832,11 +832,10 @@
       "Division 30"
     ],
     "a": 2,
-    "w": "MasterFormat 2020 assigns Division 28 to Electronic Safety and Security systems, covering fire alarms, access control, intrusion detection, and video surveillance. Division 24 covers HVAC (Heating, Ventilating, and Air Conditioning) in MasterFormat (option A). Division 26 covers Electrical systems including lighting and power distribution (option B). Division 30 covers not a standard MasterFormat division for electronic safety and security (option D).",
+    "w": "MasterFormat 2020 assigns Division 28 to Electronic Safety and Security systems, covering fire alarms, access control, intrusion detection, and video surveillance. Division 27 covers Communications (telecommunications infrastructure). Division 23 covers HVAC (Heating, Ventilating, and Air Conditioning). Division 26 covers Electrical. Division 28 is the correct answer for all electronic security and life-safety systems.",
     "k": [
-      "MasterFormat 2020 Division 28 is dedicated to Electronic Safety and Security systems, including fire detection/alarm (28 31), access control (28 13), intrusion detection (28 16), and video surveillance (28 23).",
-      "Division 26 covers Electrical (power distribution, lighting, grounding) and Division 27 covers Communications (structured cabling, DAS, AV) \u2014 Division 28 is the next tier covering life-safety and security electronics.",
-      "Division 24 does not exist as HVAC in MasterFormat 2020 \u2014 HVAC falls under Division 23; Division 24 is not a standard MasterFormat 2020 division number for any common building system."
+      "MasterFormat 2020 Division 28 covers Electronic Safety and Security (fire alarm, access control, CCTV, intrusion detection)",
+      "MasterFormat 2020 key ICT divisions: Division 23 = HVAC, Division 26 = Electrical, Division 27 = Communications, Division 28 = Electronic Safety and Security"
     ]
   },
   {
