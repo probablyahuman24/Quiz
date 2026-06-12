@@ -864,16 +864,16 @@
     "chapter": "Principles of Transmission",
     "q": "What is the typical attenuation coefficient for multimode fiber at 1300 nm?",
     "o": [
-      "0.75 dB/km",
+      "1.5 dB/km",
       "3.5 dB/km",
       "0.3 dB/km",
       "5 dB/km"
     ],
     "a": 0,
-    "w": "Multimode fiber has a typical attenuation of approximately 0.75 dB/km at the 1300 nm wavelength window. The TIA-568 maximum attenuation specification for 62.5/125 \u00b5m (OM1) multimode fiber is 1.0 dB/km at 1300 nm; 50/125 \u00b5m (OM2/OM3/OM4) is specified at 1.0 dB/km maximum. The 3.5 dB/km figure applies at 850 nm, not 1300 nm. Values above 1.5 dB/km are outside the standard specification.",
+    "w": "Multimode fiber has a typical attenuation coefficient of 1.5 dB/km at the 1300 nm wavelength window. Both 50/125 \u00b5m and 62.5/125 \u00b5m multimode fibers are specified at 1.5 dB/km maximum at 1300 nm per ANSI/TIA-568. The 3.5 dB/km figure applies at 850 nm, which has higher attenuation due to greater scattering losses at the shorter wavelength.",
     "k": [
-      "Multimode fiber attenuation at 1300 nm is approximately 0.75 dB/km typical; the 850 nm window has higher attenuation around 3.5 dB/km",
-      "TIA-568 specifies maximum multimode fiber attenuation of 1.0 dB/km at 1300 nm"
+      "Multimode fiber attenuation at 1300 nm is 1.5 dB/km; at 850 nm it is 3.5 dB/km",
+      "Both OM1 (62.5/125 \u00b5m) and OM2/OM3/OM4 (50/125 \u00b5m) multimode fibers are specified at 1.5 dB/km maximum at 1300 nm per ANSI/TIA-568"
     ]
   },
   {
@@ -881,17 +881,17 @@
     "test": 1,
     "testName": "Principles of Transmission",
     "chapter": "Principles of Transmission",
-    "q": "Calculate the total channel attenuation for a 2 km multimode fiber optic cable at 850 nm with 2 connectors (0.3 dB each) and 2 splices (0.25 dB each).",
+    "q": "Calculate the total channel attenuation for a 2 km multimode fiber optic cable at 1300 nm with 2 connectors (0.75 dB each) and 2 splices (0.3 dB each).",
     "o": [
-      "7.2 dB",
-      "8.1 dB",
-      "9.2 dB",
-      "10.1 dB"
+      "3.6 dB",
+      "4.2 dB",
+      "5.1 dB",
+      "6.3 dB"
     ],
-    "a": 1,
-    "w": "Using standard values: 2 km \u00d7 3.5 dB/km = 7.0 dB (cable attenuation at 850 nm) + 2 connectors \u00d7 0.3 dB = 0.6 dB + 2 splices \u00d7 0.25 dB = 0.5 dB, totaling 8.1 dB. This is a straightforward link budget calculation combining fiber attenuation with connector and splice losses.",
+    "a": 2,
+    "w": "Using ANSI/TIA-568 standard values: 2 km \u00d7 1.5 dB/km = 3.0 dB (cable attenuation at 1300 nm) + 2 connectors \u00d7 0.75 dB = 1.5 dB + 2 splices \u00d7 0.3 dB = 0.6 dB, totaling 5.1 dB. This is a straightforward link budget calculation combining fiber attenuation with connector and splice losses.",
     "k": [
-      "Multimode fiber attenuation at 850 nm is approximately 3.5 dB/km; at 1300 nm it is approximately 0.75 dB/km",
+      "Multimode fiber attenuation at 1300 nm is 1.5 dB/km; connector loss is 0.75 dB per connector; splice loss is 0.3 dB per splice",
       "Total link budget = (cable length \u00d7 attenuation coefficient) + (number of connectors \u00d7 connector loss) + (number of splices \u00d7 splice loss)"
     ]
   },

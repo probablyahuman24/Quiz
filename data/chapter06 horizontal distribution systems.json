@@ -1035,7 +1035,7 @@
     "k": [
       "PoE cable heating occurs because DC power flows through the data pairs \u2014 the resistance of the conductors converts some electrical energy to heat, which concentrates in tightly bundled cables.",
       "The shield in shielded cables provides a metallic heat dissipation path that spreads thermal energy laterally, reducing peak temperature and preventing insulation degradation.",
-      "For high-power PoE (Type 3 and 4, up to 90W), cable bundling and heat management are critical \u2014 using shielded cables and limiting bundle sizes reduces thermal risk."
+      "For high-power PoE (Type 3 and 4, up to 90 W), cable bundling and heat management are critical \u2014 using shielded cables and limiting bundle sizes reduces thermal risk."
     ]
   },
   {

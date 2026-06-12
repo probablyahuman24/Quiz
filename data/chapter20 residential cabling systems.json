@@ -591,10 +591,10 @@
       "Ten balanced twisted pairs, four coaxial cables, four optical fiber strands",
       "Six balanced twisted pairs, one coaxial cable, three optical fiber strands"
     ],
-    "a": 0,
-    "w": "Per TIA-570, the Auxiliary Disconnect Outlet (ADO) minimum requirements are: eight balanced twisted pairs (two 4-pair cables), one Series-6 coaxial cable, and two optical fiber strands. This provides the minimum backbone capacity to serve each living unit. Two coaxial cables and four fiber strands exceed the minimum standard and represent Grade 2 or above.",
+    "a": 1,
+    "w": "Per TIA-570, the Auxiliary Disconnect Outlet (ADO) minimum requirements are: eight balanced twisted pairs (two 4-pair cables), two coaxial cables, and four optical fiber strands. This provides the minimum backbone capacity to serve each living unit at Grade 2 level. The ADO serves as the demarcation point between the building backbone and individual living unit cabling.",
     "k": [
-      "TIA-570 ADO minimum: eight balanced twisted pairs (two 4-pair), one coaxial cable, two optical fiber strands",
+      "TIA-570 ADO minimum: eight balanced twisted pairs (two 4-pair), two coaxial cables, four optical fiber strands",
       "The ADO provides the separation point between building backbone and individual living unit cabling in MDU/residential installations"
     ]
   },

@@ -1111,11 +1111,11 @@
       "Ground loop circulating currents",
       "Radiated emissions above 5 GHz"
     ],
-    "a": 1,
-    "w": "Twisting conductors in pairs primarily minimizes common-mode (CM) interference. Each successive twist reverses the loop orientation so that external electromagnetic fields induce equal, opposite voltages on both conductors \u2014 converting the interference to common-mode noise that a balanced receiver rejects. Differential-mode noise (between conductors) is what remains when balance is poor; twisting actually helps prevent externally induced noise from becoming differential.",
+    "a": 0,
+    "w": "Twisting conductors in pairs primarily minimizes differential mode (DM) interference. Per TIA/ANSI standards, each successive twist reverses the orientation of the pair so that electromagnetic fields induced on each conductor cancel each other out, reducing the differential voltage between the conductors. This directly reduces differential-mode noise, which is the noise that appears as a voltage difference between the two conductors of a pair.",
     "k": [
-      "Twisting pairs equalizes external field coupling on both conductors, converting induced noise to common-mode which a balanced receiver rejects",
-      "Common-mode interference is induced equally on both conductors; differential-mode noise appears as a voltage difference between the two conductors"
+      "Twisting conductors minimizes differential mode interference by causing equal and opposite induced voltages on each conductor to cancel",
+      "Differential-mode interference appears as a voltage difference between the two conductors; common-mode interference is induced equally on both conductors and is rejected by balanced receivers"
     ]
   },
   {

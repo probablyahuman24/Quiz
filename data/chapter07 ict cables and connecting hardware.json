@@ -470,11 +470,11 @@
       "1000 m",
       "2000 m"
     ],
-    "a": 1,
-    "w": "OM4 multimode optical fiber supports 1 Gb/s Ethernet (1000BASE-SX per IEEE 802.3z) over a maximum distance of 550 m \u2014 the same as OM3, because IEEE 802.3z was standardised before the OM4 classification and specifies 550 m for 50/125 \u00b5m fiber. OM4's higher bandwidth extends the 10 Gb/s limit from 300 m (OM3) to 400 m, but does not change the 1 Gb/s limit. The 300 m figure is for 10 Gb/s over OM3.",
+    "a": 2,
+    "w": "OM4 multimode optical fiber supports 1 Gb/s Ethernet over a maximum distance of 1000 m. Per ANSI/TIA-568, OM4 (and OM3) 50/125 \u00b5m multimode fiber supports 1 Gb/s transmission up to 1000 m. For 10 Gb/s, OM4 supports up to 550 m (compared to 300 m for OM3). The 550 m figure applies to 10 Gb/s Ethernet over OM2, not to 1 Gb/s over OM4.",
     "k": [
-      "IEEE 802.3z 1000BASE-SX specifies 550 m maximum for 50/125 \u00b5m multimode fiber (OM3 and OM4)",
-      "OM4's bandwidth advantage over OM3 extends the 10 Gb/s limit to 400 m but does not increase the 1 Gb/s limit beyond 550 m"
+      "ANSI/TIA-568 specifies OM4 multimode fiber maximum distance for 1 Gb/s Ethernet as 1000 m",
+      "OM4 supports 10 Gb/s up to 550 m; OM3 supports 10 Gb/s up to 300 m; both support 1 Gb/s up to 1000 m"
     ]
   },
   {
