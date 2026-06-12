@@ -183,7 +183,8 @@ function AuthScreen({ onSignIn, onSignUp, loading, error, dark }) {
         error && el('div', { style: { background:'#fff1f2', border:'1px solid #fca5a5', borderRadius:9, padding:'10px 14px', marginBottom:14, fontSize:13, color:'#dc2626', fontWeight:600 } }, error),
         el('button', { onClick:handleSubmit, disabled:!canSubmit, style: { width:'100%', background: canSubmit ? '#7c3aed' : '#c4b5fd', color:'#fff', border:'none', borderRadius:12, padding:'14px', fontSize:15, fontWeight:700, cursor: canSubmit ? 'pointer' : 'default' } }, loading ? 'Please wait…' : mode==='signin' ? 'Sign In →' : 'Create Account →')
       ),
-      el('p', { style: { textAlign:'center', fontSize:12, color:t.textMuted, marginTop:20 } }, 'Progress is saved to the cloud')
+      el('p', { style: { textAlign:'center', fontSize:12, color:t.textMuted, marginTop:20 } }, 'Progress is saved to the cloud'),
+      el('p', { style: { textAlign:'center', fontSize:10, color:t.textMuted, marginTop:8, opacity:0.6 } }, 'v' + APP_VERSION.major + '.' + APP_VERSION.minor)
     )
   );
 }
