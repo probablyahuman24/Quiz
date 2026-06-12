@@ -344,9 +344,10 @@ function App() {
 
   const [syncing, setSyncing] = useState(false);
   const [syncMsg, setSyncMsg] = useState('');
+  const [versionErr, setVersionErr] = useState('');
   const syncProgress = useCallback(() => {
     if (!currentUser) return;
-    setSyncing(true); setSyncMsg('');
+    setSyncing(true); setSyncMsg(''); setVersionErr('');
     db.collection('users').doc(currentUser.username).get({ source: 'server' })
       .then(doc => {
         applyServerProgress(doc);
@@ -363,7 +364,7 @@ function App() {
               setSyncing(false); setSyncMsg('Synced ✓'); setTimeout(() => setSyncMsg(''), 2500);
             }
           })
-          .catch(() => { setSyncing(false); setSyncMsg('Synced ✓'); setTimeout(() => setSyncMsg(''), 2500); });
+          .catch(() => { setSyncing(false); setSyncMsg('Synced ✓'); setVersionErr('Version check failed'); setTimeout(() => setVersionErr(''), 4000); });
       })
       .catch(() => { setSyncing(false); setSyncMsg('Sync failed'); setTimeout(() => setSyncMsg(''), 2500); });
   }, [currentUser, applyServerProgress]);
@@ -604,7 +605,7 @@ function App() {
 
   return el('div', { style: { maxWidth:430, margin:'0 auto', minHeight:'100vh', background:t.bg, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
     !isOnline && el('div', { style: { position:'fixed', top:0, left:'50%', transform:'translateX(-50%)', zIndex:100, background:'#b45309', color:'#fff', fontSize:11, fontWeight:700, padding:'5px 14px', borderRadius:'0 0 10px 10px', letterSpacing:0.5, boxShadow:'0 2px 8px rgba(0,0,0,0.2)' } }, '⚡ Offline — changes will sync when reconnected'),
-    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg }),
+    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg, versionErr }),
     screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
     screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:()=>finishTest(activeTest), dark }),
@@ -675,7 +676,7 @@ function SessionChart({ history, dark }) {
 }
 
 // ── Side Menu ─────────────────────────────────────────────────────────────────
-function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut, onSync, syncing, syncMsg }) {
+function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut, onSync, syncing, syncMsg, versionErr }) {
   const t = T(dark);
   const accuracy   = totalAnswered > 0 ? Math.round(totalCorrect/totalAnswered*100) : 0;
   const completion = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
@@ -712,6 +713,7 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
         },
           syncing ? '⟳  Syncing…' : syncMsg ? syncMsg : '⟳  Sync Progress'
         ),
+        versionErr && el('p', { style: { fontSize:11, color:'#dc2626', textAlign:'center', marginTop:-10, marginBottom:10 } }, '⚠ ' + versionErr),
         el('p', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:10 } }, 'OVERALL'),
         el('div', { style: { display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, marginBottom:14 } },
           ...stats.map(s => el('div', { key:s.label, style: { background:t.cardAlt, borderRadius:10, padding:'10px 12px', border:'1px solid '+t.borderLight } },
