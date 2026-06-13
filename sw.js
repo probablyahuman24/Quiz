@@ -1,7 +1,7 @@
 // CACHE version must be updated manually here on every version bump.
 // Hardcoded (not importScripts) so the browser detects this file changed
 // and installs the new service worker automatically.
-const CACHE = 'rcdd-v38';
+const CACHE = 'rcdd-v39';
 
 // These are always fetched fresh from the network (network-first + cache fallback).
 // Keeping them out of the precache list breaks the stale-cache loop: the browser

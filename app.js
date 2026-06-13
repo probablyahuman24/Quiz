@@ -957,11 +957,13 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
         }
         const isElim = !isAnswered && eliminated.has(i);
         return el('div', { key:i, style: { display:'flex', alignItems:'stretch', gap:8 } },
-          el('button', { onClick:()=>{ if(!isAnswered){ timingsRef.current[qIdx]=Math.max(1,60-timerSec); onAnswer(testId,qIdx,i); } }, style: { display:'flex', alignItems:'center', gap:10, border:'1.5px solid '+border, borderRadius:11, padding:'12px', textAlign:'left', flex:1, background:bg, color:col, opacity: isElim ? 0.4 : 1 } },
-            el('span', { style: { minWidth:24, height:24, borderRadius:6, background:lbg, color:lc, display:'flex', alignItems:'center', justifyContent:'center', fontSize:11, fontWeight:700, flexShrink:0 } }, LABELS[i]),
-            el('span', { style: { fontSize:13.5, lineHeight:1.4, flex:1, textDecoration: isElim ? 'line-through' : 'none' } }, opt),
-            isAnswered && i===q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✓'),
-            isAnswered && i===selected && i!==q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✗')
+          el('div', { style: { flex:1, minWidth:0 } },
+            el('button', { onClick:()=>{ if(!isAnswered){ timingsRef.current[qIdx]=Math.max(1,60-timerSec); onAnswer(testId,qIdx,i); } }, style: { display:'flex', alignItems:'center', gap:10, border:'1.5px solid '+border, borderRadius:11, padding:'12px', textAlign:'left', width:'100%', background:bg, color:col, opacity: isElim ? 0.4 : 1 } },
+              el('span', { style: { minWidth:24, height:24, borderRadius:6, background:lbg, color:lc, display:'flex', alignItems:'center', justifyContent:'center', fontSize:11, fontWeight:700, flexShrink:0 } }, LABELS[i]),
+              el('span', { style: { fontSize:13.5, lineHeight:1.4, flex:1, textDecoration: isElim ? 'line-through' : 'none' } }, opt),
+              isAnswered && i===q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✓'),
+              isAnswered && i===selected && i!==q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✗')
+            )
           ),
           !isAnswered && el('button', { onClick: () => setEliminated(prev => { const s=new Set(prev); s.has(i)?s.delete(i):s.add(i); return s; }), style: { background:'none', border:'none', color:isElim?'#dc2626':t.textMuted, fontSize:18, padding:'0 6px', display:'flex', alignItems:'center', flexShrink:0 } }, isElim ? '✕' : '⊘')
         );
