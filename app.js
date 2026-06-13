@@ -681,6 +681,7 @@ function SessionChart({ history, dark }) {
 // ── Side Menu ─────────────────────────────────────────────────────────────────
 function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut, onSync, syncing, syncMsg, versionErr }) {
   const t = T(dark);
+  useEffect(() => { document.body.style.overflow = open ? 'hidden' : ''; return () => { document.body.style.overflow = ''; }; }, [open]);
   const accuracy   = totalAnswered > 0 ? Math.round(totalCorrect/totalAnswered*100) : 0;
   const completion = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
   const bestScore  = history.length ? Math.max(...history.map(h=>h.pct)) : null;
@@ -689,13 +690,12 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
   const globalAvgTime = timedSessions.length ? Math.round(timedSessions.reduce((s,h)=>s+h.avgTime,0)/timedSessions.length) : null;
 
   const stats = [
-    { label:'Score',    val: overallScore!==null?overallScore+'%':'—', color:'#7c3aed' },
-    { label:'Accuracy', val: accuracy+'%',                              color:'#059669' },
-    { label:'Progress', val: completion+'%',                            color:'#d97706' },
-    { label:'Sessions', val: history.length,                            color:'#0891b2' },
-    { label:'Best',     val: bestScore!==null?bestScore+'%':'—',        color:'#dc2626' },
-    { label:'Average',  val: avgScore!==null?avgScore+'%':'—',          color:'#9333ea' },
     { label:'Avg Time', val: globalAvgTime!==null?globalAvgTime+'s':'—', color:'#0284c7' },
+    { label:'Accuracy', val: accuracy+'%',                               color:'#059669' },
+    { label:'Progress', val: completion+'%',                             color:'#d97706' },
+    { label:'Sessions', val: history.length,                             color:'#0891b2' },
+    { label:'Best',     val: bestScore!==null?bestScore+'%':'—',         color:'#dc2626' },
+    { label:'Average',  val: avgScore!==null?avgScore+'%':'—',           color:'#9333ea' },
   ];
 
   return el('div', null,
