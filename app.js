@@ -873,6 +873,7 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
   const [timerSec, setTimerSec] = useState(60);
   const [timerRunning, setTimerRunning] = useState(true);
   const timingsRef = useRef([]);
+  const [eliminated, setEliminated] = useState(new Set());
 
   const color = COLORS[testId]||'#6366f1';
   const light = dark ? color+'22' : (LIGHTS[testId]||'#f5f3ff');
@@ -888,7 +889,7 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
   const wrongCount = wrongCounts[q.id]||0;
   const sessionLabel = session.mode==='focus'?'🎯 FOCUS SESSION':session.mode==='review'?'✗ REVIEW MODE':session.mode==='custom'?'✦ CUSTOM QUIZ':'TEST '+testId;
 
-  useEffect(() => { setTimerSec(60); setTimerRunning(!isAnswered); }, [qIdx]);
+  useEffect(() => { setTimerSec(60); setTimerRunning(!isAnswered); setEliminated(new Set()); }, [qIdx]);
   useEffect(() => { if (isAnswered) setTimerRunning(false); }, [isAnswered]);
   useEffect(() => {
     if (!timerRunning || timerSec <= 0) return;
@@ -954,9 +955,11 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
           else if (i===selected && i!==q.a)   { bg='#fff1f2'; border='#f43f5e'; col='#9f1239'; lbg='#f43f5e'; lc='#fff'; }
           else { bg=dark?'#0f172a':'#fafafa'; border=t.borderLight; col=dark?'#475569':'#b0bec5'; lbg=t.borderLight; lc=dark?'#475569':'#b0bec5'; }
         }
-        return el('button', { key:i, onClick:()=>{ if(!isAnswered){ timingsRef.current[qIdx]=Math.max(1,60-timerSec); onAnswer(testId,qIdx,i); } }, style: { display:'flex', alignItems:'center', gap:10, border:'1.5px solid '+border, borderRadius:11, padding:'12px', textAlign:'left', width:'100%', background:bg, color:col } },
+        const isElim = !isAnswered && eliminated.has(i);
+        return el('button', { key:i, onClick:()=>{ if(!isAnswered){ timingsRef.current[qIdx]=Math.max(1,60-timerSec); onAnswer(testId,qIdx,i); } }, style: { display:'flex', alignItems:'center', gap:10, border:'1.5px solid '+border, borderRadius:11, padding:'12px', textAlign:'left', width:'100%', background:bg, color:col, opacity: isElim ? 0.4 : 1 } },
           el('span', { style: { minWidth:24, height:24, borderRadius:6, background:lbg, color:lc, display:'flex', alignItems:'center', justifyContent:'center', fontSize:11, fontWeight:700, flexShrink:0 } }, LABELS[i]),
-          el('span', { style: { fontSize:13.5, lineHeight:1.4, flex:1 } }, opt),
+          el('span', { style: { fontSize:13.5, lineHeight:1.4, flex:1, textDecoration: isElim ? 'line-through' : 'none' } }, opt),
+          !isAnswered && el('span', { onClick: e => { e.stopPropagation(); setEliminated(prev => { const s=new Set(prev); s.has(i)?s.delete(i):s.add(i); return s; }); }, style: { marginLeft:'auto', fontSize:14, color: isElim ? '#dc2626' : t.textMuted, flexShrink:0, padding:'2px 4px', lineHeight:1 } }, isElim ? '✕' : '⊘'),
           isAnswered && i===q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✓'),
           isAnswered && i===selected && i!==q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✗')
         );
