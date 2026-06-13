@@ -841,6 +841,21 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
   );
 }
 
+// ── Timer Row ─────────────────────────────────────────────────────────────────
+function TimerRow({ timerSec, timerRunning, color, t, onToggle }) {
+  const tc = timerSec > 30 ? color : timerSec > 15 ? '#d97706' : '#dc2626';
+  const pct = (timerSec / 60) * 100;
+  const label = '0:' + String(timerSec).padStart(2, '0');
+  const icon = timerRunning ? '⏸' : (timerSec <= 0 ? '↺' : '▶');
+  return el('button', { onClick: onToggle, style: { margin:'8px 18px 0', background:t.card, border:'1.5px solid '+tc+'55', borderRadius:11, padding:'7px 14px', display:'flex', alignItems:'center', gap:10, width:'calc(100% - 36px)', cursor:'pointer' } },
+    el('span', { style: { fontSize:15, color:tc, lineHeight:1 } }, icon),
+    el('span', { style: { fontSize:14, fontWeight:700, color:tc, fontVariantNumeric:'tabular-nums', minWidth:32 } }, label),
+    el('div', { style: { flex:1, height:4, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
+      el('div', { style: { height:'100%', width:pct+'%', background:tc, borderRadius:2, transition:'width 1s linear, background 0.3s' } })
+    )
+  );
+}
+
 // ── Test Screen ───────────────────────────────────────────────────────────────
 function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfidence, onStar, onBack, onFinish, dark }) {
   const t = T(dark);
@@ -849,6 +864,8 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
     return first === -1 ? 0 : first;
   });
   const [showJump, setShowJump] = useState(false);
+  const [timerSec, setTimerSec] = useState(60);
+  const [timerRunning, setTimerRunning] = useState(true);
 
   const color = COLORS[testId]||'#6366f1';
   const light = dark ? color+'22' : (LIGHTS[testId]||'#f5f3ff');
@@ -863,6 +880,14 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
   const progress = ((qIdx+1)/qs.length)*100;
   const wrongCount = wrongCounts[q.id]||0;
   const sessionLabel = session.mode==='focus'?'🎯 FOCUS SESSION':session.mode==='review'?'✗ REVIEW MODE':session.mode==='custom'?'✦ CUSTOM QUIZ':'TEST '+testId;
+
+  useEffect(() => { setTimerSec(60); setTimerRunning(!isAnswered); }, [qIdx]);
+  useEffect(() => { if (isAnswered) setTimerRunning(false); }, [isAnswered]);
+  useEffect(() => {
+    if (!timerRunning || timerSec <= 0) return;
+    const id = setTimeout(() => setTimerSec(s => Math.max(0, s - 1)), 1000);
+    return () => clearTimeout(id);
+  }, [timerRunning, timerSec]);
 
   return el('div', { style: { minHeight:'100vh', background:t.bg, display:'flex', flexDirection:'column' } },
     el('div', { style: { background:t.card, borderBottom:'2px solid '+color+'22', padding:'52px 14px 10px', display:'flex', alignItems:'center', gap:10 } },
@@ -892,7 +917,11 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
     el('div', { style: { height:3, background:t.borderLight } },
       el('div', { style: { height:'100%', background:color, width:progress+'%', transition:'width 0.4s', borderRadius:'0 2px 2px 0' } })
     ),
-    el('div', { style: { margin:'16px 18px 0', background:t.card, borderRadius:14, padding:'16px', boxShadow:'0 1px 6px rgba(0,0,0,0.08)' } },
+    el(TimerRow, { timerSec, timerRunning, color, t, onToggle: () => {
+      if (timerSec <= 0) { setTimerSec(60); setTimerRunning(true); }
+      else setTimerRunning(r => !r);
+    }}),
+    el('div', { style: { margin:'10px 18px 0', background:t.card, borderRadius:14, padding:'16px', boxShadow:'0 1px 6px rgba(0,0,0,0.08)' } },
       el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:8 } },
         el('div', { style: { display:'flex', alignItems:'center', gap:8 } },
           el('span', { style: { fontSize:10, fontWeight:700, color:color, letterSpacing:1.5 } }, 'Q'+(qIdx+1)+' OF '+qs.length),
