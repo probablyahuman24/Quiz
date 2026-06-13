@@ -500,7 +500,7 @@ function App() {
     });
   }, []);
 
-  const finishTest = useCallback((testId) => {
+  const finishTest = useCallback((testId, avgTime) => {
     const sess = appData.sessions[testId]; if (!sess) return;
     const isSpecial = sess.mode==='review' || sess.mode==='focus' || sess.mode==='custom';
     const newWC = { ...appData.wrongCounts };
@@ -515,7 +515,7 @@ function App() {
     if (isSpecial) { setAppData(prev=>({...prev,wrongCounts:newWC,confidenceLog:newCL})); setScreen('result'); return; }
     const correct = sess.questions.filter((q,i)=>sess.answers[i]===q.a).length;
     const pct = Math.round(correct/sess.questions.length*100);
-    setAppData(prev=>({...prev,history:[{date:new Date().toISOString(),testId,correct,total:sess.questions.length,pct},...prev.history],wrongCounts:newWC,confidenceLog:newCL}));
+    setAppData(prev=>({...prev,history:[{date:new Date().toISOString(),testId,correct,total:sess.questions.length,pct,avgTime:avgTime||null},...prev.history],wrongCounts:newWC,confidenceLog:newCL}));
     setScreen('result');
   }, [appData]);
 
@@ -608,7 +608,7 @@ function App() {
     el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg, versionErr }),
     screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
-    screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:()=>finishTest(activeTest), dark }),
+    screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:(avgTime)=>finishTest(activeTest,avgTime), dark }),
     screen==='result' && session && el(ResultScreen, { testId:activeTest, session, onBack:()=>setScreen('test'), onRetry:()=>retryTest(activeTest), onReshuffle:()=>reshuffleTest(activeTest), onHome:()=>setScreen('home'), dark })
   );
 }
@@ -682,6 +682,8 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
   const completion = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
   const bestScore  = history.length ? Math.max(...history.map(h=>h.pct)) : null;
   const avgScore   = history.length ? Math.round(history.reduce((s,h)=>s+h.pct,0)/history.length) : null;
+  const timedSessions = history.filter(h=>h.avgTime);
+  const globalAvgTime = timedSessions.length ? Math.round(timedSessions.reduce((s,h)=>s+h.avgTime,0)/timedSessions.length) : null;
 
   const stats = [
     { label:'Score',    val: overallScore!==null?overallScore+'%':'—', color:'#7c3aed' },
@@ -690,6 +692,7 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
     { label:'Sessions', val: history.length,                            color:'#0891b2' },
     { label:'Best',     val: bestScore!==null?bestScore+'%':'—',        color:'#dc2626' },
     { label:'Average',  val: avgScore!==null?avgScore+'%':'—',          color:'#9333ea' },
+    { label:'Avg Time', val: globalAvgTime!==null?globalAvgTime+'s':'—', color:'#0284c7' },
   ];
 
   return el('div', null,
@@ -737,6 +740,7 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
             el('div', { style: { width:8, height:8, borderRadius:'50%', background:COLORS[h.testId]||'#6366f1', flexShrink:0 } }),
             el('span', { style: { fontSize:11, color:t.textSub, flex:1 } }, 'Test '+h.testId),
             el('span', { style: { fontSize:11, fontWeight:700, color: h.pct>=80?'#059669':h.pct>=60?'#d97706':'#dc2626' } }, h.pct+'%'),
+            h.avgTime && el('span', { style: { fontSize:9, fontWeight:700, background:dark?'#0c4a6e':'#e0f2fe', color:'#0284c7', borderRadius:5, padding:'2px 5px' } }, h.avgTime+'s'),
             el('span', { style: { fontSize:10, color:t.textMuted } }, new Date(h.date).toLocaleDateString('en-GB',{day:'2-digit',month:'short'}))
           ))
         ),
@@ -866,6 +870,7 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
   const [showJump, setShowJump] = useState(false);
   const [timerSec, setTimerSec] = useState(60);
   const [timerRunning, setTimerRunning] = useState(true);
+  const timingsRef = useRef([]);
 
   const color = COLORS[testId]||'#6366f1';
   const light = dark ? color+'22' : (LIGHTS[testId]||'#f5f3ff');
@@ -947,7 +952,7 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
           else if (i===selected && i!==q.a)   { bg='#fff1f2'; border='#f43f5e'; col='#9f1239'; lbg='#f43f5e'; lc='#fff'; }
           else { bg=dark?'#0f172a':'#fafafa'; border=t.borderLight; col=dark?'#475569':'#b0bec5'; lbg=t.borderLight; lc=dark?'#475569':'#b0bec5'; }
         }
-        return el('button', { key:i, onClick:()=>!isAnswered&&onAnswer(testId,qIdx,i), style: { display:'flex', alignItems:'center', gap:10, border:'1.5px solid '+border, borderRadius:11, padding:'12px', textAlign:'left', width:'100%', background:bg, color:col } },
+        return el('button', { key:i, onClick:()=>{ if(!isAnswered){ timingsRef.current[qIdx]=Math.max(1,60-timerSec); onAnswer(testId,qIdx,i); } }, style: { display:'flex', alignItems:'center', gap:10, border:'1.5px solid '+border, borderRadius:11, padding:'12px', textAlign:'left', width:'100%', background:bg, color:col } },
           el('span', { style: { minWidth:24, height:24, borderRadius:6, background:lbg, color:lc, display:'flex', alignItems:'center', justifyContent:'center', fontSize:11, fontWeight:700, flexShrink:0 } }, LABELS[i]),
           el('span', { style: { fontSize:13.5, lineHeight:1.4, flex:1 } }, opt),
           isAnswered && i===q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✓'),
@@ -979,7 +984,7 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
     el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', padding:'12px 18px 44px', marginTop:'auto' } },
       el('button', { onClick:()=>qIdx>0&&setQIdx(i=>i-1), disabled:qIdx===0, style: { background:t.cardAlt, border:'1.5px solid '+t.border, borderRadius:10, padding:'9px 16px', fontSize:13, fontWeight:600, color:t.textSub, opacity:qIdx===0?0.35:1 } }, '‹ Prev'),
       allDone
-        ? el('button', { onClick:onFinish, style: { background:color, color:'#fff', border:'none', borderRadius:11, padding:'10px 22px', fontSize:14, fontWeight:700, boxShadow:'0 4px 14px '+color+'40' } }, 'Finish →')
+        ? el('button', { onClick:()=>{ const v=timingsRef.current.filter(x=>x!=null); onFinish(v.length?Math.round(v.reduce((s,x)=>s+x,0)/v.length):null); }, style: { background:color, color:'#fff', border:'none', borderRadius:11, padding:'10px 22px', fontSize:14, fontWeight:700, boxShadow:'0 4px 14px '+color+'40' } }, 'Finish →')
         : isAnswered && qIdx<qs.length-1
           ? el('button', { onClick:()=>setQIdx(i=>i+1), style: { background:color, color:'#fff', border:'none', borderRadius:11, padding:'10px 22px', fontSize:14, fontWeight:700 } }, 'Next →')
           : el('div')
