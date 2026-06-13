@@ -51,6 +51,9 @@ const LIGHTS = {
   focus:'#eef2ff', review:'#fff1f2', custom:'#ecfeff'
 };
 
+const ACCENT = '#64748b';
+const ACCENT_LIGHT = '#f1f5f9';
+
 // ── Theme tokens ──────────────────────────────────────────────────────────────
 function T(dark) {
   return {
@@ -807,27 +810,26 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
       el('div', { style: { fontSize:10, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:12 } }, 'SELECT A TEST'),
       ...tests.map(test => {
         const ts = testStats.find(x=>x.testId===test.id)||{done:0,correct:0,total:test.questions.length,pct:null};
-        const color = COLORS[test.id]||'#6366f1';
-        const light = dark ? color+'22' : (LIGHTS[test.id]||'#f5f3ff');
         const totalQsInChapter = test.questions.length;
         const isComplete = ts.done===totalQsInChapter && ts.done>0;
         const fillPct = totalQsInChapter>0 ? (ts.done/totalQsInChapter*100) : 0;
         const isConfirming = resetConfirm===test.id;
+        const scorePctColor = ts.pct!==null ? (ts.pct>=80?'#059669':ts.pct>=60?'#d97706':'#dc2626') : t.border;
         return el('div', { key:test.id, style: { marginBottom:9, position:'relative' } },
-          el('button', { onClick:()=>{ if(!isConfirming) onSelect(test.id); }, style: { width:'100%', background:t.card, border:'1.5px solid '+(isComplete?color+'60':t.border), borderRadius:14, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, textAlign:'left', opacity:isConfirming?0.5:1, cursor:'pointer' } },
-            el('div', { style: { width:38, height:38, borderRadius:11, background:light, color:color, display:'flex', alignItems:'center', justifyContent:'center', fontSize:15, fontWeight:800, flexShrink:0 } }, test.id),
+          el('button', { onClick:()=>{ if(!isConfirming) onSelect(test.id); }, style: { width:'100%', background:t.card, border:'1.5px solid '+(isComplete?ACCENT+'50':t.border), borderRadius:14, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, textAlign:'left', opacity:isConfirming?0.5:1, cursor:'pointer' } },
+            el('div', { style: { width:38, height:38, borderRadius:11, background:dark?ACCENT+'22':ACCENT_LIGHT, color:ACCENT, display:'flex', alignItems:'center', justifyContent:'center', fontSize:15, fontWeight:800, flexShrink:0 } }, test.id),
             el('div', { style: { flex:1, minWidth:0 } },
               el('div', { style: { display:'flex', alignItems:'center', gap:6, marginBottom:2 } },
                 el('span', { style: { fontSize:13, fontWeight:700, color:t.text } }, test.name)
               ),
               el('div', { style: { fontSize:11, color:t.textMuted, marginBottom:5 } }, ts.done+'/'+totalQsInChapter+' questions'),
               el('div', { style: { height:3, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
-                el('div', { style: { height:'100%', background:color, borderRadius:2, width:fillPct+'%' } })
+                el('div', { style: { height:'100%', background:ACCENT, borderRadius:2, width:fillPct+'%' } })
               )
             ),
             el('div', { style: { textAlign:'right', flexShrink:0 } },
               ts.pct!==null
-                ? el('div', { style: { fontSize:17, fontWeight:800, color:color, lineHeight:1 } }, ts.pct+'%')
+                ? el('div', { style: { fontSize:17, fontWeight:800, color:scorePctColor, lineHeight:1 } }, ts.pct+'%')
                 : el('div', { style: { fontSize:13, color:t.border, lineHeight:1 } }, '—')
             ),
             el('button', { onClick:e=>{ e.stopPropagation(); setResetConfirm(test.id); }, style: { background:'none', border:'none', fontSize:16, color:t.textMuted, padding:'4px', flexShrink:0, lineHeight:1 }, title:'Reset this test' }, '↺'),
@@ -895,15 +897,15 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
   }, [timerRunning, timerSec]);
 
   return el('div', { style: { minHeight:'100vh', background:t.bg, display:'flex', flexDirection:'column' } },
-    el('div', { style: { background:t.card, borderBottom:'2px solid '+color+'22', padding:'52px 14px 10px', display:'flex', alignItems:'center', gap:10 } },
+    el('div', { style: { background:t.card, borderBottom:'2px solid '+ACCENT+'22', padding:'52px 14px 10px', display:'flex', alignItems:'center', gap:10 } },
       el('button', { onClick:onBack, style: { background:'none', border:'none', fontSize:24, color:t.textSub, lineHeight:1, padding:'0 4px' } }, '‹'),
       el('div', { style: { flex:1 } },
-        el('div', { style: { fontSize:10, fontWeight:700, color:color, letterSpacing:1.5 } }, sessionLabel),
+        el('div', { style: { fontSize:10, fontWeight:700, color:ACCENT, letterSpacing:1.5 } }, sessionLabel),
         el('div', { style: { fontSize:12, fontWeight:600, color:t.textSub } }, q.testName||q.chapter||'')
       ),
-      el('button', { onClick:()=>setShowJump(s=>!s), style: { background:showJump?color:t.cardAlt, border:'1.5px solid '+color, borderRadius:9, padding:'5px 12px', fontSize:12, fontWeight:700, color:showJump?'#fff':color } }, showJump?'✕':'⊞ '+doneCount+'/'+qs.length)
+      el('button', { onClick:()=>setShowJump(s=>!s), style: { background:showJump?ACCENT:t.cardAlt, border:'1.5px solid '+ACCENT, borderRadius:9, padding:'5px 12px', fontSize:12, fontWeight:700, color:showJump?'#fff':ACCENT } }, showJump?'✕':'⊞ '+doneCount+'/'+qs.length)
     ),
-    showJump && el('div', { style: { background:light, padding:'12px 16px 10px', borderBottom:'1px solid '+color+'20' } },
+    showJump && el('div', { style: { background:t.cardAlt, padding:'12px 16px 10px', borderBottom:'1px solid '+ACCENT+'20' } },
       el('div', { style: { display:'flex', flexWrap:'wrap', gap:6, marginBottom:8 } },
         ...qs.map((qq,i) => {
           const done=ans[i]!==null, correct=done&&ans[i]===qq.a, isCurr=i===qIdx;
@@ -920,16 +922,16 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
       )
     ),
     el('div', { style: { height:3, background:t.borderLight } },
-      el('div', { style: { height:'100%', background:color, width:progress+'%', transition:'width 0.4s', borderRadius:'0 2px 2px 0' } })
+      el('div', { style: { height:'100%', background:ACCENT, width:progress+'%', transition:'width 0.4s', borderRadius:'0 2px 2px 0' } })
     ),
-    el(TimerRow, { timerSec, timerRunning, color, t, onToggle: () => {
+    el(TimerRow, { timerSec, timerRunning, color:ACCENT, t, onToggle: () => {
       if (timerSec <= 0) { setTimerSec(60); setTimerRunning(true); }
       else setTimerRunning(r => !r);
     }}),
     el('div', { style: { margin:'10px 18px 0', background:t.card, borderRadius:14, padding:'16px', boxShadow:'0 1px 6px rgba(0,0,0,0.08)' } },
       el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:8 } },
         el('div', { style: { display:'flex', alignItems:'center', gap:8 } },
-          el('span', { style: { fontSize:10, fontWeight:700, color:color, letterSpacing:1.5 } }, 'Q'+(qIdx+1)+' OF '+qs.length),
+          el('span', { style: { fontSize:10, fontWeight:700, color:ACCENT, letterSpacing:1.5 } }, 'Q'+(qIdx+1)+' OF '+qs.length),
           wrongCount>0 && el('span', { style: { fontSize:9, fontWeight:700, background:'#fff1f2', color:'#dc2626', borderRadius:10, padding:'2px 7px' } }, '✗ '+wrongCount+'x wrong')
         ),
         el('button', { onClick:()=>onStar(q.id), style: { background:'none', border:'none', fontSize:20, color:starred.includes(q.id)?'#f59e0b':t.border, padding:0 } }, starred.includes(q.id)?'★':'☆')
@@ -1023,8 +1025,8 @@ function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome, d
     el('div', { style: { background:grade.bg, padding:'52px 20px 22px', display:'flex', flexDirection:'column', alignItems:'center', borderRadius:'0 0 22px 22px', position:'relative' } },
       el('button', { onClick:onBack, style: { position:'absolute', top:52, left:16, background:'none', border:'none', fontSize:24, color:t.textSub } }, '‹'),
       isSpecial
-        ? el('div', { style: { fontSize:13, fontWeight:800, color:color, marginBottom:8 } }, testId==='focus'?'🎯 Focus Session':testId==='custom'?'✦ Custom Quiz':'✗ Review Mode')
-        : el('div', { style: { width:44, height:44, borderRadius:12, background:light, color:color, display:'flex', alignItems:'center', justifyContent:'center', fontSize:18, fontWeight:800, marginBottom:8 } }, testId),
+        ? el('div', { style: { fontSize:13, fontWeight:800, color:ACCENT, marginBottom:8 } }, testId==='focus'?'🎯 Focus Session':testId==='custom'?'✦ Custom Quiz':'✗ Review Mode')
+        : el('div', { style: { width:44, height:44, borderRadius:12, background:dark?ACCENT+'22':ACCENT_LIGHT, color:ACCENT, display:'flex', alignItems:'center', justifyContent:'center', fontSize:18, fontWeight:800, marginBottom:8 } }, testId),
       el('div', { style: { fontSize:54, fontWeight:800, color:t.text, lineHeight:1 } }, pct, el('span', { style: { fontSize:20 } }, '%')),
       el('div', { style: { fontSize:14, fontWeight:700, color:grade.color, marginTop:3 } }, grade.label),
       el('div', { style: { fontSize:12, color:t.textSub, marginTop:4 } }, score+' of '+qs.length+' correct')
