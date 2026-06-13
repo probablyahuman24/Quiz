@@ -963,7 +963,7 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
             isAnswered && i===q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✓'),
             isAnswered && i===selected && i!==q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✗')
           ),
-          !isAnswered && el('button', { onClick: () => setEliminated(prev => { const s=new Set(prev); s.has(i)?s.delete(i):s.add(i); return s; }), style: { background:'none', border:'none', fontSize:18, color: isElim ? '#dc2626' : t.textMuted, padding:'8px 4px', lineHeight:1, flexShrink:0 } }, isElim ? '✕' : '⊘')
+          !isAnswered && el('button', { onClick: () => setEliminated(prev => { const s=new Set(prev); s.has(i)?s.delete(i):s.add(i); return s; }), style: { width:36, height:36, borderRadius:9, border:'1.5px solid '+(isElim?'#f43f5e':t.border), background:isElim?'#fff1f2':t.card, color:isElim?'#dc2626':t.textMuted, fontSize:15, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 } }, isElim ? '✕' : '⊘')
         );
       })
     ),
