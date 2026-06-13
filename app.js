@@ -758,7 +758,7 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
 }
 
 // ── Home Screen ───────────────────────────────────────────────────────────────
-const DAILY_TARGET = 50;
+const DAILY_TARGET = 100;
 function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, dailyStats, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onCustomQuiz, onResetTest, dark, onToggleDark }) {
   const t = T(dark);
   const pct = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
