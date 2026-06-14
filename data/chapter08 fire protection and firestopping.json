@@ -1220,5 +1220,205 @@
     "a": 2,
     "w": "Qualification testing ensures that a firestop system performs as expected under the fire conditions it will encounter in service, producing the F, T, and other ratings that define the system's listed performance. Cost-effectiveness is a procurement consideration, not a qualification testing purpose. Appearance is not a factor in fire performance qualification testing. Cable-to-sealant compatibility may be evaluated during testing, but the primary purpose is to validate fire performance.",
     "k": ["Qualification testing subjects a complete firestop system (barrier + penetrating item + firestop material) to standardized fire conditions, verifying that the combination achieves its claimed F and T ratings under controlled, reproducible test protocols.", "The test results produce a listing (published in UL Fire Resistance Directory or equivalent) that confirms the system's performance under the tested conditions — designers specify listed systems to ensure tested, reliable performance.", "Qualification testing is done once per system configuration; the resulting listing allows that specific system to be repeatedly installed without retesting, as long as the installation exactly matches the tested configuration."]
+  },
+  {
+    "id": 1640,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Which standards govern fire-resistance testing of the wall and floor assemblies themselves — not the firestop materials placed within penetrations?",
+    "o": [
+      "ASTM E814 and UL 1479",
+      "ASTM E1966 and UL 2079",
+      "ASTM E119 and UL 263",
+      "NFPA 13 and NFPA 72"
+    ],
+    "a": 2,
+    "w": "ASTM E119 and UL 263 test the fire-resistance rating of the barrier assemblies themselves — walls, floors, beams, and structural elements. ASTM E814 and UL 1479 evaluate through-penetration firestop systems placed within those barriers. ASTM E1966 and UL 2079 test expansion and control joints. NFPA 13 and NFPA 72 govern sprinkler systems and fire alarm systems, respectively.",
+    "k": [
+      "ASTM E119/UL 263 produces the hourly fire-resistance ratings (1-hour, 2-hour, 4-hour) printed on gypsum board and concrete floor spec sheets — these ratings apply to the entire assembly, not to individual penetration seals.",
+      "ASTM E814/UL 1479 is the complementary standard for penetrations through those rated barriers: once a cable or conduit passes through a rated wall, E814-listed firestop systems restore the barrier's rating at the penetration point.",
+      "Understanding the distinction between assembly ratings (E119) and penetration ratings (E814) prevents specifying the wrong test standard — a common error when writing project specifications."
+    ]
+  },
+  {
+    "id": 1641,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "At what specific temperature rise above ambient on the unexposed side does a firestop system fail its T rating?",
+    "o": [
+      "100°C (180°F) above ambient",
+      "140°C (250°F) above ambient",
+      "181°C (325°F) above ambient",
+      "250°C (450°F) above ambient"
+    ],
+    "a": 2,
+    "w": "A firestop system fails its T rating when the temperature on the unexposed side rises 181°C (325°F) above ambient temperature. This threshold is chosen because adjacent combustible materials can ignite at approximately that heat level. 100°C above ambient is insufficient to trigger the failure. 140°C is a threshold used in some European standards but not the U.S. T rating criterion. 250°C above ambient far exceeds the T-rating failure point.",
+    "k": [
+      "The 181°C (325°F) threshold comes from the ignition temperature of common building materials — at this temperature differential, combustible materials on the protected side can auto-ignite, spreading fire beyond the rated barrier.",
+      "Metallic conduits are highly conductive and can cause rapid temperature rise on the unexposed side, making it difficult to achieve high T ratings through metallic penetrations without intumescent insulation around the conduit.",
+      "A system labeled 'F-2/T-1' maintains the 181°C threshold for only 1 hour despite preventing flame passage for 2 hours — knowing both ratings is critical when adjacent combustibles are present."
+    ]
+  },
+  {
+    "id": 1642,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Beyond preventing fire spread, what is the primary operational purpose that compartmentation provides during a fire event?",
+    "o": [
+      "To permanently extinguish the fire without suppression systems",
+      "To buy time for occupant evacuation and firefighter response",
+      "To reduce the insurance premium classification of the building",
+      "To allow electrical systems to remain operational during a fire"
+    ],
+    "a": 1,
+    "w": "Compartmentation's primary operational purpose is to buy time — slowing fire spread so occupants can evacuate safely and firefighters can reach and suppress the fire. Compartmentation contains but does not extinguish fire; suppression systems perform that function. Insurance classification is a benefit of compartmentation but not its primary life-safety purpose. Electrical continuity during fire is addressed by emergency power systems, not firestopping.",
+    "k": [
+      "The rated duration (1-hour, 2-hour) of a fire compartment directly corresponds to the time available for evacuation and fire response — a 2-hour rated wall must contain fire long enough for full building evacuation and fire department arrival.",
+      "Compartmentation is the foundation of the 'defend in place' strategy used in hospitals and high-rise buildings where total evacuation is impractical — rated barriers protect occupants in place while fire is confined to one compartment.",
+      "The RCDD must understand that every penetration through a rated barrier reduces its effectiveness — incomplete firestopping directly threatens the time available for safe evacuation."
+    ]
+  },
+  {
+    "id": 1643,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Intumescent materials used in firestop systems typically expand to how many times their original volume when exposed to fire?",
+    "o": [
+      "2 to 3 times original volume",
+      "4 to 6 times original volume",
+      "7 to 10 times original volume",
+      "20 to 30 times original volume"
+    ],
+    "a": 2,
+    "w": "Intumescent materials typically expand 7 to 10 times their original volume when heated, generating sufficient pressure and mass to fill voids left by melted or burned combustible penetrating items. A 2–3x expansion is insufficient to seal the gap left by a burned-away plastic conduit. 4–6x falls short of the required fill volume. 20–30x expansion would generate excessive force that could damage surrounding barrier materials.",
+    "k": [
+      "The 7–10x expansion ratio is engineered to match the void created when a combustible penetrating item (plastic conduit, cable jacket) melts and burns away — the intumescent material expands exactly into that space to restore the barrier seal.",
+      "Intumescent wrap strips exploit this expansion: wrapped around plastic conduit, they expand inward when the conduit burns, pinching the hole closed rather than leaving an open path for fire and gases.",
+      "Expansion begins at approximately 120–150°C (248–302°F) and increases rapidly as temperature rises — the expansion is triggered well before the firestop approaches its F-rating failure temperature."
+    ]
+  },
+  {
+    "id": 1644,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "When installing electrical outlet boxes in a rated wall assembly, back-to-back placement on opposite sides of the wall is prohibited for what reason?",
+    "o": [
+      "It violates the National Electrical Code's wiring spacing requirements",
+      "It creates a through-path that destroys the wall's fire-rated integrity",
+      "It prevents proper bonding of the metal boxes to the grounding conductor",
+      "It reduces the acoustic rating of the wall assembly below acceptable levels"
+    ],
+    "a": 1,
+    "w": "Back-to-back electrical boxes on opposite sides of a rated wall share the same wall cavity, creating a continuous through-penetration that destroys the fire-rated integrity of the assembly. This bypasses the rated barrier completely, leaving an unprotected path for fire, heat, and smoke. NEC wiring spacing rules address electrical safety, not fire rating. Grounding connections are unaffected by box placement proximity. Acoustic performance is a separate concern from fire rating.",
+    "k": [
+      "A rated wall's fire resistance depends on the integrity of its continuous cavity — placing boxes back-to-back eliminates the solid cavity between them, allowing fire and hot gases to travel from one side to the other through the shared open box cavity.",
+      "Offset requirements vary by manufacturer and listing, but boxes on opposite sides of a rated wall must typically be separated horizontally by at least 600 mm (24 inches) to maintain separate cavities.",
+      "Alternatively, listed fire-rated electrical boxes that include intumescent material within the box itself can be used in back-to-back configurations without compromising the wall's fire rating."
+    ]
+  },
+  {
+    "id": 1645,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Cast-in-place firestop devices belong to which category of firestop system?",
+    "o": [
+      "Non-mechanical firestop systems",
+      "Intumescent wrap systems",
+      "Mechanical firestop systems",
+      "Cementitious firestop systems"
+    ],
+    "a": 2,
+    "w": "Cast-in-place firestop devices are classified as mechanical firestop systems because they involve factory-engineered mechanical components — typically a sleeve or collar with an intumescent liner — cast directly into the floor or wall slab during construction. Non-mechanical systems include caulk, putty, and foam applied after construction. Intumescent wrap systems are field-applied strips. Cementitious systems use mortar-like fill material, not prefabricated mechanical devices.",
+    "k": [
+      "Cast-in-place devices are embedded in concrete forms before the slab is poured — once the concrete cures, the device is already in position, eliminating the need to core-drill and then firestop afterward.",
+      "The mechanical component (sleeve, collar, intumescent liner) is engineered as a unit and tested as a complete listed system — the concrete becomes the surrounding barrier assembly.",
+      "Cable transit systems are the other primary example of mechanical firestop systems: both cast-in-place devices and cable transits share the characteristic of using prefabricated mechanical components rather than field-mixed or field-applied fill materials."
+    ]
+  },
+  {
+    "id": 1646,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Comprehensive building fire safety requires multiple layers of protection. Which combination correctly represents both passive and active fire protection strategies working together?",
+    "o": [
+      "Fire-rated walls (passive) and sprinkler suppression (active)",
+      "Sprinkler systems (passive) and firestopping (active)",
+      "Smoke detectors (passive) and intumescent coatings (active)",
+      "Compartmentation (active) and detection systems (passive)"
+    ],
+    "a": 0,
+    "w": "Fire-rated walls are passive fire protection (they work without power or activation), while sprinkler suppression systems are active fire protection (they require water supply activation and system monitoring). Sprinklers are active, not passive. Smoke detectors are active (require power), and intumescent coatings are passive. Compartmentation is passive, and detection systems are active — so the last option has the classifications reversed.",
+    "k": [
+      "Passive fire protection (rated assemblies, firestopping, compartmentation) provides continuous, power-independent protection — it works even when electrical power is lost in a fire event.",
+      "Active fire protection (sprinklers, detection, suppression agents, smoke exhaust fans) requires activation — sensors, triggers, power, or water pressure — to provide protection when a fire occurs.",
+      "The NFPA life safety strategy layers both: passive compartmentation buys time, active detection alerts occupants, and active suppression fights the fire — no single layer is sufficient alone."
+    ]
+  },
+  {
+    "id": 1647,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "Where must a firestop system's specific configuration be published to confirm that it is an approved, tested assembly for use in a building?",
+    "o": [
+      "The manufacturer's product data sheet only",
+      "The local authority having jurisdiction's (AHJ) internal records",
+      "A recognized fire-resistance listing directory such as the UL Fire Resistance Directory",
+      "The project architect's drawing set as a performance specification"
+    ],
+    "a": 2,
+    "w": "Listed firestop systems must appear in a recognized fire-resistance listing directory — the UL Fire Resistance Directory is the primary U.S. reference — to be considered approved, tested assemblies. Manufacturer data sheets describe products but do not constitute independent third-party listings. AHJ internal records are not an industry-recognized source for listed systems. Project specifications reference listings but do not create them.",
+    "k": [
+      "The UL Fire Resistance Directory (and its online equivalent, the UL Product iQ database) contains thousands of listed firestop systems identified by system numbers (e.g., WL1234, FL5678) — each entry specifies the exact tested combination of barrier type, penetrating item, and firestop product.",
+      "Specifying a UL system number on drawings provides a legally defensible basis for inspection — the AHJ can verify the system is tested and the installer can reproduce the exact tested configuration.",
+      "Using an unlisted system (or a system whose components have been substituted) creates liability for the designer and installer — if a fire causes casualties, an unlisted firestop system is indefensible."
+    ]
+  },
+  {
+    "id": 1648,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "When a penetrating item (such as a cable) passes through a fire-rated barrier, the firestop system's fire rating should relate to the barrier's rating in what way?",
+    "o": [
+      "The firestop rating must always exceed the barrier rating by at least one hour",
+      "The firestop rating should match or complement the fire rating of the barrier it penetrates",
+      "The firestop rating is irrelevant as long as the barrier itself is fire-rated",
+      "The firestop rating is set by the cable manufacturer, not the barrier rating"
+    ],
+    "a": 1,
+    "w": "The firestop system's fire rating should match or complement the rating of the barrier it penetrates — a penetration through a 2-hour rated wall requires a firestop system also rated for 2 hours, or the barrier's effective rating is reduced to the firestop's rating. Exceeding the barrier rating by a fixed increment is not required. The firestop is critical — a rated barrier with an unrated penetration has no effective rating at that location. Cable manufacturers specify cable properties, not barrier-matching firestop ratings.",
+    "k": [
+      "The rated assembly (wall or floor) and its firestop penetrations must have coordinated ratings — the weakest element determines the effective fire resistance of the entire barrier system.",
+      "A 2-hour rated wall with a 1-hour rated firestop at a cable penetration effectively provides only 1-hour protection at that penetration point, creating a localized weakness in the compartment.",
+      "RCDD specifiers must identify all barrier ratings in a project and specify firestop systems with matching or greater ratings — a common oversight is using a single generic firestop specification for barriers of different ratings."
+    ]
+  },
+  {
+    "id": 1649,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "The L rating for a firestop system is measured at ambient temperature. What does this ambient-temperature measurement specifically predict about the firestop system's real-world performance?",
+    "o": [
+      "Whether the firestop will maintain its F rating when exposed to direct flame",
+      "Whether the firestop will prevent smoke migration before temperatures reach fire levels",
+      "Whether the firestop will expand sufficiently when heated to seal a burned-away conduit",
+      "Whether the firestop material will shrink or degrade during normal building operation"
+    ],
+    "a": 1,
+    "w": "The L rating is measured at ambient temperature because smoke — not flame — is the primary killer in building fires in their early stages. The ambient-temperature air leakage measurement predicts whether the firestop seal will prevent smoke from migrating through penetrations before temperatures rise high enough to activate intumescent materials or trigger F-rating failure. The F rating addresses flame resistance. Intumescent expansion is a separate material property. Shrinkage/degradation is a durability concern unrelated to the L rating test.",
+    "k": [
+      "Most fire fatalities result from smoke inhalation before victims encounter flames — the L rating predicts the firestop's ability to limit this early-stage hazard by quantifying air leakage through the seal at normal temperatures.",
+      "L rating is measured in cubic feet per minute (CFM) or liters per minute per linear foot/meter of opening — lower L values indicate better smoke resistance at ambient conditions.",
+      "In the U.S., L rating tests are optional but become critical in healthcare (hospital smoke compartments), high-rise buildings, and any application where smoke control and 'defend in place' strategies are employed."
+    ]
   }
 ]
