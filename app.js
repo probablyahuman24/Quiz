@@ -608,7 +608,7 @@ function App() {
 
   const session = activeTest ? (appData.sessions[activeTest]||null) : null;
 
-  return el('div', { style: { maxWidth: tablet ? 900 : 430, margin:'0 auto', minHeight:'100vh', background:t.bg, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
+  return el('div', { style: { background:t.bg, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", ...(tablet ? { width:'100%', height:'100vh', overflow:'hidden' } : { maxWidth:430, margin:'0 auto', minHeight:'100vh', overflowX:'hidden' }) } },
     !isOnline && el('div', { style: { position:'fixed', top:0, left:'50%', transform:'translateX(-50%)', zIndex:100, background:'#b45309', color:'#fff', fontSize:11, fontWeight:700, padding:'5px 14px', borderRadius:'0 0 10px 10px', letterSpacing:0.5, boxShadow:'0 2px 8px rgba(0,0,0,0.2)' } }, '⚡ Offline — changes will sync when reconnected'),
     el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg, versionErr }),
     screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark, tablet, onToggleTablet:toggleTablet }),
@@ -771,47 +771,47 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
   const dailyPct = Math.min(Math.round(todayCorrect/DAILY_TARGET*100), 100);
   const dailyDone = todayCorrect >= DAILY_TARGET;
 
-  return el('div', { style: { minHeight:'100vh', background:t.bg, display:'flex', flexDirection:'column' } },
-    el('div', { style: { background:t.card, borderBottom:'1px solid '+t.borderLight, padding:'52px 20px 14px', display:'flex', alignItems:'center', gap:14 } },
+  return el('div', { style: { ...(tablet ? { height:'100vh' } : { minHeight:'100vh' }), background:t.bg, display:'flex', flexDirection:'column' } },
+    el('div', { style: { background:t.card, borderBottom:'1px solid '+t.borderLight, padding: tablet ? '16px 28px 14px' : '52px 20px 14px', display:'flex', alignItems:'center', gap:14 } },
       el('button', { onClick:onMenu, style: { background:'none', border:'none', padding:4, display:'flex', flexDirection:'column', gap:5 } },
-        el('span', { style: { display:'block', width:20, height:2, background:t.text, borderRadius:2 } }),
-        el('span', { style: { display:'block', width:20, height:2, background:t.text, borderRadius:2 } }),
-        el('span', { style: { display:'block', width:20, height:2, background:t.text, borderRadius:2 } })
+        el('span', { style: { display:'block', width:22, height:2.5, background:t.text, borderRadius:2 } }),
+        el('span', { style: { display:'block', width:22, height:2.5, background:t.text, borderRadius:2 } }),
+        el('span', { style: { display:'block', width:22, height:2.5, background:t.text, borderRadius:2 } })
       ),
       el('div', { style: { flex:1 } },
-        el('div', { style: { fontSize:10, fontWeight:700, color:t.textMuted, letterSpacing:2 } }, 'BICSI · RCDD'),
-        el('h1', { style: { fontSize:22, fontWeight:800, color:t.text } }, 'Practice Test')
+        el('div', { style: { fontSize: tablet?12:10, fontWeight:700, color:t.textMuted, letterSpacing:2 } }, 'BICSI · RCDD'),
+        el('h1', { style: { fontSize: tablet?26:22, fontWeight:800, color:t.text, margin:0 } }, 'Practice Test')
       ),
-      el('button', { onClick:onToggleDark, title: dark?'Light mode':'Dark mode', style: { background:t.pill, border:'1px solid '+t.border, borderRadius:10, width:36, height:36, fontSize:18, display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', flexShrink:0 } }, dark ? '☀️' : '🌙'),
-      el('button', { onClick:onToggleTablet, title: tablet?'Phone layout':'Tablet layout', style: { background:t.pill, border:'1px solid '+t.border, borderRadius:10, width:36, height:36, fontSize:18, display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', flexShrink:0 } }, tablet ? '📱' : '💻'),
+      el('button', { onClick:onToggleDark, title: dark?'Light mode':'Dark mode', style: { background:t.pill, border:'1px solid '+t.border, borderRadius:10, width: tablet?42:36, height: tablet?42:36, fontSize: tablet?20:18, display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', flexShrink:0 } }, dark ? '☀️' : '🌙'),
+      el('button', { onClick:onToggleTablet, title: tablet?'Phone layout':'Tablet layout', style: { background:t.pill, border:'1px solid '+t.border, borderRadius:10, width: tablet?42:36, height: tablet?42:36, fontSize: tablet?20:18, display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', flexShrink:0 } }, tablet ? '📱' : '💻'),
       el('div', { style: { textAlign:'right' } },
-        el('div', { style: { fontSize:24, fontWeight:800, color:'#7c3aed', lineHeight:1 } }, overallScore!==null?overallScore+'%':'—'),
-        el('div', { style: { fontSize:10, color:t.textMuted } }, 'score')
+        el('div', { style: { fontSize: tablet?30:24, fontWeight:800, color:'#7c3aed', lineHeight:1 } }, overallScore!==null?overallScore+'%':'—'),
+        el('div', { style: { fontSize: tablet?12:10, color:t.textMuted } }, 'score')
       )
     ),
-    el('div', { style: { padding:'12px 20px 10px', background:t.card } },
-      el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
-        el('span', { style: { fontSize:11, color:t.textSub } }, 'Overall Progress'),
-        el('span', { style: { fontSize:11, fontWeight:700, color:'#7c3aed' } }, totalAnswered+' / '+totalQs)
+    el('div', { style: { padding: tablet ? '10px 28px 12px' : '12px 20px 10px', background:t.card, borderBottom:'1px solid '+t.borderLight } },
+      el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:4 } },
+        el('span', { style: { fontSize: tablet?13:11, color:t.textSub } }, 'Overall Progress'),
+        el('span', { style: { fontSize: tablet?13:11, fontWeight:700, color:'#7c3aed' } }, totalAnswered+' / '+totalQs)
       ),
-      el('div', { style: { height:5, background:t.borderLight, borderRadius:3, overflow:'hidden', marginBottom:10 } },
+      el('div', { style: { height: tablet?7:5, background:t.borderLight, borderRadius:3, overflow:'hidden', marginBottom: tablet?10:10 } },
         el('div', { style: { height:'100%', background:'linear-gradient(90deg,#7c3aed,#a855f7)', borderRadius:3, width:pct+'%' } })
       ),
-      el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
-        el('span', { style: { fontSize:11, color:t.textSub } }, dailyDone ? '🎯 Daily Target Complete!' : 'Daily Target'),
-        el('span', { style: { fontSize:11, fontWeight:700, color: dailyDone?'#059669':'#16a34a' } }, todayCorrect+' / '+DAILY_TARGET)
+      el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:4 } },
+        el('span', { style: { fontSize: tablet?13:11, color:t.textSub } }, dailyDone ? '🎯 Daily Target Complete!' : 'Daily Target'),
+        el('span', { style: { fontSize: tablet?13:11, fontWeight:700, color: dailyDone?'#059669':'#16a34a' } }, todayCorrect+' / '+DAILY_TARGET)
       ),
-      el('div', { style: { height:5, background:t.borderLight, borderRadius:3, overflow:'hidden' } },
+      el('div', { style: { height: tablet?7:5, background:t.borderLight, borderRadius:3, overflow:'hidden' } },
         el('div', { style: { height:'100%', background: dailyDone?'linear-gradient(90deg,#059669,#34d399)':'linear-gradient(90deg,#16a34a,#4ade80)', borderRadius:3, width:dailyPct+'%', transition:'width 0.5s' } })
       )
     ),
-    el('div', { style: { flex:1, display:'flex', overflow:'hidden' } },
-      el('div', { style: { flex:1, padding:'16px 20px', overflowY:'auto' } },
-        el('div', { style: { display:'flex', gap:10, marginBottom:14 } },
-          el('button', { onClick:onCustomQuiz, style: { flex:1, background:'linear-gradient(135deg,#0891b2,#0284c7)', color:'#fff', border:'none', borderRadius:14, padding:'13px 10px', fontSize:13, fontWeight:700, display:'flex', alignItems:'center', justifyContent:'center', gap:7, boxShadow:'0 4px 14px rgba(8,145,178,0.3)', cursor:'pointer' } }, '✦ Custom Quiz'),
-          allTestsDone && el('button', { onClick:onFocusSession, style: { flex:1, background:'linear-gradient(135deg,#6366f1,#8b5cf6)', color:'#fff', border:'none', borderRadius:14, padding:'13px 10px', fontSize:13, fontWeight:700, display:'flex', alignItems:'center', justifyContent:'center', gap:7, boxShadow:'0 4px 14px rgba(99,102,241,0.3)', cursor:'pointer' } }, '🎯 Focus Session')
+    el('div', { style: { flex:1, display:'flex', minHeight:0 } },
+      el('div', { style: { flex:1, padding: tablet ? '20px 28px' : '16px 20px', overflowY:'auto', minHeight:0 } },
+        el('div', { style: { display:'flex', gap:12, marginBottom:16 } },
+          el('button', { onClick:onCustomQuiz, style: { flex:1, background:'linear-gradient(135deg,#0891b2,#0284c7)', color:'#fff', border:'none', borderRadius:14, padding: tablet?'16px 14px':'13px 10px', fontSize: tablet?15:13, fontWeight:700, display:'flex', alignItems:'center', justifyContent:'center', gap:7, boxShadow:'0 4px 14px rgba(8,145,178,0.3)', cursor:'pointer' } }, '✦ Custom Quiz'),
+          allTestsDone && el('button', { onClick:onFocusSession, style: { flex:1, background:'linear-gradient(135deg,#6366f1,#8b5cf6)', color:'#fff', border:'none', borderRadius:14, padding: tablet?'16px 14px':'13px 10px', fontSize: tablet?15:13, fontWeight:700, display:'flex', alignItems:'center', justifyContent:'center', gap:7, boxShadow:'0 4px 14px rgba(99,102,241,0.3)', cursor:'pointer' } }, '🎯 Focus Session')
         ),
-        el('div', { style: { fontSize:10, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:12 } }, 'SELECT A TEST'),
+        el('div', { style: { fontSize: tablet?11:10, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:12 } }, 'SELECT A TEST'),
         ...tests.map(test => {
           const ts = testStats.find(x=>x.testId===test.id)||{done:0,correct:0,total:test.questions.length,pct:null};
           const totalQsInChapter = test.questions.length;
@@ -819,69 +819,69 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
           const fillPct = totalQsInChapter>0 ? (ts.done/totalQsInChapter*100) : 0;
           const isConfirming = resetConfirm===test.id;
           const scorePctColor = ts.pct!==null ? (ts.pct>=80?'#059669':ts.pct>=60?'#d97706':'#dc2626') : t.border;
-          return el('div', { key:test.id, style: { marginBottom:9, position:'relative' } },
-            el('button', { onClick:()=>{ if(!isConfirming) onSelect(test.id); }, style: { width:'100%', background:t.card, border:'1.5px solid '+(isComplete?ACCENT+'50':t.border), borderRadius:14, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, textAlign:'left', opacity:isConfirming?0.5:1, cursor:'pointer' } },
-              el('div', { style: { width:38, height:38, borderRadius:11, background:dark?ACCENT+'22':ACCENT_LIGHT, color:ACCENT, display:'flex', alignItems:'center', justifyContent:'center', fontSize:15, fontWeight:800, flexShrink:0 } }, test.id),
+          return el('div', { key:test.id, style: { marginBottom:10, position:'relative' } },
+            el('button', { onClick:()=>{ if(!isConfirming) onSelect(test.id); }, style: { width:'100%', background:t.card, border:'1.5px solid '+(isComplete?ACCENT+'50':t.border), borderRadius:14, padding: tablet?'14px 18px':'12px 14px', display:'flex', alignItems:'center', gap:14, textAlign:'left', opacity:isConfirming?0.5:1, cursor:'pointer' } },
+              el('div', { style: { width: tablet?46:38, height: tablet?46:38, borderRadius:12, background:dark?ACCENT+'22':ACCENT_LIGHT, color:ACCENT, display:'flex', alignItems:'center', justifyContent:'center', fontSize: tablet?17:15, fontWeight:800, flexShrink:0 } }, test.id),
               el('div', { style: { flex:1, minWidth:0 } },
-                el('div', { style: { display:'flex', alignItems:'center', gap:6, marginBottom:2 } },
-                  el('span', { style: { fontSize:13, fontWeight:700, color:t.text } }, test.name)
+                el('div', { style: { display:'flex', alignItems:'center', gap:6, marginBottom:3 } },
+                  el('span', { style: { fontSize: tablet?16:13, fontWeight:700, color:t.text } }, test.name)
                 ),
-                el('div', { style: { fontSize:11, color:t.textMuted, marginBottom:5 } }, ts.done+'/'+totalQsInChapter+' questions'),
-                el('div', { style: { height:3, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
+                el('div', { style: { fontSize: tablet?13:11, color:t.textMuted, marginBottom:6 } }, ts.done+'/'+totalQsInChapter+' questions'),
+                el('div', { style: { height:4, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
                   el('div', { style: { height:'100%', background:ACCENT, borderRadius:2, width:fillPct+'%' } })
                 )
               ),
               el('div', { style: { textAlign:'right', flexShrink:0 } },
                 ts.pct!==null
-                  ? el('div', { style: { fontSize:17, fontWeight:800, color:scorePctColor, lineHeight:1 } }, ts.pct+'%')
-                  : el('div', { style: { fontSize:13, color:t.border, lineHeight:1 } }, '—')
+                  ? el('div', { style: { fontSize: tablet?20:17, fontWeight:800, color:scorePctColor, lineHeight:1 } }, ts.pct+'%')
+                  : el('div', { style: { fontSize: tablet?15:13, color:t.border, lineHeight:1 } }, '—')
               ),
-              el('button', { onClick:e=>{ e.stopPropagation(); setResetConfirm(test.id); }, style: { background:'none', border:'none', fontSize:16, color:t.textMuted, padding:'4px', flexShrink:0, lineHeight:1 }, title:'Reset this test' }, '↺'),
-              !isConfirming && el('span', { style: { fontSize:20, color:t.border } }, '›')
+              el('button', { onClick:e=>{ e.stopPropagation(); setResetConfirm(test.id); }, style: { background:'none', border:'none', fontSize: tablet?18:16, color:t.textMuted, padding:'4px', flexShrink:0, lineHeight:1 }, title:'Reset this test' }, '↺'),
+              !isConfirming && el('span', { style: { fontSize: tablet?22:20, color:t.border } }, '›')
             ),
-            isConfirming && el('div', { style: { position:'absolute', bottom:-1, left:0, right:0, background:t.card, border:'1.5px solid #f43f5e', borderRadius:'0 0 14px 14px', padding:'8px 14px', display:'flex', alignItems:'center', gap:8, zIndex:2 } },
-              el('span', { style: { fontSize:12, fontWeight:600, color:t.text, flex:1 } }, 'Reset this test?'),
-              el('button', { onClick:()=>{ onResetTest(test.id); setResetConfirm(null); }, style: { background:'#f43f5e', color:'#fff', border:'none', borderRadius:7, padding:'5px 12px', fontSize:12, fontWeight:700 } }, 'Yes'),
-              el('button', { onClick:()=>setResetConfirm(null), style: { background:t.cardAlt, color:t.textSub, border:'1.5px solid '+t.border, borderRadius:7, padding:'5px 12px', fontSize:12, fontWeight:600 } }, 'No')
+            isConfirming && el('div', { style: { position:'absolute', bottom:-1, left:0, right:0, background:t.card, border:'1.5px solid #f43f5e', borderRadius:'0 0 14px 14px', padding:'10px 18px', display:'flex', alignItems:'center', gap:10, zIndex:2 } },
+              el('span', { style: { fontSize: tablet?14:12, fontWeight:600, color:t.text, flex:1 } }, 'Reset this test?'),
+              el('button', { onClick:()=>{ onResetTest(test.id); setResetConfirm(null); }, style: { background:'#f43f5e', color:'#fff', border:'none', borderRadius:7, padding: tablet?'7px 16px':'5px 12px', fontSize: tablet?14:12, fontWeight:700 } }, 'Yes'),
+              el('button', { onClick:()=>setResetConfirm(null), style: { background:t.cardAlt, color:t.textSub, border:'1.5px solid '+t.border, borderRadius:7, padding: tablet?'7px 16px':'5px 12px', fontSize: tablet?14:12, fontWeight:600 } }, 'No')
             )
           );
         }),
-        el('button', { onClick:onReshuffleAll, style: { width:'100%', background:t.cardAlt, border:'1.5px solid '+t.border, borderRadius:12, padding:'12px', fontSize:13, fontWeight:600, color:t.textSub, marginTop:4, cursor:'pointer' } }, '↺ Reshuffle All Tests')
+        el('button', { onClick:onReshuffleAll, style: { width:'100%', background:t.cardAlt, border:'1.5px solid '+t.border, borderRadius:12, padding: tablet?'14px':'12px', fontSize: tablet?14:13, fontWeight:600, color:t.textSub, marginTop:4, cursor:'pointer' } }, '↺ Reshuffle All Tests')
       ),
-      tablet && el('div', { style: { width:270, background:t.card, borderLeft:'1px solid '+t.borderLight, padding:'20px 16px', overflowY:'auto', flexShrink:0 } },
-        el('div', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:14 } }, 'OVERVIEW'),
-        el('div', { style: { display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, marginBottom:16 } },
-          el('div', { style: { background:t.cardAlt, borderRadius:12, padding:'12px', border:'1px solid '+t.borderLight } },
-            el('div', { style: { fontSize:22, fontWeight:800, color:'#7c3aed', lineHeight:1 } }, overallScore!==null ? overallScore+'%' : '—'),
-            el('div', { style: { fontSize:10, color:t.textMuted, fontWeight:600, marginTop:4 } }, 'Score')
+      tablet && el('div', { style: { width:300, background:t.card, borderLeft:'1px solid '+t.borderLight, padding:'20px 20px', overflowY:'auto', flexShrink:0, minHeight:0 } },
+        el('div', { style: { fontSize:10, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:14 } }, 'OVERVIEW'),
+        el('div', { style: { display:'grid', gridTemplateColumns:'1fr 1fr', gap:10, marginBottom:18 } },
+          el('div', { style: { background:t.cardAlt, borderRadius:14, padding:'14px', border:'1px solid '+t.borderLight } },
+            el('div', { style: { fontSize:28, fontWeight:800, color:'#7c3aed', lineHeight:1 } }, overallScore!==null ? overallScore+'%' : '—'),
+            el('div', { style: { fontSize:11, color:t.textMuted, fontWeight:600, marginTop:5 } }, 'Overall Score')
           ),
-          el('div', { style: { background:t.cardAlt, borderRadius:12, padding:'12px', border:'1px solid '+t.borderLight } },
-            el('div', { style: { fontSize:22, fontWeight:800, color:'#0284c7', lineHeight:1 } }, totalQs > 0 ? Math.round(totalAnswered/totalQs*100)+'%' : '0%'),
-            el('div', { style: { fontSize:10, color:t.textMuted, fontWeight:600, marginTop:4 } }, 'Done')
+          el('div', { style: { background:t.cardAlt, borderRadius:14, padding:'14px', border:'1px solid '+t.borderLight } },
+            el('div', { style: { fontSize:28, fontWeight:800, color:'#0284c7', lineHeight:1 } }, totalQs > 0 ? Math.round(totalAnswered/totalQs*100)+'%' : '0%'),
+            el('div', { style: { fontSize:11, color:t.textMuted, fontWeight:600, marginTop:5 } }, 'Completed')
           )
         ),
-        el('div', { style: { marginBottom:16 } },
-          el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
-            el('span', { style: { fontSize:11, color:t.textSub } }, dailyDone ? '🎯 Daily Done!' : 'Daily Target'),
-            el('span', { style: { fontSize:11, fontWeight:700, color: dailyDone?'#059669':'#16a34a' } }, todayCorrect+'/'+DAILY_TARGET)
+        el('div', { style: { marginBottom:20 } },
+          el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:6 } },
+            el('span', { style: { fontSize:13, fontWeight:600, color:t.textSub } }, dailyDone ? '🎯 Daily Done!' : 'Daily Target'),
+            el('span', { style: { fontSize:13, fontWeight:700, color: dailyDone?'#059669':'#16a34a' } }, todayCorrect+'/'+DAILY_TARGET)
           ),
-          el('div', { style: { height:5, background:t.borderLight, borderRadius:3, overflow:'hidden' } },
-            el('div', { style: { height:'100%', background: dailyDone?'linear-gradient(90deg,#059669,#34d399)':'linear-gradient(90deg,#16a34a,#4ade80)', borderRadius:3, width:dailyPct+'%', transition:'width 0.5s' } })
+          el('div', { style: { height:8, background:t.borderLight, borderRadius:4, overflow:'hidden' } },
+            el('div', { style: { height:'100%', background: dailyDone?'linear-gradient(90deg,#059669,#34d399)':'linear-gradient(90deg,#16a34a,#4ade80)', borderRadius:4, width:dailyPct+'%', transition:'width 0.5s' } })
           )
         ),
-        el('div', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:10 } }, 'CHAPTER PROGRESS'),
-        el('div', { style: { display:'flex', flexDirection:'column', gap:7 } },
+        el('div', { style: { fontSize:10, fontWeight:700, color:t.textMuted, letterSpacing:2, marginBottom:12 } }, 'CHAPTER PROGRESS'),
+        el('div', { style: { display:'flex', flexDirection:'column', gap:8 } },
           ...testStats.map(ts => {
             const fp = ts.total > 0 ? (ts.done/ts.total*100) : 0;
             const sc = ts.pct!==null ? (ts.pct>=80?'#059669':ts.pct>=60?'#d97706':'#dc2626') : t.textMuted;
-            return el('div', { key:ts.testId, style: { display:'flex', alignItems:'center', gap:8 } },
-              el('div', { style: { width:22, height:22, borderRadius:6, background:dark?ACCENT+'22':ACCENT_LIGHT, color:ACCENT, display:'flex', alignItems:'center', justifyContent:'center', fontSize:10, fontWeight:800, flexShrink:0 } }, ts.testId),
+            return el('div', { key:ts.testId, style: { display:'flex', alignItems:'center', gap:10 } },
+              el('div', { style: { width:26, height:26, borderRadius:7, background:dark?ACCENT+'22':ACCENT_LIGHT, color:ACCENT, display:'flex', alignItems:'center', justifyContent:'center', fontSize:11, fontWeight:800, flexShrink:0 } }, ts.testId),
               el('div', { style: { flex:1 } },
-                el('div', { style: { height:4, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
+                el('div', { style: { height:5, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
                   el('div', { style: { height:'100%', background:ACCENT, borderRadius:2, width:fp+'%' } })
                 )
               ),
-              el('span', { style: { fontSize:10, fontWeight:700, color:sc, minWidth:32, textAlign:'right' } }, ts.pct!==null ? ts.pct+'%' : '—')
+              el('span', { style: { fontSize:12, fontWeight:700, color:sc, minWidth:36, textAlign:'right' } }, ts.pct!==null ? ts.pct+'%' : '—')
             );
           })
         )
@@ -941,13 +941,13 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
 
   const timerToggle = () => { if (timerSec <= 0) { setTimerSec(60); setTimerRunning(true); } else setTimerRunning(r => !r); };
 
-  const headerEl = el('div', { style: { background:t.card, borderBottom:'2px solid '+ACCENT+'22', padding:'52px 14px 10px', display:'flex', alignItems:'center', gap:10 } },
-    el('button', { onClick:onBack, style: { background:'none', border:'none', fontSize:24, color:t.textSub, lineHeight:1, padding:'0 4px' } }, '‹'),
+  const headerEl = el('div', { style: { background:t.card, borderBottom:'2px solid '+ACCENT+'22', padding: tablet?'16px 22px 12px':'52px 14px 10px', display:'flex', alignItems:'center', gap:12 } },
+    el('button', { onClick:onBack, style: { background:'none', border:'none', fontSize: tablet?28:24, color:t.textSub, lineHeight:1, padding:'0 4px' } }, '‹'),
     el('div', { style: { flex:1 } },
-      el('div', { style: { fontSize:10, fontWeight:700, color:ACCENT, letterSpacing:1.5 } }, sessionLabel),
-      el('div', { style: { fontSize:12, fontWeight:600, color:t.textSub } }, q.testName||q.chapter||'')
+      el('div', { style: { fontSize: tablet?12:10, fontWeight:700, color:ACCENT, letterSpacing:1.5 } }, sessionLabel),
+      el('div', { style: { fontSize: tablet?14:12, fontWeight:600, color:t.textSub } }, q.testName||q.chapter||'')
     ),
-    el('button', { onClick:()=>setShowJump(s=>!s), style: { background:showJump?ACCENT:t.cardAlt, border:'1.5px solid '+ACCENT, borderRadius:9, padding:'5px 12px', fontSize:12, fontWeight:700, color:showJump?'#fff':ACCENT } }, showJump?'✕':'⊞ '+doneCount+'/'+qs.length)
+    el('button', { onClick:()=>setShowJump(s=>!s), style: { background:showJump?ACCENT:t.cardAlt, border:'1.5px solid '+ACCENT, borderRadius:9, padding: tablet?'7px 16px':'5px 12px', fontSize: tablet?14:12, fontWeight:700, color:showJump?'#fff':ACCENT } }, showJump?'✕':'⊞ '+doneCount+'/'+qs.length)
   );
 
   const jumpEl = showJump && el('div', { style: { background:t.cardAlt, padding:'12px 16px 10px', borderBottom:'1px solid '+ACCENT+'20' } },
@@ -973,27 +973,28 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
 
   const timerEl = el(TimerRow, { timerSec, timerRunning, color:ACCENT, t, onToggle: timerToggle });
 
-  const questionEl = el('div', { style: { margin:'10px 18px 0', background:t.card, borderRadius:14, padding:'16px', boxShadow:'0 1px 6px rgba(0,0,0,0.08)' } },
-    el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:8 } },
+  const tb = tablet;
+  const questionEl = el('div', { style: { margin: tb?'14px 22px 0':'10px 18px 0', background:t.card, borderRadius:14, padding: tb?'20px':'16px', boxShadow:'0 1px 6px rgba(0,0,0,0.08)' } },
+    el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:10 } },
       el('div', { style: { display:'flex', alignItems:'center', gap:8 } },
-        el('span', { style: { fontSize:10, fontWeight:700, color:ACCENT, letterSpacing:1.5 } }, 'Q'+(qIdx+1)+' OF '+qs.length),
-        wrongCount>0 && el('span', { style: { fontSize:9, fontWeight:700, background:'#fff1f2', color:'#dc2626', borderRadius:10, padding:'2px 7px' } }, '✗ '+wrongCount+'x wrong')
+        el('span', { style: { fontSize: tb?12:10, fontWeight:700, color:ACCENT, letterSpacing:1.5 } }, 'Q'+(qIdx+1)+' OF '+qs.length),
+        wrongCount>0 && el('span', { style: { fontSize: tb?11:9, fontWeight:700, background:'#fff1f2', color:'#dc2626', borderRadius:10, padding:'2px 7px' } }, '✗ '+wrongCount+'x wrong')
       ),
-      el('button', { onClick:()=>onStar(q.id), style: { background:'none', border:'none', fontSize:20, color:starred.includes(q.id)?'#f59e0b':t.border, padding:0 } }, starred.includes(q.id)?'★':'☆')
+      el('button', { onClick:()=>onStar(q.id), style: { background:'none', border:'none', fontSize: tb?24:20, color:starred.includes(q.id)?'#f59e0b':t.border, padding:0 } }, starred.includes(q.id)?'★':'☆')
     ),
-    el('p', { style: { fontSize:15, fontWeight:600, color:t.text, lineHeight:1.55 } }, q.q)
+    el('p', { style: { fontSize: tb?18:15, fontWeight:600, color:t.text, lineHeight:1.6, margin:0 } }, q.q)
   );
 
-  const confidenceEl = !isAnswered && el('div', { style: { margin:'10px 18px 0' } },
-    el('div', { style: { fontSize:9, fontWeight:700, color:t.textMuted, letterSpacing:1.5, marginBottom:6 } }, 'HOW CONFIDENT ARE YOU?'),
-    el('div', { style: { display:'flex', gap:7 } },
+  const confidenceEl = !isAnswered && el('div', { style: { margin: tb?'12px 22px 0':'10px 18px 0' } },
+    el('div', { style: { fontSize: tb?11:9, fontWeight:700, color:t.textMuted, letterSpacing:1.5, marginBottom:8 } }, 'HOW CONFIDENT ARE YOU?'),
+    el('div', { style: { display:'flex', gap:9 } },
       [['Sure','#059669','#ecfdf5'],['Unsure','#d97706','#fffbeb'],['Guessing','#dc2626','#fef2f2']].map(([label,tc,bg]) =>
-        el('button', { key:label, onClick:()=>onConfidence(testId,qIdx,label.toLowerCase()), style: { flex:1, padding:'8px 4px', borderRadius:9, border:'1.5px solid '+(confs[qIdx]===label.toLowerCase()?tc:t.border), background:confs[qIdx]===label.toLowerCase()?bg:t.card, color:confs[qIdx]===label.toLowerCase()?tc:t.textMuted, fontSize:11, fontWeight:700 } }, label)
+        el('button', { key:label, onClick:()=>onConfidence(testId,qIdx,label.toLowerCase()), style: { flex:1, padding: tb?'12px 6px':'8px 4px', borderRadius:10, border:'1.5px solid '+(confs[qIdx]===label.toLowerCase()?tc:t.border), background:confs[qIdx]===label.toLowerCase()?bg:t.card, color:confs[qIdx]===label.toLowerCase()?tc:t.textMuted, fontSize: tb?14:11, fontWeight:700 } }, label)
       )
     )
   );
 
-  const optionsEl = el('div', { style: { padding:'12px 18px 0', display:'flex', flexDirection:'column', gap:8 } },
+  const optionsEl = el('div', { style: { padding: tb?'16px 22px 0':'12px 18px 0', display:'flex', flexDirection:'column', gap: tb?10:8 } },
     ...q.o.map((opt,i) => {
       let bg=t.card, border=t.border, col=t.text, lbg=t.pill, lc=t.textSub;
       if (isAnswered) {
@@ -1004,64 +1005,64 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
       const isElim = !isAnswered && eliminated.has(i);
       return el('div', { key:i, style: { display:'flex', alignItems:'stretch', gap:8 } },
         el('div', { style: { flex:1, minWidth:0 } },
-          el('button', { onClick:()=>{ if(!isAnswered){ timingsRef.current[qIdx]=Math.max(1,60-timerSec); onAnswer(testId,qIdx,i); } }, style: { display:'flex', alignItems:'center', gap:10, border:'1.5px solid '+border, borderRadius:11, padding:'12px', textAlign:'left', width:'100%', background:bg, color:col, opacity: isElim ? 0.4 : 1 } },
-            el('span', { style: { minWidth:24, height:24, borderRadius:6, background:lbg, color:lc, display:'flex', alignItems:'center', justifyContent:'center', fontSize:11, fontWeight:700, flexShrink:0 } }, LABELS[i]),
-            el('span', { style: { fontSize:13.5, lineHeight:1.4, flex:1, textDecoration: isElim ? 'line-through' : 'none' } }, opt),
-            isAnswered && i===q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✓'),
-            isAnswered && i===selected && i!==q.a && el('span', { style: { marginLeft:'auto', fontSize:14 } }, '✗')
+          el('button', { onClick:()=>{ if(!isAnswered){ timingsRef.current[qIdx]=Math.max(1,60-timerSec); onAnswer(testId,qIdx,i); } }, style: { display:'flex', alignItems:'center', gap:12, border:'1.5px solid '+border, borderRadius:12, padding: tb?'14px 16px':'12px', textAlign:'left', width:'100%', background:bg, color:col, opacity: isElim ? 0.4 : 1 } },
+            el('span', { style: { minWidth: tb?30:24, height: tb?30:24, borderRadius:7, background:lbg, color:lc, display:'flex', alignItems:'center', justifyContent:'center', fontSize: tb?13:11, fontWeight:700, flexShrink:0 } }, LABELS[i]),
+            el('span', { style: { fontSize: tb?15:13.5, lineHeight:1.45, flex:1, textDecoration: isElim ? 'line-through' : 'none' } }, opt),
+            isAnswered && i===q.a && el('span', { style: { marginLeft:'auto', fontSize: tb?16:14 } }, '✓'),
+            isAnswered && i===selected && i!==q.a && el('span', { style: { marginLeft:'auto', fontSize: tb?16:14 } }, '✗')
           )
         ),
-        !isAnswered && el('button', { onClick: () => setEliminated(prev => { const s=new Set(prev); s.has(i)?s.delete(i):s.add(i); return s; }), style: { background:'none', border:'none', color:isElim?'#dc2626':t.textMuted, fontSize:18, padding:'0 6px', display:'flex', alignItems:'center', flexShrink:0 } }, isElim ? '✕' : '⊘')
+        !isAnswered && el('button', { onClick: () => setEliminated(prev => { const s=new Set(prev); s.has(i)?s.delete(i):s.add(i); return s; }), style: { background:'none', border:'none', color:isElim?'#dc2626':t.textMuted, fontSize: tb?22:18, padding:'0 8px', display:'flex', alignItems:'center', flexShrink:0 } }, isElim ? '✕' : '⊘')
       );
     })
   );
 
-  const insightsEl = isAnswered && el('div', { style: { margin:'12px 18px 0', background:t.card, borderRadius:12, padding:'13px', border:'1px solid '+t.border } },
-    el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:5 } },
-      el('span', { style: { fontSize:12, fontWeight:700, color:selected===q.a?'#16a34a':'#dc2626' } }, selected===q.a?'Correct ✓':'Incorrect ✗'),
-      el('span', { style: { fontSize:11, color:t.textMuted } }, 'Answer: '+LABELS[q.a])
+  const insightsEl = isAnswered && el('div', { style: { margin: tb?'16px 22px 0':'12px 18px 0', background:t.card, borderRadius:12, padding: tb?'16px':'13px', border:'1px solid '+t.border } },
+    el('div', { style: { display:'flex', justifyContent:'space-between', marginBottom:6 } },
+      el('span', { style: { fontSize: tb?14:12, fontWeight:700, color:selected===q.a?'#16a34a':'#dc2626' } }, selected===q.a?'Correct ✓':'Incorrect ✗'),
+      el('span', { style: { fontSize: tb?13:11, color:t.textMuted } }, 'Answer: '+LABELS[q.a])
     ),
-    confs[qIdx] && el('div', { style: { marginBottom:6, display:'flex', gap:6, alignItems:'center' } },
-      el('span', { style: { fontSize:10, fontWeight:700, color:t.textMuted } }, 'You were:'),
-      el('span', { style: { fontSize:10, fontWeight:700, padding:'2px 9px', borderRadius:20, background:confs[qIdx]==='sure'?'#ecfdf5':confs[qIdx]==='unsure'?'#fffbeb':'#fef2f2', color:confs[qIdx]==='sure'?'#059669':confs[qIdx]==='unsure'?'#d97706':'#dc2626' } }, confs[qIdx].charAt(0).toUpperCase()+confs[qIdx].slice(1)),
-      selected!==q.a && confs[qIdx]==='sure' && el('span', { style: { fontSize:10, fontWeight:700, color:'#dc2626', background:'#fff1f2', borderRadius:20, padding:'2px 9px' } }, '⚠️ Danger Gap')
+    confs[qIdx] && el('div', { style: { marginBottom:7, display:'flex', gap:6, alignItems:'center' } },
+      el('span', { style: { fontSize: tb?12:10, fontWeight:700, color:t.textMuted } }, 'You were:'),
+      el('span', { style: { fontSize: tb?12:10, fontWeight:700, padding:'2px 9px', borderRadius:20, background:confs[qIdx]==='sure'?'#ecfdf5':confs[qIdx]==='unsure'?'#fffbeb':'#fef2f2', color:confs[qIdx]==='sure'?'#059669':confs[qIdx]==='unsure'?'#d97706':'#dc2626' } }, confs[qIdx].charAt(0).toUpperCase()+confs[qIdx].slice(1)),
+      selected!==q.a && confs[qIdx]==='sure' && el('span', { style: { fontSize: tb?12:10, fontWeight:700, color:'#dc2626', background:'#fff1f2', borderRadius:20, padding:'2px 9px' } }, '⚠️ Danger Gap')
     ),
-    el('p', { style: { fontSize:12.5, color:t.textSub, lineHeight:1.6 } }, q.w)
+    el('p', { style: { fontSize: tb?14:12.5, color:t.textSub, lineHeight:1.6, margin:0 } }, q.w)
   );
 
-  const keyConceptsEl = isAnswered && q.k && q.k.length > 0 && el('div', { style: { margin:'8px 18px 0', background:dark?'#0f172a':'#f0f9ff', borderRadius:12, padding:'13px', border:'1px solid '+(dark?'#1e3a5f':'#bfdbfe') } },
-    el('div', { style: { fontSize:10, fontWeight:700, color:'#3b82f6', letterSpacing:1.5, marginBottom:8 } }, '📚 KEY CONCEPTS'),
-    el('div', { style: { display:'flex', flexDirection:'column', gap:7 } },
-      ...q.k.map((concept, ci) => el('div', { key:ci, style: { display:'flex', gap:8, alignItems:'flex-start' } },
-        el('span', { style: { color:'#3b82f6', fontWeight:700, fontSize:13, flexShrink:0, lineHeight:1.5 } }, '•'),
-        el('p', { style: { fontSize:12.5, color:t.text, lineHeight:1.55, margin:0 } }, concept)
+  const keyConceptsEl = isAnswered && q.k && q.k.length > 0 && el('div', { style: { margin: tb?'10px 22px 0':'8px 18px 0', background:dark?'#0f172a':'#f0f9ff', borderRadius:12, padding: tb?'16px':'13px', border:'1px solid '+(dark?'#1e3a5f':'#bfdbfe') } },
+    el('div', { style: { fontSize: tb?11:10, fontWeight:700, color:'#3b82f6', letterSpacing:1.5, marginBottom:9 } }, '📚 KEY CONCEPTS'),
+    el('div', { style: { display:'flex', flexDirection:'column', gap:8 } },
+      ...q.k.map((concept, ci) => el('div', { key:ci, style: { display:'flex', gap:9, alignItems:'flex-start' } },
+        el('span', { style: { color:'#3b82f6', fontWeight:700, fontSize: tb?15:13, flexShrink:0, lineHeight:1.5 } }, '•'),
+        el('p', { style: { fontSize: tb?14:12.5, color:t.text, lineHeight:1.55, margin:0 } }, concept)
       ))
     )
   );
 
-  const navEl = el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', padding:'12px 18px 44px', marginTop:'auto' } },
-    el('button', { onClick:()=>qIdx>0&&setQIdx(i=>i-1), disabled:qIdx===0, style: { background:t.cardAlt, border:'1.5px solid '+t.border, borderRadius:10, padding:'9px 16px', fontSize:13, fontWeight:600, color:t.textSub, opacity:qIdx===0?0.35:1 } }, '‹ Prev'),
+  const navEl = el('div', { style: { display:'flex', justifyContent:'space-between', alignItems:'center', padding: tb?'16px 22px 28px':'12px 18px 44px', marginTop:'auto' } },
+    el('button', { onClick:()=>qIdx>0&&setQIdx(i=>i-1), disabled:qIdx===0, style: { background:t.cardAlt, border:'1.5px solid '+t.border, borderRadius:11, padding: tb?'11px 22px':'9px 16px', fontSize: tb?15:13, fontWeight:600, color:t.textSub, opacity:qIdx===0?0.35:1 } }, '‹ Prev'),
     allDone
-      ? el('button', { onClick:()=>{ const v=timingsRef.current.filter(x=>x!=null); onFinish(v.length?Math.round(v.reduce((s,x)=>s+x,0)/v.length):null); }, style: { background:color, color:'#fff', border:'none', borderRadius:11, padding:'10px 22px', fontSize:14, fontWeight:700, boxShadow:'0 4px 14px '+color+'40' } }, 'Finish →')
+      ? el('button', { onClick:()=>{ const v=timingsRef.current.filter(x=>x!=null); onFinish(v.length?Math.round(v.reduce((s,x)=>s+x,0)/v.length):null); }, style: { background:color, color:'#fff', border:'none', borderRadius:12, padding: tb?'12px 28px':'10px 22px', fontSize: tb?16:14, fontWeight:700, boxShadow:'0 4px 14px '+color+'40' } }, 'Finish →')
       : isAnswered && qIdx<qs.length-1
-        ? el('button', { onClick:()=>setQIdx(i=>i+1), style: { background:color, color:'#fff', border:'none', borderRadius:11, padding:'10px 22px', fontSize:14, fontWeight:700 } }, 'Next →')
+        ? el('button', { onClick:()=>setQIdx(i=>i+1), style: { background:color, color:'#fff', border:'none', borderRadius:12, padding: tb?'12px 28px':'10px 22px', fontSize: tb?16:14, fontWeight:700 } }, 'Next →')
         : el('div')
   );
 
   if (tablet) {
-    return el('div', { style: { minHeight:'100vh', background:t.bg, display:'flex', flexDirection:'column' } },
+    return el('div', { style: { height:'100vh', background:t.bg, display:'flex', flexDirection:'column' } },
       headerEl,
       jumpEl,
       progressEl,
-      el('div', { style: { flex:1, display:'flex', overflow:'auto' } },
-        el('div', { style: { flex:3, display:'flex', flexDirection:'column', overflowY:'auto', paddingBottom:24 } },
+      el('div', { style: { flex:1, display:'flex', minHeight:0 } },
+        el('div', { style: { flex:11, display:'flex', flexDirection:'column', overflowY:'auto', minHeight:0, paddingBottom:16 } },
           timerEl,
           questionEl,
           confidenceEl,
           insightsEl,
           keyConceptsEl
         ),
-        el('div', { style: { flex:2, display:'flex', flexDirection:'column', borderLeft:'1px solid '+t.borderLight, overflowY:'auto' } },
+        el('div', { style: { flex:9, display:'flex', flexDirection:'column', borderLeft:'1px solid '+t.borderLight, overflowY:'auto', minHeight:0 } },
           optionsEl,
           navEl
         )
