@@ -1198,5 +1198,85 @@
       "In a crowded office where 30 devices simultaneously request data from one access point, MU-MIMO (with beamforming) allows the AP to serve multiple groups of clients concurrently rather than sequentially \u2014 significantly improving aggregate network throughput and reducing per-device latency.",
       "Wi-Fi 6 extends MU-MIMO capabilities with OFDMA, which allows even more granular simultaneous multi-user service by allocating different frequency sub-channels (resource units) to different devices within the same transmission opportunity."
     ]
+  },
+  {
+    "id": 2110,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "What is the function of hybrid couplers (crossband couplers) in DAS and wireless systems?",
+    "o": [
+      "Convert optical fiber signals to coaxial RF signals",
+      "Combine or split RF signals of different frequency bands for management",
+      "Amplify signals between remote antenna units",
+      "Convert analog DAS signals to digital format"
+    ],
+    "a": 1,
+    "w": "Hybrid couplers, also known as crossband couplers, function to combine or split RF signals of different frequency bands, facilitating RF signal management within DAS and wireless systems. They allow multiple carrier frequencies (e.g., cellular 700 MHz and AWS 1700 MHz) to share common antenna infrastructure by combining them onto a single feed cable without interference between bands. Converting optical fiber to coaxial RF is the function of a remote unit (RU) or optical-to-electrical converter. Amplification is performed by signal boosters or repeaters. Analog-to-digital conversion is performed by digital DAS remote units, not couplers.",
+    "k": [
+      "A hybrid (crossband) coupler is a passive RF component that uses frequency-selective filtering to combine signals from multiple frequency bands onto one antenna port \u2014 for example, combining public safety 700/800 MHz signals with cellular 1900 MHz signals onto a single broadband antenna, reducing the number of antennas needed in a DAS installation.",
+      "The 'crossband' terminology emphasizes the coupler's ability to work across different frequency bands simultaneously without those bands interfering with each other; internally, the device uses diplexer or multiplexer technology that passes each frequency band through separate filter paths that rejoin at the antenna output port.",
+      "RCDDs specifying DAS infrastructure should understand that crossband couplers introduce insertion loss (typically 0.5\u20131.5 dB per port) that must be accounted for in the link budget calculation; ignoring coupler losses during DAS design can result in insufficient signal levels at remote antenna units and poor coverage."
+    ]
+  },
+  {
+    "id": 2111,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "Where is the backend (headend) equipment for a Distributed Antenna System (DAS) typically located?",
+    "o": [
+      "Adjacent to each remote antenna unit",
+      "In telecommunications rooms",
+      "On the building rooftop near the donor antenna",
+      "In the building entrance facility only"
+    ],
+    "a": 1,
+    "w": "The backend (headend) equipment for a DAS is typically located in telecommunications rooms. These rooms provide the controlled environment, power infrastructure, and cable management needed for signal processing equipment, base transceiver stations (BTS), and signal conditioning hardware. Placing equipment adjacent to each remote antenna unit would create unmanageable distributed equipment installations throughout the building. Rooftop locations are used for donor antennas to receive signals, not for processing headend equipment. The entrance facility handles building entry points, not the signal processing headend.",
+    "k": [
+      "The DAS headend in a telecommunications room contains the signal source equipment \u2014 which may be a base transceiver station (BTS), a signal repeater connected to a donor antenna, or an optical master unit (OMU) for fiber-fed DAS \u2014 and must be located where it has access to both the building's incoming cellular signal and the distributed cabling that runs to remote antenna units (RAUs) throughout the building.",
+      "Locating DAS headend equipment in telecommunications rooms aligns DAS infrastructure with the structured cabling topology: the TR serves as the central hub from which both data (via switches) and RF (via DAS headend) signals are distributed horizontally to work areas \u2014 enabling a single, coordinated infrastructure design.",
+      "When designing DAS for multi-floor buildings, the RCDD must ensure that each telecommunications room hosting DAS headend or intermediate equipment has adequate rack space, grounding, power (including UPS for emergency/safety DAS), and HVAC capacity, since DAS signal processing equipment generates significant heat."
+    ]
+  },
+  {
+    "id": 2112,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "What components are used in traditional (passive/analog) DAS for distributing RF signals from the headend to remote antennas?",
+    "o": [
+      "Fiber optic cables and optical splitters only",
+      "Balanced twisted-pair cabling and modular patch cords",
+      "Non-radiating coaxial cable and passive splitters/couplers",
+      "Waveguides and directional antennas only"
+    ],
+    "a": 2,
+    "w": "Traditional passive/analog DAS distributes RF signals using non-radiating coaxial cable combined with passive splitters and couplers. Non-radiating coax (such as 1/2-inch or 7/8-inch hardline coax) carries the RF signal from the headend to remote antenna locations, while passive splitters divide the signal power and passive directional couplers tap off a portion of the signal at intermediate points. Fiber optic cables and optical splitters are used in active (digital) DAS architectures, not traditional passive systems. Balanced twisted-pair cabling and patch cords are used for structured data/voice cabling, not RF distribution. Waveguides are used in microwave and high-frequency applications, not building DAS.",
+    "k": [
+      "In a passive DAS, the RF signal remains in its native analog form throughout the distribution network \u2014 the coaxial cable acts as a transmission line carrying the radio frequency signal, while splitters (which divide power equally, e.g., 2-way, 4-way) and directional couplers (which tap off a fraction of power, e.g., \u221210 dB tap) shape the signal distribution to achieve target power levels at each antenna.",
+      "The key limitation of passive coax-based DAS is signal attenuation: larger coax cables (7/8-inch) have lower loss per unit length than smaller cables (1/2-inch or RG-6), but all coax incurs loss that accumulates over distance \u2014 typically limiting passive DAS coverage runs to a few hundred meters before signal levels drop below usable thresholds.",
+      "An RCDD specifying traditional passive DAS must perform careful power budget calculations accounting for headend output power, coax cable loss (dB/100ft at the operating frequency), splitter insertion loss, coupler tap loss, and minimum antenna input power \u2014 ensuring that every remote antenna receives sufficient signal to provide the required coverage and data rate."
+    ]
+  },
+  {
+    "id": 2113,
+    "test": 16,
+    "testName": "Wireless Networks",
+    "chapter": "Wireless Networks",
+    "q": "What is path loss in wireless communications?",
+    "o": [
+      "The increase in signal strength as the signal travels through free space",
+      "The reduction in RF signal strength as it travels from the origin to the endpoint",
+      "The loss caused by multipath reflections at the transmitter antenna",
+      "The gain reduction caused by mismatched antenna polarization"
+    ],
+    "a": 1,
+    "w": "Path loss is the reduction in RF signal strength as the signal travels from its origin (transmitter) to the endpoint (receiver). It is a fundamental phenomenon in wireless communications caused primarily by the spreading of electromagnetic energy over an increasing spherical surface area as distance increases (free-space path loss), as well as additional losses from absorption, diffraction, and scattering in real environments. Signal strength does not increase with distance \u2014 it decreases. Multipath reflections create fading effects distinct from path loss. Polarization mismatch is a separate antenna-related loss factor, not path loss.",
+    "k": [
+      "Free-space path loss (FSPL) increases with both distance and frequency according to the formula FSPL (dB) = 20log(d) + 20log(f) + 20log(4\u03c0/c); this means that doubling the distance results in approximately 6 dB of additional path loss, and doubling the frequency also adds approximately 6 dB \u2014 which is why higher-frequency bands (e.g., 5 GHz Wi-Fi) have shorter range than lower-frequency bands (e.g., 2.4 GHz) at the same transmit power.",
+      "In the link budget calculation that RCDDs use for wireless system design, path loss is the primary 'negative' factor that must be overcome by transmit power, antenna gain, and receiver sensitivity; accurately estimating path loss (using propagation models like Free-Space, COST-231, or Okumura-Hata) is essential to ensuring reliable wireless coverage throughout a building.",
+      "Indoor path loss in buildings exceeds free-space path loss due to additional attenuation from walls, floors, furniture, and people \u2014 factors captured by the 'excess path loss' or 'shadowing' term in indoor propagation models; concrete/masonry walls add 10\u201315 dB of loss per partition, which is why DAS or multiple Wi-Fi APs are needed to cover large buildings with multiple physical barriers."
+    ]
   }
 ]

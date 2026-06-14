@@ -1096,5 +1096,25 @@
       "Color coding prevents cross-connection errors: a technician asked to connect a horizontal circuit to a backbone port can visually confirm the color mismatch before connecting, triggering verification against documentation before completing the work.",
       "The efficiency gain of color coding is most pronounced during service outages requiring rapid isolation: scanning for the relevant color-coded field reduces the time to identify and reconfigure the correct circuit, directly improving mean time to repair (MTTR)."
     ]
+  },
+  {
+    "id": 1854,
+    "test": 11,
+    "testName": "Telecommunications Administration",
+    "chapter": "Telecommunications Administration",
+    "q": "For which type of environment is Class 2 telecommunications administration specifically recommended?",
+    "o": [
+      "A premises served by a single equipment room only",
+      "Tenants served by one or more telecommunications spaces",
+      "Multi-building campus environments with outdoor cabling",
+      "Multi-site enterprise environments spanning multiple geographic locations"
+    ],
+    "a": 1,
+    "w": "Class 2 administration is specifically recommended for tenants served by one or more telecommunications spaces, adding mandatory firestop records and optional pathway records beyond Class 1. A premises with a single equipment room uses Class 1. Multi-building campus environments use Class 3. Multi-site enterprise environments use Class 4.",
+    "k": [
+      "ANSI/TIA-606 Class 2 is designed for buildings where a single tenant has multiple telecommunications spaces (ERs and TRs), requiring cross-space administration records that Class 1's single-ER scope does not support.",
+      "Class 2 adds firestop location records as a mandatory requirement because multi-space buildings have more cable penetrations through fire-rated barriers — each penetration must be documented for code compliance and maintenance.",
+      "The class hierarchy maps to building complexity: Class 1 (one ER) → Class 2 (one or more TRs per tenant) → Class 3 (multiple buildings on campus) → Class 4 (multiple sites), with each class adding record categories appropriate for that level of infrastructure complexity."
+    ]
   }
 ]

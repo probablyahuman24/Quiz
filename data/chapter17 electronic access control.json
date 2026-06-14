@@ -998,5 +998,65 @@
       "Latch bolt monitoring enables the access control system to detect a 'door ajar' condition where the door is not properly latching (from worn latches, over-compression of weatherstripping, or deliberate propping); this information triggers an alarm before an intruder can exploit the unlatched door.",
       "In combination with door position switches (which detect whether the door is open or closed), latch bolt monitors provide complete door status reporting: open/closed and latched/unlatched states can be independently monitored and combined to detect conditions such as 'closed but unlatched.'"
     ]
+  },
+  {
+    "id": 2350,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "Which of the following lens types is NOT among the common lens types used in video surveillance systems?",
+    "o": [
+      "Fixed focal length lenses",
+      "Varifocal lenses",
+      "Zoom lenses",
+      "Focal lenses"
+    ],
+    "a": 3,
+    "w": "Common lens types used in VSS include fixed focal length, varifocal, and zoom lenses. 'Focal lenses' is not a recognized VSS lens category — all lenses have focal length properties, so 'focal' is not a meaningful differentiating lens type name. Fixed focal length, varifocal, and zoom lenses are the standard VSS lens categories.",
+    "k": [
+      "The three primary VSS lens types are: fixed focal length (set at a single focal length, lower cost), varifocal (adjustable focal length requiring refocusing after adjustment), and zoom (adjustable focal length that maintains focus automatically during adjustment).",
+      "Fixed focal length lenses provide the best image quality and light transmission at their designed focal length; varifocal and zoom lenses trade some optical quality for flexibility in field-of-view adjustment after installation.",
+      "'Focal lenses' is not a valid lens category — the term has no specific meaning in VSS design; any camera lens has a focal length, making 'focal' an indistinct descriptor rather than a lens type."
+    ]
+  },
+  {
+    "id": 2453,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What characterizes event-based monitoring in an integrated security system?",
+    "o": [
+      "Independent monitoring of each system without cross-system triggers",
+      "High integration between systems enabling automated operational responses",
+      "Manual review of recorded events by security personnel only",
+      "Continuous video monitoring of all entry points simultaneously"
+    ],
+    "a": 1,
+    "w": "Event-based monitoring involves high integration between security and building systems so that an event in one system automatically triggers an operational response in another — for example, a fire alarm triggering elevator shutdown and recall. Independent monitoring of each system describes a siloed approach, not event-based monitoring. Manual review is reactive, not event-based. Continuous video monitoring is a component of VSS, not the defining characteristic of event-based monitoring.",
+    "k": [
+      "Event-based monitoring requires tight integration between systems (fire alarm, access control, elevators, HVAC) so that a single event can trigger coordinated, automated responses across multiple systems simultaneously.",
+      "A classic example of event-based monitoring: a fire alarm signal triggers elevator recall to the ground floor, releases electromagnetic door locks to allow egress, and activates smoke control fans — all automatically from a single initiating event.",
+      "Event-based monitoring is a key feature of modern ESS (Electronic Security System) design; it reduces response time, minimizes human error, and ensures life-safety systems respond consistently to building emergencies."
+    ]
+  },
+  {
+    "id": 2351,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "Which compression standard is commonly used for digital television signal transmission in video surveillance?",
+    "o": [
+      "MPEG-4",
+      "H.264",
+      "MPEG-2",
+      "JPEG"
+    ],
+    "a": 2,
+    "w": "MPEG-2 is the compression standard commonly used for digital TV signal transmission, including broadcast television and cable TV. MPEG-4 and H.264 (MPEG-4 Part 10) are more efficient codecs used primarily for IP video streaming and IP surveillance cameras, not traditional digital TV distribution. JPEG is a still-image compression format, not a video transmission standard.",
+    "k": [
+      "MPEG-2 is the foundational digital television compression standard used in satellite TV, cable TV systems, and DVDs; its widespread adoption in broadcast television infrastructure makes it the standard for digital TV signal transmission.",
+      "MPEG-4 and H.264 provide superior compression efficiency compared to MPEG-2 (same image quality at lower bitrates), which is why they replaced MPEG-2 for IP-based surveillance and streaming applications where bandwidth efficiency is critical.",
+      "JPEG (Joint Photographic Experts Group) is a still-image compression standard used for individual frame capture in surveillance systems; it is not a video compression standard because it does not define interframe compression needed for video streams."
+    ]
   }
 ]

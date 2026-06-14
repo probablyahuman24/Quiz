@@ -997,5 +997,65 @@
       "The rule applies specifically to areas with less than 70 dB background noise; in noisier environments (industrial, near mechanical equipment), closer spacing may be required to overcome the background noise and maintain intelligibility.",
       "Ceiling height directly determines the speaker-to-listener distance in a ceiling-mounted distributed system; the 2\u00d7 ceiling height spacing maintains a consistent coverage geometry that delivers consistent sound levels regardless of absolute ceiling height."
     ]
+  },
+  {
+    "id": 2105,
+    "test": 14,
+    "testName": "Audiovisual (AV) Systems",
+    "chapter": "Audiovisual (AV) Systems",
+    "q": "What is the maximum power delivery capability of the Power over HDBaseT (PoH) specification?",
+    "o": [
+      "15 W",
+      "30 W",
+      "60 W",
+      "100 W"
+    ],
+    "a": 3,
+    "w": "Power over HDBaseT (PoH) supports up to 100 W of power delivery over the same twisted-pair cable used for HDBaseT signal transmission. This greatly exceeds standard PoE (15 W) and PoE+ (30 W), making PoH capable of powering high-demand AV devices such as displays, PTZ cameras, and thin clients from a single cable run. 60 W is associated with PoE++ (Type 3) but is not the PoH maximum.",
+    "k": [
+      "PoH's 100 W power delivery capability enables HDBaseT to replace multiple cable types (HDMI for video, separate power cable, Ethernet for control) with a single Cat cable run\u2014significantly simplifying AV system installation in spaces where running multiple cables to each display or camera location is impractical.",
+      "HDBaseT combines uncompressed HD video, audio, 100BaseT Ethernet, control signals, and up to 100 W of power in a single Category cable over distances up to 100 m; this five-in-one capability (5Play) distinguishes it from HDMI (video/audio only, limited distance) and standard PoE (data and limited power).",
+      "The 100 W PoH specification was developed specifically for AV applications requiring more power than IEEE 802.3 PoE standards could provide; it uses all four pairs of a Category cable for both signal and power simultaneously, requiring careful cable selection and installation to manage heat dissipation."
+    ]
+  },
+  {
+    "id": 2106,
+    "test": 14,
+    "testName": "Audiovisual (AV) Systems",
+    "chapter": "Audiovisual (AV) Systems",
+    "q": "What does the term 'balanced' or 'unbalanced' describe in audio systems?",
+    "o": [
+      "The relative loudness level between left and right channels",
+      "The circuit configuration of the audio signal path",
+      "The frequency response curve of a loudspeaker",
+      "The impedance matching between amplifier and speaker"
+    ],
+    "a": 1,
+    "w": "In audio systems, 'balanced' and 'unbalanced' describe the circuit configuration of the audio signal path. A balanced circuit uses two conductors carrying the same signal with opposite polarity plus a shield, which rejects common-mode noise induced along the cable run. An unbalanced circuit uses one signal conductor and a shared return/shield, which is susceptible to noise pickup. These terms have nothing to do with left/right channel levels, frequency response curves, or impedance matching.",
+    "k": [
+      "Balanced audio circuits achieve noise rejection through common-mode rejection: interference induced equally on both signal conductors appears as a 'common-mode' signal that the differential input stage of the receiving device cancels out\u2014this is why professional AV installations use balanced connections for all long cable runs.",
+      "The three-conductor XLR connector is the standard hardware implementation of balanced audio; pin 1 is shield/ground, pin 2 is 'hot' (positive polarity), and pin 3 is 'cold' (negative polarity)\u2014the balanced circuit configuration defined by this wiring is what gives XLR its noise immunity advantage over unbalanced RCA/TS connections.",
+      "Unbalanced connections (RCA, TS/mono 1/4-inch jack) are adequate for short consumer equipment interconnects where cable runs are under 1-2 m and shielding is sufficient; balanced connections become essential in professional AV, broadcast, and large-venue sound systems where cable runs exceed several meters and noise sources (lighting dimmers, HVAC motors) are prevalent."
+    ]
+  },
+  {
+    "id": 2107,
+    "test": 14,
+    "testName": "Audiovisual (AV) Systems",
+    "chapter": "Audiovisual (AV) Systems",
+    "q": "What is a key limitation of sound masking systems regarding speech privacy?",
+    "o": [
+      "Sound masking cannot be used in open office environments",
+      "Sound masking requires a noise floor of NC \u2264 25 for any effect",
+      "Total speech privacy is not achievable with sound masking alone",
+      "Sound masking only works for frequencies below 500 Hz"
+    ],
+    "a": 2,
+    "w": "Total speech privacy is not achievable with sound masking alone. Sound masking raises the ambient background noise floor to reduce the intelligibility of overheard speech, but it cannot eliminate all speech transmission paths\u2014particularly where direct sound levels are very high or where structural paths conduct sound between spaces. Sound masking is commonly and effectively used in open office environments. It operates across a broad frequency spectrum covering speech frequencies (roughly 200\u20138,000 Hz), not just below 500 Hz. A specific NC threshold prerequisite for 'any effect' is not a recognized limitation.",
+    "k": [
+      "Sound masking works by reducing the signal-to-noise ratio of overheard speech: by raising the ambient noise floor with a shaped broadband signal (typically pink noise modified to match the human speech frequency spectrum), distant conversations become less intelligible\u2014but they are not made inaudible, meaning total privacy requires architectural separation as well.",
+      "The RCDD must understand that sound masking is a complementary tool in a speech privacy strategy that also includes room acoustics (absorption, barriers), architectural design (walls with appropriate STC ratings), and layout planning; specifying sound masking alone as a privacy solution will fail to meet total privacy requirements in sensitive areas such as healthcare consultation rooms or executive offices.",
+      "Practical sound masking systems are tuned to approximately NC-45 to NC-50 levels in open offices; levels above NC-50 become uncomfortable for occupants, setting an upper bound on achievable masking effect\u2014which is why total privacy through masking alone is physically unachievable without creating an unacceptably loud environment."
+    ]
   }
 ]

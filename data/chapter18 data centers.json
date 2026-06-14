@@ -998,5 +998,45 @@
       "The 100\u2013400 hour annual maintenance window for F1 represents basic-to-moderate facility complexity; 100 hours (about 4 days) is achievable in a single annual maintenance shutdown, while 400 hours indicates a facility that requires frequent partial shutdowns for component maintenance.",
       "F1 is appropriate for facilities with low criticality (development environments, secondary offices, non-production workloads) where annual maintenance shutdowns are acceptable and 99% uptime (about 3.65 days downtime per year) meets business requirements."
     ]
+  },
+  {
+    "id": 2454,
+    "test": 18,
+    "testName": "Data Centers",
+    "chapter": "Data Centers",
+    "q": "How many fibers does OM3 multimode fiber support for 50G Ethernet?",
+    "o": [
+      "1 fiber",
+      "2 fibers",
+      "8 fibers",
+      "32 fibers"
+    ],
+    "a": 1,
+    "w": "OM3 multimode fiber supports 50G Ethernet using 2 fibers (1 for transmit, 1 for receive), as specified for 50GBASE-SR. 8 fibers are required for 200G Ethernet over OM3. 400G Ethernet over OM3 requires either 8 fibers (using PAM4 modulation) or 32 fibers (using NRZ). A single fiber cannot support full-duplex 50G Ethernet without wavelength multiplexing schemes not used with OM3.",
+    "k": [
+      "OM3 fiber Ethernet fiber counts: 50G = 2 fibers, 200G = 8 fibers, 400G = 8 or 32 fibers — the fiber count scales with bandwidth and the modulation scheme used.",
+      "50GBASE-SR uses a single lane at 50 Gb/s over 2 OM3 fibers; this is the most fiber-efficient OM3 high-speed option for short-reach data center interconnects.",
+      "Higher Ethernet speeds require more fibers or denser modulation: 200G and 400G use parallel optics with multiple 50G or 100G lanes over separate fiber pairs, which is why 8 or more fibers are required."
+    ]
+  },
+  {
+    "id": 2352,
+    "test": 18,
+    "testName": "Data Centers",
+    "chapter": "Data Centers",
+    "q": "Which data center facility classes permit maintenance to be performed during unscheduled (off-hours) times?",
+    "o": [
+      "F3 and above only",
+      "F4 and F5 only",
+      "F2 and below",
+      "All classes permit unscheduled maintenance"
+    ],
+    "a": 2,
+    "w": "Maintenance during unscheduled hours is allowed in Class F2 and below (F0, F1, and F2). Classes F3 and above require concurrent maintainability — meaning maintenance can be performed on any component without disrupting operations, making the scheduling of maintenance during off-hours unnecessary and unrelated to their design requirement. F4 requires automated systems rather than depending on unscheduled maintenance windows.",
+    "k": [
+      "F2 and below permit maintenance during unscheduled hours because these classes lack the redundancy needed to perform maintenance while the data center is fully operational; maintenance typically requires planned shutdowns or reduced capacity.",
+      "F3 achieves concurrent maintainability — any component can be maintained while the data center operates at full capacity — eliminating the need for unscheduled maintenance windows; maintenance can be performed at any time without disrupting operations.",
+      "The distinction between 'unscheduled maintenance allowed' (F2 and below) and 'concurrent maintainability' (F3 and above) reflects a fundamental difference in data center architecture: F2 facilities require maintenance windows because they lack redundant components, while F3+ facilities have redundant systems that allow maintenance while the primary system carries the load."
+    ]
   }
 ]

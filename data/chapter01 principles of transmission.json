@@ -1394,5 +1394,205 @@
       "The calculation is linear: total increase = (operating \u00b0C \u2212 20 \u00b0C) \u00d7 0.2% for screened balanced twisted-pair cables.",
       "Quick mental math: every 5 \u00b0C above reference costs a screened cable about 1% extra attenuation."
     ]
+  },
+  {
+    "id": 1346,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "What is the primary purpose of an RF attenuator in a signal transmission system?",
+    "o": [
+      "To amplify the signal to overcome path loss",
+      "To intentionally inject loss into a signal",
+      "To match impedances between two different transmission lines",
+      "To filter out unwanted harmonics from a carrier"
+    ],
+    "a": 1,
+    "w": "RF attenuators are passive devices used to intentionally inject a controlled amount of loss into a signal path, reducing signal level by a precise dB value. Amplifiers, not attenuators, increase signal level. Impedance matching is accomplished by matching networks or baluns. Filtering harmonics is the function of bandpass or low-pass filters, not attenuators.",
+    "k": [
+      "An attenuator is the deliberate opposite of an amplifier: it reduces signal power by a precise, predictable amount (e.g., 3 dB, 6 dB, 10 dB) to prevent receiver overload or to pad a signal to a required level.",
+      "Attenuators are used in test setups to protect sensitive equipment from excessive signal levels and in antenna systems to equalize signal levels between distribution points.",
+      "Because an attenuator is passive and resistive, it introduces loss without distorting the signal waveform, maintaining the integrity of amplitude, frequency, and phase relationships."
+    ]
+  },
+  {
+    "id": 1347,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Which conductor type is specifically used for aerial paired drop wires?",
+    "o": [
+      "Solid copper conductors",
+      "Stranded aluminum conductors",
+      "Copper-covered steel conductors",
+      "Copper-clad aluminum conductors"
+    ],
+    "a": 2,
+    "w": "Copper-covered steel conductors are used for aerial paired drop wires because the steel core provides the high tensile strength needed to support the cable's own weight over a span, while the copper coating maintains adequate electrical conductivity for the signal. Solid copper has excellent conductivity but insufficient tensile strength for self-supporting aerial spans. Stranded aluminum corrodes easily at connections and lacks the tensile strength of copper-clad steel. Copper-clad aluminum combines aluminum's lower tensile strength with copper conductivity, which is unsuitable for long aerial spans.",
+    "k": [
+      "Aerial drop wires must be self-supporting over spans of 30\u2013100 m or more; copper-covered steel achieves this by using steel's tensile strength (far higher than copper) with a copper outer layer for conductivity.",
+      "Solid copper conductors work-harden and fatigue under repeated wind loading, while the steel core of copper-covered steel can withstand the cyclical mechanical stress of outdoor aerial installation.",
+      "Copper-covered steel is distinct from copper-clad aluminum: both have a copper surface, but steel provides higher tensile strength, making it the choice for mechanically demanding aerial applications."
+    ]
+  },
+  {
+    "id": 1348,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "What two physical characteristics of a shield determine its effectiveness?",
+    "o": [
+      "The thickness of the shield material and its weight per unit length",
+      "The size and number of openings in the shield",
+      "The DC resistance of the shield and its dielectric constant",
+      "The number of drain wires and their gauge"
+    ],
+    "a": 1,
+    "w": "Shield effectiveness depends on the size and number of openings in the shield, because openings act as aperture antennas that allow electromagnetic fields to penetrate or radiate. Larger or more numerous openings reduce effectiveness significantly. Shield thickness affects absorption loss but is secondary to aperture effects at high frequencies. DC resistance and dielectric constant are not the primary factors governing shield effectiveness. Drain wires are for grounding, not the shield's fundamental effectiveness.",
+    "k": [
+      "Any opening in a conductive shield \u2014 a gap, a braid aperture, or an unsealed seam \u2014 acts as a slot antenna that both admits external fields and radiates internal fields, degrading shield effectiveness.",
+      "At low frequencies, shield material conductivity and thickness dominate effectiveness; at high frequencies, aperture size and density become the controlling factor because the openings resonate.",
+      "This is why foil shields (100% coverage, no openings) outperform braid shields (small apertures between wires) at frequencies where the braid aperture dimensions approach a significant fraction of a wavelength."
+    ]
+  },
+  {
+    "id": 1349,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "In what units is optical fiber transmitter output power typically expressed?",
+    "o": [
+      "Watts (W) and kilovolts (kV)",
+      "Decibels relative to 1 milliwatt (dBm) and milliwatts (mW)",
+      "Decibels (dB) and volts (V)",
+      "Amperes (A) and ohms (\u03a9)"
+    ],
+    "a": 1,
+    "w": "Optical fiber transmitter output power is measured in dBm (decibels referenced to 1 milliwatt) and mW (milliwatts), which are the standard units for optical power levels. Plain dB is a relative ratio without a fixed reference and cannot express an absolute power level. Watts are too large a unit for fiber transmitter levels, which are typically in the microwatt-to-milliwatt range. Volts and amps are electrical units that do not directly describe optical power.",
+    "k": [
+      "dBm is the preferred unit in optical power budgets: it allows gains and losses to be added and subtracted algebraically rather than multiplied and divided as percentages.",
+      "A typical multimode LED transmitter outputs \u221220 to \u221214 dBm; a VCSEL outputs \u22125 to +3 dBm; dBm values are always compared to the receiver's minimum sensitivity threshold.",
+      "Conversion: P(dBm) = 10 \u00d7 log\u2081\u2080[P(mW)/1 mW]; so 1 mW = 0 dBm, 2 mW = +3 dBm, 0.5 mW = \u22123 dBm."
+    ]
+  },
+  {
+    "id": 1350,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "What is the minimum bandwidth of OM3 optical fiber at 1300 nm?",
+    "o": [
+      "200 MHz-km",
+      "500 MHz-km",
+      "1000 MHz-km",
+      "2000 MHz-km"
+    ],
+    "a": 1,
+    "w": "OM3 optical fiber has a minimum overfilled launch (OFL) bandwidth of 500 MHz-km at 1300 nm. 200 MHz-km at 1300 nm corresponds to OM1 (62.5/125 \u00b5m) fiber. 1000 MHz-km at 1300 nm matches OM2 and OM3 on some specifications but 500 MHz-km is the OM3 OFL figure at 1300 nm per ANSI/TIA-568. The 2000 MHz-km figure is OM3's effective modal bandwidth (EMB) at 850 nm, not at 1300 nm.",
+    "k": [
+      "OM3 fiber is specified at both 850 nm (EMB 2000 MHz\u00b7km) and 1300 nm (OFL 500 MHz\u00b7km); the 1300 nm window has lower bandwidth than the 850 nm EMB because OFL excites more modes.",
+      "Bandwidth at 1300 nm matters for legacy protocols using 1300 nm LEDs; the modern focus for OM3 is the 850 nm VCSEL EMB specification for 10GbE and beyond.",
+      "Know the two OM3 bandwidth figures: 2000 MHz\u00b7km at 850 nm (EMB, laser-optimized) and 500 MHz\u00b7km at 1300 nm (OFL, for legacy applications)."
+    ]
+  },
+  {
+    "id": 1351,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "When an optical fiber system uses LED sources and no operating margin is specified, what default operating margin should be applied?",
+    "o": [
+      "0 dB",
+      "2 dB",
+      "5 dB",
+      "10 dB"
+    ],
+    "a": 1,
+    "w": "Optical fiber systems using LEDs apply a 2 dB operating margin when no specific margin is stated in the design. 0 dB margin provides no safety factor against aging, connector degradation, or temperature variations. 5 dB and 10 dB are excessive default margins for LED systems and would unnecessarily restrict the allowable link loss budget.",
+    "k": [
+      "The 2 dB operating margin for LED-based systems reserves budget for the gradual degradation of the transmitter LED, dirty connectors, and aging splices over the system's lifetime.",
+      "Without an operating margin, a link that passes on day one may fail within a few years as optical components age and connector faces accumulate contamination.",
+      "For laser-based systems (VCSELs, LDs), the operating margin is typically 3 dB, slightly higher than for LEDs, because lasers can exhibit mode-hopping and other aging phenomena that LEDs do not."
+    ]
+  },
+  {
+    "id": 1352,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "For 10 Gb/s applications, what is the maximum recommended link length for multimode optical fiber?",
+    "o": [
+      "100 m (328 ft)",
+      "300 m (984 ft)",
+      "550 m (1804 ft)",
+      "2000 m (6562 ft)"
+    ],
+    "a": 1,
+    "w": "Multimode fiber is best suited for links under 300 meters (984 feet) at 10 Gb/s data rates. 100 m is the limit for 100 Gb/s applications, not 10 Gb/s. 550 m is achievable over OM3/OM4 for 10GBASE-SR with optimal conditions but 300 m is the conservative practical design limit. 2000 m is the maximum premises backbone distance for multimode fiber at legacy low-speed protocols, not at 10 Gb/s.",
+    "k": [
+      "Modal dispersion accumulates with distance and bit rate simultaneously; at 10 Gb/s the pulse spreading limit is reached at approximately 300 m on typical OM3 fiber.",
+      "10GBASE-SR over OM3 is rated to 300 m; OM4 extends this to 400 m; OM5 supports 400 m for 10G and benefits wideband SWDM applications.",
+      "For distances beyond 300 m at 10 Gb/s, single-mode fiber with 10GBASE-LR optics is the appropriate choice."
+    ]
+  },
+  {
+    "id": 1353,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Which RF propagation phenomenon describes the bending of waves around an object or barrier?",
+    "o": [
+      "Absorption",
+      "Refraction",
+      "Reflection",
+      "Diffraction"
+    ],
+    "a": 3,
+    "w": "Diffraction is the bending of electromagnetic waves around the edges of an object or barrier, allowing signals to travel into areas that would otherwise be shadowed. Absorption is the conversion of wave energy into heat within a medium. Refraction is the change in direction of waves as they pass from one medium into another with a different propagation speed. Reflection is the bouncing of waves off a surface back toward the source.",
+    "k": [
+      "Diffraction allows radio signals to propagate around buildings and terrain features, partially explaining why cellular and FM radio coverage exists even without a direct line-of-sight path.",
+      "The amount of diffraction depends on wavelength relative to the obstacle size: longer wavelengths (lower frequencies) diffract more readily around large objects than shorter wavelengths.",
+      "The five RF propagation mechanisms are reflection, refraction, scattering, diffraction, and absorption \u2014 diffraction is uniquely identified by the wave bending around an edge into the shadow zone."
+    ]
+  },
+  {
+    "id": 1354,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "Free space loss occurs when which propagation impairments are completely removed?",
+    "o": [
+      "Attenuation and crosstalk are removed",
+      "Reflection, refraction, scattering, diffraction, and absorption are all removed",
+      "Only absorption and reflection are removed",
+      "Multipath fading and Doppler shift are eliminated"
+    ],
+    "a": 1,
+    "w": "Free space loss is the signal attenuation that remains after all physical propagation effects \u2014 reflection, refraction, scattering, diffraction, and absorption \u2014 are theoretically eliminated. It represents the irreducible geometric spreading of the electromagnetic wavefront as it expands outward from the source. Removing only some impairments still includes other propagation losses. Multipath fading and Doppler shift are phenomena within real environments, not the definition of free space loss.",
+    "k": [
+      "Free space loss is caused solely by the inverse-square law: as the wavefront expands spherically, its energy spreads over an ever-larger surface area, reducing power density with the square of distance.",
+      "Free space path loss (dB) = 20\u00d7log\u2081\u2080(d) + 20\u00d7log\u2081\u2080(f) + 20\u00d7log\u2081\u2080(4\u03c0/c); it increases with both distance and frequency.",
+      "All five propagation effects (reflection, refraction, scattering, diffraction, absorption) add additional loss on top of free space loss in real environments \u2014 link budget designers must account for all of them."
+    ]
+  },
+  {
+    "id": 1355,
+    "test": 1,
+    "testName": "Principles of Transmission",
+    "chapter": "Principles of Transmission",
+    "q": "For premises applications operating at 155 Mb/s, what is the recommended maximum distance for multimode optical fiber?",
+    "o": [
+      "300 m (984 ft)",
+      "550 m (1804 ft)",
+      "2000 m (6562 ft)",
+      "10 km (32,808 ft)"
+    ],
+    "a": 2,
+    "w": "Multimode optical fibers are best suited for premises applications with links under 2000 m (6562 ft) at 155 Mb/s data rates. 300 m is the practical limit at 10 Gb/s, not the lower 155 Mb/s rate. 550 m is a common limit at 1 Gb/s over OM3. 10 km is achievable only with single-mode fiber using appropriate optics and is far beyond multimode fiber's reach at any data rate.",
+    "k": [
+      "At 155 Mb/s (e.g., ATM or 100BASE-FX applications), multimode fiber's modal dispersion budget supports up to 2 km, which aligns with the maximum premises backbone distance specified in TIA-568.",
+      "The 2 km/155 Mb/s capability drops to 300 m at 10 Gb/s and under 100 m at 100 Gb/s because dispersion and modal noise scale with bit rate and distance.",
+      "For links exceeding 2 km at any speed, single-mode fiber is required; multimode is a premises-only medium constrained by its multi-mode bandwidth-distance product."
+    ]
   }
 ]

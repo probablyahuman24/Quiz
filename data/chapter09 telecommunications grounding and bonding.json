@@ -1198,5 +1198,25 @@
       "The cone of protection angle (45° or 60°) depends on the protection methodology used (rolling sphere method vs. traditional cone method) and determines the effective protected area.",
       "ICT designers use the cone of protection concept to determine whether interbuilding cables or rooftop equipment need additional direct-strike protection beyond standard surge suppression."
     ]
+  },
+  {
+    "id": 1850,
+    "test": 9,
+    "testName": "Telecommunications Grounding and Bonding",
+    "chapter": "Telecommunications Grounding and Bonding",
+    "q": "Per IEEE 1100, what is the recommended maximum grounding impedance for telecommunications equipment systems other than 277 V ac circuits?",
+    "o": [
+      "0.8 ohms",
+      "0.5 ohms",
+      "As low as possible",
+      "1.0 ohms"
+    ],
+    "a": 2,
+    "w": "For all systems other than 277 V ac circuits, IEEE 1100 recommends that the grounding impedance be as low as possible rather than specifying a numeric ceiling. The 0.8-ohm figure applies specifically to 277 V ac circuits. The 0.5-ohm and 1.0-ohm values are not the IEEE 1100 recommendation for other systems — the standard intentionally avoids a fixed upper limit to push designers toward the lowest achievable impedance.",
+    "k": [
+      "IEEE 1100 specifies two grounding impedance targets: 0.8 ohms maximum for 277 V ac circuits, and 'as low as possible' for all other telecommunications systems — there is no fixed numeric ceiling for the general case.",
+      "The 'as low as possible' requirement reflects the principle that lower grounding impedance always improves transient protection effectiveness and equipment reliability; there is no point at which additional reduction becomes unnecessary.",
+      "In practice, 'as low as possible' drives designers to minimize conductor length, maximize conductor cross-section, use low-resistance bonding methods (exothermic welding), and select low-impedance grounding electrodes (concrete-encased steel over ground rods)."
+    ]
   }
 ]

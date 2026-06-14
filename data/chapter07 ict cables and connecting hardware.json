@@ -1196,5 +1196,225 @@
       "The defining split is what they touch: patch cords join passive facility cabling at cross-connects, while equipment cords attach to active electronics.",
       "Naming logic: you 'patch' between panels (passive-to-passive) but you cord 'equipment' into the network (passive-to-active)."
     ]
+  },
+  {
+    "id": 1618,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What term do both TIA and ISO standards use to describe balanced twisted-pair cabling performance levels?",
+    "o": ["Class", "Grade", "Category", "Type"],
+    "a": 2,
+    "w": "Both TIA and ISO standards use the term Category to describe balanced twisted-pair cabling performance levels. TIA uses Category designations (Category 5e, 6, 6A, etc.) and ISO uses Class designations (Class D, E, EA, etc.) for the rated performance levels — but Category is the shared term recognized in both standards bodies. Grade is used in some European standards but is not the TIA/ISO shared term. Type refers to cable construction, not performance level.",
+    "k": ["Both TIA-568 and ISO/IEC 11801 use 'Category' to describe the performance specification of balanced twisted-pair cabling — TIA specifies Category 5e, 6, 6A, 7A, 8 while ISO specifies Classes D, E, EA, F, FA, I.", "Despite different class names in ISO (Class D = Cat 5e, Class EA = Cat 6A, etc.), the term 'Category' is used in both standards as the common descriptor for cabling performance levels.", "Understanding that TIA categories and ISO classes are equivalent (not identical designation systems) is essential for specifying cabling on international projects."]
+  },
+  {
+    "id": 1619,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In T568A pin assignments, which pair (by TIA pair number) terminates on pins 3 and 6?",
+    "o": ["Pair 1", "Pair 2", "Pair 3", "Pair 4"],
+    "a": 1,
+    "w": "In T568A, Pair 2 terminates on pins 3 and 6, straddling the center Pair 1. Pair 1 (blue) is on the center pins 4 and 5. Pair 3 (green) is on pins 1 and 2 in T568A. Pair 4 (brown) is on pins 7 and 8.",
+    "k": ["T568A pair assignment: Pair 3 on pins 1-2, Pair 2 on pins 3 and 6, Pair 1 on pins 4-5, Pair 4 on pins 7-8 — Pair 2 straddles the central Pair 1.", "Pair 2 (orange in T568A) occupies the 'split' position at pins 3 and 6 because pair 2 historically carried the primary data pair, placed symmetrically around the center voice pair for impedance continuity.", "In T568B, Pair 2 moves to pins 1-2 and Pair 3 moves to pins 3-6, which is the only difference between the two wiring schemes."]
+  },
+  {
+    "id": 1620,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In T568A pin assignments, which pair terminates on pins 1 and 2?",
+    "o": ["Pair 1 (blue)", "Pair 2 (orange)", "Pair 3 (green)", "Pair 4 (brown)"],
+    "a": 2,
+    "w": "In T568A, Pair 3 (green) terminates on pins 1 and 2. Pair 1 (blue) is on pins 4 and 5. Pair 2 (orange) is on pins 3 and 6. Pair 4 (brown) is on pins 7 and 8. In T568B the positions of Pairs 2 and 3 are swapped, placing Pair 2 (orange) on pins 1 and 2 instead.",
+    "k": ["T568A places Pair 3 (green) on pins 1-2; this is the primary difference from T568B which places Pair 2 (orange) on pins 1-2.", "Pins 1 and 2 carry the transmit/receive pair in 100BASE-TX and 1000BASE-T signaling — knowing which pair is on those pins is critical for crossover cable identification.", "Memory aid for T568A: G-O-B-Br (Green on 1-2, Orange on 3-6, Blue on 4-5, Brown on 7-8) — the letters go alphabetically for the first color in each pair."]
+  },
+  {
+    "id": 1621,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In T568A pin assignments, which pair terminates on pins 7 and 8?",
+    "o": ["Pair 1 (blue)", "Pair 2 (orange)", "Pair 3 (green)", "Pair 4 (brown)"],
+    "a": 3,
+    "w": "In T568A, Pair 4 (brown) terminates on pins 7 and 8. Pair 1 (blue) is on pins 4 and 5. Pair 2 (orange) is on pins 3 and 6. Pair 3 (green) is on pins 1 and 2. Pair 4 on pins 7 and 8 is identical in both T568A and T568B.",
+    "k": ["Pair 4 (brown) at pins 7-8 is constant between T568A and T568B — only Pairs 2 and 3 swap positions between the two wiring schemes.", "In 1000BASE-T Gigabit Ethernet, all four pairs (including Pair 4 on pins 7-8) carry data simultaneously using 4-pair full-duplex transmission.", "Complete T568A map: Pair 3 (green) = 1-2, Pair 2 (orange) = 3 and 6, Pair 1 (blue) = 4-5, Pair 4 (brown) = 7-8."]
+  },
+  {
+    "id": 1622,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In T568B pin assignments, which pair terminates on pins 7 and 8?",
+    "o": ["Pair 1 (blue)", "Pair 2 (orange)", "Pair 3 (green)", "Pair 4 (brown)"],
+    "a": 3,
+    "w": "In T568B, Pair 4 (brown) terminates on pins 7 and 8, identical to T568A. Pair 1 (blue) is on pins 4 and 5 in both T568A and T568B. Pair 2 (orange) is on pins 1 and 2 in T568B. Pair 3 (green) is on pins 3 and 6 in T568B.",
+    "k": ["Pair 4 (brown) on pins 7-8 is the same in both T568A and T568B — this pair's position never changes between the two wiring schemes.", "The only difference between T568A and T568B: Pair 2 (orange) and Pair 3 (green) swap — in T568B, orange goes to 1-2 and green goes to 3 and 6; in T568A, green is on 1-2 and orange on 3-6.", "T568B full map: Pair 2 (orange) = 1-2, Pair 3 (green) = 3 and 6, Pair 1 (blue) = 4-5, Pair 4 (brown) = 7-8."]
+  },
+  {
+    "id": 1623,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "How do solid conductor patch cords compare to stranded conductor patch cords of the same gauge in terms of insertion loss?",
+    "o": ["Solid conductor cords have higher insertion loss due to increased skin effect", "Solid conductor cords provide better (lower) insertion loss characteristics than stranded cords", "Solid and stranded conductors have identical insertion loss at all frequencies", "Solid conductor cords have 50% higher insertion loss than stranded cords"],
+    "a": 1,
+    "w": "Solid conductor patch cords provide better insertion loss characteristics than stranded ones because solid conductors have lower DC resistance and a more consistent conductor cross-section, resulting in less signal attenuation. Solid conductors do not have higher insertion loss — the opposite is true. Stranded conductors have up to 20% higher attenuation than solid conductors of the same gauge due to inter-strand resistance. 50% higher loss for solid cords is incorrect — it is stranded cords that have higher loss.",
+    "k": ["Solid conductors offer better insertion loss (lower attenuation) than stranded conductors because the single continuous wire has no inter-strand contact resistance and the full conductor cross-section is available for current flow.", "Stranded conductors attenuate up to 20% more than solid cords of the same gauge because current must navigate the contact interfaces between strands, increasing effective resistance.", "Despite better insertion loss, solid conductor cords are not recommended for patch cord use because they crack and fail mechanically with repeated bending — the flexibility advantage of stranded conductors outweighs the small insertion loss penalty in short cord applications."]
+  },
+  {
+    "id": 1624,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What conductor types are permitted in four-pair equipment cords and patch cords?",
+    "o": ["Solid conductors only", "Stranded conductors only", "Either solid or stranded conductors", "Braided conductors only"],
+    "a": 2,
+    "w": "Four-pair cords used as equipment cords or patch cords may use either solid or stranded conductors. Solid conductors are not the only permitted type for patch cords, though they offer better insertion loss. Stranded conductors are commonly used for flexibility but are not the exclusive permitted type. Braided conductors are not a standard conductor construction for balanced twisted-pair cabling.",
+    "k": ["TIA-568 permits both solid and stranded conductors in four-pair equipment cords and patch cords, giving designers flexibility to select based on the application's priorities.", "Stranded conductors are typically chosen for patch cords because their flexibility resists fatigue from repeated bending during MACs; solid conductors are chosen when insertion loss performance takes priority.", "The conductor type selection affects the modular plug contact design required — stranded cords use single-blade contacts while solid cords use three-blade contacts; using the wrong plug type causes premature electrical failure."]
+  },
+  {
+    "id": 1625,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "LSA-style IDC connectors are known for offering which characteristic?",
+    "o": ["The highest frequency performance of any IDC connector", "Versatile configurations for cross-connecting and distribution", "Compatibility only with solid conductors", "A tool-free installation process"],
+    "a": 1,
+    "w": "LSA-style IDC connectors offer versatile configurations, making them suitable for a range of cross-connect, distribution, and building-wiring applications. LSA connectors are not specifically the highest frequency IDC connector — 110-style connectors and other types also support high-frequency applications. LSA connectors work with both solid and stranded conductors. LSA termination requires an IDC punch-down tool; they are not tool-free.",
+    "k": ["LSA-style (Lötverbindung, Schneidklemm, Auflegeverbindung) IDC connectors are manufactured by Krone and provide insulation displacement connections that are widely used in European telecom distribution applications.", "Their versatility includes multi-conductor strip configurations, stackable module designs, and compatibility with a range of conductor gauges — making them adaptable to main distribution frames, building distribution frames, and floor wiring applications.", "LSA, 110-style, and BIX-style are the three primary IDC connector families used in premises telecommunications distribution hardware; each has specific installation tool requirements and application advantages."]
+  },
+  {
+    "id": 1626,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In the classification of balanced twisted-pair cable transmission parameters, capacitance (C) is categorized as what type of parameter?",
+    "o": ["A tertiary transmission parameter", "A secondary transmission parameter", "A primary transmission parameter", "An environmental parameter"],
+    "a": 2,
+    "w": "Capacitance (C) is classified as a primary transmission parameter for balanced twisted-pair cabling, measured during manufacturing to characterize the cable's fundamental electrical geometry. Secondary parameters include insertion loss and resistance unbalance. Tertiary parameter is not a standard category in cable parameter classification. Environmental parameters relate to operating conditions, not cable electrical characteristics.",
+    "k": ["Primary transmission parameters (including capacitance, characteristic impedance, and balance) define the cable's fundamental electrical geometry — they are inherent structural properties of the cable's construction.", "Capacitance per unit length determines impedance characteristics and affects signal propagation velocity; it is measured as a structural manufacturing parameter rather than a field performance parameter.", "Secondary parameters like insertion loss and resistance unbalance are derived from or dependent upon the primary parameters; understanding this hierarchy is important for interpreting cable specification sheets and test reports."]
+  },
+  {
+    "id": 1627,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In the hierarchy of balanced twisted-pair cable transmission parameters, insertion loss is classified as what type of parameter?",
+    "o": ["A primary transmission parameter", "A secondary transmission parameter", "A reference parameter", "An installation parameter"],
+    "a": 1,
+    "w": "Insertion loss is classified as a secondary transmission parameter for balanced twisted-pair cabling. Primary parameters include capacitance and characteristic impedance. Secondary parameters are derived from the primary parameters and measured as performance characteristics. Reference and installation parameters are not standard cable parameter classifications.",
+    "k": ["Secondary transmission parameters — including insertion loss, resistance unbalance, and return loss — are measured field performance metrics derived from the cable's primary structural parameters.", "Insertion loss being a secondary parameter means it is affected by and derived from the cable's primary parameters (capacitance, impedance geometry) rather than being a direct structural property.", "Field testing focuses on secondary parameters like insertion loss and NEXT because they directly predict channel performance; primary parameters like capacitance are verified during manufacturing, not typically re-measured in the field."]
+  },
+  {
+    "id": 1630,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "OM2 multimode optical fiber has a core/cladding diameter of 50/125 µm. What is its minimum OFL bandwidth at 850 nm?",
+    "o": ["300 MHz-km", "500 MHz-km", "1500 MHz-km", "3500 MHz-km"],
+    "a": 1,
+    "w": "OM2 multimode fiber has a minimum overfilled launch (OFL) bandwidth of 500 MHz-km at 850 nm. 300 MHz-km is not a standard OFL specification for OM2. 1500 MHz-km is the OFL bandwidth requirement for OM3, and 3500 MHz-km is the OFL bandwidth specification for OM4. OM2 is a legacy 50/125 µm fiber that predates laser-optimization, so it does not achieve the higher bandwidths of OM3 and OM4.",
+    "k": ["OM2 (50/125 µm) has a minimum OFL bandwidth of 500 MHz-km at 850 nm — higher than OM1's 200 MHz-km but far below the laser-optimized OM3 (1500 MHz-km) and OM4 (3500 MHz-km).", "OM2 uses the same 50/125 µm geometry as OM3 and OM4 but lacks the controlled refractive index profile required for high VCSEL-based bandwidth, limiting its 10 Gb/s reach to approximately 82 m.", "When upgrading legacy OM2 infrastructure to support 10 Gb/s or higher, the fiber itself is typically the limiting factor — the 500 MHz-km OFL bandwidth constrains transmission distance well below what OM3 or OM4 can achieve."]
+  },
+  {
+    "id": 1631,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What distinguishes OS2 singlemode fiber from OS1a in terms of water-peak attenuation?",
+    "o": ["OS2 has higher attenuation at 1383 nm than OS1a, limiting it to longer wavelengths", "OS2 is a low-water-peak fiber with reduced attenuation at 1383 nm, enabling use across the full E-band", "OS1a is the low-water-peak variant; OS2 was designed for indoor tight-buffer applications only", "Both OS1a and OS2 have identical water-peak attenuation; they differ only in jacket material"],
+    "a": 1,
+    "w": "OS2 is a low-water-peak (LWP) singlemode fiber with significantly reduced attenuation at 1383 nm (the E-band), enabling transmission across all wavelength bands including the E-band. OS1a does not have the low-water-peak characteristic — its 1383 nm attenuation is 1.4 dB/km. OS1a, not OS2, is the indoor-optimized variant; OS2 suits both indoor and outdoor applications. The two fiber types differ in more than jacket material — their core glass specifications differ fundamentally.",
+    "k": ["OS2 singlemode fiber meets the ITU-T G.652.D low-water-peak specification, keeping 1383 nm attenuation at or below 0.4 dB/km — opening the full 1260–1625 nm window including the E-band (1360–1460 nm).", "OS1a fiber (ITU-T G.652.B) has a 1383 nm attenuation limit of 1.4 dB/km due to residual OH-ion absorption; this 'water peak' prevents its use at E-band wavelengths used in some CWDM and metro systems.", "For new installations, OS2 is strongly preferred because its low-water-peak property ensures compatibility with all current and future wavelength plans — including CWDM systems that use 1371 nm and 1391 nm channels."]
+  },
+  {
+    "id": 1632,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What is the maximum operational frequency for Category 6 / Class E balanced twisted-pair cabling?",
+    "o": ["100 MHz", "250 MHz", "500 MHz", "600 MHz"],
+    "a": 1,
+    "w": "Category 6 / Class E balanced twisted-pair cabling is specified to a maximum frequency of 250 MHz. 100 MHz is the upper frequency limit for Category 5e / Class D. 500 MHz is the limit for Category 6A / Class EA. 600 MHz is the limit for Category 7 / Class F. Category 6 provides improved performance over Cat 5e by doubling the usable frequency range to 250 MHz.",
+    "k": ["Category 6 / Class E specifies performance to 250 MHz — double the 100 MHz limit of Cat 5e / Class D — supporting 10GBASE-T over short distances and providing improved NEXT and return loss margins at Gigabit Ethernet frequencies.", "The 250 MHz bandwidth of Cat 6 supports 10GBASE-T to 55 m (vs. 100 m for Cat 6A), making it suitable only for short horizontal runs where 10 Gb/s is needed without the overhead of Cat 6A installation.", "The bandwidth staircase for UTP categories: Cat 5e = 100 MHz, Cat 6 = 250 MHz, Cat 6A = 500 MHz, Cat 7 = 600 MHz, Cat 7A = 1000 MHz, Cat 8.1 = 2000 MHz — memorizing these milestones is essential for the RCDD examination."]
+  },
+  {
+    "id": 1633,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Category 7 / Class F balanced twisted-pair cabling is specified to what maximum frequency?",
+    "o": ["500 MHz", "600 MHz", "1000 MHz", "2000 MHz"],
+    "a": 1,
+    "w": "Category 7 / Class F cabling is specified to a maximum frequency of 600 MHz. 500 MHz is the limit for Category 6A / Class EA. 1000 MHz is the limit for Category 7A / Class FA. 2000 MHz is the limit for Category 8.1 / Class I. Category 7 uses individually shielded pairs plus an overall shield (S/FTP or PiMF construction) to achieve its 600 MHz performance.",
+    "k": ["Cat 7 / Class F reaches 600 MHz using screened/foil individual pairs plus an outer braid or foil shield (S/FTP), which eliminates inter-pair alien crosstalk that limits unshielded categories.", "Category 7 uses GG45 or TERA connectors — both are different from the 8P8C modular jack used by Cat 5e through Cat 6A. This connector incompatibility is a key reason Cat 7 saw limited adoption in North America.", "Cat 7A / Class FA extends to 1000 MHz and Cat 8.1 / Class I reaches 2000 MHz; both still exceed Cat 7's 600 MHz ceiling by significant margins, supporting 25GBASE-T and 40GBASE-T applications."]
+  },
+  {
+    "id": 1634,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "Coaxial cables used for video and CATV distribution are designed with what characteristic impedance, and how does this differ from coaxial cables used for RF and data applications?",
+    "o": ["Video coaxial = 50 ohm; RF/data coaxial = 75 ohm", "Video coaxial = 75 ohm; RF/data coaxial = 50 ohm", "Both video and RF/data coaxial use 75 ohm impedance", "Both video and RF/data coaxial use 50 ohm impedance"],
+    "a": 1,
+    "w": "Video and CATV coaxial cables use 75-ohm characteristic impedance, which minimizes signal loss at video frequencies. RF and data coaxial cables use 50-ohm impedance, which is optimized for power handling in transmit applications and RF systems. Mixing 75-ohm and 50-ohm components causes impedance mismatch, reflections, and signal degradation. Both types do not share the same impedance.",
+    "k": ["The 75-ohm standard for video coaxial (used in Series-6 and Series-11U cables) dates back to early broadcast engineering practice — 75 ohms minimizes attenuation per unit length, critical for long video distribution runs.", "The 50-ohm standard for RF and data coaxial is a compromise between the 30-ohm impedance that maximizes power transfer and the 77-ohm impedance that minimizes loss — 50 ohms balances both, making it preferred for transmitters and two-way RF systems.", "Impedance mismatch between 50-ohm and 75-ohm systems creates return loss (reflections), visible as 'ghosting' in analog video or elevated bit-error rates in digital systems — proper impedance matching is mandatory throughout a coaxial distribution system."]
+  },
+  {
+    "id": 1635,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What is the maximum supported distance for 10 Gigabit Ethernet (10GBASE-SR) over OM3 laser-optimized multimode fiber?",
+    "o": ["33 m", "82 m", "300 m", "400 m"],
+    "a": 2,
+    "w": "OM3 multimode fiber supports 10GBASE-SR (10 Gb/s) to a maximum distance of 300 m. 33 m is the 10 Gb/s distance limit for OM1 (62.5/125 µm) fiber. 82 m is the approximate 10 Gb/s limit for OM2 fiber. 400 m is the maximum 10 Gb/s distance for OM4 fiber, which has a higher OFL bandwidth specification than OM3.",
+    "k": ["OM3 (50/125 µm, laser-optimized, 1500 MHz-km OFL at 850 nm) supports 10GBASE-SR to 300 m — a 9× improvement over OM1's 33 m limit for the same application.", "The 300 m OM3 / 400 m OM4 distance specifications for 10GBASE-SR reflect the effective modal bandwidth (EMB) performance rather than the OFL bandwidth; laser-optimized fibers are characterized by EMB for VCSEL-based applications.", "For planning purposes, the 10 Gb/s distance hierarchy is: OM1 = 33 m, OM2 = 82 m, OM3 = 300 m, OM4 = 400 m, OM5 = 400 m — OM3 represents the minimum practical choice for new installations targeting 10 Gb/s within a typical campus or data center environment."]
+  },
+  {
+    "id": 1636,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What is the maximum supported distance for 10 Gigabit Ethernet (10GBASE-SR) over OM4 laser-optimized multimode fiber?",
+    "o": ["82 m", "300 m", "400 m", "550 m"],
+    "a": 2,
+    "w": "OM4 multimode fiber supports 10GBASE-SR to a maximum distance of 400 m, enabled by its higher OFL bandwidth specification of 3500 MHz-km at 850 nm. 82 m is the approximate 10 Gb/s limit for OM2 fiber. 300 m is the maximum 10 Gb/s distance for OM3. 550 m is the maximum distance for 1 Gb/s Ethernet (1000BASE-SX) over OM3, not 10 Gb/s over OM4.",
+    "k": ["OM4's 3500 MHz-km OFL bandwidth at 850 nm (vs. OM3's 1500 MHz-km) yields a 33% longer reach for 10GBASE-SR: 400 m vs. 300 m — making OM4 the better choice for large data centers where switch-to-server distances may approach or exceed 300 m.", "OM4 also supports 40GBASE-SR4 and 100GBASE-SR10 to 150 m and 100 m respectively, compared to OM3's 100 m and 100 m — the advantage is most pronounced at 10 Gb/s where the 100 m difference in reach matters most for campus backbone design.", "When designing fiber infrastructure, selecting OM4 over OM3 future-proofs the cabling plant for higher speeds at greater distances; the incremental cost difference between OM3 and OM4 cable is typically small compared to the long-term flexibility gained."]
+  },
+  {
+    "id": 1637,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What is the standard cladding diameter for all common optical fiber types used in premises telecommunications cabling, including OM1, OM2, OM3, OM4, OM5, OS1a, and OS2?",
+    "o": ["50 µm", "62.5 µm", "125 µm", "250 µm"],
+    "a": 2,
+    "w": "All standard optical fiber types used in premises cabling — multimode (OM1 through OM5) and singlemode (OS1a and OS2) — share the same 125 µm cladding diameter. 50 µm is the core diameter of OM2 through OM5 multimode fibers. 62.5 µm is the core diameter of OM1 multimode fiber. 250 µm is typically the diameter of the primary coating (buffer) applied over the 125 µm cladding, not the cladding itself.",
+    "k": ["The universal 125 µm cladding diameter means all standard premises fibers are mechanically compatible — they fit the same connector ferrule bores (1.25 mm LC, 2.5 mm SC), use the same cleaving tools, and can be fusion-spliced to each other (though optical performance varies).", "The core varies by fiber type: OM1 = 62.5 µm core; OM2/OM3/OM4/OM5 = 50 µm core; OS1a/OS2 singlemode = 8–11 µm core — but all share the 125 µm cladding outer diameter.", "The 250 µm dimension refers to the acrylate primary coating applied immediately over the cladding to protect the glass; above this may be a 900 µm tight buffer or a loose tube/ribbon structure in the final cable construction."]
+  },
+  {
+    "id": 1638,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "According to TIA-568 loss budgeting guidelines, what is the maximum allowable insertion loss per mated connector pair in an optical fiber link?",
+    "o": ["0.1 dB per connector pair", "0.3 dB per connector pair", "0.75 dB per connector pair", "1.5 dB per connector pair"],
+    "a": 2,
+    "w": "TIA-568 specifies a maximum insertion loss of 0.75 dB per mated connector pair in an optical fiber channel loss budget. 0.1 dB is below what TIA-568 allows and is not the standard budgeted value. 0.3 dB is the maximum loss budget per splice (mechanical or fusion), not per connector pair. 1.5 dB per connector pair is double the allowed value and would be excessive for modern connectors.",
+    "k": ["TIA-568 uses 0.75 dB per mated connector pair as the loss budget value — this is a conservative allowance that accounts for connector cleanliness variation, return reflections, and end-face geometry mismatches encountered in real-world installations.", "In contrast, splices are budgeted at 0.3 dB per splice; connectors carry a higher budget (0.75 dB) because they are demountable and subject to repeated cleaning, re-mating, and contamination that splices avoid.", "When calculating a fiber channel loss budget: total_loss = (number_of_connectors × 0.75 dB) + (number_of_splices × 0.3 dB) + (fiber_length_km × attenuation_dB/km); this must be compared against the optical power budget of the transceiver pair to confirm the link will work."]
+  },
+  {
+    "id": 1639,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What color is used to identify adapter/coupler housings for legacy OM1 (62.5/125 µm) multimode optical fiber connections?",
+    "o": ["Aqua", "Blue", "Green", "Beige or ivory"],
+    "a": 3,
+    "w": "Beige or ivory adapter/coupler housings identify legacy OM1 (62.5/125 µm) multimode fiber connections. Aqua identifies 50/125 µm laser-enhanced multimode fiber (OM3 and OM4). Blue identifies singlemode fiber with UPC (ultra-physical contact) polished connectors. Green identifies singlemode fiber with APC (angled physical contact) polished connectors.",
+    "k": ["The fiber adapter color code: beige/ivory = 62.5 µm multimode (OM1), aqua = 50 µm laser-optimized multimode (OM3/OM4), blue = singlemode UPC, green = singlemode APC — mixing these in a link causes severe signal loss due to core diameter or reflection mismatch.", "OM1's beige/ivory color designation reflects its legacy status; OM1 infrastructure is rarely installed new but remains common in older buildings where it may be encountered during renovations or upgrades.", "When migrating from 62.5 µm OM1 to 50 µm laser-optimized fiber, the beige-to-aqua color transition at patch panels makes the changeover points immediately visible — mismatching a beige OM1 patch cord into an aqua OM3/OM4 coupler introduces a 62.5-to-50 µm core mismatch loss of approximately 2–3 dB in addition to any other link impairments."]
   }
 ]
