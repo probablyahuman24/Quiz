@@ -299,6 +299,12 @@ function App() {
   const toggleDark = useCallback(() => setDark(d => { const n=!d; try{localStorage.setItem('rcdd_dark',n?'1':'0');}catch(e){} return n; }), []);
   const [tablet, setTablet] = useState(() => { try { return localStorage.getItem('rcdd_tablet') === '1'; } catch(e) { return false; } });
   const toggleTablet = useCallback(() => setTablet(tb => { const n=!tb; try{localStorage.setItem('rcdd_tablet',n?'1':'0');}catch(e){} return n; }), []);
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (!root) return;
+    if (tablet) { root.style.height = '100vh'; root.style.overflow = 'hidden'; }
+    else { root.style.height = ''; root.style.overflow = ''; }
+  }, [tablet]);
 
   // ── Auth ──
   const [currentUser, setCurrentUser] = useState(() => { try { return JSON.parse(localStorage.getItem('rcdd_user')) || null; } catch(e) { return null; } });
