@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="RCDD Exam Prep"/>
+  <meta name="theme-color" content="#ffffff"/>
+  <title>RCDD Exam Prep</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc; }
+    #root { max-width: 430px; margin: 0 auto; min-height: 100vh; }
+    button { cursor: pointer; font-family: inherit; }
+    button:active { opacity: 0.75; }
+    ::-webkit-scrollbar { display: none; }
+    #loading { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; gap:16px; }
+    #loading p { font-size:16px; color:#64748b; font-weight:600; }
+    #error { display:none; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; gap:12px; padding:32px; text-align:center; }
+    #error p { font-size:15px; color:#dc2626; font-weight:600; }
+    #error small { font-size:13px; color:#94a3b8; }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="loading">
+      <div style="font-size:48px">💡</div>
+      <p>Loading RCDD Quiz…</p>
+    </div>
+    <div id="error">
+      <div style="font-size:48px">⚠️</div>
+      <p id="error-msg">Something went wrong.</p>
+      <small>Open Safari → share → reload, or check your connection.</small>
+    </div>
+  </div>
+
+  <!-- React -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <!-- Version (shared with sw.js) -->
+  <script src="version.js"></script>
+
+  <!-- App -->
+  <script>
+    window.onerror = function(msg, src, line) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('error').style.display = 'flex';
+      document.getElementById('error-msg').textContent = 'Error: ' + msg;
+    };
+  </script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/Quiz/sw.js').then(reg => {
+        // Check for a new SW immediately on every page load
+        reg.update();
+        // Re-check again whenever the user returns to the tab
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') reg.update();
+        });
+      });
+      // When a new SW takes control, reload to get fresh files
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        window.location.reload();
+      });
+    }
+  </script>
+</body>
+</html>
