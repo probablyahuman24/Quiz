@@ -1198,5 +1198,105 @@
       "Buildings requiring more than 72 strands of optical fiber entry have larger bandwidth needs that also typically require larger, more protected entrance facilities; underground conduit entrances are specified for these larger buildings because they can accommodate any cable size and provide better physical protection.",
       "72 strands represents a reasonable ceiling for aerial entry into small buildings (small office buildings, apartment buildings, small retail) that would be over-engineered with underground conduit systems \u2014 it balances installation simplicity with practical bandwidth capacity."
     ]
+  },
+  {
+    "id": 2100,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What are the specifications for the plywood backboards required at entrance facility (EF) terminations?",
+    "o": [
+      "12 mm (0.5 in) thick, 1.8 m (6 ft) high, free of voids",
+      "19 mm (0.75 in) thick, 2.4 m (8 ft) high, void-free",
+      "25 mm (1 in) thick, 2.4 m (8 ft) high, fire-treated",
+      "19 mm (0.75 in) thick, 3 m (10 ft) high, void-free"
+    ],
+    "a": 1,
+    "w": "EF terminations require void-free plywood backboards that are 19 mm (0.75 in) thick and 2.4 m (8 ft) high. Thinner 12 mm boards lack the structural rigidity needed to securely support cable management hardware and splice closures. The height of 2.4 m (8 ft) matches standard wall height for equipment access and mounting; 3 m is unnecessarily tall. Fire treatment is not the specified requirement\u2014void-free construction is critical to prevent moisture infiltration and delamination.",
+    "k": [
+      "The void-free requirement for EF backboards is a structural specification: internal voids weaken the plywood, reducing holding strength for screws and mounting hardware that must support cable management, protectors, and splice cases over the long service life of an OSP entrance.",
+      "19 mm (0.75 in) thickness is the RCDD-specified minimum; thinner panels are used for lighter-duty applications such as equipment room backboards, but the OSP entrance environment demands greater robustness due to heavier cabling and protector hardware.",
+      "The 2.4 m (8 ft) height aligns EF backboards with full-wall mounting practice, ensuring maximum usable surface for cable management and future capacity growth without requiring additional wall sections."
+    ]
+  },
+  {
+    "id": 2101,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "How far must conduits terminate from finished walls inside the entrance facility (EF)?",
+    "o": [
+      "25.4 mm (1 in)",
+      "50.8 mm (2 in)",
+      "101.6 mm (4 in)",
+      "152.4 mm (6 in)"
+    ],
+    "a": 2,
+    "w": "Conduits must terminate 101.6 mm (4 in) from finished walls inside the entrance facility. This clearance allows sufficient space for pulling cable through the conduit stub and making bends without damaging the cable jacket or exceeding minimum bend radius. A shorter distance such as 25.4 mm or 50.8 mm would create an obstruction at the wall face making cable pulling and installation difficult. A larger 152.4 mm projection would unnecessarily extend into the workspace.",
+    "k": [
+      "The 101.6 mm (4 in) stub-up distance is a practical installation specification: it provides enough conduit projection inside the EF for workers to attach pulling devices, install conduit fittings, and manage cable entry without the wall surface interfering with these operations.",
+      "This termination distance also accommodates firestopping materials that must be applied around conduit penetrations at the wall; the stub projection keeps the active cable management area clear of the firestop barrier.",
+      "Maintaining consistent conduit termination depth inside the EF supports orderly cable management layout\u2014cables exiting at a standard distance from the wall can be routed uniformly to backboards and cable trays without random stub lengths creating routing conflicts."
+    ]
+  },
+  {
+    "id": 2102,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "What trade size conduit is specified for OSP conduit pathway design?",
+    "o": [
+      "Trade size 1",
+      "Trade size 2",
+      "Trade size 3",
+      "Trade size 4"
+    ],
+    "a": 3,
+    "w": "Trade size 4 conduit is specified for OSP conduit pathway design. Smaller trade sizes (1, 2, or 3) do not provide sufficient interior cross-sectional area to accommodate the large-diameter cables, multiple cables, or future cable additions typical of OSP trunk routes. The standard OSP pathway design calls for trade size 4 conduits as the primary pathway, along with one spare conduit for future growth.",
+    "k": [
+      "Trade size 4 corresponds to a nominal 4-inch diameter conduit, providing approximately 81 cm\u00b2 of interior cross-sectional area\u2014large enough to accommodate multi-fiber OSP cables and leave fill ratio headroom for future cable additions without conduit replacement.",
+      "The 'four plus one spare' rule in OSP design means a minimum of four trade size 4 conduits are installed with one additional spare; the trade size 4 specification ensures each individual conduit can handle the bandwidth growth anticipated over the 25-year or longer service life of OSP infrastructure.",
+      "Trade size is a standardized designation (not actual diameter) used in North American conduit specification; trade size 4 conduit has an actual inside diameter slightly different from 4 inches depending on conduit material (EMT, rigid, PVC), but all trade size 4 variants satisfy the OSP pathway specification."
+    ]
+  },
+  {
+    "id": 2103,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "How are maintenance hole (MH) configurations identified in OSP design?",
+    "o": [
+      "With a numeric code from 1 to 10",
+      "With a color-coded label system",
+      "With a one-letter designation",
+      "With a two-letter alphanumeric code"
+    ],
+    "a": 2,
+    "w": "Maintenance hole configurations are identified with a one-letter designation in OSP design. This single-letter system provides a concise, unambiguous way to specify MH type on drawings and in specifications without lengthy descriptions. Numeric codes, color labels, or two-letter codes are not part of the standard MH identification system; the one-letter designation directly communicates the configuration to OSP designers and installers.",
+    "k": [
+      "The one-letter MH designation system allows engineers to specify the correct maintenance hole type quickly on OSP route drawings; each letter corresponds to a distinct physical configuration (different size, access opening arrangement, or duct entry count) standardized for the expected cable capacity and access requirements at that point in the route.",
+      "Using single-letter designations rather than written descriptions reduces annotation clutter on complex OSP route drawings where dozens of MHs may be shown; designers can reference the designation key in the drawing legend for full specifications.",
+      "Standardized MH configuration designations support accurate cost estimation and procurement: contractors and suppliers can immediately identify the required structure from the one-letter code without additional specification lookups, reducing bid errors and material ordering mistakes."
+    ]
+  },
+  {
+    "id": 2104,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "Where must the horizontal load be applied when testing communications poles for structural adequacy?",
+    "o": [
+      "At the midpoint of the pole",
+      "305 mm (12 in) from the top",
+      "610 mm (24 in) from the top",
+      "At the base of the pole"
+    ],
+    "a": 2,
+    "w": "Communications poles must be tested by applying the horizontal load 610 mm (24 in) from the top of the pole. This application point simulates the worst-case bending moment created by cables and hardware attached near the top of the pole. Applying the load at the midpoint would underestimate the leverage created by attachments near the top. A point 305 mm from the top is not the specified test location. Applying load at the base tests the wrong structural region for overhead attachment adequacy.",
+    "k": [
+      "The 610 mm (24 in) from-the-top load application point represents where cables and lashing hardware are typically attached; testing at this location creates a moment arm that realistically replicates wind and ice loading on actual communications attachments near the pole top.",
+      "Poles must withstand the same horizontal load as specified for power poles of equivalent class; this equal-loading requirement ensures that communications poles sharing corridors with power infrastructure have equivalent structural resilience, preventing differential failure during storms.",
+      "The horizontal load test at 610 mm from the top is critical for multi-tenant pole applications where communications cables are attached below power conductors; an inadequate pole under horizontal loading could fail and bring both communications and power infrastructure down simultaneously."
+    ]
   }
 ]

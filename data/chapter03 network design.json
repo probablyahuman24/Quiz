@@ -1197,5 +1197,105 @@
       "The core storage director is the high-port-count fiber channel switch that centralizes all server-to-storage paths, providing the redundancy and performance SANs require.",
       "For cabling design, SANs typically use OM4 or OM5 multimode fiber or single-mode fiber in larger data centers due to high bandwidth and low latency requirements."
     ]
+  },
+  {
+    "id": 1356,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "In the OSI model, what does each layer provide to the layer directly above it?",
+    "o": [
+      "Physical connectivity for bit transmission",
+      "Services through a defined interface",
+      "Routing information for packet forwarding",
+      "Error correction and retransmission capability"
+    ],
+    "a": 1,
+    "w": "Each OSI layer provides services to the layer directly above it through a well-defined interface called a Service Access Point (SAP). Physical connectivity for bit transmission is specific to Layer 1's relationship with Layer 2, not a general inter-layer principle. Routing information is a Layer 3 function. Error correction and retransmission are Layer 4 functions \u2014 they do not describe the general service relationship between all adjacent layers.",
+    "k": [
+      "The OSI model's service principle: Layer N provides services to Layer N+1 using the services of Layer N-1, creating a hierarchical stack where each layer builds on the one below.",
+      "Services are exchanged at Service Access Points (SAPs) \u2014 the defined interfaces between layers that allow lower layers to be upgraded without changing upper layer protocols.",
+      "This service relationship is why TCP (Layer 4) can run over either Ethernet or Wi-Fi (Layer 1/2) without modification \u2014 the lower layer provides its service regardless of the physical medium."
+    ]
+  },
+  {
+    "id": 1357,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which of the following is NOT a characteristic of the OSI protocol stack?",
+    "o": [
+      "Peer-to-peer communication between corresponding layers",
+      "Service Access Points connecting adjacent layers",
+      "Upper layers providing services to lower layers",
+      "Layer independence allowing changes without affecting other layers"
+    ],
+    "a": 2,
+    "w": "Upper layers providing services to lower layers is NOT a characteristic of the OSI protocol stack \u2014 it is the reverse of how the model works. In the OSI model, each layer provides services to the layer ABOVE it, not below. Peer-to-peer communication between corresponding layers, SAPs between adjacent layers, and layer independence are all valid OSI protocol stack characteristics.",
+    "k": [
+      "In the OSI model, service flows upward: lower layers serve upper layers \u2014 Layer 1 serves Layer 2, Layer 2 serves Layer 3, and so on up the stack.",
+      "The reverse \u2014 upper layers providing services to lower layers \u2014 would invert the OSI hierarchy and contradicts the model's design principle.",
+      "This 'bottom-up service' principle is the architectural rule that makes each layer's function independent and replaceable without disrupting layers above."
+    ]
+  },
+  {
+    "id": 1358,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "Which OSI layer is the Physical layer?",
+    "o": [
+      "Layer 1",
+      "Layer 2",
+      "Layer 3",
+      "Layer 4"
+    ],
+    "a": 0,
+    "w": "OSI Layer 1 is the Physical layer, responsible for transmitting raw bits over the physical medium using electrical, optical, or radio signals. Layer 2 is the Data Link layer, handling MAC addressing and frame delivery within a network segment. Layer 3 is the Network layer, responsible for logical addressing and routing. Layer 4 is the Transport layer, providing end-to-end data transfer quality.",
+    "k": [
+      "OSI Layer 1 \u2014 Physical \u2014 defines the electrical, optical, or radio characteristics of the medium: voltage levels, bit timing, connector pinouts, and modulation schemes.",
+      "Cables, connectors, NICs, and hubs operate at Layer 1; they have no concept of addressing or error control \u2014 they simply transmit bits.",
+      "Layer numbering mnemonic (bottom-up): 'Please Do Not Throw Sausage Pizza Away' = Physical, Data Link, Network, Transport, Session, Presentation, Application."
+    ]
+  },
+  {
+    "id": 1359,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "What is the primary purpose of the OSI Reference Model in network development?",
+    "o": [
+      "To define specific hardware requirements for all networking equipment",
+      "To provide a structured approach for network development and interoperability",
+      "To mandate TCP/IP as the universal network protocol suite",
+      "To standardize cable types and connector pinouts"
+    ],
+    "a": 1,
+    "w": "The OSI Reference Model is designed to provide a structured, layered approach for network development, promoting interoperability between systems from different vendors. It defines conceptual layers, not specific hardware. TCP/IP is a separate protocol suite developed by IETF, not mandated by the OSI model. Cable types and connector pinouts are addressed by physical layer standards (e.g., TIA-568, IEEE 802.3) that exist below the OSI model's scope.",
+    "k": [
+      "ISO developed the OSI model as a framework to guide network protocol development \u2014 its seven-layer structure ensures that different vendors' equipment can interoperate if each layer's interface is consistent.",
+      "The model's value is architectural: it separates concerns so that a new physical medium (e.g., fiber optics replacing copper) can be introduced at Layer 1 without requiring changes to Layers 2\u20137.",
+      "The OSI model itself does not mandate specific protocols or hardware \u2014 it defines the roles and boundaries between layers, letting standards bodies and vendors fill in the implementations."
+    ]
+  },
+  {
+    "id": 1360,
+    "test": 3,
+    "testName": "Network Design",
+    "chapter": "Network Design",
+    "q": "In a typical data center network, how are multiple servers connected to the broader network?",
+    "o": [
+      "Each server connects directly to the building entrance facility",
+      "Multiple servers are linked to a core switch via network interfaces",
+      "Servers are connected point-to-point to each other without switches",
+      "Servers share a single common bus connection managed by a hub"
+    ],
+    "a": 1,
+    "w": "A typical data center network links multiple servers to a core switch via individual network interfaces, allowing centralized traffic management, redundancy, and high-bandwidth aggregation. Servers do not connect directly to the entrance facility \u2014 that is where carrier services enter the building. Point-to-point server interconnection without switches creates an unscalable mesh and is not used in data centers. Shared bus hubs are obsolete and cannot provide the dedicated bandwidth required for server workloads.",
+    "k": [
+      "The typical data center network topology has servers connected via NICs to access-layer switches, which uplink to distribution or core switches \u2014 a hierarchical design for scalability and redundancy.",
+      "Each server NIC provides a dedicated link to its access switch port, giving each server its own collision domain and dedicated bandwidth rather than sharing a hub.",
+      "Understanding this topology matters for cabling design: each server requires at least one (often two for redundancy) horizontal cable runs to the nearest switch in the HDA or EDA."
+    ]
   }
 ]
