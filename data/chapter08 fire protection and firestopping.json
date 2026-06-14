@@ -1198,5 +1198,27 @@
       "For large cable tray penetrations in concrete walls, cementitious material can be formed around the cable tray and cables, creating a monolithic fill that is as strong as the surrounding concrete.",
       "The main limitation of cementitious firestops is that future cable additions require chipping out the cured material — they are permanent installations."
     ]
+  },
+  {
+    "id": 1628,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "When selecting a firestop system for a telecommunications application, what three factors should be balanced?",
+    "o": ["Cost, color, and chemical composition", "Durability, ease of installation, and maintenance", "Fire rating, water rating, and smoke rating", "Weight, thickness, and expansion ratio"],
+    "a": 1,
+    "w": "Firestop systems should balance durability (long-term performance without degradation), ease of installation (correct and complete application by field personnel), and maintenance (accessibility for future cable changes and inspection). Cost and color are commercial considerations, not the technical balance required for system selection. F, T, and L ratings are performance metrics, not the selection balance criteria. Physical characteristics like weight and thickness are product attributes, not the functional balance criteria.",
+    "k": ["Durability ensures the firestop maintains its rated performance over the building's service life without inspection or replacement — critical for passive fire protection that must work without activation.", "Ease of installation ensures that the specified system can be correctly installed by available field personnel; a technically superior system that is routinely mis-installed provides less protection than a simpler system correctly applied.", "Maintenance considerations are especially important in telecommunications spaces with regular MAC activity — systems easy to re-enter (pillows, putty) provide better long-term compliance than permanent systems (caulk) in active cable areas."]
+  },
+  {
+    "id": 1629,
+    "test": 8,
+    "testName": "Fire Protection and Firestopping",
+    "chapter": "Fire Protection and Firestopping",
+    "q": "What is the purpose of qualification testing for firestop systems?",
+    "o": ["To determine the cost-effectiveness of the firestop material", "To establish the color and appearance of the installed system", "To ensure system performance under expected fire conditions", "To verify compatibility between the cable jacket and the firestop sealant"],
+    "a": 2,
+    "w": "Qualification testing ensures that a firestop system performs as expected under the fire conditions it will encounter in service, producing the F, T, and other ratings that define the system's listed performance. Cost-effectiveness is a procurement consideration, not a qualification testing purpose. Appearance is not a factor in fire performance qualification testing. Cable-to-sealant compatibility may be evaluated during testing, but the primary purpose is to validate fire performance.",
+    "k": ["Qualification testing subjects a complete firestop system (barrier + penetrating item + firestop material) to standardized fire conditions, verifying that the combination achieves its claimed F and T ratings under controlled, reproducible test protocols.", "The test results produce a listing (published in UL Fire Resistance Directory or equivalent) that confirms the system's performance under the tested conditions — designers specify listed systems to ensure tested, reliable performance.", "Qualification testing is done once per system configuration; the resulting listing allows that specific system to be repeatedly installed without retesting, as long as the installation exactly matches the tested configuration."]
   }
 ]

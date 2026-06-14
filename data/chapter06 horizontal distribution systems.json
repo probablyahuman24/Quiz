@@ -1397,5 +1397,137 @@
       "Pull tension in conduits follows the Capstan equation: T_out = T_in \u00d7 e^(\u03bc\u03b8) \u2014 each bend multiplies tension exponentially, which is why bend count is strictly controlled.",
       "Whenever a conduit route requires more than two 90-degree bends, the designer must either add a pull box or increase the conduit size to keep cable pulling tension within limits."
     ]
+  },
+  {
+    "id": 1606,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "Which horizontal pathway type provides more pulling space than pull boxes in a conduit-based system?",
+    "o": ["J-hooks", "Cable trays", "Wireways and gutters", "Perimeter raceways"],
+    "a": 2,
+    "w": "Wireways and gutters provide more pulling space than pull boxes in conduit-based pathways because their large interior cross-section allows cables to spread out during pulling operations. J-hooks are non-continuous supports, not a conduit-based pathway option. Cable trays are for open cable runs, not for conduit system transitions. Perimeter raceways are surface-mounted wall-level ducts, not conduit system accessories.",
+    "k": ["Wireways (enclosed metallic troughs) and gutters provide an open interior larger than a standard pull box, giving cable installers room to handle cable during a pull and allowing cables to lay without excessive bending.", "Unlike pull boxes which provide a small accessible point in a conduit run, wireways provide an extended open run where many cables can be routed simultaneously without individual conduit runs.", "Wireways and gutters are commonly used in equipment rooms and telecommunications rooms where large cable bundles must transition between multiple conduit home-run entries."]
+  },
+  {
+    "id": 1607,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "Which components are used as fittings to adjust cable tray direction or size in a horizontal pathway system?",
+    "o": ["Pull boxes, splice boxes, and junction boxes", "Elbows, reducers, crossovers, and tees", "Conduit bodies, LBs, and condulets", "Bushings, lock rings, and grommets"],
+    "a": 1,
+    "w": "Elbows, reducers, crossovers, and tees are the fittings used to adjust cable tray direction or size in a horizontal pathway system. Pull boxes, splice boxes, and junction boxes are conduit system accessories, not cable tray fittings. Conduit bodies (LBs, condulets) are conduit fittings used at bends or transitions. Bushings, lock rings, and grommets are conduit entry accessories, not cable tray fittings.",
+    "k": ["Cable tray fitting types: elbows change horizontal direction, reducers transition between tray widths, crossovers allow two runs to cross, and tees split or merge cable tray runs at T-intersections.", "These fittings are manufactured to match the cable tray system's load rating, material, and width to maintain consistent cable fill and mechanical performance through direction changes.", "Selecting incorrect fittings or fabricating field bends in cable tray can reduce the tray's rated load capacity and create areas where cable minimum bend radius is violated."]
+  },
+  {
+    "id": 1608,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What information must be marked on the work area side of a MUTOA?",
+    "o": ["The total number of supported work areas", "The maximum allowable equipment cord length", "The cable category rating", "The HC/FD port assignment"],
+    "a": 1,
+    "w": "The work area side of a MUTOA must be marked with the maximum allowable equipment cord length to inform users of the cord length limit for their connections. The number of supported work areas is a design parameter but is not required labeling on the MUTOA itself. Cable category is typically marked on the connector but is not the specific required MUTOA marking. HC/FD port assignment is administrative information in the documentation system, not required MUTOA face marking.",
+    "k": ["The maximum equipment cord length must be marked because each MUTOA's channel budget is customized based on its distance from the HC — a MUTOA closer to the HC allows longer cords than one farther away.", "Without this marking, users could connect cords exceeding the allowed length, pushing the horizontal channel beyond its 100 m equivalent capacity and causing category compliance failures.", "The marking is required because MUTOA users (typically office occupants, not cabling technicians) must be informed of the cord length limit when connecting their workstations."]
+  },
+  {
+    "id": 1609,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What type of optical fiber infrastructure do Passive Optical Networks (PONs) use?",
+    "o": ["Duplex multimode optical fiber", "Simplex single-mode optical fiber", "Duplex single-mode optical fiber", "Multimode OM4 optical fiber"],
+    "a": 1,
+    "w": "PONs use simplex single-mode optical fiber infrastructure, where a single fiber strand carries both upstream and downstream signals simultaneously using wavelength division multiplexing. Duplex multimode fiber is used in premises horizontal cabling for Ethernet, not PON. Duplex single-mode uses two fibers; PON uses simplex (one fiber) with WDM to separate upstream and downstream wavelengths. OM4 is a multimode fiber type not used in PON systems.",
+    "k": ["PON infrastructure uses a single (simplex) strand of single-mode fiber from the OLT to each ONU, with WDM separating the upstream (1310 nm) and downstream (1490/1550 nm) wavelengths on that single strand.", "Using simplex fiber halves the fiber count compared to duplex systems, reducing cost and conduit fill in the distribution plant while maintaining full duplex communication capability.", "The passive splitter in the PON divides the simplex OLT signal to multiple ONUs — all on the same single fiber wavelength plan — without requiring active powered equipment at the split point."]
+  },
+  {
+    "id": 1610,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "For 10 Gb/s PON systems, what type of connector is required to reduce back-reflection above which wavelength?",
+    "o": ["UPC connectors above 1310 nm", "APC connectors above 1500 nm", "LC connectors above 850 nm", "SC connectors above 1300 nm"],
+    "a": 1,
+    "w": "10 Gb/s PON systems require APC (Angled Physical Contact) connectors to reduce back-reflection above the 1500 nm wavelength, where analog video signals and high-power downstream signals are especially sensitive to reflections. UPC connectors do not meet the low back-reflection requirements at any wavelength for 10 Gb/s PON. LC is a connector body style, not a polish type specifying back-reflection performance. Standard SC connectors without APC polish are insufficient for 10 Gb/s PON above 1500 nm.",
+    "k": ["Above 1500 nm, wavelengths used for 10 Gb/s PON downstream data and analog video overlay (CATV at 1550 nm) are extremely sensitive to back-reflections that can cause noise on the shared PON optical bus.", "APC connectors with their 8-degree angled endface reflect light away from the fiber core at an angle, achieving return loss below -65 dB — far better than UPC connectors at -40 to -55 dB.", "The 1500 nm threshold is significant because below this wavelength (e.g., 1310 nm upstream), back-reflection sensitivity is lower; above it, the combination of high power and wavelength-sensitive applications makes APC mandatory."]
+  },
+  {
+    "id": 1611,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "In Building Automation System (BAS) applications using Power over Ethernet, what is specified regarding conductor size for PoE power delivery?",
+    "o": ["Conductors must be at least 22 AWG for BAS PoE applications", "No specific conductor sizes are required for BAS PoE balanced twisted-pair cabling", "BAS PoE requires minimum 18 AWG solid conductors", "BAS PoE requires 24 AWG stranded conductors only"],
+    "a": 1,
+    "w": "Balanced twisted-pair cabling for PoE power delivery in BAS applications does not require specific conductor sizes beyond standard structured cabling specifications. 22 AWG is not a standard PoE BAS conductor requirement. 18 AWG solid conductors are used for power wiring, not structured cabling. Stranded 24 AWG is typical for patch cords but is not specifically mandated for BAS PoE runs.",
+    "k": ["BAS (Building Automation System) applications use PoE to power sensors, actuators, and controllers over balanced twisted-pair cabling; the standard PoE specifications (IEEE 802.3af/at/bt) govern the current and voltage requirements.", "Unlike dedicated power wiring which requires specific AWG sizing for load current, BAS PoE over structured cabling follows the standard 24 AWG minimum for horizontal cable without additional BAS-specific conductor size requirements.", "The lack of specific BAS conductor size requirements for PoE is because BAS devices typically operate at lower power levels (Type 1 or 2 PoE) where standard 24 AWG structured cabling meets thermal and resistance requirements."]
+  },
+  {
+    "id": 1612,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "In T568A pin assignments, which pair is connected to pins 3 and 6?",
+    "o": ["Blue pair", "Green pair", "Orange pair", "Brown pair"],
+    "a": 2,
+    "w": "In T568A pin assignments, the Orange pair is connected to pins 3 and 6. The Blue pair occupies pins 4 and 5. The Green pair occupies pins 1 and 2 in T568A. The Brown pair occupies pins 7 and 8.",
+    "k": ["T568A full pin-pair assignment: Green = pins 1-2, Orange = pins 3 and 6, Blue = pins 4-5, Brown = pins 7-8. The Orange pair straddles the center Blue pair at positions 3 and 6.", "The Orange pair's split position (pin 3 on one side of Blue, pin 6 on the other) is standard for all 8P8C wiring schemes and is unchanged between T568A and T568B.", "T568A and T568B differ only in which color pair occupies pins 1-2 vs. which occupies 3-6: T568A has Green on 1-2 and Orange on 3-6; T568B has Orange on 1-2 and Green on 3-6."]
+  },
+  {
+    "id": 1613,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is the required uniform load capacity for medium-duty access floors?",
+    "o": ["2.4 kPa (50 lbf/ft²)", "4.8 kPa (100 lbf/ft²)", "7.2 kPa (150 lbf/ft²)", "9.6 kPa (200 lbf/ft²)"],
+    "a": 1,
+    "w": "Medium-duty access floors should have a uniform load capacity of 4.8 kPa (100 lbf/ft²) to support the distributed loads from office equipment and personnel. 2.4 kPa would represent a lighter-duty classification insufficient for medium-duty office environments. 7.2 kPa and 9.6 kPa exceed the medium-duty specification and represent heavier-duty categories used in data center or high-load environments.",
+    "k": ["Medium-duty access floors are specified for general office environments; the 4.8 kPa (100 lbf/ft²) uniform load rating accommodates the distributed weight of office equipment, personnel, and furniture spread across the floor panel.", "Uniform load capacity (distributed load over a full panel area) is distinct from concentrated load capacity (point load); medium-duty floors must meet both the 4.8 kPa uniform load and the 8.8 kN concentrated load requirements.", "Access floor duty categories ensure the structural floor system can support not just the static weight of equipment but also dynamic loads from personnel walking and equipment being rolled across the panels."]
+  },
+  {
+    "id": 1614,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "In horizontal cabling pathway design, what should be the primary focus of the design process?",
+    "o": ["Selecting the cable category and color coding", "Designing the pathway system first", "Sizing the telecommunications room", "Calculating the total cable count"],
+    "a": 1,
+    "w": "Horizontal cabling pathways should first focus on the pathway system design — establishing the routes, pathway types, and capacities before selecting cables or other components. Selecting cable category is an important step but comes after the pathway design is established. Sizing the telecommunications room is a separate design activity. Calculating cable counts is part of the design process but follows from the pathway layout, not the other way around.",
+    "k": ["Pathway-first design ensures the physical routes for cables are coordinated with architectural, structural, and mechanical systems before cables are specified — avoiding the costly scenario of specifying cables that cannot be routed due to obstructions.", "Once pathway routes are established, the designer can calculate cable counts, determine tray/conduit sizes, and coordinate penetrations through rated barriers — all of which depend on knowing the pathway layout.", "Designing pathways after cables are specified often leads to inadequate pathway capacity, insufficient fill allowances, or conflicts with other building systems that require expensive redesign."]
+  },
+  {
+    "id": 1615,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What routing principle should conduit runs for horizontal pathways follow?",
+    "o": ["Diagonal routes that minimize total conduit length", "Direct routes parallel to building lines", "Routes that avoid all structural elements", "Circular routes that distribute pulling tension evenly"],
+    "a": 1,
+    "w": "Conduit runs for horizontal pathways should follow direct routes parallel to building lines (walls, columns, beams) to maintain orderly installation, simplify documentation, and facilitate maintenance. Diagonal routes minimize conduit length but create difficult coordination with other building systems and non-standard layouts. Avoiding all structural elements is often impossible and not the stated routing principle. Circular routing is not an accepted design principle for horizontal conduit pathways.",
+    "k": ["Routing conduit parallel to building lines (walls, beams, columns) creates an organized, predictable pathway system that aligns with architectural and structural elements, simplifying coordination with other trades.", "Diagonal conduit runs cross the grid established by other building systems (electrical, mechanical, structural) at unpredictable angles, creating coordination conflicts and making future cable additions difficult.", "Parallel routing also simplifies the administration documentation: conduit routes are described by building reference points and are easily located during maintenance or when tracing cable paths."]
+  },
+  {
+    "id": 1616,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "Under what condition may a third conduit bend be acceptable without derating capacity?",
+    "o": ["When the conduit is EMT rather than rigid conduit", "When the conduit size is increased to compensate", "When the cable fill is below 25%", "When the conduit run is shorter than 15 m"],
+    "a": 1,
+    "w": "A third conduit bend may be acceptable without derating capacity if the conduit size is increased, providing more interior space to reduce cable pulling friction to acceptable levels. The conduit material type does not directly address the pulling tension problem created by additional bends. Low cable fill below 25% reduces friction but is not the stated criterion for accepting a third bend. Short conduit runs have less cumulative friction but conduit length is not the specified criterion.",
+    "k": ["Each conduit bend increases cable pulling tension by adding friction; exceeding two 90-degree bends without a pull box normally requires derating the conduit fill to compensate for increased tension.", "Increasing conduit size (upsizing one trade size) provides additional interior space that reduces cable-to-conduit contact pressure during pulling, offsetting the additional friction from the third bend.", "This upsizing approach is a practical alternative to installing a pull box when a third bend cannot be avoided due to pathway obstructions, allowing the designer to maintain full fill capacity with the larger conduit."]
+  },
+  {
+    "id": 1617,
+    "test": 6,
+    "testName": "Horizontal Distribution Systems",
+    "chapter": "Horizontal Distribution Systems",
+    "q": "What is a key limitation of underfloor conduit systems for horizontal cabling?",
+    "o": ["They cannot support PoE applications", "They have limited flexibility for cable changes", "They require special fire-rated cables", "They cannot accommodate optical fiber cabling"],
+    "a": 1,
+    "w": "Underfloor conduit systems have limited flexibility for cable changes because the conduit is encased in concrete and cannot be easily accessed or rerouted once installed. PoE compatibility is determined by cable category, not the pathway type. Cable fire rating requirements are determined by the space type (plenum, riser, general), not the conduit enclosure. Optical fiber can be installed in underfloor conduits — the pathway type does not restrict cable media.",
+    "k": ["Underfloor conduit embedded in concrete slab provides excellent mechanical protection but creates an inflexible pathway: once the slab is poured, the conduit route is permanent and cannot be rerouted without expensive concrete cutting.", "Adding cables to an underfloor conduit system is possible only if spare conduits were installed, but the total capacity is fixed at construction; new cable routes require coring new conduit through the slab.", "Access floor systems or ceiling pathway systems are preferred for frequently reconfigured spaces because they allow cable routes to be changed without structural modifications — flexibility that underfloor concrete conduit cannot provide."]
   }
 ]

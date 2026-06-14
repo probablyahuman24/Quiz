@@ -1196,5 +1196,115 @@
       "The defining split is what they touch: patch cords join passive facility cabling at cross-connects, while equipment cords attach to active electronics.",
       "Naming logic: you 'patch' between panels (passive-to-passive) but you cord 'equipment' into the network (passive-to-active)."
     ]
+  },
+  {
+    "id": 1618,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What term do both TIA and ISO standards use to describe balanced twisted-pair cabling performance levels?",
+    "o": ["Class", "Grade", "Category", "Type"],
+    "a": 2,
+    "w": "Both TIA and ISO standards use the term Category to describe balanced twisted-pair cabling performance levels. TIA uses Category designations (Category 5e, 6, 6A, etc.) and ISO uses Class designations (Class D, E, EA, etc.) for the rated performance levels — but Category is the shared term recognized in both standards bodies. Grade is used in some European standards but is not the TIA/ISO shared term. Type refers to cable construction, not performance level.",
+    "k": ["Both TIA-568 and ISO/IEC 11801 use 'Category' to describe the performance specification of balanced twisted-pair cabling — TIA specifies Category 5e, 6, 6A, 7A, 8 while ISO specifies Classes D, E, EA, F, FA, I.", "Despite different class names in ISO (Class D = Cat 5e, Class EA = Cat 6A, etc.), the term 'Category' is used in both standards as the common descriptor for cabling performance levels.", "Understanding that TIA categories and ISO classes are equivalent (not identical designation systems) is essential for specifying cabling on international projects."]
+  },
+  {
+    "id": 1619,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In T568A pin assignments, which pair (by TIA pair number) terminates on pins 3 and 6?",
+    "o": ["Pair 1", "Pair 2", "Pair 3", "Pair 4"],
+    "a": 1,
+    "w": "In T568A, Pair 2 terminates on pins 3 and 6, straddling the center Pair 1. Pair 1 (blue) is on the center pins 4 and 5. Pair 3 (green) is on pins 1 and 2 in T568A. Pair 4 (brown) is on pins 7 and 8.",
+    "k": ["T568A pair assignment: Pair 3 on pins 1-2, Pair 2 on pins 3 and 6, Pair 1 on pins 4-5, Pair 4 on pins 7-8 — Pair 2 straddles the central Pair 1.", "Pair 2 (orange in T568A) occupies the 'split' position at pins 3 and 6 because pair 2 historically carried the primary data pair, placed symmetrically around the center voice pair for impedance continuity.", "In T568B, Pair 2 moves to pins 1-2 and Pair 3 moves to pins 3-6, which is the only difference between the two wiring schemes."]
+  },
+  {
+    "id": 1620,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In T568A pin assignments, which pair terminates on pins 1 and 2?",
+    "o": ["Pair 1 (blue)", "Pair 2 (orange)", "Pair 3 (green)", "Pair 4 (brown)"],
+    "a": 2,
+    "w": "In T568A, Pair 3 (green) terminates on pins 1 and 2. Pair 1 (blue) is on pins 4 and 5. Pair 2 (orange) is on pins 3 and 6. Pair 4 (brown) is on pins 7 and 8. In T568B the positions of Pairs 2 and 3 are swapped, placing Pair 2 (orange) on pins 1 and 2 instead.",
+    "k": ["T568A places Pair 3 (green) on pins 1-2; this is the primary difference from T568B which places Pair 2 (orange) on pins 1-2.", "Pins 1 and 2 carry the transmit/receive pair in 100BASE-TX and 1000BASE-T signaling — knowing which pair is on those pins is critical for crossover cable identification.", "Memory aid for T568A: G-O-B-Br (Green on 1-2, Orange on 3-6, Blue on 4-5, Brown on 7-8) — the letters go alphabetically for the first color in each pair."]
+  },
+  {
+    "id": 1621,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In T568A pin assignments, which pair terminates on pins 7 and 8?",
+    "o": ["Pair 1 (blue)", "Pair 2 (orange)", "Pair 3 (green)", "Pair 4 (brown)"],
+    "a": 3,
+    "w": "In T568A, Pair 4 (brown) terminates on pins 7 and 8. Pair 1 (blue) is on pins 4 and 5. Pair 2 (orange) is on pins 3 and 6. Pair 3 (green) is on pins 1 and 2. Pair 4 on pins 7 and 8 is identical in both T568A and T568B.",
+    "k": ["Pair 4 (brown) at pins 7-8 is constant between T568A and T568B — only Pairs 2 and 3 swap positions between the two wiring schemes.", "In 1000BASE-T Gigabit Ethernet, all four pairs (including Pair 4 on pins 7-8) carry data simultaneously using 4-pair full-duplex transmission.", "Complete T568A map: Pair 3 (green) = 1-2, Pair 2 (orange) = 3 and 6, Pair 1 (blue) = 4-5, Pair 4 (brown) = 7-8."]
+  },
+  {
+    "id": 1622,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In T568B pin assignments, which pair terminates on pins 7 and 8?",
+    "o": ["Pair 1 (blue)", "Pair 2 (orange)", "Pair 3 (green)", "Pair 4 (brown)"],
+    "a": 3,
+    "w": "In T568B, Pair 4 (brown) terminates on pins 7 and 8, identical to T568A. Pair 1 (blue) is on pins 4 and 5 in both T568A and T568B. Pair 2 (orange) is on pins 1 and 2 in T568B. Pair 3 (green) is on pins 3 and 6 in T568B.",
+    "k": ["Pair 4 (brown) on pins 7-8 is the same in both T568A and T568B — this pair's position never changes between the two wiring schemes.", "The only difference between T568A and T568B: Pair 2 (orange) and Pair 3 (green) swap — in T568B, orange goes to 1-2 and green goes to 3 and 6; in T568A, green is on 1-2 and orange on 3-6.", "T568B full map: Pair 2 (orange) = 1-2, Pair 3 (green) = 3 and 6, Pair 1 (blue) = 4-5, Pair 4 (brown) = 7-8."]
+  },
+  {
+    "id": 1623,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "How do solid conductor patch cords compare to stranded conductor patch cords of the same gauge in terms of insertion loss?",
+    "o": ["Solid conductor cords have higher insertion loss due to increased skin effect", "Solid conductor cords provide better (lower) insertion loss characteristics than stranded cords", "Solid and stranded conductors have identical insertion loss at all frequencies", "Solid conductor cords have 50% higher insertion loss than stranded cords"],
+    "a": 1,
+    "w": "Solid conductor patch cords provide better insertion loss characteristics than stranded ones because solid conductors have lower DC resistance and a more consistent conductor cross-section, resulting in less signal attenuation. Solid conductors do not have higher insertion loss — the opposite is true. Stranded conductors have up to 20% higher attenuation than solid conductors of the same gauge due to inter-strand resistance. 50% higher loss for solid cords is incorrect — it is stranded cords that have higher loss.",
+    "k": ["Solid conductors offer better insertion loss (lower attenuation) than stranded conductors because the single continuous wire has no inter-strand contact resistance and the full conductor cross-section is available for current flow.", "Stranded conductors attenuate up to 20% more than solid cords of the same gauge because current must navigate the contact interfaces between strands, increasing effective resistance.", "Despite better insertion loss, solid conductor cords are not recommended for patch cord use because they crack and fail mechanically with repeated bending — the flexibility advantage of stranded conductors outweighs the small insertion loss penalty in short cord applications."]
+  },
+  {
+    "id": 1624,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "What conductor types are permitted in four-pair equipment cords and patch cords?",
+    "o": ["Solid conductors only", "Stranded conductors only", "Either solid or stranded conductors", "Braided conductors only"],
+    "a": 2,
+    "w": "Four-pair cords used as equipment cords or patch cords may use either solid or stranded conductors. Solid conductors are not the only permitted type for patch cords, though they offer better insertion loss. Stranded conductors are commonly used for flexibility but are not the exclusive permitted type. Braided conductors are not a standard conductor construction for balanced twisted-pair cabling.",
+    "k": ["TIA-568 permits both solid and stranded conductors in four-pair equipment cords and patch cords, giving designers flexibility to select based on the application's priorities.", "Stranded conductors are typically chosen for patch cords because their flexibility resists fatigue from repeated bending during MACs; solid conductors are chosen when insertion loss performance takes priority.", "The conductor type selection affects the modular plug contact design required — stranded cords use single-blade contacts while solid cords use three-blade contacts; using the wrong plug type causes premature electrical failure."]
+  },
+  {
+    "id": 1625,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "LSA-style IDC connectors are known for offering which characteristic?",
+    "o": ["The highest frequency performance of any IDC connector", "Versatile configurations for cross-connecting and distribution", "Compatibility only with solid conductors", "A tool-free installation process"],
+    "a": 1,
+    "w": "LSA-style IDC connectors offer versatile configurations, making them suitable for a range of cross-connect, distribution, and building-wiring applications. LSA connectors are not specifically the highest frequency IDC connector — 110-style connectors and other types also support high-frequency applications. LSA connectors work with both solid and stranded conductors. LSA termination requires an IDC punch-down tool; they are not tool-free.",
+    "k": ["LSA-style (Lötverbindung, Schneidklemm, Auflegeverbindung) IDC connectors are manufactured by Krone and provide insulation displacement connections that are widely used in European telecom distribution applications.", "Their versatility includes multi-conductor strip configurations, stackable module designs, and compatibility with a range of conductor gauges — making them adaptable to main distribution frames, building distribution frames, and floor wiring applications.", "LSA, 110-style, and BIX-style are the three primary IDC connector families used in premises telecommunications distribution hardware; each has specific installation tool requirements and application advantages."]
+  },
+  {
+    "id": 1626,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In the classification of balanced twisted-pair cable transmission parameters, capacitance (C) is categorized as what type of parameter?",
+    "o": ["A tertiary transmission parameter", "A secondary transmission parameter", "A primary transmission parameter", "An environmental parameter"],
+    "a": 2,
+    "w": "Capacitance (C) is classified as a primary transmission parameter for balanced twisted-pair cabling, measured during manufacturing to characterize the cable's fundamental electrical geometry. Secondary parameters include insertion loss and resistance unbalance. Tertiary parameter is not a standard category in cable parameter classification. Environmental parameters relate to operating conditions, not cable electrical characteristics.",
+    "k": ["Primary transmission parameters (including capacitance, characteristic impedance, and balance) define the cable's fundamental electrical geometry — they are inherent structural properties of the cable's construction.", "Capacitance per unit length determines impedance characteristics and affects signal propagation velocity; it is measured as a structural manufacturing parameter rather than a field performance parameter.", "Secondary parameters like insertion loss and resistance unbalance are derived from or dependent upon the primary parameters; understanding this hierarchy is important for interpreting cable specification sheets and test reports."]
+  },
+  {
+    "id": 1627,
+    "test": 7,
+    "testName": "ICT Cables and Connecting Hardware",
+    "chapter": "ICT Cables and Connecting Hardware",
+    "q": "In the hierarchy of balanced twisted-pair cable transmission parameters, insertion loss is classified as what type of parameter?",
+    "o": ["A primary transmission parameter", "A secondary transmission parameter", "A reference parameter", "An installation parameter"],
+    "a": 1,
+    "w": "Insertion loss is classified as a secondary transmission parameter for balanced twisted-pair cabling. Primary parameters include capacitance and characteristic impedance. Secondary parameters are derived from the primary parameters and measured as performance characteristics. Reference and installation parameters are not standard cable parameter classifications.",
+    "k": ["Secondary transmission parameters — including insertion loss, resistance unbalance, and return loss — are measured field performance metrics derived from the cable's primary structural parameters.", "Insertion loss being a secondary parameter means it is affected by and derived from the cable's primary parameters (capacitance, impedance geometry) rather than being a direct structural property.", "Field testing focuses on secondary parameters like insertion loss and NEXT because they directly predict channel performance; primary parameters like capacitance are verified during manufacturing, not typically re-measured in the field."]
   }
 ]
