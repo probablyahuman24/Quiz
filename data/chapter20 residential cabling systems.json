@@ -1097,5 +1097,45 @@
       "Speaker cabling for whole-home audio (in-ceiling and in-wall speakers) and security system cabling (intrusion sensors, cameras, access control) are the specialty components that distinguish Grade 3 from Grade 2's purely telecommunications focus \u2014 Grade 3 is a holistic low-voltage cabling system, not just a telecommunications cable plant.",
       "Grade 3 represents the highest residential cabling grade and is typically specified for luxury homes, technology-oriented buyers, or properties where home automation systems (smart home integration, whole-home audio/video) are planned as core features."
     ]
+  },
+  {
+    "id": 2356,
+    "test": 20,
+    "testName": "Residential Cabling Systems",
+    "chapter": "Residential Cabling Systems",
+    "q": "What are the minimum CTR dimensions for a Grade 3 installation serving 5 tenant units in an MDU?",
+    "o": [
+      "610 mm (24 in) wide and 457 mm (18 in) high — smaller than Grade 2 since Grade 3 uses fiber",
+      "775 mm (30.5 in) wide and 610 mm (24 in) high — the same as Grade 2 for 5 units",
+      "914 mm (36 in) wide and 762 mm (30 in) high — larger than Grade 2 to accommodate fiber splicing",
+      "No minimum is specified for Grade 3 — enclosure size is contractor's choice"
+    ],
+    "a": 1,
+    "w": "The minimum CTR dimensions for a Grade 3 installation serving 5 tenant units are 775 mm (30.5 in) wide and 610 mm (24 in) high — the same dimensions as Grade 2 for the same unit count. Grade 3 does not require a smaller enclosure. The larger 914 × 762 mm dimensions exceed the minimum. TIA-570 specifies minimum dimensions, not contractor choice.",
+    "k": [
+      "TIA-570 specifies identical minimum CTR dimensions (775 mm wide × 610 mm high) for both Grade 2 and Grade 3 serving 5 tenant units; the same physical enclosure size accommodates both grades because the additional Grade 3 components (multimode fiber, speaker cabling, security cabling) fit within the same enclosure footprint at 5-unit scale.",
+      "The reason Grade 3 does not require a larger CTR than Grade 2 at 5 units is that Grade 3's additional components (fiber and optional specialty cabling) are relatively compact compared to the copper termination hardware; the 775 × 610 mm minimum provides sufficient space for both grades.",
+      "At higher unit counts (more than 5 units), CTR dimensions increase regardless of grade to accommodate the larger termination volume; the minimum dimensions scale with unit count rather than grade level at the 5-unit scale."
+    ]
+  },
+  {
+    "id": 2357,
+    "test": 20,
+    "testName": "Residential Cabling Systems",
+    "chapter": "Residential Cabling Systems",
+    "q": "Must all telecommunications outlet locations in a residential installation have identical cable configurations?",
+    "o": [
+      "Yes, all outlets must be identical to simplify installation and testing",
+      "Yes, all outlets must match the highest-grade cable specification in the residence",
+      "No, not all outlets need identical configurations — configuration may vary by location",
+      "No, but all outlets must have at least two Cat6 cables regardless of location"
+    ],
+    "a": 2,
+    "w": "Not all outlets in a residential cabling system need to have identical configurations — different rooms may have different outlet types depending on their anticipated use. Requiring identical outlets at all locations would waste cable in areas needing only basic service. Outlets do not need to match the highest-grade specification. Grade 1 outlets include only one Cat6 and one coaxial cable, not two Cat6 cables.",
+    "k": [
+      "TIA-570 explicitly states that not all outlet locations need identical configurations, allowing designers to tailor each outlet to the expected use of each room — a home office outlet may include two Cat6 and two coaxial cables while a bedroom outlet may have only one Cat6 and one coaxial cable.",
+      "Outlet configuration flexibility reduces installation cost by avoiding over-cabling rooms that will never need multiple services; a utility room or bathroom may need only a basic Cat6 outlet while an entertainment room benefits from the full Grade 2 complement of cables.",
+      "This flexibility does not reduce the minimum requirement of at least one telecommunications outlet in each living area — every room must have at least one outlet, but its specific cable configuration is matched to the room's expected telecommunications use."
+    ]
   }
 ]
