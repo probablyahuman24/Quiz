@@ -1020,6 +1020,26 @@
     ]
   },
   {
+    "id": 2453,
+    "test": 17,
+    "testName": "Electronic Access Control",
+    "chapter": "Electronic Access Control",
+    "q": "What characterizes event-based monitoring in an integrated security system?",
+    "o": [
+      "Independent monitoring of each system without cross-system triggers",
+      "High integration between systems enabling automated operational responses",
+      "Manual review of recorded events by security personnel only",
+      "Continuous video monitoring of all entry points simultaneously"
+    ],
+    "a": 1,
+    "w": "Event-based monitoring involves high integration between security and building systems so that an event in one system automatically triggers an operational response in another — for example, a fire alarm triggering elevator shutdown and recall. Independent monitoring of each system describes a siloed approach, not event-based monitoring. Manual review is reactive, not event-based. Continuous video monitoring is a component of VSS, not the defining characteristic of event-based monitoring.",
+    "k": [
+      "Event-based monitoring requires tight integration between systems (fire alarm, access control, elevators, HVAC) so that a single event can trigger coordinated, automated responses across multiple systems simultaneously.",
+      "A classic example of event-based monitoring: a fire alarm signal triggers elevator recall to the ground floor, releases electromagnetic door locks to allow egress, and activates smoke control fans — all automatically from a single initiating event.",
+      "Event-based monitoring is a key feature of modern ESS (Electronic Security System) design; it reduces response time, minimizes human error, and ensures life-safety systems respond consistently to building emergencies."
+    ]
+  },
+  {
     "id": 2351,
     "test": 17,
     "testName": "Electronic Access Control",

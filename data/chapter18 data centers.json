@@ -1000,6 +1000,26 @@
     ]
   },
   {
+    "id": 2454,
+    "test": 18,
+    "testName": "Data Centers",
+    "chapter": "Data Centers",
+    "q": "How many fibers does OM3 multimode fiber support for 50G Ethernet?",
+    "o": [
+      "1 fiber",
+      "2 fibers",
+      "8 fibers",
+      "32 fibers"
+    ],
+    "a": 1,
+    "w": "OM3 multimode fiber supports 50G Ethernet using 2 fibers (1 for transmit, 1 for receive), as specified for 50GBASE-SR. 8 fibers are required for 200G Ethernet over OM3. 400G Ethernet over OM3 requires either 8 fibers (using PAM4 modulation) or 32 fibers (using NRZ). A single fiber cannot support full-duplex 50G Ethernet without wavelength multiplexing schemes not used with OM3.",
+    "k": [
+      "OM3 fiber Ethernet fiber counts: 50G = 2 fibers, 200G = 8 fibers, 400G = 8 or 32 fibers — the fiber count scales with bandwidth and the modulation scheme used.",
+      "50GBASE-SR uses a single lane at 50 Gb/s over 2 OM3 fibers; this is the most fiber-efficient OM3 high-speed option for short-reach data center interconnects.",
+      "Higher Ethernet speeds require more fibers or denser modulation: 200G and 400G use parallel optics with multiple 50G or 100G lanes over separate fiber pairs, which is why 8 or more fibers are required."
+    ]
+  },
+  {
     "id": 2352,
     "test": 18,
     "testName": "Data Centers",
