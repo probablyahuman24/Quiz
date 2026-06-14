@@ -1,0 +1,56 @@
+name: Deploy Branch Preview
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compute URL-safe branch slug
+        id: slug
+        run: |
+          BRANCH="${GITHUB_REF#refs/heads/}"
+          SLUG=$(echo "$BRANCH" | sed 's|/|-|g; s|[^a-zA-Z0-9-]|-|g' | tr '[:upper:]' '[:lower:]')
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+          echo "url=https://probablyahuman24.github.io/Quiz/preview/$SLUG/" >> $GITHUB_OUTPUT
+
+      - name: Disable service worker in preview
+        run: |
+          python3 - <<'PYEOF'
+          import re
+          content = open('index.html').read()
+          # Remove SW registration to prevent the main-site SW from caching
+          # over preview files (preview is visual-only, offline not needed)
+          content = re.sub(
+            r"<script>\s*if \('serviceWorker' in navigator\).*?</script>",
+            '',
+            content,
+            flags=re.DOTALL
+          )
+          open('index.html', 'w').write(content)
+          PYEOF
+
+      - name: Deploy preview
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .
+          target-folder: preview/${{ steps.slug.outputs.slug }}
+          clean: false
+
+      - name: Print preview URL
+        run: |
+          echo ""
+          echo "┌─────────────────────────────────────────────────────────────┐"
+          echo "│  Preview deployed:                                          │"
+          echo "│  ${{ steps.slug.outputs.url }}"
+          echo "└─────────────────────────────────────────────────────────────┘"
+          echo ""
