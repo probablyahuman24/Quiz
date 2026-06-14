@@ -1,6 +1,6 @@
 {
-  "name": "RCDD Quiz Bank",
-  "short_name": "RCDD Quiz",
+  "name": "RCDD Exam Prep",
+  "short_name": "RCDD Prep",
   "start_url": "/Quiz/",
   "display": "standalone",
   "background_color": "#f8fafc",
