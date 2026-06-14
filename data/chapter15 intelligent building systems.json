@@ -1098,5 +1098,45 @@
       "In telecommunications rooms where FA circuits share space with data and voice cabling, the distinction between appropriately connected FA circuits (using listed terminal blocks or cross-connect blocks) and inappropriately patched FA circuits (using RJ cords) is critical for code compliance and inspection approval.",
       "The combination of red insulator clips (for visual identification) and non-RJ connections (for code compliance) creates a dual safeguard for fire alarm circuits in BAS installations: the red clips prevent accidental modification, and the non-RJ termination method ensures the connection meets life-safety listing requirements."
     ]
+  },
+  {
+    "id": 2108,
+    "test": 15,
+    "testName": "Intelligent Building Systems",
+    "chapter": "Intelligent Building Systems",
+    "q": "What benefit does integrating BAS with telecommunications cabling infrastructure provide for building automation?",
+    "o": [
+      "Eliminates the need for field-level controllers",
+      "Centralizes controllers while supporting distributed processing throughout the building",
+      "Replaces structured cabling with BAS-specific cabling for all systems",
+      "Requires all BAS devices to terminate at the building entrance facility"
+    ],
+    "a": 1,
+    "w": "Integrating BAS with telecommunications cabling infrastructure centralizes controllers while still supporting distributed processing throughout the building. This architecture allows central management and monitoring through common cabling infrastructure while distributed field devices continue to handle local sensing and control tasks. Eliminating field-level controllers would create a fully centralized system that lacks local responsiveness. Replacing structured cabling with BAS-specific cabling would undermine interoperability and increase costs. Terminating all BAS devices at the entrance facility would contradict the principle of distributed field devices.",
+    "k": [
+      "BAS integration with telecommunications cabling leverages the same horizontal and backbone infrastructure used for data and voice, meaning HVAC sensors, lighting controls, and access control readers can all share the structured cabling plant — reducing installation cost, simplifying moves/adds/changes, and enabling centralized monitoring via IP-based BAS controllers.",
+      "The centralized-controller-with-distributed-processing model mirrors IT network architecture: a central BAS controller (analogous to a network server) communicates over the structured cabling backbone to distributed field controllers (analogous to network switches), which in turn manage local sensors and actuators — providing both central oversight and local autonomy.",
+      "For the RCDD, designing BAS-ready cabling means ensuring telecommunications rooms have adequate space, power, and cooling for BAS controllers, and that horizontal cabling pathways accommodate both data and BAS device connections — enabling the centralized management that the integrated architecture depends on."
+    ]
+  },
+  {
+    "id": 2109,
+    "test": 15,
+    "testName": "Intelligent Building Systems",
+    "chapter": "Intelligent Building Systems",
+    "q": "What is the primary goal of designing horizontal and backbone cabling for BAS installations?",
+    "o": [
+      "To minimize initial installation cost regardless of future needs",
+      "To ensure all BAS devices share backbone cabling with telecommunications systems",
+      "To ensure scalability and flexibility for future BAS system enhancements",
+      "To reduce the number of telecommunications rooms required"
+    ],
+    "a": 2,
+    "w": "The primary goal of designing horizontal and backbone cabling for BAS installations is to ensure scalability and flexibility for future system enhancements. Building automation systems evolve as technologies change and building uses shift; cabling designed with scalability in mind allows new BAS devices, protocols, and capabilities to be added without rewiring. Minimizing initial cost at the expense of future adaptability is contrary to good infrastructure design principles. While BAS and telecommunications systems may share cabling infrastructure, the sharing is a means to an end — not the primary goal. Reducing telecommunications rooms is not a BAS cabling design objective.",
+    "k": [
+      "Scalability in BAS cabling design means installing conduit fill ratios and cable counts that leave room for growth — for example, leaving spare conduit capacity and installing Category 6A cabling that supports future higher-speed BAS devices, even if current devices only require Category 5e performance.",
+      "Flexibility in BAS cabling means designing pathways and spaces that accommodate changes in building use; an office floor that may later be converted to a laboratory needs BAS cabling infrastructure that can support new HVAC zones, additional access control points, and environmental monitoring without a complete recabling project.",
+      "The RCDD must balance BAS cabling scalability against budget constraints by identifying which spaces are most likely to evolve (e.g., lab areas, executive suites, data centers) and designing more robust, scalable infrastructure there, while applying standard designs in more stable areas — a risk-based approach to scalability planning."
+    ]
   }
 ]

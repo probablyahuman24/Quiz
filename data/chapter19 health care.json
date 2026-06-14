@@ -998,5 +998,65 @@
       "Environmental compatibility in ORs means ICT infrastructure must withstand surgical prep disinfectants, be positioned away from the sterile field, and be designed so equipment cleaning does not compromise connectivity; outlet covers must be gasketed or sealed against liquid ingress in scrub zones.",
       "Reliability requirements in ORs are among the most stringent in the facility: a system failure during surgery can be life-threatening; ICT infrastructure serving ORs should be on redundant power paths (dual-cord servers, emergency power), and critical systems should have backup connectivity options."
     ]
+  },
+  {
+    "id": 2353,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What environmental controls must a Technology Distribution Room (TDR) maintain relative to a Technology Equipment Center (TEC)?",
+    "o": [
+      "TDRs require more stringent controls than TECs due to floor-level exposure",
+      "TDRs maintain similar environmental controls as TECs",
+      "TDRs require no environmental controls since they only house passive cabling hardware",
+      "TDRs must be kept 5°C cooler than TECs to compensate for lower airflow"
+    ],
+    "a": 1,
+    "w": "TDRs maintain similar environmental controls as TECs because they house active networking equipment (switches, patch panels, and associated hardware) that requires the same temperature and humidity conditions. TDRs are not required to be more stringent than TECs. TDRs do house active equipment, not just passive hardware. No differential temperature requirement exists between TDRs and TECs.",
+    "k": [
+      "TDRs and TECs both house active networking equipment that requires similar environmental conditions — temperature in the 18–24°C range and relative humidity in the 30–55% range — to prevent equipment overheating, static discharge, and condensation.",
+      "Even though TDRs are smaller and serve only a floor or wing, the active distribution switches and patch equipment they contain generate heat and require stable environmental conditions; a TDR without adequate HVAC will experience the same equipment failures as an improperly cooled TEC.",
+      "The similar environmental control requirement means TDRs must have dedicated HVAC connections (ideally on emergency power) just like TECs; designing a TDR without environmental controls because it appears to be just a 'closet' is a common healthcare ICT design error."
+    ]
+  },
+  {
+    "id": 2354,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What is the function of headend equipment in a nurse call system?",
+    "o": [
+      "Headend equipment initiates patient calls from bedside stations",
+      "Headend equipment processes and routes alarms and signals within the nurse call system",
+      "Headend equipment provides backup power to corridor lights during outages",
+      "Headend equipment connects the nurse call system to the WMTS network"
+    ],
+    "a": 1,
+    "w": "Headend equipment in nurse call systems processes and routes alarms and signals — it receives calls from initiation devices, determines the appropriate notification outputs, and routes signals to the correct notification devices. Initiation is performed by bedside stations, bathroom stations, and similar devices. Backup power is provided by UPS systems. WMTS connectivity is a separate wireless telemetry system.",
+    "k": [
+      "The headend is the central processing unit of the nurse call system: it receives signals from all initiation devices (bed stations, bathroom pull cords, staff emergency stations), processes each call according to its type and priority, and activates the appropriate notification devices (corridor lights, annunciator panels, paging systems).",
+      "Headend equipment also maintains a log of all call events with timestamps, providing an audit trail that healthcare facilities use for compliance reporting, response time measurement, and patient care quality improvement.",
+      "Unlike fire alarm control panels, nurse call headend equipment is governed by UL 1069 rather than NFPA 72; the headend processes life-safety signals within the nursing unit but is electrically isolated from other building systems to prevent interference with its signaling functions."
+    ]
+  },
+  {
+    "id": 2355,
+    "test": 19,
+    "testName": "Health Care",
+    "chapter": "Health Care",
+    "q": "What is the real-time tracking characteristic of passive RFID systems used in healthcare?",
+    "o": [
+      "Passive RFID cannot provide real-time tracking due to its limited read range",
+      "Passive RFID is trackable in real-time when combined with a network of readers throughout the facility",
+      "Passive RFID requires line-of-sight and is therefore not suitable for real-time tracking",
+      "Passive RFID provides real-time tracking at distances up to 100 meters"
+    ],
+    "a": 1,
+    "w": "Passive RFID systems are trackable in real-time when a network of readers is distributed throughout the facility at doorways and key locations; as tagged assets pass readers, their location is updated in real time. Passive RFID cannot provide real-time tracking without infrastructure, but with distributed readers it can. RFID does not require line-of-sight — radio signals penetrate non-metallic materials. The typical passive RFID UHF read range is 1–10 meters, not 100 meters.",
+    "k": [
+      "Passive RFID achieves real-time tracking capability through infrastructure: readers placed at room entrances, corridor intersections, and key locations throughout the facility detect tagged assets as they pass, providing location updates in seconds without requiring battery power in the tag.",
+      "The passive RFID approach to real-time tracking is infrastructure-intensive but tag-cost-efficient: hundreds or thousands of inexpensive (under $1) passive tags can be deployed for assets like IV pumps, wheelchairs, and carts, while the cost of distributed readers is amortized across the entire asset inventory.",
+      "The combination of real-time trackability and low tag cost makes passive UHF RFID the preferred technology for large-scale healthcare asset management programs, while active RFID (with higher tag cost but longer read range) is reserved for higher-value assets requiring more precise location updates."
+    ]
   }
 ]
