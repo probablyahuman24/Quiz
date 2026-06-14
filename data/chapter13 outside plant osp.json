@@ -1298,5 +1298,25 @@
       "Poles must withstand the same horizontal load as specified for power poles of equivalent class; this equal-loading requirement ensures that communications poles sharing corridors with power infrastructure have equivalent structural resilience, preventing differential failure during storms.",
       "The horizontal load test at 610 mm from the top is critical for multi-tenant pole applications where communications cables are attached below power conductors; an inadequate pole under horizontal loading could fail and bring both communications and power infrastructure down simultaneously."
     ]
+  },
+  {
+    "id": 2455,
+    "test": 13,
+    "testName": "Outside Plant (OSP)",
+    "chapter": "Outside Plant (OSP)",
+    "q": "Where is aerial plant designed to be placed in relation to pole lines?",
+    "o": [
+      "On the building side of pole lines",
+      "On the roadside of pole lines",
+      "Underground alongside pole lines",
+      "At the top of pole lines only"
+    ],
+    "a": 1,
+    "w": "Aerial plant is designed for placement on the roadside of pole lines, not the building side. This positioning keeps the telecommunications infrastructure accessible for maintenance vehicles and separates it from building-side electrical equipment. Underground placement is a different method entirely. Aerial plant is installed on arm brackets at specific heights on poles, not only at the top.",
+    "k": [
+      "Aerial plant must be placed on the roadside of pole lines; this keeps telecom cables away from building-side electrical equipment and accessible for bucket trucks and maintenance crews.",
+      "The roadside placement also allows for consistent cable routing along rights-of-way without conflicting with building entrances or service drops on the structure side.",
+      "Knowing pole-side placement rules is critical when designing aerial route paths; building-side placement would create maintenance access issues and potential conflicts with electrical equipment."
+    ]
   }
 ]

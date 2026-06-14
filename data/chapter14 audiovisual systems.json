@@ -1057,5 +1057,25 @@
       "The RCDD must understand that sound masking is a complementary tool in a speech privacy strategy that also includes room acoustics (absorption, barriers), architectural design (walls with appropriate STC ratings), and layout planning; specifying sound masking alone as a privacy solution will fail to meet total privacy requirements in sensitive areas such as healthcare consultation rooms or executive offices.",
       "Practical sound masking systems are tuned to approximately NC-45 to NC-50 levels in open offices; levels above NC-50 become uncomfortable for occupants, setting an upper bound on achievable masking effect\u2014which is why total privacy through masking alone is physically unachievable without creating an unacceptably loud environment."
     ]
+  },
+  {
+    "id": 2456,
+    "test": 14,
+    "testName": "Audiovisual Systems",
+    "chapter": "Audiovisual Systems",
+    "q": "What ceiling finish should be avoided in video conferencing rooms?",
+    "o": [
+      "Acoustic tile ceilings",
+      "High-gloss finishes",
+      "Textured drywall ceilings",
+      "Open-grid suspended ceilings"
+    ],
+    "a": 1,
+    "w": "Ceilings in video conferencing rooms should avoid high-gloss finishes because they create specular reflections that cause lighting hotspots visible on camera, degrade video quality, and interfere with properly balanced lighting schemes. Acoustic tile, textured drywall, and open-grid suspended ceilings are diffuse or absorptive surfaces that reduce unwanted light reflections and are acceptable or even preferred in video room design.",
+    "k": [
+      "High-gloss ceiling finishes in video rooms create bright specular reflections that appear as lighting hotspots on camera; matte or textured finishes diffuse light uniformly and provide better video quality.",
+      "Video room lighting design requires careful control of all reflective surfaces \u2014 not just walls and floors \u2014 because gloss ceilings bounce artificial light in directions that create uneven illumination on participants' faces.",
+      "Room acoustics and video quality in telepresence rooms are governed by surface material choices; the ceiling is often overlooked but is a major contributor to both unwanted reflections and reverberation."
+    ]
   }
 ]
