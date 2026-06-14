@@ -1098,5 +1098,65 @@
       "Dial-up alarm options use a modem to call a monitoring center or pager when an alarm condition occurs; while predating IP-based monitoring, dial-up remains specified because it requires only a telephone line and operates independently of the data network infrastructure.",
       "The specification of cabled and dial-up options reflects the need for alarm paths that remain functional during the power events they are designed to report; IP-based monitoring can fail if the network switch or router loses power during the same event triggering the alarm."
     ]
+  },
+  {
+    "id": 1851,
+    "test": 10,
+    "testName": "Power Distribution",
+    "chapter": "Power Distribution",
+    "q": "In ac power circuits, where is real power measured in the system?",
+    "o": [
+      "On the source side of the system",
+      "On the load side of the system",
+      "At the utility meter only",
+      "At the midpoint of the distribution circuit"
+    ],
+    "a": 1,
+    "w": "Real power in ac circuits is measured on the load side of the system, where it is consumed by the connected equipment. The source side supplies both real and reactive power, but the meaningful real power consumption occurs at the load. Utility meters measure total energy delivered, not specifically real power on the load side. The midpoint is not the defined measurement location for real power.",
+    "k": [
+      "Real power (measured in watts or kilowatts) represents the portion of ac power that does actual work — heating, lighting, rotating motors — and is measured at the load where this work is performed.",
+      "On the source side, the generator or utility supplies apparent power (kVA), which includes both real power (kW) consumed by the load and reactive power (kVAR) cycling between source and load; real power is specifically what the load absorbs.",
+      "The distinction between load-side real power measurement and source-side apparent power is critical for understanding power factor: a load drawing 80 kW of real power from a 100 kVA source has a 0.8 power factor, and both measurements are needed to determine this ratio."
+    ]
+  },
+  {
+    "id": 1852,
+    "test": 10,
+    "testName": "Power Distribution",
+    "chapter": "Power Distribution",
+    "q": "What is the Ohm's Law power formula used in power distribution calculations?",
+    "o": [
+      "P = V / I",
+      "P = V × I",
+      "P = I / V",
+      "P = V² / I"
+    ],
+    "a": 1,
+    "w": "The Ohm's Law power formula is P = V × I, where Power equals Voltage multiplied by Current. P = V / I would yield units of ohms (resistance), not watts. P = I / V produces an inverse relationship that does not represent power. P = V² / I is not a standard form of the power formula; the correct resistance-based form is P = V² / R.",
+    "k": [
+      "P = V × I is the fundamental power formula for both dc circuits and purely resistive ac circuits; it states that power (watts) equals the product of voltage (volts) and current (amperes).",
+      "Combined with Ohm's Law (V = I × R), two derived power formulas are also valid: P = I² × R (for current through a resistance) and P = V² / R (for voltage across a resistance).",
+      "In ac circuits with reactive loads, P = V × I applies only when V and I are in phase (resistive loads); for reactive loads, real power P = V × I × cos(θ), where θ is the phase angle between voltage and current."
+    ]
+  },
+  {
+    "id": 1853,
+    "test": 10,
+    "testName": "Power Distribution",
+    "chapter": "Power Distribution",
+    "q": "What three factors does conductor ampacity depend on?",
+    "o": [
+      "Conductor color, conduit material, and ambient humidity",
+      "Conductor size, temperature rating, and insulation type",
+      "Wire gauge, circuit length, and load power factor",
+      "Voltage rating, phase count, and conduit fill percentage"
+    ],
+    "a": 1,
+    "w": "Conductor ampacity depends on conductor size (larger cross-section carries more current), temperature rating (higher temperature rating allows more current before insulation damage), and insulation type (different insulation materials have different thermal characteristics). Conductor color, conduit material, and humidity do not determine ampacity. Circuit length and power factor affect voltage drop but not ampacity. Voltage rating, phase count, and conduit fill are separate design factors.",
+    "k": [
+      "Ampacity is determined by the amount of heat a conductor can sustain without degrading its insulation: larger conductors have more surface area and lower resistance (less heat generated per ampere), higher temperature-rated insulations tolerate more heat before failing, and insulation type determines the thermal threshold.",
+      "Conduit fill percentage (derating) is an additional factor that affects the effective ampacity when multiple current-carrying conductors are bundled — heat from adjacent conductors raises the ambient temperature around each conductor, requiring derating.",
+      "NEC Table 310.16 tabulates conductor ampacity by size, insulation temperature rating (60°C, 75°C, 90°C), and conductor material (copper vs. aluminum), reflecting all three primary ampacity factors."
+    ]
   }
 ]
