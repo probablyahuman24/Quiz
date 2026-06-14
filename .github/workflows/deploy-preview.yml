@@ -12,7 +12,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout preview branch
+        uses: actions/checkout@v4
+        with:
+          path: preview-content
+
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-content
 
       - name: Compute URL-safe branch slug
         id: slug
@@ -22,35 +31,42 @@ jobs:
           echo "slug=$SLUG" >> $GITHUB_OUTPUT
           echo "url=https://probablyahuman24.github.io/Quiz/preview/$SLUG/" >> $GITHUB_OUTPUT
 
-      - name: Disable service worker in preview
+      - name: Disable service worker in preview copy
         run: |
           python3 - <<'PYEOF'
           import re
-          content = open('index.html').read()
-          # Remove SW registration to prevent the main-site SW from caching
-          # over preview files (preview is visual-only, offline not needed)
+          content = open('preview-content/index.html').read()
+          # Remove SW registration to prevent the main-site cache from
+          # masking preview changes (preview is visual-only, offline not needed)
           content = re.sub(
             r"<script>\s*if \('serviceWorker' in navigator\).*?</script>",
             '',
             content,
             flags=re.DOTALL
           )
-          open('index.html', 'w').write(content)
+          open('preview-content/index.html', 'w').write(content)
           PYEOF
 
-      - name: Deploy preview
+      - name: Ensure gh-pages root has main site content
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: .
+          folder: main-content
+          clean: false
+
+      - name: Deploy preview to subfolder
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: preview-content
           target-folder: preview/${{ steps.slug.outputs.slug }}
           clean: false
 
       - name: Print preview URL
         run: |
           echo ""
-          echo "┌─────────────────────────────────────────────────────────────┐"
-          echo "│  Preview deployed:                                          │"
+          echo "┌──────────────────────────────────────────────────────────────┐"
+          echo "│  Preview deployed!                                           │"
           echo "│  ${{ steps.slug.outputs.url }}"
-          echo "└─────────────────────────────────────────────────────────────┘"
+          echo "└──────────────────────────────────────────────────────────────┘"
           echo ""
