@@ -780,7 +780,7 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
         el('div', { style: { fontSize:12, fontWeight:400, color:t.textMuted, letterSpacing:'-0.12px' } }, 'BICSI · RCDD'),
         el('h1', { style: { fontSize:24, fontWeight:600, color:t.text, letterSpacing:'-0.374px' } }, 'Practice Test')
       ),
-      el('button', { onClick:onToggleDark, title: dark?'Light mode':'Dark mode', style: { background:t.pill, border:'1px solid '+t.border, borderRadius:9999, width:36, height:36, fontSize:16, display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', flexShrink:0 } }, dark ? '○' : '●'),
+      el('button', { onClick:onToggleDark, title: dark?'Switch to light':'Switch to dark', style: { background:t.pill, border:'1px solid '+t.border, borderRadius:9999, width:38, height:38, fontSize:18, display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', flexShrink:0, lineHeight:1 } }, dark ? '☀' : '☽'),
       el('div', { style: { textAlign:'right' } },
         el('div', { style: { fontSize:24, fontWeight:600, color:t.blue, lineHeight:1, letterSpacing:'-0.374px' } }, overallScore!==null?overallScore+'%':'—'),
         el('div', { style: { fontSize:12, color:t.textMuted, letterSpacing:'-0.12px' } }, 'score')
@@ -816,8 +816,8 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
         const isConfirming = resetConfirm===test.id;
         const scorePctColor = ts.pct!==null ? (ts.pct>=80?'#059669':ts.pct>=60?'#d97706':'#dc2626') : t.border;
         return el('div', { key:test.id, style: { marginBottom:9, position:'relative' } },
-          el('button', { onClick:()=>{ if(!isConfirming) onSelect(test.id); }, style: { width:'100%', background:t.card, border:'1px solid '+(isComplete?t.border:t.border), borderRadius:18, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, textAlign:'left', opacity:isConfirming?0.5:1, cursor:'pointer' } },
-            el('div', { style: { width:38, height:38, borderRadius:11, background:COLORS[test.id]+'18', color:COLORS[test.id], display:'flex', alignItems:'center', justifyContent:'center', fontSize:14, fontWeight:600, flexShrink:0, letterSpacing:'-0.224px' } }, test.id),
+          el('button', { onClick:()=>{ if(!isConfirming) onSelect(test.id); }, style: { width:'100%', background:t.card, border:'1px solid '+(isComplete?COLORS[test.id]+'55':t.border), borderRadius:18, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, textAlign:'left', opacity:isConfirming?0.5:1, cursor:'pointer', borderLeft:'4px solid '+COLORS[test.id] } },
+            el('div', { style: { width:38, height:38, borderRadius:11, background:COLORS[test.id], color:'#ffffff', display:'flex', alignItems:'center', justifyContent:'center', fontSize:14, fontWeight:600, flexShrink:0, letterSpacing:'-0.224px' } }, test.id),
             el('div', { style: { flex:1, minWidth:0 } },
               el('div', { style: { display:'flex', alignItems:'center', gap:6, marginBottom:2 } },
                 el('span', { style: { fontSize:14, fontWeight:600, color:t.text, letterSpacing:'-0.224px' } }, test.name)
