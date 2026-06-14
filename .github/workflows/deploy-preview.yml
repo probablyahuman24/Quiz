@@ -14,14 +14,6 @@ jobs:
     steps:
       - name: Checkout preview branch
         uses: actions/checkout@v4
-        with:
-          path: preview-content
-
-      - name: Checkout main branch
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          path: main-content
 
       - name: Compute URL-safe branch slug
         id: slug
@@ -35,7 +27,7 @@ jobs:
         run: |
           python3 - <<'PYEOF'
           import re
-          content = open('preview-content/index.html').read()
+          content = open('index.html').read()
           # Remove SW registration to prevent the main-site cache from
           # masking preview changes (preview is visual-only, offline not needed)
           content = re.sub(
@@ -44,21 +36,27 @@ jobs:
             content,
             flags=re.DOTALL
           )
-          open('preview-content/index.html', 'w').write(content)
+          open('index.html', 'w').write(content)
           PYEOF
+
+      - name: Extract main branch to temp dir (bootstrap gh-pages root)
+        run: |
+          git fetch origin main
+          mkdir -p /tmp/main-site
+          git archive origin/main | tar -x -C /tmp/main-site
 
       - name: Ensure gh-pages root has main site content
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: main-content
+          folder: /tmp/main-site
           clean: false
 
       - name: Deploy preview to subfolder
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: preview-content
+          folder: .
           target-folder: preview/${{ steps.slug.outputs.slug }}
           clean: false
 
