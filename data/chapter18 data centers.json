@@ -998,5 +998,25 @@
       "The 100\u2013400 hour annual maintenance window for F1 represents basic-to-moderate facility complexity; 100 hours (about 4 days) is achievable in a single annual maintenance shutdown, while 400 hours indicates a facility that requires frequent partial shutdowns for component maintenance.",
       "F1 is appropriate for facilities with low criticality (development environments, secondary offices, non-production workloads) where annual maintenance shutdowns are acceptable and 99% uptime (about 3.65 days downtime per year) meets business requirements."
     ]
+  },
+  {
+    "id": 2352,
+    "test": 18,
+    "testName": "Data Centers",
+    "chapter": "Data Centers",
+    "q": "Which data center facility classes permit maintenance to be performed during unscheduled (off-hours) times?",
+    "o": [
+      "F3 and above only",
+      "F4 and F5 only",
+      "F2 and below",
+      "All classes permit unscheduled maintenance"
+    ],
+    "a": 2,
+    "w": "Maintenance during unscheduled hours is allowed in Class F2 and below (F0, F1, and F2). Classes F3 and above require concurrent maintainability — meaning maintenance can be performed on any component without disrupting operations, making the scheduling of maintenance during off-hours unnecessary and unrelated to their design requirement. F4 requires automated systems rather than depending on unscheduled maintenance windows.",
+    "k": [
+      "F2 and below permit maintenance during unscheduled hours because these classes lack the redundancy needed to perform maintenance while the data center is fully operational; maintenance typically requires planned shutdowns or reduced capacity.",
+      "F3 achieves concurrent maintainability — any component can be maintained while the data center operates at full capacity — eliminating the need for unscheduled maintenance windows; maintenance can be performed at any time without disrupting operations.",
+      "The distinction between 'unscheduled maintenance allowed' (F2 and below) and 'concurrent maintainability' (F3 and above) reflects a fundamental difference in data center architecture: F2 facilities require maintenance windows because they lack redundant components, while F3+ facilities have redundant systems that allow maintenance while the primary system carries the load."
+    ]
   }
 ]

@@ -1395,5 +1395,85 @@
       "This principle applies to both copper and fiber terminations: excess fiber slack in particular must be carefully coiled and stored to avoid damage from bend radius violations.",
       "In design drawings, cross-connect hardware placement should be coordinated with the pathway entry points shown on the telecommunications space plan."
     ]
+  },
+  {
+    "id": 1361,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "When equipment racks include angled patch panels, what type of cable management hardware should be used?",
+    "o": [
+      "Horizontal cable management panels only",
+      "Vertical cable management hardware",
+      "Cable lacing bars mounted behind the rack",
+      "Overhead cable trays positioned above the rack"
+    ],
+    "a": 1,
+    "w": "Equipment racks with angled patch panels should use vertical cable management hardware to properly route and manage cables from the angled panels to the rest of the cabling infrastructure. Horizontal cable management panels are designed for standard flat-face patch panels and do not accommodate the cable routing geometry created by angled panels. Cable lacing bars and overhead trays are supplemental management elements, not the primary solution for angled patch panel installations.",
+    "k": [
+      "Angled patch panels orient connector faces at a slant rather than flat-front, which routes patch cords downward or sideward \u2014 vertical cable managers installed beside the panels capture and guide these cords cleanly.",
+      "Without vertical cable management, patch cords from angled panels hang loosely across other equipment, violating minimum bend radius requirements and creating an administration nightmare.",
+      "Vertical cable managers typically mount on the 0U (zero-rack-unit) space at the sides of the rack and provide fingers or channels that control cord routing along the full height of the rack."
+    ]
+  },
+  {
+    "id": 1362,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "How should noise-generating equipment in a telecommunications space be treated?",
+    "o": [
+      "It should be relocated to an adjacent electrical room",
+      "It should be enclosed with sound barriers",
+      "It should be powered off during business hours",
+      "It should be mounted on vibration-isolated racks only"
+    ],
+    "a": 1,
+    "w": "Noise-generating equipment in telecommunications spaces should be enclosed with sound barriers to prevent acoustic noise from creating hazardous or uncomfortable working conditions for technicians in the space. Relocating to an electrical room creates EMI risks and violates standard telecommunications space design principles. Equipment cannot be powered off during business hours as it must operate continuously. Vibration isolation addresses mechanical vibration to other equipment, not acoustic noise levels for personnel.",
+    "k": [
+      "Telecommunications spaces can contain noisy equipment such as UPS fans, cooling units, and high-density servers; enclosing them with acoustic barriers protects technicians who work in the space for extended periods.",
+      "Acoustic noise above 85 dB(A) averaged over an 8-hour shift requires hearing protection under OSHA and similar regulations \u2014 sound barriers bring equipment below this threshold.",
+      "Sound barriers in telecom spaces must still allow adequate ventilation and cooling airflow for the enclosed equipment \u2014 acoustic treatment and thermal management must be co-designed."
+    ]
+  },
+  {
+    "id": 1363,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "Where should cable trays be installed in equipment rooms with access flooring?",
+    "o": [
+      "Above the ceiling only to keep the access floor clear",
+      "Under the access flooring to route cables between racks",
+      "On the walls at 2 m AFF to avoid floor obstruction",
+      "Only in the ceiling plenum, never under raised floors"
+    ],
+    "a": 1,
+    "w": "Cable trays should be installed under access flooring in equipment rooms to utilize the under-floor plenum as a managed cable pathway between equipment racks. Above-ceiling trays may also be used but are not the primary recommendation for access floor environments. Wall-mounted trays at height do not leverage the access floor infrastructure. Restricting trays to ceiling plenums ignores the primary advantage of raised floor systems, which is providing a cable distribution space under the floor.",
+    "k": [
+      "Raised access floors in equipment rooms create an under-floor plenum specifically designed for cable routing and cooling airflow; cable trays installed there organize cables and prevent unmanaged piles of slack.",
+      "Under-floor cable trays also protect cables from physical damage from foot traffic and equipment loads while maintaining the ability to access and modify cable runs by lifting floor tiles.",
+      "The 305 mm (12 in) headroom requirement applies to overhead trays; under-floor trays must have sufficient depth to accommodate cable bundles without exceeding their minimum bend radius."
+    ]
+  },
+  {
+    "id": 1364,
+    "test": 4,
+    "testName": "Telecommunications Spaces",
+    "chapter": "Telecommunications Spaces",
+    "q": "A telecommunications space serving an area of 750 m\u00b2 (8070 ft\u00b2) should have what floor dimensions?",
+    "o": [
+      "3 m \u00d7 2.4 m (10 ft \u00d7 8 ft)",
+      "3 m \u00d7 3.0 m (10 ft \u00d7 10 ft)",
+      "3 m \u00d7 3.4 m (10 ft \u00d7 11 ft)",
+      "4 m \u00d7 4 m (13 ft \u00d7 13 ft)"
+    ],
+    "a": 2,
+    "w": "A telecommunications space serving 750 m\u00b2 (8070 ft\u00b2) should have dimensions of 3 m \u00d7 3.4 m (10 ft \u00d7 11 ft) per TIA-569 sizing guidelines. The smaller 3 m \u00d7 2.4 m (10 \u00d7 8 ft) space is only sufficient for areas up to 465 m\u00b2 (5000 ft\u00b2). A 3 m \u00d7 3.0 m (10 \u00d7 10 ft) room is intermediate but not the tabulated value for 750 m\u00b2. A 4 m \u00d7 4 m room exceeds what is required and is not the specified dimension.",
+    "k": [
+      "TIA-569 provides a room-size table directly relating served floor area to room dimensions: 465 m\u00b2 \u2192 3 \u00d7 2.4 m; 750 m\u00b2 \u2192 3 \u00d7 3.4 m; larger areas require proportionally larger rooms.",
+      "The 3 \u00d7 3.4 m dimension at 750 m\u00b2 provides space for the horizontal cross-connect hardware, active equipment, working clearances, and cable management for that population density.",
+      "Using the smaller 3 \u00d7 2.4 m room for a 750 m\u00b2 area will leave insufficient space for the required patch panels and switch equipment, creating an overcrowded room that violates working clearance requirements."
+    ]
   }
 ]
