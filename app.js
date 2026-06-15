@@ -329,7 +329,9 @@ function App() {
         const localDaily = prev.dailyStats || { date: '', correct: 0 };
         const dailyStats = localDaily.date === today && localDaily.correct > (serverDaily.date === today ? serverDaily.correct : 0)
           ? localDaily : serverDaily;
-        return { sessions:expandSessions(p.sessions||{},qById), history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{}, dailyStats };
+        const ephemeral = {};
+        ['daily', 'focus', 'review', 'custom'].forEach(k => { if (prev.sessions[k]) ephemeral[k] = prev.sessions[k]; });
+        return { sessions:{ ...expandSessions(p.sessions||{},qById), ...ephemeral }, history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{}, dailyStats };
       });
     }
   }, [questions]);
