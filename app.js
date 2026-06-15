@@ -32,27 +32,6 @@ const CHAPTER_FILES = [
   'data/chapter22 special design considerations.json',
 ];
 
-const COLORS = {
-  1:'#7c3aed', 2:'#0284c7', 3:'#059669', 4:'#d97706',
-  5:'#dc2626', 6:'#0891b2', 7:'#65a30d', 8:'#9333ea',
-  9:'#0f766e', 10:'#be185d', 11:'#b45309', 12:'#1d4ed8',
-  13:'#0f766e', 14:'#7c3aed', 15:'#c2410c', 16:'#0369a1',
-  17:'#4f46e5', 18:'#b91c1c', 19:'#047857', 20:'#9333ea',
-  21:'#0284c7', 22:'#d97706',
-  focus:'#6366f1', review:'#e11d48', custom:'#0891b2'
-};
-const LIGHTS = {
-  1:'#f5f3ff', 2:'#f0f9ff', 3:'#ecfdf5', 4:'#fffbeb',
-  5:'#fef2f2', 6:'#ecfeff', 7:'#f7fee7', 8:'#faf5ff',
-  9:'#f0fdfa', 10:'#fdf2f8', 11:'#fef3c7', 12:'#eff6ff',
-  13:'#f0fdfa', 14:'#f5f3ff', 15:'#fff7ed', 16:'#f0f9ff',
-  17:'#eef2ff', 18:'#fef2f2', 19:'#ecfdf5', 20:'#faf5ff',
-  21:'#f0f9ff', 22:'#fffbeb',
-  focus:'#eef2ff', review:'#fff1f2', custom:'#ecfeff'
-};
-
-const ACCENT = '#64748b';
-const ACCENT_LIGHT = '#f1f5f9';
 const BLUE = '#0066cc';
 const BLUE_DARK = '#2997ff';
 
@@ -748,7 +727,7 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
         history.length > 0 && el('div', null,
           el('p', { style: { fontSize:12, color:t.textMuted, letterSpacing:'-0.12px', margin:'14px 0 10px' } }, 'Recent Sessions'),
           ...history.slice(0,5).map(h => el('div', { key:h.date+'_'+h.testId, style: { display:'flex', alignItems:'center', gap:8, paddingBottom:9, borderBottom:'1px solid '+t.border } },
-            el('div', { style: { width:8, height:8, borderRadius:'50%', background:COLORS[h.testId]||BLUE, flexShrink:0 } }),
+            el('div', { style: { width:8, height:8, borderRadius:'50%', background:BLUE, flexShrink:0 } }),
             el('span', { style: { fontSize:13, color:t.textSub, flex:1, letterSpacing:'-0.224px' } }, 'Test '+h.testId),
             el('span', { style: { fontSize:13, fontWeight:600, color: h.pct>=80?'#059669':h.pct>=60?'#d97706':'#dc2626', letterSpacing:'-0.224px' } }, h.pct+'%'),
             h.avgTime && el('span', { style: { fontSize:11, fontWeight:400, background:dark?'#1d2f3f':'#f0f9ff', color:BLUE, borderRadius:9999, padding:'2px 7px', letterSpacing:'-0.12px' } }, h.avgTime+'s'),
@@ -824,15 +803,15 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
         const isConfirming = resetConfirm===test.id;
         const scorePctColor = ts.pct!==null ? (ts.pct>=80?'#059669':ts.pct>=60?'#d97706':'#dc2626') : t.border;
         return el('div', { key:test.id, style: { marginBottom:9, position:'relative' } },
-          el('button', { onClick:()=>{ if(!isConfirming) onSelect(test.id); }, style: { width:'100%', background:t.card, border:'1px solid '+(isComplete?COLORS[test.id]+'55':t.border), borderRadius:18, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, textAlign:'left', opacity:isConfirming?0.5:1, cursor:'pointer', borderLeft:'4px solid '+COLORS[test.id] } },
-            el('div', { style: { width:38, height:38, borderRadius:11, background:COLORS[test.id], color:'#ffffff', display:'flex', alignItems:'center', justifyContent:'center', fontSize:14, fontWeight:600, flexShrink:0, letterSpacing:'-0.224px' } }, test.id),
+          el('button', { onClick:()=>{ if(!isConfirming) onSelect(test.id); }, style: { width:'100%', background:t.card, border:'1px solid '+(isComplete?t.blue+'55':t.border), borderRadius:18, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, textAlign:'left', opacity:isConfirming?0.5:1, cursor:'pointer', borderLeft:'4px solid '+t.blue } },
+            el('div', { style: { width:38, height:38, borderRadius:11, background:t.cardAlt, color:t.text, display:'flex', alignItems:'center', justifyContent:'center', fontSize:14, fontWeight:600, flexShrink:0, letterSpacing:'-0.224px' } }, test.id),
             el('div', { style: { flex:1, minWidth:0 } },
               el('div', { style: { display:'flex', alignItems:'center', gap:6, marginBottom:2 } },
                 el('span', { style: { fontSize:14, fontWeight:600, color:t.text, letterSpacing:'-0.224px' } }, test.name)
               ),
               el('div', { style: { fontSize:12, color:t.textMuted, marginBottom:5, letterSpacing:'-0.12px' } }, ts.done+'/'+totalQsInChapter+' questions'),
               el('div', { style: { height:3, background:t.borderLight, borderRadius:2, overflow:'hidden' } },
-                el('div', { style: { height:'100%', background:COLORS[test.id], borderRadius:2, width:fillPct+'%' } })
+                el('div', { style: { height:'100%', background:t.blue, borderRadius:2, width:fillPct+'%' } })
               )
             ),
             el('div', { style: { textAlign:'right', flexShrink:0 } },
@@ -883,7 +862,7 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
   const timingsRef = useRef([]);
   const [eliminated, setEliminated] = useState(new Set());
 
-  const color = COLORS[testId]||'#6366f1';
+  const color = t.blue;
   const qs = session.questions;
   const ans = session.answers;
   const confs = session.confidences||Array(qs.length).fill(null);
@@ -932,7 +911,7 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
     el('div', { style: { height:3, background:t.borderLight } },
       el('div', { style: { height:'100%', background:color, width:progress+'%', transition:'width 0.4s', borderRadius:'0 2px 2px 0' } })
     ),
-    el(TimerRow, { timerSec, timerRunning, color:ACCENT, t, onToggle: () => {
+    el(TimerRow, { timerSec, timerRunning, color:t.blue, t, onToggle: () => {
       if (timerSec <= 0) { setTimerSec(60); setTimerRunning(true); }
       else setTimerRunning(r => !r);
     }}),
@@ -1013,8 +992,8 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
 function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome, dark }) {
   const t = T(dark);
   const isSpecial = testId==='focus'||testId==='review'||testId==='custom';
-  const color = COLORS[testId]||'#6366f1';
-  const light = dark ? color+'22' : (LIGHTS[testId]||'#f5f3ff');
+  const color = t.blue;
+  const light = dark ? t.blue+'22' : '#e8f0fb';
   const qs = session.questions;
   const ans = session.answers;
   const confs = session.confidences||Array(qs.length).fill(null);
@@ -1041,7 +1020,7 @@ function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome, d
       el('button', { onClick:onBack, style: { position:'absolute', top:52, left:16, background:'none', border:'none', fontSize:24, color:t.textSub } }, '‹'),
       isSpecial
         ? el('div', { style: { fontSize:14, fontWeight:600, color:t.textMuted, marginBottom:8, letterSpacing:'-0.224px' } }, testId==='focus'?'Focus Session':testId==='custom'?'Custom Quiz':'Review Mode')
-        : el('div', { style: { width:44, height:44, borderRadius:11, background:COLORS[testId]+'18', color:COLORS[testId], display:'flex', alignItems:'center', justifyContent:'center', fontSize:17, fontWeight:600, marginBottom:8, letterSpacing:'-0.374px' } }, testId),
+        : el('div', { style: { width:44, height:44, borderRadius:11, background:t.blue+'18', color:t.blue, display:'flex', alignItems:'center', justifyContent:'center', fontSize:17, fontWeight:600, marginBottom:8, letterSpacing:'-0.374px' } }, testId),
       el('div', { style: { fontSize:56, fontWeight:600, color:t.text, lineHeight:1.07, letterSpacing:'-0.28px' } }, pct, el('span', { style: { fontSize:24 } }, '%')),
       el('div', { style: { fontSize:17, fontWeight:400, color:grade.color, marginTop:6, letterSpacing:'-0.374px' } }, grade.label.replace(/\s[\S]+$/, '')),
       el('div', { style: { fontSize:14, color:t.textSub, marginTop:4, letterSpacing:'-0.224px' } }, score+' of '+qs.length+' correct')
