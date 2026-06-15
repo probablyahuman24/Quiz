@@ -576,6 +576,11 @@ function App() {
 
   const startDailySession = useCallback(() => {
     if (!questions.length) return;
+    const existing = appData.sessions['daily'];
+    if (existing && existing.answers.some(a => a === null)) {
+      setSessionMode('daily'); setActiveTest('daily'); setScreen('test');
+      return;
+    }
     const newSessions = {};
     const pool = [];
     tests.forEach(t => {
