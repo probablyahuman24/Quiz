@@ -735,6 +735,18 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
     { label:'Average',  val: avgScore!==null?avgScore+'%':'—',           color:'#9333ea' },
   ];
 
+  const last7 = Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const key = d.toDateString();
+    const daySessions = history.filter(h => new Date(h.date).toDateString() === key);
+    const correct = daySessions.reduce((s, h) => s + h.correct, 0);
+    const total   = daySessions.reduce((s, h) => s + h.total,   0);
+    const pct     = total > 0 ? Math.round(correct / total * 100) : null;
+    const timed   = daySessions.filter(h => h.avgTime);
+    const avgTime = timed.length ? Math.round(timed.reduce((s, h) => s + h.avgTime, 0) / timed.length) : null;
+    return { key, d, correct, total, pct, avgTime };
+  });
+
   return el('div', null,
     open && el('div', { onClick:onClose, style: { position:'fixed', inset:0, background:'rgba(15,23,42,0.6)', zIndex:40 } }),
     el('div', { style: { position:'fixed', top:0, left:0, height:'100vh', width:288, background:t.card, zIndex:50, overflowY:'auto', transition:'transform 0.28s ease', transform: open?'translateX(0)':'translateX(-100%)', boxShadow:'6px 0 32px rgba(0,0,0,0.18)', paddingBottom:60 } },
@@ -774,15 +786,22 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
           )
         ),
         el(SessionChart, { history, dark }),
-        history.length > 0 && el('div', null,
-          el('p', { style: { fontSize:12, color:t.textMuted, letterSpacing:'-0.12px', margin:'14px 0 10px' } }, 'Recent Sessions'),
-          ...history.slice(0,5).map(h => el('div', { key:h.date+'_'+h.testId, style: { display:'flex', alignItems:'center', gap:8, paddingBottom:9, borderBottom:'1px solid '+t.border } },
-            el('div', { style: { width:8, height:8, borderRadius:'50%', background:BLUE, flexShrink:0 } }),
-            el('span', { style: { fontSize:13, color:t.textSub, flex:1, letterSpacing:'-0.224px' } }, 'Test '+h.testId),
-            el('span', { style: { fontSize:13, fontWeight:600, color: h.pct>=80?'#059669':h.pct>=60?'#d97706':'#dc2626', letterSpacing:'-0.224px' } }, h.pct+'%'),
-            h.avgTime && el('span', { style: { fontSize:11, fontWeight:400, background:dark?'#1d2f3f':'#f0f9ff', color:BLUE, borderRadius:9999, padding:'2px 7px', letterSpacing:'-0.12px' } }, h.avgTime+'s'),
-            el('span', { style: { fontSize:12, color:t.textMuted, letterSpacing:'-0.12px' } }, new Date(h.date).toLocaleDateString('en-GB',{day:'2-digit',month:'short'}))
-          ))
+        el('div', null,
+          el('p', { style: { fontSize:12, color:t.textMuted, letterSpacing:'-0.12px', margin:'14px 0 10px' } }, 'Last 7 Days'),
+          ...last7.map(({ key, d, correct, total, pct, avgTime }, i) => {
+            const label = i === 0 ? 'Today' : i === 1 ? 'Yesterday' : d.toLocaleDateString('en-GB', { weekday:'short', day:'2-digit', month:'short' });
+            const pctColor = pct === null ? t.textMuted : pct >= 80 ? '#059669' : pct >= 60 ? '#d97706' : '#dc2626';
+            return el('div', { key, style: { display:'flex', alignItems:'center', gap:8, paddingBottom:9, borderBottom:'1px solid '+t.border } },
+              el('span', { style: { fontSize:13, color: pct===null ? t.textMuted : t.textSub, flex:1, letterSpacing:'-0.224px' } }, label),
+              pct === null
+                ? el('span', { style: { fontSize:13, color:t.textMuted } }, '—')
+                : el('div', { style: { display:'flex', alignItems:'center', gap:6 } },
+                    el('span', { style: { fontSize:12, color:t.textMuted, letterSpacing:'-0.12px' } }, correct+' / '+total),
+                    el('span', { style: { fontSize:13, fontWeight:600, color:pctColor, letterSpacing:'-0.224px', minWidth:34, textAlign:'right' } }, pct+'%'),
+                    avgTime && el('span', { style: { fontSize:11, background:dark?'#1d2f3f':'#f0f9ff', color:BLUE, borderRadius:9999, padding:'2px 7px', letterSpacing:'-0.12px' } }, avgTime+'s avg')
+                  )
+            );
+          })
         ),
         el('div', { style: { textAlign:'center', marginTop:20, paddingTop:14, borderTop:'1px solid '+t.border } },
           el('span', { style: { fontSize:12, color:t.textMuted, fontWeight:400, letterSpacing:'-0.12px' } },
