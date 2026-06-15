@@ -131,7 +131,7 @@ function expandSessions(compactSessions, questionsById) {
 }
 
 // ── Auth Screen ───────────────────────────────────────────────────────────────
-function AuthScreen({ onSignIn, onSignUp, loading, error, dark }) {
+function AuthScreen({ onSignIn, onSignUp, onGuest, loading, error, dark }) {
   const t = T(dark);
   const [mode, setMode] = useState('signin');
   const [username, setUsername] = useState('');
@@ -167,7 +167,8 @@ function AuthScreen({ onSignIn, onSignUp, loading, error, dark }) {
         error && el('div', { style: { background:'#fff1f2', border:'1px solid #fca5a5', borderRadius:9, padding:'10px 14px', marginBottom:14, fontSize:14, color:'#dc2626', fontWeight:600, letterSpacing:'-0.224px' } }, error),
         el('button', { onClick:handleSubmit, disabled:!canSubmit, style: { width:'100%', background: canSubmit ? BLUE : '#99c0f5', color:'#fff', border:'none', borderRadius:9999, padding:'14px', fontSize:17, fontWeight:400, letterSpacing:'-0.374px', cursor: canSubmit ? 'pointer' : 'default' } }, loading ? 'Please wait…' : mode==='signin' ? 'Sign In' : 'Create Account')
       ),
-      el('p', { style: { textAlign:'center', fontSize:10, color:t.textMuted, marginTop:20, opacity:0.6 } }, 'v' + APP_VERSION.major + '.' + APP_VERSION.minor)
+      el('button', { onClick:onGuest, style: { width:'100%', background:'transparent', border:'none', padding:'14px', fontSize:15, color:t.textMuted, cursor:'pointer', letterSpacing:'-0.224px' } }, 'Continue as Guest'),
+      el('p', { style: { textAlign:'center', fontSize:10, color:t.textMuted, marginTop:4, opacity:0.6 } }, 'v' + APP_VERSION.major + '.' + APP_VERSION.minor)
     )
   );
 }
@@ -365,6 +366,7 @@ function App() {
 
   useEffect(() => {
     if (!currentUser || questions.length === 0) return;
+    if (currentUser.isGuest) { setProgressLoaded(true); return; }
     // Force server fetch so we always get the latest data, not the IndexedDB cache
     db.collection('users').doc(currentUser.username).get({ source: 'server' })
       .then(doc => { applyServerProgress(doc); setProgressLoaded(true); })
@@ -375,6 +377,7 @@ function App() {
   // localStorage is also kept in sync so the fast-load cache is never stale.
   useEffect(() => {
     if (!currentUser || !progressLoaded) return;
+    if (currentUser.isGuest) return;
     if (justLoadedRef.current) { justLoadedRef.current = false; return; }
     // Always write to localStorage so the startup cache stays current
     saveUser(currentUser.username, appData);
@@ -418,6 +421,8 @@ function App() {
   }, []);
 
   const signOut = useCallback(() => { localStorage.removeItem('rcdd_user'); setCurrentUser(null); setProgressLoaded(false); setScreen('home'); setActiveTest(null); setMenuOpen(false); }, []);
+
+  const signInAsGuest = useCallback(() => { setCurrentUser({ username:'guest', isGuest:true }); }, []);
 
   const spacedShuffle = useCallback((qs) => {
     const priority = qs.filter(q => (appData.wrongCounts[q.id]||0) >= 1);
@@ -639,7 +644,7 @@ function App() {
       el('button', { onClick:()=>window.location.reload(), style: { marginTop:16, background:BLUE, color:'#fff', border:'none', borderRadius:9999, padding:'11px 28px', fontSize:17, fontWeight:400, letterSpacing:'-0.374px' } }, 'Refresh')
     );
   }
-  if (!currentUser) return el(AuthScreen, { onSignIn:signIn, onSignUp:signUp, loading:authLoading, error:authError, dark });
+  if (!currentUser) return el(AuthScreen, { onSignIn:signIn, onSignUp:signUp, onGuest:signInAsGuest, loading:authLoading, error:authError, dark });
 
   const session = activeTest ? (appData.sessions[activeTest]||null) : null;
 
@@ -755,20 +760,28 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
         el('button', { onClick:onClose, style: { background:t.pill, border:'1px solid '+t.border, borderRadius:9999, width:30, height:30, fontSize:14, color:t.textSub } }, '✕')
       ),
       el('div', { style: { padding:'14px 18px 0' } },
-        el('div', { style: { display:'flex', alignItems:'center', justifyContent:'space-between', background:t.cardAlt, borderRadius:18, padding:'10px 12px', marginBottom:14, border:'1px solid '+t.border } },
-          el('div', null,
-            el('div', { style: { fontSize:12, color:t.textMuted, letterSpacing:'-0.12px' } }, 'Signed in as'),
-            el('div', { style: { fontSize:14, fontWeight:600, color:t.text, marginTop:2, letterSpacing:'-0.224px' } }, currentUser.username)
-          ),
-          el('button', { onClick:onSignOut, style: { background:'#fff1f2', border:'1px solid #fca5a5', borderRadius:9999, padding:'6px 14px', fontSize:12, fontWeight:400, color:'#dc2626', cursor:'pointer', letterSpacing:'-0.12px' } }, 'Sign Out')
-        ),
-        el('button', {
-          onClick: onSync, disabled: syncing,
-          style: { width:'100%', display:'flex', alignItems:'center', justifyContent:'center', gap:7, background: syncing ? t.cardAlt : '#f0fdf4', border:'1px solid '+(syncing?t.border:'#86efac'), borderRadius:9999, padding:'9px 12px', fontSize:13, fontWeight:400, letterSpacing:'-0.224px', color: syncing ? t.textMuted : '#16a34a', cursor: syncing ? 'default' : 'pointer', marginBottom:14 }
-        },
-          syncing ? 'Syncing…' : syncMsg ? syncMsg : 'Sync Progress'
-        ),
-        versionErr && el('p', { style: { fontSize:12, color:'#dc2626', textAlign:'center', marginTop:-10, marginBottom:10, letterSpacing:'-0.12px' } }, versionErr),
+        currentUser.isGuest
+          ? el('div', { style: { background:t.cardAlt, borderRadius:18, padding:'10px 12px', marginBottom:14, border:'1px solid '+t.border } },
+              el('div', { style: { fontSize:12, color:t.textMuted, letterSpacing:'-0.12px', marginBottom:6 } }, 'Guest Mode'),
+              el('div', { style: { fontSize:13, color:t.textSub, letterSpacing:'-0.224px', marginBottom:10 } }, 'Progress is not saved.'),
+              el('button', { onClick:onSignOut, style: { width:'100%', background:BLUE, color:'#fff', border:'none', borderRadius:9999, padding:'8px 14px', fontSize:13, fontWeight:400, cursor:'pointer', letterSpacing:'-0.224px' } }, 'Sign In / Create Account')
+            )
+          : el('div', null,
+              el('div', { style: { display:'flex', alignItems:'center', justifyContent:'space-between', background:t.cardAlt, borderRadius:18, padding:'10px 12px', marginBottom:14, border:'1px solid '+t.border } },
+                el('div', null,
+                  el('div', { style: { fontSize:12, color:t.textMuted, letterSpacing:'-0.12px' } }, 'Signed in as'),
+                  el('div', { style: { fontSize:14, fontWeight:600, color:t.text, marginTop:2, letterSpacing:'-0.224px' } }, currentUser.username)
+                ),
+                el('button', { onClick:onSignOut, style: { background:'#fff1f2', border:'1px solid #fca5a5', borderRadius:9999, padding:'6px 14px', fontSize:12, fontWeight:400, color:'#dc2626', cursor:'pointer', letterSpacing:'-0.12px' } }, 'Sign Out')
+              ),
+              el('button', {
+                onClick: onSync, disabled: syncing,
+                style: { width:'100%', display:'flex', alignItems:'center', justifyContent:'center', gap:7, background: syncing ? t.cardAlt : '#f0fdf4', border:'1px solid '+(syncing?t.border:'#86efac'), borderRadius:9999, padding:'9px 12px', fontSize:13, fontWeight:400, letterSpacing:'-0.224px', color: syncing ? t.textMuted : '#16a34a', cursor: syncing ? 'default' : 'pointer', marginBottom:14 }
+              },
+                syncing ? 'Syncing…' : syncMsg ? syncMsg : 'Sync Progress'
+              ),
+              versionErr && el('p', { style: { fontSize:12, color:'#dc2626', textAlign:'center', marginTop:-10, marginBottom:10, letterSpacing:'-0.12px' } }, versionErr)
+            ),
         el('p', { style: { fontSize:12, color:t.textMuted, letterSpacing:'-0.12px', marginBottom:10 } }, 'Overall'),
         el('div', { style: { display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, marginBottom:14 } },
           ...stats.map(s => el('div', { key:s.label, style: { background:t.cardAlt, borderRadius:18, padding:'10px 12px', border:'1px solid '+t.border } },
