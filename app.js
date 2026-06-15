@@ -839,7 +839,7 @@ function TimerRow({ timerSec, timerRunning, color, t, onToggle }) {
   const tc = timerSec > 30 ? color : timerSec > 15 ? '#d97706' : '#dc2626';
   const pct = (timerSec / 60) * 100;
   const label = '0:' + String(timerSec).padStart(2, '0');
-  const icon = timerRunning ? '⏸' : (timerSec <= 0 ? '↺' : '▶');
+  const icon = timerRunning ? '‖' : (timerSec <= 0 ? '↺' : '▶');
   return el('button', { onClick: onToggle, style: { margin:'8px 18px 0', background:t.card, border:'1px solid '+tc+'55', borderRadius:18, padding:'7px 14px', display:'flex', alignItems:'center', gap:10, width:'calc(100% - 36px)', cursor:'pointer' } },
     el('span', { style: { fontSize:15, color:tc, lineHeight:1 } }, icon),
     el('span', { style: { fontSize:14, fontWeight:600, color:tc, fontVariantNumeric:'tabular-nums', minWidth:32, letterSpacing:'-0.224px' } }, label),
