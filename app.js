@@ -803,7 +803,7 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
         const isConfirming = resetConfirm===test.id;
         const scorePctColor = ts.pct!==null ? (ts.pct>=80?'#059669':ts.pct>=60?'#d97706':'#dc2626') : t.border;
         return el('div', { key:test.id, style: { marginBottom:9, position:'relative' } },
-          el('button', { onClick:()=>{ if(!isConfirming) onSelect(test.id); }, style: { width:'100%', background:t.card, border:'1px solid '+(isComplete?t.blue+'55':t.border), borderRadius:18, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, textAlign:'left', opacity:isConfirming?0.5:1, cursor:'pointer', borderLeft:'4px solid '+t.blue } },
+          el('button', { onClick:()=>{ if(!isConfirming) onSelect(test.id); }, style: { width:'100%', background:t.card, border:'1px solid '+t.border, borderRadius:18, padding:'12px 14px', display:'flex', alignItems:'center', gap:12, textAlign:'left', opacity:isConfirming?0.5:1, cursor:'pointer', borderLeft:'4px solid '+(isComplete?t.blue:'transparent') } },
             el('div', { style: { width:38, height:38, borderRadius:11, background:t.cardAlt, color:t.text, display:'flex', alignItems:'center', justifyContent:'center', fontSize:14, fontWeight:600, flexShrink:0, letterSpacing:'-0.224px' } }, test.id),
             el('div', { style: { flex:1, minWidth:0 } },
               el('div', { style: { display:'flex', alignItems:'center', gap:6, marginBottom:2 } },
