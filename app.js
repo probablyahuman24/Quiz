@@ -366,7 +366,7 @@ function App() {
     // Force server fetch so we always get the latest data, not the IndexedDB cache
     db.collection('users').doc(currentUser.username).get({ source: 'server' })
       .then(doc => { applyServerProgress(doc); setProgressLoaded(true); })
-      .catch(() => setProgressLoaded(true));
+      .catch(() => { justLoadedRef.current = true; setProgressLoaded(true); });
   }, [currentUser, questions]);
 
   // Cloud-first sync: write to Firestore with a short debounce.
@@ -393,8 +393,8 @@ function App() {
       const user = { username };
       localStorage.setItem('rcdd_user', JSON.stringify(user));
       const cached = loadUser(username);
-      if (cached) { setAppData({ sessions:cached.sessions||{}, history:cached.history||[], starred:cached.starred||[], wrongCounts:cached.wrongCounts||{}, confidenceLog:cached.confidenceLog||{} }); setProgressLoaded(true); }
-      else { setProgressLoaded(false); }
+      if (cached) setAppData({ sessions:cached.sessions||{}, history:cached.history||[], starred:cached.starred||[], wrongCounts:cached.wrongCounts||{}, confidenceLog:cached.confidenceLog||{}, dailyStats:cached.dailyStats||{date:'',correct:0} });
+      setProgressLoaded(false);
       setCurrentUser(user);
     } catch(e) { setAuthError('Connection error. Check your internet.'); }
     finally { setAuthLoading(false); }
