@@ -842,9 +842,8 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
         el('button', { onClick:onCustomQuiz, style: { flex:1, background:BLUE, color:'#fff', border:'none', borderRadius:9999, padding:'11px 22px', fontSize:14, fontWeight:400, letterSpacing:'-0.224px', display:'flex', alignItems:'center', justifyContent:'center', gap:7, cursor:'pointer' } }, 'Custom Quiz'),
         allTestsDone && el('button', { onClick:onFocusSession, style: { flex:1, background:BLUE, color:'#fff', border:'none', borderRadius:9999, padding:'11px 22px', fontSize:14, fontWeight:400, letterSpacing:'-0.224px', display:'flex', alignItems:'center', justifyContent:'center', gap:7, cursor:'pointer' } }, 'Focus Session')
       ),
-      dailyPoolSize > 0 && el('button', { onClick:onDailyQuiz, style: { width:'100%', background:'transparent', border:'1px solid '+BLUE, borderRadius:9999, padding:'11px 22px', fontSize:14, fontWeight:400, color:BLUE, letterSpacing:'-0.224px', display:'flex', alignItems:'center', justifyContent:'center', gap:6, cursor:'pointer', marginBottom:14 } },
-        'Daily Quiz',
-        el('span', { style: { fontSize:12, opacity:0.7 } }, '— '+Math.min(dailyPoolSize, 100)+' questions')
+      dailyPoolSize > 0 && el('button', { onClick:onDailyQuiz, style: { width:'100%', background:'transparent', border:'1px solid '+BLUE, borderRadius:9999, padding:'11px 22px', fontSize:14, fontWeight:400, color:BLUE, letterSpacing:'-0.224px', display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', marginBottom:14 } },
+        'Daily Quiz'
       ),
       dailyPoolSize === 0 && el('div', { style: { marginBottom:14 } }),
       el('div', { style: { fontSize:12, fontWeight:400, color:t.textMuted, letterSpacing:'-0.12px', marginBottom:12 } }, 'Select a Test'),
