@@ -485,8 +485,10 @@ function App() {
       const answers = [...sess.answers]; answers[qIdx] = optIdx;
       const isCorrect = optIdx === sess.questions[qIdx].a;
       const today = new Date().toDateString();
-      const ds = prev.dailyStats || { date: '', correct: 0 };
-      const dailyStats = { date: today, correct: (ds.date === today ? ds.correct : 0) + (isCorrect ? 1 : 0) };
+      const ds = prev.dailyStats || { date: '', correct: 0, total: 0 };
+      const prevCorrect = ds.date === today ? (ds.correct||0) : 0;
+      const prevTotal   = ds.date === today ? (ds.total||0)   : 0;
+      const dailyStats = { date: today, correct: prevCorrect + (isCorrect ? 1 : 0), total: prevTotal + 1 };
       let sessions = { ...prev.sessions, [testId]: { ...sess, answers } };
       if (testId === 'daily') {
         const q = sess.questions[qIdx];
@@ -650,7 +652,7 @@ function App() {
 
   return el('div', { style: { minHeight:'100vh', background:t.bg, fontFamily:"'SF Pro Text','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
     !isOnline && el('div', { style: { position:'fixed', top:0, left:'50%', transform:'translateX(-50%)', zIndex:100, background:'#1d1d1f', color:'#fff', fontSize:12, fontWeight:400, padding:'5px 14px', borderRadius:'0 0 10px 10px', letterSpacing:'-0.12px' } }, 'Offline — changes will sync when reconnected'),
-    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg, versionErr }),
+    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, dailyStats:appData.dailyStats, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg, versionErr }),
     screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onDailyQuiz:startDailySession, dailyPoolSize, onResetTest:resetTest, dark, onToggleDark:toggleDark, tablet, onToggleTablet:toggleTablet }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
     screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:(avgTime)=>finishTest(activeTest,avgTime), dark, tablet }),
@@ -721,7 +723,7 @@ function SessionChart({ history, dark }) {
 }
 
 // ── Side Menu ─────────────────────────────────────────────────────────────────
-function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut, onSync, syncing, syncMsg, versionErr }) {
+function SideMenu({ open, onClose, history, dailyStats, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut, onSync, syncing, syncMsg, versionErr }) {
   const t = T(dark);
   useEffect(() => { document.body.style.overflow = open ? 'hidden' : ''; return () => { document.body.style.overflow = ''; }; }, [open]);
   const accuracy   = totalAnswered > 0 ? Math.round(totalCorrect/totalAnswered*100) : 0;
@@ -743,6 +745,11 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
   const last7 = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(); d.setDate(d.getDate() - i);
     const key = d.toDateString();
+    if (i === 0 && dailyStats && dailyStats.date === key) {
+      const correct = dailyStats.correct || 0;
+      const total   = dailyStats.total   || 0;
+      return { key, d, correct, total, pct: total > 0 ? Math.round(correct / total * 100) : null, avgTime: null };
+    }
     const daySessions = history.filter(h => new Date(h.date).toDateString() === key);
     const correct = daySessions.reduce((s, h) => s + h.correct, 0);
     const total   = daySessions.reduce((s, h) => s + h.total,   0);
