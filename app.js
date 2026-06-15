@@ -328,8 +328,12 @@ function App() {
       const today = new Date().toDateString();
       setAppData(prev => {
         const localDaily = prev.dailyStats || { date: '', correct: 0 };
-        const dailyStats = localDaily.date === today && localDaily.correct > (serverDaily.date === today ? serverDaily.correct : 0)
+        let dailyStats = localDaily.date === today && localDaily.correct >= (serverDaily.date === today ? serverDaily.correct : 0)
           ? localDaily : serverDaily;
+        // Preserve total from local when server has old format (no total field)
+        if (dailyStats === serverDaily && localDaily.date === today && !dailyStats.total && localDaily.total) {
+          dailyStats = { ...dailyStats, total: localDaily.total };
+        }
         const ephemeral = {};
         ['daily', 'focus', 'review', 'custom'].forEach(k => { if (prev.sessions[k]) ephemeral[k] = prev.sessions[k]; });
         return { sessions:{ ...expandSessions(p.sessions||{},qById), ...ephemeral }, history:p.history||[], starred:p.starred||[], wrongCounts:p.wrongCounts||{}, confidenceLog:p.confidenceLog||{}, dailyStats };
@@ -745,10 +749,13 @@ function SideMenu({ open, onClose, history, dailyStats, totalAnswered, totalQs, 
   const last7 = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(); d.setDate(d.getDate() - i);
     const key = d.toDateString();
-    if (i === 0 && dailyStats && dailyStats.date === key) {
+    if (i === 0 && dailyStats && dailyStats.date === key && (dailyStats.total || 0) > 0) {
       const correct = dailyStats.correct || 0;
-      const total   = dailyStats.total   || 0;
-      return { key, d, correct, total, pct: total > 0 ? Math.round(correct / total * 100) : null, avgTime: null };
+      const total   = dailyStats.total;
+      const todaySess = history.filter(h => new Date(h.date).toDateString() === key);
+      const timed = todaySess.filter(h => h.avgTime);
+      const avgTime = timed.length ? Math.round(timed.reduce((s, h) => s + h.avgTime, 0) / timed.length) : null;
+      return { key, d, correct, total, pct: Math.round(correct / total * 100), avgTime };
     }
     const daySessions = history.filter(h => new Date(h.date).toDateString() === key);
     const correct = daySessions.reduce((s, h) => s + h.correct, 0);
