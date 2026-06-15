@@ -589,8 +589,16 @@ function App() {
 
   const startDailySession = useCallback(() => {
     if (!questions.length) return;
+    const today = new Date().toDateString();
     const existing = appData.sessions['daily'];
     if (existing && existing.answers.some(a => a === null)) {
+      // Resume: stamp lastAccessedDate so Today panel knows this session was active today
+      if (existing.lastAccessedDate !== today) {
+        setAppData(prev => ({
+          ...prev,
+          sessions: { ...prev.sessions, daily: { ...prev.sessions.daily, lastAccessedDate: today } }
+        }));
+      }
       setSessionMode('daily'); setActiveTest('daily'); setScreen('test');
       return;
     }
@@ -610,7 +618,7 @@ function App() {
     });
     const selected = shuffle(pool).slice(0, 100);
     if (!selected.length) return;
-    newSessions['daily'] = { questions:selected, answers:Array(selected.length).fill(null), confidences:Array(selected.length).fill(null), mode:'daily' };
+    newSessions['daily'] = { questions:selected, answers:Array(selected.length).fill(null), confidences:Array(selected.length).fill(null), mode:'daily', lastAccessedDate: today };
     setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, ...newSessions } }));
     setSessionMode('daily'); setActiveTest('daily'); setScreen('test');
   }, [questions, tests, appData.sessions, spacedShuffle]);
@@ -636,6 +644,17 @@ function App() {
   const totalCorrect  = testStats.reduce((s,ts)=>s+ts.correct, 0);
   const overallScore  = totalAnswered > 0 ? Math.round(totalCorrect/totalAnswered*100) : null;
   const allTestsDone  = tests.length > 0 && tests.every(t => { const s=appData.sessions[t.id]; return s&&s.answers.every(a=>a!==null); });
+
+  const todayLiveStats = useMemo(() => {
+    const today = new Date().toDateString();
+    const sess = appData.sessions.daily;
+    if (!sess || sess.lastAccessedDate !== today) return null;
+    const total = sess.answers.filter(a => a !== null).length;
+    if (!total) return null;
+    const correct = sess.answers.reduce((s, a, i) => a !== null && a === sess.questions[i].a ? s + 1 : s, 0);
+    return { correct, total };
+  }, [appData.sessions.daily]);
+
   const t = T(dark);
 
   if (loading || (currentUser && !progressLoaded)) {
@@ -656,7 +675,7 @@ function App() {
 
   return el('div', { style: { minHeight:'100vh', background:t.bg, fontFamily:"'SF Pro Text','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
     !isOnline && el('div', { style: { position:'fixed', top:0, left:'50%', transform:'translateX(-50%)', zIndex:100, background:'#1d1d1f', color:'#fff', fontSize:12, fontWeight:400, padding:'5px 14px', borderRadius:'0 0 10px 10px', letterSpacing:'-0.12px' } }, 'Offline — changes will sync when reconnected'),
-    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, dailyStats:appData.dailyStats, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg, versionErr }),
+    el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, dailyStats:appData.dailyStats, todayLiveStats, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg, versionErr }),
     screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onDailyQuiz:startDailySession, dailyPoolSize, onResetTest:resetTest, dark, onToggleDark:toggleDark, tablet, onToggleTablet:toggleTablet }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
     screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:(avgTime)=>finishTest(activeTest,avgTime), dark, tablet }),
@@ -727,7 +746,7 @@ function SessionChart({ history, dark }) {
 }
 
 // ── Side Menu ─────────────────────────────────────────────────────────────────
-function SideMenu({ open, onClose, history, dailyStats, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut, onSync, syncing, syncMsg, versionErr }) {
+function SideMenu({ open, onClose, history, dailyStats, todayLiveStats, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut, onSync, syncing, syncMsg, versionErr }) {
   const t = T(dark);
   useEffect(() => { document.body.style.overflow = open ? 'hidden' : ''; return () => { document.body.style.overflow = ''; }; }, [open]);
   const accuracy   = totalAnswered > 0 ? Math.round(totalCorrect/totalAnswered*100) : 0;
@@ -749,13 +768,27 @@ function SideMenu({ open, onClose, history, dailyStats, totalAnswered, totalQs, 
   const last7 = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(); d.setDate(d.getDate() - i);
     const key = d.toDateString();
-    if (i === 0 && dailyStats && dailyStats.date === key && (dailyStats.total || 0) > 0) {
-      const correct = dailyStats.correct || 0;
-      const total   = dailyStats.total;
+    if (i === 0) {
       const todaySess = history.filter(h => new Date(h.date).toDateString() === key);
       const timed = todaySess.filter(h => h.avgTime);
       const avgTime = timed.length ? Math.round(timed.reduce((s, h) => s + h.avgTime, 0) / timed.length) : null;
-      return { key, d, correct, total, pct: Math.round(correct / total * 100), avgTime };
+      // Priority 1: live dailyStats (counts every answer as it happens)
+      if (dailyStats && dailyStats.date === key && (dailyStats.total || 0) > 0) {
+        const correct = dailyStats.correct || 0;
+        const total   = dailyStats.total;
+        return { key, d, correct, total, pct: Math.round(correct / total * 100), avgTime };
+      }
+      // Priority 2: daily session accessed today (resume case — no new answers yet today)
+      if (todayLiveStats) {
+        return { key, d, correct: todayLiveStats.correct, total: todayLiveStats.total, pct: Math.round(todayLiveStats.correct / todayLiveStats.total * 100), avgTime };
+      }
+      // Priority 3: completed sessions in history for today
+      const histCorrect = todaySess.reduce((s, h) => s + h.correct, 0);
+      const histTotal   = todaySess.reduce((s, h) => s + h.total,   0);
+      if (histTotal > 0) {
+        return { key, d, correct: histCorrect, total: histTotal, pct: Math.round(histCorrect / histTotal * 100), avgTime };
+      }
+      return { key, d, correct: 0, total: 0, pct: null, avgTime: null };
     }
     const daySessions = history.filter(h => new Date(h.date).toDateString() === key);
     const correct = daySessions.reduce((s, h) => s + h.correct, 0);
