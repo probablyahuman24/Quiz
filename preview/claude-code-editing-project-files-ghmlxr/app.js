@@ -103,7 +103,7 @@ async function hashPin(pin) {
 function compactAppData(appData) {
   const sessions = {};
   Object.entries(appData.sessions).forEach(([testId, sess]) => {
-    if (!sess || testId === 'focus' || testId === 'review' || testId === 'custom') return;
+    if (!sess || testId === 'focus' || testId === 'review' || testId === 'custom' || testId === 'daily') return;
     sessions[testId] = {
       qOrder: sess.questions.map(q => q.id),
       answers: sess.answers,
@@ -480,7 +480,19 @@ function App() {
       const today = new Date().toDateString();
       const ds = prev.dailyStats || { date: '', correct: 0 };
       const dailyStats = { date: today, correct: (ds.date === today ? ds.correct : 0) + (isCorrect ? 1 : 0) };
-      return { ...prev, sessions: { ...prev.sessions, [testId]: { ...sess, answers } }, dailyStats };
+      let sessions = { ...prev.sessions, [testId]: { ...sess, answers } };
+      if (testId === 'daily') {
+        const q = sess.questions[qIdx];
+        const chSess = sessions[q.test];
+        if (chSess) {
+          const ci = chSess.questions.findIndex(cq => cq.id === q.id);
+          if (ci !== -1 && chSess.answers[ci] === null) {
+            const chAnswers = [...chSess.answers]; chAnswers[ci] = optIdx;
+            sessions = { ...sessions, [q.test]: { ...chSess, answers: chAnswers } };
+          }
+        }
+      }
+      return { ...prev, sessions, dailyStats };
     });
   }, []);
 
@@ -494,7 +506,7 @@ function App() {
 
   const finishTest = useCallback((testId, avgTime) => {
     const sess = appData.sessions[testId]; if (!sess) return;
-    const isSpecial = sess.mode==='review' || sess.mode==='focus' || sess.mode==='custom';
+    const isSpecial = sess.mode==='review' || sess.mode==='focus' || sess.mode==='custom' || sess.mode==='daily';
     const newWC = { ...appData.wrongCounts };
     const newCL = { ...appData.confidenceLog };
     sess.questions.forEach((q,i) => {
@@ -562,6 +574,29 @@ function App() {
     setSessionMode('custom'); setActiveTest('custom'); setScreen('test');
   }, []);
 
+  const startDailySession = useCallback(() => {
+    if (!questions.length) return;
+    const newSessions = {};
+    const pool = [];
+    tests.forEach(t => {
+      const sess = appData.sessions[t.id];
+      if (sess) {
+        const done = sess.answers.filter(a => a !== null).length;
+        if (done >= t.questions.length) return;
+        sess.questions.forEach((q, i) => { if (sess.answers[i] === null) pool.push(q); });
+      } else {
+        const qs = spacedShuffle(t.questions);
+        newSessions[t.id] = { questions:qs, answers:Array(qs.length).fill(null), confidences:Array(qs.length).fill(null), mode:'normal' };
+        qs.forEach(q => pool.push(q));
+      }
+    });
+    const selected = shuffle(pool).slice(0, 100);
+    if (!selected.length) return;
+    newSessions['daily'] = { questions:selected, answers:Array(selected.length).fill(null), confidences:Array(selected.length).fill(null), mode:'daily' };
+    setAppData(prev => ({ ...prev, sessions: { ...prev.sessions, ...newSessions } }));
+    setSessionMode('daily'); setActiveTest('daily'); setScreen('test');
+  }, [questions, tests, appData.sessions, spacedShuffle]);
+
   const testStats = useMemo(() => tests.map(t => {
     const sess = appData.sessions[t.id];
     if (!sess) return { testId:t.id, name:t.name, done:0, correct:0, total:t.questions.length, pct:null };
@@ -569,6 +604,14 @@ function App() {
     const correct = sess.questions.filter((q,i)=>sess.answers[i]===q.a&&sess.answers[i]!==null).length;
     return { testId:t.id, name:t.name, done, correct, total:sess.questions.length, pct: done>0?Math.round(correct/done*100):null };
   }), [tests, appData.sessions]);
+
+  const dailyPoolSize = useMemo(() => tests.reduce((sum, t) => {
+    const sess = appData.sessions[t.id];
+    if (!sess) return sum + t.questions.length;
+    const done = sess.answers.filter(a => a !== null).length;
+    if (done >= sess.questions.length) return sum;
+    return sum + sess.answers.filter(a => a === null).length;
+  }, 0), [tests, appData.sessions]);
 
   const totalAnswered = testStats.reduce((s,ts)=>s+ts.done, 0);
   const totalQs       = testStats.reduce((s,ts)=>s+ts.total, 0);
@@ -596,7 +639,7 @@ function App() {
   return el('div', { style: { minHeight:'100vh', background:t.bg, fontFamily:"'SF Pro Text','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif", overflowX:'hidden' } },
     !isOnline && el('div', { style: { position:'fixed', top:0, left:'50%', transform:'translateX(-50%)', zIndex:100, background:'#1d1d1f', color:'#fff', fontSize:12, fontWeight:400, padding:'5px 14px', borderRadius:'0 0 10px 10px', letterSpacing:'-0.12px' } }, 'Offline — changes will sync when reconnected'),
     el(SideMenu, { open:menuOpen, onClose:()=>setMenuOpen(false), history:appData.history, totalAnswered, totalQs, totalCorrect, overallScore, currentUser, dark, onSignOut:signOut, onSync:syncProgress, syncing, syncMsg, versionErr }),
-    screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onResetTest:resetTest, dark, onToggleDark:toggleDark, tablet, onToggleTablet:toggleTablet }),
+    screen==='home' && el(HomeScreen, { tests, testStats, overallScore, totalAnswered, totalQs, dailyStats:appData.dailyStats, onSelect:id=>{setSessionMode('normal');setActiveTest(id);getOrCreateSession(id);setScreen('test');}, onMenu:()=>setMenuOpen(true), onReshuffleAll:reshuffleAll, allTestsDone, onFocusSession:startFocusSession, onCustomQuiz:()=>setScreen('custom'), onDailyQuiz:startDailySession, dailyPoolSize, onResetTest:resetTest, dark, onToggleDark:toggleDark, tablet, onToggleTablet:toggleTablet }),
     screen==='custom' && el(CustomQuizScreen, { questions, appData, onStart:startCustomSession, onBack:()=>setScreen('home'), dark }),
     screen==='test' && session && el(TestScreen, { key:activeTest+'_'+(session.mode||'normal'), testId:activeTest, session, starred:appData.starred, wrongCounts:appData.wrongCounts, onAnswer:answer, onConfidence:setConfidence, onStar:toggleStar, onBack:()=>setScreen('home'), onFinish:(avgTime)=>finishTest(activeTest,avgTime), dark, tablet }),
     screen==='result' && session && el(ResultScreen, { testId:activeTest, session, onBack:()=>setScreen('test'), onRetry:()=>retryTest(activeTest), onReshuffle:()=>reshuffleTest(activeTest), onHome:()=>setScreen('home'), dark })
@@ -746,7 +789,7 @@ function SideMenu({ open, onClose, history, totalAnswered, totalQs, totalCorrect
 
 // ── Home Screen ───────────────────────────────────────────────────────────────
 const DAILY_TARGET = 100;
-function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, dailyStats, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onCustomQuiz, onResetTest, dark, onToggleDark, tablet, onToggleTablet }) {
+function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, dailyStats, onSelect, onMenu, onReshuffleAll, allTestsDone, onFocusSession, onCustomQuiz, onDailyQuiz, dailyPoolSize, onResetTest, dark, onToggleDark, tablet, onToggleTablet }) {
   const t = T(dark);
   const pct = totalQs > 0 ? Math.round(totalAnswered/totalQs*100) : 0;
   const [resetConfirm, setResetConfirm] = useState(null);
@@ -790,10 +833,15 @@ function HomeScreen({ tests, testStats, overallScore, totalAnswered, totalQs, da
       )
     ),
     el('div', { style: { flex:1, padding:'16px 20px', overflowY:'auto' } },
-      el('div', { style: { display:'flex', gap:10, marginBottom:14 } },
+      el('div', { style: { display:'flex', gap:10, marginBottom:8 } },
         el('button', { onClick:onCustomQuiz, style: { flex:1, background:BLUE, color:'#fff', border:'none', borderRadius:9999, padding:'11px 22px', fontSize:14, fontWeight:400, letterSpacing:'-0.224px', display:'flex', alignItems:'center', justifyContent:'center', gap:7, cursor:'pointer' } }, 'Custom Quiz'),
         allTestsDone && el('button', { onClick:onFocusSession, style: { flex:1, background:BLUE, color:'#fff', border:'none', borderRadius:9999, padding:'11px 22px', fontSize:14, fontWeight:400, letterSpacing:'-0.224px', display:'flex', alignItems:'center', justifyContent:'center', gap:7, cursor:'pointer' } }, 'Focus Session')
       ),
+      dailyPoolSize > 0 && el('button', { onClick:onDailyQuiz, style: { width:'100%', background:'transparent', border:'1px solid '+BLUE, borderRadius:9999, padding:'11px 22px', fontSize:14, fontWeight:400, color:BLUE, letterSpacing:'-0.224px', display:'flex', alignItems:'center', justifyContent:'center', gap:6, cursor:'pointer', marginBottom:14 } },
+        'Daily Quiz',
+        el('span', { style: { fontSize:12, opacity:0.7 } }, '— '+Math.min(dailyPoolSize, 100)+' questions')
+      ),
+      dailyPoolSize === 0 && el('div', { style: { marginBottom:14 } }),
       el('div', { style: { fontSize:12, fontWeight:400, color:t.textMuted, letterSpacing:'-0.12px', marginBottom:12 } }, 'Select a Test'),
       ...tests.map(test => {
         const ts = testStats.find(x=>x.testId===test.id)||{done:0,correct:0,total:test.questions.length,pct:null};
@@ -873,7 +921,7 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
   const doneCount = ans.filter(a=>a!==null).length;
   const progress = ((qIdx+1)/qs.length)*100;
   const wrongCount = wrongCounts[q.id]||0;
-  const sessionLabel = session.mode==='focus'?'🎯 FOCUS SESSION':session.mode==='review'?'✗ REVIEW MODE':session.mode==='custom'?'✦ CUSTOM QUIZ':'TEST '+testId;
+  const sessionLabel = session.mode==='focus'?'🎯 FOCUS SESSION':session.mode==='review'?'✗ REVIEW MODE':session.mode==='custom'?'✦ CUSTOM QUIZ':session.mode==='daily'?'◆ DAILY QUIZ':'TEST '+testId;
 
   useEffect(() => { setTimerSec(60); setTimerRunning(!isAnswered); setEliminated(new Set()); }, [qIdx]);
   useEffect(() => { if (isAnswered) setTimerRunning(false); }, [isAnswered]);
@@ -991,7 +1039,7 @@ function TestScreen({ testId, session, starred, wrongCounts, onAnswer, onConfide
 // ── Result Screen ─────────────────────────────────────────────────────────────
 function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome, dark }) {
   const t = T(dark);
-  const isSpecial = testId==='focus'||testId==='review'||testId==='custom';
+  const isSpecial = testId==='focus'||testId==='review'||testId==='custom'||testId==='daily';
   const color = t.blue;
   const light = dark ? t.blue+'22' : '#e8f0fb';
   const qs = session.questions;
@@ -1019,7 +1067,7 @@ function ResultScreen({ testId, session, onBack, onRetry, onReshuffle, onHome, d
     el('div', { style: { background:grade.bg, padding:'52px 20px 22px', display:'flex', flexDirection:'column', alignItems:'center', borderRadius:'0 0 22px 22px', position:'relative' } },
       el('button', { onClick:onBack, style: { position:'absolute', top:52, left:16, background:'none', border:'none', fontSize:24, color:t.textSub } }, '‹'),
       isSpecial
-        ? el('div', { style: { fontSize:14, fontWeight:600, color:t.textMuted, marginBottom:8, letterSpacing:'-0.224px' } }, testId==='focus'?'Focus Session':testId==='custom'?'Custom Quiz':'Review Mode')
+        ? el('div', { style: { fontSize:14, fontWeight:600, color:t.textMuted, marginBottom:8, letterSpacing:'-0.224px' } }, testId==='focus'?'Focus Session':testId==='custom'?'Custom Quiz':testId==='daily'?'Daily Quiz':'Review Mode')
         : el('div', { style: { width:44, height:44, borderRadius:11, background:t.blue+'18', color:t.blue, display:'flex', alignItems:'center', justifyContent:'center', fontSize:17, fontWeight:600, marginBottom:8, letterSpacing:'-0.374px' } }, testId),
       el('div', { style: { fontSize:56, fontWeight:600, color:t.text, lineHeight:1.07, letterSpacing:'-0.28px' } }, pct, el('span', { style: { fontSize:24 } }, '%')),
       el('div', { style: { fontSize:17, fontWeight:400, color:grade.color, marginTop:6, letterSpacing:'-0.374px' } }, grade.label.replace(/\s[\S]+$/, '')),
